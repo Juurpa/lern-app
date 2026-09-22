@@ -1,10 +1,10 @@
-import { h, md, enhance, esc } from '../render.js';
+import { h, md, enhance, esc, isHttpUrl } from '../render.js';
 
 const SECTIONS = [['kern', 'Der Kern'], ['unterDerHaube', 'Unter der Haube'], ['analogie', 'Die Analogie'], ['fehler', 'Der Fehler']];
 
 export function renderUnit(root, unit, fachLabel, onDone) {
   const body = SECTIONS.filter(([k]) => unit[k]).map(([k, t]) => `<h3>${t}</h3>${md(unit[k])}`).join('');
-  const videos = (unit.videos ?? []).map(v =>
+  const videos = (unit.videos ?? []).filter(v => isHttpUrl(v.url)).map(v =>
     `<li><a href="${esc(v.url)}" target="_blank" rel="noopener">${esc(v.title)}</a>${v.verified ? '' : ' <span class="muted">(Suche)</span>'}</li>`).join('');
   const el = h(`<article class="card">
     <div class="kicker"><span class="badge">${esc(fachLabel)}</span><span>Neue Lerneinheit</span></div>

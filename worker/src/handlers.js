@@ -1,6 +1,7 @@
 const MAX_BODY = 256 * 1024;
 const MAX_TEXT = 2000;
 const MAX_EVENTS = 200;
+const RETENTION_TTL = 60 * 60 * 24 * 120; // 120 Tage
 const ALLOWED_ORIGINS = ['https://juurpa.github.io', 'http://localhost:8080'];
 
 const corsHeaders = origin => (ALLOWED_ORIGINS.includes(origin)
@@ -40,7 +41,7 @@ export async function handle(req, env, now = new Date()) {
     if (Array.isArray(body?.events) && body.events.length > MAX_EVENTS) return json({ error: 'too many events' }, 413, cors);
     const events = (Array.isArray(body?.events) ? body.events : []).map(cleanEvent).filter(Boolean);
     if (!events.length) return json({ stored: 0 }, 200, cors);
-    await env.LERN.put(`b:${now.toISOString()}:${crypto.randomUUID()}`, JSON.stringify(events));
+    await env.LERN.put(`b:${now.toISOString()}:${crypto.randomUUID()}`, JSON.stringify(events), { expirationTtl: RETENTION_TTL });
     return json({ stored: events.length }, 200, cors);
   }
 

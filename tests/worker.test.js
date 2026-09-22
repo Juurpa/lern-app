@@ -6,7 +6,8 @@ function fakeKV() {
   const m = new Map();
   return {
     m,
-    async put(k, v) { m.set(k, v); },
+    puts: [],
+    async put(k, v, opts) { m.set(k, v); this.puts.push({ k, v, opts }); },
     async get(k) { return m.get(k) ?? null; },
     async list({ prefix }) { return { keys: [...m.keys()].filter(k => k.startsWith(prefix)).sort().map(name => ({ name })), list_complete: true }; },
   };
@@ -42,6 +43,8 @@ test('POST /events speichert bereinigte Ereignisse als Batch', async () => {
   assert.match(key, /^b:2026-09-23T10:00:00\.000Z:/);
   const stored = JSON.parse(e.LERN.m.get(key));
   assert.equal(stored[1].answer.length, 2000);
+  assert.equal(e.LERN.puts.length, 1);
+  assert.deepEqual(e.LERN.puts[0].opts, { expirationTtl: 60 * 60 * 24 * 120 });
 });
 
 test('POST /events: kaputtes JSON 400, zu groß 413, leer 200', async () => {

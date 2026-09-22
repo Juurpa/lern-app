@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { allocate, interleave, buildSession, insertRelearn } from '../js/session.js';
+import { allocate, interleave, buildSession, insertRelearn, examFinished, calendarDaysUntil, newPerDayNeeded } from '../js/session.js';
 import { emptyDoc } from '../js/store.js';
 
 const meta = { faecher: { INF2: { exam: '2026-10-07' }, MTS: { exam: '2026-10-07' } } };
@@ -90,4 +90,32 @@ test('buildSession: max-3 constraint respects seam between due and fresh (interl
     run = cardItems[i].fach === cardItems[i - 1].fach ? run + 1 : 1;
     assert.ok(run <= 3, `Run of ${cardItems[i].fach} exceeded 3 at position ${i}: ${run}`);
   }
+});
+
+test('buildSession: Karten eines Fachs mit vergangener Prüfung werden ausgeschlossen', () => {
+  const meta2 = { faecher: { INF2: { exam: '2026-10-07' }, RADAR: { exam: '2026-10-08' } } };
+  const units2 = [{ id: 'U-I', fach: 'INF2', order: 1, title: 'I' }, { id: 'U-R', fach: 'RADAR', order: 2, title: 'R' }];
+  const cards = [mk('i1', 'INF2', 'U-I'), mk('i2', 'INF2', 'U-I'), mk('r1', 'RADAR', 'U-R'), mk('r2', 'RADAR', 'U-R')];
+  const doc = emptyDoc();
+  doc.cards.i2 = { fsrs: { due: new Date(2026, 9, 6).toISOString(), reps: 2, stability: 3 }, alt: 2 };
+  const onExamDay = buildSession({ cards, units: units2, doc, meta: meta2, now: new Date(2026, 9, 7, 20) });
+  assert.ok(onExamDay.some(x => x.cardId === 'i2'), 'am Prüfungstag selbst noch dabei');
+  const after = buildSession({ cards, units: units2, doc, meta: meta2, now: new Date(2026, 9, 8, 0, 30) });
+  const ids = after.filter(x => x.type === 'card').map(x => x.cardId);
+  assert.deepEqual(ids.sort(), ['r1', 'r2']);
+});
+
+test('examFinished / calendarDaysUntil: lokale Kalendertage', () => {
+  assert.equal(examFinished('2026-10-07', new Date(2026, 9, 7, 23, 59)), false);
+  assert.equal(examFinished('2026-10-07', new Date(2026, 9, 8, 0, 0)), true);
+  assert.equal(calendarDaysUntil('2026-10-07', new Date(2026, 9, 7, 8)), 0);
+  assert.equal(calendarDaysUntil('2026-10-07', new Date(2026, 9, 6, 23)), 1);
+  assert.equal(calendarDaysUntil('2026-10-07', new Date(2026, 8, 22, 10)), 15);
+});
+
+test('newPerDayNeeded: neue Karten auf die Tage bis zum Vortag verteilen', () => {
+  assert.equal(newPerDayNeeded(700, '2026-10-07', new Date(2026, 8, 22, 10)), 50); // 700 / 14
+  assert.equal(newPerDayNeeded(5, '2026-10-07', new Date(2026, 9, 6, 10)), 5); // min. 1 Tag
+  assert.equal(newPerDayNeeded(0, '2026-10-07', new Date(2026, 8, 22)), 0);
+  assert.equal(newPerDayNeeded(10, '2026-10-07', new Date(2026, 9, 8, 10)), 0); // Prüfung vorbei
 });

@@ -3,9 +3,25 @@ import { openGaps } from './gaps.js';
 
 const DAY = 86400000;
 
+const examDay = (examDate, offset = 0) => { const [y, m, d] = examDate.split('-').map(Number); return new Date(y, m - 1, d + offset); };
+
 function daysUntil(examDate, now) {
-  const [y, m, d] = examDate.split('-').map(Number);
-  return (new Date(y, m - 1, d) - now) / DAY;
+  return (examDay(examDate) - now) / DAY;
+}
+
+// Ein Fach ist erledigt, sobald sein Prüfungstag (lokal) vorbei ist.
+export const examFinished = (examDate, now) => now >= examDay(examDate, 1);
+
+// Kalendertage von heute bis zum Prüfungstag (0 = heute Prüfung).
+export function calendarDaysUntil(examDate, now) {
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  return Math.round((examDay(examDate) - today) / DAY);
+}
+
+// Nötiges Tempo: verbleibende neue Karten auf die Tage bis zum Vortag der Prüfung verteilen.
+export function newPerDayNeeded(freshCount, examDate, now) {
+  if (!freshCount || examFinished(examDate, now)) return 0;
+  return Math.ceil(freshCount / Math.max(1, calendarDaysUntil(examDate, now) - 1));
 }
 
 export function allocate(counts, weights, total) {
@@ -53,7 +69,7 @@ const countsOf = groups => Object.fromEntries(Object.entries(groups).map(([k, v]
 
 export function buildSession({ cards, units, doc, meta, now, size = 30, newLimit = 10, exclude = new Set() }) {
   const unitById = new Map(units.map(u => [u.id, u]));
-  const pool = cards.filter(c => !exclude.has(c.id));
+  const pool = cards.filter(c => !exclude.has(c.id) && !examFinished(meta.faecher[c.fach].exam, now));
   const weights = fachWeights(meta, doc, cards, now);
   const dueAt = c => new Date(doc.cards[c.id].fsrs.due);
 

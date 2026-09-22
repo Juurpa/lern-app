@@ -1,0 +1,222 @@
+[
+ {
+  "id": "INF2-LE01",
+  "fach": "INF2",
+  "order": 100,
+  "title": "LE01 · Einführung GUI",
+  "kern": "",
+  "unterDerHaube": "",
+  "analogie": "",
+  "fehler": "",
+  "videos": []
+ },
+ {
+  "id": "INF2-LE02",
+  "fach": "INF2",
+  "order": 101,
+  "title": "LE02 · GUI mit Layoutbeschreibung",
+  "kern": "",
+  "unterDerHaube": "",
+  "analogie": "",
+  "fehler": "",
+  "videos": []
+ },
+ {
+  "id": "INF2-LE02b",
+  "fach": "INF2",
+  "order": 102,
+  "title": "LE02b · Konstruktoren",
+  "kern": "",
+  "unterDerHaube": "",
+  "analogie": "",
+  "fehler": "",
+  "videos": []
+ },
+ {
+  "id": "INF2-LE02c",
+  "fach": "INF2",
+  "order": 103,
+  "title": "LE02c · Bilder",
+  "kern": "",
+  "unterDerHaube": "",
+  "analogie": "",
+  "fehler": "",
+  "videos": []
+ },
+ {
+  "id": "INF2-LE03a",
+  "fach": "INF2",
+  "order": 104,
+  "title": "LE03a · Zeichnen mit Pane",
+  "kern": "",
+  "unterDerHaube": "",
+  "analogie": "",
+  "fehler": "",
+  "videos": []
+ },
+ {
+  "id": "INF2-LE03b",
+  "fach": "INF2",
+  "order": 105,
+  "title": "LE03b · Zeichnen mit Canvas",
+  "kern": "",
+  "unterDerHaube": "",
+  "analogie": "",
+  "fehler": "",
+  "videos": []
+ },
+ {
+  "id": "INF2-LE04",
+  "fach": "INF2",
+  "order": 106,
+  "title": "LE04 · OO: Klassen und Objekte",
+  "kern": "",
+  "unterDerHaube": "",
+  "analogie": "",
+  "fehler": "",
+  "videos": []
+ },
+ {
+  "id": "INF2-LE05",
+  "fach": "INF2",
+  "order": 107,
+  "title": "LE05 · OO: Polymorphie",
+  "kern": "",
+  "unterDerHaube": "",
+  "analogie": "",
+  "fehler": "",
+  "videos": []
+ },
+ {
+  "id": "INF2-LE06",
+  "fach": "INF2",
+  "order": 108,
+  "title": "LE06 · Schnittstellen",
+  "kern": "",
+  "unterDerHaube": "",
+  "analogie": "",
+  "fehler": "",
+  "videos": []
+ },
+ {
+  "id": "INF2-LE07",
+  "fach": "INF2",
+  "order": 109,
+  "title": "LE07 · Mehrfachvererbung",
+  "kern": "",
+  "unterDerHaube": "",
+  "analogie": "",
+  "fehler": "",
+  "videos": []
+ },
+ {
+  "id": "INF2-LE08",
+  "fach": "INF2",
+  "order": 110,
+  "title": "LE08 · Parameter",
+  "kern": "",
+  "unterDerHaube": "",
+  "analogie": "",
+  "fehler": "",
+  "videos": []
+ },
+ {
+  "id": "INF2-LE09",
+  "fach": "INF2",
+  "order": 111,
+  "title": "LE09 · Dynamische Datenstrukturen: Listen",
+  "kern": "",
+  "unterDerHaube": "",
+  "analogie": "",
+  "fehler": "",
+  "videos": []
+ },
+ {
+  "id": "INF2-LE10",
+  "fach": "INF2",
+  "order": 112,
+  "title": "LE10 · Datenstrukturen im JDK",
+  "kern": "",
+  "unterDerHaube": "",
+  "analogie": "",
+  "fehler": "",
+  "videos": []
+ },
+ {
+  "id": "INF2-LE11",
+  "fach": "INF2",
+  "order": 113,
+  "title": "LE11 · Dynamische Datenstrukturen: Bäume",
+  "kern": "",
+  "unterDerHaube": "",
+  "analogie": "",
+  "fehler": "",
+  "videos": []
+ },
+ {
+  "id": "INF2-P01",
+  "fach": "INF2",
+  "order": 114,
+  "title": "P01 · Praktikum 1: JavaFX-Start",
+  "kern": "",
+  "unterDerHaube": "",
+  "analogie": "",
+  "fehler": "",
+  "videos": []
+ },
+ {
+  "id": "INF2-P02",
+  "fach": "INF2",
+  "order": 115,
+  "title": "P02 · Praktikum 2: GUI",
+  "kern": "",
+  "unterDerHaube": "",
+  "analogie": "",
+  "fehler": "",
+  "videos": []
+ },
+ {
+  "id": "INF2-P03",
+  "fach": "INF2",
+  "order": 116,
+  "title": "P03 · Praktikum 3: GUI mit FXML",
+  "kern": "",
+  "unterDerHaube": "",
+  "analogie": "",
+  "fehler": "",
+  "videos": []
+ },
+ {
+  "id": "INF2-P04",
+  "fach": "INF2",
+  "order": 117,
+  "title": "P04 · Praktikum 4: Dynamische Datenstrukturen",
+  "kern": "",
+  "unterDerHaube": "",
+  "analogie": "",
+  "fehler": "",
+  "videos": []
+ },
+ {
+  "id": "INF2-P05",
+  "fach": "INF2",
+  "order": 118,
+  "title": "P05 · Praktikum 5: Zeichnen",
+  "kern": "",
+  "unterDerHaube": "",
+  "analogie": "",
+  "fehler": "",
+  "videos": []
+ },
+ {
+  "id": "INF2-K25",
+  "fach": "INF2",
+  "order": 119,
+  "title": "K25 · Klausur 2025",
+  "kern": "",
+  "unterDerHaube": "",
+  "analogie": "",
+  "fehler": "",
+  "videos": []
+ }
+]

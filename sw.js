@@ -1,4 +1,4 @@
-const CACHE = 'lernapp-v2';
+const CACHE = 'lernapp-v3';
 const SHELL = [
   './', 'index.html', 'manifest.webmanifest', 'icon.svg', 'css/app.css',
   'js/app.js', 'js/data.js', 'js/gaps.js', 'js/render.js', 'js/scheduler.js', 'js/session.js', 'js/store.js',

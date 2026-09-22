@@ -39,7 +39,13 @@ export function renderSettings({ data, store, root, sync }) {
     q('#syncStatus').textContent = `${s.syncKey ? 'Verbunden' : 'Nicht verbunden'} · ${sync?.pending() ?? 0} wartend · zuletzt gesendet: ${st.lastSent ? new Date(st.lastSent).toLocaleString('de-DE') : '–'}${st.lastError ? ` · Fehler: ${st.lastError}` : ''}${st.dropped ? ` · ${st.dropped} verworfen (Speicherlimit)` : ''}`;
   };
   showStatus();
-  q('#syncNow').onclick = async () => { await sync?.flush(); showStatus(); };
+  q('#syncNow').onclick = async () => {
+    // Getippten Schlüssel sichern, bevor gesendet wird – sonst greift flush() noch auf den alten Stand zu.
+    doc.settings = { ...doc.settings, syncKey: q('#syncKey').value.trim() };
+    store.save(doc);
+    await sync?.flush();
+    showStatus();
+  };
   q('#save').onclick = e => {
     doc.settings = { ...s, newPerSession: Math.max(0, Number(q('#newPer').value) || 0), geminiKey: q('#key').value.trim(), geminiModel: q('#model').value.trim() || s.geminiModel, syncKey: q('#syncKey').value.trim() };
     try {

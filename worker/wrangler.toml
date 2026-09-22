@@ -1,0 +1,7 @@
+name = "lernmaschine"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+
+[[kv_namespaces]]
+binding = "LERN"
+id = "SET_BY_DEPLOY"

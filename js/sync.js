@@ -26,7 +26,7 @@ export function enqueue(queue, ev, max = MAX_QUEUE) {
   return { queue: dropped ? q.slice(dropped) : q, dropped };
 }
 
-export function createSync({ storage = globalThis.localStorage, fetchFn = globalThis.fetch?.bind(globalThis), getConfig }) {
+export function createSync({ storage = globalThis.localStorage, fetchFn = globalThis.fetch?.bind(globalThis), getConfig, maxWhenUnconfigured = 200 }) {
   const readJson = (k, fallback) => { try { return JSON.parse(storage.getItem(k) ?? 'null') ?? fallback; } catch { return fallback; } };
   const readQueue = () => { const q = readJson(QUEUE_KEY, []); return Array.isArray(q) ? q : []; };
   const writeQueue = q => storage.setItem(QUEUE_KEY, JSON.stringify(q));
@@ -39,7 +39,10 @@ export function createSync({ storage = globalThis.localStorage, fetchFn = global
     status,
     push(ev) {
       try {
-        const r = enqueue(readQueue(), ev);
+        // Ohne konfigurierten Sync-Schlüssel kann kein Gerät die Warteschlange je leeren –
+        // dann strenger begrenzen, damit localStorage nicht vollläuft.
+        const max = getConfig?.().key ? MAX_QUEUE : maxWhenUnconfigured;
+        const r = enqueue(readQueue(), ev, max);
         writeQueue(r.queue);
         if (r.dropped) setStatus({ dropped: status().dropped + r.dropped });
       } catch {
@@ -59,16 +62,28 @@ export function createSync({ storage = globalThis.localStorage, fetchFn = global
         const { url, key } = getConfig() ?? {};
         if (!url || !key) return { sent: 0, pending: readQueue().length, skipped: true };
         let sent = 0;
+        let batchSize = BATCH;
         try {
           for (;;) {
-            const batch = readQueue().slice(0, BATCH);
+            const batch = readQueue().slice(0, batchSize);
             if (!batch.length) break;
             const res = await fetchFn(`${url}/events`, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${key}` },
               body: JSON.stringify({ events: batch }),
             });
-            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+            if (!res.ok) {
+              if (res.status === 413) {
+                if (batchSize > 1) { batchSize = Math.max(1, Math.floor(batchSize / 2)); continue; }
+                // Schon bei Batchgröße 1 zu groß: dieses eine Ereignis kann nie gesendet werden – verwerfen.
+                const dropId = batch[0].eventId;
+                writeQueue(readQueue().filter(e => e.eventId !== dropId));
+                setStatus({ lastError: `HTTP 413 – Ereignis verworfen (${dropId})` });
+                batchSize = BATCH;
+                continue;
+              }
+              throw new Error(`HTTP ${res.status}`);
+            }
             const ids = new Set(batch.map(e => e.eventId));
             writeQueue(readQueue().filter(e => !ids.has(e.eventId)));
             sent += batch.length;

@@ -54,6 +54,31 @@ test('flush-Fehler behält die Warteschlange und merkt den Fehler', async () => 
   assert.equal(s.status().lastError, 'HTTP 500');
 });
 
+test('flush halbiert die Batchgröße bei HTTP 413 und sendet weiter', async () => {
+  const sizes = [];
+  const fetchFn = async (url, opt) => {
+    const n = JSON.parse(opt.body).events.length;
+    sizes.push(n);
+    if (n > 25) return { ok: false, status: 413 };
+    return { ok: true, status: 200 };
+  };
+  const s = createSync({ storage: fakeStorage(), fetchFn, getConfig: () => ({ url: 'https://w', key: 'k' }) });
+  for (let i = 0; i < 100; i++) s.push(ev(i));
+  const r = await s.flush();
+  assert.deepEqual(r, { sent: 100, pending: 0 });
+  // 100 → 413, 50 → 413, 25 geht durch (min 1 als Untergrenze der Halbierung)
+  assert.deepEqual(sizes, [100, 50, 25, 25, 25, 25]);
+});
+
+test('flush verwirft ein einzelnes Ereignis, das auch bei Batchgröße 1 mit 413 abgelehnt wird', async () => {
+  const fetchFn = async () => ({ ok: false, status: 413 });
+  const s = createSync({ storage: fakeStorage(), fetchFn, getConfig: () => ({ url: 'https://w', key: 'k' }) });
+  s.push(ev(1));
+  const r = await s.flush();
+  assert.deepEqual(r, { sent: 0, pending: 0 });
+  assert.match(s.status().lastError, /413/);
+});
+
 test('Netzwerkfehler wird abgefangen', async () => {
   const s = createSync({ storage: fakeStorage(), fetchFn: async () => { throw new Error('offline'); }, getConfig: () => ({ url: 'https://w', key: 'k' }) });
   s.push(ev(1));
@@ -68,6 +93,18 @@ test('gleichzeitige flush-Aufrufe teilen sich einen Lauf', async () => {
   const [a, b] = await Promise.all([s.flush(), s.flush()]);
   assert.equal(n, 1);
   assert.deepEqual(a, b);
+});
+
+test('push() begrenzt die Warteschlange auf 200, solange kein Sync-Schlüssel konfiguriert ist', () => {
+  const s = createSync({ storage: fakeStorage(), fetchFn: async () => ({ ok: true }), getConfig: () => ({ key: '' }) });
+  for (let i = 0; i < 250; i++) s.push(ev(i));
+  assert.equal(s.pending(), 200);
+});
+
+test('push() erlaubt bis MAX_QUEUE, sobald ein Sync-Schlüssel konfiguriert ist', () => {
+  const s = createSync({ storage: fakeStorage(), fetchFn: async () => ({ ok: true }), getConfig: () => ({ key: 'k' }) });
+  for (let i = 0; i < 250; i++) s.push(ev(i));
+  assert.equal(s.pending(), 250);
 });
 
 test('kaputte Warteschlange im Speicher gilt als leer', () => {

@@ -1,1 +1,5 @@
 node_modules/
+automation/.env
+automation/state/
+automation/logs/
+worker/.wrangler/

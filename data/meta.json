@@ -6,5 +6,6 @@
   },
   "sessionMinutes": 15,
   "maxRun": 3,
-  "relearnGap": 5
+  "relearnGap": 5,
+  "workerUrl": "https://lernmaschine.321u-pau.workers.dev"
 }

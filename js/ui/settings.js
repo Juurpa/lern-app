@@ -39,8 +39,11 @@ export function renderSettings({ data, store, root }) {
   };
   q('#exp').onclick = () => download(`lernapp-${new Date().toISOString().slice(0, 10)}.json`, store.exportJson(doc));
   q('#imp').onchange = async e => {
-    try { store.importJson(await e.target.files[0].text(), s.geminiKey); alert('Import erfolgreich.'); location.hash = '#/'; }
+    const file = e.target.files?.[0];
+    if (!file) return; // Auswahl abgebrochen
+    try { store.importJson(await file.text(), s.geminiKey); alert('Import erfolgreich.'); location.hash = '#/'; }
     catch (err) { alert(err.message); }
+    finally { e.target.value = ''; }
   };
   q('#reset').onclick = () => {
     if (!confirm('Wirklich den gesamten Lernfortschritt löschen? Vorher exportieren!')) return;

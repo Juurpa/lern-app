@@ -6,6 +6,7 @@ import { renderLearn } from './ui/learn.js';
 import { renderGaps } from './ui/gaps.js';
 import { renderSettings } from './ui/settings.js';
 import { renderSetup } from './ui/setup.js';
+import { hasUpdate, fetchRemoteVersion, applyUpdate } from './update.js';
 
 const root = document.getElementById('app');
 const ctx = { data: null, store: createStore(), root };
@@ -19,6 +20,22 @@ function route() {
   view(ctx, new URLSearchParams(query ?? ''));
 }
 
+async function checkForUpdate() {
+  const remote = await fetchRemoteVersion();
+  if (!hasUpdate(ctx.data.version, remote) || document.querySelector('.update-banner')) return;
+  const n = remote.changed?.length ?? 0;
+  const bar = document.createElement('button');
+  bar.className = 'update-banner primary';
+  bar.textContent = n ? `✨ ${n} Karten verbessert – jetzt laden` : '✨ Neue Inhalte – jetzt laden';
+  bar.onclick = async () => {
+    bar.disabled = true;
+    bar.textContent = 'Lade …';
+    try { await applyUpdate(); location.reload(); }
+    catch (e) { bar.disabled = false; bar.textContent = `Fehler: ${e.message} – erneut versuchen`; }
+  };
+  document.body.append(bar);
+}
+
 async function main() {
   navigator.storage?.persist?.().catch(() => {}); // Fortschritt vor automatischer Löschung schützen
   ctx.data = await loadData(p => fetch(p).then(r => {
@@ -30,6 +47,8 @@ async function main() {
   window.addEventListener('online', () => ctx.sync.flush());
   window.addEventListener('hashchange', route);
   route();
+  checkForUpdate();
+  setInterval(checkForUpdate, 30 * 60 * 1000);
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
 }
 

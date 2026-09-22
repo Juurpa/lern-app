@@ -74,13 +74,14 @@ export function validateData({ meta, units, cards }) {
 }
 
 export async function loadData(fetchJson) {
-  const [meta, units, bridges, synthesis, ...cardLists] = await Promise.all([
+  const [meta, units, bridges, synthesis, version, ...cardLists] = await Promise.all([
     fetchJson(DATA_FILES.meta),
     fetchJson(DATA_FILES.units),
     fetchJson(DATA_FILES.bridges),
     fetchJson(DATA_FILES.synthesis),
+    fetchJson('data/version.json').catch(() => ({ version: '0', changed: [] })),
     ...DATA_FILES.cards.map(fetchJson),
   ]);
   const r = validateData({ meta, units, cards: cardLists.flat() });
-  return { meta, bridges, synthesis, ...r };
+  return { meta, bridges, synthesis, version, ...r };
 }

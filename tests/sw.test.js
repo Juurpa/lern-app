@@ -46,7 +46,11 @@ test('KaTeX-Grundschriften sind im Precache', () => {
 
 test('CDN wird mit CORS-Requests vorgeladen, Cache-Version erhöht', () => {
   assert.match(sw, /new Request\(u(rl)?, \{ mode: 'cors' \}\)/);
-  assert.match(sw, /const CACHE = 'lernapp-v4'/);
+  assert.match(sw, /const CACHE = 'lernapp-v5'/);
+});
+
+test('Update-Prüfanfragen werden nicht gecacht', () => {
+  assert.match(sw, /searchParams\.has\('check'\)/);
 });
 
 test('PNG-Icons: Manifest (192/512), apple-touch-icon und SHELL', () => {

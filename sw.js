@@ -1,10 +1,10 @@
-const CACHE = 'lernapp-v4';
+const CACHE = 'lernapp-v5';
 const SHELL = [
   './', 'index.html', 'manifest.webmanifest', 'icon.svg', 'icon-180.png', 'icon-192.png', 'icon-512.png', 'css/app.css',
-  'js/app.js', 'js/calc.js', 'js/data.js', 'js/gaps.js', 'js/render.js', 'js/scheduler.js', 'js/session.js', 'js/store.js', 'js/sync.js',
+  'js/app.js', 'js/calc.js', 'js/data.js', 'js/gaps.js', 'js/render.js', 'js/scheduler.js', 'js/session.js', 'js/store.js', 'js/sync.js', 'js/update.js',
   'js/ui/card.js', 'js/ui/gaps.js', 'js/ui/learn.js', 'js/ui/settings.js', 'js/ui/setup.js', 'js/ui/start.js', 'js/ui/unit.js',
   'data/bridges.json', 'data/cards-inf2.json', 'data/cards-mts.json', 'data/cards-radar.json',
-  'data/meta.json', 'data/synthesis.json', 'data/units.json'
+  'data/meta.json', 'data/synthesis.json', 'data/units.json', 'data/version.json'
 ];
 
 // Exakt versionierte CDN-Bibliotheken (identisch zu index.html) + KaTeX-Grundschriften:
@@ -43,6 +43,7 @@ self.addEventListener('activate', e => {
 self.addEventListener('fetch', e => {
   const url = new URL(e.request.url);
   if (e.request.method !== 'GET' || url.hostname === 'generativelanguage.googleapis.com') return;
+  if (url.searchParams.has('check')) return; // Update-Prüfung immer direkt ans Netz
   e.respondWith(caches.open(CACHE).then(async cache => {
     const hit = await cache.match(e.request);
     const net = fetch(e.request)

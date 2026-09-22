@@ -1808,5 +1808,627 @@
    }
   },
   "source": "MTS_Ue__03_RS3.pdf, Transferfrage „Anatomische Volumina“"
+ },
+ {
+  "id": "MTS-K5-01",
+  "fach": "MTS",
+  "unit": "MTS-K5",
+  "examMode": "free",
+  "front": "Welche **Ziele** hat die Beatmung, und wovon hängt die **Entscheidung** für eine Beatmung ab?",
+  "back": "**Ziele der Beatmung (Folie 6):**\n- **pulmonalen Gasaustausch sicherstellen** (vor allem in lebensbedrohlichen Situationen): Störungen der Oxygenierung und der Ventilation behandeln\n- **Atemnot beseitigen:** O₂-Bedarf der Atemmuskulatur senken, ermüdende Atemmuskulatur unterstützen\n- **Druck-Volumen-Beziehung der Lunge verbessern:** Atelektasen vorbeugen und wiedereröffnen, Compliance verbessern\n- Lungen- und Atemwegsheilung fördern\n- Entwöhnung von Atemhilfen fördern\n\n**Einsatz (Folie 7):** Die Entscheidung ist **stets individuell**. Es wirken zusammen:\n- **Grunderkrankung:** pulmonal (Atemwege: vorrangig **obstruktiv**, primär mit **Hyperkapnie** verbunden; Lungenparenchym: vorrangig **restriktiv**, primär mit **Hypoxie** verbunden) oder extrapulmonal (zentrale Störungen, Atemmuskulatur, Thoraxintegrität)\n- **Schwere der Gasaustauschstörung:** Die Blutgasanalyse liefert **Hinweise, keine festen Grenzwerte**. Entscheidend ist die Gesamtschau klinischer Zeichen (Kaltschweißigkeit, Agitation/Somnolenz, Dyspnoe).\n- **Patientenwille und Therapiezielplanung:** Risiko abwägen, ethische Aspekte\n- **objektivierbare Hilfsgrößen** (Tabelle Folie 8)\n\n**Warum nur Hinweise aus der BGA?** Weil die Entscheidung aus dem Zusammenspiel aller vier Faktoren folgt. Ein einzelner Blutgaswert kann Grunderkrankung, klinisches Bild und Patientenwillen nicht ersetzen.\n\n*Zusammenhang mit K4 (abgeleitet):* Obstruktion stört die Atempumpe → CO₂-Elimination ↓ → Hyperkapnie. Parenchymschäden stören die Oxygenierung → Hypoxie.",
+  "keyPoints": [
+   "Ziele: Gasaustausch sichern, Atemnot beseitigen, Druck-Volumen-Beziehung verbessern, Heilung und Entwöhnung fördern",
+   "Entscheidung individuell: Grunderkrankung, Schwere, Patientenwille, Hilfsgrößen",
+   "Atemwege (obstruktiv) → Hyperkapnie; Parenchym (restriktiv) → Hypoxie",
+   "BGA liefert Hinweise, keine festen Grenzwerte"
+  ],
+  "mc": {
+   "stem": "Womit sind Erkrankungen der **Atemwege** (vorrangig obstruktiv) laut Folie **primär** verbunden?",
+   "options": [
+    "Hyperkapnie",
+    "Hypoxie",
+    "Hypokapnie",
+    "respiratorischer Alkalose"
+   ],
+   "correct": "Hyperkapnie"
+  },
+  "why": "Warum liefert die Blutgasanalyse laut Folie nur Hinweise und keine festen Grenzwerte für die Entscheidung zur Beatmung?",
+  "source": "MTS__05_RS4.pdf, Folie 6–7"
+ },
+ {
+  "id": "MTS-K5-02",
+  "fach": "MTS",
+  "unit": "MTS-K5",
+  "examMode": "free",
+  "front": "Welche **objektivierbaren Hilfsgrößen** sprechen für **Atemtherapie** bzw. **Beatmung**?",
+  "back": "| Parameter | Normwerte | Atemtherapie erwägen | Beatmung erwägen |\n|---|---|---|---|\n| Atemfrequenz [/min] | 10–25 | 25–35 bzw. < 10 | **> 35 bzw. < 6** |\n| Vitalkapazität [ml/kg KG] | 30–70 | 15–30 | < 15 |\n| Inspirationskraft (Sog) [mbar] | 50–100 | 25–50 | < 25 |\n| FEV₁ [ml/kg KG] | 50–60 | 10–50 | < 10 |\n| SaO₂ [%] | 96–100 | < 96 | **< 90** |\n| paO₂ [mmHg] | 75–100 (bei RL) | < 75 (bei RL) | **< 60** bei O₂-Insufflation über Maske oder Nasensonde |\n| Oxygenierungsindex paO₂/FIO₂ | > 300 | < 300 | < 200 |\n| paCO₂ [mmHg] | 35–45 | 45–55 | **> 55** |\n\n(RL = Raumluft. Tabelle wie auf Folie 8.)\n\nDie Werte sind **Hilfsgrößen**. Die Entscheidung bleibt individuell (Folie 7).\n\n*Unterschiedliche Angaben:* Die Tachypnoe-Schwellen in K4 (> 20/min als Definition, > 35/min als Warnzeichen) stehen in einem anderen Zusammenhang. Hier ist > 35/min die Schwelle, ab der Beatmung erwogen wird.",
+  "keyPoints": [
+   "Beatmung erwägen: f > 35 bzw. < 6 /min, VC < 15 ml/kg",
+   "SaO₂ < 90 %, paO₂ < 60 mmHg trotz O₂, paCO₂ > 55 mmHg",
+   "Oxygenierungsindex paO₂/FIO₂ < 200",
+   "Hilfsgrößen, keine festen Grenzen"
+  ],
+  "mc": {
+   "stem": "Ab welchem **paCO₂** ist laut Tabelle eine **Beatmung** zu erwägen?",
+   "options": [
+    "> 55 mmHg",
+    "> 45 mmHg",
+    "> 35 mmHg",
+    "> 75 mmHg"
+   ],
+   "correct": "> 55 mmHg"
+  },
+  "cloze": {
+   "text": "Beatmung ist zu erwägen bei einer Atemfrequenz über {{1}} pro Minute oder einem Oxygenierungsindex paO₂/FIO₂ unter {{2}}.",
+   "answers": [
+    "35",
+    "200"
+   ]
+  },
+  "source": "MTS__05_RS4.pdf, Folie 8"
+ },
+ {
+  "id": "MTS-K5-03",
+  "fach": "MTS",
+  "unit": "MTS-K5",
+  "examMode": "free",
+  "front": "Wie beschreibt man den **Atemzyklus** und die **Atemmechanik**, und worin liegt der **wesentliche Unterschied** zwischen Spontanatmung und Beatmung?",
+  "back": "**Atemzyklus (Folie 10):**\n- $T = T_I + T_E$ (Inspiration + Exspiration)\n- I:E-Verhältnis $= T_I : T_E$. Ist der Quotient **> 1**, spricht man von einem **inversen Atemzeitverhältnis**.\n- Physiologisch fließt Luft als Folge der Änderung des transpulmonalen Drucks bzw. Pleuradrucks.\n\n**Ventilation gegen Widerstände:**\n- Resistance $R = \\dfrac{\\Delta P}{\\dot V}$\n- Compliance $C_{Th+L} = \\dfrac{\\Delta V}{\\Delta P_{pul}}$\n- **Bewegungsgleichung:** $P_{Atemwege} = \\dot V \\cdot R + \\dfrac{1}{C_{Th+L}}\\int \\dot V\\,dt$ (resistiver Anteil $P_R$ + elastischer Anteil $P_C$)\n\n**Bei Beatmung (Folie 11):**\n- Keine Muskelaktivität → der transpulmonale Druck (Pleuradruck) muss **anderweitig** beeinflusst werden.\n- Die elastischen Eigenschaften der Lunge sind i. d. R. erhalten → **passive Exspiration**.\n- → Der wesentliche Unterschied liegt in der **Inspiration**.\n\n**Warum ist die Exspiration passiv möglich?** Während der Inspiration wird Volumen in der elastischen Lunge (Compliance) gespeichert. Das erzeugt den Druck $P_C = V/C$. Dieser Druck treibt die Luft ohne Muskelarbeit über die Resistance wieder hinaus. Im Modell entlädt sich die Compliance wie ein Kondensator (Lsg_RS4.pdf, S. 4).\n\nBeispiel aus der Übung: I:E = 3:7, bei 12 Atemzügen/min also $T = 5$ s, $T_I = 1{,}5$ s, $T_E = 3{,}5$ s *(nachgerechnet)*.",
+  "keyPoints": [
+   "T = T_I + T_E; I:E = T_I : T_E; Quotient > 1 = inverses Verhältnis",
+   "P_Atemwege = V̇·R + (1/C)·∫V̇ dt",
+   "Beatmung: Exspiration passiv, Unterschied liegt in der Inspiration"
+  ],
+  "cloze": {
+   "text": "Der wesentliche Unterschied zwischen Spontanatmung und Beatmung liegt in der {{1}}. Ist T_I : T_E größer als 1, spricht man von einem {{2}} Atemzeitverhältnis.",
+   "answers": [
+    "Inspiration",
+    "inversen"
+   ]
+  },
+  "why": "Warum kann die Exspiration auch bei maschineller Beatmung passiv erfolgen?",
+  "source": "MTS__05_RS4.pdf, Folie 10–11; MTS_Ue__04_RS4.pdf, Transferfrage „Elastanz bei Beatmung“"
+ },
+ {
+  "id": "MTS-K5-04",
+  "fach": "MTS",
+  "unit": "MTS-K5",
+  "examMode": "free",
+  "front": "Vergleiche **Unterdruck-** und **Überdruckbeatmung**. Welche **endinspiratorischen Drücke** herrschen jeweils?",
+  "back": "**Unterdruckbeatmung (Folie 12):** Unterdruck um den Thorax erweitert den Thorax (**Prinzip der eisernen Lunge**). Heute nicht mehr verbreitet.\n\n**Überdruckbeatmung (Folie 13):** Das Gerät drückt Luft in die Lunge. Abbildung: Inspiration mit $p_{alv} = 10$ mbar und $\\Delta V = 1$ L, Exspiration mit $p_{alv} = 0$ mbar. Heute wird nahezu ausschließlich mit Überdruck beatmet (Folie 44).\n\n*Abgeleitet:* Aus den Zahlen der Abbildung folgt $C = \\Delta V/\\Delta p = 1\\,\\text{L}/10\\,\\text{mbar} = 0{,}1$ L/mbar.\n\n**Endinspiratorische Drücke (Folie 15, bezogen auf Atmosphäre):**\n\n| | Spontanatmung | Überdruckbeatmung | Unterdruckbeatmung |\n|---|---|---|---|\n| Atemwege | 0 | **> 0** | 0 |\n| extrathorakal | 0 | 0 | **< 0** |\n| intrathorakal (Pleuradruck) | < 0 | **> 0** | < 0 |\n\n„Extrathorakal“ meint die unmittelbare Umgebung des Thorax und ist nicht zwangsläufig gleich dem Atmosphärendruck.\n\nMerke: Nur bei der **Überdruckbeatmung** wird der Pleuradruck **positiv**. Spontanatmung und Unterdruckbeatmung arbeiten beide mit negativem Pleuradruck.",
+  "keyPoints": [
+   "Unterdruck: eiserne Lunge, heute nicht mehr verbreitet",
+   "Überdruck: heute nahezu ausschließlich im Einsatz",
+   "Pleuradruck endinspiratorisch: Überdruck > 0, Spontan und Unterdruck < 0"
+  ],
+  "mc": {
+   "stem": "Welches Vorzeichen hat der **endinspiratorische Pleuradruck** bei **Überdruckbeatmung** (bezogen auf Atmosphäre)?",
+   "options": [
+    "größer als 0",
+    "kleiner als 0",
+    "gleich 0",
+    "wechselt mit jedem Atemzug"
+   ],
+   "correct": "größer als 0"
+  },
+  "source": "MTS__05_RS4.pdf, Folie 12–15 und 44"
+ },
+ {
+  "id": "MTS-K5-05",
+  "fach": "MTS",
+  "unit": "MTS-K5",
+  "examMode": "free",
+  "front": "Worin unterscheiden sich **druckkontrollierte (PCV)** und **volumenkontrollierte (VCV)** Beatmung?",
+  "back": "| | PCV | VCV |\n|---|---|---|\n| Vorgabe | **Druckverlauf** | **Volumen**, appliziert über einen eingestellten **Flow** |\n| Druckkurve | annähernd **rechteckig** (Inspirationsdruck $P_{insp}$) | ergibt sich: Anstieg bis Spitzendruck, dann Plateau |\n| Flowkurve Inspiration | hoch am Anfang, klingt dann ab (Abbildung Folie 23) | konstant (Rechteck, Folie 22) |\n| Ersatzschaltbild | **Druckquelle** | **Stromquelle** |\n| Einstellung (Folie 38) | maximaler Inspirationsdruck; für den Einstrom verantwortlich ist die **Differenz zum PEEP** | Atemhubvolumen einstellbar |\n\nDie Frequenz ist in beiden Fällen einstellbar (Folie 38).\n\n**Warum klingt der Flow bei PCV ab?** *(abgeleitet aus der Bewegungsgleichung)* Der Druck ist fest. Mit wachsendem Volumen steigt der elastische Anteil $V/C$, für den resistiven Anteil $\\dot V R$ bleibt weniger übrig. Der Flow sinkt also.",
+  "keyPoints": [
+   "PCV: Druckverlauf vorgegeben, annähernd rechteckig",
+   "VCV: Volumen über eingestellten Flow vorgegeben",
+   "Ersatzschaltbild: PC = Druckquelle, VC = Stromquelle"
+  ],
+  "mc": {
+   "stem": "Was wird bei **volumenkontrollierter** Beatmung am Gerät vorgegeben?",
+   "options": [
+    "ein Volumen, appliziert über einen eingestellten Flow",
+    "ein annähernd rechteckiger Druckverlauf",
+    "nur der PEEP, das Volumen ergibt sich",
+    "der Pleuradruck"
+   ],
+   "correct": "ein Volumen, appliziert über einen eingestellten Flow"
+  },
+  "source": "MTS__05_RS4.pdf, Folie 14, 18, 22, 23 und 38"
+ },
+ {
+  "id": "MTS-K5-06",
+  "fach": "MTS",
+  "unit": "MTS-K5",
+  "examMode": "free",
+  "front": "Skizziere den **normalen Druckverlauf bei VC-CMV** und benenne die charakteristischen Drücke.",
+  "back": "**Verlauf (Folie 19, Ü S. 5):**\n1. **Anstieg** durch Druckaufbau **und** Druckabfall über die Atemwege. Zu Beginn springt der Druck um $R\\cdot\\dot V$, danach steigt er mit der Steigung $\\dot V/C$.\n2. **Spitzendruck** am Ende der Flow-Phase.\n3. **Plateaudruck** in der **No-Flow-Phase** (kein Luftfluss) durch die „gespannten Alveolen“.\n4. **Abfall** durch passive Exspiration: Die Luft weicht aus den Alveolen aus.\nAlles liegt auf dem **PEEP** als Grundlinie.\n\n**Charakteristische Druckdifferenzen:**\n- Spitzendruck − Plateaudruck = Druck zur Überwindung der **Resistance**: $R\\cdot\\dot V$\n- Plateaudruck − PEEP = Druck zur Überwindung der **Compliance**: $V_T/C$\n\nDie Höhe des Plateaudrucks bestimmen **Compliance und Tidalvolumen**.\n\n**Warum fällt der Druck am Ende der Flow-Phase schlagartig auf das Plateau?** In der No-Flow-Phase ist $\\dot V = 0$. Damit ist der resistive Anteil $\\dot V R = 0$. Das Volumen in der Lunge bleibt gleich, also bleibt der elastische Anteil $V_T/C$ stehen (Lsg_RS4.pdf, S. 3).\n\n**Variation (Folie 20):** Die Abbildung zeigt Inspirationsflows von 30, 60 und 90 l/min. Bei höherem Flow ist der Spitzendruck höher und die Flow-Phase kürzer. *(Begründung abgeleitet: $R\\dot V$ wächst, und dasselbe Volumen ist schneller appliziert.)*",
+  "keyPoints": [
+   "Anstieg: Sprung R·V̇, dann Steigung V̇/C bis Spitzendruck",
+   "Plateau (No-Flow): nur V_T/C über PEEP",
+   "Spitzendruck − Plateaudruck = R·V̇"
+  ],
+  "cloze": {
+   "text": "Die Differenz aus Spitzendruck und Plateaudruck entspricht dem durch die {{1}} verursachten Druckanstieg. Die Höhe des Plateaudrucks bestimmen die {{2}} und das Tidalvolumen. (Folienbegriffe)",
+   "answers": [
+    "Resistance",
+    "Compliance"
+   ]
+  },
+  "why": "Warum fällt der Druck bei VC-CMV am Ende der Flow-Phase schlagartig vom Spitzendruck auf den Plateaudruck?",
+  "source": "MTS__05_RS4.pdf, Folie 19–20; MTS_Ue__04_RS4.pdf, Kontrollfrage „Druckverlauf bei VC-CMV“ (S. 5); Lsg_RS4.pdf, S. 3"
+ },
+ {
+  "id": "MTS-K5-07",
+  "fach": "MTS",
+  "unit": "MTS-K5",
+  "examMode": "free",
+  "front": "Wie ändert sich der **Druckverlauf bei VC-CMV** bei einer **obstruktiven Störung**? Begründe **formal**.",
+  "back": "**Änderung (Ü S. 6, Folie 21):** Die Resistance ist erhöht. Der **Spitzendruck steigt**, die Kurve ist in der Flow-Phase **nach oben verschoben**. Der **Plateaudruck bleibt gleich**.\n\n**Formale Begründung:** Bewegungsgleichung\n$$P_{Atemwege} = \\underbrace{\\dot V \\cdot R}_{P_R} + \\underbrace{\\tfrac{1}{C}\\textstyle\\int \\dot V\\,dt}_{P_C}$$\n- Bei VC-CMV ist $\\dot V$ vorgegeben. Steigt $R$, wächst der **flowabhängige Druckanteil** $P_R = \\dot V\\cdot R$ → Spitzendruck ↑.\n- $P_C$ hängt nur von Volumen und Compliance ab, und beide sind unverändert.\n- In der No-Flow-Phase ist $\\dot V = 0$, also $P_R = 0$ → **Plateau unverändert**.\n\n**Flow bei der Exspiration (Folie 22):** schwächer, flacher, länger (längere Zeitkonstante). Am Ende der Exspiration bleibt ein **Restflow** → **intrinsischer PEEP**.\n\n**Vergleich restriktiv:** Die Compliance ist verringert. Dasselbe Volumen erzeugt mehr Druck ($P_C \\propto 1/C$), deshalb steigt **auch das Plateau** (Karte K5-08).\n\n**Warum bleibt das Plateau bei Obstruktion gleich?** Weil im Plateau kein Flow fließt und die Resistance nur über $\\dot V R$ in den Druck eingeht.",
+  "keyPoints": [
+   "Obstruktiv: R ↑ → Spitzendruck ↑, Plateau gleich",
+   "Grund: P_R = V̇·R, im Plateau ist V̇ = 0",
+   "Exspiration: längere Zeitkonstante, Restflow → intrinsischer PEEP"
+  ],
+  "mc": {
+   "stem": "Welche Änderung zeigt der VC-CMV-Druckverlauf bei einer **obstruktiven** Störung?",
+   "options": [
+    "Spitzendruck steigt, Plateaudruck bleibt gleich",
+    "Spitzendruck und Plateaudruck steigen",
+    "Plateaudruck steigt, Spitzendruck bleibt gleich",
+    "Spitzendruck sinkt, Plateaudruck steigt"
+   ],
+   "correct": "Spitzendruck steigt, Plateaudruck bleibt gleich"
+  },
+  "why": "Warum bleibt der Plateaudruck bei VC-CMV und obstruktiver Störung unverändert?",
+  "source": "MTS_Ue__04_RS4.pdf, Kontrollfrage „Druckverlauf bei VC-CMV“ (S. 6); MTS__05_RS4.pdf, Folie 21–22"
+ },
+ {
+  "id": "MTS-K5-08",
+  "fach": "MTS",
+  "unit": "MTS-K5",
+  "examMode": "free",
+  "front": "Wie ändern sich **Druckverlauf** und **Exspiration** bei VC-CMV, wenn eine **restriktive Störung** die Compliance verringert?",
+  "back": "**Kurzfassung (Ü S. 6, Folie 21):** Die Compliance ist verringert (weniger dehnbar). Dasselbe Volumen erzeugt einen höheren Druck, und zwar nicht nur wegen des „akuten Flows“, denn $P_C \\propto 1/C$. **Spitzendruck und Plateau steigen.**\n\n**Musterlösung (Lsg_RS4.pdf, S. 2–4), konstanter Flow $\\dot V_0$, PEEP 0, $C_2 = 0{,}4\\,C_1$ (Reduktion um 60 %):**\n- **Flow-Phase:** $P_R = R\\dot V_0$ bleibt **gleich**. $P_C(t) = \\dfrac{\\dot V_0}{C}t$ steigt nach der Störung **2,5-mal steiler**.\n- **Ende Flow-Phase:** $P_C = V_T/C$, also um den Faktor 2,5 höher. Spitzendruck $R\\dot V_0 + 2{,}5\\,V_T/C_1$.\n- **Dauer der Flow-Phase unverändert:** $\\dot V_0 \\cdot T_{Flow} = V_T$, und bei VCV sind $\\dot V_0$ und $V_T$ fest.\n- **No-Flow-Phase:** $P_R = 0$, Plateau $= V_T/C$ → 2,5-fach.\n- **Exspiration:** $P_C(t) = \\dfrac{V_T}{C}e^{-t/(RC)}$. Der Anfangsdruck ist 2,5-mal höher, und der Druck fällt um **denselben Faktor schneller** ab, weil $\\tau = RC$ kleiner ist.\n\n**Warum bleibt die Dauer der Flow-Phase gleich?** Das Gerät gibt Flow und Volumen fest vor. Aus $V_T = \\dot V_0 \\cdot T_{Flow}$ folgt eine feste $T_{Flow}$, egal wie steif die Lunge ist. Nur der Druck passt sich an.\n\n**Flow (Folie 22):** Die Exspiration ist stärker, steiler und kürzer (kürzere Zeitkonstante).",
+  "keyPoints": [
+   "Restriktiv: C ↓ → P_C = V/C ↑ → Spitzendruck und Plateau ↑",
+   "P_R = R·V̇₀ und T_Flow bleiben gleich",
+   "Exspiration: höherer Anfangsdruck, schnellerer Abfall (τ = RC kleiner)"
+  ],
+  "cloze": {
+   "text": "Bei einer restriktiven Störung sinkt die {{1}} (Folienbegriff). Im VC-CMV-Druckverlauf steigt dadurch neben dem Spitzendruck auch der {{2}}.",
+   "answers": [
+    "Compliance",
+    "Plateaudruck"
+   ]
+  },
+  "why": "Warum bleibt bei VC-CMV die Dauer der Flow-Phase nach einer restriktiven Störung unverändert?",
+  "source": "Lsg_RS4.pdf, S. 1–5; MTS_Ue__04_RS4.pdf, Kontrollfrage „Druckverlauf bei VC-CMV“ (S. 6); MTS__05_RS4.pdf, Folie 21–22"
+ },
+ {
+  "id": "MTS-K5-09",
+  "fach": "MTS",
+  "unit": "MTS-K5",
+  "examMode": "free",
+  "front": "Wie verändern **Compliance-Abnahme** und **Resistance-Zunahme** die **Flowkurven** bei VCV und PCV, und woher kommt ein **intrinsischer PEEP**?",
+  "back": "**Zeitkonstante:** Die passive Exspiration ist die Entladung eines RC-Glieds, $P_C(t) = P_{C,0}\\,e^{-t/\\tau}$ mit $\\tau = RC$ (Lsg_RS4.pdf, S. 4).\n\n**VCV (Folie 22), Inspiration unverändert (konstanter Flow):**\n- **Compliance ↓:** stärkere, steilere, kürzere Exspiration (**kürzere** Zeitkonstante)\n- **Resistance ↑:** schwächerer, flacherer, längerer Exspirationsflow (**längere** Zeitkonstante). Abbildung: **endexspiratorischer Restflow → intrinsischer PEEP**\n\n**PCV (Folie 24):**\n- **Compliance ↓:** steilere, kürzere Kurven bei Inspiration **und** Exspiration (kleinere Zeitkonstante)\n- **Resistance ↑:** flachere, längere Kurven (größere Zeitkonstante). Die Abbildung zeigt einen **endinspiratorischen Flowabbruch** und einen **endexspiratorischen Restflow → intrinsischer PEEP**.\n\n**Warum entsteht bei erhöhter Resistance ein intrinsischer PEEP?** Mit $\\tau = RC$ dauert die Entleerung länger. Beginnt die nächste Inspiration, bevor der Flow auf null gefallen ist, bleibt Volumen und damit Druck in der Lunge. Folie 25: Der intrinsische PEEP ist Folge obstruktiver Erkrankungen bzw. unvollständiger Ausatmung.\n\n*Unterschiedliche Angaben auf Folie 24:* Die Überschrift lautet „Inspiration unverändert“ wie bei VCV (Folie 22). Die Stichpunkte und die Abbildung zeigen bei PCV aber veränderte Inspirationskurven. Außerdem nennt der Text einen „endexspiratorischen Flowabbruch“, die Abbildung einen „endinspiratorischen Flowabbruch“ und einen „endexspiratorischen Restflow“.",
+  "keyPoints": [
+   "τ = R·C: C ↓ → kürzer, R ↑ → länger",
+   "VCV: Inspirationsflow bleibt, nur die Exspiration ändert sich",
+   "PCV: In- und Exspirationskurven ändern sich",
+   "R ↑ → endexspiratorischer Restflow → intrinsischer PEEP"
+  ],
+  "mc": {
+   "stem": "Wie verändert eine **Abnahme der Compliance** die Flowkurven bei **PCV**?",
+   "options": [
+    "steilere, kürzere Kurven bei Inspiration und Exspiration",
+    "flachere, längere Kurven mit endexspiratorischem Restflow",
+    "Inspiration unverändert, nur die Exspiration wird länger",
+    "keine Änderung, da der Druck vorgegeben ist"
+   ],
+   "correct": "steilere, kürzere Kurven bei Inspiration und Exspiration"
+  },
+  "why": "Warum führt eine erhöhte Resistance zu einem intrinsischen PEEP?",
+  "source": "MTS__05_RS4.pdf, Folie 22, 24 und 25; Lsg_RS4.pdf, S. 4"
+ },
+ {
+  "id": "MTS-K5-10",
+  "fach": "MTS",
+  "unit": "MTS-K5",
+  "examMode": "free",
+  "front": "Was bedeuten **ZEEP, PEEP und NEEP**, was bewirkt ein PEEP, und was unterscheidet **intrinsischen** und **extrinsischen** PEEP?",
+  "back": "**Endexspiratorischer Druck (EEP, Folie 25):**\n- **ZEEP:** zero endexpiratory pressure\n- **PEEP:** positive endexpiratory pressure\n- **NEEP:** negative endexpiratory pressure → **nicht mehr im Einsatz (Atelektasengefahr!)**\n\n**Wirkung:** Der PEEP **erhöht die FRC** und **verhindert Atelektasen**. Richtig eingestellt verbessert er den **Sauerstoffaustausch** und wirkt Atelektasen und Lungenödem entgegen. **Risiken:** Totraum und Traumatisierung durch **Überblähung** (Folie 38). Der externe PEEP kann u. a. mit sinkender Oxygenierung steigen (Folie 38).\n\n**Extrinsisch vs. intrinsisch:**\n- **extrinsischer PEEP:** am Gerät eingestellt\n- **intrinsischer PEEP:** Folge obstruktiver Erkrankungen bzw. unvollständiger Ausatmung\n\n**Einteilung nach PEEP (Folie 32):** kontrollierte Beatmung mit PEEP = 0 mbar → **IPPV**, mit PEEP > 0 mbar → **CPPV**.\n\nIm Ersatzschaltbild ist der PEEP eine eigene **Druckquelle** $P_{PEEP}$ (Karten K5-11/12).",
+  "keyPoints": [
+   "ZEEP = 0, PEEP > 0, NEEP < 0 (NEEP: Atelektasengefahr, nicht mehr im Einsatz)",
+   "PEEP erhöht FRC, verhindert Atelektasen; Risiko Überblähung, Totraum",
+   "extrinsisch = am Gerät; intrinsisch = unvollständige Ausatmung/Obstruktion"
+  ],
+  "mc": {
+   "stem": "Warum wird **NEEP** heute nicht mehr eingesetzt?",
+   "options": [
+    "wegen Atelektasengefahr",
+    "wegen Überblähungsgefahr",
+    "weil er die FRC erhöht",
+    "weil er nur bei PCV einstellbar ist"
+   ],
+   "correct": "wegen Atelektasengefahr"
+  },
+  "cloze": {
+   "text": "Ein am Gerät eingestellter PEEP heißt {{1}} PEEP. Ein PEEP als Folge unvollständiger Ausatmung heißt {{2}} PEEP.",
+   "answers": [
+    "extrinsischer",
+    "intrinsischer"
+   ]
+  },
+  "source": "MTS__05_RS4.pdf, Folie 25, 32 und 38"
+ },
+ {
+  "id": "MTS-K5-11",
+  "fach": "MTS",
+  "unit": "MTS-K5",
+  "examMode": "free",
+  "front": "Was versteht man unter **PC-CMV**? Beschreibe das **Ersatzschaltbild** (Einkompartimentmodell) mit PEEP und die Lage der charakteristischen Drücke.",
+  "back": "**PC-CMV** = pressure-controlled continuous mandatory ventilation (**druckkontrollierte, kontinuierlich mandatorische Beatmung**).\n\n**Ersatzschaltbild (Ü S. 3, Folie 26/34), als Stromkreis von links nach rechts:**\n1. **Quellenzweig** (links, unten an $P_{Atm}$): **PEEP-Druckquelle** $P_{PEEP}$ (Gleichdruck) **in Reihe** mit der **Respirator-Druckquelle** $P_{Respirator}$ (Symbol mit „Schwingung“ = zeitveränderlich)\n2. oben: Flowpfeil $\\dot V$, dann der **Widerstand R** (Atemwegswiderstand, Resistance)\n3. rechts: **Reihenschaltung** der Kapazitäten **$C_L$** (Lunge) und **$C_{Th}$** (Thorax) nach unten gegen $P_{Atm}$\n\n**Druckpfeile:**\n| Größe | liegt über |\n|---|---|\n| $P_{Atemwege}$ | gekrümmter Pfeil vom Quellenzweig über R in Richtung Lunge |\n| $P_{TransPul} = P_{Pul} - P_{Pl}$ | $C_L$ |\n| $P_{Pl}$ (Pleuradruck) | $C_{Th}$ |\n| $P_{Pul}$ | $C_L$ und $C_{Th}$ zusammen, gegen $P_{Atm}$ |\n\n**Modellbildung:**\n- **Ein Kompartiment:** Lunge als eine Einheit, keine zwei Flügel (+ Zuleitung)\n- Verschiedene Drücke über Lunge und Thorax lassen sich nur einzeichnen, wenn mit **zwei Kapazitäten** modelliert wird.\n- **Druckquelle**, weil druckkontrolliert\n- Postexspiratorischer Druck = **PEEP**: liegt zweckmäßig **dauerhaft** an, der zusätzliche Druck wird **zeitgesteuert** aufgeschaltet.\n\n**Warum eine Druckquelle, und warum liegt der PEEP dauerhaft an?** Bei PCV gibt das Gerät den **Druck** vor, der Flow stellt sich ein. Das entspricht einer Spannungsquelle. Der PEEP soll auch in der Exspiration wirken. In Reihe addiert er sich immer zum Respiratordruck, und in der Exspiration bleibt er allein übrig.",
+  "keyPoints": [
+   "PC-CMV = druckkontrollierte, kontinuierlich mandatorische Beatmung",
+   "P_PEEP in Reihe mit zeitveränderlicher Druckquelle P_Respirator",
+   "R in Reihe mit C_L und C_Th gegen P_Atm",
+   "P_TransPul über C_L, P_Pl über C_Th, P_Pul über beiden"
+  ],
+  "why": "Warum wird der Respirator im PC-CMV-Ersatzschaltbild als Druckquelle modelliert, und warum liegt der PEEP dort dauerhaft an?",
+  "source": "MTS_Ue__04_RS4.pdf, Kontrollfrage „PC-CMV“ (S. 2–3); MTS__05_RS4.pdf, Folie 26 und 34"
+ },
+ {
+  "id": "MTS-K5-12",
+  "fach": "MTS",
+  "unit": "MTS-K5",
+  "examMode": "free",
+  "front": "Was versteht man unter **VC-CMV**? Beschreibe das **Ersatzschaltbild** (Einkompartimentmodell) mit PEEP und den Unterschied zu PC-CMV.",
+  "back": "**VC-CMV** = volume-controlled continuous mandatory ventilation (**volumenkontrollierte, kontinuierlich mandatorische Beatmung**).\n\n**Ersatzschaltbild (Ü S. 4, Folie 26/34):**\n1. **Quellenzweig:** eine **Stromquelle** $\\dot V_{Respirator}$ (unten an $P_{Atm}$) und darüber eine **PEEP-Druckquelle** $P_{PEEP}$ (oben an $P_{Atm}$). Ein **Schalter** verbindet entweder die Stromquelle oder die PEEP-Quelle mit dem Rest der Schaltung.\n2. Widerstand **R**, danach die Reihenschaltung **$C_L$ + $C_{Th}$** gegen $P_{Atm}$. Die Druckpfeile ($P_{Atemwege}$, $P_{TransPul} = P_{Pul} - P_{Pl}$, $P_{Pl}$, $P_{Pul}$) liegen wie bei PC-CMV.\n\n**Modellbildung (Ü S. 4):**\n- ein Kompartiment (Lunge als Einheit, + Zuleitung); unterschiedliche Drücke über Lunge und Thorax nur mit zwei Kapazitäten\n- **Stromquelle wegen VC**\n- PEEP als **„schaltbarer“ Druck**\n- Die „Schwingung“ im Quellsymbol steht für Zeitveränderlichkeit. Bei konstantem Strom und Schalter ist sie streng genommen nicht nötig.\n\n| | PC-CMV | VC-CMV |\n|---|---|---|\n| Respirator | Druckquelle | **Stromquelle** |\n| PEEP | dauerhaft in Reihe | über **Schalter** zugeschaltet |\n\n**Warum wird der PEEP über einen Schalter zugeschaltet?** *(Begründung abgeleitet)* Eine ideale Stromquelle erzwingt ihren Flow unabhängig von einer Spannung in Reihe. Ein PEEP in Reihe würde also während der Inspiration nichts bewirken. In der Exspiration liefert die Stromquelle keinen Flow und wirkt wie eine Unterbrechung, die Lunge könnte sich darüber nicht entleeren. Deshalb schaltet man in der Exspiration auf die PEEP-Quelle um: Die Lunge atmet gegen den PEEP aus.",
+  "keyPoints": [
+   "VC-CMV = volumenkontrollierte, kontinuierlich mandatorische Beatmung",
+   "Respirator = Stromquelle V̇_Respirator",
+   "PEEP = schaltbarer Druck (Schalter zwischen Stromquelle und PEEP-Quelle)",
+   "R + C_L + C_Th und Druckpfeile wie bei PC-CMV"
+  ],
+  "mc": {
+   "stem": "Wodurch wird der Respirator im Ersatzschaltbild der **VC-CMV** dargestellt?",
+   "options": [
+    "durch eine Stromquelle, der PEEP wird über einen Schalter zugeschaltet",
+    "durch eine Druckquelle in Reihe mit der PEEP-Quelle",
+    "durch einen zusätzlichen Kondensator parallel zu C_L",
+    "durch einen veränderlichen Widerstand in Reihe zu R"
+   ],
+   "correct": "durch eine Stromquelle, der PEEP wird über einen Schalter zugeschaltet"
+  },
+  "why": "Warum wird der PEEP im VC-CMV-Ersatzschaltbild über einen Schalter zugeschaltet und nicht dauerhaft in Reihe zur Quelle?",
+  "source": "MTS_Ue__04_RS4.pdf, Kontrollfrage „VC-CMV“ (S. 2 und 4); MTS__05_RS4.pdf, Folie 26 und 34"
+ },
+ {
+  "id": "MTS-K5-13",
+  "fach": "MTS",
+  "unit": "MTS-K5",
+  "examMode": "free",
+  "front": "Welche Faktoren bestimmen das **Beatmungsmuster**, und wie wird die Inspiration **ausgelöst** und **beendet**?",
+  "back": "**Beatmungsmuster** = zeitlicher Verlauf von Druck, Volumen und Flow. Es bestimmt die **intrapulmonale Gasverteilung** innerhalb eines Atemzyklus (Folie 28).\n\n**Bestimmende Faktoren (Folie 17, Exspiration als passiv angenommen):** Durchführung der Inspiration (Mechanismus), **Auslöser** der Inspiration, **Beendigung** der Inspiration.\n\n**Einflussfaktoren (Folie 28):** Inspirationsdruck bzw. Atemhubvolumen, PEEP, Frequenz f, I:E-Verhältnis, FIO₂.\n\n**Auslöser der Inspiration (Folie 27):**\n- **Maschinentriggerung:** „festes“ **Zeitintervall**\n- **Patiententriggerung:** eigene Spontanatemaktivität nötig, erkannt über\n  - Druck/Sog (Druckabfall in den Atemwegen)\n  - Volumen (Volumenverschiebungen)\n  - Flow (Flowänderung)\n\n**Beendigung der Inspiration:** Maschinentriggerung oder Patiententriggerung, heute i. d. R. über den **Flow**.\n\n**Charakteristika einer Beatmungsform (Folie 30):** Freiheitsgrade (Druck oder Volumen), **Triggerung** der maschinellen In- bzw. Exspiration (Druck oder Flow), **Steuerung** (Zeit oder Flow). Die Bezeichnungen sind **uneinheitlich und firmenspezifisch**.",
+  "keyPoints": [
+   "Muster: Durchführung, Auslöser, Beendigung der Inspiration",
+   "Maschinentriggerung: festes Zeitintervall",
+   "Patiententriggerung: Druck/Sog, Volumen, Flow",
+   "Beendigung durch Patient heute i. d. R. über Flow"
+  ],
+  "cloze": {
+   "text": "Bei Maschinentriggerung wird die Inspiration nach einem festen {{1}} ausgelöst. Beendet der Patient die Inspiration, erkennt das Gerät das heute in der Regel am {{2}}.",
+   "answers": [
+    "Zeitintervall",
+    "Flow"
+   ]
+  },
+  "source": "MTS__05_RS4.pdf, Folie 17, 27, 28 und 30"
+ },
+ {
+  "id": "MTS-K5-14",
+  "fach": "MTS",
+  "unit": "MTS-K5",
+  "examMode": "free",
+  "front": "Wie werden **Beatmungsformen** eingeteilt? Nenne die **5 Grundformen** und die Einteilung nach **Atemarbeit**.",
+  "back": "**Nach Atemarbeit (Folie 31):**\n- **kontrollierte Beatmung:** Der Respirator übernimmt die Atemarbeit zur Gänze.\n- **augmentierte** (unterstützende, assistierte) Beatmung: Die Atemarbeit teilen sich Respirator und Patient (assistierende Beatmung, assistierte Spontanatmung).\n- **Spontanatmung:** Der Patient übernimmt die Atemarbeit.\n\n**Atemsequenzen (Folie 32):**\n- **Kontrolliert/mandatorisch (CMV):** Die Inspiration wird vom Respirator ausgelöst und/oder beendet, keine Spontanatmung. Nach PEEP: **IPPV** (PEEP = 0 mbar) bzw. **CPPV** (PEEP > 0 mbar).\n- **Augmentiert/intermittierend mandatorisch (IMV):** Der Respirator unterstützt die Ventilation, z. B. assistiert-kontrolliert (mandatorischer Atemhub, den der Patient auslösen muss), intermittierende mandatorische Beatmung (+ sequentielle Spontanatmung), druckunterstützte Beatmung.\n\n**5 Grundformen (Folie 33):**\n| Kontrollvariable | Atemsequenz | Modus |\n|---|---|---|\n| VC | CMV | **VC-CMV** |\n| VC | IMV | **VC-IMV** |\n| PC | CMV | **PC-CMV** |\n| PC | IMV | **PC-IMV** |\n| PC | CSV (kontinuierlich spontan) | **PC-CSV** |\n\n**VC-CSV macht keinen Sinn** (Folie 33). *Mögliche Erklärung (abgeleitet):* Bei reiner Spontanatmung bestimmt der Patient selbst, wie viel Volumen er einatmet. Ein vorgegebenes Volumen widerspricht dem.\n\n**CPAP** = continuous positive airway pressure = CSV + PEEP (Folie 35). Häufigste Modi 2014 bei intubierten Patienten: VC-CMV 31,6 %, PSV 23,4 %, BIPAP 12,0 %.",
+  "keyPoints": [
+   "Atemarbeit: kontrolliert – augmentiert – spontan",
+   "5 Grundformen: VC-CMV, VC-IMV, PC-CMV, PC-IMV, PC-CSV",
+   "VC-CSV macht keinen Sinn; CPAP = CSV + PEEP",
+   "IPPV: PEEP = 0; CPPV: PEEP > 0"
+  ],
+  "mc": {
+   "stem": "Welche Kombination gehört **nicht** zu den 5 Grundformen der Beatmung?",
+   "options": [
+    "VC-CSV",
+    "PC-CSV",
+    "VC-IMV",
+    "PC-CMV"
+   ],
+   "correct": "VC-CSV"
+  },
+  "cloze": {
+   "text": "Kontrollierte Beatmung mit PEEP = 0 mbar heißt {{1}}, mit PEEP > 0 mbar heißt sie {{2}}.",
+   "answers": [
+    "IPPV",
+    "CPPV"
+   ]
+  },
+  "source": "MTS__05_RS4.pdf, Folie 31–35"
+ },
+ {
+  "id": "MTS-K5-15",
+  "fach": "MTS",
+  "unit": "MTS-K5",
+  "examMode": "free",
+  "front": "Welche **Einstellgrößen** hat ein Beatmungsgerät, und wie unterscheiden sich **invasive** und **nicht-invasive** Beatmung?",
+  "back": "**Systemkomponenten (Folie 37):** Beatmungsgerät (Beatmungsantrieb, Steuerung, Sensoren) und Beatmungsschlauchsystem (Inspirationszweig, Exspirationszweig, Exspirationsventil; evtl. Befeuchtung, Vernebler, Filter).\n\n**Einstellgrößen (Folie 38):**\n- **Atemhubvolumen, AMV, Frequenz:** Das Atemhubvolumen ist je nach Art (volumen-/druckkontrolliert) einstellbar, die Frequenz immer.\n- **Inspirationsdruck:** maximaler Inspirationsdruck bei druckkontrollierter Beatmung; für den Einstrom verantwortlich ist die Differenz zum PEEP.\n- **PEEP** (externer PEEP): richtig eingestellt verbessert er den O₂-Austausch; Risiko Totraum und Überblähung.\n- **I:E-Verhältnis:** nur bei **mandatorischer** Beatmung einstellbar; normalerweise ist die Exspiration länger als die Inspiration.\n- **FIO₂** (Folie: „Sauerstoffsättigung am Respirator“): bis 100 %. Ziel **paO₂ > 60 mmHg** bzw. **SaO₂ > 90 %**.\n\n**Invasiv (Folie 40):** Intubation = Einführen eines Tubus (Hohlsonde) in eine natürliche Körperhöhle oder ein Hohlorgan. Gängigstes Verfahren ist die **endotracheale Intubation** (Patient komatös, narkotisiert oder stark sediert; Tubus über den Mund mittels Laryngoskop; seitliche Abdichtung über einen Ballon). Klinischer Standard. Risiken: Verletzung der Stimmbänder, Intubation des Ösophagus, Belüftung nur eines Bronchus u. a.\n\n**Nicht-invasiv (Folie 41):** über ein „Interface“ (Nasenmaske, Gesichtsmaske, Beatmungshelm). Schonend, auch außerklinisch möglich. **Problem: Leckagen.** Einsatz u. a. **CPAP bei obstruktivem Schlafapnoe-Syndrom (OSAS)**. Beide Varianten können „alle Modi“ nutzen (Folie 39).\n\n**Stufenschema (Folie 42):** physikalische Atemtherapie → nichtinvasive Atemhilfe → nichtinvasive Unterstützung der Spontanatmung → invasive Unterstützung der Spontanatmung → intermittierend mandatorische Beatmung → kontinuierlich mandatorische Beatmung (PC-CMV, VC-CMV) → extrakorporale Lungenunterstützung (z. B. ECMO). Mit der Schwere der Insuffizienz **steigt die Invasivität**, die **Patientenbeteiligung sinkt**.",
+  "keyPoints": [
+   "I:E nur bei mandatorischer Beatmung einstellbar; Exspiration normalerweise länger",
+   "FIO₂ bis 100 %; Ziel paO₂ > 60 mmHg bzw. SaO₂ > 90 %",
+   "Invasiv: endotracheale Intubation; nicht-invasiv: Maske/Helm, Problem Leckagen",
+   "Stufenschema: Invasivität ↑, Patientenbeteiligung ↓"
+  ],
+  "mc": {
+   "stem": "Welche Einstellgröße ist laut Folie **nur bei mandatorischer Beatmung** einstellbar?",
+   "options": [
+    "das I:E-Verhältnis",
+    "die Atemfrequenz",
+    "der PEEP",
+    "die FIO₂"
+   ],
+   "correct": "das I:E-Verhältnis"
+  },
+  "source": "MTS__05_RS4.pdf, Folie 37–42"
+ },
+ {
+  "id": "MTS-K5-16",
+  "fach": "MTS",
+  "unit": "MTS-K5",
+  "examMode": "calc",
+  "front": "VC-CMV mit **linear ansteigendem Flow**: Welcher **Druck am Y-Stück** herrscht zu einem Zeitpunkt $t$ während der Inspiration?",
+  "back": "**Bewegungsgleichung:** $P = \\dot V(t)\\cdot R + \\dfrac{V(t)}{C}$ (PEEP 0, Muskeldruck vernachlässigt, Anfangsvolumen 0)\n\n1. Flow zum Zeitpunkt $t$: $\\dot V(t) = \\dot V_{max}\\cdot t/T$\n2. Volumen = **Dreiecksfläche** unter der Flowkurve: $V(t) = \\tfrac12\\,t\\,\\dot V(t)$\n3. $P_R = R\\cdot\\dot V(t)$, $P_C = V(t)/C$, $P = P_R + P_C$\n\n**Übung** ($R = 1$ mbar·s/L, $C = 0{,}15$ L/mbar, 0 → 0,5 L/s in 5 s, $t = 2$ s):\n$\\dot V = 0{,}2$ L/s → $V = \\tfrac12\\cdot 2\\cdot 0{,}2 = 0{,}2$ L → $P = 0{,}2 + 0{,}2/0{,}15 = 0{,}2 + 1{,}333 ≈$ **1,53 mbar**.\n\nTypischer Fehler: $V = \\dot V(t)\\cdot t = 0{,}4$ L (Rechteck statt Dreieck) → 2,87 mbar.\n\n*Für diese Aufgabe gibt es keine Musterlösung (Lsg_RS4.pdf behandelt nur „Druckabfall bei restriktiver Störung“); Ergebnis nachgerechnet.*",
+  "keyPoints": [
+   "P = V̇·R + V/C",
+   "Linear steigender Flow: V = Dreiecksfläche ½·t·V̇(t)",
+   "Übung: 0,2 + 0,2/0,15 = 1,53 mbar"
+  ],
+  "calc": {
+   "vars": {
+    "R": [
+     0.5,
+     3,
+     0.5
+    ],
+    "C": [
+     0.05,
+     0.15,
+     0.01
+    ],
+    "Vmax": [
+     0.3,
+     0.8,
+     0.1
+    ],
+    "T": [
+     4,
+     6,
+     1
+    ],
+    "t": [
+     2,
+     3,
+     1
+    ]
+   },
+   "given": "Respiratorisches System als Reihenschaltung aus R = [[R]] mbar·s/L und C = [[C]] L/mbar, volumenkontrolliert beatmet. Der Inspirationsflow steigt über [[T]] s linear von 0 auf [[Vmax]] L/s. Muskeldruck vernachlässigt, PEEP 0 mbar, Anfangsvolumen vernachlässigbar. Gesucht: Druck am Y-Stück zum Zeitpunkt t = [[t]] s in mbar.",
+   "solution": "R*Vmax*t/T + (0.5*t*Vmax*t/T)/C",
+   "unit": "mbar",
+   "steps": [
+    "Flow: $\\dot V(t) = \\dot V_{max}\\cdot t/T$ = [[Vmax]] · [[t]] / [[T]] = [[= Vmax*t/T]] L/s",
+    "Volumen (Dreiecksfläche): $V = \\tfrac12\\,t\\,\\dot V(t)$ = ½ · [[t]] · [[= Vmax*t/T]] = [[= 0.5*t*Vmax*t/T]] L",
+    "Resistiver Anteil: $P_R = R\\cdot\\dot V$ = [[R]] · [[= Vmax*t/T]] = [[= R*Vmax*t/T]] mbar",
+    "Elastischer Anteil: $P_C = V/C$ = [[= 0.5*t*Vmax*t/T]] / [[C]] = [[= 0.5*t*Vmax*t/T/C]] mbar",
+    "Summe: $P = P_R + P_C$ = [[= R*Vmax*t/T + 0.5*t*Vmax*t/T/C]] mbar"
+   ],
+   "example": {
+    "vars": {
+     "R": 1,
+     "C": 0.15,
+     "Vmax": 0.5,
+     "T": 5,
+     "t": 2
+    },
+    "result": 1.53
+   }
+  },
+  "source": "MTS_Ue__04_RS4.pdf, Transferfrage „Druckaufbau bei VC-CMV“ (S. 7)"
+ },
+ {
+  "id": "MTS-K5-17",
+  "fach": "MTS",
+  "unit": "MTS-K5",
+  "examMode": "calc",
+  "front": "VC-CMV: Aus **Plateaudruck** und **Atemhubvolumen** soll die **Elastanz** des respiratorischen Systems bestimmt werden.",
+  "back": "In der **No-Flow-Phase** ist $\\dot V = 0$, der resistive Anteil fällt weg. Mit PEEP 0 und vernachlässigtem Muskeldruck gilt:\n$$P_{Plateau} = \\frac{V_T}{C} = E\\cdot V_T \\quad\\Rightarrow\\quad E = \\frac{P_{Plateau}}{V_T}$$\n(Elastanz $E = 1/C$, Kehrwert der Compliance.)\n\n**Übung:** $E = 12\\,\\text{mbar} / 0{,}7\\,\\text{L} ≈$ **17,14 mbar/L** (entspricht $C ≈ 0{,}058$ L/mbar).\n\n**Warum braucht man weder Atemfrequenz noch I:E-Verhältnis?** Sie bestimmen nur das **Timing** (Dauer von Flow- und No-Flow-Phase). Im Plateau ist das ganze Volumen appliziert und der Flow null, also hängt der Druck nur von $V_T$ und $C$ ab.\n\n*Zur Kontrolle (nachgerechnet, nicht gefragt):* 12/min → $T = 5$ s; I:E = 3:7 → $T_I = 1{,}5$ s; No-Flow = ⅓ → $T_{Flow} = 1$ s → Flow $= 0{,}7$ L/s. Diesen Wert bräuchte man erst für den Spitzendruck.\n\nVolumen in **L** einsetzen (700 mL = 0,7 L), sonst ist das Ergebnis um den Faktor 1000 falsch.\n\n*Für diese Aufgabe gibt es keine Musterlösung (Lsg_RS4.pdf behandelt nur „Druckabfall bei restriktiver Störung“); Ergebnis nachgerechnet.*",
+  "keyPoints": [
+   "No-Flow-Phase: P_R = 0 → P_Plateau = V_T/C = E·V_T",
+   "E = P_Plateau / V_T; f, I:E und No-Flow-Anteil sind Ablenker",
+   "Übung: 12 / 0,7 = 17,14 mbar/L"
+  ],
+  "why": "Warum braucht man für die Elastanz aus dem Plateaudruck weder die Atemfrequenz noch das I:E-Verhältnis?",
+  "calc": {
+   "vars": {
+    "f": [
+     10,
+     20,
+     1
+    ],
+    "VT": [
+     0.4,
+     0.8,
+     0.05
+    ],
+    "P": [
+     8,
+     20,
+     1
+    ]
+   },
+   "given": "Reihenschaltung aus Compliance und Resistance, volumenkontrolliert beatmet mit [[f]] Atemzügen pro Minute und einem Atemhubvolumen von [[= VT*1000]] mL. Atemzeitverhältnis 3:7, die No-Flow-Phase nimmt ein Drittel der Inspiration ein. In der No-Flow-Phase werden am Y-Stück [[P]] mbar gemessen. Muskeldruck vernachlässigt, PEEP 0 mbar, Anfangsvolumen vernachlässigbar. Gesucht: Elastanz in mbar/L.",
+   "solution": "P/VT",
+   "unit": "mbar/L",
+   "steps": [
+    "No-Flow-Phase: $\\dot V = 0$ → $P_R = 0$ → $P_{Plateau} = V_T/C = E\\cdot V_T$ (Frequenz und I:E werden nicht gebraucht)",
+    "$E = P_{Plateau}/V_T$ = [[P]] mbar / [[VT]] L = [[= P/VT]] mbar/L"
+   ],
+   "example": {
+    "vars": {
+     "f": 12,
+     "VT": 0.7,
+     "P": 12
+    },
+    "result": 17.14
+   }
+  },
+  "source": "MTS_Ue__04_RS4.pdf, Transferfrage „Elastanz bei Beatmung“ (S. 8)"
+ },
+ {
+  "id": "MTS-K5-18",
+  "fach": "MTS",
+  "unit": "MTS-K5",
+  "examMode": "calc",
+  "front": "**RC-Exspiration:** Nach welcher Zeit ist der Druck über der Compliance bei passiver Exspiration auf einen bestimmten **Anteil des Ausgangsdrucks** gefallen?",
+  "back": "Passive Exspiration = Entladung des RC-Glieds (Lsg_RS4.pdf, S. 4):\n$$P_C(t) = P_{C,0}\\,e^{-t/\\tau},\\qquad \\tau = RC$$\nAuf den Anteil $p$ gefallen: $e^{-t/\\tau} = p$ → $t = -\\tau\\ln p$.\n\n**Übung** ($R = 2$ mbar·s/L, $C = 0{,}1$ L/mbar, 60 %):\n$\\tau = 0{,}2$ s → $t = -0{,}2\\cdot\\ln 0{,}6 = 0{,}2\\cdot 0{,}511 ≈$ **0,102 s = 102 ms**.\n\nDie Karte fragt in **ms**, damit auch kurze Zeiten gerundet in die Toleranz passen. In der Klausur ist die Zeit in s anzugeben (0,10 s).\n\nKontrolle der Einheiten: mbar·s/L · L/mbar = s.\n\n*Für diese Aufgabe gibt es keine Musterlösung (Lsg_RS4.pdf behandelt nur „Druckabfall bei restriktiver Störung“); Ergebnis nachgerechnet.*",
+  "keyPoints": [
+   "P_C(t) = P_C,0 · e^(−t/τ), τ = R·C",
+   "t = −τ · ln(Anteil)",
+   "Übung: τ = 0,2 s → t = 0,102 s"
+  ],
+  "calc": {
+   "vars": {
+    "R": [
+     1,
+     4,
+     0.5
+    ],
+    "C": [
+     0.05,
+     0.2,
+     0.01
+    ],
+    "p": [
+     30,
+     80,
+     5
+    ]
+   },
+   "given": "Respiratorisches System als Reihenschaltung aus R = [[R]] mbar·s/L und C = [[C]] L/mbar. Nach welcher Zeit ist bei passiver Exspiration der Druck über der Compliance auf [[p]] % des Ausgangsdrucks (Druck zu Beginn der Exspiration) gesunken? Antwort in ms.",
+   "solution": "-1000*R*C*ln(p/100)",
+   "unit": "ms",
+   "steps": [
+    "Zeitkonstante: $\\tau = R\\cdot C$ = [[R]] · [[C]] = [[= R*C]] s",
+    "$P_C(t) = P_{C,0}\\,e^{-t/\\tau}$ → $e^{-t/\\tau}$ = [[= p/100]] → $t = -\\tau\\ln(\\text{Anteil})$",
+    "$t$ = −[[= R*C]] · ln([[= p/100]]) = [[= -R*C*ln(p/100)]] s = [[= -1000*R*C*ln(p/100)]] ms"
+   ],
+   "example": {
+    "vars": {
+     "R": 2,
+     "C": 0.1,
+     "p": 60
+    },
+    "result": 102.2
+   }
+  },
+  "source": "MTS_Ue__04_RS4.pdf, Transferfrage „RC-Exspiration“ (S. 8); Lsg_RS4.pdf, S. 4"
+ },
+ {
+  "id": "MTS-K5-19",
+  "fach": "MTS",
+  "unit": "MTS-K5",
+  "examMode": "calc",
+  "front": "**Restriktive Störung bei VC-CMV:** Zu welchem Zeitpunkt der Exspiration ist der Druck über der Compliance **vor und nach** der Störung gleich?",
+  "back": "**Ansatz (Lsg_RS4.pdf, S. 6):** Zeitnullpunkt = Beginn der Exspiration. Vorher $C_1$, nachher $C_2 = k\\cdot C_1$ (bei Reduktion um 60 % ist $k = 0{,}4$). $R$ und $V_T$ bleiben gleich.\n$$\\frac{V_T}{C_1}e^{-t/(RC_1)} = \\frac{V_T}{C_2}e^{-t/(RC_2)}$$\nKürzen, logarithmieren und nach $t$ auflösen:\n$$t_= = \\frac{\\ln(C_1/C_2)}{\\dfrac{1}{RC_2} - \\dfrac{1}{RC_1}} \\qquad\\text{(Lsg: } t_= = -RC_1\\,\\tfrac{\\ln 0{,}4}{1{,}5}\\text{)}$$\n\n**Übung** ($R = 2$ mbar·s/L, $C_1 = 0{,}2$ L/mbar, −60 %):\n$t_= = -2\\cdot 0{,}2\\cdot\\ln(0{,}4)/1{,}5 = 0{,}4\\cdot 0{,}916/1{,}5 ≈$ **0,244 s** (Musterlösung).\n\n**Deutung:** Nach der Störung startet der Druck 2,5-mal höher, fällt aber 2,5-mal schneller. Bei $t_=$ kreuzen sich die Kurven, danach liegt die gestörte Kurve darunter.\n\nDie Karte fragt in **ms** (244 ms). Die Musterlösung gibt 0,244 s an.",
+  "keyPoints": [
+   "C_2 = 0,4·C_1 bei Reduktion um 60 %",
+   "V_T/C_1·e^(−t/RC_1) = V_T/C_2·e^(−t/RC_2) → logarithmieren",
+   "Übung: t = −R·C_1·ln(0,4)/1,5 = 0,244 s (Musterlösung)"
+  ],
+  "calc": {
+   "vars": {
+    "R": [
+     1,
+     4,
+     0.5
+    ],
+    "C1": [
+     0.1,
+     0.3,
+     0.05
+    ],
+    "r": [
+     30,
+     70,
+     10
+    ]
+   },
+   "given": "Einkompartimentmodell (R = [[R]] mbar·s/L in Reihe zu C = [[C1]] L/mbar), beatmet mit VC-CMV. Durch eine restriktive Störung sinkt die Compliance um [[r]] %. Das applizierte Volumen bleibt gleich, PEEP 0 mbar, Anfangsvolumen vernachlässigbar. Zu welchem Zeitpunkt nach Beginn der Exspiration ist der Druck über der Compliance in beiden Situationen gleich? Antwort in ms.",
+   "solution": "1000*ln(1/(1-r/100))/(1/(R*C1*(1-r/100)) - 1/(R*C1))",
+   "unit": "ms",
+   "steps": [
+    "Verbleibende Compliance: $C_2$ = [[C1]] · (1 − [[r]] %) = [[= C1*(1-r/100)]] L/mbar",
+    "Zeitkonstanten: $\\tau_1 = RC_1$ = [[= R*C1]] s, $\\tau_2 = RC_2$ = [[= R*C1*(1-r/100)]] s",
+    "Gleichsetzen $\\frac{V_T}{C_1}e^{-t/\\tau_1} = \\frac{V_T}{C_2}e^{-t/\\tau_2}$ und logarithmieren: $t\\,(1/\\tau_2 - 1/\\tau_1) = \\ln(C_1/C_2)$",
+    "$t_=$ = ln([[= 1/(1-r/100)]]) / ([[= 1/(R*C1*(1-r/100))]] − [[= 1/(R*C1)]]) = [[= ln(1/(1-r/100))/(1/(R*C1*(1-r/100)) - 1/(R*C1))]] s = [[= 1000*ln(1/(1-r/100))/(1/(R*C1*(1-r/100)) - 1/(R*C1))]] ms"
+   ],
+   "example": {
+    "vars": {
+     "R": 2,
+     "C1": 0.2,
+     "r": 60
+    },
+    "result": 244
+   }
+  },
+  "source": "Lsg_RS4.pdf, S. 6; MTS_Ue__04_RS4.pdf, Transferfrage „Druckabfall bei restriktiver Störung“ (S. 9)"
+ },
+ {
+  "id": "MTS-K5-20",
+  "fach": "MTS",
+  "unit": "MTS-K5",
+  "examMode": "calc",
+  "front": "**Restriktive Störung bei VC-CMV:** Um welchen **Faktor** steigt der **Plateaudruck** (elastischer Druck am Ende der Inspiration), wenn die Compliance um einen bestimmten Prozentsatz sinkt?",
+  "back": "**Musterlösung (Lsg_RS4.pdf, S. 1–3):** Bei einer Reduktion um 60 % bleiben 40 %: $C_2 = 0{,}4\\cdot C_1$.\n$$P_{C,2} = \\frac{V_T}{C_2} = \\frac{V_T}{0{,}4\\,C_1} = 2{,}5\\cdot\\frac{V_T}{C_1}$$\nDas Volumen $V_T$ ist bei VCV fest. Der elastische Druck am Ende der Flow-Phase und damit das Plateau steigen um den Faktor **1/0,4 = 2,5**. Um denselben Faktor ist auch die Steigung $\\dot V_0/C$ in der Flow-Phase steiler.\n\n**Nicht verwechseln:**\n- Der **Spitzendruck** $R\\dot V_0 + V_T/C$ steigt um **weniger** als 2,5, weil $R\\dot V_0$ gleich bleibt.\n- „Reduktion um 60 %“ heißt Faktor 0,4, **nicht** 0,6.",
+  "keyPoints": [
+   "Reduktion um r % → C_2 = (1 − r/100)·C_1",
+   "Plateau ∝ 1/C → Faktor 1/(1 − r/100)",
+   "Übung: −60 % → Faktor 2,5 (Musterlösung)"
+  ],
+  "calc": {
+   "vars": {
+    "r": [
+     10,
+     80,
+     5
+    ]
+   },
+   "given": "Ein Einkompartimentmodell wird mit VC-CMV beatmet (PEEP 0 mbar). Durch eine restriktive Störung sinkt die Compliance um [[r]] %, das applizierte Volumen bleibt gleich. Um welchen Faktor ist der Plateaudruck danach höher als vorher?",
+   "solution": "1/(1-r/100)",
+   "unit": "",
+   "steps": [
+    "Verbleibender Anteil der Compliance: $C_2/C_1$ = 1 − [[r]] % = [[= 1-r/100]]",
+    "Plateau $= V_T/C$ mit festem $V_T$ → Faktor $= C_1/C_2$ = 1 / [[= 1-r/100]] = [[= 1/(1-r/100)]]"
+   ],
+   "example": {
+    "vars": {
+     "r": 60
+    },
+    "result": 2.5
+   }
+  },
+  "source": "Lsg_RS4.pdf, S. 1–3; MTS_Ue__04_RS4.pdf, Transferfrage „Druckabfall bei restriktiver Störung“ (S. 9)"
  }
 ]

@@ -13,6 +13,7 @@ const all = read('cards-mts.json');
 const UNITS = [
   { id: 'MTS-K3', sources: /MTS__03_RS2\.pdf|MTS_Ue__02_RS2\.pdf|02_Medizintechnische_Systeme\.md/ },
   { id: 'MTS-K4', sources: /MTS__04_RS3\.pdf|MTS_Ue__03_RS3\.pdf|02_Medizintechnische_Systeme\.md/ },
+  { id: 'MTS-K5', sources: /MTS__05_RS4\.pdf|MTS_Ue__04_RS4\.pdf|Lsg_RS4\.pdf|02_Medizintechnische_Systeme\.md/ },
 ];
 
 for (const { id, sources } of UNITS) {

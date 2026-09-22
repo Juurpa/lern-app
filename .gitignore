@@ -3,3 +3,4 @@ automation/.env
 automation/state/
 automation/logs/
 worker/.wrangler/
+.claude/

@@ -30,7 +30,8 @@ export function review(st, { button, mode, hinted = false }, now, examDate) {
   const rating = toRating(button, mode, hinted);
   let next = engine.next(prev, now, rating).card;
   if (rating !== Rating.Again && next.state === State.Review) {
-    const m = MULT[hinted ? 'hinted' : mode] ?? 1;
+    const shouldApplyHinted = hinted && ['free', 'voice', 'code', 'calc'].includes(mode);
+    const m = shouldApplyHinted ? MULT.hinted : (MULT[mode] ?? 1);
     const s0 = prev.stability || 0;
     const s = s0 + (next.stability - s0) * m;
     const days = Math.max(1, Math.round(s));

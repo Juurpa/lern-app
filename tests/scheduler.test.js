@@ -26,6 +26,22 @@ test('MC bringt weniger Stabilität als Freitext, aber mehr als vorher', () => {
   assert.ok(viaMc.fsrs.stability < viaFree.fsrs.stability);
 });
 
+test('hinted Flag wird für MC und Cloze ignoriert', () => {
+  const s1 = review(undefined, { button: 'green', mode: 'free' }, t0, FAR);
+  const t1 = new Date(s1.fsrs.due);
+  const mcNoHint = review(s1, { button: 'green', mode: 'mc' }, t1, FAR);
+  const mcHinted = review(s1, { button: 'green', mode: 'mc', hinted: true }, t1, FAR);
+  assert.equal(mcNoHint.fsrs.stability, mcHinted.fsrs.stability);
+});
+
+test('hinted Flag senkt Stabilität nur für free Mode', () => {
+  const s1 = review(undefined, { button: 'green', mode: 'free' }, t0, FAR);
+  const t1 = new Date(s1.fsrs.due);
+  const freeNoHint = review(s1, { button: 'green', mode: 'free' }, t1, FAR);
+  const freeHinted = review(s1, { button: 'green', mode: 'free', hinted: true }, t1, FAR);
+  assert.ok(freeHinted.fsrs.stability < freeNoHint.fsrs.stability);
+});
+
 test('Intervall folgt der gedämpften Stabilität', () => {
   const s1 = review(undefined, { button: 'green', mode: 'free' }, t0, FAR);
   const t1 = new Date(s1.fsrs.due);

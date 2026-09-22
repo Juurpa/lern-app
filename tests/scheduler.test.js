@@ -96,3 +96,29 @@ test('chooseMode: 3-Tage-Lock erzwingt examMode', () => {
   assert.equal(chooseMode(card, undefined, now, '2026-10-07'), 'free');
   assert.equal(chooseMode(card, stWith(6, 12, 4), now, '2026-10-07'), 'free');
 });
+
+test('Prüfungsdeckel verteilt gedeckelte Karten auf die 3 Tage vor dem Vortag-Stichtag', () => {
+  const cut = new Date(2026, 9, 6);
+  const dues = new Set();
+  // Karten mit unterschiedlicher Vorgeschichte → unterschiedliche Stabilität
+  for (const first of [1, 2, 4, 6, 8, 10, 12]) {
+    let st = review(undefined, { button: 'green', mode: 'free' }, new Date(2026, 8, first), '2026-10-07');
+    st = review(st, { button: 'green', mode: 'free' }, new Date(2026, 8, 22), '2026-10-07');
+    const due = new Date(st.fsrs.due);
+    assert.ok(due <= cut, `nach Stichtag: ${due}`);
+    if (due >= new Date(2026, 9, 4)) dues.add(due.getTime());
+  }
+  assert.ok(dues.size >= 2, `nur ${dues.size} verschiedene Deckel-Termine`);
+});
+
+test('Prüfungsdeckel: gedeckelter Termin liegt mindestens 1 Tag in der Zukunft, wenn möglich', () => {
+  const now = new Date(2026, 9, 4, 20, 0); // 28 h vor dem Stichtag 06.10. 00:00
+  for (const first of [1, 2, 4, 6, 8, 10, 12]) {
+    let st = review(undefined, { button: 'green', mode: 'free' }, new Date(2026, 8, first), '2026-10-07');
+    st = review(st, { button: 'green', mode: 'free' }, new Date(2026, 8, 22), '2026-10-07');
+    st = review(st, { button: 'green', mode: 'free' }, now, '2026-10-07');
+    const due = new Date(st.fsrs.due);
+    assert.ok(due <= new Date(2026, 9, 6), `nach Stichtag: ${due}`);
+    assert.ok(due - now >= 86400000, `zu früh: ${due}`);
+  }
+});

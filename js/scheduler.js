@@ -17,9 +17,15 @@ function localDate(isoDay, offsetDays = 0) {
   return new Date(y, m - 1, d + offsetDays);
 }
 
-function capDue(due, examDate, now) {
+// Deckel: spätestens am Vortag der Prüfung (00:00) fällig. Gedeckelte Karten werden
+// deterministisch (über die Stabilität) auf Stichtag, -1 und -2 Tage verteilt, statt alle
+// auf einen Tag zu fallen – aber nie früher als 1 Tag ab jetzt, solange das möglich ist.
+function capDue(due, examDate, now, stability) {
   const cut = localDate(examDate, -1);
-  return cut > now && due > cut ? cut : due;
+  if (!(cut > now && due > cut)) return due;
+  let offset = Math.floor(stability || 0) % 3;
+  while (offset > 0 && localDate(examDate, -1 - offset) - now < DAY) offset--;
+  return localDate(examDate, -1 - offset);
 }
 
 const serialize = c => ({ ...c, due: c.due.toISOString(), last_review: c.last_review ? c.last_review.toISOString() : null });
@@ -37,7 +43,7 @@ export function review(st, { button, mode, hinted = false }, now, examDate) {
     const days = Math.max(1, Math.round(s));
     next = { ...next, stability: s, scheduled_days: days, due: new Date(now.getTime() + days * DAY) };
   }
-  next = { ...next, due: capDue(next.due, examDate, now) };
+  next = { ...next, due: capDue(next.due, examDate, now, next.stability) };
   return { fsrs: serialize(next), alt: (st?.alt ?? 0) + 1 };
 }
 

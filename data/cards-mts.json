@@ -146,11 +146,12 @@
   "unit": "MTS-K2",
   "examMode": "free",
   "front": "Wie unterscheidet sich der **Wandaufbau** von **Bronchien** und **Bronchiolen**?",
-  "back": "**Bronchien:**\n- **Knorpel** (hufeisenförmige Knorpelspangen) und **Drüsen**\n- weniger Knorpel mit steigender Generation\n- stärkerer Muskelanteil (ringförmig in großen, spiralig in kleinen Bronchien)\n\n**Bronchiolen:**\n- **keine Knorpel, keine Drüsen** (Ø < 1 mm)\n- Stabilisierung durch **in die Wand einstrahlende Fasernetze**",
+  "back": "**Bronchien:**\n- **Knorpel** (hufeisenförmige Knorpelspangen) und **Drüsen**\n- weniger Knorpel mit steigender Generation\n- stärkerer Muskelanteil (ringförmig in großen, spiralig in kleinen Bronchien)\n\n**Bronchiolen:**\n- **keine Knorpel, keine Drüsen** (Ø < 1 mm)\n- Stabilisierung durch **in die Wand einstrahlende Fasernetze**\n\n**Trachea/Bronchien – Mechanik:** hufeisenförmige Knorpelspangen zwischen elastischem Material halten das Lumen offen; die **elastische Rückwand (Muskeln und Bänder)** erlaubt **Längenveränderungen** (wichtig für Bewegungen) und **radiale Elastizität**: Verengung, u. a. beim **Husten**.",
   "keyPoints": [
    "Bronchien: Knorpel + Drüsen, Knorpel nimmt mit Generation ab",
    "Bronchiolen: kein Knorpel, keine Drüsen",
-   "Bronchiolen durch einstrahlende Fasernetze stabilisiert"
+   "Bronchiolen durch einstrahlende Fasernetze stabilisiert",
+   "Trachea: Knorpelspangen halten offen, elastische Rückwand erlaubt Längenänderung und Verengung (Husten)"
   ],
   "why": "Warum hat die Trachea hufeisenförmige Knorpelspangen mit einer elastischen Rückwand statt eines geschlossenen Knorpelrings?",
   "source": "MTS__02_RS1.pdf, Folie 16–18"
@@ -207,18 +208,18 @@
   "unit": "MTS-K2",
   "examMode": "free",
   "front": "Welche **Zusatzfunktionen** erfüllen die Atemwege, und wo werden Partikel welcher Größe **abgefangen**?",
-  "back": "- **Surfactant:** Produktion/Sekretion, wichtig für die mechanischen Eigenschaften der Alveolen\n- **Erwärmung** (vor den Alveolen) über ausgeprägten Venenplexus – verhindert Abkühlen der Alveolen\n- **Befeuchtung** (obere Atemwege, Bronchien) über Drüsen/Schleim – verhindert Wasserentzug der Alveolarwände\n- **Filterung:**\n  - Partikel **> 10 µm:** Nasen-Rachenraum\n  - Partikel **1…10 µm:** Bronchialsystem (Schleimfilm, Zilien transportieren nach oben)\n  - Partikel **< 0,5 µm:** Ausatmen oder Alveolarmakrophagen",
+  "back": "- **Surfactant:** Produktion/Sekretion, wichtig für die mechanischen Eigenschaften der Alveolen\n- **Erwärmung** (vor den Alveolen) über ausgeprägten Venenplexus – verhindert Abkühlen der Alveolen\n- **Befeuchtung** (obere Atemwege, Bronchien) über Drüsen/Schleim – verhindert Wasserentzug der Alveolarwände\n- **Filterung:**\n  - Partikel **> 10 µm:** Nasen-Rachen-Raum\n  - Partikel **1…10 µm:** Bronchialsystem (Schleimfilm, Zilien transportieren nach oben)\n  - Partikel **< 0,5 µm:** Ausatmen oder Alveolarmakrophagen",
   "keyPoints": [
    "Surfactant, Erwärmung, Befeuchtung, Filterung",
-   "> 10 µm: Nasen-Rachenraum",
+   "> 10 µm: Nasen-Rachen-Raum",
    "1–10 µm: Bronchialsystem (Schleim + Zilien)",
    "< 0,5 µm: Ausatmen oder Alveolarmakrophagen"
   ],
   "cloze": {
-   "text": "Partikel > 10 µm werden im {{1}} abgefangen, Partikel von 1…10 µm im {{2}}.",
+   "text": "Partikel > 10 µm werden im Nasen-Rachen-Raum abgefangen, Partikel von 1…10 µm im {{1}}; Partikel < 0,5 µm werden ausgeatmet oder von {{2}} beseitigt.",
    "answers": [
-    "Nasen-Rachenraum",
-    "Bronchialsystem"
+    "Bronchialsystem",
+    "Alveolarmakrophagen"
    ]
   },
   "source": "MTS__02_RS1.pdf, Folie 22"
@@ -253,7 +254,7 @@
   "unit": "MTS-K2",
   "examMode": "free",
   "front": "**Rechenaufgabe:** Im Lungenkreislauf beträgt der Strömungsdruck $P_{pa} - P_{pv} = 0{,}8$ kPa, im Körperkreislauf $P_{aorta} - ZVD = 12{,}5$ kPa, das HZV jeweils 6,2 l/min. Berechne **PVR** und **TPR** in kPa·s/l.",
-  "back": "**Rechenweg** ($R = \\Delta p / \\dot V$, l/min → l/s: $6{,}2\\,\\text{l/min} = 0{,}1033\\,\\text{l/s}$):\n- $PVR = \\frac{0{,}8\\,\\text{kPa}}{0{,}1033\\,\\text{l/s}} \\approx 7{,}74\\,\\text{kPa·s/l}$ (Folie: 7,7)\n- $TPR = \\frac{12{,}5\\,\\text{kPa}}{0{,}1033\\,\\text{l/s}} \\approx 120{,}97\\,\\text{kPa·s/l}$ (Folie: 120)\n\n**Deutung:** Der Lungenkreislauf ist Teil des **Niederdrucksystems** und hat **keine speziellen Widerstandsgefäße** – sein Widerstand ist rund **15-mal kleiner** als der des Körperkreislaufs. Das Lungenkapillarbett trägt erheblich (30–40 %) zum Widerstand bei.",
+  "back": "**Rechenweg** ($R = \\Delta p / \\dot V$, l/min → l/s: $6{,}2\\,\\text{l/min} = 0{,}1033\\,\\text{l/s}$):\n- $PVR = \\frac{0{,}8\\,\\text{kPa}}{0{,}1033\\,\\text{l/s}} \\approx 7{,}74\\,\\text{kPa·s/l}$ (Folie: 7,7)\n- $TPR = \\frac{12{,}5\\,\\text{kPa}}{0{,}1033\\,\\text{l/s}} \\approx 120{,}97\\,\\text{kPa·s/l}$ (Folie: 120)\n\n**Deutung:** Der Lungenkreislauf ist Teil des **Niederdrucksystems** und hat **keine speziellen Widerstandsgefäße** – sein Widerstand ist **≈ 16-mal kleiner** ($120{,}97 / 7{,}74 \\approx 15{,}6$) als der des Körperkreislaufs. Das Lungenkapillarbett trägt erheblich (30–40 %) zum Widerstand bei.",
   "keyPoints": [
    "R = Δp / HZV, HZV in l/s umrechnen (÷ 60)",
    "PVR ≈ 7,74 kPa·s/l",
@@ -342,7 +343,7 @@
   "unit": "MTS-K2",
   "examMode": "free",
   "front": "Wie unterscheiden sich die **Partialdrücke von O₂ und CO₂** in der Umgebungsluft und im **alveolären Gasgemisch**?",
-  "back": "| Gas | Umgebung | alveolär |\n|---|---|---|\n| O₂ | 21,25 kPa (160 mmHg, 20,98 %) | **13,3 kPa (100 mmHg)** |\n| CO₂ | 0,04 kPa (0,03 mmHg) | **5,3 kPa (39,7 mmHg)** |\n| H₂O | 0 | 6,3 kPa (47,3 mmHg) |\n| N₂ | 79,08 kPa | 76,3 kPa |\n\nIm Alveolargas ist O₂ **niedriger**, CO₂ und Wasserdampf **deutlich höher** als in der Umgebungsluft.",
+  "back": "| Gas | Umgebung | alveolär |\n|---|---|---|\n| O₂ | 21,25 kPa (160 mmHg, 20,98 %) | **13,3 kPa (100 mmHg)** |\n| CO₂ | 0,04 kPa (0,03 mmHg) | **5,3 kPa (39,7 mmHg)** |\n| H₂O | 0 | 6,3 kPa (47,3 mmHg) |\n| N₂ | 79,08 kPa | 76,3 kPa |\n\nIm Alveolargas ist O₂ **niedriger**, CO₂ und Wasserdampf **deutlich höher** als in der Umgebungsluft.\n\n*Hinweis:* Die Folie nennt für CO₂ in der Umgebung „0,04 kPa (0,03 mmHg)“ – das ist in sich inkonsistent (0,04 kPa ≈ 0,3 mmHg). Wert hier wie auf der Folie übernommen.",
   "keyPoints": [
    "Umgebung O₂ ≈ 21,25 kPa (160 mmHg)",
    "Alveolär O₂ ≈ 13,3 kPa (100 mmHg)",
@@ -350,10 +351,10 @@
    "Alveolär zusätzlich Wasserdampf 6,3 kPa"
   ],
   "cloze": {
-   "text": "Alveolärer O₂-Partialdruck ≈ {{1}} kPa, alveolärer CO₂-Partialdruck ≈ {{2}} kPa.",
+   "text": "Im Alveolargas ist der O₂-Partialdruck {{1}} und der CO₂-Partialdruck {{2}} als in der Umgebungsluft.",
    "answers": [
-    "13,3",
-    "5,3"
+    "niedriger",
+    "höher"
    ]
   },
   "source": "MTS__02_RS1.pdf, Folie 43"
@@ -388,7 +389,7 @@
   "unit": "MTS-K2",
   "examMode": "free",
   "front": "**Übungsaufgabe 1:** Skizziere und beschrifte die **Sauerstoffbindungskurve von Hämoglobin**.",
-  "back": "- **Achsen:** x = O₂-Partialdruck $P_{O_2}$ (kPa, 0–20), y = O₂-Sättigung $S_{O_2}$ (0–1)\n- **Form: sigmoid** (S-förmig) – Ursache: **positive Kooperativität** (Affinität steigt nach der ersten O₂-Bindung; Hb = Tetramer, bis 4 O₂)\n- **Markante Punkte:** **50 % bei 3,6 kPa** (Halbsättigungsdruck $P_{0,5}$), **75 % bei 5,4 kPa**, **98 % bei 13,3 kPa**\n- **Normalbedingungen:** pH 7,4, 37 °C, $P_{CO_2} = 5{,}3$ kPa\n- Zum Vergleich: **Myoglobin** hyperbolisch, links davon\n- $S_{O_2}(\\%) = 100 \\cdot \\frac{HbO_2}{HbO_2 + Hb}$\n\n**Bedeutung:** flaches Plateau = **Sicherheitsbereich** (sinkt $P_{O_2}$, sinkt die Sättigung nicht direkt); steiler Bereich = einfache Abgabe/Aufnahme.",
+  "back": "- **Achsen:** x = O₂-Partialdruck $P_{O_2}$ (kPa, 0–20), y = O₂-Sättigung $S_{O_2}$ (0–1)\n- **Form: sigmoid** (S-förmig) – Ursache: **positive Kooperativität** (Affinität steigt nach der ersten O₂-Bindung; Hb = Tetramer, bis 4 O₂)\n- **Markante Punkte:** **50 % bei 3,6 kPa** (Halbsättigungsdruck $P_{0,5}$), **75 % bei 5,4 kPa**, **98 % bei 13,3 kPa**\n- **Normalbedingungen:** pH 7,4, 37 °C, $P_{CO_2} = 5{,}3$ kPa\n- Zum Vergleich: **Myoglobin**: Kurve liegt links davon (Folie 47)\n- $S_{O_2}(\\%) = 100 \\cdot \\frac{HbO_2}{HbO_2 + Hb}$\n\n**Bedeutung:** flaches Plateau = **Sicherheitsbereich** (sinkt $P_{O_2}$, sinkt die Sättigung nicht direkt); steiler Bereich = einfache Abgabe/Aufnahme.",
   "keyPoints": [
    "Achsen P_O₂ (kPa) gegen S_O₂; sigmoide Form durch positive Kooperativität",
    "P₀,₅ = 3,6 kPa (50 %); 75 % bei 5,4 kPa; 98 % bei 13,3 kPa",
@@ -396,10 +397,10 @@
    "Plateau = Sicherheitsbereich, steiler Teil = leichte Abgabe/Aufnahme"
   ],
   "cloze": {
-   "text": "Die O₂-Bindungskurve des Hämoglobins ist {{1}}; der Halbsättigungsdruck beträgt physiologisch {{2}} kPa.",
+   "text": "Die S-förmige Bindungskurve des Hämoglobins entsteht durch positive {{1}}; zum Vergleich zeigt die Folie die Bindungskurve von {{2}}.",
    "answers": [
-    "sigmoid",
-    "3,6"
+    "Kooperativität",
+    "Myoglobin"
    ]
   },
   "why": "Warum ist die sigmoide Form der Hb-Bindungskurve für den Körper vorteilhaft – sowohl in der Lunge als auch im Gewebe?",

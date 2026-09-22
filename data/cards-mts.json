@@ -453,5 +453,623 @@
    ]
   },
   "source": "MTS__02_RS1.pdf, Folie 49–52"
+ },
+ {
+  "id": "MTS-K3-01",
+  "fach": "MTS",
+  "unit": "MTS-K3",
+  "examMode": "free",
+  "front": "Warum folgt die Lunge den Bewegungen des Thorax? Beschreibe **Pleurakopplung** und die **Kräfteverhältnisse**.",
+  "back": "- **Pleuraspalt:** flüssigkeitsgefüllter Spalt (**5–10 ml**) zwischen Thoraxinnenfläche und Lunge.\n- **Horizontal** beweglich, **vertikal nicht lösbar** (vgl. benetzte Glasplatten) → die Lunge folgt Veränderungen des Thoraxinnenvolumens.\n- **Zentripetale Kräfte (nach innen):** Lunge – Eigenelastizität, Oberflächenspannung der Alveolen.\n- **Zentrifugale Kräfte (nach außen):** Thoraxwand (Skelett, Muskulatur).\n- Der **subatmosphärische Druck im Pleuraspalt** hält die Lunge offen – Bedingung: **intakte Pleurahöhle**.",
+  "keyPoints": [
+   "Flüssigkeitsgefüllter Pleuraspalt (5–10 ml)",
+   "Horizontal verschieblich, vertikal nicht lösbar (benetzte Glasplatten)",
+   "Lunge zieht nach innen, Thoraxwand nach außen",
+   "Subatmosphärischer Pleuradruck hält Lunge offen – nur bei intakter Pleurahöhle"
+  ],
+  "why": "Warum hält gerade ein **subatmosphärischer** Druck im Pleuraspalt die Lunge offen – und was folgt daraus, wenn die Pleurahöhle nicht mehr intakt ist?",
+  "mc": {
+   "stem": "Welche Kraft wirkt an der Pleura **zentrifugal** (nach außen)?",
+   "options": [
+    "Die Thoraxwand (Skelett und Muskulatur)",
+    "Die Eigenelastizität der Lunge",
+    "Die Oberflächenspannung der Alveolen",
+    "Der Zug der Bronchien zum Hilus"
+   ],
+   "correct": "Die Thoraxwand (Skelett und Muskulatur)"
+  },
+  "source": "MTS__03_RS2.pdf, Folie 7, 12"
+ },
+ {
+  "id": "MTS-K3-02",
+  "fach": "MTS",
+  "unit": "MTS-K3",
+  "examMode": "free",
+  "front": "Welche **Muskeln** arbeiten bei **Inspiration** und **Exspiration**, und welche Atemtypen unterscheidet man?",
+  "back": "**Zwei Mechanismen:** Zwerchfellsenkung/-hebung und Rippenbewegungen.\n- **Bauch-/Zwerchfellatmung (diaphragmal):** Zwerchfellanspannung senkt die Kuppel → **vertikale** Vergrößerung.\n- **Brust-/Rippenatmung (kostal):** Zwischenrippenmuskulatur → **sagittale und laterale** Vergrößerung.\n\n**Inspiration (primär):** **Mm. intercostales externi** (Thorax nach vorn und zur Seite) + **Zwerchfell**. Hilfsmuskeln: Brustmuskel, Sägezahnmuskel, Treppenmuskeln, Kopfwender.\n\n**Exspiration:** maßgeblich **passive Rückstellung** (elastisches Verhalten der Lunge); ggf. **Mm. intercostales interni** (Absenken des Brustkorbs). Hilfsmuskulatur: v. a. **Bauchmuskulatur** (verkleinert Thorax aktiv).",
+  "keyPoints": [
+   "Diaphragmal: vertikal; kostal: sagittal + lateral",
+   "Inspiration: Zwerchfell + Mm. intercostales externi",
+   "Exspiration in Ruhe passiv (elastische Rückstellung)",
+   "Aktiv: Mm. intercostales interni, Bauchmuskulatur"
+  ],
+  "cloze": {
+   "text": "Bei der Inspiration ziehen sich die Mm. intercostales {{1}} zusammen und das {{2}} senkt seine Kuppel; die Ruhe-Exspiration erfolgt maßgeblich {{3}}.",
+   "answers": [
+    "externi",
+    "Zwerchfell",
+    "passiv"
+   ]
+  },
+  "source": "MTS__03_RS2.pdf, Folie 8–11"
+ },
+ {
+  "id": "MTS-K3-03",
+  "fach": "MTS",
+  "unit": "MTS-K3",
+  "examMode": "free",
+  "front": "Warum benötigt die **Ruhe-Exspiration** keine Muskelarbeit?",
+  "back": "Bei der **Inspiration** leisten die Muskeln Arbeit gegen die **elastischen Widerstände** und für die **Gasbewegung**. Die elastische Verformungsarbeit wird wie in einer gedehnten Feder **gespeichert**.\n\nIn Ruhe **reicht diese gespeicherte Arbeit aus, um die exspiratorische visköse Arbeit zu decken** → Exspiration durch passive Rückstellung. Bei **vermehrter Atmung** ist zusätzliche Unterstützung nötig (Mm. intercostales interni, Bauchmuskulatur).",
+  "keyPoints": [
+   "Inspiration: Arbeit gegen elastische Widerstände + Gasbewegung",
+   "Elastische Arbeit wird gespeichert",
+   "Gespeicherte Arbeit deckt in Ruhe die visköse Exspirationsarbeit",
+   "Vermehrte Atmung: Muskeln unterstützen aktiv"
+  ],
+  "why": "Warum ist die Exspiration in Ruhe passiv, bei vertiefter Atmung aber nicht mehr?",
+  "source": "MTS__03_RS2.pdf, Folie 11, 29"
+ },
+ {
+  "id": "MTS-K3-04",
+  "fach": "MTS",
+  "unit": "MTS-K3",
+  "examMode": "free",
+  "front": "Definiere **Pulmonal-, Pleura- und transpulmonalen Druck** und nenne die Ruhewerte.",
+  "back": "| Größe | Definition | Ruhewert |\n|---|---|---|\n| **Pulmonaldruck** $P_{Pul}$ (Alveolar-/Intrapulmonaldruck) | Druckdifferenz Alveolen – Atmosphäre (am Mund ohne Strömung messbar) | **0 kPa** |\n| **Pleuradruck** $P_{Pl}$ (intrapleural/intrathorakal) | Druckdifferenz Pleuraspalt – Atmosphäre | **−0,5 … −0,8 kPa** |\n| **Transpulmonaler Druck** $P_{Transpul}$ | $P_{Pul} - P_{Pl}$ | siehe Hinweis |\n\n- Drücke auf **Atmosphärendruck** bezogen; negativ = **subatmosphärisch**.\n- Ruhewerte jeweils am **Ende der Exspiration bzw. Inspiration** gemessen.\n- **Atemstromstärke** $\\dot V$: eingeatmet **< 0**, ausgeatmet **> 0**.\n\n*Hinweis:* Folie 13 gibt für $P_{Transpul}$ „0,5 … −0,8 kPa“ an; aus der Definition folgt mit $P_{Pul} = 0$ und $P_{Pl} = -0{,}5 … -0{,}8$ kPa ein **positiver** Wert (+0,5 … +0,8 kPa) – die Vorzeichen auf der Folie sind uneinheitlich.",
+  "keyPoints": [
+   "Pulmonaldruck: Alveolen – Atmosphäre, Ruhe 0 kPa",
+   "Pleuradruck: Pleuraspalt – Atmosphäre, Ruhe −0,5 … −0,8 kPa",
+   "Transpulmonal = P_Pul − P_Pl",
+   "Einatmung: V̇ < 0, Ausatmung: V̇ > 0"
+  ],
+  "mc": {
+   "stem": "Welcher **Ruhewert** gilt für den **Pleuradruck** (bezogen auf Atmosphärendruck)?",
+   "options": [
+    "−0,5 … −0,8 kPa",
+    "0 kPa",
+    "+0,5 … +0,8 kPa",
+    "−5 … −8 kPa"
+   ],
+   "correct": "−0,5 … −0,8 kPa"
+  },
+  "source": "MTS__03_RS2.pdf, Folie 13"
+ },
+ {
+  "id": "MTS-K3-05",
+  "fach": "MTS",
+  "unit": "MTS-K3",
+  "examMode": "free",
+  "front": "Beschreibe die **Ereigniskette der Inspiration** von der Thoraxerweiterung bis zum Lufteinstrom.",
+  "back": "1. **Volumenzunahme des Thorax** (Ausgangspunkt).\n2. **Pleuradruck sinkt** ab.\n3. Die **Lunge folgt** der Thoraxinnenfläche (Pleurakopplung).\n4. **Lungenvolumen steigt**, der **Pulmonaldruck wird negativ** (Vergrößerung bei gleichem Inhalt → Druck nimmt ab).\n5. **Luft strömt ein** (von höherem zu niedrigerem Druck; im Diagramm negative Stromstärke).\n\nExspiration: prinzipiell umgekehrt, aber mit **qualitativen und quantitativen Unterschieden**. Der **Pleuradruck bleibt stets negativ**.",
+  "keyPoints": [
+   "Thorax ↑ → Pleuradruck ↓",
+   "Lunge folgt → Volumen ↑ → Pulmonaldruck negativ",
+   "Luft strömt vom höheren zum niedrigeren Druck",
+   "Pleuradruck bleibt stets negativ"
+  ],
+  "cloze": {
+   "text": "Thorax vergrößert sich → {{1}} sinkt → Lunge folgt → Lungenvolumen steigt → {{2}} wird negativ → Luft strömt ein. Der Pleuradruck bleibt dabei stets {{3}}.",
+   "answers": [
+    "Pleuradruck",
+    "Pulmonaldruck",
+    "negativ"
+   ]
+  },
+  "source": "MTS__03_RS2.pdf, Folie 12, 14–15"
+ },
+ {
+  "id": "MTS-K3-06",
+  "fach": "MTS",
+  "unit": "MTS-K3",
+  "examMode": "free",
+  "front": "Nenne die vier **Lungenvolumina** und die vier **Kapazitäten** mit typischen Werten.",
+  "back": "**Volumina** (Werte von 20–30-jährigen Männern):\n- **AZV** (Atemzug-/Tidalvolumen): bei ruhiger Atmung gefördert – ca. **0,5 l**\n- **IRV**: über das AZV hinaus einatembar – ca. **2,5 l**\n- **ERV**: über das AZV hinaus ausatembar – ca. **1,5 l**\n- **RV** (Residualvolumen): nach maximaler Exspiration – ca. **1,5 l**\n\n**Kapazitäten** (Summen von Volumina):\n- **VC** = IRV + AZV + ERV ≈ **4,5 l**\n- **IC** = AZV + IRV ≈ **3 l**\n- **FRC** = RV + ERV ≈ **3 l** (Volumenarbeitspunkt; entspricht intrathorakalem Gasvolumen)\n- **TLC** = RV + ERV + AZV + IRV ≈ **6 l**",
+  "keyPoints": [
+   "AZV 0,5 · IRV 2,5 · ERV 1,5 · RV 1,5 l",
+   "VC = IRV + AZV + ERV (4,5 l)",
+   "FRC = RV + ERV (≈ 3 l), IC = AZV + IRV (≈ 3 l)",
+   "TLC = alle vier Volumina (6 l)"
+  ],
+  "mc": {
+   "stem": "Aus welchen Volumina setzt sich die **funktionelle Residualkapazität (FRC)** zusammen?",
+   "options": [
+    "RV + ERV",
+    "RV + AZV",
+    "AZV + IRV",
+    "IRV + AZV + ERV"
+   ],
+   "correct": "RV + ERV"
+  },
+  "cloze": {
+   "text": "Die Vitalkapazität umfasst IRV, AZV und {{1}}; die Totalkapazität enthält zusätzlich das {{2}}.",
+   "answers": [
+    "ERV",
+    "Residualvolumen"
+   ]
+  },
+  "source": "MTS__03_RS2.pdf, Folie 17–18"
+ },
+ {
+  "id": "MTS-K3-07",
+  "fach": "MTS",
+  "unit": "MTS-K3",
+  "examMode": "free",
+  "front": "Warum ist eine **große funktionelle Residualkapazität (FRC)** im Vergleich zum Atemzugvolumen sinnvoll?",
+  "back": "Die FRC (≈ 3 l) ist der **Volumenarbeitspunkt** und groß im Vergleich zum AZV (≈ 0,5 l). Jeder Atemzug mischt nur relativ wenig Frischluft in ein großes Gasvolumen → **Glättungseffekt für die Partialdrücke**: die alveolären Partialdrücke schwanken zwischen In- und Exspiration kaum.\n\nDie FRC entspricht dem **intrathorakalen Gasvolumen** (Atemruhelage).",
+  "keyPoints": [
+   "FRC = Volumenarbeitspunkt (≈ 3 l)",
+   "Groß gegenüber AZV (≈ 0,5 l)",
+   "Glättungseffekt für Partialdrücke",
+   "Entspricht intrathorakalem Gasvolumen"
+  ],
+  "why": "Warum schwanken die alveolären Partialdrücke trotz zyklischer Atmung nur wenig?",
+  "source": "MTS__03_RS2.pdf, Folie 17–18"
+ },
+ {
+  "id": "MTS-K3-08",
+  "fach": "MTS",
+  "unit": "MTS-K3",
+  "examMode": "calc",
+  "front": "Berechne aus den Lungenvolumina die **totale Lungenkapazität (TLC)**.",
+  "back": "$VC = IRV + AZV + ERV$, $TLC = VC + RV$ – die TLC ist die Summe **aller vier Volumina**. Folienwerte (20–30-jährige Männer): 2,5 + 0,5 + 1,5 = **4,5 l** VC, + 1,5 l RV = **6 l** TLC.",
+  "keyPoints": [
+   "VC = IRV + AZV + ERV",
+   "TLC = VC + RV",
+   "Folienbeispiel: 4,5 l + 1,5 l = 6 l"
+  ],
+  "calc": {
+   "vars": {
+    "IRV": [
+     2,
+     3.2,
+     0.1
+    ],
+    "AZV": [
+     0.35,
+     0.85,
+     0.05
+    ],
+    "ERV": [
+     1,
+     2,
+     0.1
+    ],
+    "RV": [
+     1,
+     2,
+     0.1
+    ]
+   },
+   "given": "IRV = [[IRV]] l, AZV = [[AZV]] l, ERV = [[ERV]] l, RV = [[RV]] l",
+   "solution": "IRV + AZV + ERV + RV",
+   "unit": "l",
+   "steps": [
+    "Vitalkapazität: $VC = IRV + AZV + ERV$ = [[IRV]] + [[AZV]] + [[ERV]] = [[= IRV + AZV + ERV]] l",
+    "Totalkapazität: $TLC = VC + RV$ = [[= IRV + AZV + ERV]] + [[RV]] = [[= IRV + AZV + ERV + RV]] l"
+   ],
+   "example": {
+    "vars": {
+     "IRV": 2.5,
+     "AZV": 0.5,
+     "ERV": 1.5,
+     "RV": 1.5
+    },
+    "result": 6
+   }
+  },
+  "source": "MTS__03_RS2.pdf, Folie 17–18"
+ },
+ {
+  "id": "MTS-K3-09",
+  "fach": "MTS",
+  "unit": "MTS-K3",
+  "examMode": "free",
+  "front": "Was ist ein **Totraum**? Unterscheide **anatomischen** und **funktionellen** Totraum.",
+  "back": "**Totraum:** Anteile der Atemwege und Alveolarräume, die **belüftet** werden, in denen aber **kein Gasaustausch** stattfindet.\n- **Anatomischer Totraum:** rein **konduktives** System (Nase bzw. Mund, Pharynx, Larynx, Trachea, Bronchien, Bronchiolen), ca. **150 ml**; muss zunächst belüftet werden, erfüllt wichtige Funktionen.\n- **Alveoläre Bereiche**, die belüftet, aber nicht/schlecht durchblutet sind (beim Gesunden vernachlässigbar).\n- **Funktioneller (physiologischer) Totraum** = anatomischer Totraum + nicht durchblutete Bereiche.\n\nDas AZV (350–850 ml) enthält den Totraum – mindestens den anatomischen.",
+  "keyPoints": [
+   "Belüftet, aber kein Gasaustausch",
+   "Anatomisch: konduktive Atemwege, ca. 150 ml",
+   "Funktionell = anatomisch + belüftete, nicht durchblutete Alveolarbereiche",
+   "Beim Gesunden: alveolärer Anteil vernachlässigbar"
+  ],
+  "cloze": {
+   "text": "Der anatomische Totraum beträgt ca. {{1}} ml. Anatomischer Totraum + belüftete, aber nicht durchblutete Alveolarbereiche = funktioneller oder {{2}} Totraum.",
+   "answers": [
+    "150",
+    "physiologischer"
+   ]
+  },
+  "why": "Warum muss das Atemzugvolumen immer größer sein als der anatomische Totraum, damit überhaupt Gasaustausch stattfindet?",
+  "source": "MTS__03_RS2.pdf, Folie 19–20"
+ },
+ {
+  "id": "MTS-K3-10",
+  "fach": "MTS",
+  "unit": "MTS-K3",
+  "examMode": "free",
+  "front": "Wie berechnet man das **Atemminutenvolumen**, und in welchen Bereichen liegen AZV und Atemfrequenz?",
+  "back": "Ventilation ist ein **zyklischer** Vorgang:\n\n$$AMV = AZV \\cdot f_{resp}$$\n\n- **AMV:** Atemminutenvolumen\n- **AZV:** Atemzugvolumen **350–850 ml** (inklusive Totraum, d. h. mindestens anatomischer Totraum)\n- $f_{resp}$: Respirationsfrequenz **7–20 Atemzüge/min**, starke Unterschiede",
+  "keyPoints": [
+   "AMV = AZV · f_resp",
+   "AZV 350–850 ml (inkl. Totraum)",
+   "f_resp 7–20 /min, stark variabel"
+  ],
+  "mc": {
+   "stem": "Welcher Bereich gilt laut Vorlesung für die **Respirationsfrequenz** in Ruhe?",
+   "options": [
+    "7–20 Atemzüge/min",
+    "20–40 Atemzüge/min",
+    "2–6 Atemzüge/min",
+    "60–80 Atemzüge/min"
+   ],
+   "correct": "7–20 Atemzüge/min"
+  },
+  "source": "MTS__03_RS2.pdf, Folie 20"
+ },
+ {
+  "id": "MTS-K3-11",
+  "fach": "MTS",
+  "unit": "MTS-K3",
+  "examMode": "free",
+  "front": "Gegen welche **Widerstände** arbeitet die Ventilation, und wie verteilen sie sich?",
+  "back": "**Elastische Widerstände:** Lunge und Thorax.\n\n**Nicht-elastische Widerstände:**\n- **Visköse Widerstände:** **Strömungswiderstand (90 %)** der zuleitenden Atemwege + **Gewebewiderstand (10 %)** (nicht-elastische Verformung, Gewebereibung)\n- **Trägheitswiderstand** (Gastransport): meist vernachlässigbar klein\n\n**Strömungswiderstand nach Ort:** **40 %** obere Atemwege, **40 %** größere Bronchien, **20 %** kleinere Bronchien/Bronchiolen (< 2 mm).\n\nAtemwegswiderstand in Atemruhelage (Abbildung): $R_L = 0{,}13$ kPa·l⁻¹·s; er **sinkt mit steigendem Lungenvolumen**.",
+  "keyPoints": [
+   "Elastisch: Lunge, Thorax",
+   "Viskös: 90 % Strömung, 10 % Gewebe; Trägheit meist vernachlässigbar",
+   "Strömung: 40 % obere Atemwege / 40 % große Bronchien / 20 % kleine",
+   "R_L in Atemruhelage ≈ 0,13 kPa·l⁻¹·s, sinkt mit Lungenvolumen"
+  ],
+  "cloze": {
+   "text": "Der visköse Widerstand besteht zu {{1}} % aus Strömungswiderstand und zu {{2}} % aus Gewebewiderstand; auf die kleinen Bronchien/Bronchiolen entfallen nur {{3}} % des Strömungswiderstands.",
+   "answers": [
+    "90",
+    "10",
+    "20"
+   ]
+  },
+  "source": "MTS__03_RS2.pdf, Folie 21, 26–27"
+ },
+ {
+  "id": "MTS-K3-12",
+  "fach": "MTS",
+  "unit": "MTS-K3",
+  "examMode": "free",
+  "front": "Was ist **Surfactant**, und wie erklärt das **Laplace-Gesetz** seine Bedeutung?",
+  "back": "**Surfactant** = Kurzform von „**surface active agent**“, ein Stoff, der die Alveolen auskleidet.\n\n**Laplace-Gesetz** (Folie/Übung): $P = T \\cdot \\frac{2d}{r}$ mit Oberflächenspannung $T$, Wanddicke $d$, Radius $r$ – die Wandspannung versucht, den Radius zu verkleinern.\n\n- Surfactant **verringert die Oberflächenspannung** maßgeblich (auf nur **10 %** der erwarteten Spannung) → benötigter **Druck zum Entfalten** wesentlich geringer.\n- In **kleinen Alveolen dichter** vorhanden → kleine Alveolen **kollabieren nicht** (sonst Gefahr, da der Druck dort wegen kleinem $r$ höher ist).\n- Oberflächenspannung macht **50 %** des elastischen Lungenwiderstands aus.",
+  "keyPoints": [
+   "Surfactant = surface active agent, kleidet Alveolen aus",
+   "Laplace: P = T · 2d/r – kleiner Radius → höherer Druck",
+   "Senkt Oberflächenspannung auf ≈ 10 % → leichteres Entfalten",
+   "In kleinen Alveolen dichter → kein Kollaps"
+  ],
+  "why": "Warum würden kleine Alveolen ohne Surfactant kollabieren, und warum verhindert gerade eine **höhere Surfactant-Dichte in kleinen Alveolen** das?",
+  "mc": {
+   "stem": "Auf etwa welchen Anteil der erwarteten Oberflächenspannung senkt Surfactant die Spannung?",
+   "options": [
+    "≈ 10 %",
+    "≈ 50 %",
+    "≈ 90 %",
+    "≈ 1 %"
+   ],
+   "correct": "≈ 10 %"
+  },
+  "source": "MTS__03_RS2.pdf, Folie 22–23; MTS_Ue__02_RS2.pdf, Kontrollfrage 1–2"
+ },
+ {
+  "id": "MTS-K3-13",
+  "fach": "MTS",
+  "unit": "MTS-K3",
+  "examMode": "free",
+  "front": "Wie sind **Compliance der Lunge, des Thorax und des Gesamtsystems** definiert, und wie hängen sie zusammen?",
+  "back": "**Compliance** = Dehnbarkeit = Kehrwert des elastischen Widerstands: $C = \\frac{\\Delta V}{\\Delta P}$ (relevant ist der **transmurale Druck**).\n\n| | Volumen | Druck |\n|---|---|---|\n| $C_{Th+L}$ | ≈ Lungenvolumen | **Pulmonaldruck** $P_{Pul}$ |\n| $C_{Th}$ | ≈ Lungenvolumen | **Pleuradruck** $P_{Pl}$ |\n| $C_L$ | Lungenvolumen | **Transpulmonaldruck** $P_{Pul} - P_{Pl}$ |\n\nDie **Elastanzen addieren sich**: $\\frac{1}{C_{Th+L}} = \\frac{1}{C_L} + \\frac{1}{C_{Th}}$, Einheit $[C] = \\frac{l}{kPa}$ (auch ml/mbar).\n\n- **Arbeitspunkt** bei maximaler Steilheit (max. Compliance): kleine Druckänderung → große Volumenänderung; dort annähernd **linear**.\n- Elastische Widerstände **nehmen mit dem Alter zu** (mehr kollagene Fasern, versteiftes Thoraxskelett).\n- Atemruhelage: Alveolardruck = Außendruck → transmuraler Druck des Gesamtsystems = 0 (Vol. ca. 3 l).",
+  "keyPoints": [
+   "C = ΔV/ΔP mit transmuralem Druck",
+   "Lunge ↔ Transpulmonaldruck, Thorax ↔ Pleuradruck, gesamt ↔ Pulmonaldruck",
+   "1/C_Th+L = 1/C_L + 1/C_Th",
+   "Arbeitspunkt bei maximaler Compliance, fast linear"
+  ],
+  "mc": {
+   "stem": "Auf welchen Druck bezieht sich die **Compliance der Lunge** $C_L$?",
+   "options": [
+    "Transpulmonaldruck (Pulmonal- minus Pleuradruck)",
+    "Pleuradruck",
+    "Pulmonaldruck",
+    "Atmosphärendruck"
+   ],
+   "correct": "Transpulmonaldruck (Pulmonal- minus Pleuradruck)"
+  },
+  "why": "Warum ist die Gesamtcompliance von Lunge und Thorax **kleiner** als jede der beiden Einzelcompliances?",
+  "source": "MTS__03_RS2.pdf, Folie 22, 24–25"
+ },
+ {
+  "id": "MTS-K3-14",
+  "fach": "MTS",
+  "unit": "MTS-K3",
+  "examMode": "calc",
+  "front": "Gegeben sind die **Gesamtcompliance** des respiratorischen Systems und die **thorakale Compliance**. Berechne die Compliance **eines Lungenflügels** (außer Lunge und Thorax alle Compliances vernachlässigbar; beide Flügel gleich).",
+  "back": "1. Lunge und Thorax sind **in Reihe** → $\\frac{1}{C_L} = \\frac{1}{C_{ges}} - \\frac{1}{C_{Th}}$.\n2. Die beiden Lungenflügel liegen am **selben Druck** und ihre Volumina addieren sich → **parallel** → $C_L = 2 \\cdot C_{Flügel}$, also $C_{Flügel} = C_L/2$.\n\nÜbungswerte: $1/C_L = 8 - 2 = 6$ mbar/L → $C_L ≈ 0{,}167$ L/mbar → **$C_{Flügel} ≈ 0{,}083$ L/mbar** (≈ 83 ml/mbar).\n\n*Das Übungsblatt enthält keine Musterlösung; Ergebnis nachgerechnet. Annahme: gleich große Flügel.*",
+  "keyPoints": [
+   "Lunge + Thorax in Reihe: 1/C_L = 1/C_ges − 1/C_Th",
+   "Lungenflügel parallel: C_Flügel = C_L/2",
+   "Übung: 0,125 und 0,5 L/mbar → 0,083 L/mbar"
+  ],
+  "calc": {
+   "vars": {
+    "Cges": [
+     0.08,
+     0.15,
+     0.005
+    ],
+    "CTh": [
+     0.3,
+     0.6,
+     0.05
+    ]
+   },
+   "given": "$C_{ges}$ = [[Cges]] L/mbar, $C_{Th}$ = [[CTh]] L/mbar. Gesucht: Compliance eines Lungenflügels.",
+   "solution": "1/(1/Cges - 1/CTh)/2",
+   "unit": "L/mbar",
+   "steps": [
+    "Reihenschaltung: $1/C_L = 1/C_{ges} - 1/C_{Th}$ = [[= 1/Cges]] − [[= 1/CTh]] = [[= 1/Cges - 1/CTh]] mbar/L",
+    "$C_L$ = 1 / [[= 1/Cges - 1/CTh]] = [[= 1/(1/Cges - 1/CTh)]] L/mbar (beide Flügel)",
+    "Flügel parallel: $C_{Flügel} = C_L/2$ = [[= 1/(1/Cges - 1/CTh)/2]] L/mbar"
+   ],
+   "example": {
+    "vars": {
+     "Cges": 0.125,
+     "CTh": 0.5
+    },
+    "result": 0.0833
+   }
+  },
+  "source": "MTS_Ue__02_RS2.pdf, Transferfrage „Compliance“; MTS__03_RS2.pdf, Folie 25"
+ },
+ {
+  "id": "MTS-K3-15",
+  "fach": "MTS",
+  "unit": "MTS-K3",
+  "examMode": "free",
+  "front": "Wie ist die **Resistance** definiert, und was sagt das **Hagen-Poiseuille-Gesetz** über den Atemwegswiderstand?",
+  "back": "**Visköse Widerstände (Resistance $R$)** entstehen durch die zuleitenden Atemwege.\n\n$$R = \\frac{\\Delta P}{\\dot V}$$\n\nBei **laminarer** Strömung nach **Hagen-Poiseuille**:\n\n$$R = \\frac{8 \\eta \\cdot l}{\\pi \\cdot r_0^4}$$\n\n→ $R \\propto l$, $R \\propto \\eta$, aber $R \\propto 1/r^4$: **halber Radius → 16-facher Widerstand**.\n\nEinheiten: $[R] = \\frac{kPa}{l/s}$ oder $\\frac{mbar}{l/s}$, mit **1 kPa = 10 mbar**.\n\n*Hinweis:* Das Lösungsblatt der Übung nennt als Einheit des Flusses „kPa“ und schreibt $R = \\Delta p / I$ – gemeint ist der Fluss $\\dot V$ in l/s.",
+  "keyPoints": [
+   "R = ΔP / V̇",
+   "Laminar: R = 8ηl / (π r⁴)",
+   "R ∝ 1/r⁴: halber Radius → 16-facher Widerstand",
+   "1 kPa = 10 mbar"
+  ],
+  "cloze": {
+   "text": "Nach Hagen-Poiseuille ist der Strömungswiderstand umgekehrt proportional zur {{1}}. Potenz des Radius; halbiert sich der Radius, steigt der Widerstand auf das {{2}}-Fache.",
+   "answers": [
+    "4",
+    "16"
+   ]
+  },
+  "why": "Warum wirkt schon eine leichte Verengung der Atemwege (z. B. Schleimhautschwellung) so stark auf den Atemwegswiderstand?",
+  "source": "MTS__03_RS2.pdf, Folie 26; MTS_Ue__02_RS2.pdf, Kontrollfrage 3"
+ },
+ {
+  "id": "MTS-K3-16",
+  "fach": "MTS",
+  "unit": "MTS-K3",
+  "examMode": "calc",
+  "front": "Ein Rohr (Radius $r$) wird laminar von Luft ($\\eta$ = 18,1 µPa·s) durchströmt. Welche **Länge darf das Rohr maximal** haben, damit bei einem Druckabfall $P$ der Flow **mindestens** $\\dot V$ beträgt?",
+  "back": "Aus $R = \\frac{\\Delta P}{\\dot V}$ und $R = \\frac{8\\eta l}{\\pi r^4}$ folgt\n\n$$l_{max} = \\frac{\\Delta P \\cdot \\pi r^4}{8 \\eta \\dot V}$$\n\n(längeres Rohr → größeres $R$ → kleinerer Flow).\n\n**SI-Einheiten!** 1 mbar = 100 Pa, 1 mm = 10⁻³ m, 1 l/s = 10⁻³ m³/s, 1 µPa·s = 10⁻⁶ Pa·s.\n\nÜbungswerte $r$ = 4 mm, $P$ = 2,1 mbar, $\\dot V$ = 0,7 l/s: $l_{max}$ = 210 · π · (0,004)⁴ / (8 · 18,1·10⁻⁶ · 0,0007) ≈ **1,67 m**.\n\n*Das Übungsblatt enthält keine Musterlösung; Ergebnis nachgerechnet.*",
+  "keyPoints": [
+   "l_max = ΔP · π r⁴ / (8 η V̇)",
+   "Vorher alles in SI umrechnen (mbar → Pa, mm → m, l/s → m³/s)",
+   "Übung: r = 4 mm, 2,1 mbar, 0,7 l/s → ≈ 1,67 m"
+  ],
+  "calc": {
+   "vars": {
+    "r": [
+     3,
+     5,
+     0.5
+    ],
+    "p": [
+     1.5,
+     3,
+     0.1
+    ],
+    "Q": [
+     0.4,
+     1,
+     0.1
+    ]
+   },
+   "given": "$r$ = [[r]] mm, $P$ = [[p]] mbar, $\\dot V_{min}$ = [[Q]] l/s, $\\eta$ = 18,1 µPa·s. Gesucht: maximale Rohrlänge in m.",
+   "solution": "p*100*pi*(r/1000)^4/(8*18.1e-6*Q/1000)",
+   "unit": "m",
+   "steps": [
+    "SI: $\\Delta P$ = [[= p*100]] Pa, $r$ = [[= r/1000]] m, $\\dot V$ = [[= Q/1000]] m³/s, $\\eta$ = 18,1·10⁻⁶ Pa·s",
+    "Zähler: $\\Delta P \\cdot \\pi r^4$ = [[= p*100]] Pa · π · ([[r]] mm)⁴ = [[= p*100*pi*r^4]] · 10⁻¹² Pa·m⁴",
+    "Nenner: $8 \\eta \\dot V$ = 8 · 18,1·10⁻⁶ Pa·s · [[= Q/1000]] m³/s = [[= 8*18.1*Q]] · 10⁻⁹ Pa·m³",
+    "$l_{max}$ = [[= p*100*pi*r^4]] / [[= 8*18.1*Q]] · 10⁻³ m = [[= p*100*pi*(r/1000)^4/(8*18.1e-6*Q/1000)]] m"
+   ],
+   "example": {
+    "vars": {
+     "r": 4,
+     "p": 2.1,
+     "Q": 0.7
+    },
+    "result": 1.67
+   }
+  },
+  "source": "MTS_Ue__02_RS2.pdf, Transferfrage „Hagen-Poiseuille-Gesetz“; MTS__03_RS2.pdf, Folie 26"
+ },
+ {
+  "id": "MTS-K3-17",
+  "fach": "MTS",
+  "unit": "MTS-K3",
+  "examMode": "calc",
+  "front": "In der Trachea (Generation 0) strömt Luft mit $v_0$. Bei jeder Aufteilung entstehen **zwei** Äste, der Durchmesser sinkt je Generation um $k$ %. Wie groß ist die **Luftflussgeschwindigkeit in Generation $n$** (idealisiert: konstante Strömung, kreisrunder Querschnitt, keine Turbulenzen)?",
+  "back": "**Kontinuitätsgleichung:** Der Volumenstrom bleibt gleich, er verteilt sich auf den **Gesamtquerschnitt** der Generation:\n\n$$v_n = v_0 \\cdot \\frac{A_0}{2^n \\cdot A_n} = \\frac{v_0}{2^n \\cdot (1 - k)^{2n}}$$\n\n(Fläche ∝ Durchmesser², $k$ als Anteil). Übung: $v_0$ = 1 m/s, $k$ = 35 %, $n$ = 2 → $2^2 \\cdot 0{,}65^4 = 0{,}714$ → **$v_2 ≈ 1{,}40$ m/s**.\n\nDer Gesamtquerschnitt **schrumpft** hier je Generation (2 · 0,65² = 0,845 < 1) → die Geschwindigkeit **steigt**. Trachea-Durchmesser (1 cm) und Widerstand (2 mbar·s/l) werden nicht gebraucht.\n\n*Generationszählung: Trachea = Generation 0 (MTS__02_RS1). Zählt man die Trachea als Generation 1, ergäbe sich 1,18 m/s. Das Übungsblatt enthält keine Musterlösung.*",
+  "keyPoints": [
+   "Kontinuität: gleicher Volumenstrom über Gesamtquerschnitt",
+   "v_n = v₀ / (2ⁿ · (1−k)²ⁿ)",
+   "Übung: 1 m/s, −35 %, n = 2 → ≈ 1,40 m/s",
+   "Durchmesser 1 cm und R = 2 mbar·s/l sind Ablenker"
+  ],
+  "calc": {
+   "vars": {
+    "v0": [
+     0.5,
+     2,
+     0.1
+    ],
+    "k": [
+     20,
+     40,
+     5
+    ],
+    "n": [
+     1,
+     3,
+     1
+    ]
+   },
+   "given": "$v_0$ = [[v0]] m/s in der Trachea (Generation 0), Durchmesserabnahme [[k]] % je Generation, 2 Äste pro Verzweigung. Gesucht: Geschwindigkeit in Generation [[n]].",
+   "solution": "v0/(2^n*(1-k/100)^(2*n))",
+   "unit": "m/s",
+   "steps": [
+    "Anzahl Äste: $2^n$ = [[= 2^n]]; Durchmesser relativ zur Trachea $(1-k)^n$ = [[= 1-k/100]]^[[n]] = [[= (1-k/100)^n]] ($k$ als Anteil)",
+    "Gesamtquerschnitt relativ zur Trachea: $2^n \\cdot (1-k)^{2n}$ = [[= 2^n*(1-k/100)^(2*n)]]",
+    "$v_n = v_0 / $ [[= 2^n*(1-k/100)^(2*n)]] = [[= v0/(2^n*(1-k/100)^(2*n))]] m/s"
+   ],
+   "example": {
+    "vars": {
+     "v0": 1,
+     "k": 35,
+     "n": 2
+    },
+    "result": 1.4
+   }
+  },
+  "source": "MTS_Ue__02_RS2.pdf, Transferfrage „Luftfluss“ (Generationszählung: MTS__02_RS1.pdf, Folie 14)"
+ },
+ {
+  "id": "MTS-K3-18",
+  "fach": "MTS",
+  "unit": "MTS-K3",
+  "examMode": "free",
+  "front": "Beschreibe das **Einkompartimentmodell** der Lunge und die **mechanisch-elektrischen Analogien**.",
+  "back": "**Einkompartimentmodell:** Lunge als eine Einheit (keine Lungenflügel), Reihenschaltung aus Resistance $R$, $C_L$, $C_{Th}$ und Druckquelle $P_{Mus}$ (Sog bei Einatmung, $P_{Mus} < 0$).\n\n**Analogien:** Volumenfluss → **Strom**, Druck → **Spannung**, visköser Widerstand → **ohmscher Widerstand**, Compliance → **Kapazität**, Trägheit (Inertance) → **Spule**.\n\n**Bewegungsgleichung** ($P_{Atemwege} = P_{Mus}$; in Atemruhelage $P_{Mus} = 0$):\n\n$$P_{Atemwege} = \\dot V \\cdot R + \\frac{1}{C_{Th+L}} \\int \\dot V \\, dt$$\n\n| Widerstand | Abhängigkeit |\n|---|---|\n| elastisch | $\\Delta p \\propto V(t)$ |\n| viskös | $\\Delta p \\propto \\dot V(t)$ |\n| Trägheit | $\\Delta p \\propto \\ddot V(t)$ |\n\nErweiterungen: Induktivität in Reihe, mehrere Kompartimente (u. a. beide Lungenflügel).",
+  "keyPoints": [
+   "Druck = Spannung, Fluss = Strom",
+   "R = ohmscher Widerstand, Compliance = Kondensator, Inertance = Spule",
+   "P_Atemwege = V̇·R + (1/C)·∫V̇ dt",
+   "Elastisch ∝ V, viskös ∝ V̇, Trägheit ∝ V̈"
+  ],
+  "mc": {
+   "stem": "Welchem elektrischen Bauteil entspricht die **Compliance** im Ersatzschaltbild der Lunge?",
+   "options": [
+    "Kondensator",
+    "Ohmscher Widerstand",
+    "Spule",
+    "Spannungsquelle"
+   ],
+   "correct": "Kondensator"
+  },
+  "cloze": {
+   "text": "Im Ersatzschaltbild entspricht der Druck der {{1}}, der Volumenfluss dem {{2}} und die Trägheit einer {{3}}.",
+   "answers": [
+    "Spannung",
+    "Strom",
+    "Spule"
+   ]
+  },
+  "source": "MTS__03_RS2.pdf, Folie 31–34; MTS_Ue__02_RS2.pdf, Kontrollfrage 3"
+ },
+ {
+  "id": "MTS-K3-19",
+  "fach": "MTS",
+  "unit": "MTS-K3",
+  "examMode": "calc",
+  "front": "Das respiratorische System ist als **Reihenschaltung** aus Resistance, Lungen- und Thoraxcompliance und Druckquelle modelliert. Berechne den **Atemwegsdruck** aus resistivem Druck, Pulmonaldruck und Pleuradruck.",
+  "back": "Im Einkompartimentmodell fällt über $C_{Th}$ der **Pleuradruck** und über $C_L$ der **Transpulmonaldruck** ab; beide zusammen ergeben den **Pulmonaldruck**: $P_{Pul} = P_{Pl} + P_{Transpul}$.\n\n$$P_{Atemwege} = P_{res} + P_{Pul}$$\n\nDer Pleuradruck steckt also **schon im Pulmonaldruck** – nicht noch einmal addieren!\n\nÜbung: 5 mbar + 15 mbar = **20 mbar** (der Pleuradruck 5 mbar ist Ablenker; 25 mbar wäre der typische Fehler).\n\n*Das Übungsblatt enthält keine Musterlösung; Ergebnis nachgerechnet.*",
+  "keyPoints": [
+   "P_Atemwege = resistiver Druck + elastischer Druck",
+   "Elastischer Anteil = Pulmonaldruck = P_Pl + P_Transpul",
+   "Pleuradruck nicht doppelt zählen",
+   "Übung: 5 + 15 = 20 mbar"
+  ],
+  "calc": {
+   "vars": {
+    "Pres": [
+     2,
+     8,
+     1
+    ],
+    "Ppul": [
+     10,
+     20,
+     1
+    ],
+    "Ppl": [
+     3,
+     8,
+     1
+    ]
+   },
+   "given": "Resistiver Druck [[Pres]] mbar, Pulmonaldruck [[Ppul]] mbar, Pleuradruck [[Ppl]] mbar. Gesucht: Atemwegsdruck.",
+   "solution": "Pres + Ppul",
+   "unit": "mbar",
+   "steps": [
+    "Über beiden Compliances zusammen fällt der Pulmonaldruck ab ($P_{Pul} = P_{Pl} + P_{Transpul}$) – der Pleuradruck [[Ppl]] mbar ist darin enthalten.",
+    "$P_{Atemwege} = P_{res} + P_{Pul}$ = [[Pres]] + [[Ppul]] = [[= Pres + Ppul]] mbar"
+   ],
+   "example": {
+    "vars": {
+     "Pres": 5,
+     "Ppul": 15,
+     "Ppl": 5
+    },
+    "result": 20
+   }
+  },
+  "why": "Warum darf man den Pleuradruck beim Atemwegsdruck nicht zusätzlich zum Pulmonaldruck addieren?",
+  "source": "MTS_Ue__02_RS2.pdf, Transferfrage „Modell respiratorisches System“; MTS__03_RS2.pdf, Folie 32–33"
+ },
+ {
+  "id": "MTS-K3-20",
+  "fach": "MTS",
+  "unit": "MTS-K3",
+  "examMode": "free",
+  "front": "Wie wird die **Atmung reguliert**? Nenne Neuronenklassen, chemische und mechanosensorische Einflussgrößen.",
+  "back": "**Zentrum:** Neuronenpopulationen in der **Medulla oblongata** (ANS) steuern **Atemfrequenz** (Rhythmus) und **Atemzugvolumen** (Dauer von In-/Exspiration, Atemtiefe) – willkürlich und unwillkürlich.\n\n**Neuronenklassen:**\n- **I-Neurone:** Zwerchfell (über **N. phrenicus**) und Mm. intercostales externi kontrahieren\n- **PI-Neurone:** entladen in der ersten Ausatemphase, relaxieren das Zwerchfell (antagonistisch zu I angenommen)\n- **E-Neurone:** Kontraktion der internen Intercostalmuskulatur\n\n**Chemorezeptoren:** zentrale (und periphere) für **$P_{CO_2}$ und pH** (besonders wichtig in Schlaf und Narkose); **periphere** messen **$P_{O_2}$** (Glomus caroticum).\n\n**Mechanorezeptoren:**\n- **Langsam adaptierende Dehnungsrezeptoren** (Atemwegswand): bei Inspiration aktiv → begrenzen die Inspiration (**Hering-Breuer-Reflex**), erhöhen Atemfrequenz\n- **Rasch adaptierende** (Epithel obere Atemwege): Initialphase, chemische Reize (Zigarettenrauch) → verkürzen Exspiration\n- **J-Rezeptoren** (perikapillär): bei stark erhöhtem elastischem Widerstand → flache, hochfrequente Atmung\n- **Propriozeptoren** (Muskelspindeln, Thoraxwand): Anpassung der Kraft",
+  "keyPoints": [
+   "Medulla oblongata: I-, PI-, E-Neurone",
+   "Zentrale Chemorezeptoren: P_CO₂/pH; periphere (Glomus caroticum): P_O₂",
+   "Langsam adaptierende Dehnungsrezeptoren → Hering-Breuer-Reflex",
+   "J-Rezeptoren → flache, hochfrequente Atmung"
+  ],
+  "mc": {
+   "stem": "Welcher Reflex **begrenzt die Inspirationsphase** über langsam adaptierende Dehnungsrezeptoren?",
+   "options": [
+    "Hering-Breuer-Reflex",
+    "Bohr-Effekt",
+    "Haldane-Effekt",
+    "Frank-Starling-Mechanismus"
+   ],
+   "correct": "Hering-Breuer-Reflex"
+  },
+  "cloze": {
+   "text": "Die peripheren Chemorezeptoren im Glomus {{1}} messen den O₂-Partialdruck; I-Neurone aktivieren das Zwerchfell über den N. {{2}}.",
+   "answers": [
+    "caroticum",
+    "phrenicus"
+   ]
+  },
+  "source": "MTS__03_RS2.pdf, Folie 36–40"
  }
 ]

@@ -42,3 +42,13 @@ test('fehlende Settings werden mit Standardwerten ergänzt', () => {
   st.setItem('lernapp.v1', JSON.stringify({ version: 1, cards: {}, units: {}, gaps: [], settings: {} }));
   assert.equal(createStore(st).load().settings.newPerSession, 10);
 });
+
+test('importJson lehnt cards: null ab', () => {
+  const s = createStore(fakeStorage());
+  assert.throws(() => s.importJson('{"version":1,"cards":null,"gaps":[]}'), /Keine gültige Sicherung/);
+});
+
+test('importJson lehnt cards: [] (Array) ab', () => {
+  const s = createStore(fakeStorage());
+  assert.throws(() => s.importJson('{"version":1,"cards":[],"gaps":[]}'), /Keine gültige Sicherung/);
+});

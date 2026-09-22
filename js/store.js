@@ -12,6 +12,10 @@ function normalize(d) {
   return { ...e, ...d, settings: { ...e.settings, ...(d.settings ?? {}) } };
 }
 
+function isPlainObject(x) {
+  return x !== null && typeof x === 'object' && !Array.isArray(x);
+}
+
 export function createStore(storage = globalThis.localStorage, key = 'lernapp.v1') {
   return {
     load() {
@@ -30,7 +34,7 @@ export function createStore(storage = globalThis.localStorage, key = 'lernapp.v1
     },
     importJson(text, keepKey = '') {
       const d = JSON.parse(text);
-      if (d?.version !== VERSION || typeof d.cards !== 'object' || !Array.isArray(d.gaps)) {
+      if (d?.version !== VERSION || !isPlainObject(d.cards) || !Array.isArray(d.gaps) || (d.units !== undefined && !isPlainObject(d.units))) {
         throw new Error('Keine gültige Sicherung der Lern-App');
       }
       const doc = normalize(d);

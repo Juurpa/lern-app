@@ -1,4 +1,5 @@
 import { h, md, mdInline, enhance, esc } from '../render.js';
+import { prepareCalc, checkAnswer, formatNumber } from '../calc.js';
 
 const MODE_LABEL = { free: 'Freitext', voice: 'Erklären', code: 'Code', calc: 'Rechnen', mc: 'Multiple Choice', cloze: 'Lückentext', why: 'Warum?', bridge: 'Brücke' };
 const norm = s => String(s).trim().toLowerCase().replace(/\s+/g, ' ');
@@ -24,6 +25,7 @@ export function renderCard(root, { card, mode, fachLabel, onRated }) {
   root.replaceChildren(el);
   const [q, work, reveal, rate] = ['.q', '.work', '.reveal', '.rate-slot'].map(s => el.querySelector(s));
   let hinted = false;
+  let answer = ''; const t0 = Date.now();
 
   const showBack = () => {
     reveal.hidden = false;
@@ -32,7 +34,7 @@ export function renderCard(root, { card, mode, fachLabel, onRated }) {
   };
   const showRating = suggest => {
     rate.hidden = false;
-    rate.replaceChildren(ratingBar(suggest, button => onRated({ button, mode, hinted })));
+    rate.replaceChildren(ratingBar(suggest, button => onRated({ button, mode, hinted, answer, ms: Date.now() - t0 })));
     rate.scrollIntoView({ behavior: 'smooth', block: 'end' });
   };
 
@@ -42,6 +44,7 @@ export function renderCard(root, { card, mode, fachLabel, onRated }) {
     for (const i of shuffle(card.mc.options.map((_, k) => k))) {
       const b = h(`<button class="opt" data-i="${i}">${mdInline(card.mc.options[i])}</button>`);
       b.onclick = () => {
+        answer = card.mc.options[i];
         const right = i === correctIdx;
         work.querySelectorAll('.opt').forEach(o => { o.disabled = true; if (Number(o.dataset.i) === correctIdx) o.classList.add('right'); });
         if (!right) b.classList.add('wrong');
@@ -62,6 +65,7 @@ export function renderCard(root, { card, mode, fachLabel, onRated }) {
     const check = h('<button class="primary big">Prüfen</button>');
     check.onclick = () => {
       const inputs = [...p.querySelectorAll('input')];
+      answer = inputs.map(i => i.value).join(' | ');
       let ok = 0;
       inputs.forEach(i => {
         const want = card.cloze.answers[Number(i.dataset.i)];
@@ -90,14 +94,50 @@ export function renderCard(root, { card, mode, fachLabel, onRated }) {
       if (shown >= hints.length) hintBtn.hidden = true;
     };
     const solve = h('<button class="primary">Lösung zeigen</button>');
-    solve.onclick = () => { solve.remove(); hintBtn.remove(); showBack(); showRating(null); };
+    solve.onclick = () => { answer = work.querySelector('textarea').value; solve.remove(); hintBtn.remove(); showBack(); showRating(null); };
     work.append(hintBox, h('<div class="row"></div>'));
     work.lastChild.append(hintBtn, solve);
+  } else if (mode === 'calc' && card.calc) {
+    const task = prepareCalc(card.calc);
+    q.innerHTML = md(card.front) + md(task.given);
+    const row = h(`<div class="row calc-row"><input type="text" inputmode="decimal" class="calc-input" placeholder="Ergebnis" autocomplete="off"><span class="calc-unit">${esc(task.unit)}</span></div>`);
+    const input = row.querySelector('input');
+    const stepBox = document.createElement('div');
+    let shownSteps = 0;
+    const stepBtn = h(`<button>Rechenweg-Schritt (${task.steps.length})</button>`);
+    stepBtn.hidden = !task.steps.length;
+    stepBtn.onclick = () => {
+      hinted = true;
+      stepBox.append(h(`<div class="panel">🧮 ${md(task.steps[shownSteps++])}</div>`));
+      enhance(stepBox);
+      stepBtn.textContent = `Rechenweg-Schritt (${task.steps.length - shownSteps})`;
+      if (shownSteps >= task.steps.length) stepBtn.hidden = true;
+    };
+    const check = h('<button class="primary">Prüfen</button>');
+    check.onclick = () => {
+      answer = input.value;
+      const r = checkAnswer(input.value, task.expected, task.tolerance);
+      input.disabled = true;
+      input.classList.add(r.ok ? 'right' : 'wrong');
+      check.remove();
+      stepBtn.remove();
+      stepBox.replaceChildren(
+        h(`<div class="panel"><b>${r.ok ? '✅ Richtig' : '❌ Erwartet'}:</b> ${esc(formatNumber(task.expected))} ${esc(task.unit)}</div>`),
+        ...task.steps.map(s => h(`<div class="panel">🧮 ${md(s)}</div>`)),
+      );
+      enhance(stepBox);
+      showBack();
+      showRating(r.ok ? (hinted ? 'yellow' : 'green') : 'red');
+    };
+    const buttons = h('<div class="row"></div>');
+    buttons.append(stepBtn, check);
+    work.append(row, stepBox, buttons);
   } else {
     q.innerHTML = mode === 'why' && card.why ? `<div class="muted">${md(card.front)}</div>${md(`**${card.why}**`)}` : md(card.front);
     work.append(h(`<textarea placeholder="${mode === 'voice' ? 'Laut erklären und Stichpunkte tippen …' : 'Erst selbst antworten …'}"></textarea>`));
     const go = h('<button class="primary big">Aufdecken</button>');
     go.onclick = () => {
+      answer = work.querySelector('textarea').value;
       go.remove();
       showBack();
       if (!card.keyPoints?.length) return showRating(null);

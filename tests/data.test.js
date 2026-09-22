@@ -56,3 +56,26 @@ test('Units ohne Pflichtfelder werden verworfen, Rest nach order sortiert', () =
   assert.deepEqual(r.units.map(u => u.id), ['U1', 'U2']);
   assert.equal(r.errors.length, 1);
 });
+
+const calcOk = { vars: { a: [1, 3, 1] }, given: 'a = [[a]]', solution: 'a*2', unit: 'x' };
+
+test('calc-Karte mit gültiger Aufgabe bleibt', () => {
+  const r = validateData({ meta, units, cards: [{ ...ok, examMode: 'calc', calc: calcOk }] });
+  assert.equal(r.cards.length, 1);
+});
+
+test('calc-Karte ohne oder mit kaputter Aufgabe wird verworfen', () => {
+  const r = validateData({ meta, units, cards: [
+    { ...ok, id: 'A', examMode: 'calc' },
+    { ...ok, id: 'B', examMode: 'calc', calc: { ...calcOk, solution: 'a*b' } },
+  ] });
+  assert.equal(r.cards.length, 0);
+  assert.equal(r.errors.length, 2);
+});
+
+test('kaputtes calc an Nicht-calc-Karte wird entfernt (Warnung)', () => {
+  const r = validateData({ meta, units, cards: [{ ...ok, calc: { ...calcOk, given: '' } }] });
+  assert.equal(r.cards.length, 1);
+  assert.equal(r.cards[0].calc, undefined);
+  assert.equal(r.warnings.length, 1);
+});

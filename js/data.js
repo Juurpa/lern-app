@@ -1,3 +1,5 @@
+import { checkCalcSpec } from './calc.js';
+
 export const EXAM_MODES = ['free', 'voice', 'code', 'calc'];
 
 export const DATA_FILES = {
@@ -20,6 +22,7 @@ function checkCard(c, unitIds, faecher) {
   if (c.unit && !unitIds.has(c.unit)) errors.push(`${id}: unbekannte Unit ${c.unit}`);
   if (c.examMode && !EXAM_MODES.includes(c.examMode)) errors.push(`${id}: ungültiger examMode ${c.examMode}`);
   if (c.examMode === 'code' && !c.code?.solution) errors.push(`${id}: code.solution fehlt`);
+  if (c.examMode === 'calc' && !c.calc) errors.push(`${id}: calc fehlt`);
 
   const card = { ...c };
   if (card.mc && !(Array.isArray(card.mc.options) && card.mc.options.includes(card.mc.correct))) {
@@ -31,6 +34,13 @@ function checkCard(c, unitIds, faecher) {
     if (gaps === 0 || gaps !== card.cloze.answers?.length) {
       warnings.push(`${id}: Lückenzahl ≠ answers – Lückentext entfernt`);
       delete card.cloze;
+    }
+  }
+  if (card.calc) {
+    const problems = checkCalcSpec(card.calc);
+    if (problems.length) {
+      if (card.examMode === 'calc') errors.push(...problems.map(p => `${id}: ${p}`));
+      else { warnings.push(`${id}: ${problems[0]} – Rechenaufgabe entfernt`); delete card.calc; }
     }
   }
   return { card, errors, warnings };

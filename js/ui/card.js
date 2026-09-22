@@ -1,4 +1,4 @@
-import { h, md, enhance, esc } from '../render.js';
+import { h, md, mdInline, enhance, esc } from '../render.js';
 
 const MODE_LABEL = { free: 'Freitext', voice: 'Erklären', code: 'Code', calc: 'Rechnen', mc: 'Multiple Choice', cloze: 'Lückentext', why: 'Warum?', bridge: 'Brücke' };
 const norm = s => String(s).trim().toLowerCase().replace(/\s+/g, ' ');
@@ -38,17 +38,19 @@ export function renderCard(root, { card, mode, fachLabel, onRated }) {
 
   if (mode === 'mc') {
     q.innerHTML = md(card.mc.stem || card.front);
-    for (const opt of shuffle(card.mc.options)) {
-      const b = h(`<button class="opt">${esc(opt)}</button>`);
+    const correctIdx = card.mc.options.indexOf(card.mc.correct);
+    for (const i of shuffle(card.mc.options.map((_, k) => k))) {
+      const b = h(`<button class="opt" data-i="${i}">${mdInline(card.mc.options[i])}</button>`);
       b.onclick = () => {
-        const right = opt === card.mc.correct;
-        work.querySelectorAll('.opt').forEach(o => { o.disabled = true; if (o.textContent === card.mc.correct) o.classList.add('right'); });
+        const right = i === correctIdx;
+        work.querySelectorAll('.opt').forEach(o => { o.disabled = true; if (Number(o.dataset.i) === correctIdx) o.classList.add('right'); });
         if (!right) b.classList.add('wrong');
         showBack();
         showRating(right ? 'green' : 'red');
       };
       work.append(b);
     }
+    enhance(work);
   } else if (mode === 'cloze') {
     q.innerHTML = md(card.front);
     const p = document.createElement('p');

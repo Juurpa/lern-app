@@ -17,6 +17,7 @@ function route() {
 }
 
 async function main() {
+  navigator.storage?.persist?.().catch(() => {}); // Fortschritt vor automatischer Löschung schützen
   ctx.data = await loadData(p => fetch(p).then(r => {
     if (!r.ok) throw new Error(`${p}: HTTP ${r.status}`);
     return r.json();

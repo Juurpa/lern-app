@@ -69,7 +69,7 @@ export function buildSession({ cards, units, doc, meta, now, size = 30, newLimit
   const freshAlloc = allocate(countsOf(freshGroups), weights, Math.max(0, Math.min(newLimit, size - dueCards.length)));
   const freshCards = Object.entries(freshAlloc).flatMap(([f, n]) => freshGroups[f].slice(0, n));
 
-  const seq = [...interleave(dueCards, meta.maxRun ?? 3), ...interleave(freshCards, meta.maxRun ?? 3)];
+  const seq = interleave([...dueCards, ...freshCards], meta.maxRun ?? 3);
   const items = [];
   const introduced = new Set();
   for (const c of seq) {

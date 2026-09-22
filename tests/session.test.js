@@ -58,3 +58,36 @@ test('insertRelearn fügt 5 Positionen später ein bzw. am Ende', () => {
   assert.equal(insertRelearn(q, 1, item).findIndex(x => x.cardId === 'X'), 6);
   assert.equal(insertRelearn(q.slice(0, 3), 2, item).at(-1).cardId, 'X');
 });
+
+test('buildSession: max-3 constraint respects seam between due and fresh (interleave globally)', () => {
+  // 3 due INF2 + 5 fresh INF2 + 2 fresh MTS
+  const cards = [
+    mk('due1', 'INF2', 'U-I'),
+    mk('due2', 'INF2', 'U-I'),
+    mk('due3', 'INF2', 'U-I'),
+    mk('fresh1', 'INF2', 'U-I'),
+    mk('fresh2', 'INF2', 'U-I'),
+    mk('fresh3', 'INF2', 'U-I'),
+    mk('fresh4', 'INF2', 'U-I'),
+    mk('fresh5', 'INF2', 'U-I'),
+    mk('mts1', 'MTS', 'U-M'),
+    mk('mts2', 'MTS', 'U-M'),
+  ];
+  const doc = emptyDoc();
+  doc.cards.due1 = { fsrs: { due: past, reps: 2, stability: 3 }, alt: 2 };
+  doc.cards.due2 = { fsrs: { due: past, reps: 2, stability: 3 }, alt: 2 };
+  doc.cards.due3 = { fsrs: { due: past, reps: 2, stability: 3 }, alt: 2 };
+
+  const s = buildSession({ cards, units, doc, meta, now, size: 30, newLimit: 10 });
+  const cardItems = s.filter(x => x.type === 'card');
+
+  // First card should be due
+  assert.ok(['due1', 'due2', 'due3'].includes(cardItems[0].cardId));
+
+  // No run > 3 of same fach
+  let run = 1;
+  for (let i = 1; i < cardItems.length; i++) {
+    run = cardItems[i].fach === cardItems[i - 1].fach ? run + 1 : 1;
+    assert.ok(run <= 3, `Run of ${cardItems[i].fach} exceeded 3 at position ${i}: ${run}`);
+  }
+});

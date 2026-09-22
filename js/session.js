@@ -18,6 +18,9 @@ export function calendarDaysUntil(examDate, now) {
   return Math.round((examDay(examDate) - today) / DAY);
 }
 
+// Neue Karten gelten pro 15-min-Session (bis „Weiter“), nicht pro Queue-Aufbau.
+export const sessionNewLimit = (settings, shownNew) => Math.max(0, (settings.newPerSession ?? 0) - shownNew);
+
 // Nötiges Tempo: verbleibende neue Karten auf die Tage bis zum Vortag der Prüfung verteilen.
 export function newPerDayNeeded(freshCount, examDate, now) {
   if (!freshCount || examFinished(examDate, now)) return 0;

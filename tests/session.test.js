@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { allocate, interleave, buildSession, insertRelearn, examFinished, calendarDaysUntil, newPerDayNeeded } from '../js/session.js';
+import { allocate, interleave, buildSession, insertRelearn, examFinished, calendarDaysUntil, newPerDayNeeded, sessionNewLimit } from '../js/session.js';
 import { emptyDoc } from '../js/store.js';
 
 const meta = { faecher: { INF2: { exam: '2026-10-07' }, MTS: { exam: '2026-10-07' } } };
@@ -118,4 +118,11 @@ test('newPerDayNeeded: neue Karten auf die Tage bis zum Vortag verteilen', () =>
   assert.equal(newPerDayNeeded(5, '2026-10-07', new Date(2026, 9, 6, 10)), 5); // min. 1 Tag
   assert.equal(newPerDayNeeded(0, '2026-10-07', new Date(2026, 8, 22)), 0);
   assert.equal(newPerDayNeeded(10, '2026-10-07', new Date(2026, 9, 8, 10)), 0); // Prüfung vorbei
+});
+
+test('sessionNewLimit: neue Karten pro 15-min-Session, nicht pro Queue-Aufbau', () => {
+  assert.equal(sessionNewLimit({ newPerSession: 15 }, 0), 15);
+  assert.equal(sessionNewLimit({ newPerSession: 15 }, 9), 6);
+  assert.equal(sessionNewLimit({ newPerSession: 15 }, 20), 0);
+  assert.equal(emptyDoc().settings.newPerSession, 15);
 });

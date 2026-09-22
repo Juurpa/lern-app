@@ -40,7 +40,7 @@ test('Import lehnt fremde Dateien ab', () => {
 test('fehlende Settings werden mit Standardwerten ergänzt', () => {
   const st = fakeStorage();
   st.setItem('lernapp.v1', JSON.stringify({ version: 1, cards: {}, units: {}, gaps: [], settings: {} }));
-  assert.equal(createStore(st).load().settings.newPerSession, 10);
+  assert.equal(createStore(st).load().settings.newPerSession, 15);
 });
 
 test('importJson lehnt cards: null ab', () => {

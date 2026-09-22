@@ -8,7 +8,7 @@ export function renderSettings({ data, store, root }) {
   const el = h(`<section>
     <h1>Einstellungen</h1>
     <div class="panel">
-      <label>Neue Karten pro Session<input type="number" id="newPer" min="0" max="50" value="${esc(s.newPerSession)}"></label>
+      <label>Neue Karten pro 15-min-Session<input type="number" id="newPer" min="0" max="50" value="${esc(s.newPerSession)}"></label>
     </div>
     <div class="panel">
       <h3>Gemini (optional)</h3>

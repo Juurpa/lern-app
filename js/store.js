@@ -3,7 +3,7 @@ export const VERSION = 1;
 export function emptyDoc() {
   return {
     version: VERSION, cards: {}, units: {}, gaps: [],
-    settings: { newPerSession: 10, geminiKey: '', geminiModel: 'gemini-flash-latest' },
+    settings: { newPerSession: 15, geminiKey: '', geminiModel: 'gemini-flash-latest' },
   };
 }
 

@@ -1,5 +1,5 @@
 import { h } from '../render.js';
-import { buildSession, insertRelearn } from '../session.js';
+import { buildSession, insertRelearn, sessionNewLimit } from '../session.js';
 import { review, chooseMode } from '../scheduler.js';
 import { addGap, recordCorrect } from '../gaps.js';
 import { renderCard } from './card.js';
@@ -12,12 +12,13 @@ export function renderLearn({ data, store, root }) {
   const done = new Set();
   const stats = { red: 0, yellow: 0, green: 0 };
   let started = Date.now();
+  let shownNew = 0; // neue Karten in der aktuellen 15-min-Session
   let queue = [];
   let pos = 0;
 
   const build = () => buildSession({
     cards: data.cards, units: data.units, doc, meta: data.meta, now: new Date(),
-    newLimit: doc.settings.newPerSession, exclude: done,
+    newLimit: sessionNewLimit(doc.settings, shownNew), exclude: done,
   });
 
   function save() {
@@ -33,7 +34,7 @@ export function renderLearn({ data, store, root }) {
       <p class="muted">${total} Karten in ${Math.round((Date.now() - started) / 60000)} min.</p>
       <div class="row">${empty ? '' : '<button class="primary" id="more">Weiter (15 min)</button>'}<a class="btn" href="#/">Schluss</a></div>
     </section>`);
-    el.querySelector('#more')?.addEventListener('click', () => { started = Date.now(); next(); });
+    el.querySelector('#more')?.addEventListener('click', () => { started = Date.now(); shownNew = 0; next(); });
     root.replaceChildren(el);
   }
 
@@ -60,6 +61,7 @@ export function renderLearn({ data, store, root }) {
       card, mode, fachLabel,
       onRated: ({ button, hinted }) => {
         const now = new Date();
+        if (!doc.cards[card.id]) shownNew++;
         doc.cards[card.id] = review(doc.cards[card.id], { button, mode, hinted }, now, exam);
         if (button === 'red') {
           doc.gaps = addGap(doc.gaps, card, now);

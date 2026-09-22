@@ -35,6 +35,8 @@ pre { overflow-x: auto; border-radius: 10px; }
 .opt.wrong { border-color: var(--red); background: color-mix(in srgb, var(--red) 15%, transparent); }
 .cloze-input { display: inline-block; width: 9em; padding: 2px 6px; margin: 0 2px; }
 .cloze-input.right { border-color: var(--green); } .cloze-input.wrong { border-color: var(--red); }
+label { display: block; margin-bottom: 10px; }
+label > input { margin-top: 4px; }
 .checklist label { display: flex; gap: 10px; align-items: flex-start; padding: 6px 0; }
 .checklist input { width: 22px; height: 22px; flex: none; margin-top: 2px; }
 .warn { border-left: 4px solid var(--yellow); padding: 8px 12px; background: var(--surface); margin-bottom: var(--gap); }

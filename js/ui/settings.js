@@ -8,7 +8,7 @@ export function renderSettings({ data, store, root }) {
   const el = h(`<section>
     <h1>Einstellungen</h1>
     <div class="panel">
-      <label>Neue Karten pro Session<input type="number" id="newPer" min="0" max="50" value="${s.newPerSession}"></label>
+      <label>Neue Karten pro Session<input type="number" id="newPer" min="0" max="50" value="${esc(s.newPerSession)}"></label>
     </div>
     <div class="panel">
       <h3>Gemini (optional)</h3>
@@ -28,9 +28,14 @@ export function renderSettings({ data, store, root }) {
     <nav class="bottom"><a class="btn primary" href="#/" id="save">Speichern &amp; zurück</a></nav>
   </section>`);
   const q = sel => el.querySelector(sel);
-  q('#save').onclick = () => {
+  q('#save').onclick = e => {
     doc.settings = { ...s, newPerSession: Math.max(0, Number(q('#newPer').value) || 0), geminiKey: q('#key').value.trim(), geminiModel: q('#model').value.trim() || s.geminiModel };
-    store.save(doc);
+    try {
+      store.save(doc);
+    } catch (err) {
+      e.preventDefault();
+      alert(`Speichern fehlgeschlagen: ${err.message}`);
+    }
   };
   q('#exp').onclick = () => download(`lernapp-${new Date().toISOString().slice(0, 10)}.json`, store.exportJson(doc));
   q('#imp').onchange = async e => {

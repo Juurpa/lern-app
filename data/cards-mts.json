@@ -460,7 +460,7 @@
   "unit": "MTS-K3",
   "examMode": "free",
   "front": "Warum folgt die Lunge den Bewegungen des Thorax? Beschreibe **Pleurakopplung** und die **Kräfteverhältnisse**.",
-  "back": "- **Pleuraspalt:** flüssigkeitsgefüllter Spalt (**5–10 ml**) zwischen Thoraxinnenfläche und Lunge.\n- **Horizontal** beweglich, **vertikal nicht lösbar** (vgl. benetzte Glasplatten) → die Lunge folgt Veränderungen des Thoraxinnenvolumens.\n- **Zentripetale Kräfte (nach innen):** Lunge – Eigenelastizität, Oberflächenspannung der Alveolen.\n- **Zentrifugale Kräfte (nach außen):** Thoraxwand (Skelett, Muskulatur).\n- Der **subatmosphärische Druck im Pleuraspalt** hält die Lunge offen – Bedingung: **intakte Pleurahöhle**.",
+  "back": "- **Pleuraspalt:** flüssigkeitsgefüllter Spalt (**5–10 ml**) zwischen Thoraxinnenfläche und Lunge.\n- **Horizontal** beweglich, **vertikal nicht lösbar** (vgl. benetzte Glasplatten) → die Lunge folgt Veränderungen des Thoraxinnenvolumens.\n- **Zentripetale Kräfte (nach innen):** Lunge – Eigenelastizität, Oberflächenspannung der Alveolen.\n- **Zentrifugale Kräfte (nach außen):** Thoraxwand (Skelett, Muskulatur).\n- Der **subatmosphärische Druck im Pleuraspalt** hält die Lunge offen – Bedingung: **intakte Pleurahöhle**.\n\n**Warum subatmosphärisch?** Lunge (nach innen) und Thoraxwand (nach außen) ziehen in entgegengesetzte Richtungen am abgeschlossenen Pleuraspalt → dort entsteht ein **Sog**, der Pleuradruck ist **negativ** (Folie 13: −0,5 … −0,8 kPa). Ist die Pleurahöhle **eröffnet**, entfällt die Bedingung: die Kopplung geht verloren, die Lunge folgt ihrer Eigenelastizität nach innen und **fällt zusammen**, statt dem Thorax zu folgen.",
   "keyPoints": [
    "Flüssigkeitsgefüllter Pleuraspalt (5–10 ml)",
    "Horizontal verschieblich, vertikal nicht lösbar (benetzte Glasplatten)",
@@ -478,7 +478,7 @@
    ],
    "correct": "Die Thoraxwand (Skelett und Muskulatur)"
   },
-  "source": "MTS__03_RS2.pdf, Folie 7, 12"
+  "source": "MTS__03_RS2.pdf, Folie 7, 12, 13"
  },
  {
   "id": "MTS-K3-02",
@@ -494,10 +494,10 @@
    "Aktiv: Mm. intercostales interni, Bauchmuskulatur"
   ],
   "cloze": {
-   "text": "Bei der Inspiration ziehen sich die Mm. intercostales {{1}} zusammen und das {{2}} senkt seine Kuppel; die Ruhe-Exspiration erfolgt maßgeblich {{3}}.",
+   "text": "Bei der Inspiration ziehen sich die Mm. intercostales {{1}} zusammen; die Zwerchfellatmung vergrößert den Thorax {{2}}, die Rippenatmung sagittal und lateral. Die Ruhe-Exspiration erfolgt maßgeblich {{3}}.",
    "answers": [
     "externi",
-    "Zwerchfell",
+    "vertikal",
     "passiv"
    ]
   },
@@ -591,10 +591,11 @@
    "correct": "RV + ERV"
   },
   "cloze": {
-   "text": "Die Vitalkapazität umfasst IRV, AZV und {{1}}; die Totalkapazität enthält zusätzlich das {{2}}.",
+   "text": "Typische Werte (20–30-jährige Männer): totale Lungenkapazität ca. {{1}} l, funktionelle Residualkapazität ca. {{2}} l, Inspirationskapazität ca. {{3}} l.",
    "answers": [
-    "ERV",
-    "Residualvolumen"
+    "6",
+    "3",
+    "3"
    ]
   },
   "source": "MTS__03_RS2.pdf, Folie 17–18"
@@ -675,7 +676,7 @@
   "unit": "MTS-K3",
   "examMode": "free",
   "front": "Was ist ein **Totraum**? Unterscheide **anatomischen** und **funktionellen** Totraum.",
-  "back": "**Totraum:** Anteile der Atemwege und Alveolarräume, die **belüftet** werden, in denen aber **kein Gasaustausch** stattfindet.\n- **Anatomischer Totraum:** rein **konduktives** System (Nase bzw. Mund, Pharynx, Larynx, Trachea, Bronchien, Bronchiolen), ca. **150 ml**; muss zunächst belüftet werden, erfüllt wichtige Funktionen.\n- **Alveoläre Bereiche**, die belüftet, aber nicht/schlecht durchblutet sind (beim Gesunden vernachlässigbar).\n- **Funktioneller (physiologischer) Totraum** = anatomischer Totraum + nicht durchblutete Bereiche.\n\nDas AZV (350–850 ml) enthält den Totraum – mindestens den anatomischen.",
+  "back": "**Totraum:** Anteile der Atemwege und Alveolarräume, die **belüftet** werden, in denen aber **kein Gasaustausch** stattfindet.\n- **Anatomischer Totraum:** rein **konduktives** System (Nase bzw. Mund, Pharynx, Larynx, Trachea, Bronchien, Bronchiolen), ca. **150 ml**; muss zunächst belüftet werden, erfüllt wichtige Funktionen.\n- **Alveoläre Bereiche**, die belüftet, aber nicht/schlecht durchblutet sind (beim Gesunden vernachlässigbar).\n- **Funktioneller (physiologischer) Totraum** = anatomischer Totraum + nicht durchblutete Bereiche.\n\nDas AZV (350–850 ml) enthält den Totraum – mindestens den anatomischen (Folie 20). Weil der anatomische Totraum bei jedem Atemzug **zuerst belüftet werden muss** (Folie 19), erreicht nur der Anteil des AZV **jenseits der ca. 150 ml Totraum** die Alveolen – ein kleineres AZV brächte keine Frischluft zum Gasaustausch.",
   "keyPoints": [
    "Belüftet, aber kein Gasaustausch",
    "Anatomisch: konduktive Atemwege, ca. 150 ml",
@@ -705,7 +706,7 @@
    "f_resp 7–20 /min, stark variabel"
   ],
   "mc": {
-   "stem": "Welcher Bereich gilt laut Vorlesung für die **Respirationsfrequenz** in Ruhe?",
+   "stem": "Welcher Bereich gilt laut Vorlesung für die **Respirationsfrequenz**?",
    "options": [
     "7–20 Atemzüge/min",
     "20–40 Atemzüge/min",
@@ -796,12 +797,12 @@
   "fach": "MTS",
   "unit": "MTS-K3",
   "examMode": "calc",
-  "front": "Gegeben sind die **Gesamtcompliance** des respiratorischen Systems und die **thorakale Compliance**. Berechne die Compliance **eines Lungenflügels** (außer Lunge und Thorax alle Compliances vernachlässigbar; beide Flügel gleich).",
-  "back": "1. Lunge und Thorax sind **in Reihe** → $\\frac{1}{C_L} = \\frac{1}{C_{ges}} - \\frac{1}{C_{Th}}$.\n2. Die beiden Lungenflügel liegen am **selben Druck** und ihre Volumina addieren sich → **parallel** → $C_L = 2 \\cdot C_{Flügel}$, also $C_{Flügel} = C_L/2$.\n\nÜbungswerte: $1/C_L = 8 - 2 = 6$ mbar/L → $C_L ≈ 0{,}167$ L/mbar → **$C_{Flügel} ≈ 0{,}083$ L/mbar** (≈ 83 ml/mbar).\n\n*Das Übungsblatt enthält keine Musterlösung; Ergebnis nachgerechnet. Annahme: gleich große Flügel.*",
+  "front": "Gegeben sind die **Gesamtcompliance** des respiratorischen Systems und die **thorakale Compliance**. Berechne die Compliance **eines Lungenflügels** in **ml/mbar** (außer Lunge und Thorax alle Compliances vernachlässigbar; beide Flügel gleich).",
+  "back": "1. Lunge und Thorax sind **in Reihe** → $\\frac{1}{C_L} = \\frac{1}{C_{ges}} - \\frac{1}{C_{Th}}$.\n2. Die beiden Lungenflügel liegen am **selben Druck** und ihre Volumina addieren sich → **parallel** → $C_L = 2 \\cdot C_{Flügel}$, also $C_{Flügel} = C_L/2$.\n\nÜbungswerte: $1/C_L = 8 - 2 = 6$ mbar/L → $C_L ≈ 0{,}167$ L/mbar → $C_{Flügel} ≈ 0{,}0833$ L/mbar = **≈ 83,3 ml/mbar**.\n\n*Das Übungsblatt enthält keine Musterlösung; Ergebnis nachgerechnet. Annahme: gleich große Flügel.*",
   "keyPoints": [
    "Lunge + Thorax in Reihe: 1/C_L = 1/C_ges − 1/C_Th",
    "Lungenflügel parallel: C_Flügel = C_L/2",
-   "Übung: 0,125 und 0,5 L/mbar → 0,083 L/mbar"
+   "Übung: 0,125 und 0,5 L/mbar → ≈ 83,3 ml/mbar"
   ],
   "calc": {
    "vars": {
@@ -816,20 +817,20 @@
      0.05
     ]
    },
-   "given": "$C_{ges}$ = [[Cges]] L/mbar, $C_{Th}$ = [[CTh]] L/mbar. Gesucht: Compliance eines Lungenflügels.",
-   "solution": "1/(1/Cges - 1/CTh)/2",
-   "unit": "L/mbar",
+   "given": "$C_{ges}$ = [[Cges]] L/mbar, $C_{Th}$ = [[CTh]] L/mbar. Gesucht: Compliance eines Lungenflügels in ml/mbar.",
+   "solution": "1000/(1/Cges - 1/CTh)/2",
+   "unit": "ml/mbar",
    "steps": [
     "Reihenschaltung: $1/C_L = 1/C_{ges} - 1/C_{Th}$ = [[= 1/Cges]] − [[= 1/CTh]] = [[= 1/Cges - 1/CTh]] mbar/L",
     "$C_L$ = 1 / [[= 1/Cges - 1/CTh]] = [[= 1/(1/Cges - 1/CTh)]] L/mbar (beide Flügel)",
-    "Flügel parallel: $C_{Flügel} = C_L/2$ = [[= 1/(1/Cges - 1/CTh)/2]] L/mbar"
+    "Flügel parallel: $C_{Flügel} = C_L/2$ = [[= 1/(1/Cges - 1/CTh)/2]] L/mbar = [[= 1000/(1/Cges - 1/CTh)/2]] ml/mbar"
    ],
    "example": {
     "vars": {
      "Cges": 0.125,
      "CTh": 0.5
     },
-    "result": 0.0833
+    "result": 83.33
    }
   },
   "source": "MTS_Ue__02_RS2.pdf, Transferfrage „Compliance“; MTS__03_RS2.pdf, Folie 25"
@@ -913,7 +914,7 @@
   "unit": "MTS-K3",
   "examMode": "calc",
   "front": "In der Trachea (Generation 0) strömt Luft mit $v_0$. Bei jeder Aufteilung entstehen **zwei** Äste, der Durchmesser sinkt je Generation um $k$ %. Wie groß ist die **Luftflussgeschwindigkeit in Generation $n$** (idealisiert: konstante Strömung, kreisrunder Querschnitt, keine Turbulenzen)?",
-  "back": "**Kontinuitätsgleichung:** Der Volumenstrom bleibt gleich, er verteilt sich auf den **Gesamtquerschnitt** der Generation:\n\n$$v_n = v_0 \\cdot \\frac{A_0}{2^n \\cdot A_n} = \\frac{v_0}{2^n \\cdot (1 - k)^{2n}}$$\n\n(Fläche ∝ Durchmesser², $k$ als Anteil). Übung: $v_0$ = 1 m/s, $k$ = 35 %, $n$ = 2 → $2^2 \\cdot 0{,}65^4 = 0{,}714$ → **$v_2 ≈ 1{,}40$ m/s**.\n\nDer Gesamtquerschnitt **schrumpft** hier je Generation (2 · 0,65² = 0,845 < 1) → die Geschwindigkeit **steigt**. Trachea-Durchmesser (1 cm) und Widerstand (2 mbar·s/l) werden nicht gebraucht.\n\n*Generationszählung: Trachea = Generation 0 (MTS__02_RS1). Zählt man die Trachea als Generation 1, ergäbe sich 1,18 m/s. Das Übungsblatt enthält keine Musterlösung.*",
+  "back": "**Kontinuitätsgleichung:** Der Volumenstrom bleibt gleich, er verteilt sich auf den **Gesamtquerschnitt** der Generation:\n\n$$v_n = v_0 \\cdot \\frac{A_0}{2^n \\cdot A_n} = \\frac{v_0}{2^n \\cdot (1 - k)^{2n}}$$\n\n(Fläche ∝ Durchmesser², $k$ als Anteil). Übung: $v_0$ = 1 m/s, $k$ = 35 %, $n$ = 2 → $2^2 \\cdot 0{,}65^4 = 0{,}714$ → **$v_2 ≈ 1{,}40$ m/s**.\n\nDer Gesamtquerschnitt **schrumpft** hier je Generation (2 · 0,65² = 0,845 < 1) → die Geschwindigkeit **steigt**. **Achtung, nur Modellrechnung:** Real schrumpft der Gesamtquerschnitt $S(z)$ nur in den ersten Generationen (Gen. 0 → 2: 2,54 → 2,13 cm²), danach wächst er stark (Gen. 16: 180 cm², Alveolarbereich: 5880 cm²) → in der Peripherie wird die Strömung sehr langsam (MTS__02_RS1, Folie 14).\n\nTrachea-Durchmesser (1 cm) und Widerstand (2 mbar·s/l) werden nicht gebraucht.\n\n*Generationszählung: Trachea = Generation 0 (MTS__02_RS1). Zählt man die Trachea als Generation 1, ergäbe sich 1,18 m/s. Das Übungsblatt enthält keine Musterlösung.*",
   "keyPoints": [
    "Kontinuität: gleicher Volumenstrom über Gesamtquerschnitt",
    "v_n = v₀ / (2ⁿ · (1−k)²ⁿ)",
@@ -955,7 +956,7 @@
     "result": 1.4
    }
   },
-  "source": "MTS_Ue__02_RS2.pdf, Transferfrage „Luftfluss“ (Generationszählung: MTS__02_RS1.pdf, Folie 14)"
+  "source": "MTS_Ue__02_RS2.pdf, Transferfrage „Luftfluss“ (Generationszählung und S(z): MTS__02_RS1.pdf, Folie 14)"
  },
  {
   "id": "MTS-K3-18",

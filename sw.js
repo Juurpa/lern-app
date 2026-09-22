@@ -1,7 +1,7 @@
 const CACHE = 'lernapp-v4';
 const SHELL = [
   './', 'index.html', 'manifest.webmanifest', 'icon.svg', 'icon-180.png', 'icon-192.png', 'icon-512.png', 'css/app.css',
-  'js/app.js', 'js/data.js', 'js/gaps.js', 'js/render.js', 'js/scheduler.js', 'js/session.js', 'js/store.js',
+  'js/app.js', 'js/calc.js', 'js/data.js', 'js/gaps.js', 'js/render.js', 'js/scheduler.js', 'js/session.js', 'js/store.js',
   'js/ui/card.js', 'js/ui/gaps.js', 'js/ui/learn.js', 'js/ui/settings.js', 'js/ui/start.js', 'js/ui/unit.js',
   'data/bridges.json', 'data/cards-inf2.json', 'data/cards-mts.json', 'data/cards-radar.json',
   'data/meta.json', 'data/synthesis.json', 'data/units.json'

@@ -24,9 +24,13 @@ test('applyUpdate lädt alle Datendateien frisch in den App-Cache', async () => 
   const cache = { put: async (u) => put.push(u) };
   const cachesApi = { keys: async () => ['andere', 'lernapp-v5'], open: async name => { assert.equal(name, 'lernapp-v5'); return cache; } };
   const fetched = [];
-  await applyUpdate({ cachesApi, fetchFn: async (u, o) => { fetched.push(o.cache); return { ok: true, clone() { return this; } }; }, urls: ['data/a.json', 'data/version.json'] });
+  await applyUpdate({ cachesApi, fetchFn: async (u, o) => { fetched.push({ u, cache: o.cache }); return { ok: true, clone() { return this; } }; }, urls: ['data/a.json', 'data/version.json'] });
+  // Der Fetch muss den SW-Cache umgehen (?check= + no-store), sonst schreibt der SW den alten Stand zurück.
+  assert.match(fetched[0].u, /^data\/a\.json\?check=\d+$/);
+  assert.match(fetched[1].u, /^data\/version\.json\?check=\d+$/);
+  assert.deepEqual(fetched.map(f => f.cache), ['no-store', 'no-store']);
+  // Im App-Cache landet trotzdem die reine URL (ohne ?check=), damit die App sie offline unter dem gewohnten Key findet.
   assert.deepEqual(put, ['data/a.json', 'data/version.json']);
-  assert.deepEqual(fetched, ['reload', 'reload']);
 });
 
 test('applyUpdate bricht bei HTTP-Fehler ab', async () => {

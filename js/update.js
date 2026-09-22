@@ -18,8 +18,9 @@ export async function applyUpdate({ cachesApi = globalThis.caches, fetchFn = glo
   const name = cachesApi ? (await cachesApi.keys()).find(k => k.startsWith('lernapp-')) : undefined;
   const cache = name ? await cachesApi.open(name) : null;
   for (const u of urls) {
-    const r = await fetchFn(u, { cache: 'reload' });
+    // SW-Cache umgehen (Stale-while-revalidate liefert sonst weiter den alten Stand zurück).
+    const r = await fetchFn(`${u}?check=${Date.now()}`, { cache: 'no-store' });
     if (!r.ok) throw new Error(`${u}: HTTP ${r.status}`);
-    if (cache) await cache.put(u, r.clone());
+    if (cache) await cache.put(u, r.clone()); // App-Cache-Key bleibt die reine URL
   }
 }

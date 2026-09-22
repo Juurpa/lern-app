@@ -1,0 +1,7 @@
+{
+  "name": "lern-app",
+  "private": true,
+  "type": "module",
+  "scripts": { "test": "node --test", "convert": "node tools/convert-inf2.mjs" },
+  "devDependencies": { "ts-fsrs": "5.4.2" }
+}

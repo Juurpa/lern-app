@@ -1,0 +1,10 @@
+{
+  "faecher": {
+    "INF2":  { "label": "Informatik 2", "short": "INF2", "exam": "2026-10-07", "examMode": "free" },
+    "MTS":   { "label": "Medizintechnische Systeme", "short": "MTS", "exam": "2026-10-07", "examMode": "free" },
+    "RADAR": { "label": "Radartechnik", "short": "Radar", "exam": "2026-10-08", "examMode": "voice" }
+  },
+  "sessionMinutes": 15,
+  "maxRun": 3,
+  "relearnGap": 5
+}

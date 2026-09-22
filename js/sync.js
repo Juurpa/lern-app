@@ -38,9 +38,20 @@ export function createSync({ storage = globalThis.localStorage, fetchFn = global
     pending: () => readQueue().length,
     status,
     push(ev) {
-      const r = enqueue(readQueue(), ev);
-      writeQueue(r.queue);
-      if (r.dropped) setStatus({ dropped: status().dropped + r.dropped });
+      try {
+        const r = enqueue(readQueue(), ev);
+        writeQueue(r.queue);
+        if (r.dropped) setStatus({ dropped: status().dropped + r.dropped });
+      } catch {
+        // Speicher voll (z. B. QuotaExceededError): älteste Hälfte verwerfen und einmal erneut versuchen.
+        try {
+          const q = readQueue();
+          const half = q.slice(Math.ceil(q.length / 2));
+          writeQueue(enqueue(half, ev).queue);
+        } catch {
+          try { setStatus({ lastError: 'Speicher voll – Ereignis nicht gespeichert' }); } catch { /* auch Status nicht schreibbar: aufgeben, aber nie werfen */ }
+        }
+      }
     },
     flush() {
       if (running) return running;

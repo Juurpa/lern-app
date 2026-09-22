@@ -75,3 +75,12 @@ test('kaputte Warteschlange im Speicher gilt als leer', () => {
   st.setItem(QUEUE_KEY, '{kaputt');
   assert.equal(createSync({ storage: st, fetchFn: async () => ({ ok: true }), getConfig: () => ({}) }).pending(), 0);
 });
+
+test('push() wirft nicht, wenn der Speicher voll ist (QUEUE_KEY-Schreibfehler)', () => {
+  const st = fakeStorage();
+  const realSetItem = st.setItem;
+  st.setItem = (k, v) => { if (k === QUEUE_KEY) throw new Error('QuotaExceededError'); return realSetItem(k, v); };
+  const s = createSync({ storage: st, fetchFn: async () => ({ ok: true }), getConfig: () => ({}) });
+  assert.doesNotThrow(() => s.push(ev(1)));
+  assert.equal(s.status().lastError, 'Speicher voll – Ereignis nicht gespeichert');
+});

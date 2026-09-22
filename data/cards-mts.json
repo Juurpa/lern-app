@@ -1072,5 +1072,741 @@
    ]
   },
   "source": "MTS__03_RS2.pdf, Folie 36–40"
+ },
+ {
+  "id": "MTS-K4-01",
+  "fach": "MTS",
+  "unit": "MTS-K4",
+  "examMode": "free",
+  "front": "Was ist eine **respiratorische Insuffizienz**, welche **zwei Typen** unterscheidet man, und woran erkennt man sie in der **Blutgasanalyse**?",
+  "back": "**Definition:** O₂-Versorgung bzw. CO₂-Abtransport sind nicht mehr sichergestellt. Die Insuffizienz ist der **„Endpunkt“**, leichte Formen der Störungen sind noch keine Insuffizienz.\n\n| | Lungenparenchymversagen | Atempumpenversagen |\n|---|---|---|\n| auch | **Oxygenierungsversagen** | **Ventilationsversagen** |\n| Ursache | Verlust an funktionellem Lungengewebe | mangelnde Druckdifferenz zur Volumenverschiebung: Störung von **Antrieb, Kraft, Mechanik** |\n| Folge | Oxygenierung ↓ → **pO₂ sinkt** | CO₂-Elimination ↓ → **pCO₂ steigt** |\n\n**Ursache vs. Auswirkung (Folie 8):**\n- Lunge gesund, Atempumpe krank: pCO₂ ↑↑, pO₂ unverändert → **primäre Atempumpeninsuffizienz**. Die Pumpe liefert die Volumenverschiebung, die das CO₂ abtransportiert. Die gesunde Lunge oxygeniert weiter, deshalb ist vor allem der pCO₂ betroffen.\n- Lunge krank, Atempumpe gesund: pCO₂ ↑ oder ↓, pO₂ ↓ → **respiratorische Insuffizienz**\n- Lunge und Atempumpe krank: pCO₂ ↑, pO₂ ↓↓ → **sekundäre Atempumpeninsuffizienz**\n\n**Symptome bei drohender Insuffizienz (u. a.):** Tachypnoe (> 35/min), abnehmendes Atemzugvolumen, **Schaukelatmung** (der Brustkorb zieht sich bei der Einatmung zusammen), Einsatz der Atemhilfsmuskulatur, Unruhe, Schwitzen, Tachykardie, Hypertonie, **respiratorische Alkalose** in der BGA (pO₂ ↓, pCO₂ ↓ → dem Blut werden H⁺-Ionen entzogen).\n\n*Widersprüche:* Folie 6 nennt als Tachypnoe-Schwelle > 35/min (Warnzeichen), Folie 20 definiert Tachypnoe ab > 20/min. Die Alkalose (pCO₂ ↓) passt zur Konstellation „Lunge krank, Atempumpe gesund“, **nicht** zum Ventilationsversagen (pCO₂ ↑). *(Diese Zuordnung ist abgeleitet.)*",
+  "keyPoints": [
+   "Insuffizienz: O₂-Versorgung bzw. CO₂-Abtransport nicht mehr gesichert",
+   "Atempumpen-/Ventilationsversagen → pCO₂ ↑",
+   "Parenchym-/Oxygenierungsversagen → pO₂ ↓",
+   "Warnzeichen: Tachypnoe, Schaukelatmung, Atemhilfsmuskulatur"
+  ],
+  "mc": {
+   "stem": "Welcher Blutgasbefund kennzeichnet eine **primäre Atempumpeninsuffizienz** (Lunge gesund)?",
+   "options": [
+    "pCO₂ stark erhöht, pO₂ unverändert",
+    "pCO₂ unverändert, pO₂ stark erniedrigt",
+    "pCO₂ erniedrigt, pO₂ erniedrigt",
+    "pCO₂ und pO₂ unverändert"
+   ],
+   "correct": "pCO₂ stark erhöht, pO₂ unverändert"
+  },
+  "why": "Warum ist bei einem reinen Atempumpenversagen vor allem der pCO₂ und nicht der pO₂ verändert?",
+  "source": "MTS__04_RS3.pdf, Folie 6–8 und 54"
+ },
+ {
+  "id": "MTS-K4-02",
+  "fach": "MTS",
+  "unit": "MTS-K4",
+  "examMode": "free",
+  "front": "Welche **Ursachen eines Ventilationsversagens** unterscheidet man (Schema A–I)?",
+  "back": "Ventilationsversagen = Störung der **„Atempumpe“**.\n\n**Neurologisch/neuromuskulär**\n- **zentral (A, B):** Störungen des Atemzentrums (A) und im Rückenmark (B: oberes Motoneuron)\n- **peripher (C, D, E):** Vorderhornzelle (C), unteres Motoneuron (D), neuromuskuläre Endplatte (E), z. B. gestörte neuromuskuläre Überleitung, **Polyneuritiden** (entzündlich verursachte Erkrankungen mehrerer Nerven), **Muskelschwäche nach Langzeitbeatmung**\n\n**Störungen der Atemmechanik (peripher, F–I)**\n- F: Atemmuskulatur\n- G: veränderte Elastizität von Lunge/Thoraxwand\n- H: Verlust der Integrität der Thoraxwand und/oder Pleurahöhle\n- I: erhöhter Atemwegswiderstand\n\n→ Die Atemmechanik-Störungen werden in **restriktive** und **obstruktive** Ventilationsstörungen eingeteilt.",
+  "keyPoints": [
+   "Zentral: Atemzentrum, Rückenmark (A, B)",
+   "Peripher: Vorderhornzelle, unteres Motoneuron, Endplatte (C–E)",
+   "Atemmechanik (F–I): Muskulatur, Elastizität, Thoraxwand/Pleura, Atemwegswiderstand"
+  ],
+  "mc": {
+   "stem": "Zu welcher Ursachengruppe gehört eine **Muskelschwäche nach Langzeitbeatmung**?",
+   "options": [
+    "neurologisch/neuromuskulär, peripher",
+    "neurologisch, zentral",
+    "Atemmechanik, obstruktiv",
+    "Oxygenierungsversagen, Diffusionsstörung"
+   ],
+   "correct": "neurologisch/neuromuskulär, peripher"
+  },
+  "cloze": {
+   "text": "Das Ventilationsversagen wird auch als Störung der {{1}} bezeichnet. Entzündlich verursachte Erkrankungen mehrerer Nerven heißen {{2}}.",
+   "answers": [
+    "Atempumpe",
+    "Polyneuritiden"
+   ]
+  },
+  "source": "MTS__04_RS3.pdf, Folie 9"
+ },
+ {
+  "id": "MTS-K4-03",
+  "fach": "MTS",
+  "unit": "MTS-K4",
+  "examMode": "free",
+  "front": "Vergleiche **obstruktive** und **restriktive** Ventilationsstörungen: Mechanismus, betroffene Atemphase, Beispiele und Lungenfunktionswerte.",
+  "back": "**Obstruktiv:** erhöhter Strömungswiderstand durch intra- und/oder extrabronchiale Atemwegseinengung. Behindert **vor allem die Exspiration**. Beispiele: chronische Bronchitis, Asthma (auch COPD).\n\n**Restriktiv:** verringerte Ventilationsexkursion, u. a. durch geringere Elastizität oder Veränderungen im Pleuraspalt, auch durch verringerte Lungenparenchymfläche. Behindert **bereits die Inspiration**. Beispiele: Pneumonie, Lungenfibrose, Pneumothorax (auch Pleuraerguss).\n\n| Größe | restriktiv | obstruktiv |\n|---|---|---|\n| Compliance | ↓ | 0 |\n| Resistance | 0 | ↑ |\n| Vitalkapazität (VC) | ↓ | 0–↑ |\n| Totalkapazität (TLC) | ↓ | 0–↑ |\n| Intrathorakales Gasvolumen (IGV) | ↓ | ↑ |\n| Relative Sekundenkapazität (FEV₁/VC) | 0–↑ | ↓ |\n| Maximale Atemstromstärke (PEF) | 0–↑ | ↓ |\n\n(0 = unverändert; Tabelle wie auf Folie 10.)\n\n**Warum ist FEV₁/VC bei Restriktion nicht erniedrigt?** Die Resistance ist unverändert, die Luft strömt also ungebremst aus. FEV₁ sinkt nur, weil weniger Volumen da ist. Da die VC im Nenner ebenfalls sinkt, bleibt der Quotient gleich oder steigt. Bei Obstruktion bremst die erhöhte Resistance den Ausstrom: FEV₁ sinkt bei gleicher VC, der Quotient fällt. *(Begründung aus der Tabelle abgeleitet.)*",
+  "keyPoints": [
+   "Obstruktiv: Resistance ↑, behindert v. a. Exspiration (Bronchitis, Asthma)",
+   "Restriktiv: Compliance ↓, VC/TLC ↓, behindert schon Inspiration (Fibrose, Pneumothorax)",
+   "FEV₁/VC: obstruktiv ↓, restriktiv 0–↑"
+  ],
+  "mc": {
+   "stem": "Welche Befundkombination spricht für eine **obstruktive** Ventilationsstörung?",
+   "options": [
+    "Resistance ↑, FEV₁/VC ↓, IGV ↑",
+    "Compliance ↓, VC ↓, TLC ↓",
+    "Resistance unverändert, FEV₁/VC erhöht, PEF unverändert",
+    "Compliance ↓, IGV ↓, Resistance unverändert"
+   ],
+   "correct": "Resistance ↑, FEV₁/VC ↓, IGV ↑"
+  },
+  "cloze": {
+   "text": "Obstruktive Störungen behindern vor allem die {{1}} (Ausatmung), restriktive Störungen bereits die {{2}} (Einatmung).",
+   "answers": [
+    "Exspiration",
+    "Inspiration"
+   ]
+  },
+  "why": "Warum ist die relative Sekundenkapazität (FEV₁/VC) bei einer restriktiven Störung nicht erniedrigt?",
+  "source": "MTS__04_RS3.pdf, Folie 10"
+ },
+ {
+  "id": "MTS-K4-04",
+  "fach": "MTS",
+  "unit": "MTS-K4",
+  "examMode": "calc",
+  "front": "Berechne den **Ventilations-Perfusions-Quotienten** $V/Q$ aus alveolärer Belüftung und kapillärer Durchblutung und ordne ihn ein.",
+  "back": "$$V/Q = \\frac{\\dot V_{Alveolen}}{\\dot V_{Kapillaren}} = \\frac{\\dot V_{Ventilation}}{\\dot V_{Perfusion}}$$\n\nDer Quotient ist das **Kriterium für den Gasaustausch**. Im Normalzustand gilt $V/Q \\approx \\frac{4\\,\\text{l/min}}{5\\,\\text{l/min}} = 0{,}8$. Abweichungen zeigen ein gestörtes Verhältnis an.\n\n- $V/Q \\to 0$: **Shunt** (perfundiert, nicht ventiliert)\n- $V/Q \\to \\infty$: **Totraum** (ventiliert, nicht perfundiert)\n\nDer Quotient ist **ortsabhängig**: Im Liegen ist die Verteilung relativ homogen. Im Stehen gibt Folie 14 lokal ≈ 3,3 (apikal), 0,9 (Mitte) und 0,63 (basal) an.",
+  "keyPoints": [
+   "V/Q = Ventilation / Perfusion",
+   "Normal: 4 l/min / 5 l/min = 0,8",
+   "V/Q → 0 Shunt, V/Q → ∞ Totraum"
+  ],
+  "mc": {
+   "stem": "Welcher V/Q-Wert ist für die Gesamtlunge im **Normalzustand** typisch?",
+   "options": [
+    "≈ 0,8",
+    "≈ 1,25",
+    "≈ 0",
+    "→ ∞"
+   ],
+   "correct": "≈ 0,8"
+  },
+  "calc": {
+   "vars": {
+    "VA": [
+     3,
+     6,
+     0.5
+    ],
+    "Q": [
+     4,
+     7,
+     0.5
+    ]
+   },
+   "given": "Alveoläre Ventilation $\\dot V_A$ = [[VA]] l/min, Perfusion $\\dot Q$ = [[Q]] l/min. Gesucht: $V/Q$ (dimensionslos, zwei Nachkommastellen).",
+   "solution": "VA/Q",
+   "unit": "",
+   "steps": [
+    "$V/Q = \\dot V_A / \\dot Q$ = [[VA]] / [[Q]] = [[= VA/Q]]",
+    "Einordnung: ≈ 0,8 normal; kleiner → Richtung Shunt ($V/Q \\to 0$), größer → Richtung Totraum ($V/Q \\to \\infty$)"
+   ],
+   "example": {
+    "vars": {
+     "VA": 4,
+     "Q": 5
+    },
+    "result": 0.8
+   }
+  },
+  "source": "MTS__04_RS3.pdf, Folie 11, 14 und 16"
+ },
+ {
+  "id": "MTS-K4-05",
+  "fach": "MTS",
+  "unit": "MTS-K4",
+  "examMode": "free",
+  "front": "Wie verteilen sich **Perfusion**, **Ventilation** und **V/Q** in der **stehenden** Lunge? Erkläre auch die **Zonen 1–3**.",
+  "back": "**Perfusion:** Der apikale Bereich liegt über dem Herzen (negativer Druckgradient), dort ist der intrakapilläre Druck vermindert. Die Druckdifferenz apikal–basal beträgt ca. **22 mmHg**. Der alveoläre Druck behindert den Blutfluss:\n\n| Zone | Druckverhältnis | Wirkung |\n|---|---|---|\n| 1 (apikal) | $P_A > P_{pa} > P_{pv}$ | starker Effekt: Durchblutung **sistiert in der Diastole** (niedriger Blutdruck) |\n| 2 | $P_{pa} > P_A > P_{pv}$ | behinderter Blutfluss |\n| 3 (basal) | $P_{pa} > P_{pv} > P_A$ | i. d. R. keine Beeinflussung |\n\n($P_A$: Alveolarraum, $P_{pa}$: A. pulmonalis, $P_{pv}$: V. pulmonalis)\n\n**Ventilation:** Durch den Zug nach unten ist der Pleuradruck apikal negativer (Abbildung: ca. −10 mbar apikal bis −2,5 mbar basal). Die apikalen Alveolen sind stärker entfaltet. Bei gleicher Änderung des Pleuradrucks nehmen sie daher weniger Volumen auf (höherer Widerstand bei zunehmender Dehnung). Das ergibt eine **apikobasale Inhomogenität** der Belüftung.\n\n**V/Q:** Apikal ist die Ventilation **weniger eingeschränkt als die Perfusion**, deshalb **steigt V/Q apikal** (Folie 14: ≈ 3,3 apikal, 0,9 Mitte, 0,63 basal). Belüftung und Durchblutung unterliegen beide der Schwerkraft. Im Liegen sind sie relativ homogen verteilt.",
+  "keyPoints": [
+   "Perfusion: apikal stark vermindert (Δ ≈ 22 mmHg), Zone 1 P_A > P_pa > P_pv",
+   "Ventilation: apikal Alveolen stärker entfaltet, geringerer Volumenzuwachs",
+   "Perfusion sinkt apikal stärker als Ventilation → V/Q steigt apikal"
+  ],
+  "mc": {
+   "stem": "Welche Druckreihenfolge gilt in **Zone 1** (apikal) der stehenden Lunge?",
+   "options": [
+    "Alveolardruck > Druck A. pulmonalis > Druck V. pulmonalis",
+    "Druck A. pulmonalis > Alveolardruck > Druck V. pulmonalis",
+    "Druck A. pulmonalis > Druck V. pulmonalis > Alveolardruck",
+    "Druck V. pulmonalis > Druck A. pulmonalis > Alveolardruck"
+   ],
+   "correct": "Alveolardruck > Druck A. pulmonalis > Druck V. pulmonalis"
+  },
+  "cloze": {
+   "text": "Im Stehen steigt der V/Q-Quotient zur Lungenspitze hin, also {{1}}, an. In Zone {{2}} sistiert die Durchblutung in der Diastole.",
+   "answers": [
+    "apikal",
+    "1"
+   ]
+  },
+  "why": "Warum steigt der V/Q-Quotient in der stehenden Lunge zur Spitze hin an?",
+  "source": "MTS__04_RS3.pdf, Folie 11–15"
+ },
+ {
+  "id": "MTS-K4-06",
+  "fach": "MTS",
+  "unit": "MTS-K4",
+  "examMode": "free",
+  "front": "Welche **Mechanismen** führen zum **Oxygenierungsversagen**? Unterscheide **Shunt**, **Totraum** und **Diffusionsstörung**.",
+  "back": "Oxygenierungsversagen entsteht durch einen **gestörten Ventilations-Perfusions-Quotienten** oder eine **Diffusionsstörung**.\n\n| Situation | Bezeichnung | V/Q |\n|---|---|---|\n| ventiliert und perfundiert | normale Funktion | ≈ 0,8 |\n| nicht ventiliert, perfundiert | **Shunt** | → 0 |\n| ventiliert, nicht perfundiert | **Totraum** | → ∞ |\n| weder ventiliert noch perfundiert | aktuell nicht arbeitend | – |\n\nBeim Shunt vermischt sich oxygeniertes mit nicht oxygeniertem Blut: **venöse Beimischung**. Lokale Unterschiede im V/Q sind üblich.\n\n**Lungenembolie → Totraum:** Der Embolus verstopft ein Blutgefäß. Die Alveolen dahinter werden weiter belüftet, aber nicht mehr durchblutet. Das ergibt lokale Minderdurchblutung mit $V/Q \\to \\infty$ und eine primäre Hypoxie. Ein Shunt wäre der umgekehrte Fall.\n\n**Diffusionsstörungen**\n- Mechanismen: Diffusionsstrecke durch **Membranverdickung** verlängert, **Kontaktzeit** des Bluts in den Kapillaren verkürzt, Veränderungen im Blut\n- Ursachen (u. a.): Bindegewebe im Interstitium, Ansammlung von Flüssigkeit/Schleim, niedriger Hämoglobingehalt",
+  "keyPoints": [
+   "Shunt: perfundiert, nicht ventiliert → V/Q → 0, venöse Beimischung",
+   "Totraum: ventiliert, nicht perfundiert → V/Q → ∞ (Lungenembolie)",
+   "Diffusion: dickere Membran, kürzere Kontaktzeit, Blutveränderungen"
+  ],
+  "mc": {
+   "stem": "Welche Situation beschreibt einen **Shunt**?",
+   "options": [
+    "perfundiert, aber nicht ventiliert (V/Q → 0)",
+    "ventiliert, aber nicht perfundiert (V/Q → ∞)",
+    "ventiliert und perfundiert (V/Q ≈ 0,8)",
+    "weder ventiliert noch perfundiert"
+   ],
+   "correct": "perfundiert, aber nicht ventiliert (V/Q → 0)"
+  },
+  "cloze": {
+   "text": "Perfundiert, aber nicht ventiliert: {{1}} (V/Q gegen 0). Ventiliert, aber nicht perfundiert: {{2}} (V/Q gegen unendlich).",
+   "answers": [
+    "Shunt",
+    "Totraum"
+   ]
+  },
+  "why": "Warum führt eine Lungenembolie zu einem Totraum und nicht zu einem Shunt?",
+  "source": "MTS__04_RS3.pdf, Folie 11, 16, 18 und 29"
+ },
+ {
+  "id": "MTS-K4-07",
+  "fach": "MTS",
+  "unit": "MTS-K4",
+  "examMode": "free",
+  "front": "Wie können trotz funktionierender Atempumpe **nicht belüftete Bereiche** entstehen? Erkläre **langsame/schnelle Kompartimente** und **Pendelluft**.",
+  "back": "Die Ursache sind **lokale mechanische Unterschiede** zwischen Lungenbereichen:\n\n- **„Langsame Kompartimente“:** **hohe Resistance** → verzögertes, unvollständiges Belüften. Die Luft strömt nur gebremst ein, und die Inspiration endet, bevor das Kompartiment gefüllt ist.\n- **„Schnelle Kompartimente“:** **niedrige Compliance** (steif) → schnell ventiliert, aber nur kleine Volumina.\n- Ein **passendes Verhältnis von R und C** sorgt für eine „angepasste“ Belüftung.\n- **Pendelluft:** Luftaustausch zwischen Kompartimenten unterschiedlicher Eigenschaften, der die lokale Belüftung beeinträchtigt. Eine rasche Inflation versorgt zunächst die steifen Alveolen, in der **endinspiratorischen Pause** verteilt sich die Luft um.\n\n*Abgeleitet (nicht auf der Folie):* Im RC-Modell aus K3 bestimmt die Zeitkonstante $\\tau = R \\cdot C$, wie schnell sich ein Kompartiment füllt. Hohe R bedeutet großes τ und langsame Füllung. Kleine C bedeutet kleines τ, aber auch ein kleines Endvolumen.",
+  "keyPoints": [
+   "Langsam: hohe Resistance → verzögerte, unvollständige Belüftung",
+   "Schnell: niedrige Compliance → schnell, aber kleine Volumina",
+   "Pendelluft: Umverteilung zwischen Kompartimenten (endinspiratorische Pause)"
+  ],
+  "mc": {
+   "stem": "Was kennzeichnet ein **„schnelles Kompartiment“**?",
+   "options": [
+    "niedrige Compliance: schnell ventiliert, aber nur kleine Volumina",
+    "hohe Resistance: verzögerte, unvollständige Belüftung",
+    "hohe Compliance: große Volumina in kurzer Zeit",
+    "fehlende Perfusion: V/Q gegen unendlich"
+   ],
+   "correct": "niedrige Compliance: schnell ventiliert, aber nur kleine Volumina"
+  },
+  "cloze": {
+   "text": "Den Luftaustausch zwischen Kompartimenten mit unterschiedlichen mechanischen Eigenschaften nennt man {{1}}.",
+   "answers": [
+    "Pendelluft"
+   ]
+  },
+  "why": "Warum wird ein Kompartiment mit hoher Resistance bei einer raschen Inspiration nur unvollständig belüftet?",
+  "source": "MTS__04_RS3.pdf, Folie 17"
+ },
+ {
+  "id": "MTS-K4-08",
+  "fach": "MTS",
+  "unit": "MTS-K4",
+  "examMode": "free",
+  "front": "Gib einen Überblick über die **Messtechnik** am respiratorischen System: Verfahrensgruppen, **erweiterte Lungenfunktionsdiagnostik**, **Monitoring** und **BTPS-Normierung**.",
+  "back": "**Überblick (extrem breites Spektrum):** Auskultation · Bildgebung (Röntgen, MRT, Szintigrafie) · Blutgasanalyse (Labortechnik, Pulsoxymetrie) · Lungenfunktionsdiagnostik (Spirometrie, erweiterte Diagnostik) · Monitoring.\n\n**Erweiterte Lungenfunktionsdiagnostik** (die Spirometrie ist Standard, reicht aber teilweise nicht aus):\n- **Bodyplethysmographie:** Atemwegswiderstand und Lungenteilvolumina\n- **Single-Breath-Methode:** Diffusion\n- **Multiple-Breath-Washout:** Lungenteilvolumina und Homogenität der Gasverteilung\n- **Ergospirometrie** (Belastungsspirometrie): Ventilation und Gasaustausch unter körperlicher Belastung\n\n**Monitoring** (Atemfrequenz/-typ reichen oft aus). Die Atmung erzeugt intrathorakal und an der Oberfläche messbare Änderungen:\n- **mechanisch:** Gurte um Thorax/Abdomen, z. B. mit Dehnmessstreifen\n- **thermisch:** der Luftstrom erzeugt Temperaturänderungen\n- **elektrisch:** Impedanzmessung, weil die Atmung die intrathorakalen Gewebeeigenschaften verändert\n\n**Normierung auf BTPS** (body temperature pressure saturated: 37 °C, 100 % relative Feuchte beim gegebenen Luftdruck). Gasvolumina hängen von der Umgebung ab, u. a. von der Temperatur. Exspiratorische Größen werden direkt erfasst. Inspiratorische Größen stehen unter **ATP**-Bedingungen (Umgebung) und müssen deshalb auf BTPS korrigiert werden, damit sie mit den exspiratorischen vergleichbar sind.",
+  "keyPoints": [
+   "Bodyplethysmographie: Resistance + Teilvolumina; Single-Breath: Diffusion",
+   "Monitoring: mechanisch (Gurt/DMS), thermisch, elektrisch (Impedanz)",
+   "BTPS: 37 °C, 100 % Feuchte; inspiratorische ATP-Werte werden korrigiert"
+  ],
+  "mc": {
+   "stem": "Mit welchem Verfahren misst man **Atemwegswiderstand** und **Lungenteilvolumina**?",
+   "options": [
+    "Bodyplethysmographie",
+    "Single-Breath-Methode",
+    "Pulsoxymetrie",
+    "Ergospirometrie"
+   ],
+   "correct": "Bodyplethysmographie"
+  },
+  "cloze": {
+   "text": "Spirometrische Volumina und Flüsse werden auf {{1}}-Bedingungen normiert: 37 °C und 100 % relative Feuchte.",
+   "answers": [
+    "BTPS"
+   ]
+  },
+  "why": "Warum müssen inspiratorische Volumina auf BTPS korrigiert werden?",
+  "source": "MTS__04_RS3.pdf, Folie 34, 40 und 48–52"
+ },
+ {
+  "id": "MTS-K4-09",
+  "fach": "MTS",
+  "unit": "MTS-K4",
+  "examMode": "free",
+  "front": "Beschreibe die **pathologischen Atmungstypen** Tachypnoe, Bradypnoe, Cheyne-Stokes-, Kussmaul-, Biot- und Schnappatmung mit Vorkommen.",
+  "back": "| Atmungstyp | Merkmal | Vorkommen (u. a.) |\n|---|---|---|\n| **Tachypnoe** | Atemfrequenz erhöht (> 20/min), normale Tiefe | drohende/manifeste respiratorische Insuffizienz, Stress, Fieber |\n| **Bradypnoe** | Atemfrequenz verringert (< 10/min), normale Tiefe | Narkotika, Drogen |\n| **Cheyne-Stokes** | periodisch; Frequenz und Tiefe nehmen rhythmisch zu und ab | zerebrale Durchblutungsstörungen, Enzephalitis, Entwöhnung vom Respirator, Schlaf |\n| **Kussmaul** | rhythmisch, **abnorm vertieft** | **respiratorische Kompensation einer Azidose** (z. B. Laktatazidose) |\n| **Biot** | periodisch (intermittierend), Atemzüge **gleicher Tiefe** | direkte Hirnverletzung, erhöhter intrakranieller Druck |\n| **Schnappatmung** | kurze, krampfartige Atemexkursionen | unmittelbar vor dem Atemstillstand (Apnoe) |\n\nDie Folien 20–23 stellen diese Typen jeweils unter „Ventilationsversagen (neurologisch, zentral)“.\n\n*Widerspruch:* Folie 20 definiert Tachypnoe ab > 20/min, Folie 6 nennt > 35/min als Warnzeichen einer drohenden Insuffizienz.",
+  "keyPoints": [
+   "Tachypnoe > 20/min, Bradypnoe < 10/min (normale Tiefe)",
+   "Cheyne-Stokes: zu- und abnehmend; Biot: intermittierend, gleiche Tiefe",
+   "Kussmaul: vertieft, kompensiert Azidose; Schnappatmung vor Apnoe"
+  ],
+  "mc": {
+   "stem": "Welche Atmung dient der **respiratorischen Kompensation einer Azidose**?",
+   "options": [
+    "Kussmaul-Atmung",
+    "Biot-Atmung",
+    "Cheyne-Stokes-Atmung",
+    "Schnappatmung"
+   ],
+   "correct": "Kussmaul-Atmung"
+  },
+  "cloze": {
+   "text": "Eine rhythmische, abnorm vertiefte Atmung heißt {{1}}-Atmung. Eine periodische, intermittierende Atmung mit Atemzügen gleicher Tiefe heißt {{2}}-Atmung.",
+   "answers": [
+    "Kussmaul",
+    "Biot"
+   ]
+  },
+  "source": "MTS__04_RS3.pdf, Folie 20–23"
+ },
+ {
+  "id": "MTS-K4-10",
+  "fach": "MTS",
+  "unit": "MTS-K4",
+  "examMode": "free",
+  "front": "Erkläre **Pneumothorax**, **Pleuraerguss** und **Atelektase**: Definition, Formen, Folgen und Einordnung.",
+  "back": "**Pneumothorax:** Luft tritt von außen oder innen in den Pleuraraum ein.\n- **geschlossen:** Lufteintritt durch die Alveolen, Pleura parietalis intakt\n- **offen:** Pleura parietalis und ggf. Pleura visceralis verletzt\n- Ursachen u. a. zentralvenöser Katheter, Beatmung\n- Folge: Das Lungengewebe folgt dem Brustkorb nicht mehr und fällt zusammen, es ist kein Gasaustausch mehr möglich. *(Mit K3: Die Pleurakopplung ist aufgehoben, die Eigenelastizität zieht die Lunge nach innen.)*\n- Symptome: Hustenreiz bis Erstickungsgefühl, Tachypnoe → **Ventilationsversagen (restriktiv)**\n\n**Pleuraerguss:** übermäßige Flüssigkeitsansammlung in der Pleurahöhle.\n- **Transsudate:** nicht entzündlich bedingte Körperflüssigkeiten, die durch Epithelien hindurch oder aus Gefäßen austreten\n- **Exsudate:** (meist entzündlich bedingte) Absonderungen\n- Ursachen: Herzschwäche, Entzündungen. Folge: erhöhter Druck auf die Alveolen, deren Entfaltung behindert wird. Symptome erst bei ausreichender Füllung, u. a. Atemnot → **Ventilationsversagen (restriktiv)**\n\n**Atelektase:** kollabierter Lungenabschnitt.\n- **Obstruktionsatelektase:** Bronchiole versperrt, das Gas wird resorbiert\n- **Entspannungsatelektase:** Luft im Pleuraspalt (Pneumothorax)\n- **Kompressionsatelektase:** zusätzliche Flüssigkeit im Pleuraspalt (Pleuraerguss)\n- Alveolen fallen zusammen, das kann sich von selbst wieder lösen. Bei großen Bereichen greifen Kompensationsmechanismen → **Oxygenierungsversagen**",
+  "keyPoints": [
+   "Pneumothorax: Luft im Pleuraraum → Lunge kollabiert (restriktiv)",
+   "Pleuraerguss: Transsudat/Exsudat, behindert Entfaltung (restriktiv)",
+   "Atelektase: Obstruktions-, Entspannungs-, Kompressionsatelektase (Oxygenierungsversagen)"
+  ],
+  "mc": {
+   "stem": "Welche Atelektase entsteht durch **zusätzliche Flüssigkeit im Pleuraspalt**?",
+   "options": [
+    "Kompressionsatelektase",
+    "Entspannungsatelektase",
+    "Obstruktionsatelektase",
+    "offener Pneumothorax"
+   ],
+   "correct": "Kompressionsatelektase"
+  },
+  "cloze": {
+   "text": "Einen kollabierten Lungenabschnitt nennt man {{1}}. Beim geschlossenen Pneumothorax ist die Pleura {{2}} intakt.",
+   "answers": [
+    "Atelektase",
+    "parietalis"
+   ]
+  },
+  "why": "Warum fällt die Lunge bei einem Pneumothorax zusammen?",
+  "source": "MTS__04_RS3.pdf, Folie 24, 25 und 31"
+ },
+ {
+  "id": "MTS-K4-11",
+  "fach": "MTS",
+  "unit": "MTS-K4",
+  "examMode": "free",
+  "front": "Erkläre **COPD**, **Lungenemphysem** und **Asthma bronchiale**: Definition, Folgen und Unterschiede.",
+  "back": "**COPD** (chronisch obstruktive Lungenerkrankung): Sammelbegriff für Lungenkrankheiten mit eingeschränkter Atemstromstärke bzw. erhöhtem Atemwegswiderstand.\n- Ursachen u. a.: Rauchen, Umweltverschmutzung, Infektionen der Atemwege\n- Bestandteile: **chronische Bronchitis** (Hypertrophie der Bronchialschleimhaut, vermehrte Schleimsekretion, vergrößerter Bronchialknorpel) und **Lungenemphysem** (irreversible Überblähung der Lungenbläschen)\n- Symptome: **„AHA“**, also Atemnot, Husten und Auswurf → **Ventilationsversagen (obstruktiv)**\n\n**Lungenemphysem:** Überblähung der Lunge durch Zerstörung bzw. Abbau von Alveolarsepten (Ursachen: Schadstoffe, Entzündungen). Folgen:\n- verringerte Alveolaroberfläche → **verringerter Austausch trotz höherem Gasvolumen**\n- höhere Dehnbarkeit, **geringere Eigenelastizität** → kleinere Bronchiolen werden nicht mehr offen gehalten → **Resistance ↑**\n\n**Asthma bronchiale:** anfallsweise Atemnot durch eine akute Verengung der Atemwege (vermehrte Schleimsekretion und/oder Verkrampfung). Ursachen u. a.: Entzündungen, allgemeine bronchiale Hyperaktivität, mangelnde Clearance. **Unterschied zur COPD: reversibel** (teilweise wenig reversibel, ein Übergang ins chronische Stadium ist möglich) → **Ventilationsversagen (obstruktiv)**",
+  "keyPoints": [
+   "COPD = chronische Bronchitis + Emphysem; AHA-Symptome",
+   "Emphysem: Septenabbau → Austausch ↓, Eigenelastizität ↓ → Bronchiolen kollabieren, Resistance ↑",
+   "Asthma: anfallsweise, reversibel; beide obstruktiv"
+  ],
+  "mc": {
+   "stem": "Was unterscheidet **Asthma bronchiale** laut Folie grundsätzlich von der **COPD**?",
+   "options": [
+    "Asthma ist (weitgehend) reversibel",
+    "Asthma ist eine restriktive Störung",
+    "Asthma zerstört die Alveolarsepten",
+    "Asthma verursacht ein Oxygenierungsversagen ohne Obstruktion"
+   ],
+   "correct": "Asthma ist (weitgehend) reversibel"
+  },
+  "cloze": {
+   "text": "Die AHA-Symptome der COPD sind Atemnot, Husten und {{1}}. Im Unterschied zur COPD ist Asthma bronchiale {{2}}.",
+   "answers": [
+    "Auswurf",
+    "reversibel"
+   ]
+  },
+  "why": "Warum steigt beim Lungenemphysem die Resistance, obwohl die Lunge dehnbarer wird?",
+  "source": "MTS__04_RS3.pdf, Folie 26–28"
+ },
+ {
+  "id": "MTS-K4-12",
+  "fach": "MTS",
+  "unit": "MTS-K4",
+  "examMode": "free",
+  "front": "Erkläre **Lungenembolie**, **Lungenödem** und **Pneumonie (COVID-19)** und ordne sie dem Versagenstyp zu.",
+  "back": "**Lungenembolie:** Verstopfung (Embolie) eines Blutgefäßes in der Lunge, Auslöser i. d. R. ein Thrombus. Folge: lokale Minderdurchblutung (**Totraum**, $V/Q \\to \\infty$), **primäre Hypoxie**. Symptome: Husten, Tachykardie, Tachypnoe → **Oxygenierungsversagen**\n\n**Lungenödem:** Blutflüssigkeit (Plasma) tritt aus den Kapillaren ins Interstitium und ggf. in die Alveolen aus.\n- **kardial:** Rückstau des Blutes wegen Linksherzinsuffizienz\n- **nicht kardial:** erhöhte Gefäßdurchlässigkeit, z. B. beim akuten Lungenversagen (**ARDS**)\n- Folgen: **Compliance ↓**, erhöhte Atemarbeit. Symptome: Atemnot, rasselnde Atmung → **Oxygenierungsversagen**\n\n**Pneumonie / COVID-19:** Pneumonie = Entzündung des Lungengewebes, **alveolär** oder **interstitiell**. Folge: Flüssigkeitseinlagerung/Pleuraerguss und/oder Gewebeschädigung → gravierende Probleme beim Gasaustausch. Symptome: Fieber, Husten, Dyspnoe/Tachypnoe. In schweren Fällen wird beatmet.\n- COVID-19: Die Lunge ist das primär betroffene Organ, die Pneumonie verläuft häufig schleichend und **interstitiell**. Das akute Lungenversagen ist die häufigste Todesursache.\n- Hinweis: Auf Folie 10 steht die Pneumonie als Beispiel einer **restriktiven** Ventilationsstörung.",
+  "keyPoints": [
+   "Lungenembolie: Totraum, primäre Hypoxie → Oxygenierungsversagen",
+   "Lungenödem: kardial vs. nicht kardial (ARDS); Compliance ↓",
+   "Pneumonie: alveolär vs. interstitiell (COVID-19 meist interstitiell)"
+  ],
+  "mc": {
+   "stem": "Welche Pathologie ordnet die Vorlesung dem **Oxygenierungsversagen** zu?",
+   "options": [
+    "Lungenödem",
+    "Pneumothorax",
+    "Pleuraerguss",
+    "Asthma bronchiale"
+   ],
+   "correct": "Lungenödem"
+  },
+  "cloze": {
+   "text": "Lungenödeme durch Rückstau des Blutes bei Linksherzinsuffizienz heißen {{1}} Lungenödeme; eine erhöhte Gefäßdurchlässigkeit tritt z. B. beim akuten Lungenversagen auf, abgekürzt {{2}}.",
+   "answers": [
+    "kardiale",
+    "ARDS"
+   ]
+  },
+  "source": "MTS__04_RS3.pdf, Folie 29, 30 und 32"
+ },
+ {
+  "id": "MTS-K4-13",
+  "fach": "MTS",
+  "unit": "MTS-K4",
+  "examMode": "free",
+  "front": "Wie funktioniert die **Spirometrie** (geschlossene vs. offene Systeme), und welche **Flowmeter-Prinzipien** gibt es?",
+  "back": "**Spirometrie** ist die pulmonale Routineuntersuchung. Zentrale Fragen: Wie groß ist das ein- oder ausatembare Volumen, und in welcher Zeit bzw. mit welcher Geschwindigkeit wird es bewegt?\n\n**Historisch: Glockenspirometer.** Ein geschlossenes System, in dem Hebung und Senkung der Glocke erfasst werden. Im Schlauchsystem sitzt i. d. R. ein Absorberbehälter gegen Hyperkapnie.\n\n**Heute: offene Systeme.** Der Fluss wird bestimmt (ggf. über die Flussgeschwindigkeit) und zum Volumen integriert, $V = \\int \\dot V\\,dt$. Die Messung folgt einem festen Protokoll.\n\n| Prinzip | Funktion |\n|---|---|\n| **Pneumotachograph nach Fleisch** | Lamellen teilen den Atemstrom vielfach auf → **laminare** Strömung → linearer Zusammenhang $\\Delta p = P_1 - P_2 = \\frac{8\\eta l}{\\pi r^4}\\dot V$ (Differenzdruck) |\n| **Pneumotachograph nach Lilly** | Gitter-/Netzstruktur (Differenzdruck) |\n| **Turbulenz-Flowmeter** | Widerstandselemente erzeugen gezielt Turbulenzen |\n| **Turbinen-Flowmeter** | Turbine, LED(s), Photodioden: Die Rotation unterbricht den Lichtstrahl → Impulse (Häufigkeit ~ Flussgeschwindigkeit, **Anzahl ~ Volumen**). Der Volumenstrom wird i. d. R. aus der Ableitung des Volumens bestimmt. |\n| **Hitzedraht** | geheizter Draht mit Regelung; die Luft kühlt ihn ab, die Energie zum Konstanthalten der Temperatur korreliert mit der Flussgeschwindigkeit |\n| **Ultraschall** (laufzeitbasiert) | zwei Wandler schräg zum Atemrohr, Impulse 100–400 Hz; die Schallgeschwindigkeit ändert sich um den Betrag des Flussvektors → Geschwindigkeit aus beiden Laufzeiten |\n\n**Warum Lamellen?** Nur bei laminarer Strömung gilt Hagen-Poiseuille. Dann ist Δp **proportional** zu V̇, und der Fluss lässt sich direkt aus dem Differenzdruck ablesen.",
+  "keyPoints": [
+   "Offene Systeme: Fluss messen, Volumen = ∫ V̇ dt",
+   "Fleisch: Lamellen → laminar → Δp = 8ηl/(πr⁴) · V̇ (linear)",
+   "Turbine: Impulsanzahl ~ Volumen; Hitzedraht: Heizenergie; Ultraschall: Laufzeit"
+  ],
+  "mc": {
+   "stem": "Bei welchem Flowmeter entspricht die **Anzahl der Impulse** dem Volumen?",
+   "options": [
+    "Turbinen-Flowmeter",
+    "Hitzedraht-Flowmeter",
+    "Ultraschall-Flowmeter",
+    "Pneumotachograph nach Fleisch"
+   ],
+   "correct": "Turbinen-Flowmeter"
+  },
+  "cloze": {
+   "text": "Beim Pneumotachographen nach {{1}} teilen Lamellen den Atemstrom auf. Beim Pneumotachographen nach {{2}} übernimmt das eine Gitter- bzw. Netzstruktur.",
+   "answers": [
+    "Fleisch",
+    "Lilly"
+   ]
+  },
+  "why": "Warum teilt der Pneumotachograph nach Fleisch den Atemstrom durch viele Lamellen auf?",
+  "source": "MTS__04_RS3.pdf, Folie 35–39"
+ },
+ {
+  "id": "MTS-K4-14",
+  "fach": "MTS",
+  "unit": "MTS-K4",
+  "examMode": "calc",
+  "front": "Ein **Pneumotachograph** erfasst eine Strömung, die bei $t = 0$ null ist und dann über die gesamte Messdauer **linear** auf einen Endwert ansteigt. Welches **Volumen** wurde bis zu einem Zeitpunkt $t$ aufgenommen?",
+  "back": "Das Volumen ist das **Integral des Flusses**: $V = \\int_0^t \\dot V\\,dt$. Bei linear steigendem Fluss ist das die **Dreiecksfläche** unter der Flusskurve.\n\n1. Steigung: $a = \\dot V_{end}/T$\n2. Fluss zum Zeitpunkt $t$: $\\dot V(t) = a \\cdot t$\n3. $V(t) = \\tfrac12 \\cdot t \\cdot \\dot V(t) = \\tfrac12 a t^2$\n\nÜbung: $a = 0{,}5/5 = 0{,}1$ L/s², $\\dot V(4\\,\\text{s}) = 0{,}4$ L/s, $V = \\tfrac12 \\cdot 4 \\cdot 0{,}4 =$ **0,80 L** = 800 ml.\n\n**Warum nicht 4 s · 0,5 L/s = 2 L?** Der Endwert 0,5 L/s wird erst nach 5 s erreicht. Bis 4 s steigt der Fluss von 0 auf 0,4 L/s, im Mittel sind das nur 0,2 L/s. 4 s · 0,2 L/s = 0,8 L.\n\n*Das Übungsblatt enthält keine Musterlösung (nur Abbildung); Ergebnis nachgerechnet.*",
+  "keyPoints": [
+   "Volumen = Integral des Flusses",
+   "Linearer Anstieg → Dreiecksfläche ½·t·V̇(t)",
+   "Übung: V̇(4 s) = 0,4 L/s → V = 0,80 L"
+  ],
+  "calc": {
+   "vars": {
+    "T": [
+     4,
+     10,
+     1
+    ],
+    "Vend": [
+     0.3,
+     1,
+     0.1
+    ],
+    "t": [
+     2,
+     4,
+     1
+    ]
+   },
+   "given": "Messdauer [[T]] s; der Fluss steigt von 0 linear auf [[Vend]] L/s bei t = [[T]] s. Gesucht: aufgenommenes Volumen nach t = [[t]] s in **ml**.",
+   "solution": "1000*Vend/T*t^2/2",
+   "unit": "ml",
+   "steps": [
+    "Steigung: $a = \\dot V_{end}/T$ = [[Vend]] / [[T]] = [[= Vend/T]] L/s²",
+    "Fluss bei t = [[t]] s: $\\dot V(t) = a \\cdot t$ = [[= Vend/T*t]] L/s",
+    "Dreiecksfläche: $V = \\tfrac12 \\cdot t \\cdot \\dot V(t)$ = 0,5 · [[t]] · [[= Vend/T*t]] = [[= Vend/T*t^2/2]] L = [[= 1000*Vend/T*t^2/2]] ml"
+   ],
+   "example": {
+    "vars": {
+     "T": 5,
+     "Vend": 0.5,
+     "t": 4
+    },
+    "result": 800
+   }
+  },
+  "why": "Warum ist das Volumen nach 4 s nicht einfach 4 s · 0,5 L/s?",
+  "source": "MTS_Ue__03_RS3.pdf, Transferfrage „Pneumotachograph“; MTS__04_RS3.pdf, Folie 36"
+ },
+ {
+  "id": "MTS-K4-15",
+  "fach": "MTS",
+  "unit": "MTS-K4",
+  "examMode": "free",
+  "front": "Wofür stehen **FVC, FEV₁, PEF, FEF25, FEF50 und FEF75**? Beschreibe den Ablauf der Spirometrie und die **Fluss-Volumen-Kurve**.",
+  "back": "**Ablauf:** Man unterscheidet statische und dynamische (zeitabhängige) Volumina. Die Messung ist zweiteilig: **Ruhespirometrie** und **forcierte Spirometrie**. Bei der forcierten Spirometrie atmet der Patient zügig bis zur TLC ein und sofort mit maximaler Anstrengung bis zum Residualvolumen aus.\n\n| Symbol | Bedeutung | Einheit |\n|---|---|---|\n| IVC | inspiratorische Vitalkapazität: nach kompletter Exspiration maximal eingeatmetes Volumen | L |\n| FVC | forcierte Vitalkapazität: nach kompletter Inspiration forciert ausgeatmetes Volumen | L |\n| FEV₁ | Einsekundenkapazität: nach maximaler Inspiration in der **ersten Sekunde** forciert ausgeatmetes Volumen | L |\n| FEV₁/FVC | relative Einsekundenkapazität, **Tiffeneau-Index** | % |\n| PEF | Spitzenfluss („Peak flow“) bei maximaler Anstrengung | L/s (Peak-Flow-Meter: L/min) |\n| FEF25/50/75 | maximale Atemstromstärke **nach Ausatmung von 25/50/75 % der FVC** | L/s |\n| FEF25–75 | mittlere Atemstromstärke zwischen 25 und 75 % der FVC | L/s |\n\n**Skizze der Fluss-Volumen-Kurve:** Das Volumen liegt auf der einen Achse, der Fluss auf der anderen. Die Exspiration ist positiv. Kurz nach Beginn steigt der Fluss steil zum **PEF**. Danach fällt er annähernd linear über **FEF25 → FEF50 → FEF75** ab und erreicht bei der **FVC** den Wert null. Die Inspiration ist ein flacher Bogen auf der Gegenseite. In der Übungsabbildung liegt das Volumen senkrecht und der Fluss waagerecht. Daneben ist die Volumen-Zeit-Kurve dargestellt, mit Ruheatmung (V_T, IRV, ERV, IC, FRC) und forcierter Exspiration (FEV₁ nach 1 s, FVC).",
+  "keyPoints": [
+   "Forciert: bis TLC einatmen, maximal bis RV ausatmen",
+   "FEV₁ = Volumen der 1. Sekunde; FVC = gesamtes forciertes Volumen",
+   "FEF_x = Fluss nach Ausatmung von x % der FVC; PEF = Spitzenfluss",
+   "FV-Kurve: steiler Anstieg zu PEF, fast linearer Abfall bis FVC"
+  ],
+  "mc": {
+   "stem": "Was bedeutet **FEF75** laut Folie?",
+   "options": [
+    "maximale Atemstromstärke nach Ausatmung von 75 % der FVC",
+    "75 % des Spitzenflusses PEF",
+    "in 0,75 s forciert ausgeatmetes Volumen",
+    "mittlere Atemstromstärke zwischen 25 und 75 % der FVC"
+   ],
+   "correct": "maximale Atemstromstärke nach Ausatmung von 75 % der FVC"
+  },
+  "cloze": {
+   "text": "FEF50 ist die maximale Atemstromstärke nach Ausatmung von {{1}} % der forcierten Vitalkapazität. Der Spitzenfluss bei maximaler Anstrengung hat das Symbol {{2}}.",
+   "answers": [
+    "50",
+    "PEF"
+   ]
+  },
+  "source": "MTS_Ue__03_RS3.pdf, Kontrollfrage 1 „Spirometrie“; MTS__04_RS3.pdf, Folie 41, 42 und 44"
+ },
+ {
+  "id": "MTS-K4-16",
+  "fach": "MTS",
+  "unit": "MTS-K4",
+  "examMode": "free",
+  "front": "Wie ist der **Tiffeneau-Index** definiert, welcher Wert gilt als normal, und wie wird die **COPD nach GOLD** eingeteilt?",
+  "back": "$$\\text{Tiffeneau-Index} = \\frac{FEV_1}{FVC}$$\n\nBei gesunden Patienten gilt **TI ≥ 70 %**. $FEV_1$ (Einsekundenkapazität) ist das forcierte exspirierte Volumen in der ersten Sekunde.\n\n**GOLD-Klassifikation der COPD** (FEV₁ in % des Sollwerts):\n\n| Stadium | FEV₁ |\n|---|---|\n| GOLD 1 (leicht) | ≥ 80 % |\n| GOLD 2 (mittelgradig) | 50–80 % |\n| GOLD 3 (schwer) | 30–49 % |\n| GOLD 4 (sehr schwer) | < 30 % |\n\n**Warum % des Sollwerts?** Der Sollwert wird aus **Alter, Geschlecht und Körpergröße** bestimmt. Normale FEV₁-Werte hängen also von der Person ab (Folie 44: Sollwert-Gleichungen mit Körpergröße und Alter, getrennt für Männer und Frauen). Ein fester absoluter Grenzwert passt deshalb nicht für alle, erst der Bezug auf den Sollwert macht Patienten vergleichbar.\n\n*Hinweise:* Folie 10 verwendet die relative Sekundenkapazität **FEV₁/VC**, Folie 42/43 dagegen **FEV₁/FVC**. Bei GOLD überlappen sich die Grenzen von Stadium 1 (≥ 80 %) und Stadium 2 (50–80 %) bei 80 % (so auf der Folie).",
+  "keyPoints": [
+   "Tiffeneau = FEV₁/FVC, gesund ≥ 70 %",
+   "GOLD: ≥ 80 / 50–80 / 30–49 / < 30 % des FEV₁-Sollwerts",
+   "Sollwert aus Alter, Geschlecht, Körpergröße"
+  ],
+  "mc": {
+   "stem": "Ein COPD-Patient hat ein **FEV₁ von 40 % des Sollwerts**. Welches GOLD-Stadium liegt vor?",
+   "options": [
+    "GOLD 3 (schwer)",
+    "GOLD 2 (mittelgradig)",
+    "GOLD 4 (sehr schwer)",
+    "GOLD 1 (leicht)"
+   ],
+   "correct": "GOLD 3 (schwer)"
+  },
+  "cloze": {
+   "text": "Bei Gesunden beträgt der Tiffeneau-Index mindestens {{1}} %. GOLD 4 bedeutet ein FEV1 unter {{2}} % des Sollwerts.",
+   "answers": [
+    "70",
+    "30"
+   ]
+  },
+  "why": "Warum wird für die GOLD-Einteilung das FEV₁ in % des Sollwerts angegeben statt als absoluter Wert?",
+  "source": "MTS__04_RS3.pdf, Folie 10, 42–44"
+ },
+ {
+  "id": "MTS-K4-17",
+  "fach": "MTS",
+  "unit": "MTS-K4",
+  "examMode": "free",
+  "front": "Wie wertet man eine Spirometrie aus? Beschreibe den **Entscheidungsalgorithmus** (Normal, Obstruktion, Restriktion) und die typischen **Kurvenformen**.",
+  "back": "**Bewertung:** Vergleich mit Normalwerten und „qualitative“ Analyse der Fluss-Volumen-Kurve.\n\n**Algorithmus (Folie 46; LLN = untere Grenze des Normalbereichs):**\n- FEV₁/FVC ≥ LLN?\n  - **ja:** FVC ≥ LLN? ja → **Normal**; nein → TLC ≥ LLN? nein → **Restriktion**, ja → **Obstruktion**\n  - **nein:** FVC ≥ LLN? ja → **Obstruktion**; nein → TLC ≥ LLN? ja → **Obstruktion**, nein → **Obstruktion und Restriktion**\n\nEine niedrige FVC allein beweist also **keine** Restriktion. Erst eine **TLC unter der Normgrenze** entscheidet. *(Abgeleitet: Die TLC enthält das RV und ist spirometrisch nicht erfassbar. Man braucht z. B. die Bodyplethysmographie, Folie 48.)*\n\n**Kurvenformen (Folie 47, nach Abbildung):**\n- **Normalbefund:** steiler Anstieg zum Spitzenfluss, dann gleichmäßiger Abfall. Messfehler: „keine forcierte Exspiration“ (Spitze fehlt), „keine maximale Exspiration“ (die Kurve endet zu früh).\n- **Obstruktion:** Der exspiratorische Schenkel **hängt nach der Spitze konkav durch**. In schwereren Fällen ist zusätzlich das Volumen verringert.\n- **Restriktion:** Die Form bleibt annähernd normal, die Kurve ist aber **verkleinert** und endet bei kleinerem Volumen.\n- **Emphysem:** Nach einer kurzen Spitze **bricht der Fluss abrupt ein** (Knick), danach verläuft die Kurve flach, teils mit kleinerem Volumen.",
+  "keyPoints": [
+   "FEV₁/FVC < LLN → Obstruktion (ggf. + Restriktion bei TLC < LLN)",
+   "Restriktion nur bei TLC < LLN, nicht allein wegen niedriger FVC",
+   "Kurven: Obstruktion konkav, Restriktion verkleinert, Emphysem Knick nach Spitze"
+  ],
+  "mc": {
+   "stem": "Wie sieht die Fluss-Volumen-Kurve bei einer **Restriktion** typischerweise aus?",
+   "options": [
+    "Form annähernd normal, aber verkleinert (endet bei kleinerem Volumen)",
+    "exspiratorischer Schenkel nach der Spitze konkav durchhängend",
+    "der Spitzenfluss fehlt, weil nicht forciert ausgeatmet wird",
+    "abrupter Flusseinbruch direkt nach einer kurzen Spitze"
+   ],
+   "correct": "Form annähernd normal, aber verkleinert (endet bei kleinerem Volumen)"
+  },
+  "cloze": {
+   "text": "Ist FEV1/FVC normal, die FVC aber erniedrigt und auch die TLC unter der Normgrenze, liegt eine {{1}} vor.",
+   "answers": [
+    "Restriktion"
+   ]
+  },
+  "why": "Warum reicht eine erniedrigte FVC allein nicht aus, um eine Restriktion zu diagnostizieren?",
+  "source": "MTS__04_RS3.pdf, Folie 44–47"
+ },
+ {
+  "id": "MTS-K4-18",
+  "fach": "MTS",
+  "unit": "MTS-K4",
+  "examMode": "calc",
+  "front": "In einer Spirometrie wird der **Tiffeneau-Index** bestimmt. Gegeben sind außerdem die **totale Lungenkapazität** und die in den ersten Sekunden forciert ausgeatmeten Volumina. Wie groß ist das **Residualvolumen**?",
+  "back": "1. $TI = FEV_1/FVC$, umgestellt: $FVC = FEV_1/TI$\n2. $RV = TLC - VC$. *Annahme: forcierte Vitalkapazität = Vitalkapazität.*\n\nÜbung: $FVC = 3/0{,}76 = 3{,}947$ L → $RV = 6 - 3{,}947 =$ **2,05 L**.\n\n**Warum nicht einfach die Sekundenvolumina addieren?** 3 + 0,5 + 0,1 = 3,6 L ist nur das, was in den **ersten drei Sekunden** ausgeatmet wurde, und nicht die FVC. Mit 3,6 L als FVC ergäbe sich TI = 0,83, was dem gegebenen TI = 0,76 widerspricht. Die FVC folgt aus dem Tiffeneau-Index, der Patient atmet also nach 3 s noch weiter aus. Die Werte der 2. und 3. Sekunde sind **Ablenker** (falsches Ergebnis: 6 − 3,6 = 2,4 L).\n\n*Das Übungsblatt enthält keine Musterlösung (nur Abbildung); Ergebnis nachgerechnet.*",
+  "keyPoints": [
+   "FVC = FEV₁ / Tiffeneau-Index",
+   "RV = TLC − VC (Annahme VC = FVC)",
+   "Übung: 6 − 3/0,76 = 2,05 L; Sekundenvolumina 2 und 3 sind Ablenker"
+  ],
+  "calc": {
+   "vars": {
+    "TI": [
+     0.6,
+     0.8,
+     0.01
+    ],
+    "FVC": [
+     3.2,
+     4.8,
+     0.1
+    ],
+    "RV": [
+     1.2,
+     2.4,
+     0.1
+    ],
+    "V2": [
+     0.2,
+     0.5,
+     0.1
+    ],
+    "V3": [
+     0.05,
+     0.1,
+     0.05
+    ]
+   },
+   "given": "Tiffeneau-Index [[TI]], TLC = [[= FVC + RV]] L. Forcierte Exspiration: 1. Sekunde [[= TI*FVC]] L, 2. Sekunde [[V2]] L, 3. Sekunde [[V3]] L. Gesucht: Residualvolumen in L.",
+   "solution": "FVC + RV - TI*FVC/TI",
+   "unit": "L",
+   "steps": [
+    "$FEV_1$ = Volumen der **ersten** Sekunde = [[= TI*FVC]] L. Die Werte der 2. und 3. Sekunde werden nicht gebraucht.",
+    "$FVC = FEV_1/TI$ = [[= TI*FVC]] / [[TI]] = [[FVC]] L",
+    "$RV = TLC - VC$ = [[= FVC + RV]] − [[FVC]] = [[RV]] L"
+   ],
+   "example": {
+    "vars": {
+     "TI": 0.76,
+     "FVC": 3.947368,
+     "RV": 2.052632,
+     "V2": 0.5,
+     "V3": 0.1
+    },
+    "result": 2.05
+   }
+  },
+  "why": "Warum darf man die in den ersten drei Sekunden ausgeatmeten Volumina nicht als FVC verwenden?",
+  "source": "MTS_Ue__03_RS3.pdf, Transferfrage „Spirometrie“ (Tiffeneau); MTS__04_RS3.pdf, Folie 43"
+ },
+ {
+  "id": "MTS-K4-19",
+  "fach": "MTS",
+  "unit": "MTS-K4",
+  "examMode": "calc",
+  "front": "Eine Person atmet in Ruhe. Gegeben sind **RV, IC, IRV, ERV** und das **Atemminutenvolumen**. Wie viele **Atemzüge pro Minute** macht sie?",
+  "back": "1. Inspirationskapazität $IC = V_T + IRV$, umgestellt: $V_T = IC - IRV$\n2. $AMV = V_T \\cdot f$, umgestellt: $f = AMV / V_T$\n\nÜbung: $V_T = 3 - 2{,}2 = 0{,}8$ L → $f = 6{,}5/0{,}8 = 8{,}125 ≈$ **8,13 /min**.\n\nRV (1,7 L) und ERV (1,5 L) sind **Ablenker**. Sie gehören nicht zur IC.\n\n*Das Übungsblatt enthält keine Musterlösung (nur Abbildung); Ergebnis nachgerechnet.*",
+  "keyPoints": [
+   "IC = V_T + IRV → V_T = IC − IRV",
+   "f = AMV / V_T",
+   "Übung: 6,5 / 0,8 = 8,13 /min; RV und ERV sind Ablenker"
+  ],
+  "calc": {
+   "vars": {
+    "IRV": [
+     1.8,
+     2.8,
+     0.1
+    ],
+    "VT": [
+     0.4,
+     0.9,
+     0.05
+    ],
+    "AMV": [
+     5,
+     9,
+     0.5
+    ],
+    "RV": [
+     1.2,
+     2,
+     0.1
+    ],
+    "ERV": [
+     1,
+     2,
+     0.1
+    ]
+   },
+   "given": "Residualvolumen [[RV]] L, Inspirationskapazität [[= IRV + VT]] L, inspiratorisches Reservevolumen [[IRV]] L, exspiratorisches Reservevolumen [[ERV]] L, Atemminutenvolumen [[AMV]] L/min. Gesucht: Atemfrequenz in 1/min.",
+   "solution": "AMV/VT",
+   "unit": "1/min",
+   "steps": [
+    "$V_T = IC - IRV$ = [[= IRV + VT]] − [[IRV]] = [[VT]] L (RV und ERV werden nicht gebraucht)",
+    "$f = AMV / V_T$ = [[AMV]] / [[VT]] = [[= AMV/VT]] /min"
+   ],
+   "example": {
+    "vars": {
+     "IRV": 2.2,
+     "VT": 0.8,
+     "AMV": 6.5,
+     "RV": 1.7,
+     "ERV": 1.5
+    },
+    "result": 8.13
+   }
+  },
+  "source": "MTS_Ue__03_RS3.pdf, Transferfrage „Lungenvolumina & Respirationsfrequenz“; MTS__04_RS3.pdf, Folie 41"
+ },
+ {
+  "id": "MTS-K4-20",
+  "fach": "MTS",
+  "unit": "MTS-K4",
+  "examMode": "calc",
+  "front": "Aus dem **Gesamtvolumen** aller an der Ventilation beteiligten Kompartimente und den Anteilen der Atemwege soll das **Volumen des Alveolarraums** bestimmt werden.",
+  "back": "1. intrathorakale Atemwege = Anteil · Gesamtvolumen\n2. extrathorakale Atemwege = ½ · intrathorakale\n3. Alveolarraum = Gesamt − intrathorakal − extrathorakal\n\nÜbung: $0{,}06 \\cdot 4{,}4 = 0{,}264$ L; $0{,}132$ L; $4{,}4 - 0{,}264 - 0{,}132 = 4{,}004 ≈$ **4,00 L**.\n\n**Die Trachea wird nicht zusätzlich abgezogen.** Sie gehört als zentraler Atemweg zu den intrathorakalen Atemwegen und ist dort schon enthalten. In der Abbildung der Lösungsfolie sind die zentralen Atemwege genau ein Drittel der intrathorakalen (40 von 120 ml). *Das ist eine Interpretation, da keine Musterlösung vorliegt.* Wer die Trachea (0,088 L) trotzdem abzieht, erhält 3,92 L.\n\n*Das Übungsblatt enthält keine Musterlösung (nur Abbildung); Ergebnis nachgerechnet.*",
+  "keyPoints": [
+   "Alveolarraum = Gesamt − intrathorakal − extrathorakal",
+   "Extrathorakal = ½ · intrathorakal",
+   "Trachea ist in den intrathorakalen Atemwegen enthalten (Ablenker)",
+   "Übung: 4,4 − 0,264 − 0,132 = 4,00 L"
+  ],
+  "calc": {
+   "vars": {
+    "Vges": [
+     3.5,
+     5.5,
+     0.1
+    ],
+    "p": [
+     3,
+     8,
+     1
+    ]
+   },
+   "given": "Gesamtvolumen aller Kompartimente [[Vges]] L. Davon liegen [[p]] % in den intrathorakalen Atemwegen. Die extrathorakalen Atemwege sind halb so groß wie die intrathorakalen, die Trachea misst ein Drittel der intrathorakalen Atemwege. Gesucht: Volumen des Alveolarraums in L.",
+   "solution": "Vges - Vges*p/100 - Vges*p/100/2",
+   "unit": "L",
+   "steps": [
+    "intrathorakal: [[Vges]] · [[p]] % = [[= Vges*p/100]] L (die Trachea mit [[= Vges*p/300]] L ist darin enthalten)",
+    "extrathorakal: ½ · [[= Vges*p/100]] = [[= Vges*p/200]] L",
+    "Alveolarraum: [[Vges]] − [[= Vges*p/100]] − [[= Vges*p/200]] = [[= Vges - Vges*p/100 - Vges*p/100/2]] L"
+   ],
+   "example": {
+    "vars": {
+     "Vges": 4.4,
+     "p": 6
+    },
+    "result": 4
+   }
+  },
+  "source": "MTS_Ue__03_RS3.pdf, Transferfrage „Anatomische Volumina“"
  }
 ]

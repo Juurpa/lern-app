@@ -12,6 +12,7 @@ const all = read('cards-mts.json');
 // Jede Inhaltsaufgabe ergänzt hier ihre Unit und die erlaubten Quelldateien.
 const UNITS = [
   { id: 'MTS-K3', sources: /MTS__03_RS2\.pdf|MTS_Ue__02_RS2\.pdf|02_Medizintechnische_Systeme\.md/ },
+  { id: 'MTS-K4', sources: /MTS__04_RS3\.pdf|MTS_Ue__03_RS3\.pdf|02_Medizintechnische_Systeme\.md/ },
 ];
 
 for (const { id, sources } of UNITS) {

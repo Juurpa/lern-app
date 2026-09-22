@@ -57,6 +57,7 @@ export function chooseMode(card, st, now, examDate) {
   const reps = st?.fsrs.reps ?? 0;
   if (reps === 0 && card.mc) return 'mc';
   if (reps < 2 && card.cloze) return 'cloze';
+  if (reps < 2 && card.mc) return 'mc';
   const hasBridge = (card.bridges?.length ?? 0) > 0;
   if ((st?.fsrs.stability ?? 0) >= 10 && (hasBridge || card.why) && st.alt % 2 === 0) {
     return hasBridge ? 'bridge' : 'why';

@@ -122,3 +122,10 @@ test('Prüfungsdeckel: gedeckelter Termin liegt mindestens 1 Tag in der Zukunft,
     assert.ok(due - now >= 86400000, `zu früh: ${due}`);
   }
 });
+
+test('chooseMode: Karte mit MC, aber ohne Lückentext → MC in den ersten 2 Wiederholungen', () => {
+  const mcOnly = { examMode: 'free', mc: { options: ['a', 'b'], correct: 'a' } };
+  assert.equal(chooseMode(mcOnly, undefined, t0, FAR), 'mc');
+  assert.equal(chooseMode(mcOnly, stWith(1, 1, 1), t0, FAR), 'mc');
+  assert.equal(chooseMode(mcOnly, stWith(2, 3, 2), t0, FAR), 'free');
+});

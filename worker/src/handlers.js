@@ -1,5 +1,6 @@
 const MAX_BODY = 256 * 1024;
 const MAX_TEXT = 2000;
+const MAX_EVENTS = 200;
 const ALLOWED_ORIGINS = ['https://juurpa.github.io', 'http://localhost:8080'];
 
 const corsHeaders = origin => (ALLOWED_ORIGINS.includes(origin)
@@ -30,10 +31,13 @@ export async function handle(req, env, now = new Date()) {
 
   if (url.pathname === '/events' && req.method === 'POST') {
     if (!env.DEVICE_KEY || bearer(req) !== env.DEVICE_KEY) return json({ error: 'unauthorized' }, 401, cors);
+    const contentLength = req.headers.get('Content-Length');
+    if (contentLength && Number(contentLength) > MAX_BODY) return json({ error: 'too large' }, 413, cors);
     const text = await req.text();
-    if (text.length > MAX_BODY) return json({ error: 'too large' }, 413, cors);
+    if (new TextEncoder().encode(text).length > MAX_BODY) return json({ error: 'too large' }, 413, cors);
     let body;
     try { body = JSON.parse(text); } catch { return json({ error: 'bad json' }, 400, cors); }
+    if (Array.isArray(body?.events) && body.events.length > MAX_EVENTS) return json({ error: 'too many events' }, 413, cors);
     const events = (Array.isArray(body?.events) ? body.events : []).map(cleanEvent).filter(Boolean);
     if (!events.length) return json({ stored: 0 }, 200, cors);
     await env.LERN.put(`b:${now.toISOString()}:${crypto.randomUUID()}`, JSON.stringify(events));

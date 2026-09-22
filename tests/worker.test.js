@@ -70,3 +70,19 @@ test('cleanEvent: Veto ohne Button erlaubt, Review ohne gültigen Button nicht',
 test('unbekannte Route 404', async () => {
   assert.equal((await handle(new Request('https://w.example/nix'), env(), now)).status, 404);
 });
+
+test('POST /events: UTF-8 byte size > 256KB (string.length deceptively small) → 413', async () => {
+  const answerWithUmlauts = 'ä'.repeat(140000);
+  assert(answerWithUmlauts.length < 256 * 1024, 'string length should be < 256KB');
+  assert(new TextEncoder().encode(answerWithUmlauts).length > 256 * 1024, 'UTF-8 byte size should be > 256KB');
+  const res = await handle(post({ events: [ev({ answer: answerWithUmlauts })] }), env(), now);
+  assert.equal(res.status, 413);
+  assert.deepEqual(await res.json(), { error: 'too large' });
+});
+
+test('POST /events: > 200 events → 413', async () => {
+  const events = Array.from({ length: 201 }, (_, i) => ev({ eventId: `e${i}` }));
+  const res = await handle(post({ events }), env(), now);
+  assert.equal(res.status, 413);
+  assert.deepEqual(await res.json(), { error: 'too many events' });
+});

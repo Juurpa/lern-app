@@ -1,4 +1,4 @@
-const CACHE = 'lernapp-v3';
+const CACHE = 'lernapp-v4';
 const SHELL = [
   './', 'index.html', 'manifest.webmanifest', 'icon.svg', 'css/app.css',
   'js/app.js', 'js/data.js', 'js/gaps.js', 'js/render.js', 'js/scheduler.js', 'js/session.js', 'js/store.js',
@@ -7,8 +7,29 @@ const SHELL = [
   'data/meta.json', 'data/synthesis.json', 'data/units.json'
 ];
 
+// Exakt versionierte CDN-Bibliotheken (identisch zu index.html) + KaTeX-Grundschriften:
+// werden bei der Installation vorgeladen, damit die App auch direkt nach einem Update offline startet.
+const CDN = [
+  'https://cdn.jsdelivr.net/npm/marked@15.0.12/marked.min.js',
+  'https://cdn.jsdelivr.net/npm/katex@0.16.47/dist/katex.min.css',
+  'https://cdn.jsdelivr.net/npm/katex@0.16.47/dist/katex.min.js',
+  'https://cdn.jsdelivr.net/npm/katex@0.16.47/dist/contrib/auto-render.min.js',
+  'https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@11.12.0/styles/github-dark.min.css',
+  'https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@11.12.0/highlight.min.js',
+  'https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@11.12.0/languages/matlab.min.js',
+  'https://cdn.jsdelivr.net/npm/ts-fsrs@5.4.2/+esm',
+  'https://cdn.jsdelivr.net/npm/katex@0.16.47/dist/fonts/KaTeX_Main-Regular.woff2',
+  'https://cdn.jsdelivr.net/npm/katex@0.16.47/dist/fonts/KaTeX_Main-Bold.woff2',
+  'https://cdn.jsdelivr.net/npm/katex@0.16.47/dist/fonts/KaTeX_Main-Italic.woff2',
+  'https://cdn.jsdelivr.net/npm/katex@0.16.47/dist/fonts/KaTeX_Math-Italic.woff2',
+  'https://cdn.jsdelivr.net/npm/katex@0.16.47/dist/fonts/KaTeX_Size1-Regular.woff2',
+  'https://cdn.jsdelivr.net/npm/katex@0.16.47/dist/fonts/KaTeX_Size2-Regular.woff2',
+  'https://cdn.jsdelivr.net/npm/katex@0.16.47/dist/fonts/KaTeX_AMS-Regular.woff2'
+];
+
+// Atomar: schlägt ein Download fehl, bleibt die alte Version samt Cache aktiv.
 self.addEventListener('install', e => {
-  e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)));
+  e.waitUntil(caches.open(CACHE).then(c => c.addAll([...SHELL, ...CDN.map(u => new Request(u, { mode: 'cors' }))])));
   self.skipWaiting();
 });
 

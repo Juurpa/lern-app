@@ -24,3 +24,27 @@ test('Gemini-Aufrufe werden nie gecacht', () => {
 test('Fetch-Fallback liefert bei Cache-Miss + Netzwerkfehler eine saubere Response', () => {
   assert.match(sw, /Response\.error\(\)/);
 });
+
+const cdnMatch = sw.match(/const CDN = (\[[\s\S]*?\]);/);
+const cdn = cdnMatch ? JSON.parse(cdnMatch[1].replace(/'/g, '"').replace(/,\s*\]/, ']')) : [];
+const html = readFileSync(new URL('index.html', root), 'utf8');
+const htmlCdn = [...html.matchAll(/https:\/\/cdn\.jsdelivr\.net\/[^"'\s]+/g)].map(m => m[0]);
+
+test('jede CDN-URL aus index.html ist exakt versioniert und im SW-Precache', () => {
+  assert.ok(htmlCdn.length >= 8, `nur ${htmlCdn.length} CDN-URLs gefunden`);
+  for (const u of htmlCdn) {
+    assert.match(u, /@\d+\.\d+\.\d+\//, `nicht exakt gepinnt: ${u}`);
+    assert.ok(cdn.includes(u), `nicht im Precache: ${u}`);
+  }
+});
+
+test('KaTeX-Grundschriften sind im Precache', () => {
+  for (const f of ['Main-Regular', 'Math-Italic', 'Main-Bold', 'Size1-Regular', 'Size2-Regular', 'AMS-Regular']) {
+    assert.ok(cdn.some(u => u.endsWith(`/fonts/KaTeX_${f}.woff2`)), `fehlt: ${f}`);
+  }
+});
+
+test('CDN wird mit CORS-Requests vorgeladen, Cache-Version erhöht', () => {
+  assert.match(sw, /new Request\(u(rl)?, \{ mode: 'cors' \}\)/);
+  assert.match(sw, /const CACHE = 'lernapp-v4'/);
+});

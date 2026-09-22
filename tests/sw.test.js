@@ -48,3 +48,10 @@ test('CDN wird mit CORS-Requests vorgeladen, Cache-Version erhöht', () => {
   assert.match(sw, /new Request\(u(rl)?, \{ mode: 'cors' \}\)/);
   assert.match(sw, /const CACHE = 'lernapp-v4'/);
 });
+
+test('PNG-Icons: Manifest (192/512), apple-touch-icon und SHELL', () => {
+  const manifest = JSON.parse(readFileSync(new URL('manifest.webmanifest', root), 'utf8'));
+  for (const size of ['192x192', '512x512']) assert.ok(manifest.icons.some(i => i.sizes === size && i.type === 'image/png'), `fehlt: ${size}`);
+  assert.match(html, /<link rel="apple-touch-icon" href="icon-180\.png">/);
+  for (const i of ['icon-180.png', ...manifest.icons.map(x => x.src)]) assert.ok(shell.includes(i), `nicht gecacht: ${i}`);
+});

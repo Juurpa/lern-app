@@ -5,11 +5,13 @@ export function renderGaps({ data, store, root }) {
   const doc = store.load();
   const open = openGaps(doc.gaps);
   const closed = doc.gaps.filter(g => g.closed);
+  const cardById = new Map(data.cards.map(c => [c.id, c]));
+  const front = g => cardById.get(g.cardId)?.front ?? g.front;
   const block = f => {
     const list = open.filter(g => g.fach === f);
     if (!list.length) return '';
     return `<h2>${esc(data.meta.faecher[f].label)}</h2>` + list.map(g =>
-      `<div class="panel"><div class="kicker"><span>${new Date(g.added).toLocaleDateString('de-DE')}</span><span>${g.hits.length}/2 ✅</span></div>${md(g.front)}</div>`).join('');
+      `<div class="panel"><div class="kicker"><span>${new Date(g.added).toLocaleDateString('de-DE')}</span><span>${g.hits.length}/2 ✅</span></div>${md(front(g))}</div>`).join('');
   };
   const el = h(`<section>
     <h1>Lücken (${open.length} offen)</h1>

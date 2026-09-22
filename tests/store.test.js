@@ -72,3 +72,15 @@ test('Import verwirft kaputte Kartenzustände und Lücken statt sie zu übernehm
   assert.deepEqual(doc.gaps, [gapOk]);
   assert.deepEqual(s.load().cards, { A: ok });
 });
+
+test('Export enthält keinen Sync-Schlüssel, Import behält beide Schlüssel', () => {
+  const s = createStore(fakeStorage());
+  const doc = emptyDoc();
+  doc.settings.syncKey = 'SYNC-GEHEIM';
+  doc.settings.geminiKey = 'GEM';
+  const text = s.exportJson(doc);
+  assert.ok(!text.includes('SYNC-GEHEIM'));
+  const back = s.importJson(text, { geminiKey: 'GEM', syncKey: 'SYNC-GEHEIM' });
+  assert.equal(back.settings.syncKey, 'SYNC-GEHEIM');
+  assert.equal(back.settings.geminiKey, 'GEM');
+});

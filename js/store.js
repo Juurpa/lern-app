@@ -3,7 +3,7 @@ export const VERSION = 1;
 export function emptyDoc() {
   return {
     version: VERSION, cards: {}, units: {}, gaps: [],
-    settings: { newPerSession: 15, geminiKey: '', geminiModel: 'gemini-flash-latest' },
+    settings: { newPerSession: 15, geminiKey: '', geminiModel: 'gemini-flash-latest', syncKey: '' },
   };
 }
 
@@ -34,9 +34,10 @@ export function createStore(storage = globalThis.localStorage, key = 'lernapp.v1
       storage.setItem(key, JSON.stringify(doc));
     },
     exportJson(doc) {
-      return JSON.stringify({ ...doc, settings: { ...doc.settings, geminiKey: '' } }, null, 1);
+      return JSON.stringify({ ...doc, settings: { ...doc.settings, geminiKey: '', syncKey: '' } }, null, 1);
     },
-    importJson(text, keepKey = '') {
+    importJson(text, keep = '') {
+      const k = typeof keep === 'string' ? { geminiKey: keep } : keep;
       let d;
       try { d = JSON.parse(text); }
       catch { throw new Error('Datei ist keine gültige JSON-Sicherung'); }
@@ -46,7 +47,8 @@ export function createStore(storage = globalThis.localStorage, key = 'lernapp.v1
       const doc = normalize(d);
       doc.cards = Object.fromEntries(Object.entries(doc.cards).filter(([, st]) => validCardState(st)));
       doc.gaps = doc.gaps.filter(validGap);
-      doc.settings.geminiKey = keepKey;
+      doc.settings.geminiKey = k.geminiKey ?? '';
+      doc.settings.syncKey = k.syncKey ?? '';
       this.save(doc);
       return doc;
     },

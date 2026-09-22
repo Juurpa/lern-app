@@ -2,15 +2,17 @@ import { h } from '../render.js';
 import { buildSession, insertRelearn, sessionNewLimit } from '../session.js';
 import { review, chooseMode } from '../scheduler.js';
 import { addGap, recordCorrect } from '../gaps.js';
+import { makeReviewEvent } from '../sync.js';
 import { renderCard } from './card.js';
 import { renderUnit } from './unit.js';
 
-export function renderLearn({ data, store, root }) {
+export function renderLearn({ data, store, root, sync }) {
   const doc = store.load();
   const cardById = new Map(data.cards.map(c => [c.id, c]));
   const unitById = new Map(data.units.map(u => [u.id, u]));
   const done = new Set();
   const stats = { red: 0, yellow: 0, green: 0 };
+  const sessionId = globalThis.crypto?.randomUUID?.() ?? String(Date.now());
   let started = Date.now();
   let shownNew = 0; // neue Karten in der aktuellen 15-min-Session
   let queue = [];
@@ -59,7 +61,7 @@ export function renderLearn({ data, store, root }) {
     const mode = chooseMode(card, doc.cards[card.id], new Date(), exam);
     renderCard(root, {
       card, mode, fachLabel,
-      onRated: ({ button, hinted }) => {
+      onRated: ({ button, hinted, answer, ms }) => {
         const now = new Date();
         if (!doc.cards[card.id]) shownNew++;
         doc.cards[card.id] = review(doc.cards[card.id], { button, mode, hinted }, now, exam);
@@ -72,6 +74,8 @@ export function renderLearn({ data, store, root }) {
         done.add(card.id);
         stats[button]++;
         save();
+        sync?.push(makeReviewEvent({ card, button, mode, hinted, answer, ms, sessionId, now }));
+        sync?.flush();
         next();
       },
     });

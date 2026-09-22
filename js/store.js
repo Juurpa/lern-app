@@ -16,6 +16,10 @@ function isPlainObject(x) {
   return x !== null && typeof x === 'object' && !Array.isArray(x);
 }
 
+const isDateString = v => (typeof v === 'string' || typeof v === 'number') && !Number.isNaN(new Date(v).getTime());
+const validCardState = st => isPlainObject(st) && isPlainObject(st.fsrs) && isDateString(st.fsrs.due);
+const validGap = g => isPlainObject(g) && ['cardId', 'fach', 'front', 'added'].every(k => typeof g[k] === 'string') && Array.isArray(g.hits);
+
 export function createStore(storage = globalThis.localStorage, key = 'lernapp.v1') {
   return {
     load() {
@@ -33,11 +37,15 @@ export function createStore(storage = globalThis.localStorage, key = 'lernapp.v1
       return JSON.stringify({ ...doc, settings: { ...doc.settings, geminiKey: '' } }, null, 1);
     },
     importJson(text, keepKey = '') {
-      const d = JSON.parse(text);
+      let d;
+      try { d = JSON.parse(text); }
+      catch { throw new Error('Datei ist keine gültige JSON-Sicherung'); }
       if (d?.version !== VERSION || !isPlainObject(d.cards) || !Array.isArray(d.gaps) || (d.units !== undefined && !isPlainObject(d.units))) {
         throw new Error('Keine gültige Sicherung der Lern-App');
       }
       const doc = normalize(d);
+      doc.cards = Object.fromEntries(Object.entries(doc.cards).filter(([, st]) => validCardState(st)));
+      doc.gaps = doc.gaps.filter(validGap);
       doc.settings.geminiKey = keepKey;
       this.save(doc);
       return doc;

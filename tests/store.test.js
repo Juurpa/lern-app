@@ -52,3 +52,23 @@ test('importJson lehnt cards: [] (Array) ab', () => {
   const s = createStore(fakeStorage());
   assert.throws(() => s.importJson('{"version":1,"cards":[],"gaps":[]}'), /Keine gültige Sicherung/);
 });
+
+test('Import: ungültiges JSON → verständliche Meldung', () => {
+  const s = createStore(fakeStorage());
+  assert.throws(() => s.importJson('nicht json'), /Datei ist keine gültige JSON-Sicherung/);
+});
+
+test('Import verwirft kaputte Kartenzustände und Lücken statt sie zu übernehmen', () => {
+  const s = createStore(fakeStorage());
+  const ok = { fsrs: { due: '2026-09-30T08:00:00.000Z', reps: 1, stability: 2 }, alt: 1 };
+  const gapOk = { cardId: 'A', fach: 'INF2', front: 'F', added: '2026-09-22T08:00:00.000Z', hits: [], closed: null };
+  const d = {
+    version: 1, units: {},
+    cards: { A: ok, B: { fsrs: { due: 'kein Datum' } }, C: { alt: 1 }, D: null, E: { fsrs: null } },
+    gaps: [gapOk, { cardId: 5, fach: 'INF2', front: 'F', added: 'x', hits: [] }, { cardId: 'B', fach: 'INF2', front: 'F', added: 'x', hits: null }, null, { cardId: 'C', fach: 'INF2', front: 3, added: 'x', hits: [] }],
+  };
+  const doc = s.importJson(JSON.stringify(d));
+  assert.deepEqual(Object.keys(doc.cards), ['A']);
+  assert.deepEqual(doc.gaps, [gapOk]);
+  assert.deepEqual(s.load().cards, { A: ok });
+});

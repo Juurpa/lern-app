@@ -25,8 +25,9 @@ self.addEventListener('fetch', e => {
   e.respondWith(caches.open(CACHE).then(async cache => {
     const hit = await cache.match(e.request);
     const net = fetch(e.request)
+      // Hintergrund-Update: eine online geladene Ressource ist ab dem nächsten Start offline verfügbar.
       .then(r => { if (r.ok) cache.put(e.request, r.clone()); return r; })
-      .catch(() => hit);
+      .catch(() => hit ?? Response.error());
     return hit ?? net;
   }));
 });

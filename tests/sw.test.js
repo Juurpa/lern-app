@@ -20,3 +20,7 @@ test('alle JS-Module und Datendateien sind in SHELL', () => {
 test('Gemini-Aufrufe werden nie gecacht', () => {
   assert.match(sw, /generativelanguage\.googleapis\.com/);
 });
+
+test('Fetch-Fallback liefert bei Cache-Miss + Netzwerkfehler eine saubere Response', () => {
+  assert.match(sw, /Response\.error\(\)/);
+});

@@ -558,7 +558,7 @@
    "Pleuradruck bleibt stets negativ"
   ],
   "cloze": {
-   "text": "Thorax vergrößert sich → {{1}} sinkt → Lunge folgt → Lungenvolumen steigt → {{2}} wird negativ → Luft strömt ein. Der Pleuradruck bleibt dabei stets {{3}}.",
+   "text": "Thorax vergrößert sich → {{1}} sinkt → Lunge folgt → Lungenvolumen steigt → {{2}} wird negativ → Luft strömt ein. Dieser Druck unterschreitet während des gesamten Atemzyklus nie den Atmosphärendruck, bleibt also stets {{3}}.",
    "answers": [
     "Pleuradruck",
     "Pulmonaldruck",
@@ -1079,7 +1079,7 @@
   "unit": "MTS-K4",
   "examMode": "free",
   "front": "Was ist eine **respiratorische Insuffizienz**, welche **zwei Typen** unterscheidet man, und woran erkennt man sie in der **Blutgasanalyse**?",
-  "back": "**Definition:** O₂-Versorgung bzw. CO₂-Abtransport sind nicht mehr sichergestellt. Die Insuffizienz ist der **„Endpunkt“**, leichte Formen der Störungen sind noch keine Insuffizienz.\n\n| | Lungenparenchymversagen | Atempumpenversagen |\n|---|---|---|\n| auch | **Oxygenierungsversagen** | **Ventilationsversagen** |\n| Ursache | Verlust an funktionellem Lungengewebe | mangelnde Druckdifferenz zur Volumenverschiebung: Störung von **Antrieb, Kraft, Mechanik** |\n| Folge | Oxygenierung ↓ → **pO₂ sinkt** | CO₂-Elimination ↓ → **pCO₂ steigt** |\n\n**Ursache vs. Auswirkung (Folie 8):**\n- Lunge gesund, Atempumpe krank: pCO₂ ↑↑, pO₂ unverändert → **primäre Atempumpeninsuffizienz**. Die Pumpe liefert die Volumenverschiebung, die das CO₂ abtransportiert. Die gesunde Lunge oxygeniert weiter, deshalb ist vor allem der pCO₂ betroffen.\n- Lunge krank, Atempumpe gesund: pCO₂ ↑ oder ↓, pO₂ ↓ → **respiratorische Insuffizienz**\n- Lunge und Atempumpe krank: pCO₂ ↑, pO₂ ↓↓ → **sekundäre Atempumpeninsuffizienz**\n\n**Symptome bei drohender Insuffizienz (u. a.):** Tachypnoe (> 35/min), abnehmendes Atemzugvolumen, **Schaukelatmung** (der Brustkorb zieht sich bei der Einatmung zusammen), Einsatz der Atemhilfsmuskulatur, Unruhe, Schwitzen, Tachykardie, Hypertonie, **respiratorische Alkalose** in der BGA (pO₂ ↓, pCO₂ ↓ → dem Blut werden H⁺-Ionen entzogen).\n\n*Widersprüche:* Folie 6 nennt als Tachypnoe-Schwelle > 35/min (Warnzeichen), Folie 20 definiert Tachypnoe ab > 20/min. Die Alkalose (pCO₂ ↓) passt zur Konstellation „Lunge krank, Atempumpe gesund“, **nicht** zum Ventilationsversagen (pCO₂ ↑). *(Diese Zuordnung ist abgeleitet.)*",
+  "back": "**Definition:** O₂-Versorgung bzw. CO₂-Abtransport sind nicht mehr sichergestellt. Die Insuffizienz ist der **„Endpunkt“**, leichte Formen der Störungen sind noch keine Insuffizienz.\n\n| | Lungenparenchymversagen | Atempumpenversagen |\n|---|---|---|\n| auch | **Oxygenierungsversagen** | **Ventilationsversagen** |\n| Ursache | Verlust an funktionellem Lungengewebe | mangelnde Druckdifferenz zur Volumenverschiebung: Störung von **Antrieb, Kraft, Mechanik** |\n| Folge | Oxygenierung ↓ → **pO₂ sinkt** | CO₂-Elimination ↓ → **pCO₂ steigt** |\n\n**Ursache vs. Auswirkung (Folie 8):**\n- Lunge gesund, Atempumpe krank: pCO₂ ↑↑, pO₂ unverändert → **primäre Atempumpeninsuffizienz**. Die Pumpe liefert die Volumenverschiebung, die das CO₂ abtransportiert. Die gesunde Lunge oxygeniert weiter, deshalb ist vor allem der pCO₂ betroffen.\n- Lunge krank, Atempumpe gesund: pCO₂ ↑ oder ↓, pO₂ ↓ → **respiratorische Insuffizienz**\n- Lunge und Atempumpe krank: pCO₂ ↑, pO₂ ↓↓ → **sekundäre Atempumpeninsuffizienz**\n\n**Symptome bei drohender Insuffizienz (u. a.):** Tachypnoe (> 35/min), abnehmendes Atemzugvolumen, **Schaukelatmung** (der Brustkorb zieht sich bei der Einatmung zusammen), Einsatz der Atemhilfsmuskulatur, Unruhe, Schwitzen, Tachykardie, Hypertonie, **respiratorische Alkalose** in der BGA (pO₂ ↓, pCO₂ ↓ → dem Blut werden H⁺-Ionen entzogen).\n\nFür die Tachypnoe nennen die Folien **unterschiedliche Schwellen**: Folie 20 definiert sie als Tachypnoe ab > 20/min, Folie 6 nennt > 35/min als Warnschwelle einer drohenden Insuffizienz. Die Alkalose (pCO₂ ↓) passt zur Konstellation „Lunge krank, Atempumpe gesund“, **nicht** zum Ventilationsversagen (pCO₂ ↑). *(Diese Zuordnung ist abgeleitet.)* Der Mechanismus: **Hypoxämie → Hyperventilation → pCO₂ ↓ (Alkalose im frühen Stadium)**. *(Dieser Zusammenhang ist abgeleitet, nicht wörtlich auf den Folien.)*",
   "keyPoints": [
    "Insuffizienz: O₂-Versorgung bzw. CO₂-Abtransport nicht mehr gesichert",
    "Atempumpen-/Ventilationsversagen → pCO₂ ↑",
@@ -1237,7 +1237,7 @@
    "correct": "Alveolardruck > Druck A. pulmonalis > Druck V. pulmonalis"
   },
   "cloze": {
-   "text": "Im Stehen steigt der V/Q-Quotient zur Lungenspitze hin, also {{1}}, an. In Zone {{2}} sistiert die Durchblutung in der Diastole.",
+   "text": "Im Stehen ist der V/Q-Quotient {{1}} am höchsten. In Zone {{2}} sistiert die Durchblutung in der Diastole.",
    "answers": [
     "apikal",
     "1"
@@ -1346,7 +1346,7 @@
   "unit": "MTS-K4",
   "examMode": "free",
   "front": "Beschreibe die **pathologischen Atmungstypen** Tachypnoe, Bradypnoe, Cheyne-Stokes-, Kussmaul-, Biot- und Schnappatmung mit Vorkommen.",
-  "back": "| Atmungstyp | Merkmal | Vorkommen (u. a.) |\n|---|---|---|\n| **Tachypnoe** | Atemfrequenz erhöht (> 20/min), normale Tiefe | drohende/manifeste respiratorische Insuffizienz, Stress, Fieber |\n| **Bradypnoe** | Atemfrequenz verringert (< 10/min), normale Tiefe | Narkotika, Drogen |\n| **Cheyne-Stokes** | periodisch; Frequenz und Tiefe nehmen rhythmisch zu und ab | zerebrale Durchblutungsstörungen, Enzephalitis, Entwöhnung vom Respirator, Schlaf |\n| **Kussmaul** | rhythmisch, **abnorm vertieft** | **respiratorische Kompensation einer Azidose** (z. B. Laktatazidose) |\n| **Biot** | periodisch (intermittierend), Atemzüge **gleicher Tiefe** | direkte Hirnverletzung, erhöhter intrakranieller Druck |\n| **Schnappatmung** | kurze, krampfartige Atemexkursionen | unmittelbar vor dem Atemstillstand (Apnoe) |\n\nDie Folien 20–23 stellen diese Typen jeweils unter „Ventilationsversagen (neurologisch, zentral)“.\n\n*Widerspruch:* Folie 20 definiert Tachypnoe ab > 20/min, Folie 6 nennt > 35/min als Warnzeichen einer drohenden Insuffizienz.",
+  "back": "| Atmungstyp | Merkmal | Vorkommen (u. a.) |\n|---|---|---|\n| **Tachypnoe** | Atemfrequenz erhöht (> 20/min), normale Tiefe | drohende/manifeste respiratorische Insuffizienz, Stress, Fieber |\n| **Bradypnoe** | Atemfrequenz verringert (< 10/min), normale Tiefe | Narkotika, Drogen |\n| **Cheyne-Stokes** | periodisch; Frequenz und Tiefe nehmen rhythmisch zu und ab | zerebrale Durchblutungsstörungen, Enzephalitis, Entwöhnung vom Respirator, Schlaf |\n| **Kussmaul** | rhythmisch, **abnorm vertieft** | **respiratorische Kompensation einer Azidose** (z. B. Laktatazidose) |\n| **Biot** | periodisch (intermittierend), Atemzüge **gleicher Tiefe** | direkte Hirnverletzung, erhöhter intrakranieller Druck |\n| **Schnappatmung** | kurze, krampfartige Atemexkursionen | unmittelbar vor dem Atemstillstand (Apnoe) |\n\nDie Folien 20–23 stellen diese Typen jeweils unter „Ventilationsversagen (neurologisch, zentral)“.\n\nFür die Tachypnoe nennen die Folien **unterschiedliche Schwellen**: Folie 20 definiert sie ab > 20/min, Folie 6 nennt > 35/min als Warnzeichen einer drohenden Insuffizienz.",
   "keyPoints": [
    "Tachypnoe > 20/min, Bradypnoe < 10/min (normale Tiefe)",
    "Cheyne-Stokes: zu- und abnehmend; Biot: intermittierend, gleiche Tiefe",
@@ -1880,7 +1880,7 @@
    "Beatmung: Exspiration passiv, Unterschied liegt in der Inspiration"
   ],
   "cloze": {
-   "text": "Der wesentliche Unterschied zwischen Spontanatmung und Beatmung liegt in der {{1}}. Ist T_I : T_E größer als 1, spricht man von einem {{2}} Atemzeitverhältnis.",
+   "text": "Der wesentliche Unterschied zwischen Spontanatmung und Beatmung liegt in der {{1}}. Ist das Verhältnis von Inspirationszeit zu Exspirationszeit größer als 1, spricht man von einem {{2}} Atemzeitverhältnis.",
    "answers": [
     "Inspiration",
     "inversen"
@@ -2055,7 +2055,7 @@
    "correct": "wegen Atelektasengefahr"
   },
   "cloze": {
-   "text": "Ein am Gerät eingestellter PEEP heißt {{1}} PEEP. Ein PEEP als Folge unvollständiger Ausatmung heißt {{2}} PEEP.",
+   "text": "Ein am Gerät eingestellter PEEP heißt {{1}} PEEP (Folienbegriff). Ein PEEP als Folge unvollständiger Ausatmung heißt {{2}} PEEP.",
    "answers": [
     "extrinsischer",
     "intrinsischer"
@@ -2119,7 +2119,7 @@
    "Beendigung durch Patient heute i. d. R. über Flow"
   ],
   "cloze": {
-   "text": "Bei Maschinentriggerung wird die Inspiration nach einem festen {{1}} ausgelöst. Beendet der Patient die Inspiration, erkennt das Gerät das heute in der Regel am {{2}}.",
+   "text": "Bei Maschinentriggerung wird die Inspiration nach einem festen {{1}} ausgelöst. Beendet der Patient die Inspiration, erkennt das Gerät das heute in der Regel am {{2}} (Folienbegriff).",
    "answers": [
     "Zeitintervall",
     "Flow"
@@ -2302,7 +2302,7 @@
   "unit": "MTS-K5",
   "examMode": "calc",
   "front": "**RC-Exspiration:** Nach welcher Zeit ist der Druck über der Compliance bei passiver Exspiration auf einen bestimmten **Anteil des Ausgangsdrucks** gefallen?",
-  "back": "Passive Exspiration = Entladung des RC-Glieds (Lsg_RS4.pdf, S. 4):\n$$P_C(t) = P_{C,0}\\,e^{-t/\\tau},\\qquad \\tau = RC$$\nAuf den Anteil $p$ gefallen: $e^{-t/\\tau} = p$ → $t = -\\tau\\ln p$.\n\n**Übung** ($R = 2$ mbar·s/L, $C = 0{,}1$ L/mbar, 60 %):\n$\\tau = 0{,}2$ s → $t = -0{,}2\\cdot\\ln 0{,}6 = 0{,}2\\cdot 0{,}511 ≈$ **0,102 s = 102 ms**.\n\nDie Karte fragt in **ms**, damit auch kurze Zeiten gerundet in die Toleranz passen. In der Klausur ist die Zeit in s anzugeben (0,10 s).\n\nKontrolle der Einheiten: mbar·s/L · L/mbar = s.\n\n*Für diese Aufgabe gibt es keine Musterlösung (Lsg_RS4.pdf behandelt nur „Druckabfall bei restriktiver Störung“); Ergebnis nachgerechnet.*",
+  "back": "Passive Exspiration = Entladung des RC-Glieds (Lsg_RS4.pdf, S. 4):\n$$P_C(t) = P_{C,0}\\,e^{-t/\\tau},\\qquad \\tau = RC$$\nAuf den Anteil $p$ gefallen: $e^{-t/\\tau} = p$ → $t = -\\tau\\ln p$.\n\n**Übung** ($R = 2$ mbar·s/L, $C = 0{,}1$ L/mbar, 60 %):\n$\\tau = 0{,}2$ s → $t = -0{,}2\\cdot\\ln 0{,}6 = 0{,}2\\cdot 0{,}511 ≈$ **0,102 s = 102 ms**.\n\nDie Karte fragt in **ms**, damit auch kurze Zeiten gerundet in die Toleranz passen. Übung/Musterlösung rechnen in s; auf 2 Nachkommastellen 0,10 s.\n\nKontrolle der Einheiten: mbar·s/L · L/mbar = s.\n\n*Für diese Aufgabe gibt es keine Musterlösung (Lsg_RS4.pdf behandelt nur „Druckabfall bei restriktiver Störung“); Ergebnis nachgerechnet.*",
   "keyPoints": [
    "P_C(t) = P_C,0 · e^(−t/τ), τ = R·C",
    "t = −τ · ln(Anteil)",

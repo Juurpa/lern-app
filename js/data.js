@@ -30,8 +30,11 @@ function checkCard(c, unitIds, faecher) {
     delete card.mc;
   }
   if (card.cloze) {
-    const gaps = (card.cloze.text?.match(/\{\{\d+\}\}/g) ?? []).length;
-    if (gaps === 0 || gaps !== card.cloze.answers?.length) {
+    const nums = [...(card.cloze.text?.matchAll(/\{\{(\d+)\}\}/g) ?? [])].map(m => Number(m[1]));
+    const uniq = new Set(nums);
+    const n = card.cloze.answers?.length ?? 0;
+    const valid = nums.length > 0 && uniq.size === n && [...uniq].every(i => i >= 1 && i <= n);
+    if (!valid) {
       warnings.push(`${id}: Lückenzahl ≠ answers – Lückentext entfernt`);
       delete card.cloze;
     }

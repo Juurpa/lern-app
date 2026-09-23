@@ -44,6 +44,26 @@ test('kaputtes mc/cloze wird entfernt, Karte bleibt (Warnung)', () => {
   assert.equal(r.warnings.length, 2);
 });
 
+test('cloze mit wiederholtem Platzhalter (gleiche Antwort mehrfach) bleibt erhalten', () => {
+  const r = validateData({ meta, units, cards: [{
+    ...ok,
+    cloze: { text: '{{1}} und nochmal {{1}}, dann {{2}}', answers: ['x', 'y'] },
+  }] });
+  assert.equal(r.cards.length, 1);
+  assert.notEqual(r.cards[0].cloze, undefined);
+  assert.equal(r.warnings.length, 0);
+});
+
+test('cloze mit Lücke außerhalb des answers-Bereichs wird entfernt', () => {
+  const r = validateData({ meta, units, cards: [{
+    ...ok,
+    cloze: { text: '{{1}} und {{3}}', answers: ['x', 'y'] },
+  }] });
+  assert.equal(r.cards.length, 1);
+  assert.equal(r.cards[0].cloze, undefined);
+  assert.equal(r.warnings.length, 1);
+});
+
 test('code-Karte braucht code.solution', () => {
   const r = validateData({ meta, units, cards: [{ ...ok, examMode: 'code' }] });
   assert.equal(r.cards.length, 0);

@@ -1,1 +1,2535 @@
-[]
+[
+ {
+  "id": "RAD-S1-01",
+  "fach": "RADAR",
+  "unit": "RAD-S1",
+  "examMode": "voice",
+  "front": "Nenne alle vier Maxwell-Gleichungen in Integralform und ordne jeder ihre physikalische Bedeutung zu.",
+  "back": "1. $\\oint \\vec D\\cdot d\\vec A = \\iiint \\rho\\,dV$ — **Gauß, elektrisch**: Ladungen sind Quellen des D-Feldes.\n2. $\\oint \\vec B\\cdot d\\vec A = 0$ — **Gauß, magnetisch**: keine magnetischen Monopole, B-Feldlinien sind geschlossen.\n3. $\\oint \\vec E\\cdot d\\vec s = -\\iint \\dfrac{\\partial \\vec B}{\\partial t}\\cdot d\\vec A$ — **Induktionsgesetz**: zeitlich veränderliches B-Feld erzeugt Wirbel-E-Feld.\n4. $\\oint \\vec H\\cdot d\\vec s = \\iint \\left(\\vec J+\\dfrac{\\partial \\vec D}{\\partial t}\\right)\\cdot d\\vec A$ — **Durchflutungsgesetz**: Leitungs- und Verschiebungsstrom erzeugen Wirbel-H-Feld.",
+  "keyPoints": [
+   "div D = ρ: Ladung als Quelle",
+   "div B = 0: keine Monopole",
+   "rot E = -∂B/∂t: Induktion",
+   "rot H = J + ∂D/∂t: Durchflutung mit Verschiebungsstrom"
+  ],
+  "mc": {
+   "stem": "Welche Maxwell-Gleichung besagt, dass es keine magnetischen Monopole gibt?",
+   "options": [
+    "$\\oint \\vec B\\cdot d\\vec A = 0$",
+    "$\\oint \\vec D\\cdot d\\vec A = Q$",
+    "$\\oint \\vec E\\cdot d\\vec s = -\\iint \\partial \\vec B/\\partial t\\cdot d\\vec A$",
+    "$\\oint \\vec H\\cdot d\\vec s = I_{ges}$"
+   ],
+   "correct": "$\\oint \\vec B\\cdot d\\vec A = 0$"
+  },
+  "source": "skript_physik_2_emf.pdf, Kapitel 1.11 (Maxwell'sche Gleichungen in Integralform, S. 15–16)"
+ },
+ {
+  "id": "RAD-S1-02",
+  "fach": "RADAR",
+  "unit": "RAD-S1",
+  "examMode": "voice",
+  "front": "Warum musste Maxwell das Ampère'sche Gesetz um die Verschiebungsstromdichte ∂D/∂t erweitern – was würde ohne sie fehlen?",
+  "back": "Ohne $\\partial \\vec D/\\partial t$ würde $\\oint \\vec H\\cdot d\\vec s = \\iint \\vec J\\cdot d\\vec A$ vom gewählten Integrationsweg/der Fläche abhängen: Legt man die Fläche z. B. durch das Dielektrikum eines Kondensators, fließt dort kein Leitungsstrom J, wohl aber ändert sich D. Erst der Term $\\partial \\vec D/\\partial t$ macht das Gesetz konsistent, unabhängig von der Flächenwahl. Physikalisch bedeutet er: eine **zeitlich veränderliche elektrische Flussdichte wirkt wie ein Strom** und erzeugt ebenfalls ein Wirbel-H-Feld. Ohne diesen Term gäbe es keine gekoppelte Rückkopplung zwischen E und H und damit **keine Wellenausbreitung im ladungsfreien Raum**. (Das Kondensator-Beispiel ist ein Standard-Lehrbuchargument zur Anschaulichkeit, auf der zitierten Folie selbst nicht ausgeführt.)",
+  "keyPoints": [
+   "Ohne ∂D/∂t: Durchflutungsgesetz hängt von Flächenwahl ab (Kondensator-Widerspruch)",
+   "∂D/∂t wirkt wie ein Strom (Verschiebungsstrom)",
+   "Erst damit koppeln E und H zur Welle"
+  ],
+  "mc": {
+   "stem": "Was bewirkt der von Maxwell ergänzte Term ∂D/∂t im Durchflutungsgesetz?",
+   "options": [
+    "Er macht das Gesetz unabhängig von der Wahl der Integrationsfläche und ermöglicht Wellenausbreitung im ladungsfreien Raum",
+    "Er sorgt dafür, dass magnetische Monopole existieren können",
+    "Er beschreibt ausschließlich den Leitungsstrom in Metallen",
+    "Er ersetzt das Induktionsgesetz vollständig"
+   ],
+   "correct": "Er macht das Gesetz unabhängig von der Wahl der Integrationsfläche und ermöglicht Wellenausbreitung im ladungsfreien Raum"
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.2.6, Folie 63"
+ },
+ {
+  "id": "RAD-S1-03",
+  "fach": "RADAR",
+  "unit": "RAD-S1",
+  "examMode": "voice",
+  "front": "Nenne die drei Materialgleichungen und die Kontinuitätsgleichung. Was drückt Letztere aus?",
+  "back": "**Materialgleichungen:** $\\vec D=\\varepsilon_0\\varepsilon_r\\vec E$ (Verschiebungsdichte), $\\vec B=\\mu_0\\mu_r\\vec H$ (Flussdichte), $\\vec J=\\sigma\\vec E$ (lokales Ohm'sches Gesetz).\n**Kontinuitätsgleichung:** $\\text{div}\\,\\vec J = -\\dfrac{\\partial \\rho}{\\partial t}$ — die Stromdichte, die aus einem Volumen herausfließt, entspricht genau der dortigen Abnahme der Ladungsdichte pro Zeit. Ladung wird weder erzeugt noch vernichtet, sie fließt nur.",
+  "keyPoints": [
+   "D = ε₀εᵣE, B = μ₀μᵣH, J = σE",
+   "div J = -∂ρ/∂t = Ladungserhaltung",
+   "Kontinuitätsgleichung liegt der Herleitung der retardierten Potentiale zugrunde"
+  ],
+  "cloze": {
+   "text": "Die Kontinuitätsgleichung $\\text{div}\\,\\vec J = -\\partial\\rho/\\partial t$ drückt die Erhaltung der {{1}} aus.",
+   "answers": [
+    "Ladung"
+   ]
+  },
+  "source": "skript_physik_2_emf.pdf, Kapitel 1.5/1.7/1.8 (Materialgleichungen); Kontinuitätsgleichung: Lecture_RadarSystems_Lec.pdf, Abschnitt 2.4.2, Folie 88"
+ },
+ {
+  "id": "RAD-S1-04",
+  "fach": "RADAR",
+  "unit": "RAD-S1",
+  "examMode": "voice",
+  "front": "Unterscheide stationäre, quasistationäre und zeitharmonische Felder – und erkläre, warum man in der Hochfrequenztechnik mit dem Ansatz e^{jωt} rechnet.",
+  "back": "- **Stationär:** Felder sind zeitunabhängig (Statik).\n- **Quasistationär:** Felder ändern sich zwar mit der Zeit, aber die Verschiebungsstromdichte $\\partial \\vec D/\\partial t$ ist gegenüber der Leitungsstromdichte $\\vec J$ vernachlässigbar – typisch im **Nahfeld**, wenn die Bauteilabmessungen ≪ λ sind.\n- **Zeitharmonisch:** Ansatz $\\vec E(\\vec r,t)=\\text{Re}(\\underline{\\vec E}(\\vec r)e^{j\\omega t})$. Jede Zeitableitung wird zu einer Multiplikation mit $j\\omega$ ($\\partial/\\partial t \\to j\\omega$). Dadurch werden aus den partiellen Differentialgleichungen der Maxwell-Gleichungen **algebraische Gleichungen in ω** – Amplitude und Phase des Feldes stecken vollständig im komplexen Zeiger $\\underline{\\vec E}(\\vec r)$, genau wie bei der komplexen Wechselstromrechnung.",
+  "why": "Warum liefert derselbe zeitharmonische Ansatz für E automatisch auch für H, D und B dieselbe Kreisfrequenz ω?",
+  "cloze": {
+   "text": "Bei der quasistationären Näherung sind die Bauteil-Abmessungen viel kleiner als die {{1}}, sodass der Verschiebungsstrom gegenüber dem Leitungsstrom vernachlässigt werden kann.",
+   "answers": [
+    "Wellenlänge"
+   ]
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.2.5–2.2.6, Folie 54 und 64",
+  "keyPoints": [
+   "Stationär: zeitunabhängig",
+   "Quasistationär: dD/dt gegenüber J vernachlässigbar (Nahfeld)",
+   "Zeitharmonisch: e^(jωt)-Ansatz, d/dt → jω",
+   "Macht aus DGLs algebraische Gleichungen in ω"
+  ]
+ },
+ {
+  "id": "RAD-S1-05",
+  "fach": "RADAR",
+  "unit": "RAD-S1",
+  "examMode": "voice",
+  "front": "Skizziere die Herleitung: Wie kommt man im quellenfreien Raum von den Maxwell-Gleichungen zur Wellengleichung?",
+  "back": "Ausgangspunkt (quellenfrei, zeitharmonisch): $\\text{rot}\\,\\vec H=j\\omega\\vec D=j\\omega\\varepsilon\\vec E$ (Durchflutungsgesetz), $\\text{rot}\\,\\vec E=-j\\omega\\vec B=-j\\omega\\mu\\vec H$ (Induktionsgesetz).\n1. Durchflutungsgesetz nach $\\vec E$ auflösen: $\\vec E=\\dfrac{1}{j\\omega\\varepsilon}\\text{rot}\\,\\vec H$.\n2. In das Induktionsgesetz einsetzen: $\\text{rot}\\left(\\dfrac{1}{j\\omega\\varepsilon}\\text{rot}\\,\\vec H\\right)=-j\\omega\\mu\\vec H$.\n3. Umstellen: $\\text{rot}\\,\\text{rot}\\,\\vec H = -j\\omega\\mu\\cdot j\\omega\\varepsilon\\,\\vec H = \\omega^2\\mu\\varepsilon\\,\\vec H$.\n4. Mit $c=1/\\sqrt{\\mu\\varepsilon}$ und Wellenzahl $k=\\omega/c=2\\pi/\\lambda$ folgt die **Wellengleichung** $\\text{rot}\\,\\text{rot}\\,\\vec H = k^2\\vec H$ (der spiegelbildliche Weg – Rotation zuerst auf das Induktionsgesetz, dann das Durchflutungsgesetz einsetzen – liefert dieselbe Gleichung für $\\vec E$). E und H sind über diesen Weg vollständig entkoppelt und erfüllen jeweils dieselbe Gleichung.",
+  "keyPoints": [
+   "Quellenfrei: div D=0, div B=0",
+   "rot H=jωD=jωεE, rot E=-jωB=-jωμH",
+   "Durchflutungsgesetz nach E auflösen, in Induktionsgesetz einsetzen",
+   "Ergebnis: rot rot H = ω²με H = k²H mit c=1/√(εμ)"
+  ],
+  "why": "Warum taucht in der Wellengleichung nur noch das Produkt ωc bzw. k auf, aber nicht mehr E und H getrennt?",
+  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.3.1, Folie 67–70"
+ },
+ {
+  "id": "RAD-S1-06",
+  "fach": "RADAR",
+  "unit": "RAD-S1",
+  "examMode": "voice",
+  "front": "Welche Aussage zur ebenen elektromagnetischen Welle (Ansatz H = e_x e^{-jky}) ist korrekt?",
+  "back": "$\\vec E$, $\\vec H$ und die Ausbreitungsrichtung $\\vec n$ stehen paarweise senkrecht aufeinander (**TEM-Welle**). Es gilt $\\vec E = Z_f\\,(\\vec n\\times\\vec H)$ mit dem Wellenwiderstand $Z_f=\\sqrt{\\mu/\\varepsilon}$ – die Amplituden von E und H sind also fest über $Z_f$ gekoppelt, nicht unabhängig wählbar. *Hinweis:* Folie 73/74 des Foliensatzes schreibt an dieser Stelle abweichend $\\vec E=\\frac{1}{Z_f}(\\vec n\\times\\vec H)$ – das widerspricht der Standardkonvention (und der eigenen Hertzscher-Dipol-Formel auf Folie 80, die $Z_f$ als Faktor nutzt) und ist vermutlich ein Tippfehler im Foliensatz. Rechne mit der physikalisch korrekten Form $\\vec E=Z_f(\\vec n\\times\\vec H)$, sprich das im Zweifel beim Dozenten an.",
+  "keyPoints": [
+   "H = e_x·e^{-jky} propagiert in y-Richtung",
+   "E = Zf·(n×H), n = e_y",
+   "E, H, n bilden ein rechtwinkliges Dreibein (TEM)"
+  ],
+  "mc": {
+   "stem": "Welche Aussage zur ebenen elektromagnetischen Welle ist korrekt?",
+   "options": [
+    "E, H und Ausbreitungsrichtung stehen paarweise senkrecht aufeinander (TEM-Welle)",
+    "E und H sind parallel zueinander orientiert",
+    "Nur E steht senkrecht zur Ausbreitungsrichtung, H ist beliebig orientiert",
+    "E, H und die Ausbreitungsrichtung bilden kein festes Dreibein"
+   ],
+   "correct": "E, H und Ausbreitungsrichtung stehen paarweise senkrecht aufeinander (TEM-Welle)"
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.3.2, Folie 72–73"
+ },
+ {
+  "id": "RAD-S1-07",
+  "fach": "RADAR",
+  "unit": "RAD-S1",
+  "examMode": "voice",
+  "front": "Was ist der Wellenwiderstand Z_f einer ebenen Welle, und welchen Wert hat er im Vakuum?",
+  "back": "$Z_f=\\sqrt{\\mu/\\varepsilon}$ koppelt die Amplituden von E- und H-Feld über $\\vec E=Z_f(\\vec n\\times \\vec H)$. Im Vakuum ($\\varepsilon_r=\\mu_r=1$): $Z_{f0}=120\\pi\\,\\Omega\\approx 377\\,\\Omega$. In einem Medium mit $\\varepsilon_r>1$ sinkt $Z_f$ gegenüber $Z_{f0}$.",
+  "keyPoints": [
+   "Z_f = √(μ/ε)",
+   "Z_f0 (Vakuum) = 120π Ω ≈ 377 Ω",
+   "E = Zf · (n × H)"
+  ],
+  "cloze": {
+   "text": "Der Wellenwiderstand des Vakuums beträgt $Z_{f0} = 120\\pi\\,\\Omega \\approx {{1}}\\,\\Omega$.",
+   "answers": [
+    "377"
+   ]
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.3.2, Folie 73–74"
+ },
+ {
+  "id": "RAD-S1-08",
+  "fach": "RADAR",
+  "unit": "RAD-S1",
+  "examMode": "calc",
+  "front": "Ein FMCW-Radar sendet mit der Trägerfrequenz f. Wie groß ist die Wellenlänge λ in mm?",
+  "back": "$\\lambda = c/f$ mit $c \\approx 3\\times10^8\\,\\text{m/s}$. Als Faustformel: $\\lambda[\\text{mm}] = 300/f[\\text{GHz}]$. Bei $f=76$ GHz: $\\lambda = 300/76\\,\\text{mm} \\approx 3{,}947\\,\\text{mm}$ – diese Zahl taucht an mehreren Stellen im Fach wieder auf (Antennenabstand λ/2, Fernfeldbedingung, Range-Auflösung).",
+  "calc": {
+   "vars": {
+    "f_GHz": [
+     24,
+     81,
+     1
+    ]
+   },
+   "given": "Trägerfrequenz f = [[f_GHz]] GHz",
+   "solution": "300 / f_GHz",
+   "unit": "mm",
+   "steps": [
+    "λ = c / f mit c ≈ 3·10⁸ m/s, also λ[mm] = 300 / f[GHz]",
+    "λ = 300 / [[f_GHz]] mm"
+   ],
+   "example": {
+    "vars": {
+     "f_GHz": 76
+    },
+    "result": 3.947
+   }
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.3.1, Folie 70 (λ = c/f, Beispiel 0,3 m bei 1 GHz)",
+  "keyPoints": [
+   "λ = c/f",
+   "Faustformel: λ[mm] = 300/f[GHz]",
+   "Bei 76 GHz: λ ≈ 3,947 mm",
+   "Diese Zahl taucht mehrfach wieder auf (d=λ/2, Fernfeld, Range-Auflösung)"
+  ]
+ },
+ {
+  "id": "RAD-S1-09",
+  "fach": "RADAR",
+  "unit": "RAD-S1",
+  "examMode": "voice",
+  "front": "Was versteht man unter der Polarisation einer elektromagnetischen Welle, und welche Grundtypen gibt es?",
+  "back": "Die **Polarisation** bezeichnet die Richtung (den zeitlichen Verlauf) des elektrischen Feldvektors E senkrecht zur Ausbreitungsrichtung. Bei **linearer** Polarisation schwingt E immer entlang derselben Achse (Betrag ändert sich, Richtung nicht). Zeigt E dagegen eine sich drehende Richtung mit konstantem Betrag, spricht man von **zirkularer**, bei ungleichen Achsen von **elliptischer** Polarisation.",
+  "keyPoints": [
+   "Polarisation = Richtung des E-Feldvektors",
+   "linear: feste Richtung, Amplitude oszilliert",
+   "zirkular/elliptisch: rotierender E-Vektor"
+  ],
+  "mc": {
+   "stem": "Welche Aussage zur Polarisation einer ebenen Welle ist richtig?",
+   "options": [
+    "Die Polarisation bezeichnet die Richtung des E-Feldvektors senkrecht zur Ausbreitungsrichtung",
+    "Die Polarisation bezeichnet die Frequenz der Welle",
+    "Die Polarisation ist identisch mit dem Wellenwiderstand Z_f",
+    "Nur zirkular polarisierte Wellen existieren in der Praxis"
+   ],
+   "correct": "Die Polarisation bezeichnet die Richtung des E-Feldvektors senkrecht zur Ausbreitungsrichtung"
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.3.2, Folie 75"
+ },
+ {
+  "id": "RAD-S1-10",
+  "fach": "RADAR",
+  "unit": "RAD-S1",
+  "examMode": "calc",
+  "front": "Wie groß ist der Wellenwiderstand Z_f einer ebenen Welle in einem verlustfreien, unmagnetischen Dielektrikum mit relativer Permittivität εr?",
+  "back": "$Z_f=\\sqrt{\\mu/\\varepsilon}=\\dfrac{Z_{f0}}{\\sqrt{\\varepsilon_r}}$ für $\\mu_r=1$, mit $Z_{f0}=120\\pi\\,\\Omega\\approx 377\\,\\Omega$. Je größer $\\varepsilon_r$, desto kleiner der Wellenwiderstand.",
+  "calc": {
+   "vars": {
+    "epsilon_r": [
+     1,
+     12,
+     1
+    ]
+   },
+   "given": "Relative Permittivität εr = [[epsilon_r]] (μr = 1)",
+   "solution": "377 / sqrt(epsilon_r)",
+   "unit": "Ω",
+   "steps": [
+    "Z_f = √(μ/ε) = Z_f0 / √(εr) für μr = 1",
+    "Z_f0 = 120π Ω ≈ 377 Ω",
+    "Z_f = 377 / √([[epsilon_r]]) Ω"
+   ],
+   "example": {
+    "vars": {
+     "epsilon_r": 4
+    },
+    "result": 188.5
+   }
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.3.2, Folie 73–74",
+  "keyPoints": [
+   "Zf = √(μ/ε) = Zf0/√(εr) für μr=1",
+   "Zf0 (Vakuum) ≈ 377 Ω",
+   "Größeres εr → kleineres Zf"
+  ]
+ },
+ {
+  "id": "RAD-S1-11",
+  "fach": "RADAR",
+  "unit": "RAD-S1",
+  "examMode": "voice",
+  "front": "Beschreibe das Fernfeld eines Hertzschen Dipols: Formel, Richtcharakteristik, wo strahlt er nicht ab?",
+  "back": "Für einen Elementarstrahler der Länge $h\\ll\\lambda$ mit Strom $I$ gilt im Fernfeld $\\vec E(\\vec r)=Z_f\\dfrac{jk}{4\\pi}Ih\\dfrac{e^{-jkr}}{r}\\sin\\theta\\,\\vec e_\\theta$. Die Amplitude hängt über $\\sin\\theta$ vom Winkel zur Dipolachse ab: Maximum senkrecht zur Achse ($\\theta=90°$), **keine Abstrahlung entlang der Dipolachse** ($\\theta=0°$, $\\sin\\theta=0$). Das entstehende Strahlungsdiagramm ist rotationssymmetrisch um die Dipolachse (Donut-Form).",
+  "keyPoints": [
+   "Elementarstrahler: Länge h ≪ λ, Strom I",
+   "E ∝ (jk/4π)·I·h·(e^{-jkr}/r)·sinθ",
+   "Maximum senkrecht zur Achse (θ=90°)",
+   "Keine Abstrahlung in Achsrichtung (θ=0°)"
+  ],
+  "mc": {
+   "stem": "In welche Richtung strahlt ein Hertzscher Dipol NICHT ab?",
+   "options": [
+    "Entlang seiner eigenen Achse (θ = 0°)",
+    "Senkrecht zu seiner Achse (θ = 90°)",
+    "In alle Richtungen gleich stark",
+    "Nur nach vorne, unidirektional"
+   ],
+   "correct": "Entlang seiner eigenen Achse (θ = 0°)"
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.4.1, Folie 80"
+ },
+ {
+  "id": "RAD-S1-12",
+  "fach": "RADAR",
+  "unit": "RAD-S1",
+  "examMode": "voice",
+  "front": "Was sind retardierte Potentiale, und was bedeutet die retardierte Zeit t' = t − r/c physikalisch?",
+  "back": "Für eine beliebige, bekannte Stromverteilung J(r',t) auf einer Fläche A lassen sich Vektorpotential und Skalarpotential über $\\vec A(\\vec r,t)=\\dfrac{\\mu}{4\\pi}\\displaystyle\\int_A \\dfrac{\\vec J(\\vec r',t')}{r}\\,da'$ bzw. $\\phi(\\vec r,t)=\\dfrac{1}{4\\pi\\varepsilon}\\displaystyle\\int_A \\dfrac{\\rho(\\vec r',t')}{r}\\,da'$ berechnen, mit $r=|\\vec r-\\vec r'|$. Die **retardierte Zeit** $t'=t-r/c$ berücksichtigt, dass sich Feldänderungen nur mit Lichtgeschwindigkeit $c$ ausbreiten: Das Feld am Aufpunkt zur Zeit $t$ „sieht” nicht den aktuellen, sondern den Zustand der Quelle **von vor der Laufzeit $r/c$**.",
+  "why": "Warum reicht die retardierte Zeit t'=t-r/c allein nicht aus, um die Felder zu berechnen, wenn die Stromverteilung J(r',t) unbekannt ist?",
+  "keyPoints": [
+   "A(r,t), φ(r,t) aus Integralen über bekannte J bzw. ρ",
+   "t' = t - r/c: Signal braucht die Laufzeit r/c",
+   "Feld 'hinkt' der Quelle um r/c hinterher"
+  ],
+  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.4.2, Folie 87–88"
+ },
+ {
+  "id": "RAD-S1-13",
+  "fach": "RADAR",
+  "unit": "RAD-S1",
+  "examMode": "voice",
+  "front": "Ab welcher Entfernung r gilt die Fernfeldnäherung einer Antenne, und warum darf man die Welle dort lokal als eben ansehen?",
+  "back": "Fernfeldbedingung: $r > \\dfrac{2D^2}{\\lambda}$, mit $D$ = größte Abmessung (Apertur) der Antenne. In diesem Bereich vereinfacht sich der Phasenterm $e^{-jk|\\vec r-\\vec r'|}$ zu $e^{-jk|\\vec r|}e^{jk(\\dots)}$, und man kann $r_0\\approx|\\vec r|$ als Abstand zum „Schwerpunkt” der Antenne verwenden. Der Grund: Die Krümmung der von der Antenne ausgehenden Kugelwelle wird über die Antennenapertur $D$ hinweg so gering, dass der dadurch entstehende Phasenfehler vernachlässigbar klein ist – die Kugelwelle darf lokal als **ebene Welle** behandelt werden.",
+  "why": "Warum wächst die geforderte Fernfeld-Entfernung mit dem Quadrat der Antennengröße D, nicht nur linear?",
+  "cloze": {
+   "text": "Die Fernfeldbedingung einer Antenne lautet $r > 2D^2/\\lambda$, wobei $D$ die {{1}} der Antenne bezeichnet.",
+   "answers": [
+    "Abmessung"
+   ]
+  },
+  "source": "Allgemeine Antennentheorie (Fraunhofer-Fernfeldkriterium) – die Formel r>2D²/λ steht nicht wörtlich in Lecture_RadarSystems_Lec.pdf Abschnitt 2.4.3 (dort nur qualitative Phasennäherung) oder in skript_physik_2_emf.pdf.",
+  "keyPoints": [
+   "Fernfeldbedingung: r > 2D²/λ",
+   "D = Antennenapertur",
+   "Ab dort: Phasenfehler durch Kugelwellenkrümmung vernachlässigbar",
+   "Welle darf lokal als eben behandelt werden"
+  ]
+ },
+ {
+  "id": "RAD-S1-14",
+  "fach": "RADAR",
+  "unit": "RAD-S1",
+  "examMode": "calc",
+  "front": "Um welchen Faktor sinkt die Leistungsdichte einer Welle im Freiraum, wenn sich die Entfernung von r1 auf r2 vergrößert?",
+  "back": "Die abgestrahlte Leistung verteilt sich auf eine wachsende Kugelfläche $4\\pi r^2$, die Leistungsdichte fällt daher mit $1/r^2$ (Energieerhaltung, keine Verluste angenommen). Das Verhältnis der Leistungsdichten ist $\\dfrac{S(r_1)}{S(r_2)}=\\left(\\dfrac{r_2}{r_1}\\right)^2$.",
+  "calc": {
+   "vars": {
+    "r1": [
+     5,
+     15,
+     1
+    ],
+    "r2": [
+     30,
+     100,
+     5
+    ]
+   },
+   "given": "Entfernung r1 = [[r1]] m, r2 = [[r2]] m",
+   "solution": "(r2/r1)*(r2/r1)",
+   "unit": "-",
+   "steps": [
+    "Leistungsdichte S ∝ 1/r² (Energieerhaltung auf der Kugelfläche 4πr²)",
+    "S(r1)/S(r2) = (r2/r1)²",
+    "= ([[r2]]/[[r1]])²"
+   ],
+   "example": {
+    "vars": {
+     "r1": 10,
+     "r2": 30
+    },
+    "result": 9
+   }
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.5 (Reflection, diffraction and damping)",
+  "keyPoints": [
+   "Leistungsdichte fällt mit 1/r²",
+   "Ursache: Energieverteilung auf Kugelfläche 4πr²",
+   "S(r1)/S(r2) = (r2/r1)²"
+  ]
+ },
+ {
+  "id": "RAD-S1-15",
+  "fach": "RADAR",
+  "unit": "RAD-S1",
+  "examMode": "voice",
+  "front": "Warum liegt das für Automotive-Radar genutzte 76–81-GHz-Band in einem günstigen Bereich der atmosphärischen Dämpfung?",
+  "back": "Die theoretische atmosphärische Dämpfung steigt mit der Frequenz und zeigt zusätzlich scharfe **Resonanzspitzen** – u. a. bei ≈ 60 GHz (Sauerstoff, O₂) und ≈ 22,2 GHz (Wasserdampf, H₂O). Das 76–81-GHz-Automotive-Band liegt zwischen diesen Resonanzen in einem relativen **Dämpfungsfenster**: Zwar ist die Grunddämpfung bei 76–81 GHz höher als z. B. bei 24 GHz, aber sie liegt deutlich unter der Spitzendämpfung direkt an der O₂-Resonanz bei 60 GHz.",
+  "why": "Warum steigt die grundsätzliche atmosphärische Dämpfung mit der Frequenz auch abseits der Resonanzstellen an?",
+  "keyPoints": [
+   "O₂-Resonanz bei ≈ 60 GHz, H₂O-Resonanz bei ≈ 22,2 GHz",
+   "Grunddämpfung steigt mit der Frequenz",
+   "76–81 GHz liegt zwischen den Resonanzspitzen"
+  ],
+  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.5.2, Folie 107"
+ },
+ {
+  "id": "RAD-S1-16",
+  "fach": "RADAR",
+  "unit": "RAD-S1",
+  "examMode": "voice",
+  "front": "Formuliere das Snellius'sche Brechungsgesetz für elektromagnetische Wellen und die Größe, die dabei die Rolle des optischen Brechungsindex übernimmt.",
+  "back": "$\\sin\\theta_t = \\sin\\theta_i \\cdot \\dfrac{n_1}{n_2}$, mit dem **Brechungsindex** $n=\\sqrt{\\varepsilon_r\\mu_r}$ des jeweiligen Mediums. Geht die Welle in ein optisch dichteres Medium ($n_2>n_1$) über, wird sie zum Lot hin gebrochen ($\\theta_t<\\theta_i$).",
+  "keyPoints": [
+   "sinθt = sinθi · n1/n2",
+   "n = √(εrμr)",
+   "Übergang zu dichterem Medium: Brechung zum Lot hin"
+  ],
+  "mc": {
+   "stem": "Welche Größe entspricht bei elektromagnetischen Wellen dem optischen Brechungsindex n?",
+   "options": [
+    "$n=\\sqrt{\\varepsilon_r\\mu_r}$",
+    "$n=Z_f/Z_{f0}$",
+    "$n=\\varepsilon_r/\\mu_r$",
+    "$n=\\sigma/\\omega\\varepsilon$"
+   ],
+   "correct": "$n=\\sqrt{\\varepsilon_r\\mu_r}$"
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.5.1, Folie 100"
+ },
+ {
+  "id": "RAD-S1-17",
+  "fach": "RADAR",
+  "unit": "RAD-S1",
+  "examMode": "voice",
+  "front": "Was unterscheidet s-/TE- und p-/TM-Polarisation bei der Reflexion an einer Grenzfläche?",
+  "back": "**s / TE (perpendicular):** Das elektrische Feld steht senkrecht zur Einfallsebene und damit parallel zur Grenzfläche.\n**p / TM (parallel):** Das elektrische Feld liegt in der Einfallsebene, also nicht parallel zur Grenzfläche.\nDie Einfallsebene ist dabei die Ebene, die durch den einfallenden Strahl und die Flächennormale aufgespannt wird. Beide Polarisationen haben unterschiedliche Reflexions-/Transmissionsfaktoren ($r_p, t_p$ bzw. $r_s, t_s$).",
+  "keyPoints": [
+   "Einfallsebene = Ebene aus Strahl + Flächennormale",
+   "TE/s: E senkrecht zur Einfallsebene, parallel zur Grenzfläche",
+   "TM/p: E parallel zur Einfallsebene"
+  ],
+  "mc": {
+   "stem": "Was unterscheidet s-/TE- und p-/TM-Polarisation bei der Reflexion an einer Grenzfläche?",
+   "options": [
+    "TE: E-Feld senkrecht zur Einfallsebene (parallel zur Grenzfläche); TM: E-Feld parallel zur Einfallsebene",
+    "TE: E-Feld parallel zur Einfallsebene; TM: E-Feld senkrecht zur Einfallsebene",
+    "Beide Polarisationen haben identische Reflexionsfaktoren",
+    "TE bezeichnet die reflektierte, TM die transmittierte Welle"
+   ],
+   "correct": "TE: E-Feld senkrecht zur Einfallsebene (parallel zur Grenzfläche); TM: E-Feld parallel zur Einfallsebene"
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.5.1, Folie 99"
+ },
+ {
+  "id": "RAD-S1-18",
+  "fach": "RADAR",
+  "unit": "RAD-S1",
+  "examMode": "voice",
+  "front": "Wie groß sind die Reflexionsfaktoren r_p (TM) und r_s (TE) an einer idealen Leiterfläche, und was folgt daraus für die Phase?",
+  "back": "Für $\\varepsilon_r''\\to\\infty$ (idealer Leiter) ergibt sich $r_p=r_{TM}=+1$ und $r_s=r_{TE}=-1$ (jeweils $t_p=t_s=0$, keine Transmission). Das negative Vorzeichen bei TE bedeutet einen **Phasensprung von 180°** bei der Reflexion; TM reflektiert dagegen ohne Phasensprung. Erklärung: Am idealen Leiter muss die tangentiale E-Feld-Komponente verschwinden – bei TE liegt E parallel zur Grenzfläche, daher muss die reflektierte Welle das einfallende Feld exakt auslöschen, was den Vorzeichenwechsel erzwingt.",
+  "keyPoints": [
+   "rp = +1, rs = -1 an idealer Leiterfläche",
+   "tp = ts = 0 (keine Transmission)",
+   "TE: 180°-Phasensprung, TM: kein Phasensprung",
+   "Grund: tangentiales E-Feld am Leiter = 0"
+  ],
+  "mc": {
+   "stem": "Welche Aussage zur Reflexion an einer idealen Leiterfläche ist korrekt?",
+   "options": [
+    "r_p = +1 und r_s = −1 – nur die TE-Welle macht einen 180°-Phasensprung",
+    "r_p = r_s = −1 (beide Polarisationen springen um 180°)",
+    "r_p = r_s = +1 (keine Polarisation macht einen Phasensprung)",
+    "r_p = −1 und r_s = +1 – nur die TM-Welle macht einen Phasensprung"
+   ],
+   "correct": "r_p = +1 und r_s = −1 – nur die TE-Welle macht einen 180°-Phasensprung"
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.5.1, Folie 105"
+ },
+ {
+  "id": "RAD-S1-19",
+  "fach": "RADAR",
+  "unit": "RAD-S1",
+  "examMode": "voice",
+  "front": "Definiere den Brewster-Winkel: Bedingung und Formel. Was passiert dort mit p-polarisierten Wellen?",
+  "back": "Der **Brewster-Winkel** ist der Einfallswinkel $\\theta_B=\\arctan\\!\\left(\\dfrac{n_2}{n_1}\\right)$, bei dem eine **p-polarisierte (TM)** Welle **vollständig transmittiert** wird – es gibt keine reflektierte Komponente ($r_p=0$). Für s-/TE-polarisierte Wellen gibt es keinen entsprechenden Winkel; sie werden bei diesem Winkel weiterhin teilweise reflektiert.",
+  "why": "Warum verschwindet bei p-Polarisation am Brewster-Winkel die Reflexion vollständig, bei s-Polarisation aber nicht?",
+  "cloze": {
+   "text": "Am Brewster-Winkel $\\theta_B=\\arctan(n_2/n_1)$ wird eine p-polarisierte Welle vollständig {{1}} – es gibt keine reflektierte Komponente.",
+   "answers": [
+    "transmittiert"
+   ]
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.5.1, Folie 103",
+  "keyPoints": [
+   "Brewster-Winkel: θB = arctan(n2/n1)",
+   "Dort: p-/TM-Welle vollständig transmittiert, rp=0",
+   "s-/TE-Welle hat keinen entsprechenden Winkel"
+  ]
+ },
+ {
+  "id": "RAD-S1-20",
+  "fach": "RADAR",
+  "unit": "RAD-S1",
+  "examMode": "voice",
+  "front": "Erkläre, wie Mehrwegeausbreitung (Multipath) bei einem Automotive-Radar zu Geisterzielen führt.",
+  "back": "Neben dem direkten Pfad Sender→Ziel→Empfänger existieren reflektierte Pfade, z. B. über die Fahrbahn (Source-Reflector-Boundary-Source usw.). Direkt- und Reflexionssignal überlagern sich am Empfänger phasenabhängig: $R_x \\sim \\dfrac{e^{-jkr_1}}{r_1} + r_{p,s}\\dfrac{e^{-jkr_2}}{r_2} + \\dots$. Über der Distanz entsteht dadurch ein **Interferenzmuster mit periodischen Einbrüchen (Nullstellen)** statt eines glatten Signalverlaufs. Ein Empfänger, der diese zusätzlichen Reflexionspfade nicht von echten Zielen unterscheiden kann, interpretiert sie als zusätzliche, tatsächlich nicht vorhandene Ziele – **Geisterziele**.",
+  "why": "Warum unterscheiden sich die Interferenzmuster von TE- und TM-polarisierten Signalen bei derselben Mehrwegegeometrie?",
+  "keyPoints": [
+   "Direktpfad + reflektierte Pfade (z. B. über Fahrbahn) überlagern sich phasenabhängig",
+   "Ergebnis: periodisches Interferenzmuster mit Einbrüchen über der Distanz",
+   "TE (rs=−1) und TM (rp=+1) zeigen unterschiedliche Nullstellenmuster",
+   "Fehlinterpretation der Reflexion als zusätzliches Ziel = Geisterziel"
+  ],
+  "mc": {
+   "stem": "Warum zeigen TE- und TM-Signal bei Multipath unterschiedliche Interferenzmuster über der Distanz?",
+   "options": [
+    "Weil ihre Reflexionsfaktoren an der Grenzfläche unterschiedliches Vorzeichen haben (rp = +1, rs = −1)",
+    "Weil TE- und TM-Wellen unterschiedliche Ausbreitungsgeschwindigkeiten im Vakuum haben",
+    "Weil nur TM-Wellen überhaupt reflektiert werden",
+    "Weil TE-Wellen keine Interferenz zeigen können"
+   ],
+   "correct": "Weil ihre Reflexionsfaktoren an der Grenzfläche unterschiedliches Vorzeichen haben (rp = +1, rs = −1)"
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.5.3, Folie 109–113"
+ },
+ {
+  "id": "RAD-S2-01",
+  "fach": "RADAR",
+  "unit": "RAD-S2",
+  "examMode": "voice",
+  "front": "Zeichne und erzähle die komplette Sende-/Empfangskette eines FMCW-Radars von der Frequenzerzeugung bis zur Digitalisierung. Welche Blöcke, in welcher Reihenfolge?",
+  "back": "**Sendezweig:** μC/PLL → **VCO** → **Verstärker (PA)** → **Sendeantenne**.\n**Dazwischen:** Freiraumausbreitung, Reflexion am **Ziel** (Radar Cross Section σ).\n**Empfangszweig:** **Empfangsantenne** → **LNA** → **Filter** → **Mixer** → **Filter (Anti-Aliasing)** → **ADC** → **DSP**.\nDie PLL liegt als **Regelschleife um den VCO** (nicht als eigener Block in Serie mit dem HF-Signal) und stellt ihm die Referenzfrequenz für den Mixer als Lokaloszillator-Signal bereit.",
+  "keyPoints": [
+   "Sendezweig: μC/PLL → VCO → PA → Sendeantenne",
+   "Ziel streut mit Radar Cross Section σ zurück",
+   "Empfangszweig: Empfangsantenne → LNA → Filter → Mixer → Filter → ADC → DSP",
+   "PLL = Regelschleife um den VCO, kein Serienblock im Signalpfad"
+  ],
+  "why": "Warum lohnt es sich, die Kette immer in derselben Reihenfolge zu erzählen, auch wenn der Prüfer mittendrin mit einer Nachfrage einsteigt?",
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 126"
+ },
+ {
+  "id": "RAD-S2-02",
+  "fach": "RADAR",
+  "unit": "RAD-S2",
+  "examMode": "voice",
+  "front": "Was ist die Aufgabe des **VCO** in der Radar-Signalkette, und welche Kenngröße begrenzt vor allem die Detektion eines schwachen Ziels neben einem starken?",
+  "back": "Der VCO (Voltage Controlled Oscillator) erzeugt die durchstimmbare **Trägerfrequenz** – über die Steuerspannung wird die Frequenz linear durchgefahren (Chirp). Kenngröße: **Phasenrauschen** (daneben Abstimmbereich, Linearität von Frequenz vs. Steuerspannung, Verstärkungsfaktor, Fähigkeit zur Breitbandmodulation, Kosten, Load Pulling). Hohes Phasenrauschen 'verschmiert' die Energie um jede erzeugte Frequenzlinie – ein starkes nahes Ziel überdeckt dann ein schwaches, weiter entferntes Ziel im selben Beat-Frequenz-Bereich.",
+  "keyPoints": [
+   "VCO erzeugt die Trägerfrequenz, durchstimmbar über Steuerspannung",
+   "Kenngröße: Phasenrauschen",
+   "Weitere KPIs: Abstimmbereich, Linearität, Gain, Breitbandfähigkeit, Load Pulling",
+   "Hohes Phasenrauschen verdeckt schwache Ziele neben starken"
+  ],
+  "mc": {
+   "stem": "Welche Kenngröße des VCO begrenzt vor allem die Detektion eines schwachen Ziels direkt neben einem starken?",
+   "options": [
+    "Phasenrauschen",
+    "Konversionsverlust",
+    "Rauschzahl",
+    "Schleifenbandbreite"
+   ],
+   "correct": "Phasenrauschen"
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 130; 04_Radartechnik.md, Abschnitt 'Station 2'"
+ },
+ {
+  "id": "RAD-S2-03",
+  "fach": "RADAR",
+  "unit": "RAD-S2",
+  "examMode": "voice",
+  "front": "Welche Aufgabe übernimmt die **PLL**, und wie wirkt sich eine zu kleine Schleifenbandbreite auf den erzeugten Chirp aus?",
+  "back": "Die PLL (Phase-Locked Loop) regelt den VCO gegen eine stabile Referenz (Quarz) über Phasenvergleich, Tiefpass und Rückführung (Vor-/Nachteiler) – sie **stabilisiert und linearisiert den Sweep**, erzeugt die Frequenz aber nicht selbst. Kenngröße: **Schleifenbandbreite**. Ist sie zu klein, kann die PLL schnelle Sweep-Änderungen nicht mehr genau nachführen → der Chirp wird **nichtlinear** → im Spektrum entstehen statt scharfer Peaks **verschmierte** Peaks → schlechtere Entfernungsauflösung.",
+  "keyPoints": [
+   "PLL stabilisiert/linearisiert den VCO-Sweep über eine Regelschleife",
+   "Aufbau: Quarz-Referenz, Phasenkomparator, Tiefpass, VCO, Vor-/Rückteiler",
+   "Kenngröße: Schleifenbandbreite",
+   "Zu kleine Bandbreite → nichtlinearer Chirp → verschmierte Peaks"
+  ],
+  "cloze": {
+   "text": "Eine zu {{1}} Schleifenbandbreite der PLL führt zu einem {{2}} Chirp, dessen Spektrum statt scharfer Peaks nur verschmierte Peaks zeigt.",
+   "answers": [
+    "kleine",
+    "nichtlinearen"
+   ]
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 133; 04_Radartechnik.md, Abschnitt 'Station 2'"
+ },
+ {
+  "id": "RAD-S2-04",
+  "fach": "RADAR",
+  "unit": "RAD-S2",
+  "examMode": "voice",
+  "front": "**VCO vs. PLL** – was ist der Unterschied, und welche typische Verwechslung solltest du im Gespräch vermeiden?",
+  "back": "Der **VCO erzeugt** die Trägerfrequenz selbst (spannungsgesteuerter Oszillator). Die **PLL erzeugt keine eigene Frequenz**, sondern ist eine Regelschleife, die den VCO an eine stabile Referenz bindet, stabilisiert und den Sweep linearisiert. Häufige Verwechslung: 'Die PLL macht den Chirp' – richtig ist: **der VCO macht den Chirp, die PLL hält ihn sauber und linear.**",
+  "keyPoints": [
+   "VCO = Frequenzerzeugung",
+   "PLL = Regelschleife zur Stabilisierung/Linearisierung, keine eigene Frequenzerzeugung"
+  ],
+  "why": "Warum reicht ein freilaufender VCO ohne PLL für einen präzisen FMCW-Chirp nicht aus?",
+  "mc": {
+   "stem": "Welche Aussage ist korrekt?",
+   "options": [
+    "Der VCO erzeugt die Trägerfrequenz, die PLL stabilisiert und linearisiert den Sweep",
+    "Die PLL erzeugt die Trägerfrequenz, der VCO stabilisiert sie",
+    "VCO und PLL erfüllen dieselbe Aufgabe redundant",
+    "Die PLL ersetzt den VCO bei hohen Frequenzen"
+   ],
+   "correct": "Der VCO erzeugt die Trägerfrequenz, die PLL stabilisiert und linearisiert den Sweep"
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 129-133"
+ },
+ {
+  "id": "RAD-S2-05",
+  "fach": "RADAR",
+  "unit": "RAD-S2",
+  "examMode": "voice",
+  "front": "Welchen Zielkonflikt muss der **Sendeverstärker (PA)** lösen?",
+  "back": "Der PA liefert die **Sendeleistung** für die Antenne. Kenngrößen: Ausgangsleistung und **Linearität**. Zu wenig Leistung → die Reichweite sinkt (wie stark, zeigt später die Radargleichung mit ihrer R⁴-Abhängigkeit). Zu viel Leistung bzw. Betrieb nahe der Sättigung → **Verzerrung/Nichtlinearität** des Sendesignals, was die Qualität des Chirps und damit die Messgenauigkeit verschlechtert.",
+  "keyPoints": [
+   "PA-Aufgabe: Sendeleistung liefern",
+   "Kenngrößen: Ausgangsleistung, Linearität",
+   "Zu wenig Leistung → Reichweite sinkt",
+   "Zu viel Leistung → Verzerrung/Nichtlinearität"
+  ],
+  "why": "Warum ist 'maximale Sendeleistung' allein noch kein gutes Entwurfsziel für den PA?",
+  "source": "04_Radartechnik.md, Abschnitt 'Station 2'"
+ },
+ {
+  "id": "RAD-S2-06",
+  "fach": "RADAR",
+  "unit": "RAD-S2",
+  "examMode": "voice",
+  "front": "Welche drei Kenngrößen beschreiben eine Sendeantenne, und warum sind **Nebenkeulen** ein Problem?",
+  "back": "Kenngrößen: **Gewinn (Gain)**, **Öffnungswinkel (HPBW)** und **Nebenkeulen (Sidelobes)**. Das Antennendiagramm zeigt eine Hauptkeule (0 dB-Referenz) und mehrere Nebenkeulen mit deutlichem Abstand darunter. Energie, die über Nebenkeulen abgestrahlt wird, kann an Objekten außerhalb der eigentlichen Hauptrichtung reflektiert werden und im Empfänger als **Falschziel** in der scheinbar richtigen Blickrichtung erscheinen.",
+  "keyPoints": [
+   "Kenngrößen: Gewinn, Öffnungswinkel (HPBW), Nebenkeulen",
+   "Antennendiagramm: Hauptkeule + mehrere Nebenkeulen",
+   "Nebenkeulen → Reflexionen aus falscher Richtung → Falschziele"
+  ],
+  "mc": {
+   "stem": "Wodurch entstehen 'Falschziele' durch die Sendeantenne?",
+   "options": [
+    "Durch Energie, die über Nebenkeulen in andere Richtungen abgestrahlt und dort reflektiert wird",
+    "Durch zu geringes Phasenrauschen des VCO",
+    "Durch zu hohe Abtastrate des ADC",
+    "Durch Sättigung des Mixers"
+   ],
+   "correct": "Durch Energie, die über Nebenkeulen in andere Richtungen abgestrahlt und dort reflektiert wird"
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 139; 04_Radartechnik.md, Abschnitt 'Station 2'"
+ },
+ {
+  "id": "RAD-S2-07",
+  "fach": "RADAR",
+  "unit": "RAD-S2",
+  "examMode": "voice",
+  "front": "Unterscheide **Directivity (Richtwirkung)** und **Gain (Gewinn)** einer Antenne.",
+  "back": "**Directivity** ist das Verhältnis der Strahlungsdichte in eine bestimmte Richtung zu der einer isotropen (ideal gleichmäßig strahlenden) Quelle – eine rein geometrische/formbedingte Größe. **Gain** berücksichtigt zusätzlich den **Wirkungsgrad (Effizienz)** der Antenne, also reale Verluste; Gain ist deshalb ≤ Directivity. Beispielwerte (log./lin.): Isotroper Strahler 0 dBi/1, Hertzscher Dipol 1,76 dBi/1,5, λ/2-Dipol 2,15 dBi/1,64, Patchantenne 6 dBi/4, Hornantenne 20 dBi/100, Parabolschüssel > 30 dBi/> 1000.",
+  "keyPoints": [
+   "Directivity: Richtungsverhältnis relativ zu isotroper Quelle, rein geometrisch",
+   "Gain: Directivity × Wirkungsgrad, berücksichtigt reale Verluste",
+   "Gain ≤ Directivity"
+  ],
+  "why": "Warum reicht die Angabe der Directivity allein nicht, um die tatsächlich nutzbare Sendeleistung in eine Richtung zu beurteilen?",
+  "mc": {
+   "stem": "Was unterscheidet Gain von Directivity?",
+   "options": [
+    "Gain berücksichtigt zusätzlich den Wirkungsgrad der Antenne",
+    "Gain ist unabhängig von der Richtung, Directivity nicht",
+    "Directivity berücksichtigt Verluste, Gain nicht",
+    "Gain und Directivity sind exakt dasselbe"
+   ],
+   "correct": "Gain berücksichtigt zusätzlich den Wirkungsgrad der Antenne"
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 140, 142"
+ },
+ {
+  "id": "RAD-S2-08",
+  "fach": "RADAR",
+  "unit": "RAD-S2",
+  "examMode": "voice",
+  "front": "Wie lautet die Formel für die **Leistungsdichte am Ziel** im Fernfeld einer Sendeantenne, und was bedeuten die Terme?",
+  "back": "$$W_t = \\frac{P_t\\,G_t(\\vartheta_t,\\varphi_t)}{4\\pi R^2}$$ $P_t$ = Sendeleistung, $G_t$ = Antennengewinn in Zielrichtung, $R$ = Entfernung. Die Sendeleistung verteilt sich gedanklich gleichmäßig über eine Kugeloberfläche $4\\pi R^2$; der Antennengewinn bündelt sie in Zielrichtung. Das ist der **erste Baustein der Radargleichung**: die Leistungsdichte, die überhaupt am Ziel ankommt.",
+  "keyPoints": [
+   "W_t = Pt·Gt/(4πR²)",
+   "Sendeleistung verteilt sich über die Kugeloberfläche 4πR²",
+   "Gt bündelt die Leistung in Zielrichtung",
+   "Erster Schritt der Radargleichungs-Herleitung"
+  ],
+  "why": "Warum taucht im Nenner die komplette Kugeloberfläche 4πR² auf und nicht z. B. nur ein Kreisquerschnitt?",
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 143"
+ },
+ {
+  "id": "RAD-S2-09",
+  "fach": "RADAR",
+  "unit": "RAD-S2",
+  "examMode": "voice",
+  "front": "Definiere die **Radar Cross Section (RCS) σ** formal – was misst sie eigentlich?",
+  "back": "σ ist die hypothetische Fläche, die die am Ziel ankommende Leistungsdichte so abfangen müsste, dass – würde die gesamte abgefangene Leistung isotrop zurückgestrahlt – am Empfänger genau die tatsächlich beobachtete Leistungsdichte entstünde: $$\\sigma=\\lim_{R\\to\\infty}4\\pi R^2\\frac{P_s}{P_i}=\\lim_{R\\to\\infty}4\\pi R^2\\frac{|E_s|}{|E_i|}$$ Einheit: **m²** (üblich als **dBsm** = $10\\log_{10}(\\sigma/1\\,\\text{m}^2)$).",
+  "keyPoints": [
+   "σ = hypothetische, isotrop rückstreuende Fläche",
+   "Definition über Grenzwert R→∞ und Verhältnis rückgestreuter/einfallender Leistungsdichte",
+   "Einheit m², logarithmisch üblich in dBsm"
+  ],
+  "why": "Warum ist σ keine echte, direkt messbare geometrische Fläche des Ziels, sondern eine 'hypothetische' Größe?",
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 159"
+ },
+ {
+  "id": "RAD-S2-10",
+  "fach": "RADAR",
+  "unit": "RAD-S2",
+  "examMode": "voice",
+  "front": "Nenne die RCS-Formel einer **großen leitenden Kugel** (optischer Bereich) und einer **leitenden Rechteckplatte** bei senkrechtem Einfall (Maximalwert).",
+  "back": "Kugel (optischer Bereich, $r\\gg\\lambda$): $\\sigma=\\pi r^2$ – die RCS nähert sich dort der geometrischen Querschnittsfläche. Rechteckplatte, Maximum bei senkrechter Einstrahlung: $\\sigma_{max}=\\dfrac{4\\pi w^2h^2}{\\lambda^2}$ – hier steckt die Abhängigkeit von $1/\\lambda^2$: bei gleicher Fläche ist die RCS bei **kürzerer Wellenlänge größer**.",
+  "keyPoints": [
+   "Kugel (optischer Bereich): σ = πr²",
+   "Rechteckplatte (⊥, Maximum): σ_max = 4πw²h²/λ²",
+   "Plattenformel skaliert mit 1/λ² – kürzere Wellenlänge → größere RCS bei gleicher Fläche"
+  ],
+  "cloze": {
+   "text": "Für eine große leitende Kugel im optischen Bereich (r ≫ λ) gilt σ = π mal r hoch {{1}}. Die maximale RCS einer leitenden Rechteckplatte skaliert bei fester Fläche mit 1 durch λ hoch {{2}}.",
+   "answers": [
+    "2",
+    "2"
+   ]
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 160-161"
+ },
+ {
+  "id": "RAD-S2-11",
+  "fach": "RADAR",
+  "unit": "RAD-S2",
+  "examMode": "calc",
+  "front": "**Rechenaufgabe:** Berechne die maximale RCS $\\sigma_{max}$ einer rechteckigen leitenden Platte (z. B. ein Kennzeichen) bei senkrechter Einstrahlung aus Breite, Höhe und Wellenlänge.",
+  "back": "$$\\sigma_{max}=\\frac{4\\pi w^2h^2}{\\lambda^2}$$ Beispiel (Kennzeichen $w=0{,}3\\,\\text{m}$, $h=0{,}1\\,\\text{m}$, $\\lambda=3{,}9\\,\\text{mm}$ bei 76 GHz): $\\sigma\\approx\\dfrac{4\\pi\\cdot0{,}3^2\\cdot0{,}1^2}{0{,}0039^2}\\approx743\\,\\text{m}^2\\approx28{,}7\\,\\text{dBsm}$ – überraschend groß für ein kleines Blech, weil bei mmWave-Wellenlängen $1/\\lambda^2$ sehr groß wird.",
+  "keyPoints": [
+   "σ_max = 4πw²h²/λ²",
+   "Kennzeichen bei 76GHz: σ≈743 m² ≈ 28,7 dBsm",
+   "1/λ² macht glatte Metallflächen bei mmWave überproportional 'sichtbar'"
+  ],
+  "calc": {
+   "vars": {
+    "w": [
+     0.15,
+     0.5,
+     0.01
+    ],
+    "h": [
+     0.05,
+     0.2,
+     0.01
+    ],
+    "lambda_mm": [
+     3,
+     5,
+     0.1
+    ]
+   },
+   "given": "Rechteckige leitende Platte, Breite w = [[w]] m, Höhe h = [[h]] m, Wellenlänge λ = [[lambda_mm]] mm (senkrechte Einstrahlung).",
+   "solution": "4*pi*w^2*h^2/(lambda_mm/1000)^2",
+   "unit": "m²",
+   "steps": [
+    "Wellenlänge in Metern: λ = [[lambda_mm]] mm = [[= lambda_mm/1000]] m",
+    "σ_max = 4π·w²·h²/λ² ≈ [[= 4*pi*w^2*h^2/(lambda_mm/1000)^2]] m²"
+   ],
+   "example": {
+    "vars": {
+     "w": 0.3,
+     "h": 0.1,
+     "lambda_mm": 3.9
+    },
+    "result": 743
+   }
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 161"
+ },
+ {
+  "id": "RAD-S2-12",
+  "fach": "RADAR",
+  "unit": "RAD-S2",
+  "examMode": "calc",
+  "front": "**Rechenaufgabe:** Wie groß ist die wirksame Fläche $A$ einer Empfangsantenne mit (linearem) Gewinn $G$ bei Wellenlänge $\\lambda$?",
+  "back": "$$A=\\frac{G\\lambda^2}{4\\pi}$$ Beispiel: $G=100$ (≈ 20 dBi), $\\lambda=3{,}9\\,\\text{mm}$ (76 GHz) → $A\\approx1{,}21\\,\\text{cm}^2$ – trotz ordentlichem Antennengewinn ist die wirksame Fläche bei mmWave winzig, weil $\\lambda^2$ so klein ist.",
+  "keyPoints": [
+   "A = G·λ²/(4π)",
+   "Bei 76GHz und G=100 (20dBi): A ≈ 1,21 cm²",
+   "Kleines λ → kleine wirksame Fläche, auch bei hohem Gewinn"
+  ],
+  "why": "Warum sammelt eine 76-GHz-Antenne trotz hohem Gewinn viel weniger Leistung ein als eine große Parabolantenne bei niedrigeren Frequenzen und gleichem Gewinn?",
+  "calc": {
+   "vars": {
+    "G_lin": [
+     20,
+     200,
+     5
+    ],
+    "lambda_mm": [
+     3,
+     5,
+     0.1
+    ]
+   },
+   "given": "Empfangsantenne mit (linearem) Gewinn G = [[G_lin]], Wellenlänge λ = [[lambda_mm]] mm.",
+   "solution": "G_lin*(lambda_mm/1000)^2/(4*pi)*10000",
+   "unit": "cm²",
+   "steps": [
+    "Wellenlänge in Metern: λ = [[= lambda_mm/1000]] m",
+    "A = G·λ²/(4π) ≈ [[= G_lin*(lambda_mm/1000)^2/(4*pi)]] m² = [[= G_lin*(lambda_mm/1000)^2/(4*pi)*10000]] cm²"
+   ],
+   "example": {
+    "vars": {
+     "G_lin": 100,
+     "lambda_mm": 3.9
+    },
+    "result": 1.21
+   }
+  },
+  "source": "04_Radartechnik.md, Abschnitt 'Station 2'; Lecture_RadarSystems_Lec.pdf, Folie 144"
+ },
+ {
+  "id": "RAD-S2-13",
+  "fach": "RADAR",
+  "unit": "RAD-S2",
+  "examMode": "voice",
+  "front": "Leite die **Radargleichung** Schritt für Schritt her: von der Sendeleistung bis zur empfangenen Leistung $P_r$.",
+  "back": "1. Leistungsdichte am Ziel: $W_t=P_tG_t/(4\\pi R^2)$ (Sendeleistung verteilt über eine Kugelfläche, gebündelt durch $G_t$).\n2. Rückstreuung am Ziel über die RCS σ: effektiv rückgestreute Leistung $P_tG_t\\sigma/(4\\pi R^2)$.\n3. Diese Leistung verteilt sich auf dem Rückweg wieder über eine Kugelfläche $4\\pi R^2$ → Leistungsdichte am Empfänger $W_r=P_tG_t\\sigma/(4\\pi R^2)^2$.\n4. Die Empfangsantenne fängt davon ihre wirksame Fläche $A_r=G_r\\lambda^2/(4\\pi)$ ein: $$P_r=W_r\\cdot A_r=\\frac{P_tG_tG_r\\lambda^2\\sigma}{(4\\pi)^3R^4}$$ Real kommt noch ein **Pattern-Propagation-Faktor** $F^4$ (Umgebungseinflüsse, z. B. Mehrwegeausbreitung) hinzu: $P_r=P_tG_tG_r\\lambda^2\\sigma F^4/((4\\pi)^3R^4)$.",
+  "keyPoints": [
+   "Schritt 1: Leistungsdichte am Ziel über Kugelfläche 4πR²",
+   "Schritt 2: Rückstreuung über RCS σ",
+   "Schritt 3: nochmal 1/4πR² auf dem Rückweg",
+   "Schritt 4: Empfangsantenne fängt über wirksame Fläche Ar=Grλ²/4π ein"
+  ],
+  "why": "Warum taucht 4πR² im Nenner gleich zweimal auf (einmal hin, einmal zurück)?",
+  "source": "04_Radartechnik.md, Abschnitt 'Station 2'; Lecture_RadarSystems_Lec.pdf, Folie 165"
+ },
+ {
+  "id": "RAD-S2-14",
+  "fach": "RADAR",
+  "unit": "RAD-S2",
+  "examMode": "voice",
+  "front": "Vervollständige die Radargleichung: welche Potenzen stehen im Nenner?",
+  "back": "$$P_r=\\frac{P_tG_tG_r\\lambda^2\\sigma}{(4\\pi)^3R^4}$$ Im Nenner steht $(4\\pi)^3$ (aus den zwei Kugelflächen-Termen und der Aperturformel) und $R^4$ – die **Reichweite geht mit der 4. Potenz ein.**",
+  "keyPoints": [
+   "Nenner: (4π)³ und R⁴",
+   "R⁴-Abhängigkeit ist die zentrale Aussage der Radargleichung"
+  ],
+  "cloze": {
+   "text": "In der Radargleichung steht im Nenner (4π) hoch {{1}} und die Reichweite R hoch {{2}}.",
+   "answers": [
+    "3",
+    "4"
+   ]
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 165"
+ },
+ {
+  "id": "RAD-S2-15",
+  "fach": "RADAR",
+  "unit": "RAD-S2",
+  "examMode": "voice",
+  "front": "Die Reichweite eines Radars soll bei sonst gleichen Parametern **verdoppelt** werden. Um welchen Faktor muss die Sendeleistung mindestens steigen?",
+  "back": "Da $P_r\\propto P_t/R^4$, muss bei doppelter Reichweite und gleicher empfangener Leistung $P_t$ um den Faktor $2^4=16$ steigen. **Die R⁴-Abhängigkeit ist die wichtigste Einzelaussage der Radargleichung** – sie erklärt, warum Reichweitensteigerung bei Radar so teuer ist.",
+  "keyPoints": [
+   "Pr ∝ Pt/R⁴",
+   "Doppelte Reichweite → 16-fache Sendeleistung nötig",
+   "R⁴-Abhängigkeit = wichtigste Aussage der Radargleichung"
+  ],
+  "mc": {
+   "stem": "Bei doppelter Reichweite (gleiches Pr) muss die Sendeleistung um welchen Faktor steigen?",
+   "options": [
+    "16",
+    "2",
+    "4",
+    "8"
+   ],
+   "correct": "16"
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 165; 04_Radartechnik.md, Abschnitt 'Station 2'"
+ },
+ {
+  "id": "RAD-S2-16",
+  "fach": "RADAR",
+  "unit": "RAD-S2",
+  "examMode": "calc",
+  "front": "**Rechenaufgabe:** Die Reichweite eines Radars ändert sich von $R_1$ auf $R_2$, die empfangene Leistung $P_r$ soll gleich bleiben. Um welchen Faktor muss $P_t$ mindestens steigen?",
+  "back": "Aus $P_r\\propto P_t/R^4$ folgt für konstantes $P_r$: $$\\frac{P_{t,2}}{P_{t,1}}=\\left(\\frac{R_2}{R_1}\\right)^4$$ Beispiel $R_1=10\\,\\text{m}\\to R_2=20\\,\\text{m}$ (Verdopplung): Faktor $2^4=16$.",
+  "keyPoints": [
+   "Pt,2/Pt,1 = (R2/R1)^4",
+   "Reichweitenverhältnis wirkt in 4. Potenz auf die nötige Sendeleistung",
+   "Grundlage: Pr ∝ Pt/R⁴"
+  ],
+  "calc": {
+   "vars": {
+    "R1": [
+     5,
+     20,
+     1
+    ],
+    "R2": [
+     10,
+     80,
+     1
+    ]
+   },
+   "given": "Reichweite wird von R1 = [[R1]] m auf R2 = [[R2]] m geändert, Pr soll gleich bleiben.",
+   "solution": "(R2/R1)^4",
+   "unit": "×",
+   "steps": [
+    "Verhältnis: R2/R1 = [[= R2/R1]]",
+    "Leistungsfaktor: (R2/R1)^4 ≈ [[= (R2/R1)^4]]"
+   ],
+   "example": {
+    "vars": {
+     "R1": 10,
+     "R2": 20
+    },
+    "result": 16
+   }
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 165; 04_Radartechnik.md, Abschnitt 'Station 2'"
+ },
+ {
+  "id": "RAD-S2-17",
+  "fach": "RADAR",
+  "unit": "RAD-S2",
+  "examMode": "calc",
+  "front": "**Rechenaufgabe:** Berechne die vom Radar empfangene Leistung $P_r$ nach der Radargleichung für ein Fahrzeug-Radar bei 76 GHz ($\\lambda=3{,}9\\,\\text{mm}$, $G_t=G_r=100$ ≈ 20 dBi, Ziel-RCS $\\sigma=10\\,\\text{m}^2$ ≈ 10 dBsm).",
+  "back": "$$P_r=\\frac{P_tG_tG_r\\lambda^2\\sigma}{(4\\pi)^3R^4}$$ Mit z. B. $P_t=10\\,\\text{mW}$ und $R=50\\,\\text{m}$: $P_r\\approx1{,}23\\,\\text{pW}$ – ein extrem kleines Signal, das erst durch den rauscharmen LNA sinnvoll verstärkbar wird. Schon diese Größenordnung zeigt, warum jede Rauschquelle in der Empfangskette kritisch ist.",
+  "keyPoints": [
+   "Pr = PtGtGrλ²σ/((4π)³R⁴)",
+   "Selbst bei 10mW Sendeleistung und 10m² RCS liegt Pr im Pikowatt-Bereich",
+   "Zeigt, warum der Empfangspfad extrem rauscharm sein muss"
+  ],
+  "calc": {
+   "vars": {
+    "Pt_mW": [
+     5,
+     50,
+     5
+    ],
+    "R_m": [
+     20,
+     100,
+     5
+    ]
+   },
+   "given": "Pt = [[Pt_mW]] mW, Gt=Gr=100 (≈20 dBi), λ=3,9 mm (76 GHz), σ=10 m², R = [[R_m]] m.",
+   "solution": "Pt_mW/1000*100*100*(0.0039)^2*10/((4*pi)^3*R_m^4)*1e12",
+   "unit": "pW",
+   "steps": [
+    "Radargleichung: Pr = Pt·Gt·Gr·λ²·σ / ((4π)³·R⁴)",
+    "Pt = [[Pt_mW]] mW = [[= Pt_mW/1000]] W, R = [[R_m]] m",
+    "Einsetzen: Pr ≈ [[= Pt_mW/1000*100*100*(0.0039)^2*10/((4*pi)^3*R_m^4)*1e12]] pW"
+   ],
+   "example": {
+    "vars": {
+     "Pt_mW": 10,
+     "R_m": 50
+    },
+    "result": 1.226
+   }
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 165; 04_Radartechnik.md, Abschnitt 'Station 2'"
+ },
+ {
+  "id": "RAD-S2-18",
+  "fach": "RADAR",
+  "unit": "RAD-S2",
+  "examMode": "voice",
+  "front": "Warum darf man die RCS σ eines Ziels **nicht als feste, materialabhängige Fläche** behandeln?",
+  "back": "σ hängt stark vom **Aspektwinkel** (Blickrichtung auf das Ziel), der Frequenz/Wellenlänge und der Geometrie ab – bei realen Zielen schwankt sie im Betrieb erheblich. Beispiel aus einer 76-GHz-CW-Messung an einem Mercedes C-Klasse: die RCS variiert stark über dem Aspektwinkel (Polarplot mit ausgeprägten Maxima/Minima); ein Fußgänger liegt im Mittel bei nur ≈ −8 dBsm, aber mit **starker Schwankung**. Für die Praxis heißt das: σ ist eher eine statistische Größe mit Verteilung, kein einzelner Tabellenwert.",
+  "keyPoints": [
+   "σ hängt stark vom Aspektwinkel ab, nicht nur von Material/Größe",
+   "Beispielmessung: Pkw-RCS-Polarplot mit starken Maxima/Minima bei 76GHz",
+   "Fußgänger ≈ -8dBsm im Mittel, aber stark schwankend",
+   "σ ist praktisch eine statistische Größe, kein fixer Wert"
+  ],
+  "mc": {
+   "stem": "Wovon hängt die RCS σ eines realen Ziels wesentlich ab?",
+   "options": [
+    "Vom Aspektwinkel (Blickrichtung) auf das Ziel",
+    "Ausschließlich von der Sendeleistung des Radars",
+    "Ausschließlich von der Entfernung R",
+    "Ausschließlich vom Öffnungswinkel der Empfangsantenne"
+   ],
+   "correct": "Vom Aspektwinkel (Blickrichtung) auf das Ziel"
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 163"
+ },
+ {
+  "id": "RAD-S2-19",
+  "fach": "RADAR",
+  "unit": "RAD-S2",
+  "examMode": "voice",
+  "front": "Was ist die Aufgabe des **LNA**, und welche Kenngröße ist entscheidend?",
+  "back": "Der LNA (Low Noise Amplifier) verstärkt das schwache Empfangssignal, **ohne selbst wesentlich Rauschen hinzuzufügen**. Kenngröße: **Rauschzahl F** (Noise Figure), $F=\\text{SNR}_{in}/\\text{SNR}_{out}=\\dfrac{1}{G}\\cdot\\dfrac{N_2}{N_1}$ mit Verstärkung $G$. Ein LNA mit niedriger Rauschzahl und ausreichender Verstärkung ist entscheidend, weil er ganz am Anfang der Empfangskette sitzt.",
+  "keyPoints": [
+   "LNA = erste Verstärkerstufe, verstärkt möglichst rauscharm",
+   "F = SNRin/SNRout = (1/G)·(N2/N1)",
+   "LNA sitzt so nah wie möglich an der Antenne"
+  ],
+  "why": "Warum steht der LNA direkt nach der Empfangsantenne und nicht erst nach dem Filter?",
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 169; 04_Radartechnik.md, Abschnitt 'Station 2'"
+ },
+ {
+  "id": "RAD-S2-20",
+  "fach": "RADAR",
+  "unit": "RAD-S2",
+  "examMode": "voice",
+  "front": "Nach der **Friis-Formel**: Warum dominiert die **erste Verstärkerstufe** (der LNA) die Gesamtrauschzahl der Empfangskette?",
+  "back": "$$F_{total}=1+(F_1-1)+\\frac{F_2-1}{G_1}+\\frac{F_3-1}{G_1G_2}+\\dots$$ Jede weitere Stufe geht nur noch **geteilt durch das Produkt aller vorherigen Verstärkungen** ein. Ist $G_1$ (Gewinn der ersten Stufe, z. B. LNA) groß genug, werden die Rauschbeiträge aller folgenden Stufen stark gedämpft – die **Rauschzahl der ersten Stufe dominiert die Gesamtrauschzahl** fast vollständig. Deshalb verschlechtert ein Filter **vor** dem LNA die Systemrauschzahl direkt (volles Gewicht), ein Filter **nach** dem LNA praktisch kaum.",
+  "keyPoints": [
+   "Friis: F_total=1+(F1-1)+(F2-1)/G1+(F3-1)/(G1G2)+...",
+   "Folgestufen werden durch das Produkt der vorherigen Gewinne gedämpft",
+   "F1 (LNA) dominiert bei ausreichendem G1",
+   "Filter vor LNA schadet der Rauschzahl direkt, Filter nach LNA kaum"
+  ],
+  "mc": {
+   "stem": "Warum wird ein Filter idealerweise nach dem LNA und nicht davor platziert?",
+   "options": [
+    "Weil ein Filter vor dem LNA die Systemrauschzahl mit vollem Gewicht verschlechtert",
+    "Weil Filter erst bei Basisbandfrequenzen physikalisch realisierbar sind",
+    "Weil der LNA sonst übersteuert würde",
+    "Weil die Friis-Formel Filter nur nach Verstärkern erlaubt"
+   ],
+   "correct": "Weil ein Filter vor dem LNA die Systemrauschzahl mit vollem Gewicht verschlechtert"
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 170"
+ },
+ {
+  "id": "RAD-S2-21",
+  "fach": "RADAR",
+  "unit": "RAD-S2",
+  "examMode": "voice",
+  "front": "Wie erzeugt der **Mixer** aus Sende- und Empfangssignal die Beat-Frequenz, warum braucht er dafür ein nichtlineares Bauelement, und welche Kenngrößen beschreiben ihn?",
+  "back": "Zwei Kosinus-Signale unterschiedlicher Frequenz ergeben bei **Multiplikation** Summen- und Differenzfrequenz: $$\\cos(\\omega_1t)\\cos(\\omega_2t)=\\tfrac12\\big(\\cos((\\omega_1+\\omega_2)t)+\\cos((\\omega_1-\\omega_2)t)\\big)$$ Die Differenzfrequenz ist die gesuchte **Beat-Frequenz**. Eine echte Multiplikation zweier Signale entsteht nur an einem **nichtlinearen** Bauelement (z. B. einer Diode, Shockley-Kennlinie $I_D=I_S(e^{U_D/nU_T}-1)\\approx I_S(1+\\tfrac{U_D}{nU_T}+\\tfrac12(\\tfrac{U_D}{nU_T})^2+\\dots)$) – der **quadratische** Term der Reihenentwicklung liefert das Produkt zweier Eingangssignale; ein rein linearer Verstärker könnte das nicht. Kenngrößen des Mixers: **Linearität, Konversionsgewinn/-verlust, Rauschzahl, Leistungsaufnahme, Bias**.",
+  "keyPoints": [
+   "Mixer multipliziert zwei Signale → Summen- und Differenzfrequenz",
+   "Differenzfrequenz = Beat-Frequenz, Grundlage der Range/Doppler-Messung",
+   "Multiplikation erfordert Nichtlinearität, z.B. Diode (Shockley-Gleichung)",
+   "Kenngrößen: Linearität, Konversionsgewinn/-verlust, Rauschzahl, Leistungsaufnahme, Bias"
+  ],
+  "why": "Warum kann ein rein linearer Verstärker niemals als Mixer funktionieren?",
+  "cloze": {
+   "text": "Der {{1}} des Mixers gibt an, wie viel Signalpegel beim Umsetzen von HF- auf Zwischenfrequenz verloren geht.",
+   "answers": [
+    "Konversionsverlust"
+   ]
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 175-176, 178"
+ },
+ {
+  "id": "RAD-S2-22",
+  "fach": "RADAR",
+  "unit": "RAD-S2",
+  "examMode": "voice",
+  "front": "Welche Aufgabe hat der **Filter** vor dem ADC, und was passiert bei Verletzung des Nyquist-Kriteriums?",
+  "back": "Der Filter vor dem ADC ist ein **Anti-Aliasing-Filter** (Tiefpass/Bandpass): er begrenzt die Bandbreite des Signals auf höchstens die halbe Abtastrate, bevor digitalisiert wird. Wird das **Nyquist-Kriterium** verletzt (Signalanteile oberhalb $f_s/2$ gelangen unbegrenzt zum ADC), entsteht **Aliasing** – hochfrequente Anteile werden im digitalisierten Spektrum fälschlich als niedrigere Frequenz interpretiert, ein Ziel erscheint dann bei **falscher Entfernung/Geschwindigkeit**.",
+  "keyPoints": [
+   "Filter vor ADC = Anti-Aliasing-Filter",
+   "Begrenzt Bandbreite auf < fs/2 (Nyquist)",
+   "Nyquist verletzt → Aliasing → Ziel an falscher Position im Spektrum"
+  ],
+  "mc": {
+   "stem": "Was ist die Hauptaufgabe des Filters direkt vor dem ADC?",
+   "options": [
+    "Anti-Aliasing: Bandbegrenzung auf max. die halbe Abtastrate",
+    "Verstärkung des Signals auf ADC-Pegel",
+    "Erzeugung der Beat-Frequenz",
+    "Kompensation des Phasenrauschens des VCO"
+   ],
+   "correct": "Anti-Aliasing: Bandbegrenzung auf max. die halbe Abtastrate"
+  },
+  "source": "04_Radartechnik.md, Abschnitt 'Station 2'"
+ },
+ {
+  "id": "RAD-S2-23",
+  "fach": "RADAR",
+  "unit": "RAD-S2",
+  "examMode": "voice",
+  "front": "Nenne zwei Kenngrößen des ADC, die die Qualität der Digitalisierung bestimmen – mit typischen Beispielwerten aus realen Automotive-Radar-Chips.",
+  "back": "**Abtastrate** (z. B. TI AWR1843: 25 MSPS; TI AWR2243: bis 45 MSPS/22,5 MSPS komplex) und **Auflösung** (beide Chips: 12 Bit). Beide Chips haben zudem 4 ADCs an Bord (für mehrere Empfangsantennen, ggf. weitere ADC zusätzlich).",
+  "keyPoints": [
+   "Abtastrate in MSPS (Beispiel: 25 bzw. bis 45 MSPS)",
+   "Auflösung in Bit (Beispiel: 12 Bit)",
+   "Mehrere ADC parallel für mehrere Rx-Antennen"
+  ],
+  "cloze": {
+   "text": "Der TI AWR1843 tastet mit {{1}} MSPS ab und digitalisiert mit {{2}} Bit Auflösung.",
+   "answers": [
+    "25",
+    "12"
+   ]
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 181-182"
+ },
+ {
+  "id": "RAD-S2-24",
+  "fach": "RADAR",
+  "unit": "RAD-S2",
+  "examMode": "voice",
+  "front": "Was ist der **Dynamikbereich (Receiver Dynamics) D** des Empfängers, und warum stellt er beim ADC eine besondere Herausforderung dar?",
+  "back": "$$D=\\frac{P_{max}}{P_{min}}$$ – Verhältnis größter zu kleinster gleichzeitig zu verarbeitender Empfangsleistung. Wegen $\\sigma/R^4$ in der Radargleichung können ein **naher, stark reflektierender** und ein **weit entfernter, schwacher** Ziel extrem unterschiedliche Empfangsleistungen erzeugen (Beispiel aus den Folien: 30 dBsm bei R=10 m vs. 30 dBsm bei R=80 m unterscheiden sich im σ/R⁴-Term um den Faktor ≈ 4000). Ein 12-Bit-ADC deckt linear nur einen Bereich von $1/2^{12}\\approx2{,}44\\times10^{-4}$ ab – reicht der reale Dynamikbereich der Szene darüber hinaus, geht das schwache Ziel im Quantisierungsrauschen unter, wenn nicht Auflösung oder automatische Verstärkungsregelung helfen.",
+  "keyPoints": [
+   "D = Pmax/Pmin (Dynamikbereich des Empfängers)",
+   "σ/R⁴ erzeugt große Leistungsunterschiede zwischen nahen/starken und fernen/schwachen Zielen",
+   "12-Bit-ADC deckt linear nur ≈2,44×10⁻⁴ (1/2¹²) ab",
+   "Reicht die ADC-Auflösung nicht, geht das schwache Ziel im Quantisierungsrauschen unter"
+  ],
+  "why": "Warum reicht 'einfach mehr Bit beim ADC' als Lösung nicht immer aus, wenn schwache und starke Ziele gleichzeitig sichtbar sein sollen?",
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 183-184"
+ },
+ {
+  "id": "RAD-S3-01",
+  "fach": "RADAR",
+  "unit": "RAD-S3",
+  "examMode": "voice",
+  "front": "Vergleiche die Radar-Modulationsverfahren **CW**, **FSK** und **FMCW**: Was misst jedes Verfahren, und wo liegt seine Grenze?",
+  "back": "- **CW** (Continuous Wave): sendet eine konstante Frequenz, misst über den Dopplereffekt **nur die Geschwindigkeit** – **keinen Abstand** (keine Laufzeitinformation im Signal).\n- **FSK** (Frequency Shift Keying): sendet abwechselnd zwei feste Frequenzen; aus der **Phasendifferenz** der beiden Echos folgt der Abstand. Funktioniert nur für **wenige Ziele**.\n- **FMCW**: linear durchgestimmter Chirp, liefert **Abstand und Geschwindigkeit** – aber **gekoppelt** in einer einzigen Beatfrequenz. Ein Chirp allein reicht nicht zur Trennung.",
+  "keyPoints": [
+   "CW: nur Doppler, kein Abstand",
+   "FSK: Abstand über Phasendifferenz, wenige Ziele",
+   "FMCW: Abstand UND Geschwindigkeit, aber gekoppelt",
+   "Grenzen sind die eigentliche Prüfungsfrage"
+  ],
+  "mc": {
+   "stem": "Welches Modulationsverfahren liefert keine Abstandsinformation?",
+   "options": [
+    "CW",
+    "FSK",
+    "FMCW",
+    "Chirp Sequence"
+   ],
+   "correct": "CW"
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 190–196"
+ },
+ {
+  "id": "RAD-S3-02",
+  "fach": "RADAR",
+  "unit": "RAD-S3",
+  "examMode": "voice",
+  "front": "Warum kann ein reines **CW-Radar** keinen Abstand messen, obwohl es Geschwindigkeit sehr genau bestimmt?",
+  "back": "Ein CW-Signal $s_{tx}(t)\\propto\\sin(\\omega_0 t)$ hat **keine zeitliche Struktur** (konstante Frequenz) – das Echo unterscheidet sich vom Sendesignal nur durch die **Dopplerverschiebung**, nicht durch eine messbare Laufzeit. Ohne moduliertes Merkmal gibt es nichts, an dem sich die Signal-Laufzeit (und damit $R$) ablesen ließe. Genau das liefert erst eine **Modulation** (FSK, FMCW).",
+  "keyPoints": [
+   "CW: konstante Frequenz, keine zeitliche Struktur",
+   "Nur Dopplerverschiebung messbar",
+   "Laufzeit braucht ein moduliertes Merkmal"
+  ],
+  "why": "Warum reicht die reine Frequenzverschiebung (Doppler) nicht aus, um auch den Abstand zu bestimmen?",
+  "mc": {
+   "stem": "Was genau fehlt einem CW-Signal, um daraus einen Abstand zu bestimmen?",
+   "options": [
+    "Ein zeitveränderliches Merkmal (Modulation), dessen Verschiebung die Laufzeit codiert",
+    "Ausreichend Sendeleistung",
+    "Eine zweite Empfangsantenne",
+    "Eine hohe Trägerfrequenz"
+   ],
+   "correct": "Ein zeitveränderliches Merkmal (Modulation), dessen Verschiebung die Laufzeit codiert"
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 190f"
+ },
+ {
+  "id": "RAD-S3-03",
+  "fach": "RADAR",
+  "unit": "RAD-S3",
+  "examMode": "voice",
+  "front": "Wie bestimmt ein **FSK-Radar** den Abstand, und wo liegt seine praktische Grenze?",
+  "back": "FSK sendet **abwechselnd zwei feste Frequenzen** $f_1,f_2$. Am Empfänger wird für jede Frequenz die Phase des Echos gemessen; aus der **Phasendifferenz** zwischen den beiden Echos folgt die Laufzeit und damit der Abstand $R$.\n\n**Grenze:** Bei **mehreren Zielen** überlagern sich die Phasenbeiträge aller Ziele bei jeder der zwei Frequenzen – es lässt sich nicht mehr eindeutig zuordnen, welche Phasendifferenz zu welchem Ziel gehört. FSK eignet sich daher nur für wenige, gut getrennte Ziele.",
+  "keyPoints": [
+   "Zwei feste Frequenzen im Wechsel",
+   "Phasendifferenz der Echos → Abstand",
+   "Versagt bei mehreren Zielen (Phasen überlagern sich)"
+  ],
+  "cloze": {
+   "text": "FSK sendet abwechselnd zwei Frequenzen; aus der {{1}} zwischen den beiden Echos wird der Abstand bestimmt. FSK eignet sich nur für {{2}} Ziele.",
+   "answers": [
+    "Phasendifferenz",
+    "wenige"
+   ]
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 192f"
+ },
+ {
+  "id": "RAD-S3-04",
+  "fach": "RADAR",
+  "unit": "RAD-S3",
+  "examMode": "voice",
+  "front": "Leite das **FMCW-Empfangssignal** her: Was ergibt sich nach Mischung von Sende- und (verzögertem) Empfangssignal für ein ruhendes Ziel?",
+  "back": "Sendesignal ($\\omega(t)=\\omega_0+\\Delta\\omega t$): $s_{tx}(t)=A_{tx}\\sin(\\omega_0 t+0{,}5\\Delta\\omega t^2)$. Das Echo ist um $\\tau=2R/c$ verzögert. Nach Mischung mit dem Sendesignal und Tiefpassfilterung (Terme in $1/c^2$ vernachlässigt) bleibt näherungsweise\n\n$$s_{rx}(t)\\approx A_{rx}\\sin\\Big(\\tfrac{2\\omega_0}{c}R+\\tfrac{2\\Delta\\omega}{c}R\\,t\\Big)$$\n\nDie **Beatfrequenz** ist konstant über die Chirpdauer und proportional zu $R$ – so wird aus dem Mischprodukt ein einfach auswertbarer Sinuston statt eines 76-GHz-Signals.",
+  "keyPoints": [
+   "s_tx: linear steigende Frequenz, Phase = Integral der Frequenz",
+   "Mischung + Tiefpass → konstante Beatfrequenz ∝ R",
+   "Näherung: Terme in 1/c² vernachlässigt"
+  ],
+  "why": "Warum wird aus dem Mischprodukt eine konstante Frequenz, obwohl Sende- und Empfangssignal beide ihre Frequenz ändern?",
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 194–197"
+ },
+ {
+  "id": "RAD-S3-05",
+  "fach": "RADAR",
+  "unit": "RAD-S3",
+  "examMode": "voice",
+  "front": "Aus welchen zwei Anteilen setzt sich die FMCW-**Beatfrequenz** $f_b$ zusammen, wenn das Ziel sich zusätzlich bewegt?",
+  "back": "$$f_b=\\pm\\frac{2\\mu}{c}R+\\frac{2}{\\lambda_0}\\dot R,\\qquad\\mu=B/T$$\n\n- **Range-Anteil** $\\pm\\frac{2\\mu}{c}R$: Vorzeichen hängt von der Chirprichtung ab (+ Upchirp, − Downchirp).\n- **Doppler-Anteil** $\\frac{2}{\\lambda_0}\\dot R$: gleiches Vorzeichen bei Up- und Downchirp.\n\nBeide Anteile verschieben dieselbe gemessene Frequenz – aus einer einzelnen Beatfrequenz lässt sich nicht erkennen, wie viel davon Range und wie viel Doppler ist.",
+  "keyPoints": [
+   "f_b = Range-Anteil + Doppler-Anteil",
+   "Range-Vorzeichen wechselt mit Chirprichtung",
+   "Doppler-Vorzeichen bleibt gleich"
+  ],
+  "cloze": {
+   "text": "Die Beatfrequenz $f_b$ setzt sich aus einem {{1}}-Anteil (Vorzeichen wechselt mit der Chirprichtung) und einem {{2}}-Anteil (Vorzeichen bleibt bei Up- und Downchirp gleich) zusammen.",
+   "answers": [
+    "Range",
+    "Doppler"
+   ]
+  },
+  "source": "Radar_FMCW_Diskussion.md, Abschnitt 2"
+ },
+ {
+  "id": "RAD-S3-06",
+  "fach": "RADAR",
+  "unit": "RAD-S3",
+  "examMode": "voice",
+  "front": "**Der wichtigste Gedanke der Station:** Warum kann ein einzelner FMCW-Chirp Abstand und Geschwindigkeit nicht trennen?",
+  "back": "Ein einzelner Chirp liefert eine einzige Beatfrequenz $f_b=\\pm\\frac{2\\mu}{c}R+\\frac{2}{\\lambda_0}\\dot R$ – das ist eine Gleichung mit zwei Unbekannten ($R$ und $\\dot R$). Bei 76 GHz und nur 100 MHz Bandbreite dominiert dabei sogar typischerweise der Doppleranteil den Rangeanteil (Faktor ~4 im Beispiel).\n\n**Lösung:** Ein zweites Chirp-Segment mit umgekehrter Steigung (Downchirp) liefert die zweite Gleichung. Erst das Gleichungssystem aus Up- und Downchirp trennt $R$ und $\\dot R$ eindeutig.",
+  "keyPoints": [
+   "Ein Chirp = eine Gleichung, zwei Unbekannte (R, Ṙ)",
+   "Range- und Dopplerbeitrag verschieben dieselbe Frequenz",
+   "Erst Up- + Downchirp trennen sie eindeutig"
+  ],
+  "why": "Warum liefert selbst ein sehr genau gemessener f_b-Wert allein keine eindeutige Aussage über R?",
+  "mc": {
+   "stem": "Was genau fehlt einem einzelnen FMCW-Chirp, um R und Ṙ zu trennen?",
+   "options": [
+    "Eine zweite, unabhängige Gleichung (z. B. vom Downchirp)",
+    "Eine höhere Abtastrate",
+    "Eine zweite Empfangsantenne",
+    "Ein stärkeres Sendesignal"
+   ],
+   "correct": "Eine zweite, unabhängige Gleichung (z. B. vom Downchirp)"
+  },
+  "source": "Radar_FMCW_Diskussion.md, Abschnitt 2–3"
+ },
+ {
+  "id": "RAD-S3-07",
+  "fach": "RADAR",
+  "unit": "RAD-S3",
+  "examMode": "voice",
+  "front": "Wie berechnest du aus Up- und Downchirp-Beatfrequenz $f_{up},f_{down}$ die Entfernung $R$ und die Radialgeschwindigkeit $\\dot R$?",
+  "back": "Mit $f_{up}=\\frac{2\\mu}{c}R+\\frac{2}{\\lambda_0}\\dot R$ und $f_{down}=-\\frac{2\\mu}{c}R+\\frac{2}{\\lambda_0}\\dot R$ folgt durch Differenz- bzw. Summenbildung:\n\n$$R=\\frac{(f_{up}-f_{down})c}{4\\mu}\\qquad\\dot R=\\frac{(f_{up}+f_{down})\\lambda_0}{4}$$\n\nDie Differenz eliminiert den (gleich großen) Doppleranteil und lässt nur Range übrig; die Summe eliminiert den (vorzeichenwechselnden) Rangeanteil und lässt nur Doppler übrig.",
+  "keyPoints": [
+   "R = (f_up − f_down)·c/(4μ)",
+   "Ṙ = (f_up + f_down)·λ₀/4",
+   "Differenz eliminiert Doppler, Summe eliminiert Range"
+  ],
+  "mc": {
+   "stem": "Welche Verknüpfung von f_up und f_down liefert die Entfernung R?",
+   "options": [
+    "Die Differenz (f_up − f_down)",
+    "Die Summe (f_up + f_down)",
+    "Das Produkt (f_up · f_down)",
+    "Der Quotient (f_up / f_down)"
+   ],
+   "correct": "Die Differenz (f_up − f_down)"
+  },
+  "source": "Radar_FMCW_Diskussion.md, Abschnitt 4"
+ },
+ {
+  "id": "RAD-S3-08",
+  "fach": "RADAR",
+  "unit": "RAD-S3",
+  "examMode": "calc",
+  "front": "**Rechenaufgabe:** Berechne die Upchirp-Beatfrequenz $f_{up}$ aus Bandbreite $B$, Chirpdauer $T$, Entfernung $R$ und Radialgeschwindigkeit $\\dot R$ (bei $\\lambda_0=3{,}945$ mm, $c=3\\cdot10^8$ m/s).",
+  "back": "Chirprate: $\\mu=B/T$. Beatfrequenz Upchirp: $f_{up}=\\frac{2\\mu}{c}R+\\frac{2}{\\lambda_0}\\dot R$.\n\nBeispiel (76-GHz-Radar, B=100 MHz, T=25 ms, R=10 m, Ṙ=−2 m/s): μ=4 GHz/s, Rangeanteil ≈266,7 Hz, Doppleranteil ≈−1013,9 Hz, also f_up≈−747 Hz.",
+  "keyPoints": [
+   "μ = B/T (Chirprate)",
+   "f_up = Rangeanteil + Doppleranteil",
+   "Vorzeichen: Doppler kann Range dominieren"
+  ],
+  "calc": {
+   "vars": {
+    "B": [
+     50000000,
+     150000000,
+     10000000
+    ],
+    "T": [
+     0.01,
+     0.03,
+     0.005
+    ],
+    "R": [
+     5,
+     50,
+     1
+    ],
+    "Rdot": [
+     -10,
+     10,
+     0.5
+    ]
+   },
+   "given": "Bandbreite B=[[B]] Hz, Chirpdauer T=[[T]] s, Entfernung R=[[R]] m, Radialgeschwindigkeit Ṙ=[[Rdot]] m/s (λ₀=3,945 mm, c=3·10⁸ m/s)",
+   "solution": "(2*(B/T)/300000000)*R + (2/0.003945)*Rdot",
+   "unit": "Hz",
+   "steps": [
+    "Chirprate: $\\mu=B/T$ = [[= B / T]] Hz/s",
+    "Rangeanteil: $f_R=\\frac{2\\mu}{c}R$ = [[= (2*(B/T)/300000000)*R]] Hz",
+    "Doppleranteil: $f_D=\\frac{2}{\\lambda_0}\\dot R$ = [[= (2/0.003945)*Rdot]] Hz",
+    "$f_{up}=f_R+f_D$ = [[= (2*(B/T)/300000000)*R + (2/0.003945)*Rdot]] Hz"
+   ],
+   "example": {
+    "vars": {
+     "B": 100000000,
+     "T": 0.025,
+     "R": 10,
+     "Rdot": -2
+    },
+    "result": -747.3
+   }
+  },
+  "source": "Radar_FMCW_Diskussion.md, Abschnitt 3"
+ },
+ {
+  "id": "RAD-S3-09",
+  "fach": "RADAR",
+  "unit": "RAD-S3",
+  "examMode": "calc",
+  "front": "**Rechenaufgabe:** Bestimme die Entfernung $R$ aus gemessenen Beatfrequenzen $f_{up}$ und $f_{down}$.",
+  "back": "$$R=\\frac{(f_{up}-f_{down})c}{4\\mu},\\quad\\mu=B/T,\\ c=3\\cdot10^8\\text{ m/s}$$\n\nBeispiel: f_up=3333,9 Hz, f_down=1732,6 Hz, B=100 MHz, T=25 ms ⇒ μ=4 GHz/s ⇒ R≈30 m (echtes Ziel aus Radar_FMCW_Diskussion.md).",
+  "keyPoints": [
+   "R aus Differenz von f_up und f_down",
+   "μ = B/T geht in den Nenner",
+   "Test: Ergebnis muss R ≥ 0 sein (sonst Geisterziel)"
+  ],
+  "calc": {
+   "vars": {
+    "fup": [
+     -2000,
+     4000,
+     50
+    ],
+    "fdown": [
+     -2000,
+     2500,
+     50
+    ],
+    "B": [
+     50000000,
+     150000000,
+     10000000
+    ],
+    "T": [
+     0.01,
+     0.03,
+     0.005
+    ]
+   },
+   "given": "f_up=[[fup]] Hz, f_down=[[fdown]] Hz, B=[[B]] Hz, T=[[T]] s (μ=B/T, c=3·10⁸ m/s)",
+   "solution": "(fup - fdown) * 300000000 / (4*(B/T))",
+   "unit": "m",
+   "steps": [
+    "Chirprate: $\\mu=B/T$ = [[= B / T]] Hz/s",
+    "$R=\\frac{(f_{up}-f_{down})c}{4\\mu}$ = [[= (fup-fdown)*300000000/(4*(B/T))]] m"
+   ],
+   "example": {
+    "vars": {
+     "fup": 3333.9,
+     "fdown": 1732.6,
+     "B": 100000000,
+     "T": 0.025
+    },
+    "result": 30
+   }
+  },
+  "source": "Radar_FMCW_Diskussion.md, Abschnitt 4"
+ },
+ {
+  "id": "RAD-S3-10",
+  "fach": "RADAR",
+  "unit": "RAD-S3",
+  "examMode": "calc",
+  "front": "**Rechenaufgabe:** Bestimme die Radialgeschwindigkeit $\\dot R$ aus gemessenen Beatfrequenzen $f_{up}$ und $f_{down}$.",
+  "back": "$$\\dot R=\\frac{(f_{up}+f_{down})\\lambda_0}{4}$$\n\nBeispiel: f_up=3333,9 Hz, f_down=1732,6 Hz, λ₀=3,945 mm ⇒ Ṙ≈5 m/s (echtes Ziel).",
+  "keyPoints": [
+   "Ṙ aus Summe von f_up und f_down",
+   "λ₀ geht direkt (nicht c) in die Formel ein",
+   "Kein μ/B nötig – nur λ₀"
+  ],
+  "calc": {
+   "vars": {
+    "fup": [
+     -2000,
+     4000,
+     50
+    ],
+    "fdown": [
+     -2000,
+     2500,
+     50
+    ]
+   },
+   "given": "f_up=[[fup]] Hz, f_down=[[fdown]] Hz (λ₀=3,945 mm)",
+   "solution": "(fup+fdown)*0.003945/4",
+   "unit": "m/s",
+   "steps": [
+    "$\\dot R=\\frac{(f_{up}+f_{down})\\lambda_0}{4}$ = [[= (fup+fdown)*0.003945/4]] m/s"
+   ],
+   "example": {
+    "vars": {
+     "fup": 3333.9,
+     "fdown": 1732.6
+    },
+    "result": 5
+   }
+  },
+  "source": "Radar_FMCW_Diskussion.md, Abschnitt 4"
+ },
+ {
+  "id": "RAD-S3-11",
+  "fach": "RADAR",
+  "unit": "RAD-S3",
+  "examMode": "voice",
+  "front": "Bei $K$ Zielen im Beat-Spektrum: Wie viele Paarungen aus Up-/Down-Peaks ergeben sich, und wie viele davon sind Geisterziele?",
+  "back": "Jeder der $K$ Up-Peaks kann mit jedem der $K$ Down-Peaks gepaart werden → $K^2$ Paarungen. Davon sind $K$ Paarungen die echten Ziele, die restlichen $K^2-K$ sind **Geisterziele**.\n\nBeispiel (2 Ziele, aus Radar_FMCW_Diskussion.md): 4 Paarungen, davon 2 echte Ziele und 2 Geister – einer mit R<0 (unmöglich), einer plausibel klingend (R≈86 m) aber falsch.",
+  "keyPoints": [
+   "K Ziele → K² Paarungen",
+   "K echte, K²−K Geisterziele",
+   "Manche Geister fallen über R<0 oder unrealistisches |Ṙ| weg"
+  ],
+  "mc": {
+   "stem": "Wie viele Geisterziele entstehen bei K=3 realen Zielen kombinatorisch (vor jeder Plausibilitätsprüfung)?",
+   "options": [
+    "6",
+    "9",
+    "3",
+    "12"
+   ],
+   "correct": "6"
+  },
+  "source": "Radar_FMCW_Diskussion.md, Abschnitt 4"
+ },
+ {
+  "id": "RAD-S3-12",
+  "fach": "RADAR",
+  "unit": "RAD-S3",
+  "examMode": "voice",
+  "front": "Ein Teil der Geisterziele fällt über Plausibilität weg (z. B. R<0). Wie löst man die verbleibenden echten Mehrdeutigkeiten auf?",
+  "back": "Plausibilitätsprüfung entfernt nur einen Teil der $K^2-K$ Geisterziele. Für den Rest:\n\n- **Dritter Chirp** mit anderer Steigung – dritte unabhängige Gleichung, echte Ziele müssen in allen drei Paarungen konsistent sein.\n- **Amplituden-/Winkelvergleich** – Geisterziele haben oft inkonsistente Amplituden/Winkel.\n- **Chirp-Sequence mit 2D-FFT** – grundsätzlichste Lösung, ganz ohne Up-/Down-Paarung.",
+  "keyPoints": [
+   "Plausibilität entfernt nur einen Teil",
+   "Dritter Chirp mit anderer Steigung",
+   "Chirp-Sequence + 2D-FFT als grundsätzliche Lösung"
+  ],
+  "cloze": {
+   "text": "Bei K Zielen entstehen K² Paarungen aus Up- und Down-Peaks, davon sind K²−K {{1}}. Ein Teil scheidet über {{2}} aus, der Rest braucht einen {{3}} Chirp mit anderer Steigung oder eine Chirp-Sequence mit 2D-FFT.",
+   "answers": [
+    "Geisterziele",
+    "Plausibilität",
+    "dritten"
+   ]
+  },
+  "source": "Radar_FMCW_Diskussion.md, Abschnitt 4"
+ },
+ {
+  "id": "RAD-S3-13",
+  "fach": "RADAR",
+  "unit": "RAD-S3",
+  "examMode": "calc",
+  "front": "**Rechenaufgabe:** Berechne die Entfernungsauflösung $\\Delta R$ aus der Bandbreite $B$.",
+  "back": "$$\\Delta R=\\frac{c}{2B}=\\frac{\\lambda_{BW}}{2}$$\n\nHängt nur von der Bandbreite ab – nicht von Trägerfrequenz, Chirpdauer oder Samples. Beispiel: B=100 MHz ⇒ ΔR=1,5 m.",
+  "keyPoints": [
+   "ΔR = c/(2B)",
+   "Hängt nur an B, nicht an T oder f₀",
+   "100 MHz → 1,5 m"
+  ],
+  "calc": {
+   "vars": {
+    "B": [
+     20000000,
+     200000000,
+     10000000
+    ]
+   },
+   "given": "Bandbreite B=[[B]] Hz (c=3·10⁸ m/s)",
+   "solution": "300000000/(2*B)",
+   "unit": "m",
+   "steps": [
+    "$\\Delta R=\\dfrac{c}{2B}$ = [[= 300000000/(2*B)]] m"
+   ],
+   "example": {
+    "vars": {
+     "B": 100000000
+    },
+    "result": 1.5
+   }
+  },
+  "source": "Radar_FMCW_Diskussion.md, Abschnitt 5"
+ },
+ {
+  "id": "RAD-S3-14",
+  "fach": "RADAR",
+  "unit": "RAD-S3",
+  "examMode": "calc",
+  "front": "**Rechenaufgabe:** Berechne die Geschwindigkeitsauflösung $\\Delta\\dot R$ aus der Beobachtungsdauer $T$.",
+  "back": "$$\\Delta\\dot R=\\frac{\\lambda_0}{2T}$$\n\nHängt nur von der Beobachtungsdauer ab – nicht von der Bandbreite. Beispiel: T=25 ms, λ₀=3,945 mm ⇒ Δv≈0,079 m/s.",
+  "keyPoints": [
+   "Δv = λ₀/(2T)",
+   "Hängt nur an T, nicht an B",
+   "25 ms → ≈0,079 m/s"
+  ],
+  "calc": {
+   "vars": {
+    "T": [
+     0.005,
+     0.05,
+     0.005
+    ]
+   },
+   "given": "Beobachtungsdauer T=[[T]] s (λ₀=3,945 mm)",
+   "solution": "0.003945/(2*T)",
+   "unit": "m/s",
+   "steps": [
+    "$\\Delta\\dot R=\\dfrac{\\lambda_0}{2T}$ = [[= 0.003945/(2*T)]] m/s"
+   ],
+   "example": {
+    "vars": {
+     "T": 0.025
+    },
+    "result": 0.0789
+   }
+  },
+  "source": "Radar_FMCW_Diskussion.md, Abschnitt 5"
+ },
+ {
+  "id": "RAD-S3-15",
+  "fach": "RADAR",
+  "unit": "RAD-S3",
+  "examMode": "voice",
+  "front": "Zwei Ziele liegen bei R=10 m/30 m und Ṙ=−2/+5 m/s. Warum sind sie bei B=100 MHz, T=25 ms klar trennbar, obwohl ein einzelner Chirp R und Ṙ gar nicht trennen kann?",
+  "back": "**Trennbarkeit (Auflösung)** ist eine andere Frage als **Trennung von R und Ṙ pro Ziel**: Auflösung fragt, ob zwei Ziele zwei getrennte Peaks ergeben. Mit ΔR=c/2B=1,5 m und Δv=λ₀/2T≈0,079 m/s liegen die Zielabstände (Δ20 m, Δ7 m/s) weit über der jeweiligen Auflösungsgrenze.\n\nDavon unabhängig bleibt: für jedes einzelne Ziel braucht man trotzdem Up- und Downchirp, um R und Ṙ zu trennen.",
+  "keyPoints": [
+   "Auflösung (2 Ziele trennen) ≠ Range/Doppler-Trennung (1 Ziel)",
+   "ΔR=1,5 m, Δv≈0,079 m/s – Zielabstände liegen weit darüber",
+   "Trotzdem: pro Ziel weiter Up+Down nötig"
+  ],
+  "why": "Warum widerspricht die klare Trennbarkeit der beiden Ziele nicht der Aussage, dass ein Chirp R und Ṙ nicht trennen kann?",
+  "source": "Radar_FMCW_Diskussion.md, Abschnitt 5"
+ },
+ {
+  "id": "RAD-S3-16",
+  "fach": "RADAR",
+  "unit": "RAD-S3",
+  "examMode": "voice",
+  "front": "Welche zwei unabhängigen Grenzen bestimmen die maximale Reichweite eines FMCW-Radars, und warum reicht es nicht, nur eine zu nennen?",
+  "back": "1. **Signalverarbeitungs-/Abtastgrenze:** $f_b\\le f_s/2\\Rightarrow R_{max}=\\frac{cf_s}{4\\mu}$. Beispiel: f_s=20,48 kHz, μ=4 GHz/s ⇒ R_max≈384 m.\n2. **Energetische Grenze (Radargleichung):** SNR∝1/R⁴ – ab einer Entfernung reicht die zurückgestreute Leistung nicht mehr.\n\nDie Abtastgrenze ist oft riesig (durch Chirpdauer allein: c·T/2≈3747 km, irrelevant), **real begrenzend ist fast immer die Radargleichung** – wer nur die Abtastgrenze nennt, bekommt die Nachfrage.",
+  "keyPoints": [
+   "Grenze 1: Abtasttheorem f_b ≤ f_s/2 → R_max = c·f_s/(4μ)",
+   "Grenze 2: Radargleichung, SNR ∝ 1/R⁴",
+   "Beide getrennt nennen – energetische Grenze ist meist die engere"
+  ],
+  "why": "Warum kann die Abtastgrenze eine riesige, unrealistische Reichweite ergeben, obwohl das Radar real viel früher an seine Grenzen stößt?",
+  "source": "Radar_FMCW_Diskussion.md, Abschnitt 5"
+ },
+ {
+  "id": "RAD-S3-17",
+  "fach": "RADAR",
+  "unit": "RAD-S3",
+  "examMode": "voice",
+  "front": "Wie groß ist der maximale eindeutig messbare Doppler |Ṙ|_max eines FMCW-Radars mit f_s=20,48 kHz und λ₀=3,945 mm – und warum ist das für Automotive-Radar (±60 m/s) zu wenig?",
+  "back": "Aus dem Abtasttheorem $|f_D|\\le f_s/2$ folgt $|\\dot R|_{max}=\\frac{\\lambda_0 f_s}{4}\\approx20{,}2$ m/s.\n\nFür Automotive (bis ±60 m/s) ist das deutlich zu wenig – lange FMCW-Chirps sind ungeeignet. Die **Chirp-Sequence** mit kurzen Chirps (T≈30 µs) löst das: $\\dot R_{max}=\\lambda_0/(4T_{chirp})\\approx\\pm33$ m/s bei höherer Range-Bandbreite pro Frame.",
+  "keyPoints": [
+   "Ṙ_max = λ₀·f_s/4 (aus Abtasttheorem)",
+   "≈20,2 m/s bei fs=20,48 kHz – zu wenig für Automotive",
+   "Chirp-Sequence mit kurzen Chirps löst das (T≈30µs → ≈±33 m/s)"
+  ],
+  "mc": {
+   "stem": "Warum ist ein langsamer FMCW-Chirp (T=25 ms) für automotive Geschwindigkeiten (±60 m/s) ungeeignet?",
+   "options": [
+    "Der maximale eindeutige Doppler v_max=λ₀f_s/4 liegt bei einem solchen Chirp weit unter 60 m/s",
+    "Die Bandbreite ist zu gering für hohe Geschwindigkeiten",
+    "Die Trägerfrequenz 76 GHz ist zu niedrig für schnelle Ziele",
+    "FMCW kann grundsätzlich keine Geschwindigkeit messen"
+   ],
+   "correct": "Der maximale eindeutige Doppler v_max=λ₀f_s/4 liegt bei einem solchen Chirp weit unter 60 m/s"
+  },
+  "source": "Radar_FMCW_Diskussion.md, Abschnitt 5"
+ },
+ {
+  "id": "RAD-S3-18",
+  "fach": "RADAR",
+  "unit": "RAD-S3",
+  "examMode": "voice",
+  "front": "Ein Fußgänger quert exakt senkrecht vor einem Fahrzeug-Radar. Was misst der Doppler in diesem Moment – und warum?",
+  "back": "Das Radar misst ausschließlich die radiale Komponente der Geschwindigkeit, $v_r=|v|\\cos\\theta$; allgemein $\\dot R=v_x\\sin\\varphi+v_y\\cos\\varphi$.\n\nBei θ=90° ist v_r=0 – der Fußgänger erscheint im Doppler wie stehend, obwohl er sich bewegt. Ein Punktziel liefert mit Ṙ eine Gleichung für zwei Unbekannte (v_x,v_y); die vollständige Geschwindigkeit bekommt man erst aus mehreren Detektionen unter verschiedenen Winkeln oder Tracking über mehrere Zyklen.",
+  "keyPoints": [
+   "v_r = |v|·cos θ – nur radiale Komponente",
+   "θ=90°: v_r=0, Ziel im Doppler unsichtbar trotz Bewegung",
+   "v_x, v_y nur aus mehreren Winkeln/Tracking"
+  ],
+  "why": "Warum ist ein quer querendes Ziel gerade im Moment des Querens für ein reines Doppler-Radar am gefährlichsten unauffällig?",
+  "mc": {
+   "stem": "Ein Ziel bewegt sich mit 5 m/s exakt senkrecht zur Sichtlinie des Radars (θ=90°). Was misst der Doppler?",
+   "options": [
+    "v_r = 0 m/s",
+    "v_r = 5 m/s",
+    "v_r = 2,5 m/s",
+    "Der Doppler kann in diesem Fall nicht ausgewertet werden"
+   ],
+   "correct": "v_r = 0 m/s"
+  },
+  "source": "Radar_FMCW_Diskussion.md, Abschnitt 5"
+ },
+ {
+  "id": "RAD-S3-19",
+  "fach": "RADAR",
+  "unit": "RAD-S3",
+  "examMode": "voice",
+  "front": "Wie trennt eine Chirp-Sequence Range und Doppler, wenn ein einzelner Chirp das nicht kann?",
+  "back": "Statt eines langen Chirps sendet die Chirp-Sequence viele kurze, identische Chirps hintereinander.\n\n- Eine **erste FFT** über die Samples innerhalb eines Chirps liefert wie beim einzelnen Chirp die Beatfrequenz (Range-Information).\n- Eine **zweite FFT über die aufeinanderfolgenden Chirps** erfasst, wie sich die Phase von Chirp zu Chirp ändert – reine Doppler-Information.\n\nZusammen ergibt sich eine **Range-Doppler-Matrix (2D-FFT)**, in der jedes Ziel einen eindeutigen Bildpunkt hat – ohne Up-/Down-Paarung und ohne Geisterziel-Problem.",
+  "keyPoints": [
+   "Viele kurze Chirps statt einem langen",
+   "1. FFT (pro Chirp) → Range",
+   "2. FFT (über Chirps) → Doppler; zusammen Range-Doppler-Matrix"
+  ],
+  "cloze": {
+   "text": "Bei der Chirp-Sequence liefert die erste FFT (über die Samples eines Chirps) die {{1}}-Information, die zweite FFT (über die aufeinanderfolgenden Chirps) die {{2}}-Information; zusammen ergibt sich eine {{3}}-Matrix.",
+   "answers": [
+    "Range",
+    "Doppler",
+    "Range-Doppler"
+   ]
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 203–207"
+ },
+ {
+  "id": "RAD-S3-20",
+  "fach": "RADAR",
+  "unit": "RAD-S3",
+  "examMode": "voice",
+  "front": "Was ist der entscheidende Vorteil der Chirp-Sequence gegenüber einem einzelnen langen FMCW-Chirp bei der Geschwindigkeitsmessung?",
+  "back": "Ein einzelner langer Chirp hat einen niedrigen maximalen eindeutigen Doppler $\\dot R_{max}=\\lambda_0 f_s/4$. Die Chirp-Sequence verwendet stattdessen viele sehr kurze Chirps (T≈30 µs): $\\dot R_{max}=\\frac{\\lambda_0}{4T_{chirp}}\\approx\\pm33$ m/s – ein Vielfaches des Werts eines langen Einzelchirps (≈10 m/s), bei gleichzeitig hoher Range-Bandbreite pro Chirp.",
+  "keyPoints": [
+   "Kurze Chirps → hoher Ṙ_max",
+   "T≈30µs → Ṙ_max≈±33 m/s (vs. ≈20 m/s bei langem Chirp)",
+   "Automotive braucht diesen größeren Geschwindigkeitsbereich"
+  ],
+  "mc": {
+   "stem": "Warum erreicht die Chirp-Sequence einen deutlich höheren maximalen eindeutigen Doppler als ein einzelner langer FMCW-Chirp?",
+   "options": [
+    "Weil die einzelnen Chirps sehr kurz sind (Ṙ_max = λ₀/(4·T_chirp), kleines T_chirp → großes Ṙ_max)",
+    "Weil die Sendeleistung höher ist",
+    "Weil mehr Empfangsantennen verwendet werden",
+    "Weil die Trägerfrequenz niedriger gewählt wird"
+   ],
+   "correct": "Weil die einzelnen Chirps sehr kurz sind (Ṙ_max = λ₀/(4·T_chirp), kleines T_chirp → großes Ṙ_max)"
+  },
+  "source": "Radar_FMCW_Diskussion.md, Abschnitt 5"
+ },
+ {
+  "id": "RAD-S3-21",
+  "fach": "RADAR",
+  "unit": "RAD-S3",
+  "examMode": "voice",
+  "front": "Was ist der Zweck der Phase Coded Chirp Sequence, und wie funktioniert die Codierung?",
+  "back": "Ziel: **mehrere Sendeantennen gleichzeitig** betreiben, ohne dass sich ihre Signale am Empfänger gegenseitig stören. Jede Tx-Antenne sendet dieselbe Chirp-Sequence, aber mit einem antennenspezifischen **Phasenoffset** pro Chirp: $s_{n,i}(t)=\\sin(\\omega_0 t+0{,}5\\Delta\\omega t^2+\\varphi_{n,i})$.\n\nAm Empfänger lassen sich die Beiträge der einzelnen Tx-Antennen anhand ihres bekannten Phasenmusters trennen (z. B. Hella RS6: 3 Tx-Antennen, 78 GHz, 1720 MHz Bandbreite, 512 Chirps). Zusätzlicher Nutzen: höhere Robustheit gegenüber Interferenz.",
+  "keyPoints": [
+   "Mehrere Tx-Antennen gleichzeitig, getrennt über Phasenmuster",
+   "Jede Antenne bekommt eigenen Phasenoffset pro Chirp",
+   "Zusatznutzen: Interferenzrobustheit"
+  ],
+  "mc": {
+   "stem": "Wozu dient die zusätzliche Phasencodierung bei der Phase Coded Chirp Sequence in erster Linie?",
+   "options": [
+    "Um Signale mehrerer gleichzeitig sendender Tx-Antennen am Empfänger trennen zu können",
+    "Um die Bandbreite zu erhöhen",
+    "Um die Reichweite zu vergrößern",
+    "Um die Abtastrate zu senken"
+   ],
+   "correct": "Um Signale mehrerer gleichzeitig sendender Tx-Antennen am Empfänger trennen zu können"
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 216–218"
+ },
+ {
+  "id": "RAD-S3-22",
+  "fach": "RADAR",
+  "unit": "RAD-S3",
+  "examMode": "voice",
+  "front": "Wie misst man den Zielwinkel mit zwei Empfangsantennen, und warum wählt man den Abstand d=λ₀/2?",
+  "back": "Eine ebene Welle aus Richtung φ trifft die zwei Antennen mit einem Gangunterschied $d\\sin\\varphi$, entsprechend $\\Delta\\varphi=\\frac{2\\pi d}{\\lambda_0}\\sin\\varphi$.\n\nFür d=λ₀/2: Δφ=π sinφ. Da sinφ∈[−1,1], gilt Δφ∈(−π,π] für **jeden** Winkel im Sichtbereich |φ|≤90° – die gemessene Phase lässt sich immer eindeutig zurückrechnen, ohne Mehrdeutigkeit. Deshalb ist d=λ/2 die Standardwahl.",
+  "keyPoints": [
+   "Δφ = 2πd·sinφ/λ₀ (Gangunterschied → Phase)",
+   "d=λ/2 → Δφ=π·sinφ, bleibt immer in (−π,π]",
+   "Eindeutig rückrechenbar für den gesamten Sichtbereich ±90°"
+  ],
+  "why": "Warum ist gerade d=λ/2 die 'magische' Wahl, und was würde bei größerem d konkret schiefgehen?",
+  "source": "Radar_FMCW_Diskussion.md, Abschnitt 6"
+ },
+ {
+  "id": "RAD-S3-23",
+  "fach": "RADAR",
+  "unit": "RAD-S3",
+  "examMode": "calc",
+  "front": "**Rechenaufgabe:** Ein Ziel liegt bei Winkel φ. Wie groß ist die theoretische Phasendifferenz Δφ zwischen zwei Empfangsantennen mit Abstand d=λ₀/2?",
+  "back": "$$\\Delta\\varphi=\\pi\\sin\\varphi\\quad(\\text{in Grad: }\\Delta\\varphi=180°\\cdot\\sin\\varphi)$$\n\nBeispiel: φ=−30° (Ziel 1 aus Radar_FMCW_Diskussion.md) ⇒ Δφ=180°·sin(−30°)=−90° – die Simulation (mit Rauschen) maß −89,94°, sehr nah am theoretischen Wert.",
+  "keyPoints": [
+   "Δφ = π·sinφ bei d=λ/2",
+   "In Grad: Δφ = 180°·sinφ",
+   "φ=−30° → Δφ=−90° (theoretisch exakt)"
+  ],
+  "calc": {
+   "vars": {
+    "phi_deg": [
+     -89,
+     89,
+     1
+    ]
+   },
+   "given": "Zielwinkel φ=[[phi_deg]]°, Antennenabstand d=λ₀/2",
+   "solution": "180*sin(phi_deg*pi/180)",
+   "unit": "°",
+   "steps": [
+    "$\\Delta\\varphi=\\frac{2\\pi d}{\\lambda_0}\\sin\\varphi=\\pi\\sin\\varphi$ (da d=λ₀/2)",
+    "In Grad: $\\Delta\\varphi$ = [[= 180*sin(phi_deg*pi/180)]] °"
+   ],
+   "example": {
+    "vars": {
+     "phi_deg": -30
+    },
+    "result": -90
+   }
+  },
+  "source": "Radar_FMCW_Diskussion.md, Abschnitt 6"
+ },
+ {
+  "id": "RAD-S3-24",
+  "fach": "RADAR",
+  "unit": "RAD-S3",
+  "examMode": "voice",
+  "front": "Diskutiere die Wahl des Antennenabstands d: Was passiert bei d>λ/2 und bei d<λ/2?",
+  "back": "- **d>λ/2:** größere Apertur → genauere Winkelschätzung möglich, aber die Phasenmessung wird **mehrdeutig** außerhalb |φ|≤arcsin(λ/2d) (**Grating Lobes**). Bei d=λ ist der eindeutige Bereich nur noch ±30°.\n- **d<λ/2:** bleibt eindeutig, aber die Phasendifferenz pro Grad wird kleiner → **schlechtere Genauigkeit** und stärkere Kopplung.\n\n**Fazit:** d=λ/2 ist der Sweet Spot – maximale Genauigkeit ohne Mehrdeutigkeit.",
+  "keyPoints": [
+   "d>λ/2: genauer, aber mehrdeutig (Grating Lobes)",
+   "d<λ/2: eindeutig, aber ungenauer",
+   "d=λ/2: maximale eindeutige Genauigkeit"
+  ],
+  "mc": {
+   "stem": "Ein Radar verwendet Antennenabstand d=λ. Was ist die Folge?",
+   "options": [
+    "Der eindeutig messbare Winkelbereich schrumpft auf ±30° (Grating Lobes außerhalb)",
+    "Die Winkelmessung wird komplett unmöglich",
+    "Es ändert sich nichts gegenüber d=λ/2",
+    "Die Reichweite verdoppelt sich"
+   ],
+   "correct": "Der eindeutig messbare Winkelbereich schrumpft auf ±30° (Grating Lobes außerhalb)"
+  },
+  "source": "Radar_FMCW_Diskussion.md, Abschnitt 6"
+ },
+ {
+  "id": "RAD-S3-25",
+  "fach": "RADAR",
+  "unit": "RAD-S3",
+  "examMode": "voice",
+  "front": "Was besagt der Steering-Vektor einer ULA (Uniform Linear Array) mit N Antennen, und welche Winkelauflösung folgt daraus bei d=λ/2?",
+  "back": "$$|\\boldsymbol a(\\vartheta)|=\\left|\\frac{\\sin(\\frac12 Nkd\\cos\\vartheta)}{\\sin(\\frac12 kd\\cos\\vartheta)}\\right|,\\quad k=\\tfrac{2\\pi}{\\lambda}$$\n\nMaximum ist N (alle Antennen phasenrichtig addiert). Für d=λ/2 liegt die erste Nullstelle bei cosϑ₀=2/N; linearisiert ergibt sich die **Winkelauflösung** Δϑ≈2/N rad≈120°/N – mehr Antennen bedeuten eine schmalere, besser auflösende Keule.",
+  "keyPoints": [
+   "Steering-Vektor: Summensignal aller Antennenphasen",
+   "Maximum = N, erste Nullstelle bei cosθ₀=2/N (d=λ/2)",
+   "Δθ ≈ 120°/N"
+  ],
+  "cloze": {
+   "text": "Für eine ULA mit N Antennen und d=λ/2 folgt aus der ersten Nullstelle des Steering-Vektors näherungsweise die Winkelauflösung Δϑ≈{{1}}°/N. Für N={{2}} Antennen ergibt sich damit Δϑ≈{{3}}°.",
+   "answers": [
+    "120",
+    "10",
+    "12"
+   ]
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 223–226"
+ },
+ {
+  "id": "RAD-S3-26",
+  "fach": "RADAR",
+  "unit": "RAD-S3",
+  "examMode": "voice",
+  "front": "Wie funktioniert Amplituden-Monopuls, und wie genau ist er als Faustregel?",
+  "back": "- Zwei **überlappende Antennenkeulen** werden gleichzeitig erzeugt.\n- Aus beiden wird das **Summensignal** und das **Differenzsignal** gebildet.\n- Das **Verhältnis** Differenz/Summe hängt monoton vom Einfallswinkel ab und liefert die Winkelschätzung.\n\n**Faustregel:** Genauigkeit ≈ 1/10 der Keulenbreite bei einem SNR von 10 dB.",
+  "keyPoints": [
+   "Zwei überlappende Keulen, Summe + Differenz",
+   "Verhältnis Differenz/Summe → Winkel",
+   "Faustregel: ≈1/10 Keulenbreite bei 10 dB SNR"
+  ],
+  "mc": {
+   "stem": "Worauf basiert die Winkelschätzung beim Amplituden-Monopuls?",
+   "options": [
+    "Dem Verhältnis von Differenz- zu Summensignal zweier überlappender Keulen",
+    "Der Phasendifferenz zweier Empfangsantennen",
+    "Einer DFT über die Antennenpositionen",
+    "Der Laufzeitdifferenz zwischen Sende- und Empfangssignal"
+   ],
+   "correct": "Dem Verhältnis von Differenz- zu Summensignal zweier überlappender Keulen"
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 229f"
+ },
+ {
+  "id": "RAD-S3-27",
+  "fach": "RADAR",
+  "unit": "RAD-S3",
+  "examMode": "voice",
+  "front": "Wie hängt die DFT-basierte Winkelbestimmung mit dem Steering-Vektor-Ansatz zusammen?",
+  "back": "Bei einer ULA mit d=λ/2 hat die Phase am n-ten Antennenelement die Form $e^{j\\pi n\\cos\\vartheta}$ – formal identisch zu einem zeitlich abgetasteten Signal mit räumlicher Frequenz $f_{spat}=0{,}5\\cos\\vartheta$.\n\nEine **DFT über die N Antennensignale** liefert deshalb eine Frequenzauflösung Δf=1/N; umgerechnet in den Winkel ergibt sich dieselbe Auflösung Δϑ≈2/N rad wie beim Steering-Vektor-Ansatz – beide Sichtweisen sind mathematisch äquivalent.",
+  "keyPoints": [
+   "Antennenphase ↔ räumliche Frequenz f_spat=0,5·cosθ",
+   "DFT über N Antennen wie DFT über N Zeitsamples",
+   "Δθ≈2/N rad – identisch zum Steering-Vektor-Ergebnis"
+  ],
+  "why": "Warum liefert die DFT-Sichtweise exakt dieselbe Winkelauflösung wie die Steering-Vektor-Nullstellenbetrachtung?",
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 234–236"
+ },
+ {
+  "id": "RAD-S3-28",
+  "fach": "RADAR",
+  "unit": "RAD-S3",
+  "examMode": "voice",
+  "front": "**Fehler-Check:** Ein Kommilitone behauptet: „Mehr Bandbreite B verbessert automatisch auch die Geschwindigkeitsauflösung Δv.\" Stimmt das?",
+  "back": "**Nein.** Die beiden Auflösungen sind vollständig entkoppelt:\n\n$$\\Delta R=\\frac{c}{2B}\\ (\\text{nur }B)\\qquad\\Delta\\dot R=\\frac{\\lambda_0}{2T}\\ (\\text{nur }T)$$\n\nMehr Bandbreite verbessert ausschließlich die Entfernungsauflösung. Um die Geschwindigkeitsauflösung zu verbessern, muss man die Beobachtungsdauer T verlängern – unabhängig von B. Ein beliebter Prüfungs-Fallstrick.",
+  "keyPoints": [
+   "ΔR hängt nur an B, Δv nur an T",
+   "Mehr Bandbreite hilft NICHT bei der Geschwindigkeitsauflösung",
+   "Beliebter Fallstrick in der Prüfung"
+  ],
+  "mc": {
+   "stem": "Wie verbessert man gezielt die Geschwindigkeitsauflösung Δv, ohne ΔR zu verändern?",
+   "options": [
+    "Beobachtungsdauer T verlängern",
+    "Bandbreite B erhöhen",
+    "Trägerfrequenz f₀ erhöhen",
+    "Abtastrate f_s erhöhen"
+   ],
+   "correct": "Beobachtungsdauer T verlängern"
+  },
+  "source": "Radar_FMCW_Diskussion.md, Abschnitt 5"
+ },
+ {
+  "id": "RAD-S4-01",
+  "fach": "RADAR",
+  "unit": "RAD-S4",
+  "examMode": "voice",
+  "front": "Was leistet der **Clustering**-Schritt in der Punktwolkenverarbeitung, und wann gilt ein Punkt bei **DBSCAN** als *Kernpunkt (Core Point)*?",
+  "back": "**Clustering** fasst die vielen Einzeldetektionen der Punktwolke zu **Objekten** zusammen (Punktwolke → Objektliste) – das ist der erste Schritt vom rohen Signal zum „Ding\" im Umfeldmodell.\n\nBei **DBSCAN** gilt ein Punkt $P$ als **Kernpunkt**, wenn seine $\\varepsilon$-Nachbarschaft mindestens **MinPts** Punkte enthält. Von jedem Kernpunkt aus wird das Cluster rekursiv um alle erreichbaren Nachbarn erweitert (`recursiveExpandCluster`); Punkte, die keinem Cluster zugeordnet werden können, gelten als **Rauschen (Noise)**.",
+  "keyPoints": [
+   "Clustering: Punktwolke → Objektliste",
+   "DBSCAN-Parameter: ε (Nachbarschaftsradius) und MinPts",
+   "Kernpunkt: ≥ MinPts Nachbarn in der ε-Umgebung",
+   "Nicht zuordenbare Punkte = Rauschen"
+  ],
+  "mc": {
+   "stem": "Wann gilt ein Punkt bei DBSCAN als **Kernpunkt**?",
+   "options": [
+    "Wenn seine ε-Nachbarschaft mindestens MinPts Punkte enthält",
+    "Wenn er der räumliche Mittelpunkt aller Detektionen ist",
+    "Wenn er die höchste gemessene Radialgeschwindigkeit hat",
+    "Wenn er in jedem Messzyklus mindestens einmal detektiert wird"
+   ],
+   "correct": "Wenn seine ε-Nachbarschaft mindestens MinPts Punkte enthält"
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 278 (Kap. 5.2 Clustering, Algorithmus DBSCAN)"
+ },
+ {
+  "id": "RAD-S4-02",
+  "fach": "RADAR",
+  "unit": "RAD-S4",
+  "examMode": "voice",
+  "front": "Welche drei Punkttypen unterscheidet DBSCAN, und was passiert bei ungünstig gewähltem ε?",
+  "back": "**Kernpunkt (Core Point):** mindestens MinPts Nachbarn innerhalb ε. **Randpunkt (Border Point):** liegt selbst in der ε-Umgebung eines Kernpunkts, hat aber zu wenige eigene Nachbarn, um Kernpunkt zu sein. **Rauschen (Noise):** weder Kern- noch Randpunkt – gehört zu keinem Cluster.\n\nDie Parameterwahl entscheidet über die Qualität: **ε zu klein** (oder MinPts zu groß) → ein Objekt zerfällt in mehrere Cluster oder wird komplett zu Rauschen. **ε zu groß** → getrennte Objekte verschmelzen zu einem Cluster.",
+  "keyPoints": [
+   "Kernpunkt: ≥ MinPts Nachbarn in ε",
+   "Randpunkt: in ε-Umgebung eines Kernpunkts, selbst kein Kernpunkt",
+   "Rauschen: keinem Cluster zugeordnet",
+   "Parameterwahl entscheidet über Über-/Unter-Clustering"
+  ],
+  "cloze": {
+   "text": "Ein Punkt mit mindestens MinPts Nachbarn in seiner ε-Umgebung heißt {{1}}. Ein Punkt, der nur in der ε-Umgebung eines solchen Punkts liegt, selbst aber zu wenige Nachbarn hat, heißt {{2}}. Gehört ein Punkt zu keinem Cluster, ist er {{3}}.",
+   "answers": [
+    "Kernpunkt",
+    "Randpunkt",
+    "Rauschen"
+   ]
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 278 (Kap. 5.2 Clustering)"
+ },
+ {
+  "id": "RAD-S4-03",
+  "fach": "RADAR",
+  "unit": "RAD-S4",
+  "examMode": "voice",
+  "front": "Warum reicht **eine einzelne Detektion** nicht aus, um die kartesischen Geschwindigkeitskomponenten $v_x, v_y$ eines Ziels zu bestimmen?",
+  "back": "Eine Detektion liefert nur die **Radialgeschwindigkeit** $\\dot R = v_x \\cos\\varphi + v_y \\sin\\varphi$ – das ist **eine Gleichung mit zwei Unbekannten** ($v_x, v_y$), also **unterbestimmt**. Unendlich viele Kombinationen aus $v_x$ und $v_y$ ergeben bei gegebenem Winkel $\\varphi$ denselben Messwert $\\dot R$.",
+  "keyPoints": [
+   "Gemessen wird nur Ṙ, nicht vx, vy direkt",
+   "1 Gleichung, 2 Unbekannte → unterbestimmt",
+   "Viele (vx,vy)-Kombinationen liefern denselben Ṙ-Wert"
+  ],
+  "why": "Warum genügt selbst eine sehr präzise Einzelmessung von φ und Ṙ nicht, um den Geschwindigkeitsvektor eindeutig festzulegen?",
+  "mc": {
+   "stem": "Warum lassen sich $v_x$ und $v_y$ **nicht** aus einer einzigen Detektion bestimmen?",
+   "options": [
+    "Weil eine Gleichung mit zwei Unbekannten unterbestimmt ist",
+    "Weil das Radar grundsätzlich keine Winkelinformation liefert",
+    "Weil die Radialgeschwindigkeit dabei immer null ist",
+    "Weil vx und vy zeitlich konstant sein müssen"
+   ],
+   "correct": "Weil eine Gleichung mit zwei Unbekannten unterbestimmt ist"
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 283 (Kap. 5.3 Determination of radial speed)"
+ },
+ {
+  "id": "RAD-S4-04",
+  "fach": "RADAR",
+  "unit": "RAD-S4",
+  "examMode": "voice",
+  "front": "Ein Fußgänger überquert exakt **quer** vor dem Fahrzeug die Fahrbahn. Was misst das Radar für seine Radialgeschwindigkeit, und warum ist das gefährlich?",
+  "back": "Bewegt sich das Ziel **senkrecht zur Sichtlinie**, ist die Projektion seiner Geschwindigkeit auf die Sichtlinie näherungsweise null: $\\dot R \\approx 0$, obwohl der Fußgänger sich tatsächlich mit voller Geschwindigkeit bewegt.\n\nDas ist der klassische Fallstrick reiner Radialmessung – ein rein dopplerbasiertes System würde das Ziel übersehen. Erst zusätzliche **Winkelinformation** (mehrere Detektionen desselben Ziels) oder die **Verfolgung über mehrere Zyklen (Tracking)** deckt die tangentiale Bewegung auf.",
+  "keyPoints": [
+   "Quer laufendes Ziel: Ṙ ≈ 0 trotz Bewegung",
+   "Reine Dopplermessung würde das Ziel 'übersehen'",
+   "Aufgedeckt erst durch Winkelinformation oder Tracking über die Zeit"
+  ],
+  "why": "Warum kann ein sich schnell bewegendes Ziel im Radialgeschwindigkeits-Kanal praktisch unsichtbar sein?",
+  "source": "04_Radartechnik.md, Abschnitt 'Station 4'"
+ },
+ {
+  "id": "RAD-S4-05",
+  "fach": "RADAR",
+  "unit": "RAD-S4",
+  "examMode": "calc",
+  "front": "Ein Ziel hat die kartesische Geschwindigkeit $(v_x, v_y)$. Berechne die vom Radar gemessene **Radialgeschwindigkeit** $\\dot R$ unter dem Beobachtungswinkel $\\varphi$.",
+  "back": "$$\\dot R = v_x \\cos\\varphi + v_y \\sin\\varphi$$\n\nDas Radar sieht nur die **Projektion** des Geschwindigkeitsvektors auf die Sichtlinie – die Komponente senkrecht dazu bleibt unsichtbar.",
+  "keyPoints": [
+   "Ṙ = vx·cosφ + vy·sinφ",
+   "Projektion des Geschwindigkeitsvektors auf die Sichtlinie"
+  ],
+  "calc": {
+   "vars": {
+    "vx": [
+     5,
+     15,
+     1
+    ],
+    "vy": [
+     2,
+     10,
+     1
+    ],
+    "phi": [
+     0,
+     90,
+     15
+    ]
+   },
+   "given": "$v_x$ = [[vx]] m/s, $v_y$ = [[vy]] m/s, Beobachtungswinkel $\\varphi$ = [[phi]]°.",
+   "solution": "vx*cos(phi*pi/180) + vy*sin(phi*pi/180)",
+   "unit": "m/s",
+   "steps": [
+    "Winkel in Radiant: $\\varphi$ = [[phi]]° = [[= phi*pi/180]] rad",
+    "$\\dot R = v_x\\cos\\varphi + v_y\\sin\\varphi$ = [[vx]]·cos([[phi]]°) + [[vy]]·sin([[phi]]°) = [[= vx*cos(phi*pi/180) + vy*sin(phi*pi/180)]] m/s"
+   ],
+   "example": {
+    "vars": {
+     "vx": 10,
+     "vy": 4,
+     "phi": 30
+    },
+    "result": 10.66
+   }
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 283 (Kap. 5.3 Determination of radial speed)"
+ },
+ {
+  "id": "RAD-S4-06",
+  "fach": "RADAR",
+  "unit": "RAD-S4",
+  "examMode": "voice",
+  "front": "Welche **zwei Wege** gibt es, aus reinen Radialgeschwindigkeits-Messungen den **vollen Geschwindigkeitsvektor** $(v_x, v_y)$ eines Ziels zu rekonstruieren?",
+  "back": "1. **Mehrere Detektionen desselben ausgedehnten Ziels bei verschiedenen Winkeln** $\\varphi_1, \\varphi_2, \\dots$: jede liefert eine Gleichung $\\dot R_i = v_x\\cos\\varphi_i + v_y\\sin\\varphi_i$ – ab zwei unterschiedlichen Winkeln ist das Gleichungssystem lösbar (**Fit von $\\dot R(\\varphi)$**).\n2. **Tracking über die Zeit:** dieselbe Detektion wird über mehrere Messzyklen verfolgt; aus der Positionsänderung lässt sich die Geschwindigkeit direkt bestimmen.\n\nBeide Wege brauchen mehr als eine einzelne Momentaufnahme – das ist der gemeinsame Kern.",
+  "keyPoints": [
+   "Weg 1: mehrere Winkel desselben Ziels, Fit von Ṙ(φ)",
+   "Weg 2: Tracking über mehrere Zyklen",
+   "Gemeinsam: mehr als eine einzelne Momentaufnahme nötig"
+  ],
+  "mc": {
+   "stem": "Welche Voraussetzung erfüllen **beide** Methoden zur Rekonstruktion des vollen Geschwindigkeitsvektors?",
+   "options": [
+    "Sie benötigen mehr als eine einzelne Momentaufnahme (mehrere Winkel oder mehrere Zeitpunkte)",
+    "Sie funktionieren nur bei stehenden Zielen",
+    "Sie brauchen mindestens zwei Radarsensoren",
+    "Sie setzen ein bekanntes Bewegungsmodell voraus"
+   ],
+   "correct": "Sie benötigen mehr als eine einzelne Momentaufnahme (mehrere Winkel oder mehrere Zeitpunkte)"
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 283–285 (Kap. 5.3); 04_Radartechnik.md, Abschnitt 'Station 4'"
+ },
+ {
+  "id": "RAD-S4-07",
+  "fach": "RADAR",
+  "unit": "RAD-S4",
+  "examMode": "calc",
+  "front": "Zwei Detektionen **desselben starren Ziels** werden gemessen: bei $\\varphi_1 = 30°$ mit $\\dot R_1$, bei $\\varphi_2 = 20°$ mit $\\dot R_2$. Bestimme daraus $v_x$.",
+  "back": "Beide Messungen erfüllen dieselbe Bewegungsgleichung mit gemeinsamem $v_x, v_y$:\n\n$\\dot R_1 = v_x\\cos\\varphi_1 + v_y\\sin\\varphi_1$\n$\\dot R_2 = v_x\\cos\\varphi_2 + v_y\\sin\\varphi_2$\n\nZwei Gleichungen, zwei Unbekannte → auflösbar. Eliminiert man $v_y$, ergibt sich\n\n$$v_x = \\frac{\\dot R_1 \\sin\\varphi_2 - \\dot R_2 \\sin\\varphi_1}{\\sin(\\varphi_2-\\varphi_1)}$$\n\nMit den Folienwerten $\\dot R_1 = 16{,}1603$ m/s, $\\dot R_2 = 14{,}5272$ m/s ergibt sich $v_x \\approx 10$ m/s (und daraus $v_y \\approx 15$ m/s).",
+  "keyPoints": [
+   "Zwei Winkel/Messungen → zwei Gleichungen, zwei Unbekannte",
+   "vx durch Elimination von vy bestimmbar",
+   "Folienbeispiel: vx ≈ 10 m/s, vy ≈ 15 m/s"
+  ],
+  "calc": {
+   "vars": {
+    "R1": [
+     12,
+     20,
+     0.5
+    ],
+    "R2": [
+     10,
+     18,
+     0.5
+    ]
+   },
+   "given": "Zwei Detektionen desselben Ziels: bei $\\varphi_1 = 30°$ gemessen $\\dot R_1$ = [[R1]] m/s, bei $\\varphi_2 = 20°$ gemessen $\\dot R_2$ = [[R2]] m/s.",
+   "solution": "(R1*sin(20*pi/180) - R2*sin(30*pi/180)) / sin((20-30)*pi/180)",
+   "unit": "m/s",
+   "steps": [
+    "Gleichungssystem: $\\dot R_1 = v_x\\cos30° + v_y\\sin30°$, $\\dot R_2 = v_x\\cos20° + v_y\\sin20°$",
+    "$v_y$ eliminieren: $v_x = \\dfrac{\\dot R_1 \\sin20° - \\dot R_2 \\sin30°}{\\sin(20°-30°)}$ = ([[R1]]·sin20° − [[R2]]·sin30°) / sin(−10°) = [[= (R1*sin(20*pi/180) - R2*sin(30*pi/180)) / sin((20-30)*pi/180)]] m/s"
+   ],
+   "example": {
+    "vars": {
+     "R1": 16.1603,
+     "R2": 14.5272
+    },
+    "result": 10
+   }
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 284–285 (Kap. 5.3, Beispiel 'Two targets')"
+ },
+ {
+  "id": "RAD-S4-08",
+  "fach": "RADAR",
+  "unit": "RAD-S4",
+  "examMode": "voice",
+  "front": "Was unterscheidet **Clustering** von **Tracking** in der Punktwolkenverarbeitung?",
+  "back": "**Clustering** arbeitet **räumlich, innerhalb eines einzelnen Messzyklus**: es fasst gleichzeitig vorliegende Detektionen zu Objekten zusammen (Punktwolke → Objektliste).\n\n**Tracking** arbeitet **zeitlich, über mehrere Messzyklen**: es verfolgt ein bereits erkanntes Objekt von Zyklus zu Zyklus weiter und schätzt daraus u. a. die volle Geschwindigkeit sowie eine geglättete Position (z. B. mit einem Kalman-Filter).\n\nBeide Schritte bauen aufeinander auf: erst Clustering (Objekte pro Zyklus), dann Tracking (Objekte über die Zeit verbinden).",
+  "keyPoints": [
+   "Clustering: räumlich, ein Zyklus, Punktwolke → Objektliste",
+   "Tracking: zeitlich, mehrere Zyklen, Objekt über die Zeit verfolgen",
+   "Reihenfolge: erst Clustering, dann Tracking"
+  ],
+  "mc": {
+   "stem": "Welche Aussage beschreibt den Unterschied zwischen Clustering und Tracking korrekt?",
+   "options": [
+    "Clustering wirkt innerhalb eines Zyklus räumlich, Tracking verfolgt Objekte über mehrere Zyklen zeitlich",
+    "Clustering und Tracking sind zwei Namen für denselben Schritt",
+    "Tracking findet grundsätzlich vor dem Clustering statt",
+    "Clustering benötigt zwingend einen Kalman-Filter"
+   ],
+   "correct": "Clustering wirkt innerhalb eines Zyklus räumlich, Tracking verfolgt Objekte über mehrere Zyklen zeitlich"
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 275 (Kap. 5, Gliederung Point cloud processing)"
+ },
+ {
+  "id": "RAD-S4-09",
+  "fach": "RADAR",
+  "unit": "RAD-S4",
+  "examMode": "voice",
+  "front": "Was ist die Grundidee eines **Bayes-Filters** bei der Zustandsschätzung?",
+  "back": "Ein Bayes-Filter schätzt den Zustand eines Systems **rekursiv**: Er kombiniert eine **a-priori-Vorhersage** (aus dem Bewegungsmodell, „wo müsste das Ziel jetzt sein\") mit einer **neuen, verrauschten Messung** zu einer **a-posteriori-Schätzung**, die genauer ist als Modell oder Messung allein.\n\nFür den nächsten Schritt wird nur die **aktuelle Schätzung** weitergereicht, nicht die komplette Messhistorie – die Vergangenheit steckt bereits in ihr. Der **Kalman-Filter** ist die optimale, geschlossene Lösung dieses Prinzips für lineare Systeme mit gaußschem Rauschen.",
+  "keyPoints": [
+   "Rekursiv: a-priori-Vorhersage + neue Messung → a-posteriori-Schätzung",
+   "Kombination ist genauer als Modell oder Messung allein",
+   "Keine komplette Historie nötig, nur der aktuelle Zustand",
+   "Kalman-Filter = optimale Lösung im linear-gaußschen Fall"
+  ],
+  "why": "Warum ist eine Schätzung, die Modell UND Messung kombiniert, grundsätzlich besser als eine, die nur eine der beiden Quellen nutzt?",
+  "cloze": {
+   "text": "Ein Bayes-Filter kombiniert eine {{1}}-Vorhersage aus dem Bewegungsmodell mit der neuen Messung zu einer verbesserten Schätzung. Dafür wird nicht die komplette Historie benötigt, sondern nur der {{2}} Zustand.",
+   "answers": [
+    "a-priori",
+    "aktuelle"
+   ]
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Kap. 5.4 (Bayes Filter); S. 320, 323 (Kap. 5.6.1 Motivation, Findings)"
+ },
+ {
+  "id": "RAD-S4-10",
+  "fach": "RADAR",
+  "unit": "RAD-S4",
+  "examMode": "voice",
+  "front": "Was beschreibt ein **Zustandsraummodell**, und worin unterscheiden sich die kontinuierliche und die diskrete Form?",
+  "back": "Ein Zustandsraummodell beschreibt ein dynamisches System über zwei Teile: ein **Systemmodell** (wie sich der Zustand mit der Zeit entwickelt) und ein **Messmodell** (wie der Zustand mit dem tatsächlich Gemessenen zusammenhängt).\n\n- **Kontinuierlich:** die Zeitentwicklung wird als **Differentialgleichung** beschrieben (Zustand ändert sich stetig).\n- **Diskret:** die Zeitentwicklung wird zeitgetaktet mit fester Abtastzeit $T$ als **Differenzengleichung** beschrieben – der neue Zustand $x_n$ ergibt sich aus dem vorherigen Zustand $x_{n-1}$ (z. B. Position und Geschwindigkeit) plus einem Term für unmodellierte Störungen (Prozessrauschen, etwa eine nicht erfasste Beschleunigung).\n\nRadar-Messungen sind zeitgetaktet (ein Zyklus alle paar ms) → für die Filterung wird das **diskrete** Modell verwendet.",
+  "keyPoints": [
+   "Systemmodell (Dynamik) + Messmodell (Bezug zur Messung)",
+   "Kontinuierlich: Differentialgleichung",
+   "Diskret: Differenzengleichung mit Abtastzeit T",
+   "Radar nutzt das diskrete Modell (zeitgetaktete Zyklen)"
+  ],
+  "mc": {
+   "stem": "Warum wird bei der Radar-Zustandsschätzung das **diskrete** statt das kontinuierliche Zustandsraummodell verwendet?",
+   "options": [
+    "Weil Radar-Messungen zeitgetaktet in festen Zyklen anfallen",
+    "Weil diskrete Modelle grundsätzlich genauer sind",
+    "Weil kontinuierliche Modelle kein Messrauschen zulassen",
+    "Weil nur diskrete Modelle eine Radialgeschwindigkeit liefern können"
+   ],
+   "correct": "Weil Radar-Messungen zeitgetaktet in festen Zyklen anfallen"
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Kap. 5.5 (State space model); S. 325 (Kap. 5.6.2, Beispiel Random Walk)"
+ },
+ {
+  "id": "RAD-S4-11",
+  "fach": "RADAR",
+  "unit": "RAD-S4",
+  "examMode": "voice",
+  "front": "Erkläre am **ACC-Beispiel** (Abstandsmessung) aus der Vorlesung, warum der Kalman-Filter eine verrauschte Einzelmessung mit einem Bewegungsmodell kombiniert, statt der Messung einfach zu vertrauen.",
+  "back": "Beispiel von der Vorlesung: Ein Sensor meldet alle **40 ms** die Distanz $D$ zu einem vorausfahrenden Fahrzeug, real erwartet **50 m**, aber mit einer **Standardabweichung von 2 m** verrauscht – eine einzelne Messung kann also deutlich daneben liegen.\n\nHat man zusätzlich **a-priori-Wissen** (z. B. eine bisherige Schätzung des Erwartungswerts), lässt sich dieses mit der aktuellen Messung kombinieren und liefert eine **bessere Schätzung** als die reine Rohmessung. Genau das ist die Motivation für den Kalman-Filter: **Bewegungsmodell (Vorhersage) + Messung → geringere Unsicherheit als jede Quelle allein**, und das rekursiv, ohne alle bisherigen Messwerte zu speichern.",
+  "keyPoints": [
+   "ACC-Beispiel: Distanzmessung alle 40 ms, Erwartung 50 m, Std.-Abw. 2 m",
+   "A-priori-Wissen + aktuelle Messung → bessere Schätzung",
+   "Rekursiv, keine gespeicherte Historie nötig",
+   "Motivation, nicht Herleitung der Matrizen"
+  ],
+  "why": "Warum reicht die reine Messung nicht aus, obwohl sie doch die 'echten' Daten liefert?",
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 321, 323 (Kap. 5.6.1 Motivation, Beispiel + Findings)"
+ },
+ {
+  "id": "RAD-S4-12",
+  "fach": "RADAR",
+  "unit": "RAD-S4",
+  "examMode": "voice",
+  "front": "Aus welchen zwei Schritten besteht ein Kalman-Filter-Zyklus, und wie verändert sich dabei jeweils die Unsicherheit der Schätzung?",
+  "back": "**1. Prädiktion (Predict):** der Zustand wird mit dem Bewegungsmodell einen Zeitschritt in die Zukunft projiziert – die Unsicherheit **wächst** dabei (kein neues Wissen, nur Fortschreibung).\n\n**2. Korrektur (Update):** die Vorhersage wird mit der neuen Messung kombiniert, gewichtet nach den jeweiligen Unsicherheiten (**Kalman-Gain**) – die Unsicherheit **sinkt** wieder, weil zusätzliche Information dazukommt.\n\nDanach beginnt der Zyklus erneut mit der nächsten Prädiktion – daher „rekursiv\".",
+  "keyPoints": [
+   "Prädiktion: Zustand fortschreiben, Unsicherheit wächst",
+   "Korrektur: mit Messung kombinieren, Unsicherheit sinkt",
+   "Gewichtung über den Kalman-Gain",
+   "Zyklus wiederholt sich rekursiv"
+  ],
+  "cloze": {
+   "text": "Im Prädiktionsschritt wird der Zustand mit dem Bewegungsmodell fortgeschrieben, dabei {{1}} die Unsicherheit. Im Korrekturschritt wird die Vorhersage mit der neuen Messung kombiniert, gewichtet über den {{2}}, dabei {{3}} die Unsicherheit wieder.",
+   "answers": [
+    "wächst",
+    "Kalman-Gain",
+    "sinkt"
+   ]
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Kap. 5.6.6 (Algorithm); S. 323 (Findings)"
+ },
+ {
+  "id": "RAD-S4-13",
+  "fach": "RADAR",
+  "unit": "RAD-S4",
+  "examMode": "voice",
+  "front": "Für welche Art von System liefert der klassische Kalman-Filter die **optimale** Schätzung – und was macht man, wenn diese Voraussetzung nicht gilt?",
+  "back": "Der klassische Kalman-Filter ist optimal für **lineare** System- und Messmodelle mit **gaußschem (normalverteiltem)** Rauschen.\n\nGilt das nicht (nichtlineares System oder nichtlineare Messfunktion), ist der klassische Kalman-Filter **nicht mehr direkt anwendbar** – dann braucht man Erweiterungen wie den **erweiterten Kalman-Filter (EKF)** oder, bei starker Nichtlinearität/Nicht-Gauß-Verteilungen, einen **Partikelfilter**.",
+  "keyPoints": [
+   "Voraussetzung: lineares System + Messmodell",
+   "Voraussetzung: gaußsches Rauschen",
+   "Sonst: EKF oder Partikelfilter nötig"
+  ],
+  "mc": {
+   "stem": "Für welche Systemklasse ist der **klassische** Kalman-Filter optimal?",
+   "options": [
+    "Lineare Systeme mit gaußschem Rauschen",
+    "Beliebige nichtlineare Systeme",
+    "Nur vollständig rauschfreie Systeme",
+    "Nur Systeme ohne Bewegungsmodell"
+   ],
+   "correct": "Lineare Systeme mit gaußschem Rauschen"
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Kap. 5.6 (Kalman Filter), Kap. 5.7 (Single Target Tracking)"
+ },
+ {
+  "id": "RAD-S4-14",
+  "fach": "RADAR",
+  "unit": "RAD-S4",
+  "examMode": "voice",
+  "front": "Was ist der zentrale Unterschied zwischen dem klassischen **Kalman-Filter** und dem **erweiterten Kalman-Filter (EKF)**?",
+  "back": "Der klassische Kalman-Filter setzt **lineare** System- und Messgleichungen voraus und rechnet mit einer festen Systemmatrix.\n\nDer **EKF** wird für **nichtlineare** Modelle verwendet: er **linearisiert** das System- bzw. Messmodell bei jedem Zeitschritt **lokal um die aktuelle Schätzung** (mit der Jacobi-Matrix als lokaler Näherung), statt eine global gültige, konstante lineare Beziehung anzunehmen.",
+  "keyPoints": [
+   "Kalman-Filter: setzt Linearität voraus, konstante Systemmatrix",
+   "EKF: für nichtlineare Modelle",
+   "EKF linearisiert lokal um die aktuelle Schätzung (Jacobi-Matrix)"
+  ],
+  "mc": {
+   "stem": "Was macht der erweiterte Kalman-Filter (EKF) anders als der klassische Kalman-Filter?",
+   "options": [
+    "Er linearisiert das nichtlineare Modell bei jedem Schritt lokal um die aktuelle Schätzung",
+    "Er benötigt gar keine Messung mehr",
+    "Er speichert zusätzlich die komplette Messhistorie",
+    "Er funktioniert nur bei linearen Systemen"
+   ],
+   "correct": "Er linearisiert das nichtlineare Modell bei jedem Schritt lokal um die aktuelle Schätzung"
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Kap. 5.7 (Single Target Tracking)"
+ },
+ {
+  "id": "RAD-S4-15",
+  "fach": "RADAR",
+  "unit": "RAD-S4",
+  "examMode": "voice",
+  "front": "Wie unterscheidet sich ein **Partikelfilter** grundsätzlich von einem Kalman-Filter in der Art, wie er die Zustandsschätzung darstellt?",
+  "back": "Der Kalman-Filter (und der EKF) stellt die Unsicherheit der Schätzung als **eine Gauß-Verteilung** dar (Mittelwert + Kovarianz).\n\nDer **Partikelfilter** stellt die Verteilung stattdessen durch eine Menge **gewichteter Stichproben (Partikel)** dar, die den Zustandsraum abtasten. Dadurch kann er auch **stark nichtlineare** Systeme und **beliebige, nicht-gaußsche** Verteilungen (z. B. mehrgipflige Verteilungen) abbilden – bezahlt das aber mit deutlich **höherem Rechenaufwand**.",
+  "keyPoints": [
+   "Kalman/EKF: Verteilung als eine Gauß-Kurve",
+   "Partikelfilter: Verteilung als gewichtete Stichproben (Partikel)",
+   "Geeignet für stark nichtlineare/nicht-gaußsche Probleme",
+   "Nachteil: hoher Rechenaufwand"
+  ],
+  "cloze": {
+   "text": "Während Kalman-Filter und EKF die Zustandsverteilung als eine {{1}}-Verteilung darstellen, nutzt der Partikelfilter eine Menge gewichteter {{2}} zur Darstellung – geeignet für stark nichtlineare Probleme, aber rechenintensiver.",
+   "answers": [
+    "Gauß",
+    "Partikel"
+   ]
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Kap. 5.7 (Single Target Tracking)"
+ },
+ {
+  "id": "RAD-S4-16",
+  "fach": "RADAR",
+  "unit": "RAD-S4",
+  "examMode": "voice",
+  "front": "Was ist das **Assoziationsproblem** beim Multi-Target-Tracking, und wie gehen **MHT** und **JPDA** grundsätzlich unterschiedlich damit um?",
+  "back": "**Assoziationsproblem:** Bei mehreren gleichzeitig verfolgten Zielen ist nicht von vornherein klar, welche **neue Detektion** zu welchem **bestehenden Track** gehört (oder ob sie ein neues Ziel bzw. ein Falschalarm ist).\n\n- **MHT (Multiple Hypotheses Tracking):** hält bei Unsicherheit **mehrere mögliche Zuordnungs-Hypothesen** parallel offen und entscheidet sich erst später, wenn mehr Information vorliegt (kann rechenintensiv werden, Hypothesenbaum wächst).\n- **JPDA (Joint Probabilistic Data Association):** legt sich **nicht fest**, sondern gewichtet **alle plausiblen Zuordnungen** wahrscheinlichkeitsbasiert und verrechnet sie gemeinsam in die Schätzung.\n\nBeides ist auf diesem Stand nur als **Begriff mit Grundidee** gefragt, nicht in algorithmischer Tiefe.",
+  "keyPoints": [
+   "Assoziationsproblem: welche Detektion gehört zu welchem Track?",
+   "MHT: mehrere Hypothesen parallel offenhalten",
+   "JPDA: alle plausiblen Zuordnungen wahrscheinlichkeitsgewichtet verrechnen",
+   "Hier nur Begriffsebene, keine algorithmische Tiefe nötig"
+  ],
+  "mc": {
+   "stem": "Was ist das **Assoziationsproblem** beim Multi-Target-Tracking?",
+   "options": [
+    "Die Frage, welche neue Detektion zu welchem bestehenden Track gehört",
+    "Die Frage, wie viele Radarsensoren nötig sind",
+    "Die Frage, welche Clustering-Parameter optimal sind",
+    "Die Frage, ob ein Ziel linear oder nichtlinear ist"
+   ],
+   "correct": "Die Frage, welche neue Detektion zu welchem bestehenden Track gehört"
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Kap. 5.8 (Multiple Target Tracking)"
+ },
+ {
+  "id": "RAD-S5-01",
+  "fach": "RADAR",
+  "unit": "RAD-S5",
+  "examMode": "voice",
+  "front": "Der Prüfer fragt zum Abschluss: 'Wo geht die Entwicklung im automotive Radar-Signalprocessing hin?' Mit welchen Stichworten deckst du das in 30 Sekunden ab?",
+  "back": "Vier Stichworte reichen als roter Faden:\n- **Marktwachstum** Richtung **4D-/Imaging-Radar** (mehr Winkel-/Höhenauflösung)\n- **Virtuelle Antennen (MIMO)**: mehr rechnerische Kanäle ohne mehr Hardware\n- **Beamforming/Angle-of-Arrival**: von FFT zu hochauflösenden Verfahren wie CAPON/MUSIC\n- **Interferenz** zwischen Radaren als wachsendes Problem, adressiert durch neue **Modulationsverfahren** (PMCW, OFDM-Radar) und **kohärente Radarnetzwerke**\n\nDas ist die 30-Sekunden-Basisversion – bei Nachfragen zu einem Stichwort in die Tiefe gehen (2- bzw. 5-Minuten-Version).",
+  "keyPoints": [
+   "4D-/Imaging-Radar-Markt wächst",
+   "Virtuelle Antennen via MIMO",
+   "Beamforming/AOA: FFT → CAPON/MUSIC",
+   "Interferenz → neue Modulationsverfahren & kohärente Netzwerke"
+  ],
+  "why": "Warum reicht bei dieser Abschlussfrage eine Stichwortliste, während andere Stationen Herleitungen verlangen?",
+  "cloze": {
+   "text": "Die Abschlussfrage 'Wo geht die Entwicklung hin?' deckst du mit Stichworten ab: {{1}}-Radar als Marktrend, {{2}} Antennen nach dem MIMO-Prinzip, {{3}} bzw. Angle-of-Arrival-Verfahren, und {{4}} zwischen Radaren als wachsendes Problem.",
+   "answers": [
+    "4D-/Imaging",
+    "virtuelle",
+    "Beamforming",
+    "Interferenz"
+   ]
+  },
+  "source": "04_Radartechnik.md, Abschnitt 'Station 5 · Einordnung'"
+ },
+ {
+  "id": "RAD-S5-02",
+  "fach": "RADAR",
+  "unit": "RAD-S5",
+  "examMode": "voice",
+  "front": "Wie entwickelt sich laut der im Kurs zitierten Yole-Marktprognose der Automotive-Radarmarkt, und was treibt das Wachstum?",
+  "back": "Der Radar-Plattformmarkt lag **2021 bei 5,8 Mrd. USD**, die Prognose (Yole) erwartet ein Wachstum von **14 %** auf **12,8 Mrd. USD bis 2027**. Haupttreiber: strengere **Sicherheitsvorschriften** und neue **Automatisierungsfunktionen**, die vor allem **4D-/Imaging-Radar** brauchen (mehr Auflösung, auch in der Höhe). Zusätzlich entsteht ein neues Marktsegment: **Innenraum-Radar** (Kindererkennung, Präsenzsensorik/Occupancy Monitoring), das laut Prognose bis 2027 zusätzlich **knapp 500 Mio. USD** bringen soll.",
+  "keyPoints": [
+   "5,8 Mrd. USD (2021) → 12,8 Mrd. USD (2027)",
+   "Treiber: Sicherheitsvorschriften + Automatisierung",
+   "4D-/Imaging-Radar als Hauptwachstumstreiber",
+   "Neues Segment: Innenraum-Radar (~500 Mio. USD bis 2027)"
+  ],
+  "mc": {
+   "stem": "Welches Marktsegment nennt die im Kurs zitierte Yole-Prognose als neuen, zusätzlichen Wachstumstreiber neben klassischem Frontradar?",
+   "options": [
+    "Innenraum-Radar (z. B. Kindererkennung, Präsenzsensorik)",
+    "Wetterradar für die Landwirtschaft",
+    "Maritimes Überwachungsradar",
+    "Radarbasierte Verkehrsampeln"
+   ],
+   "correct": "Innenraum-Radar (z. B. Kindererkennung, Präsenzsensorik)"
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 383 (6.2.1 Automotive radar market forecast)"
+ },
+ {
+  "id": "RAD-S5-03",
+  "fach": "RADAR",
+  "unit": "RAD-S5",
+  "examMode": "voice",
+  "front": "Was ist eine virtuelle Antenne im MIMO-Radar, und warum verbessert sie die Winkelauflösung, ohne mehr physische Hardware zu verbauen?",
+  "back": "Senden mehrere **Tx-Antennen** orthogonal codiert (z. B. zeit-, frequenz- oder codemultiplext), kann der Empfänger am jeweiligen **Rx-Element** erkennen, von welchem Sender ein Echo stammt. Jede **Tx-Rx-Kombination** verhält sich dann wie ein eigenes, räumlich versetztes Empfangselement – ein **virtuelles Array** mit bis zu $M_{Tx}\\cdot M_{Rx}$ Elementen entsteht rein rechnerisch aus $M_{Tx}+M_{Rx}$ physischen Antennen. Eine größere **effektive Apertur** bedeutet über den Zusammenhang zwischen Array-Größe und Winkelauflösung eine **feinere Winkelauflösung**, ohne dass mehr Sende-/Empfangspfade verbaut werden müssen.",
+  "keyPoints": [
+   "Orthogonale Codierung der Tx-Signale nötig",
+   "Jede Tx-Rx-Kombination = ein virtuelles Element",
+   "N_virtuell = M_Tx · M_Rx",
+   "Größere Apertur → feinere Winkelauflösung, keine zusätzliche Hardware"
+  ],
+  "why": "Warum reicht die orthogonale Codierung der Sender aus, um aus wenigen physischen Antennen ein deutlich größeres virtuelles Array zu machen?",
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 456 (6.4.3 Virtual Antennas)"
+ },
+ {
+  "id": "RAD-S5-04",
+  "fach": "RADAR",
+  "unit": "RAD-S5",
+  "examMode": "voice",
+  "front": "Die im Kurs gezeigte Marktübersicht (Yole) trägt die Anzahl der Rx-Antennen verschiedener Hersteller über der Anzahl der Tx-Antennen auf – von wenigen bis über 2000 Kanälen. Wie erklärt sich diese hohe Zahl, wenn moderne Radarchips nur eine überschaubare Zahl physischer Antennenpfade haben?",
+  "back": "Die aufgetragene Zahl sind **virtuelle Kanäle**, nicht physische Antennen. Durch **MIMO-Kombination** ($N_{virtuell}=M_{Tx}\\cdot M_{Rx}$) erzeugen z. B. 24 physische Tx- und 24 physische Rx-Antennen bereits 576 virtuelle Kanäle; Hersteller, die mehrere MMIC-Bausteine kaskadieren (**MMIC-Kaskadierung**), kommen so auf virtuelle Arrays bis in den vierstelligen Bereich (im Kurs bis 2304). Die Grafik zeigt damit ein 'Wettrüsten' um **Winkelauflösung**, nicht um physisch verbaute Antennen.",
+  "keyPoints": [
+   "Chart zeigt virtuelle, nicht physische Kanäle",
+   "Hohe Zahlen entstehen durch MIMO-Kombinatorik + MMIC-Kaskadierung",
+   "Ziel ist mehr Winkelauflösung, nicht mehr Hardware"
+  ],
+  "mc": {
+   "stem": "Was bilden die hohen Antennenzahlen (bis über 2000) in der im Kurs gezeigten Marktgrafik tatsächlich ab?",
+   "options": [
+    "Die Anzahl virtueller Kanäle nach MIMO-Kombination von Tx- und Rx-Antennen",
+    "Die Anzahl der tatsächlich verlöteten Empfangsantennen auf der Platine",
+    "Die Anzahl unabhängiger Radarsensoren pro Fahrzeug",
+    "Die Anzahl der ADC-Kanäle pro Sekunde"
+   ],
+   "correct": "Die Anzahl virtueller Kanäle nach MIMO-Kombination von Tx- und Rx-Antennen"
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 455 (6.4.3 Virtual Antennas, 'Number of Antennas')"
+ },
+ {
+  "id": "RAD-S5-05",
+  "fach": "RADAR",
+  "unit": "RAD-S5",
+  "examMode": "calc",
+  "front": "Ein MIMO-Radar-Chip hat $M_{Tx}$ physische Sendeantennen und $M_{Rx}$ physische Empfangsantennen mit orthogonal codierten Sendesignalen. Wie viele virtuelle Kanäle (virtuelle Antennenelemente) entstehen rechnerisch daraus?",
+  "back": "**MIMO-Prinzip:** Codieren sich die $M_{Tx}$ Sender orthogonal (z. B. per Zeit-, Frequenz- oder Codemultiplex), kann der Empfänger jeden Sendepfad einzeln den $M_{Rx}$ Empfängern zuordnen. Es entstehen $N_{virtuell} = M_{Tx}\\cdot M_{Rx}$ rechnerisch unterscheidbare Kanäle – ein virtuelles Antennenarray, größer als die Summe der physischen Elemente ($M_{Tx}+M_{Rx}$). Beispiel aus der Vorlesung (Sun et al.): $M_{Tx}=24$, $M_{Rx}=24$ → $N_{virtuell}=576$ virtuelle Kanäle aus nur 48 physischen Antennen.",
+  "keyPoints": [
+   "Virtuelles Array: N = M_Tx · M_Rx",
+   "Mehr virtuelle Kanäle → größere effektive Apertur → feinere Winkelauflösung",
+   "Keine zusätzliche physische Hardware nötig",
+   "Beispiel Vorlesung: 24×24 = 576 virtuelle Kanäle"
+  ],
+  "calc": {
+   "vars": {
+    "MTX": [
+     2,
+     32,
+     1
+    ],
+    "MRX": [
+     2,
+     32,
+     1
+    ]
+   },
+   "given": "Ein MIMO-Radar besitzt [[MTX]] physische Sendeantennen (Tx) und [[MRX]] physische Empfangsantennen (Rx), deren Sendesignale orthogonal codiert sind (z. B. zeit- oder frequenzmultiplext).",
+   "solution": "MTX * MRX",
+   "unit": "Kanäle",
+   "tolerance": 0.005,
+   "steps": [
+    "Virtuelles Array: $N_{virtuell} = M_{Tx} \\cdot M_{Rx}$",
+    "Einsetzen: [[MTX]] · [[MRX]] = [[= MTX*MRX]] virtuelle Kanäle"
+   ],
+   "example": {
+    "vars": {
+     "MTX": 24,
+     "MRX": 24
+    },
+    "result": 576
+   }
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 456 (6.4.3 Virtual Antennas)"
+ },
+ {
+  "id": "RAD-S5-06",
+  "fach": "RADAR",
+  "unit": "RAD-S5",
+  "examMode": "voice",
+  "front": "Welche drei Verfahren zur Winkelbestimmung (Angle of Arrival) werden im Kurs als Übungsaufgabe genannt, und worin unterscheiden sie sich grundsätzlich?",
+  "back": "Die Übung nennt **FFT-basiertes Beamforming**, **CAPON** und **MUSIC**:\n- **FFT-basiert:** klassische Fourier-Transformation über die Phasen der Array-Elemente – einfach, aber durch die Apertur (Anzahl Elemente) in der Auflösung begrenzt.\n- **CAPON** (Minimum-Varianz-Beamformer): gewichtet die Elemente so, dass die Leistung aus einer Zielrichtung maximiert und aus allen anderen Richtungen minimiert wird – nutzt dazu die **Kovarianzmatrix** der Empfangssignale.\n- **MUSIC** (*MUltiple SIgnal Classification*): zerlegt die Kovarianzmatrix per **Eigenwertzerlegung** in Signal- und Rauschunterraum und sucht Winkel, bei denen der Steering-Vektor orthogonal zum Rauschunterraum steht – liefert die schärfsten Winkelschätzungen der drei Verfahren, bei höherem Rechenaufwand.",
+  "keyPoints": [
+   "FFT: einfach, aperturbegrenzt",
+   "CAPON: Minimum-Varianz über Kovarianzmatrix",
+   "MUSIC: Eigenwertzerlegung in Signal-/Rauschunterraum",
+   "Auflösung steigt FFT < CAPON < MUSIC, Rechenaufwand ebenso"
+  ],
+  "mc": {
+   "stem": "Welches Verfahren nutzt eine Eigenwertzerlegung der Kovarianzmatrix in Signal- und Rauschunterraum, um die Winkelauflösung zu verbessern?",
+   "options": [
+    "MUSIC",
+    "FFT-basiertes Beamforming",
+    "Amplituden-Monopuls",
+    "Hagen-Poiseuille-Verfahren"
+   ],
+   "correct": "MUSIC"
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 4.4.5 Spectral-Based Algorithms (MUSIC laut Index auf Folie 259); Folie 453 (6.4.2) nennt dazu nur die Übungsaufgabe ohne Erklärung."
+ },
+ {
+  "id": "RAD-S5-07",
+  "fach": "RADAR",
+  "unit": "RAD-S5",
+  "examMode": "voice",
+  "front": "Ein Kommilitone sagt: 'CAPON und MUSIC sind letztlich nur eine feinere FFT.' Stimmt das?",
+  "back": "Nein. Die **FFT** ist eine feste lineare Transformation – ihre Winkelauflösung hängt nur von der **Apertur** (Anzahl/Abstand der Elemente) ab und ist für eine gegebene Apertur nicht verbesserbar. **CAPON** und **MUSIC** sind dagegen **datenadaptive, statistische Schätzverfahren**: Sie werten die **Kovarianzmatrix** der tatsächlich empfangenen Signale aus (Rauschstatistik, Korrelationen zwischen Zielen) und können dadurch enger stehende Ziele trennen, als es die Apertur bei reiner FFT erlauben würde ('Superresolution'). Der Preis ist deutlich höherer Rechenaufwand und die Notwendigkeit, die Kovarianzmatrix aus mehreren Snapshots zu schätzen.",
+  "keyPoints": [
+   "FFT: feste Transformation, aperturbegrenzt",
+   "CAPON/MUSIC: adaptiv, nutzen Kovarianzmatrix",
+   "Können physikalische Apertur-Grenze der FFT unterschreiten",
+   "Kosten: höherer Rechenaufwand, Kovarianzschätzung nötig"
+  ],
+  "why": "Warum kann ein statistisches Verfahren wie MUSIC eine feinere Winkeltrennung liefern als die physikalische Apertur eigentlich erlaubt?",
+  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 4.4.5 Spectral-Based Algorithms (Folie ca. 239-261); Folie 453 (6.4.2) nennt dazu nur die Übungsaufgabe ohne Erklärung."
+ },
+ {
+  "id": "RAD-S5-08",
+  "fach": "RADAR",
+  "unit": "RAD-S5",
+  "examMode": "voice",
+  "front": "Warum wird Interferenz zwischen Radaren zu einem wachsenden Problem, und welche Gegenmaßnahmen werden diskutiert?",
+  "back": "Je mehr Fahrzeuge mit Radar im selben Frequenzband unterwegs sind, desto wahrscheinlicher empfängt ein Radar das **Sendesignal eines fremden Radars** statt nur die eigenen Reflexionen – das erhöht das Rauschniveau und kann Falschziele erzeugen. Gegenmaßnahmen, die im Kurs als Trend genannt werden:\n- **Andere/robustere Modulationsverfahren** (z. B. **PMCW**, **OFDM-Radar**, **Phase Coded Chirp Sequence**) statt eines einfachen linearen Chirps\n- **Kohärente Radarnetzwerke**, die Sender koordinieren/synchronisieren statt unabhängig arbeiten zu lassen\n- Sendeparameter (z. B. Chirp-Timing) randomisieren/codieren, damit fremde Signale statistisch von Rauschen unterscheidbar bleiben",
+  "keyPoints": [
+   "Mehr Radare im Feld → höheres Risiko fremder Sendesignale im eigenen Empfänger",
+   "Folge: höheres Rauschniveau, mögliche Falschziele",
+   "Gegenmaßnahmen: robustere Modulation (PMCW/OFDM), kohärente Netzwerke, Codierung/Randomisierung"
+  ],
+  "cloze": {
+   "text": "Mit wachsender Radardichte steigt die Gefahr, dass ein Empfänger das Sendesignal eines {{1}} Radars empfängt. Als Gegenmaßnahmen nennt der Kurs robustere {{2}} wie PMCW oder OFDM-Radar sowie {{3}} Radarnetzwerke, die ihre Sender koordinieren.",
+   "answers": [
+    "fremden",
+    "Modulationsverfahren",
+    "kohärente"
+   ]
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Kap. 6.4.1 Interference (Folie 450-451, dort nur als Übungsaufgabe genannt; PMCW/OFDM/kohärente Netzwerke sind Standard-Automotive-Radar-Fachwissen, nicht wörtlich auf der Folie ausgeführt)."
+ },
+ {
+  "id": "RAD-S5-09",
+  "fach": "RADAR",
+  "unit": "RAD-S5",
+  "examMode": "voice",
+  "front": "Ein Kommilitone verwechselt Interferenz und Multipath als 'im Grunde dasselbe Problem'. Was ist der Unterschied?",
+  "back": "**Multipath** (Mehrwegeausbreitung) entsteht durch das **eigene** Sendesignal: Es erreicht das Ziel oder den Empfänger über mehrere Pfade (z. B. Reflexion an Fahrbahn/Leitplanke), was Geisterziele erzeugen kann. **Interferenz** entsteht dagegen durch **fremde** Sender – andere Radare im selben Frequenzband, deren Signal der eigene Empfänger fälschlich mitempfängt. Beide erhöhen das Risiko von Falschzielen, haben aber unterschiedliche Ursachen und erfordern unterschiedliche Gegenmaßnahmen.",
+  "keyPoints": [
+   "Multipath: eigenes Signal über mehrere Pfade",
+   "Interferenz: fremdes Sendesignal im eigenen Empfänger",
+   "Beide erhöhen Falschzielrisiko, unterschiedliche Ursache",
+   "Unterschiedliche Gegenmaßnahmen nötig"
+  ],
+  "mc": {
+   "stem": "Worin besteht der grundlegende Unterschied zwischen Multipath und Interferenz bei Radar?",
+   "options": [
+    "Multipath kommt vom eigenen Sendesignal über mehrere Pfade, Interferenz von fremden Radarsendern",
+    "Multipath tritt nur bei CW-Radar auf, Interferenz nur bei FMCW",
+    "Beide Begriffe bezeichnen exakt denselben physikalischen Effekt",
+    "Multipath betrifft nur die Empfangsantenne, Interferenz nur die Sendeantenne"
+   ],
+   "correct": "Multipath kommt vom eigenen Sendesignal über mehrere Pfade, Interferenz von fremden Radarsendern"
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Kap. 6.4 (Interference vs. Multipath als Systemthemen; Multipath physikalisch ausführlicher in Kap. 2.5.3, Station 1)."
+ },
+ {
+  "id": "RAD-S5-10",
+  "fach": "RADAR",
+  "unit": "RAD-S5",
+  "examMode": "voice",
+  "front": "FMCW hat Grenzen bei Interferenz und Range-Doppler-Kopplung (Station 3). Welche zwei alternativen Modulationstrends nennt der Kurs, und was ist ihr jeweiliges Grundprinzip?",
+  "back": "- **PMCW** (*Phase-Modulated Continuous Wave*, z. B. als *Stepped-Frequency-PMCW*): moduliert die **Phase** eines Dauerstrichsignals nach einem Codemuster, statt die Frequenz wie bei FMCW zu wobbeln – das Codemuster macht das Signal robuster gegenüber fremden, unkorrelierten Sendern.\n- **OFDM-Radar** (z. B. *Stepped-Carrier-OFDM*): nutzt viele **orthogonale Subträger** gleichzeitig; aus deren Phasen-/Amplitudenmuster wird ein hochauflösendes **Range-Doppler-Profil** gewonnen, das laut den zitierten Arbeiten bereits bei **niedrigerer Abtastrate** möglich ist als beim klassischen FMCW-Ansatz.\n\nBeide Ansätze ersetzen den einfachen linearen Chirp durch codierte/strukturierte Signale, die sich besser von fremden Radarsignalen unterscheiden lassen.",
+  "keyPoints": [
+   "PMCW: Phasencodierung statt Frequenz-Sweep",
+   "OFDM-Radar: viele orthogonale Subträger",
+   "OFDM-Ansatz: hochauflösendes Range-Doppler-Profil bei niedrigerer Abtastrate",
+   "Beide adressieren Interferenzrobustheit gegenüber klassischem FMCW"
+  ],
+  "mc": {
+   "stem": "Was ist das Grundprinzip von PMCW im Unterschied zu klassischem FMCW?",
+   "options": [
+    "Ein Dauerstrichsignal wird nach einem Codemuster in der Phase moduliert, statt die Frequenz zu wobbeln",
+    "Es wird ausschließlich die Amplitude linear erhöht",
+    "Es wird kein Trägersignal mehr benötigt",
+    "Es ersetzt den Mixer durch einen zweiten VCO"
+   ],
+   "correct": "Ein Dauerstrichsignal wird nach einem Codemuster in der Phase moduliert, statt die Frequenz zu wobbeln"
+  },
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 458 (6.4.4 Modulation Schemes)"
+ },
+ {
+  "id": "RAD-S5-11",
+  "fach": "RADAR",
+  "unit": "RAD-S5",
+  "examMode": "voice",
+  "front": "Was ist ein kohärentes Radarnetzwerk, und welchen Vorteil bringt es gegenüber unabhängig arbeitenden Einzelradaren?",
+  "back": "Mehrere Radareinheiten werden zeitlich/phasenmäßig **synchronisiert** (im Kurs u. a. als *'Over-the-Air-Synchronisation'* referenziert), statt jede für sich unabhängig zu senden und auszuwerten. Dadurch lassen sich ihre Messungen **gemeinsam kohärent verarbeiten** – das Netzwerk verhält sich ähnlich wie ein einziges, größeres verteiltes Array. Genannte Vorteile: bessere **Abbildung/Mapping der Umgebung** und ein genaueres **Belegungsraster (Occupancy Gridmapping)** als bei unabhängigen Einzelsensoren, da sich Mehrdeutigkeiten und Messrauschen zwischen den Sensoren gegenseitig auflösen lassen.",
+  "keyPoints": [
+   "Synchronisation mehrerer Radareinheiten (z. B. Over-the-Air)",
+   "Gemeinsame kohärente Auswertung statt unabhängiger Einzelsensoren",
+   "Wirkt wie ein größeres verteiltes Array",
+   "Vorteil: besseres Mapping / Occupancy Gridmapping"
+  ],
+  "why": "Warum bringt allein die Synchronisation mehrerer Radare schon einen Auflösungsgewinn, ohne dass ein einzelner Sensor verändert wird?",
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 461 (6.4.6 Coherent Radar)"
+ },
+ {
+  "id": "RAD-S5-12",
+  "fach": "RADAR",
+  "unit": "RAD-S5",
+  "examMode": "voice",
+  "front": "Warum bleibt der Elementabstand $d=\\lambda/2$ auch bei virtuellen MIMO-Arrays eine kritische Größe, obwohl die zusätzlichen Elemente nur rechnerisch entstehen?",
+  "back": "Die virtuellen Elemente entstehen an den effektiven Positionen der Tx-Rx-Kombinationen (Faltung der physischen Tx- und Rx-Anordnung) – für die Winkelauswertung zählt am Ende nur diese resultierende Geometrie, nicht ob ein Element real verlötet oder rechnerisch entstanden ist. Liegt der effektive Abstand zwischen benachbarten (virtuellen) Elementen über $\\lambda/2$, gilt wie bei einem realen Array: Die Phasendifferenz $\\Delta\\varphi = 2\\pi d \\sin\\varphi/\\lambda$ kann für manche Winkel $180°$ überschreiten → **Mehrdeutigkeit** und **Grating Lobes** (Nebenkeulen, die ein Ziel an einem falschen Winkel vortäuschen). MIMO-Antennenlayouts werden deshalb gezielt so entworfen, dass die virtuelle Array-Geometrie den $\\lambda/2$-Abstand einhält.",
+  "keyPoints": [
+   "Virtuelle Elemente liegen an gefalteten Tx-Rx-Positionen",
+   "Für Grating Lobes zählt die effektive (virtuelle), nicht die physische Geometrie",
+   "d > λ/2 → |Δφ| kann 180° überschreiten → Mehrdeutigkeit/Grating Lobes",
+   "MIMO-Layout wird auf λ/2 im virtuellen Array optimiert"
+  ],
+  "cloze": {
+   "text": "Grating Lobes entstehen, wenn der effektive Elementabstand im (virtuellen) Array größer als {{1}} ist, sodass die Phasendifferenz für manche Winkel {{2}}° überschreitet – deshalb wird auch das virtuelle MIMO-Array auf diesen Abstand hin optimiert.",
+   "answers": [
+    "λ/2",
+    "180"
+   ]
+  },
+  "source": "04_Radartechnik.md, Abschnitt 'Station 3 · Funktionsweise' (Angle of Arrival)"
+ },
+ {
+  "id": "RAD-S5-13",
+  "fach": "RADAR",
+  "unit": "RAD-S5",
+  "examMode": "voice",
+  "front": "Was ist ein Steering-Vektor, und welche Rolle spielt er in Verfahren wie CAPON/MUSIC?",
+  "back": "Der **Steering-Vektor** beschreibt für eine angenommene Einfallsrichtung $\\varphi$, welche **Phasenverschiebung** das Signal an jedem einzelnen Element eines Antennenarrays im Vergleich zu einem Referenzelement hätte (Modell der ebenen Welle über das Array). CAPON und MUSIC testen für ein Raster möglicher Winkel jeweils den zugehörigen Steering-Vektor gegen die aus den Messdaten geschätzte **Kovarianzmatrix**: MUSIC sucht Winkel, bei denen der Steering-Vektor **orthogonal zum Rauschunterraum** steht, CAPON sucht die Gewichtung, die für den jeweiligen Steering-Vektor die Ausgangsleistung minimiert, während das Zielsignal erhalten bleibt. Der Steering-Vektor ist damit das gemeinsame geometrische Modell, das beide Verfahren mit den gemessenen Daten vergleichen.",
+  "keyPoints": [
+   "Steering-Vektor = erwartete Phasenverschiebungen über das Array für einen Winkel",
+   "Basis für den Vergleich mit der gemessenen Kovarianzmatrix",
+   "MUSIC: Orthogonalität zum Rauschunterraum",
+   "CAPON: Leistungsminimierung bei erhaltenem Zielsignal"
+  ],
+  "why": "Warum brauchen sowohl CAPON als auch MUSIC denselben Steering-Vektor, obwohl sie unterschiedlich rechnen?",
+  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 4.4.1 Steering vector of ULA (Folie 223-228) und Anhang 7.0.4 Index ('Steering Vector')."
+ },
+ {
+  "id": "RAD-S5-14",
+  "fach": "RADAR",
+  "unit": "RAD-S5",
+  "examMode": "voice",
+  "front": "Fasse die zentrale fachliche Erkenntnis von Station 5 in einem Satz zusammen: Warum ist 'mehr Rechenleistung statt mehr Hardware' der rote Faden hinter allen hier genannten Trends?",
+  "back": "Fast jeder genannte Trend – **virtuelle MIMO-Antennen**, **CAPON/MUSIC statt FFT**, **OFDM-Radar mit vielen Subträgern**, **kohärente Radarnetzwerke** – kauft sich bessere Auflösung oder Robustheit durch **mehr Signalverarbeitungs- bzw. Rechenaufwand**, nicht durch mehr physische Sendeleistung oder Bandbreite. Das ist die Fortsetzung des Signalwegs aus den vorigen Stationen: Wo Station 3 die physikalischen Grenzen eines einzelnen FMCW-Chirps zeigte, zeigt Station 5, dass die aktuelle Industrieentwicklung diese Grenzen vor allem rechnerisch (mehr Kanäle, adaptive Verfahren, Netzwerk-Koordination) verschiebt, nicht durch neue Physik.",
+  "keyPoints": [
+   "Roter Faden: mehr Rechenaufwand statt mehr Sendeleistung/Bandbreite",
+   "Virtuelle Antennen, CAPON/MUSIC, OFDM, kohärente Netzwerke folgen demselben Muster",
+   "Knüpft an die physikalischen Grenzen aus Station 3 an",
+   "Passt zur Abschlussfrage 'Wo geht die Entwicklung hin?'"
+  ],
+  "why": "Warum ist diese Synthese die stärkste Antwort auf eine Nachfrage, nachdem du die Stichwortliste (Karte 1) schon genannt hast?",
+  "source": "04_Radartechnik.md, Abschnitt 'Station 5 · Einordnung'"
+ }
+]

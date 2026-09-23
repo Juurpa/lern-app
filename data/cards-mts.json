@@ -2430,5 +2430,2561 @@
    }
   },
   "source": "Lsg_RS4.pdf, S. 1–3; MTS_Ue__04_RS4.pdf, Transferfrage „Druckabfall bei restriktiver Störung“ (S. 9)"
+ },
+ {
+  "id": "MTS-S1-01",
+  "fach": "MTS",
+  "unit": "MTS-S1",
+  "examMode": "free",
+  "front": "Nenne mindestens vier strömungsmechanische Prozesse **im menschlichen Körper**, für die man Strömungsmechanik als Grundlage braucht.",
+  "back": "- **Blutströmung** in Gefäßen\n- **Luftaustausch** in den Atemwegen\n- **Urinausscheidung**\n- **Lymphströmung**\n- **Liquorströmung** im Gehirn\n- **Mikrofluidik im Gewebe**\n\nDaneben gibt es **medizin(techn)ische** Anwendungen: Strömung in medizinischen Geräten, Modellierung von Körperprozessen für Therapiegeräte, Diagnostik (z. B. **Doppler-Ultraschall**), **Wirkstofftransport** (Diffusion + Advektion) und **Lab-on-a-Chip**-Anwendungen.",
+  "keyPoints": [
+   "Blutströmung, Atemwege, Urinausscheidung",
+   "Lymphströmung, Liquorströmung im Gehirn",
+   "Mikrofluidik im Gewebe",
+   "Medizintechnisch: Geräte, Doppler-Ultraschall, Wirkstofftransport"
+  ],
+  "why": "Warum reicht es in der Medizintechnik nicht, Strömungsmechanik nur auf das Blutgefäßsystem zu beziehen?",
+  "source": "01__Einführung_Strömungsmechanik.pdf, Folie 2"
+ },
+ {
+  "id": "MTS-S1-02",
+  "fach": "MTS",
+  "unit": "MTS-S1",
+  "examMode": "free",
+  "front": "Nenne ein Beispiel für eine **medizintechnische** Anwendung der Strömungsmechanik, die kein rein körpereigener Prozess ist.",
+  "back": "Beispiele: **Diagnostik mit Doppler-Ultraschall** (misst Strömungsgeschwindigkeiten, z. B. im Blut), **Modellierung von Körperprozessen für Therapiegeräte**, **Wirkstofftransport** (Kombination aus Diffusion und Advektion) sowie **Lab-on-a-Chip-Anwendungen** (Mikrofluidik auf einem Chip für Diagnostik/Analytik).",
+  "keyPoints": [
+   "Doppler-Ultraschall misst Strömungsgeschwindigkeiten",
+   "Modellierung von Therapiegeräten",
+   "Wirkstofftransport: Diffusion + Advektion",
+   "Lab-on-a-Chip: Mikrofluidik-Diagnostik"
+  ],
+  "mc": {
+   "stem": "Welche der folgenden Optionen ist ein Beispiel für eine **medizintechnische** (keine rein körpereigene) Anwendung der Strömungsmechanik?",
+   "options": [
+    "Diagnostik mittels Doppler-Ultraschall",
+    "Liquorströmung im Gehirn",
+    "Lymphströmung",
+    "Urinausscheidung"
+   ],
+   "correct": "Diagnostik mittels Doppler-Ultraschall"
+  },
+  "source": "01__Einführung_Strömungsmechanik.pdf, Folie 2"
+ },
+ {
+  "id": "MTS-S1-03",
+  "fach": "MTS",
+  "unit": "MTS-S1",
+  "examMode": "free",
+  "front": "Wie lautet die **Advektions-Diffusions-Gleichung**, und was beschreibt sie?",
+  "back": "$$\\frac{\\partial c}{\\partial t} + v \\cdot \\nabla c = D \\nabla^2 c$$\n\nmit Stoffkonzentration $c$, Strömungsgeschwindigkeit $v$, Diffusionskoeffizient $D$ und Zeit $t$. Der Transport von Material zeigt sich als **Änderung der (räumlichen) Konzentration** $c$. Der Term $v\\cdot\\nabla c$ beschreibt den Anteil durch **Advektion** (Transport mit der Strömung), der Term $D\\nabla^2 c$ den Anteil durch **Diffusion** (stochastische Molekülbewegung).",
+  "keyPoints": [
+   "∂c/∂t + v·∇c = D∇²c",
+   "Linker Term: zeitliche Konzentrationsänderung",
+   "v·∇c: Advektionsanteil",
+   "D∇²c: Diffusionsanteil"
+  ],
+  "cloze": {
+   "text": "Die Advektions-Diffusions-Gleichung lautet $\\frac{\\partial c}{\\partial t} + v \\cdot \\nabla c = D \\nabla^2 c$. Der Term $v \\cdot \\nabla c$ beschreibt den Transport durch {{1}}, der Term $D \\nabla^2 c$ den Transport durch {{2}}.",
+   "answers": [
+    "Advektion",
+    "Diffusion"
+   ]
+  },
+  "source": "01__Einführung_Strömungsmechanik.pdf, Folie 3"
+ },
+ {
+  "id": "MTS-S1-04",
+  "fach": "MTS",
+  "unit": "MTS-S1",
+  "examMode": "free",
+  "front": "Wie lautet das **1. Fick'sche Gesetz**, und wie hängt es mit der Advektions-Diffusions-Gleichung zusammen?",
+  "back": "$$J = -D \\nabla c$$\n\nDer Diffusionsfluss $J$ ist proportional zum **negativen** Konzentrationsgradienten – Material wandert von hoher zu niedriger Konzentration. Setzt man dies in die **Kontinuitätsgleichung** (Massenerhaltung) ein, folgt daraus\n\n$$\\frac{\\partial c}{\\partial t} = D \\nabla^2 c$$\n\n– genau der reine Diffusionsanteil der Advektions-Diffusions-Gleichung (ohne Strömungsterm).",
+  "keyPoints": [
+   "J = −D∇c (1. Fick'sches Gesetz)",
+   "Fluss von hoher zu niedriger Konzentration",
+   "Herleitung über Kontinuitätsgleichung",
+   "Ergibt ∂c/∂t = D∇²c (reine Diffusion)"
+  ],
+  "why": "Warum steht vor dem Gradienten in $J = -D\\nabla c$ ein Minuszeichen?",
+  "source": "01__Einführung_Strömungsmechanik.pdf, Folie 3"
+ },
+ {
+  "id": "MTS-S1-05",
+  "fach": "MTS",
+  "unit": "MTS-S1",
+  "examMode": "free",
+  "front": "Was unterscheidet **Advektion** von **Diffusion** beim Materialtransport?",
+  "back": "**Advektion:** Transport von Material, indem es von der **Strömung** ($v$) mitgenommen wird – gerichtete Bewegung.\n\n**Diffusion:** Transport über **stochastische Molekülbewegungen** in einem Medium – ungerichtet, entsteht auch ganz ohne Strömung, getrieben vom Konzentrationsgefälle (1. Fick'sches Gesetz).\n\nBeide Mechanismen laufen in der Regel **gleichzeitig** ab; welcher überwiegt, zeigt die Peclet-Zahl.",
+  "keyPoints": [
+   "Advektion: gerichteter Transport mit der Strömung v",
+   "Diffusion: ungerichtete, stochastische Molekülbewegung",
+   "Diffusion existiert auch ohne Strömung",
+   "Beide laufen meist gleichzeitig ab"
+  ],
+  "mc": {
+   "stem": "Was unterscheidet **Advektion** von **Diffusion** beim Materialtransport?",
+   "options": [
+    "Advektion ist Transport durch die Strömung selbst, Diffusion durch stochastische Molekülbewegung",
+    "Advektion findet nur in Gasen statt, Diffusion nur in Flüssigkeiten",
+    "Advektion ist per Definition immer schneller als Diffusion",
+    "Diffusion setzt zwingend eine von außen angelegte Strömungsgeschwindigkeit v voraus"
+   ],
+   "correct": "Advektion ist Transport durch die Strömung selbst, Diffusion durch stochastische Molekülbewegung"
+  },
+  "source": "01__Einführung_Strömungsmechanik.pdf, Folie 3"
+ },
+ {
+  "id": "MTS-S1-06",
+  "fach": "MTS",
+  "unit": "MTS-S1",
+  "examMode": "free",
+  "front": "Definiere die **Peclet-Zahl**, und welche Größen gehen ein?",
+  "back": "$$Pe = \\frac{vL}{D}$$\n\nmit Geschwindigkeit $v$, (charakteristischer) Länge $L$ und Diffusionskoeffizient $D$. Die Peclet-Zahl ist das **Verhältnis von Advektion zu Diffusion** beim Materialtransport – eine dimensionslose Kennzahl.",
+  "keyPoints": [
+   "Pe = vL/D",
+   "Verhältnis Advektion/Diffusion",
+   "Dimensionslose Kennzahl",
+   "Eingangsgrößen: v, L, D"
+  ],
+  "cloze": {
+   "text": "Die Peclet-Zahl ist definiert als $Pe = \\frac{vL}{D}$, mit Geschwindigkeit $v$, charakteristischer {{1}} $L$ und {{2}} $D$.",
+   "answers": [
+    "Länge",
+    "Diffusionskoeffizient"
+   ]
+  },
+  "source": "01__Einführung_Strömungsmechanik.pdf, Folie 4"
+ },
+ {
+  "id": "MTS-S1-07",
+  "fach": "MTS",
+  "unit": "MTS-S1",
+  "examMode": "free",
+  "front": "Was bedeuten die Grenzfälle $Pe \\gg 1$ und $Pe \\ll 1$ für den Materialtransport?",
+  "back": "**$Pe \\gg 1$** (Peclet-Zahl viel größer als 1): **Advektion dominiert** – der Transport durch die Strömung überwiegt gegenüber der Diffusion.\n\n**$Pe \\ll 1$** (Peclet-Zahl viel kleiner als 1): **Diffusion dominiert** – die Strömung trägt kaum zum Transport bei, stochastische Molekülbewegung überwiegt.\n\nIm Körper gilt z. B.: in **großen Gefäßen** $Pe \\gg 1$ (Advektion dominiert), an **Kapillarwänden** dagegen $Pe \\sim 1$ – dort **dominiert die Diffusion**.",
+  "keyPoints": [
+   "Pe ≫ 1: Advektion dominiert",
+   "Pe ≪ 1: Diffusion dominiert",
+   "Große Gefäße: Pe ≫ 1",
+   "Kapillarwände: Pe ~ 1"
+  ],
+  "mc": {
+   "stem": "Was bedeutet $Pe \\gg 1$ für den Materialtransport?",
+   "options": [
+    "Die Advektion dominiert den Transport",
+    "Die Diffusion dominiert den Transport",
+    "Es findet überhaupt kein Materialtransport statt",
+    "Die Strömung ist zwangsläufig turbulent"
+   ],
+   "correct": "Die Advektion dominiert den Transport"
+  },
+  "why": "Warum dominiert an den dünnen Kapillarwänden eher die Diffusion, obwohl dort ständig Blut strömt?",
+  "source": "01__Einführung_Strömungsmechanik.pdf, Folie 4"
+ },
+ {
+  "id": "MTS-S1-08",
+  "fach": "MTS",
+  "unit": "MTS-S1",
+  "examMode": "free",
+  "front": "Wie unterscheidet sich die Peclet-Zahl in **großen Gefäßen** von der an **Kapillarwänden**?",
+  "back": "**Große Gefäße:** $Pe \\gg 1$ → **Advektion dominiert** den Stofftransport (die Strömung ist schnell, die Strecke lang).\n\n**Kapillarwände** (Austauschstrecke von der Kapillare ins Gewebe): $Pe \\sim 1$ → trotzdem **dominiert dort die Diffusion** den Stofftransport, weil Geschwindigkeit und Länge hier sehr viel kleiner sind als in großen Gefäßen.",
+  "keyPoints": [
+   "Große Gefäße: Pe ≫ 1, Advektion dominiert",
+   "Kapillarwände: Pe ~ 1",
+   "Dort dominiert trotzdem die Diffusion",
+   "Grund: viel kleinere v und L an der Kapillarwand"
+  ],
+  "cloze": {
+   "text": "In großen Gefäßen ist $Pe \\gg 1$, dort dominiert die {{1}}. An den Kapillarwänden gilt dagegen $Pe \\sim 1$ – dort **dominiert** die {{2}}.",
+   "answers": [
+    "Advektion",
+    "Diffusion"
+   ]
+  },
+  "source": "01__Einführung_Strömungsmechanik.pdf, Folie 4"
+ },
+ {
+  "id": "MTS-S1-09",
+  "fach": "MTS",
+  "unit": "MTS-S1",
+  "examMode": "calc",
+  "front": "Berechne die **Peclet-Zahl** für einen Stofftransport und ordne ein, ob Advektion oder Diffusion dominiert.",
+  "back": "$$Pe = \\frac{vL}{D}$$\n\nIst $Pe \\gg 1$, dominiert die **Advektion**; ist $Pe \\ll 1$, dominiert die **Diffusion**; bei $Pe \\approx 1$ sind beide etwa gleich wichtig – das ist z. B. an **Kapillarwänden** der Fall.\n\nBeispiel: $v$ = 500 µm/s, $L$ = 2 µm, $D$ = 1000 µm²/s → $Pe = \\frac{500 \\cdot 2}{1000} = 1$ – Advektion und Diffusion tragen etwa gleich stark zum Stofftransport bei.",
+  "keyPoints": [
+   "Pe = vL/D, Verhältnis Advektion/Diffusion",
+   "Pe ≫ 1: Advektion dominiert",
+   "Pe ≪ 1: Diffusion dominiert",
+   "Pe ≈ 1: beide etwa gleich stark (z. B. Kapillarwand)"
+  ],
+  "calc": {
+   "vars": {
+    "v": [
+     100,
+     1000,
+     50
+    ],
+    "L": [
+     1,
+     50,
+     1
+    ],
+    "D": [
+     200,
+     2000,
+     100
+    ]
+   },
+   "given": "Geschwindigkeit $v$ = [[v]] µm/s, charakteristische Länge $L$ = [[L]] µm, Diffusionskoeffizient $D$ = [[D]] µm²/s.",
+   "solution": "v*L/D",
+   "unit": "",
+   "steps": [
+    "Peclet-Zahl: $Pe = \\dfrac{vL}{D}$ = [[v]] · [[L]] / [[D]] = [[= v*L/D]]",
+    "Einordnung: Pe ≫ 1 → Advektion dominiert; Pe ≪ 1 → Diffusion dominiert; Pe ≈ 1 → beide etwa gleich stark."
+   ],
+   "example": {
+    "vars": {
+     "v": 500,
+     "L": 2,
+     "D": 1000
+    },
+    "result": 1
+   }
+  },
+  "source": "01__Einführung_Strömungsmechanik.pdf, Folie 4"
+ },
+ {
+  "id": "MTS-S1-10",
+  "fach": "MTS",
+  "unit": "MTS-S1",
+  "examMode": "free",
+  "front": "Wie lautet die **Navier-Stokes-Gleichung** (allgemeiner Fall der Advektion), und was bedeuten ihre Terme?",
+  "back": "$$\\rho\\left(\\frac{\\partial v}{\\partial t} + (v \\cdot \\nabla)v\\right) = -\\nabla p + \\mu \\nabla^2 v + f$$\n\nmit Geschwindigkeit $v$ [m/s], Druck $p$ [Pa], Dichte $\\rho$ [kg/m³], Viskosität $\\mu$ [Pa·s] und äußeren Kräften $f$ [N].\n\n- **Linke Seite:** **Trägheit** des strömenden Fluids.\n- $-\\nabla p$: **Druckgradient**, treibt die Strömung an.\n- $\\mu \\nabla^2 v$: **Viskosität**, bremst die Strömung.\n- $f$: **äußere Kräfte**, z. B. Gravitation.\n\nEinfache Setups lassen sich analytisch lösen, komplexere nur per **Simulation**.",
+  "keyPoints": [
+   "ρ(∂v/∂t + (v·∇)v) = −∇p + μ∇²v + f",
+   "Linke Seite: Trägheit",
+   "−∇p treibt an, μ∇²v bremst",
+   "f: äußere Kräfte (z. B. Gravitation)"
+  ],
+  "source": "01__Einführung_Strömungsmechanik.pdf, Folie 5"
+ },
+ {
+  "id": "MTS-S1-11",
+  "fach": "MTS",
+  "unit": "MTS-S1",
+  "examMode": "free",
+  "front": "Welcher Term der Navier-Stokes-Gleichung **treibt** die Strömung an, welcher bremst sie?",
+  "back": "Der **Druckgradient** $-\\nabla p$ treibt die Strömung an – Fluid fließt von hohem zu niedrigem Druck. Die **Viskosität** $\\mu \\nabla^2 v$ bremst die Strömung – sie beschreibt die innere Reibung des Fluids. Die linke Seite (Trägheitsterm) beschreibt, wie sich die Geschwindigkeit durch diese Kräfte zeitlich und räumlich ändert; äußere Kräfte $f$ (z. B. Gravitation) wirken nur, wenn sie tatsächlich vorhanden sind.",
+  "keyPoints": [
+   "−∇p treibt die Strömung an",
+   "μ∇²v (Viskosität) bremst",
+   "Trägheitsterm = linke Seite, beschreibt Änderung von v",
+   "f wirkt nur bei vorhandenen äußeren Kräften"
+  ],
+  "mc": {
+   "stem": "Welcher Term der Navier-Stokes-Gleichung **treibt** die Strömung überhaupt erst an?",
+   "options": [
+    "Der Druckgradient $-\\nabla p$",
+    "Der viskose Term $\\mu \\nabla^2 v$",
+    "Der Trägheitsterm auf der linken Seite",
+    "Die äußere Kraft $f$ ist immer der Antrieb"
+   ],
+   "correct": "Der Druckgradient $-\\nabla p$"
+  },
+  "why": "Warum bremst die Viskosität $\\mu\\nabla^2 v$ die Strömung, während der Druckgradient sie antreibt?",
+  "source": "01__Einführung_Strömungsmechanik.pdf, Folie 5"
+ },
+ {
+  "id": "MTS-S1-12",
+  "fach": "MTS",
+  "unit": "MTS-S1",
+  "examMode": "free",
+  "front": "Was unterscheidet **laminare** von **turbulenter** Strömung äußerlich?",
+  "back": "**Laminare Strömung:** **geordnet**, die Fluidschichten gleiten aneinander vorbei, es entsteht ein **parabolisches Geschwindigkeitsprofil**.\n\n**Turbulente Strömung:** **chaotisch**, es bilden sich **Wirbel** – die Strömung ist nicht mehr in geordneten Schichten organisiert.\n\nOb eine Strömung laminar oder turbulent ist, entscheidet die **Reynolds-Zahl**.",
+  "keyPoints": [
+   "Laminar: geordnet, parabolisches Profil",
+   "Turbulent: chaotisch, Wirbelbildung",
+   "Entscheidend: Reynolds-Zahl"
+  ],
+  "cloze": {
+   "text": "Eine laminare Strömung ist geordnet und zeigt ein {{1}} Geschwindigkeitsprofil, eine turbulente Strömung ist chaotisch mit {{2}}.",
+   "answers": [
+    "parabolisches",
+    "Wirbelbildung"
+   ]
+  },
+  "source": "01__Einführung_Strömungsmechanik.pdf, Folie 6"
+ },
+ {
+  "id": "MTS-S1-13",
+  "fach": "MTS",
+  "unit": "MTS-S1",
+  "examMode": "free",
+  "front": "Definiere die **Reynolds-Zahl**, und was gibt sie an?",
+  "back": "$$Re = \\frac{\\rho v L}{\\mu}$$\n\nmit Dichte $\\rho$ [kg/m³], Geschwindigkeit $v$ [m/s], (charakteristischer) Länge $L$ [m] und Viskosität $\\mu$ [Pa·s]. Die Reynolds-Zahl ist das **Verhältnis von Trägheit zu Viskosität** – sie ist dimensionslos und entscheidet, ob eine Strömung laminar oder turbulent ist.",
+  "keyPoints": [
+   "Re = ρvL/μ",
+   "Verhältnis Trägheit/Viskosität",
+   "Dimensionslose Kennzahl",
+   "Entscheidet über Flussregime"
+  ],
+  "source": "01__Einführung_Strömungsmechanik.pdf, Folie 7"
+ },
+ {
+  "id": "MTS-S1-14",
+  "fach": "MTS",
+  "unit": "MTS-S1",
+  "examMode": "free",
+  "front": "Ab welchen Reynolds-Zahl-Werten gilt eine Strömung als laminar bzw. als turbulent?",
+  "back": "**$Re < 2300$:** Strömung ist **laminar**.\n\n**$Re > 2900$:** Strömung ist **turbulent**.\n\nDazwischen (2300–2900) liegt ein **Übergangsbereich**, in dem die Strömung instabil zwischen laminar und turbulent wechseln kann.",
+  "keyPoints": [
+   "Re < 2300: laminar",
+   "Re > 2900: turbulent",
+   "2300–2900: Übergangsbereich"
+  ],
+  "mc": {
+   "stem": "Ab welchem Reynolds-Zahl-Wert gilt eine Strömung laut Seminar als **turbulent**?",
+   "options": [
+    "Re > 2900",
+    "Re > 2300",
+    "Re > 100",
+    "Re > 10.000"
+   ],
+   "correct": "Re > 2900"
+  },
+  "cloze": {
+   "text": "Unterhalb von $Re$ = {{1}} gilt eine Strömung als laminar, oberhalb von $Re$ = {{2}} als turbulent; dazwischen liegt ein Übergangsbereich.",
+   "answers": [
+    "2300",
+    "2900"
+   ]
+  },
+  "source": "01__Einführung_Strömungsmechanik.pdf, Folie 7"
+ },
+ {
+  "id": "MTS-S1-15",
+  "fach": "MTS",
+  "unit": "MTS-S1",
+  "examMode": "calc",
+  "front": "Berechne die **Reynolds-Zahl** für eine Strömung und klassifiziere sie als laminar oder turbulent.",
+  "back": "$$Re = \\frac{\\rho v L}{\\mu}$$\n\n$Re < 2300$ → **laminar**, $Re > 2900$ → **turbulent**, dazwischen Übergangsbereich.\n\nBeispiel (Größenordnung Aorta): $\\rho$ = 1050 kg/m³, $v$ = 0,5 m/s, $L$ = 0,025 m, $\\mu$ = 0,0035 Pa·s → $Re = \\frac{1050 \\cdot 0{,}5 \\cdot 0{,}025}{0{,}0035} = 3750$ – **turbulent**.",
+  "keyPoints": [
+   "Re = ρvL/μ, Verhältnis Trägheit/Viskosität",
+   "Re < 2300: laminar",
+   "Re > 2900: turbulent",
+   "Beispiel Aorta-Größenordnung: Re ≈ 3750 → turbulent"
+  ],
+  "why": "Warum steigt die Reynolds-Zahl so stark an, sobald Gefäßdurchmesser oder Strömungsgeschwindigkeit zunehmen?",
+  "calc": {
+   "vars": {
+    "rho": [
+     1000,
+     1100,
+     10
+    ],
+    "v": [
+     0.1,
+     1.5,
+     0.1
+    ],
+    "L": [
+     0.005,
+     0.04,
+     0.005
+    ],
+    "mu": [
+     0.001,
+     0.006,
+     0.0005
+    ]
+   },
+   "given": "Dichte $\\rho$ = [[rho]] kg/m³, Geschwindigkeit $v$ = [[v]] m/s, Innendurchmesser $L$ = [[L]] m, Viskosität $\\mu$ = [[mu]] Pa·s.",
+   "solution": "rho*v*L/mu",
+   "unit": "",
+   "steps": [
+    "Reynolds-Zahl: $Re = \\dfrac{\\rho v L}{\\mu}$ = [[rho]] · [[v]] · [[L]] / [[mu]] = [[= rho*v*L/mu]]",
+    "Einordnung: Re < 2300 → laminar; Re > 2900 → turbulent."
+   ],
+   "example": {
+    "vars": {
+     "rho": 1050,
+     "v": 0.5,
+     "L": 0.025,
+     "mu": 0.0035
+    },
+    "result": 3750
+   }
+  },
+  "source": "01__Einführung_Strömungsmechanik.pdf, Folie 7"
+ },
+ {
+  "id": "MTS-S1-16",
+  "fach": "MTS",
+  "unit": "MTS-S1",
+  "examMode": "free",
+  "front": "Vergleiche das Flussregime in der **Aorta** mit dem in den **Kapillaren** – warum unterscheiden sie sich so stark?",
+  "back": "**Aorta:** $v \\approx 0{,}5$–$1$ m/s, $L \\approx 2$–$3$ cm → $Re \\approx 10^3$–$10^4$ → **teils turbulent** (und **pulsatil**!).\n\n**Kapillaren** (entlang der Gefäßachse): $v \\approx 0{,}5$–$1$ mm/s, $L \\approx 5$–$10$ µm → $Re \\ll 1$ → **laminar**.\n\nGeschwindigkeit **und** charakteristische Länge sind in den Kapillaren um mehrere Größenordnungen kleiner als in der Aorta – da $Re \\propto v \\cdot L$, sinkt die Reynolds-Zahl dadurch drastisch. **Derselbe Fluid (Blut) zeigt also je nach Ort im Körper extrem unterschiedliche Strömungsregime.**",
+  "keyPoints": [
+   "Aorta: Re ≈ 10³–10⁴, teils turbulent, pulsatil",
+   "Kapillaren: Re ≪ 1, laminar",
+   "v und L beide um Größenordnungen kleiner in Kapillaren",
+   "Gleiches Fluid, völlig anderes Regime je nach Ort"
+  ],
+  "why": "Warum kann dasselbe Fluid (Blut) im selben Kreislauf gleichzeitig laminar und turbulent strömen?",
+  "source": "01__Einführung_Strömungsmechanik.pdf, Folie 8"
+ },
+ {
+  "id": "MTS-S1-17",
+  "fach": "MTS",
+  "unit": "MTS-S1",
+  "examMode": "calc",
+  "front": "Berechne mit dem **Poiseuille-Geschwindigkeitsprofil** die Strömungsgeschwindigkeit in einem bestimmten Abstand von der Rohrachse.",
+  "back": "$$v(r) = v_0\\left(1 - \\frac{r^2}{R^2}\\right)$$\n\nIm Zentrum ($r=0$) ist $v=v_0$ maximal, am Rand ($r=R$) ist $v=0$.\n\nBeispiel: $v_0$ = 1 m/s, $r/R$ = 50 % → $v = 1 \\cdot (1 - 0{,}5^2) = 1 \\cdot 0{,}75 = 0{,}75$ m/s. Dieses parabolische Profil lässt sich experimentell mit Nanopartikeln als Tracer sichtbar machen.",
+  "keyPoints": [
+   "v(r) = v0·(1 − r²/R²)",
+   "Maximum v0 im Zentrum (r = 0)",
+   "Geschwindigkeit 0 am Rand (r = R)",
+   "Parabolisches Profil, laminar & stationär"
+  ],
+  "calc": {
+   "vars": {
+    "v0": [
+     0.2,
+     2,
+     0.2
+    ],
+    "k": [
+     0,
+     90,
+     10
+    ]
+   },
+   "given": "Im Rohrzentrum beträgt die Geschwindigkeit $v_0$ = [[v0]] m/s (laminare Poiseuille-Strömung). Gesucht: die Geschwindigkeit $v(r)$ in einem Abstand von [[k]] % des Innenradius $R$ von der Rohrachse.",
+   "solution": "v0*(1-(k/100)^2)",
+   "unit": "m/s",
+   "steps": [
+    "Profil: $v(r) = v_0\\left(1-\\dfrac{r^2}{R^2}\\right)$ mit $r/R$ = [[k]] % = [[= k/100]]",
+    "$v(r)$ = [[v0]] · (1 − [[= k/100]]²) = [[= v0*(1-(k/100)^2)]] m/s"
+   ],
+   "example": {
+    "vars": {
+     "v0": 1,
+     "k": 50
+    },
+    "result": 0.75
+   }
+  },
+  "source": "01__Einführung_Strömungsmechanik.pdf, Folie 9"
+ },
+ {
+  "id": "MTS-K6-01",
+  "fach": "MTS",
+  "unit": "MTS-K6",
+  "examMode": "free",
+  "front": "Was macht eine Herzmuskelzelle zur **Schrittmacherzelle**, und warum übernimmt im Normalfall der **Sinusknoten** diese Rolle?",
+  "back": "Mehrere Areale im Herzen besitzen ein **instabiles Ruhemembranpotential**: Es driftet spontan zur Schwelle und löst periodisch ein eigenes Aktionspotential aus – diese Zellen heißen **Schrittmacherzellen**. Der **Sinusknoten** ist im gesunden Herzen der **primäre Schrittmacher** und gibt den Rhythmus für das gesamte Herz vor. Fällt er aus (z. B. Sinusarrest), können auch andere Zellen im Erregungsleitungssystem (u. a. der AV-Knoten) die Schrittmacherfunktion übernehmen – dieser Ersatzrhythmus ist klinisch ein wichtiger Ausgangspunkt für die Herzschrittmacher-Indikation.",
+  "keyPoints": [
+   "Schrittmacherzelle = instabiles Ruhemembranpotential",
+   "Sinusknoten = primärer Schrittmacher",
+   "Bei Ausfall: andere Zellen im Erregungsleitungssystem als Ersatz",
+   "Ausfall → Bradykardie → HSM-Indikation"
+  ],
+  "why": "Warum ist ein Ersatzrhythmus aus dem Erregungsleitungssystem klinisch riskanter als der normale Sinusrhythmus?",
+  "source": "MTS__06_CRM1.pdf, Folie 10, 15"
+ },
+ {
+  "id": "MTS-K6-02",
+  "fach": "MTS",
+  "unit": "MTS-K6",
+  "examMode": "free",
+  "front": "Nenne die **Stationen der Erregungsleitung** im Herzen von der Entstehung bis zur Kammerkontraktion in der richtigen Reihenfolge.",
+  "back": "1. **Sinusknoten** (Erregungsbildung)\n2. **Arbeitsmyokard der Vorhöfe** (sinuatriale Überleitung)\n3. **AV-Knoten** (Boden rechter Vorhof/Septumnähe)\n4. **His-Bündel**\n5. **Kammerschenkel** (Tawara-Schenkel)\n6. **Purkinje-Fasern**\n7. **Arbeitsmyokard der Kammern**\n\nDie Leitungsgeschwindigkeiten sind zwischen den Stationen **extrem unterschiedlich** – der AV-Knoten leitet am langsamsten, His-Bündel/Kammerschenkel/Purkinje-Fasern am schnellsten.",
+  "keyPoints": [
+   "Sinusknoten → Vorhofmyokard → AV-Knoten → His-Bündel → Kammerschenkel → Purkinje-Fasern → Ventrikelmyokard",
+   "AV-Knoten = langsamste Leitung",
+   "His-Bündel/Kammerschenkel/Purkinje = schnellste Leitung"
+  ],
+  "cloze": {
+   "text": "Die Erregung läuft vom Sinusknoten über das Vorhofmyokard zum {{1}}, von dort über das {{2}} und die Kammerschenkel zu den {{3}}-Fasern und schließlich zum Arbeitsmyokard der Kammern.",
+   "answers": [
+    "AV-Knoten",
+    "His-Bündel",
+    "Purkinje"
+   ]
+  },
+  "source": "MTS__06_CRM1.pdf, Folie 11–12"
+ },
+ {
+  "id": "MTS-K6-03",
+  "fach": "MTS",
+  "unit": "MTS-K6",
+  "examMode": "free",
+  "front": "Warum ist die **langsame Leitung im AV-Knoten** physiologisch sinnvoll und keine „Fehlfunktion“?",
+  "back": "Die stark unterschiedlichen Leitungsgeschwindigkeiten im Erregungsleitungssystem sind funktionell: Der **AV-Knoten** verzögert die Erregung auf dem Weg von den Vorhöfen zu den Kammern deutlich. Dadurch können sich die **Vorhöfe kontrahieren und die Kammern zusätzlich füllen**, bevor die Kammererregung beginnt – erst danach schaltet das System über His-Bündel, Kammerschenkel und Purkinje-Fasern auf sehr schnelle Leitung um, damit sich beide Kammern annähernd synchron kontrahieren.",
+  "keyPoints": [
+   "AV-Knoten: langsamste Leitung im System",
+   "Verzögerung trennt Vorhof- von Kammerkontraktion zeitlich",
+   "Danach schnelle Leitung (His-Bündel bis Purkinje) für synchrone Kammerkontraktion"
+  ],
+  "why": "Was würde bei einer Störung dieser AV-Verzögerung (z. B. AV-Block oder zu kurz programmierte AV-Zeit im Schrittmacher) hämodynamisch passieren?",
+  "source": "MTS__06_CRM1.pdf, Folie 11–12"
+ },
+ {
+  "id": "MTS-K6-04",
+  "fach": "MTS",
+  "unit": "MTS-K6",
+  "examMode": "free",
+  "front": "Wie hängen **Aktionspotential** und **Kontraktion** einer Herzmuskelzelle zusammen (elektromechanische Kopplung)?",
+  "back": "Herzmuskelzellen sind **elektrisch erregbar**: Ihr Ruhemembranpotential kann durch ein **Aktionspotential** kurzzeitig ausgelenkt werden. Grundlage ist die **aktive Änderung der Ionenpermeabilität** der Membran. Über die **elektromechanische Kopplung** gehen Aktionspotentiale mit veränderten extra- und intrazellulären Ionenkonzentrationen einher, was unmittelbar die **mechanische Kontraktion** der Herzmuskelzelle auslöst – elektrisches Signal und Pumpaktion sind also fest gekoppelt.",
+  "keyPoints": [
+   "Aktionspotential = zeitlich begrenzte Auslenkung vom Ruhemembranpotential",
+   "Grundlage: aktive Änderung der Ionenpermeabilität",
+   "Elektromechanische Kopplung: AP → veränderte Ionenkonzentrationen → Kontraktion"
+  ],
+  "mc": {
+   "stem": "Was ist die **funktionelle Grundlage** eines Aktionspotentials in einer erregbaren Zelle?",
+   "options": [
+    "Aktive Änderung der Ionenpermeabilität der Membran",
+    "Eine dauerhafte Erhöhung des Ruhemembranpotentials",
+    "Der Verlust der Zellmembran-Kapazität",
+    "Eine rein mechanische Dehnung der Zelle"
+   ],
+   "correct": "Aktive Änderung der Ionenpermeabilität der Membran"
+  },
+  "source": "MTS__06_CRM1.pdf, Folie 8"
+ },
+ {
+  "id": "MTS-K6-05",
+  "fach": "MTS",
+  "unit": "MTS-K6",
+  "examMode": "free",
+  "front": "Wie entsteht ein **EKG**-Signal physikalisch, und was wird dabei tatsächlich gemessen?",
+  "back": "Im Herzen liegen zu jedem Zeitpunkt **depolarisierte und nicht-depolarisierte Bereiche** nebeneinander – dieser Ladungsunterschied wirkt wie ein elektrischer **Dipol**. Der Dipol erzeugt **zeitveränderliche Potentialdifferenzen** auf der Körperoberfläche, die über Elektroden abgeleitet werden können (z. B. die Extremitätenableitungen I, II, III nach Einthoven zwischen rechtem/linkem Arm und linkem Fuß). Das EKG ist also **nicht direkt eine Aufnahme des Herzstroms**, sondern der Schrieb der resultierenden Potentialdifferenzen auf der Körperoberfläche.",
+  "keyPoints": [
+   "Depolarisierte vs. nicht-depolarisierte Bereiche = elektrischer Dipol",
+   "Dipol erzeugt Potentialdifferenzen auf der Körperoberfläche",
+   "EKG = Ableitung dieser Potentialdifferenzen (z. B. Einthoven I/II/III)"
+  ],
+  "source": "MTS__06_CRM1.pdf, Folie 13–14"
+ },
+ {
+  "id": "MTS-K6-06",
+  "fach": "MTS",
+  "unit": "MTS-K6",
+  "examMode": "free",
+  "front": "Nenne typische **Indikationen** für einen Herzschrittmacher und erkläre den Zusammenhang zur Erregungsbildung/-leitung.",
+  "back": "Herzschrittmacher-Indikationen ergeben sich aus **Störungen der Erregungsbildung oder -leitung**, die zu einer symptomatischen **Bradykardie** führen:\n- **Sinusknotenausfall/Sinusarrest**: keine oder unzureichende Erregungsbildung im Sinusknoten.\n- **AV-Block** (z. B. 3. Grades): die im Sinusknoten/Vorhof gebildete Erregung wird **nicht weitergeleitet** – die im Ventrikel erwartete elektrische Erregung bleibt aus, obwohl der Vorhof normal erregt wird.\n\nIn beiden Fällen übernimmt der Schrittmacher die fehlende Erregungsbildung bzw. -leitung elektrisch.",
+  "keyPoints": [
+   "Sinusarrest → Bradykardie, keine Erregungsbildung",
+   "AV-Block 3. Grades → Vorhoferregung normal, aber nicht auf Kammer übergeleitet",
+   "Beides: symptomatische Bradykardie als Kernindikation"
+  ],
+  "mc": {
+   "stem": "Was ist beim **AV-Block 3. Grades** charakteristisch?",
+   "options": [
+    "Die Vorhoferregung wird nicht auf die Kammer übergeleitet, obwohl der Vorhof normal erregt wird",
+    "Der Sinusknoten bildet gar keine Erregung mehr",
+    "Die Kammern schlagen schneller als die Vorhöfe",
+    "Es liegt ein Kammerflimmern vor"
+   ],
+   "correct": "Die Vorhoferregung wird nicht auf die Kammer übergeleitet, obwohl der Vorhof normal erregt wird"
+  },
+  "source": "MTS__06_CRM1.pdf, Folie 15, 29"
+ },
+ {
+  "id": "MTS-K6-07",
+  "fach": "MTS",
+  "unit": "MTS-K6",
+  "examMode": "free",
+  "front": "Aus welchen **Grundkomponenten** besteht ein implantierbares CRM-System, und welche Aufgabe hat jede Komponente?",
+  "back": "Das Systemkonzept ist seit dem ersten vollständig implantierbaren Schrittmacher (1958) **prinzipiell gleich geblieben**:\n- **Generator/Aggregat**: enthält die Elektronik (Signalerfassung, Impulsabgabe, Kommunikation), die **Batterie** (Lithium-Iod) und die **Elektrodenkonnektoren**.\n- **Elektrode(n)/Sonde(n)**: Verbindung zwischen Aggregat und Herz, übernehmen Stimulation und Wahrnehmung.\n- **Externes Programmiergerät**: zusätzlich benötigt, um das Aggregat zu programmieren/auszulesen (nicht implantiert).\n\nDieses Grundschema gilt gleichermaßen für Herzschrittmacher, CRT-Systeme und ICDs – sie unterscheiden sich in der konkreten Ausführung und den Funktionsmodi, nicht im Prinzip.",
+  "keyPoints": [
+   "Aggregat: Elektronik + Batterie + Elektrodenkonnektoren",
+   "Elektrode(n): Verbindung Aggregat–Herz, Stimulation + Wahrnehmung",
+   "Externes Programmiergerät zusätzlich nötig",
+   "Gleiches Grundschema bei HSM, CRT, ICD"
+  ],
+  "source": "MTS__06_CRM1.pdf, Folie 18–20, 51"
+ },
+ {
+  "id": "MTS-K6-08",
+  "fach": "MTS",
+  "unit": "MTS-K6",
+  "examMode": "free",
+  "front": "Welche Funktion hat die **Blanking-Einheit** in der Aggregat-Elektronik, und warum ist sie nötig?",
+  "back": "Die Blanking-Einheit **entkoppelt die Eingänge der Sensingeinheit** (über einen Transistor) kurzzeitig vom Herzsignal. Damit wird verhindert, dass der eigene **Stimulationsimpuls** die empfindliche Wahrnehmungselektronik **übersteuert** oder fälschlich als Eigenaktion erkannt wird. Erst nach der Blanking-Zeit ist die Wahrnehmung (Verstärkung + Filterung + Detektor/Komparator gegen einstellbare Empfindlichkeitswerte) wieder aktiv.",
+  "keyPoints": [
+   "Blanking = kurzzeitige Entkopplung der Sensing-Eingänge (Transistor)",
+   "Zweck: eigener Stimulus soll Sensing nicht übersteuern",
+   "Danach: Verstärkung, Filterung, Detektor/Komparator gegen Empfindlichkeitswerte"
+  ],
+  "why": "Was würde passieren, wenn ein Schrittmacher kein Blanking hätte und seinen eigenen Stimulationsimpuls als Herzeigenaktion 'sehen' würde?",
+  "source": "MTS__06_CRM1.pdf, Folie 21"
+ },
+ {
+  "id": "MTS-K6-09",
+  "fach": "MTS",
+  "unit": "MTS-K6",
+  "examMode": "free",
+  "front": "Beschreibe den **Lebenszyklus einer Schrittmacherbatterie** (BOL bis EOL) und die verwendete Batterietechnologie.",
+  "back": "Herzschrittmacher verwenden **Lithium-Iod-Batterien** (hohe Energiedichte, geringe Selbstentladung, keine Gasbildung, charakteristische Veränderungen vor dem Ausfall – dadurch rechtzeitig erkennbar). Der Lebenszyklus wird in Stufen eingeteilt:\n- **BOL** (Begin of Life)\n- **ERN/ERT** (Elective Replacement Near / Elective Replacement Time – Empfehlung zum baldigen Austausch)\n- **PSP** (Prolonged Service Period)\n- **EOL** (End of Life)\n\nMit sinkender Batteriespannung nimmt die **Pacing-Impulsamplitude** gegen Ende der Batterielebensdauer ab – bereits ab ERN (bis ERT) sind deshalb engmaschigere Kontrollen ('frequent follow-ups') vorgesehen.",
+  "keyPoints": [
+   "Lithium-Iod: hohe Energiedichte, geringe Selbstentladung, keine Gasbildung",
+   "Lebenszyklus: BOL → ERN/ERT → PSP → EOL",
+   "Pacing-Amplitude sinkt gegen Lebensende",
+   "Ab ERN (bis ERT): engmaschigere Kontrollen"
+  ],
+  "source": "MTS__06_CRM1.pdf, Folie 20, 23"
+ },
+ {
+  "id": "MTS-K6-10",
+  "fach": "MTS",
+  "unit": "MTS-K6",
+  "examMode": "free",
+  "front": "Aus welchen **Bestandteilen** besteht eine Schrittmacherelektrode (Sonde), vom Aggregat bis zum Herzgewebe?",
+  "back": "- **Konnektor**: Verbindung zum Aggregat.\n- **Leiter**: leitfähige Verbindung zum Herzen.\n- **Befestigung**: Verankerung im Herzen, damit die Elektrode nicht disloziert.\n- **Pol(e)**: elektrische Funktion – Stimulation und Wahrnehmung finden über die Pole statt (z. B. **Tip**- und **Ring**-Elektrode bei bipolaren Sonden).",
+  "keyPoints": [
+   "Konnektor – Leiter – Befestigung – Pol(e)",
+   "Befestigung verhindert Dislokation im Herzen",
+   "Elektrische Funktion sitzt an den Polen (z. B. Tip/Ring)"
+  ],
+  "cloze": {
+   "text": "Eine Schrittmacherelektrode besteht aus Konnektor, {{1}}, Befestigung und Pol(en). Bei einer bipolaren Sonde sitzen die zwei Pole als {{2}}- und {{3}}-Elektrode.",
+   "answers": [
+    "Leiter",
+    "Tip",
+    "Ring"
+   ]
+  },
+  "source": "MTS__06_CRM1.pdf, Folie 24–25"
+ },
+ {
+  "id": "MTS-K6-11",
+  "fach": "MTS",
+  "unit": "MTS-K6",
+  "examMode": "free",
+  "front": "Unterscheide **unipolare** und **bipolare** Wahrnehmung/Stimulation bei Schrittmacherelektroden.",
+  "back": "**Unipolar**: Ein Pol liegt an der **Tip-Elektrode** im Herzen, der Gegenpol ist das **Aggregatgehäuse** selbst – dadurch entsteht ein großes elektrisches Feld zwischen Herz und Gehäuse.\n**Bipolar**: Beide Pole (**Tip** und **Ring**) liegen dicht beieinander auf derselben Sonde im Herzen – dadurch ist das Feld räumlich klein begrenzt.\n\nJe kleiner das Feld, desto **spezifischer und störungsärmer** die Wahrnehmung (weniger Einstreuung externer Signale).",
+  "keyPoints": [
+   "Unipolar: Tip vs. Aggregatgehäuse, großes Feld",
+   "Bipolar: Tip + Ring auf einer Sonde, kleines Feld",
+   "Kleineres Feld = störungsärmere Wahrnehmung"
+  ],
+  "why": "Warum ist eine bipolare Konfiguration in einer elektromagnetisch „lauten“ Umgebung (z. B. starke externe Störfelder) im Vorteil?",
+  "source": "MTS__06_CRM1.pdf, Folie 25"
+ },
+ {
+  "id": "MTS-K6-12",
+  "fach": "MTS",
+  "unit": "MTS-K6",
+  "examMode": "free",
+  "front": "Was passiert elektrisch am **Übergang Elektrode–Gewebe** (Phasengrenze), und welche Bauelemente stehen im Ersatzschaltbild?",
+  "back": "An der Phasengrenze trifft **Ionenleitung** (Körper/Gewebe) auf **Elektronenleitung** (Elektrodenmetall) – ein elektrochemischer Übergang mit eigenen elektrischen Eigenschaften:\n- **Halbzellenspannung** $U_H$ (materialabhängig)\n- **Helmholtz-Kapazität** $C_H$: kapazitive Eigenschaft des Übergangs\n- **Faraday-Widerstand** $R_F$: Stromfluss durch (reversible) chemische Redoxreaktionen\n- **Gewebewiderstände**: $R_{Shunt}$ (Überbrückung durch Herzmuskelzellen), $R_{Narbe}$/$R_{Gewebe}$ (Zu-/Ableitung), $R_{EZR}$ (extrazellulärer Widerstand)\n- **Zellmembran-Kapazität** $C_M$\n\nDeshalb lässt sich die Elektrode-Gewebe-Grenze nicht als einfacher ohmscher Widerstand modellieren, sondern als **RC-Ersatzschaltbild**.",
+  "keyPoints": [
+   "Phasengrenze = Übergang Ionenleitung ↔ Elektronenleitung",
+   "Helmholtz-Kapazität C_H (kapazitiv) + Faraday-Widerstand R_F (Redoxreaktion, reversibel)",
+   "Zusätzlich Gewebewiderstände und Zellmembran-Kapazität C_M",
+   "Ersatzschaltbild statt einfachem ohmschem Widerstand"
+  ],
+  "source": "MTS__06_CRM1.pdf, Folie 26–27"
+ },
+ {
+  "id": "MTS-K6-13",
+  "fach": "MTS",
+  "unit": "MTS-K6",
+  "examMode": "free",
+  "front": "Was bedeuten die **ersten beiden Stellen** des **NASPE/BPEG-Schrittmachercodes**, und welche Optionen gibt es jeweils?",
+  "back": "Der NASPE/BPEG-Code beschreibt Schrittmacher-Betriebsmodi in bis zu 5 Stellen. Die ersten beiden sind:\n\n| Stelle | Bedeutung | Optionen |\n|---|---|---|\n| 1 | **Stimulationsort** | **V**entricle, **A**trium, **D**ual (V+A), **S**ingle (V oder A), **0** (keine) |\n| 2 | **Wahrnehmungsort** | **V**entricle, **A**trium, **D**ual (V+A), **S**ingle (V oder A), **0** (keine) |\n\nBeide Stellen benutzen dasselbe Buchstaben-Alphabet, beziehen sich aber auf zwei verschiedene Vorgänge: Stelle 1 = **wo wird stimuliert**, Stelle 2 = **wo wird die elektrische Eigenaktivität des Herzens wahrgenommen**.",
+  "keyPoints": [
+   "Stelle 1 = Stimulationsort, Stelle 2 = Wahrnehmungsort",
+   "Optionen jeweils: V, A, D, S, 0",
+   "Gleiches Alphabet, aber unterschiedliche Bedeutung je Stelle"
+  ],
+  "cloze": {
+   "text": "Bei Stelle 1 und 2 des NASPE/BPEG-Codes steht {{1}} für Ventricle, {{2}} für Atrium, {{3}} für Dual (beide Kammern) und {{4}} für keine Stimulation bzw. Wahrnehmung.",
+   "answers": [
+    "V",
+    "A",
+    "D",
+    "0"
+   ]
+  },
+  "source": "MTS__06_CRM1.pdf, Folie 46; MTS_Ue__05_CRM1-2.pdf, Kontrollfrage „HSM-Codes“"
+ },
+ {
+  "id": "MTS-K6-14",
+  "fach": "MTS",
+  "unit": "MTS-K6",
+  "examMode": "free",
+  "front": "Was bedeutet **Stelle 3 (Betriebsart)** des NASPE/BPEG-Codes, und wie unterscheiden sich **Inhibited** und **Triggered**?",
+  "back": "Stelle 3 beschreibt, **was ein wahrgenommenes Signal auslöst**:\n- **I – Inhibited**: Ein wahrgenommenes Signal (Eigenaktion) **führt zur Unterdrückung** der geplanten Stimulation.\n- **T – Triggered**: Ein wahrgenommenes Signal **führt zur (sofortigen) Stimulation** – z. B. in einer anderen Kammer.\n- **D – Dual**: Kombination aus I und T (je nach Kammer/Situation).\n- **0**: keine Betriebsart-Reaktion (rein asynchrone Stimulation).\n\nDamit ist Stelle 3 der Kern der „Intelligenz“ eines Schrittmachers: Sie legt fest, wie das Gerät auf das reagiert, was es wahrnimmt.",
+  "keyPoints": [
+   "I = Inhibited: Eigenaktion unterdrückt Stimulation",
+   "T = Triggered: Eigenaktion löst Stimulation aus",
+   "D = Dual (I und T kombiniert), 0 = keine Reaktion (asynchron)"
+  ],
+  "mc": {
+   "stem": "Ein Schrittmacher im Modus **VVI** erkennt eine ventrikuläre Eigenaktion. Was passiert?",
+   "options": [
+    "Die geplante ventrikuläre Stimulation wird unterdrückt",
+    "Es wird sofort zusätzlich stimuliert",
+    "Das Gerät schaltet in den Vorhof um",
+    "Es löst einen Schock aus"
+   ],
+   "correct": "Die geplante ventrikuläre Stimulation wird unterdrückt"
+  },
+  "source": "MTS__06_CRM1.pdf, Folie 46–47; MTS_Ue__05_CRM1-2.pdf, Kontrollfrage „HSM-Codes“"
+ },
+ {
+  "id": "MTS-K6-15",
+  "fach": "MTS",
+  "unit": "MTS-K6",
+  "examMode": "free",
+  "front": "Ein Kommilitone behauptet: „Ein **VVI**-Schrittmacher stimuliert unabhängig vom Eigenrhythmus des Patienten immer im Takt.“ Stimmt das?",
+  "back": "**Nein.** VVI bedeutet: Stimulationsort **V**entricle, Wahrnehmungsort **V**entricle, Betriebsart **I**nhibited. Der Schrittmacher stimuliert also **nur dann** im Ventrikel, wenn **keine** eigene ventrikuläre Erregung wahrgenommen wird – erkennt er eine Eigenaktion, wird die geplante Stimulation **unterdrückt** (inhibiert). „Immer im Takt stimulieren“ unabhängig von der Eigenaktivität wäre eine **asynchrone** Stimulation (Betriebsart 0), wie sie historisch die ersten implantierbaren Schrittmacher verwendeten.",
+  "keyPoints": [
+   "VVI: V-Stimulation, V-Wahrnehmung, Inhibited",
+   "Stimulation nur bei fehlender Eigenaktion",
+   "Asynchrone Stimulation (0) ist der historische Sonderfall, nicht VVI"
+  ],
+  "source": "MTS__06_CRM1.pdf, Folie 18, 46–47"
+ },
+ {
+  "id": "MTS-K6-16",
+  "fach": "MTS",
+  "unit": "MTS-K6",
+  "examMode": "free",
+  "front": "Wie wird der **AV-Block 3. Grades** mit einem Zweikammerschrittmacher im **VAT-Modus** behandelt? Beschreibe Wahrnehmung und Stimulation.",
+  "back": "Beim AV-Block 3. Grades wird die im Vorhof natürlich entstehende Erregung nicht auf die Kammer weitergeleitet – die im Ventrikel erwartete elektrische Erregung bleibt aus. Ein Zweikammer-Schrittmacher im **VAT**-Betrieb löst das, indem er:\n1. die **atriale Eigenaktivität wahrnimmt** (Vorhofelektrode),\n2. dieses Signal als **Trigger** nutzt, um\n3. **im rechten Ventrikel zu stimulieren**.\n\nSo bleibt die physiologische zeitliche Kopplung zwischen Vorhof- und Kammererregung erhalten, obwohl die natürliche Überleitung über den AV-Knoten fehlt.",
+  "keyPoints": [
+   "AV-Block 3. Grades: Vorhoferregung erreicht Kammer nicht",
+   "VAT: Wahrnehmung im Vorhof, Stimulation im Ventrikel",
+   "Vorhofsignal triggert Ventrikelstimulation → physiologische Kopplung bleibt erhalten"
+  ],
+  "why": "Warum wird beim AV-Block gezielt die Vorhofaktivität als Trigger genutzt, statt den Ventrikel einfach mit fester Frequenz zu stimulieren?",
+  "source": "MTS__06_CRM1.pdf, Folie 29"
+ },
+ {
+  "id": "MTS-K6-17",
+  "fach": "MTS",
+  "unit": "MTS-K6",
+  "examMode": "free",
+  "front": "Aus wie vielen Stellen besteht der **NASPE/BPEG-Code für ICDs**, und was bedeuten sie?",
+  "back": "Der ICD-Code hat **4 Stellen**:\n\n| Stelle | Bedeutung | Optionen |\n|---|---|---|\n| 1 | **Schockkammer** | V, A, D, 0 |\n| 2 | **Antitachykardie-Pacing-Kammer** | V, A, D, 0 |\n| 3 | **Tachykardie-Erkennung** | **E** (intrakardiales Elektrogramm) oder **H** (Hämodynamik inkl. Elektrogramm) |\n| 4 | **Antibradykardie-Pacing-Kammer** | V, A, D, 0 |\n\nAnders als beim HSM-Code ist Stelle 3 hier **keine Betriebsart**, sondern das **Erkennungsverfahren** für die Tachykardie.",
+  "keyPoints": [
+   "ICD-Code: 4 Stellen (nicht 5 wie beim HSM)",
+   "Stelle 1 Schockkammer, Stelle 2 ATP-Kammer, Stelle 4 Antibradykardie-Pacing-Kammer",
+   "Stelle 3: Erkennung über Elektrogramm (E) oder Hämodynamik (H)"
+  ],
+  "cloze": {
+   "text": "Beim ICD-Code bedeutet Stelle 3 die Tachykardie-Erkennung: {{1}} steht für ein intrakardiales Elektrogramm, {{2}} für die Erkennung über Hämodynamik. Der ICD-Code hat insgesamt {{3}} Stellen.",
+   "answers": [
+    "E",
+    "H",
+    "4"
+   ]
+  },
+  "source": "MTS__06_CRM1.pdf, Folie 48"
+ },
+ {
+  "id": "MTS-K6-18",
+  "fach": "MTS",
+  "unit": "MTS-K6",
+  "examMode": "free",
+  "front": "Worin unterscheidet sich **Stelle 3** des HSM-Codes von **Stelle 3** des ICD-Codes? Warum ist diese Verwechslung ein typischer Klausurfallstrick?",
+  "back": "Beide Codes verwenden an **Stelle 3** unterschiedliche Konzepte, obwohl es „dieselbe Position“ ist:\n- **HSM-Code, Stelle 3 = Betriebsart** (I/T/D/0) – legt fest, **wie** das Gerät auf ein wahrgenommenes Signal reagiert.\n- **ICD-Code, Stelle 3 = Tachykardie-Erkennung** (E/H) – legt fest, **womit** die Tachykardie erkannt wird.\n\nDie Buchstaben-Alphabete sind an dieser Stelle komplett unterschiedlich (I/T/D/0 vs. E/H) – man darf sie nicht vermischen, auch wenn beide Codes an den ersten Stellen (Kammer für Stimulation/Wahrnehmung bzw. Schock/ATP) ähnlich aufgebaut sind.",
+  "keyPoints": [
+   "HSM Stelle 3 = Betriebsart (I/T/D/0)",
+   "ICD Stelle 3 = Tachykardie-Erkennung (E/H)",
+   "Unterschiedliche Alphabete trotz gleicher Position – typischer Verwechslungsfehler"
+  ],
+  "source": "MTS__06_CRM1.pdf, Folie 46, 48; MTS_Ue__05_CRM1-2.pdf, Kontrollfrage „HSM-Codes“"
+ },
+ {
+  "id": "MTS-K6-19",
+  "fach": "MTS",
+  "unit": "MTS-K6",
+  "examMode": "free",
+  "front": "Was ist das Hauptziel der **kardialen Resynchronisationstherapie (CRT)**, und wie wird es technisch erreicht?",
+  "back": "Ziel der CRT ist die **synchrone (physiologische) Stimulation beider Ventrikel**, um eine durch Erregungsleitungsstörungen asynchron kontrahierende, insuffiziente Herzkammer wieder koordiniert schlagen zu lassen. Technisch wird das durch **biventrikuläre Stimulation** erreicht: Zusätzlich zur rechtsventrikulären Elektrode wird eine Elektrode **epikardial über den Koronarvenensinus** platziert, die den **linken Ventrikel** stimuliert.\n\nMögliche Effekte: verbesserte **LVEF**, reduzierte **Hospitalisierung/Mortalität**, **Reverse Remodelling** (Rückbildung der krankhaften Herzvergrößerung). Trotz Optimierungsstrategien bleibt der Anteil an **Non-Respondern bei mindestens 30 %** – die Patientenauswahl ist entsprechend anspruchsvoll.",
+  "keyPoints": [
+   "CRT-Ziel: synchrone Stimulation beider Ventrikel",
+   "Zusätzliche LV-Elektrode epikardial über Koronarvenensinus",
+   "Effekte: LVEF ↑, Hospitalisierung/Mortalität ↓, Reverse Remodelling",
+   "Mind. 30 % Non-Responder trotz Optimierung"
+  ],
+  "why": "Warum ist die Patientenauswahl bei CRT besonders wichtig, obwohl die Implantation technisch aufwendiger und riskanter ist als bei einem einfachen Einkammerschrittmacher?",
+  "source": "MTS__06_CRM1.pdf, Folie 32, 35"
+ },
+ {
+  "id": "MTS-K6-20",
+  "fach": "MTS",
+  "unit": "MTS-K6",
+  "examMode": "free",
+  "front": "Was löst **Kammerflimmern** hämodynamisch aus, und wie beendet ein **ICD** es? Was ist die heutige Alternative zum Schock?",
+  "back": "**Kammerflimmern** ist eine kreisende, unkoordinierte elektrische Erregung im Ventrikel: Das Gewebe ist zwar **stets elektrisch erregt**, aber ohne Koordination – es kommt zu **keinem hämodynamischen Effekt** → unbehandelt **plötzlicher Herztod**.\n\nEin **ICD** beendet Kammerflimmern durch einen **energiereichen Schock über eine Schockwendel im rechten Ventrikel**, der das gesamte Herz **komplett depolarisiert** und damit die kreisende Erregung „zurücksetzt“.\n\nDa jeder Schock **physisch und psychisch belastet**, ist **antitachykardes Pacing (ATP)** – schnelle Stimulationsimpulse bei erkannter ventrikulärer Tachykardie – heute Standard **vor** dem Schock. ATP wirkt aber nicht bei jeder Episode.",
+  "keyPoints": [
+   "Kammerflimmern: elektrisch erregt, aber unkoordiniert → kein hämodynamischer Effekt",
+   "ICD-Schock: komplette Depolarisation über Schockwendel im RV",
+   "ATP = schnelle Stimulation bei VT, heute Standard vor dem Schock",
+   "ATP wirkt nicht immer, nicht bei jedem Rhythmus"
+  ],
+  "mc": {
+   "stem": "Warum wird heute vor einem ICD-Schock möglichst **antitachykardes Pacing (ATP)** versucht?",
+   "options": [
+    "Weil jeder Schock den Patienten physisch und psychisch belastet",
+    "Weil ATP schneller wirkt als jeder Schock",
+    "Weil ATP auch Kammerflimmern zuverlässig beendet",
+    "Weil ein Schock die Batterie nicht belastet"
+   ],
+   "correct": "Weil jeder Schock den Patienten physisch und psychisch belastet"
+  },
+  "source": "MTS__06_CRM1.pdf, Folie 38–40, 42"
+ },
+ {
+  "id": "MTS-K6-21",
+  "fach": "MTS",
+  "unit": "MTS-K6",
+  "examMode": "free",
+  "front": "Nach welchem Schema wählt man laut Vorlesung den Schrittmacher-Betriebsmodus abhängig vom Zustand des Sinusknotens (SA node condition)?",
+  "back": "Vier Fälle (Entscheidung bleibt immer individuell, hier nur Richtlinien):\n- **Chronic Atrial Fibrillation** (oder nicht erregbarer Vorhof) → **VVI(R)**\n- **Sinus Bradycardia**: bei **AV-Block ja** → **DDD(R)**, bei **AV-Block nein** → **AAI(R)**\n- **Intermittent Atrial Arrhythmias** → **DDD**\n- **Normal** (mit AV-Block ja) → **DDD**",
+  "keyPoints": [
+   "Chronic AF/nicht erregbarer Vorhof → VVI(R)",
+   "Sinusbradykardie + AV-Block → DDD(R), ohne AV-Block → AAI(R)",
+   "Intermittierende Vorhofarrhythmien → DDD",
+   "Vorhofbezogene Modi (AAI/DDD) brauchen nutzbaren Vorhof – AF schließt das aus"
+  ],
+  "why": "Warum kommt bei Chronic Atrial Fibrillation kein vorhofgesteuerter Modus (AAI/DDD) infrage?",
+  "source": "MTS__06_CRM1.pdf, Folie 49"
+ },
+ {
+  "id": "MTS-K7-01",
+  "fach": "MTS",
+  "unit": "MTS-K7",
+  "examMode": "free",
+  "front": "Was ist das **Ziel** der elektrischen Stimulation durch einen Herzschrittmacher, und wie wird der Reiz technisch erzeugt?",
+  "back": "- **Ziel:** eine kurzfristige, lokale **Überschreitung von −70 mV** in der transmembranen Spannungsdifferenz der Herzmuskelzelle, um eine **Depolarisation** (Aktionspotential) auszulösen.\n- **Erzeugung:** durch **Kondensatorentladung** über die Elektrode – kein kontinuierlicher Strom, sondern ein kurzer, steiler Spannungs-/Stromimpuls.\n- Die Reizung erfolgt **stets kathodisch**, d. h. über den **Minuspol** (Tip-Elektrode) – unabhängig von der konkreten Schaltungsrealisierung.\n- Je nach implantierten Elektroden entsteht ein charakteristisches Stimulations-EKG: **Vorhofstimulation**, **Kammerstimulation** oder **2-Kammer-Stimulation** sehen im Oberflächen-EKG unterschiedlich aus (Spike + nachfolgende P- bzw. QRS-ähnliche Welle).",
+  "keyPoints": [
+   "Ziel: kurzfristige Überschreitung von −70 mV → Depolarisation",
+   "Erzeugung durch Kondensatorentladung",
+   "Reizung stets kathodisch (Minuspol/Tip)",
+   "EKG-Bild unterscheidet Vorhof-, Kammer-, 2-Kammer-Stimulation"
+  ],
+  "mc": {
+   "stem": "Über welchen Pol erfolgt die Reizung bei einem Herzschrittmacher immer?",
+   "options": [
+    "Den Minuspol (kathodisch)",
+    "Den Pluspol (anodisch)",
+    "Abwechselnd Plus- und Minuspol",
+    "Über das Gehäuse als Pluspol, nie über die Spitze"
+   ],
+   "correct": "Den Minuspol (kathodisch)"
+  },
+  "source": "MTS__07_CRM2.pdf, Folie 6, 9"
+ },
+ {
+  "id": "MTS-K7-02",
+  "fach": "MTS",
+  "unit": "MTS-K7",
+  "examMode": "free",
+  "front": "Was ist die **Stimulationsschwelle (pacing threshold)**, und wie beschreibt die **Lapicque-Funktion** ihren Zusammenhang mit der Pulsdauer?",
+  "back": "**Stimulationsschwelle:** die minimal nötige Erregung, um eine Depolarisation auszulösen – angebbar als Amplitude, Pulsdauer oder Energie.\n\nBei **rechteckförmigen Impulsen** gilt die hyperbolische **Lapicque-Funktion**:\n$$U_S(T_{Stim}) = U_R \\left(1 + \\frac{T_C}{T_{Stim}}\\right)$$\nmit Rheobase $U_R$ und Chronaxie $T_C$. Kurze Pulse brauchen eine hohe Amplitude, sehr lange Pulse nähern sich der Rheobase, kommen aber **nie darunter**.\n\nStimuliert wird bei $U_{Stim} > U_S$; **typische Parameterwahl: $2\\cdot U_S$** als Sicherheitsreserve, um trotz patientenabhängiger und zeitlich veränderlicher Reizschwelle sicher zu erregen.",
+  "keyPoints": [
+   "Schwelle: minimale Erregung für Depolarisation (Amplitude/Pulsdauer/Energie)",
+   "Lapicque: U_S(T)=U_R(1+T_C/T)",
+   "Hyperbel: kurze Pulse → hohe Amplitude, lange Pulse → nähert sich U_R",
+   "Typische Parametrierung: 2×U_S"
+  ],
+  "why": "Warum programmiert man die Ausgangsspannung eines Schrittmachers typischerweise auf das Doppelte der gemessenen Reizschwelle statt genau auf die Schwelle?",
+  "source": "MTS__07_CRM2.pdf, Folie 7"
+ },
+ {
+  "id": "MTS-K7-03",
+  "fach": "MTS",
+  "unit": "MTS-K7",
+  "examMode": "free",
+  "front": "Definiere **Rheobase** und **Chronaxie**.",
+  "back": "- **Rheobase $U_R$:** die minimale Amplitude, die bei **unendlich langer** Stimulation gerade noch zur Erregung führt (Grenzwert der Lapicque-Kurve für $T_{Stim}\\to\\infty$).\n- **Chronaxie $T_C$:** die Pulsdauer, bei der die Schwelle **doppelt so hoch wie die Rheobase** ist ($U_S(T_C) = U_R(1+T_C/T_C) = 2U_R$) – ein Maß für die „Trägheit“ des erregbaren Gewebes.\n- Wirksame Größe ist die **Strom- bzw. Ladungsdichte** an der Elektrode; die **Übergangs- oder Elektrodenimpedanz** entscheidet, welcher Strom bei gegebener Spannung tatsächlich fließt.",
+  "keyPoints": [
+   "Rheobase: Schwelle bei T→∞",
+   "Chronaxie: Pulsdauer bei 2×Rheobase",
+   "Wirksam: Strom-/Ladungsdichte",
+   "Elektrodenimpedanz entscheidet über Strom bei gegebener Spannung"
+  ],
+  "cloze": {
+   "text": "Die **Rheobase** ist die Schwelle bei {{1}} langer Stimulation. Die **Chronaxie** ist die Pulsdauer, bei der die Schwelle das {{2}}-Fache der Rheobase beträgt.",
+   "answers": [
+    "unendlich",
+    "2"
+   ]
+  },
+  "source": "MTS__07_CRM2.pdf, Folie 7–8"
+ },
+ {
+  "id": "MTS-K7-04",
+  "fach": "MTS",
+  "unit": "MTS-K7",
+  "examMode": "calc",
+  "front": "Ein unipolarer Schrittmacher hat einen **Rheobase-Strom** $I_R$ (Grenzstrom bei unendlich langer Reizung) und ein **Elektroden-Gewebe-System** mit Widerstand $R$. Berechne die **Stimulationsspannung** $U_S$, die bei rechteckförmiger Stimulation mit der **doppelten Chronaxie** gerade noch eine Depolarisation auslöst.",
+  "back": "1. Rheobase-Spannung aus dem Ohm'schen Gesetz: $U_R = I_R \\cdot R$.\n2. Lapicque bei $T_{Stim} = 2T_C$: $U_S = U_R\\left(1+\\dfrac{T_C}{2T_C}\\right) = 1{,}5\\,U_R$ – der Faktor **1,5** gilt unabhängig vom konkreten Wert der Chronaxie.\n3. Übungswerte $I_R$ = 1 mA, $R$ = 2 kΩ: $U_R$ = 2 V, $U_S = 1{,}5\\cdot 2$ V = **3 V**.\n\n*Nicht verwechseln:* bei der Chronaxie selbst ($T_{Stim}=T_C$) beträgt der Faktor **2**, nicht 1,5 – erst bei der doppelten Chronaxie sinkt er auf 1,5.",
+  "keyPoints": [
+   "U_R = I_R · R (Ohm'sches Gesetz)",
+   "Bei T_Stim=2T_C: U_S = 1,5·U_R",
+   "Übung: 1 mA · 2 kΩ = 2 V → U_S = 3 V",
+   "Bei T_Stim=T_C wäre der Faktor 2, nicht 1,5"
+  ],
+  "calc": {
+   "vars": {
+    "IR": [
+     0.5,
+     3,
+     0.25
+    ],
+    "R": [
+     0.5,
+     4,
+     0.25
+    ]
+   },
+   "given": "Rheobase-Strom $I_R$ = [[IR]] mA, Elektroden-Gewebe-Widerstand $R$ = [[R]] kΩ. Gesucht: Stimulationsspannung $U_S$ bei rechteckförmiger Stimulation mit $T_{Stim}=2T_C$.",
+   "solution": "IR*R*1.5",
+   "unit": "V",
+   "steps": [
+    "Rheobase-Spannung: $U_R = I_R \\cdot R$ = [[IR]] mA · [[R]] kΩ = [[= IR*R]] V",
+    "Bei $T_{Stim}=2T_C$: $U_S = U_R\\left(1+\\dfrac{T_C}{2T_C}\\right) = 1{,}5\\,U_R$ = [[= IR*R*1.5]] V"
+   ],
+   "example": {
+    "vars": {
+     "IR": 1,
+     "R": 2
+    },
+    "result": 3
+   }
+  },
+  "source": "MTS_Ue__05_CRM1-2.pdf, Transferfrage „Lapicque-Funktion“; MTS__07_CRM2.pdf, Folie 7"
+ },
+ {
+  "id": "MTS-K7-05",
+  "fach": "MTS",
+  "unit": "MTS-K7",
+  "examMode": "free",
+  "front": "Welche **drei Zustände** durchläuft die Grundschaltung eines Schrittmachers beim Stimulationszyklus (vereinfachte Betrachtung über einen Transistor als Schalter)?",
+  "back": "1. **Geladen + gesperrter Transistor** – der Stimulationskondensator $C$ ist auf $U_{Batt}$ geladen, es fließt kein Strom zum Herzen.\n2. **Entladen + leitender Transistor** – die Steuerung schaltet den (npn-)Transistor durch, $C$ entlädt sich über den Gewebewiderstand → der eigentliche **Stimulationsimpuls**.\n3. **Aufladung + gesperrter Transistor** – der Transistor sperrt wieder, die Batterie lädt $C$ über den Widerstand $R$ neu auf, bis zum nächsten Zyklus.\n\nRelevante Größen: Batteriespannung $U_{Batt}$, Kapazität $C$, Widerstand $R$, Halbzellenspannungsdifferenz $\\Delta U_H$, Kathoden- und Anodenimpedanz $Z_{E,K}$/$Z_{E,A}$.",
+  "keyPoints": [
+   "1: geladen, Transistor gesperrt",
+   "2: Entladung = Stimulationsimpuls, Transistor leitend",
+   "3: Wiederaufladung, Transistor wieder gesperrt",
+   "Reizung stets kathodisch über die Tip-Elektrode"
+  ],
+  "mc": {
+   "stem": "In welchem Zustand der Grundschaltung fließt der eigentliche Stimulationsimpuls zum Herzen?",
+   "options": [
+    "Entladen + leitender Transistor",
+    "Geladen + gesperrter Transistor",
+    "Aufladung + gesperrter Transistor",
+    "Keiner der drei – Stimulation erfolgt direkt aus der Batterie"
+   ],
+   "correct": "Entladen + leitender Transistor"
+  },
+  "source": "MTS__07_CRM2.pdf, Folie 9"
+ },
+ {
+  "id": "MTS-K7-06",
+  "fach": "MTS",
+  "unit": "MTS-K7",
+  "examMode": "free",
+  "front": "Leite her: Warum führt die **Entladung** des Stimulationskondensators auf eine **homogene** Differentialgleichung, und wie lautet die Lösung für Spannung und Strom?",
+  "back": "Ansatz (Kondensator über Gewebewiderstand $R$, keine Halbzellenpotentialdifferenz): $U_C + U_R = 0$ (kein äußerer Quellterm!) → $\\dfrac{1}{RC}Q(t) + \\dot Q(t) = 0$ – eine **homogene** DGL, weil auf der rechten Seite **0** steht (die Batterie ist während der Stimulation abgetrennt).\n\nLösung mit $Q(t_0)=Q_0$, $t_0=0$:\n$$Q(t) = Q_0\\,e^{-t/RC}, \\quad U_C(t) = U_0\\,e^{-t/RC}, \\quad I(t) = -I_0\\,e^{-t/RC}$$\nSpannung und Ladung **fallen** exponentiell von $U_0$ auf 0; das Minuszeichen beim Strom zeigt, dass er in die **entgegengesetzte Richtung** wie beim späteren Aufladen fließt. Nach der Stimulation bleibt am Herzen noch ein **Nachpotential** (Ladestrom + Prozesse am Elektroden-Haut-Übergang).",
+  "keyPoints": [
+   "U_C+U_R=0 → homogene DGL (kein Quellterm)",
+   "Q(t)=Q0·e^(−t/RC), U_C(t)=U0·e^(−t/RC)",
+   "I(t)=−I0·e^(−t/RC) – Vorzeichen zeigt Stromrichtung",
+   "Danach: Nachpotential"
+  ],
+  "why": "Warum ist die DGL beim Entladen homogen, beim Aufladen dagegen nicht?",
+  "source": "MTS__07_CRM2.pdf, Folie 10–14"
+ },
+ {
+  "id": "MTS-K7-07",
+  "fach": "MTS",
+  "unit": "MTS-K7",
+  "examMode": "free",
+  "front": "Vergleiche **Laden** und **Entladen** des Stimulationskondensators: Welche Größe steigt, welche fällt – und wie unterscheiden sich die beiden Differentialgleichungen?",
+  "back": "| | Entladen (Stimulation) | Laden (Wiederaufladung) |\n|---|---|---|\n| DGL | **homogen**: $\\frac1{RC}Q+\\dot Q=0$ | **inhomogen**: $\\frac1{RC}Q+\\dot Q=\\frac{U_0}{R}$ |\n| Spannung $U_C(t)$ | fällt: $U_0\\,e^{-t/RC}$ | steigt: $U_0(1-e^{-t/RC})$ |\n| Strom $I(t)$ | $-I_0\\,e^{-t/RC}$ | $I_0\\,e^{-t/RC}$ (fällt von $I_0$ auf 0) |\n| Ladung $Q(t)$ | $Q_0\\,e^{-t/RC}$ | $U_0 C(1-e^{-t/RC})$ |\n\nBeide Vorgänge haben dieselbe **Zeitkonstante** $\\tau = RC$; nur weil beim Laden ein **konstanter Quellterm** $U_0/R$ (die Batterie) dazukommt, ist die DGL inhomogen statt homogen.",
+  "keyPoints": [
+   "Entladen: U_C fällt, homogene DGL",
+   "Laden: U_C steigt, inhomogene DGL (Quellterm U0/R)",
+   "Beide: τ = RC",
+   "Strom beim Laden startet bei I0 und fällt auf 0"
+  ],
+  "mc": {
+   "stem": "Was unterscheidet die DGL des Ladevorgangs von der des Entladevorgangs?",
+   "options": [
+    "Beim Laden kommt ein konstanter Quellterm U0/R hinzu – die DGL ist inhomogen",
+    "Die Zeitkonstante τ=RC ist beim Laden doppelt so groß",
+    "Beim Entladen ist die DGL inhomogen, beim Laden homogen",
+    "Es gibt keinen Unterschied, beide DGLs sind identisch"
+   ],
+   "correct": "Beim Laden kommt ein konstanter Quellterm U0/R hinzu – die DGL ist inhomogen"
+  },
+  "source": "MTS__07_CRM2.pdf, Folie 12–17"
+ },
+ {
+  "id": "MTS-K7-08",
+  "fach": "MTS",
+  "unit": "MTS-K7",
+  "examMode": "calc",
+  "front": "Das Aufladen des Stimulationskondensators wird vereinfacht als Kondensatorladung über einem Widerstand betrachtet ($I(t)=I_0e^{-t/\\tau}$, $U_C(t)=U_0(1-e^{-t/\\tau})$). Zu einem Zeitpunkt $t_1$ beträgt der Strom noch ein bestimmter Prozentsatz des Anfangsstroms, zur selben Zeit ist die Kondensatorspannung bekannt. Berechne die **maximal erreichbare Spannung** $U_0$ (vollständig entladener Kondensator zu Beginn, idealisierte Bedingungen).",
+  "back": "$I(t)$ und $U_C(t)$ teilen sich denselben Exponentialfaktor $e^{-t_1/\\tau}$:\n$$\\frac{I(t_1)}{I_0} = e^{-t_1/\\tau} \\quad\\Rightarrow\\quad U_C(t_1) = U_0\\left(1-\\frac{I(t_1)}{I_0}\\right)$$\nAlso $U_0 = \\dfrac{U_C(t_1)}{1 - I(t_1)/I_0}$.\n\nÜbungswerte: $t_1=30$ ms, $I(t_1)/I_0 = 45\\,\\%$, $U_C(t_1)=2{,}3$ V → $U_0 = 2{,}3/0{,}55 \\approx$ **4,18 V**.\n\n*Auffällig:* $t_1$ selbst wird für $U_0$ **nicht gebraucht** – er steckt in beiden Gleichungen im selben Exponentialfaktor und kürzt sich weg.",
+  "keyPoints": [
+   "I(t) und U_C(t) teilen sich denselben Exponentialfaktor",
+   "U0 = U_C(t1) / (1 − I(t1)/I0)",
+   "Übung: 2,3 V / 0,55 ≈ 4,18 V",
+   "t1 selbst wird für U0 nicht benötigt (Ablenker)"
+  ],
+  "calc": {
+   "vars": {
+    "frac": [
+     20,
+     70,
+     5
+    ],
+    "Ut1": [
+     0.5,
+     4,
+     0.1
+    ],
+    "t1": [
+     10,
+     80,
+     5
+    ]
+   },
+   "given": "Zum Zeitpunkt $t_1$ = [[t1]] ms beträgt der Ladestrom noch [[frac]] % des Anfangsstroms $I_0$, zur gleichen Zeit ist $U_C(t_1)$ = [[Ut1]] V. Gesucht: die maximale Kondensatorspannung $U_0$.",
+   "solution": "Ut1/(1-frac/100)",
+   "unit": "V",
+   "steps": [
+    "$I(t)$ und $U_C(t)$ teilen sich denselben Exponentialfaktor: $I(t_1)/I_0$ = [[frac]] % (der Wert $t_1$ = [[t1]] ms wird dafür nicht gebraucht)",
+    "$U_C(t_1) = U_0(1-[[frac]]/100)$ = [[Ut1]] V",
+    "$U_0$ = [[Ut1]] / (1 − [[frac]]/100) = [[= Ut1/(1-frac/100)]] V"
+   ],
+   "example": {
+    "vars": {
+     "frac": 45,
+     "Ut1": 2.3,
+     "t1": 30
+    },
+    "result": 4.18
+   }
+  },
+  "source": "MTS_Ue__05_CRM1-2.pdf, Transferfrage „Kondensatorladung“; MTS__07_CRM2.pdf, Folie 15–17"
+ },
+ {
+  "id": "MTS-K7-09",
+  "fach": "MTS",
+  "unit": "MTS-K7",
+  "examMode": "free",
+  "front": "Wozu dient eine **Ladungspumpe** im Schrittmacher, und wie hängt ihre Ausgangsspannung von der Eingangsspannung ab?",
+  "back": "Die **Batteriespannung $U_{Batt}$** eines Schrittmachers ist begrenzt und reicht nicht immer aus, um den Stimulationskondensator auf die benötigte Spannung zu laden. Eine **Ladungspumpe** (2 Dioden + 2 Kondensatoren) setzt die Eingangsspannung dann näherungsweise auf das Doppelte hoch:\n$$U_a = 2U_e - 2U_D$$\nmit Flussspannung $U_D$ der Dioden.\n\n**Ablauf:** In Schalterstellung 1 lädt sich $C_1$ auf $U_{C1}=U_e-U_D$; schaltet der Schalter um, wird $C_2$ über $C_1$ **in Reihe** mit der Quelle geladen, sodass sich die Spannungen addieren: $U_{C1}+U_e-U_D$.",
+  "keyPoints": [
+   "Batteriespannung reicht ggf. nicht für nötige Stimulationsspannung",
+   "Ladungspumpe verdoppelt näherungsweise die Spannung",
+   "U_a = 2U_e − 2U_D",
+   "2 Dioden + 2 Kondensatoren, Umschalten lädt C2 in Reihe mit C1"
+  ],
+  "why": "Warum wird die Ausgangsspannung der Ladungspumpe nicht exakt $2U_e$, sondern $2U_e - 2U_D$?",
+  "source": "MTS__07_CRM2.pdf, Folie 18"
+ },
+ {
+  "id": "MTS-K7-10",
+  "fach": "MTS",
+  "unit": "MTS-K7",
+  "examMode": "free",
+  "front": "Wie ist der **NASPE/BPEG-Schrittmachercode** aufgebaut? Erkläre die ersten drei Stellen mit ihren Optionen.",
+  "back": "Der Code hat **5 Stellen**, die systematisch die Funktion eines Schrittmachers beschreiben:\n\n| Stelle | Bedeutung | Optionen |\n|---|---|---|\n| 1 | **Stimulationsort** | Ventricle, Atrium, Dual, Single (V oder A), keine (0) |\n| 2 | **Wahrnehmungsort** | Ventricle, Atrium, Dual, Single (V oder A), keine (0) |\n| 3 | **Betriebsart** | Inhibited (Signal unterdrückt Stimulation), Triggered (Signal löst Stimulation aus), Dual (I und T), keine (0) |\n| 4 | Frequenzadaption | keine (0), Rate modulation (R) |\n| 5 | Multifokale Stimulation | Ventricle, Atrium, Dual, keine (0) |\n\n**Beispiele:** **VVI** – eine Elektrode im Ventrikel, stimuliert dort, wird durch intrinsische Ventrikelerregung **inhibiert**. **DDD** – zwei Elektroden (Vorhof + Kammer), stimuliert und wahrgenommen an beiden Orten, **triggert und inhibiert** je nach Situation.",
+  "keyPoints": [
+   "Stelle 1+2: Stimulations- bzw. Wahrnehmungsort (V/A/D/S/0)",
+   "Stelle 3: Betriebsart I/T/D/0",
+   "Stelle 4: Frequenzadaption 0/R",
+   "VVI = inhibiert, DDD = triggert und inhibiert"
+  ],
+  "mc": {
+   "stem": "Was bedeutet die Option D (Dual) an der dritten Stelle (Betriebsart) des NASPE/BPEG-Codes?",
+   "options": [
+    "Sowohl Inhibited als auch Triggered möglich",
+    "Stimulation gleichzeitig in Vorhof und Kammer, immer aktiv",
+    "Der Schrittmacher pausiert vollständig (Demand-Stopp)",
+    "Die Stimulation erfolgt grundsätzlich verzögert (Delay)"
+   ],
+   "correct": "Sowohl Inhibited als auch Triggered möglich"
+  },
+  "cloze": {
+   "text": "Stelle 1 des NASPE/BPEG-Codes gibt den {{1}} an, Stelle 3 zeigt bei VVI ein {{2}}, weil intrinsische Erregung die Stimulation unterdrückt.",
+   "answers": [
+    "Stimulationsort",
+    "I"
+   ]
+  },
+  "source": "MTS__07_CRM2.pdf, Folie 20"
+ },
+ {
+  "id": "MTS-K7-11",
+  "fach": "MTS",
+  "unit": "MTS-K7",
+  "examMode": "free",
+  "front": "Welche Risiken birgt der asynchrone **V00/A00-Modus**, und warum wird er heute nur noch als Notprogramm eingesetzt?",
+  "back": "**V00 (analog A00):** keine Frequenzadaption, keine Wahrnehmung – der Schrittmacher stimuliert stur nach Ablauf des Grundintervalls, unabhängig von herzeigener Aktivität.\n\n- **Parasystolie:** herzeigene und stimulierende Aktionen konkurrieren; gleichzeitige Vorhof- und Ventrikelaktivität ist möglich → **keine Vorhofentleerung** möglich → Herzzeitvolumen sinkt, Schwindel → **Schrittmachersyndrom**.\n- **Stimulation in der vulnerablen Phase** möglich, da keine Wahrnehmung stattfindet – Risiko für gefährliche Rhythmusstörungen.\n- Deshalb heute **nur noch als Notprogramm** eingesetzt (z. B. bei Elektromagnet-Auflage), nicht im Dauerbetrieb.",
+  "keyPoints": [
+   "V00/A00: keine Adaption, keine Wahrnehmung",
+   "Parasystolie: konkurrierende Eigen- und SM-Aktivität",
+   "Risiko: vulnerable Phase, Schrittmachersyndrom",
+   "Heute nur noch Notprogramm"
+  ],
+  "why": "Warum kann ein Schrittmacher ohne jede Wahrnehmung (V00) direkt in eine gefährliche Rhythmusstörung stimulieren?",
+  "source": "MTS__07_CRM2.pdf, Folie 21"
+ },
+ {
+  "id": "MTS-K7-12",
+  "fach": "MTS",
+  "unit": "MTS-K7",
+  "examMode": "free",
+  "front": "Wie ist die **Refraktärzeit (RFZ)** im VVI-Modus aufgebaut, und was unterscheidet **Grundintervall (GI)** von **Ausweichintervall (AI)**?",
+  "back": "**RFZ besteht aus zwei Teilen:**\n- **Blanking:** der Schrittmacher ist komplett „blind“ – er nimmt in dieser Zeit **gar nichts** wahr.\n- **Noise-Sampling-Intervall** (Rest der RFZ): der Schrittmacher **detektiert**, aber eine Detektion löst **keine Rücksetzung** (kein Reset von GI) aus – sie kann die RFZ jedoch **verlängern**.\n\n**GI vs. AI:** Nach einer **intrinsischen** (natürlichen, außerhalb der RFZ erkannten) Erregung wartet der Schrittmacher nicht das normale Grundintervall ab, sondern ein meist **längeres Ausweichintervall (AI)**, bevor er ggf. selbst stimuliert – VVI ist damit prinzipiell bei Bradykardien (z. B. AV-Block) einsetzbar, bleibt aber **asynchron zum Vorhof**.",
+  "keyPoints": [
+   "RFZ = Blanking (komplett blind) + Noise-Sampling (detektiert, kein Reset)",
+   "Noise-Sampling: Detektion verlängert RFZ, setzt aber nicht zurück",
+   "Nach intrinsischer Erregung: Ausweichintervall (AI), meist > GI",
+   "Hauptproblem VVI: asynchron zum Vorhof"
+  ],
+  "mc": {
+   "stem": "Was passiert, wenn der Schrittmacher im Noise-Sampling-Intervall ein Signal detektiert?",
+   "options": [
+    "Keine Rücksetzung, aber mögliche Verlängerung der RFZ",
+    "Sofortige Rücksetzung von GI und RFZ",
+    "Der Schrittmacher stimuliert sofort",
+    "Nichts – das Signal wird wie im Blanking komplett ignoriert"
+   ],
+   "correct": "Keine Rücksetzung, aber mögliche Verlängerung der RFZ"
+  },
+  "source": "MTS__07_CRM2.pdf, Folie 24–25"
+ },
+ {
+  "id": "MTS-K7-13",
+  "fach": "MTS",
+  "unit": "MTS-K7",
+  "examMode": "free",
+  "front": "**AAI** ist technisch nahezu identisch zu **VVI** – worin unterscheiden sich die beiden Modi trotzdem klinisch?",
+  "back": "Beide Modi arbeiten nach demselben Prinzip: **eine** Elektrode, ein Ort für Stimulation und Wahrnehmung, **Inhibited**-Betrieb (Eigenaktion unterdrückt die Stimulation).\n\n- **VVI:** Elektrode im **Ventrikel** – funktioniert unabhängig vom Vorhof, klassischer Einsatz z. B. bei **AV-Block**.\n- **AAI:** Elektrode im **Vorhof** – stimuliert und wahrgenommen wird nur dort. Damit das tatsächlich zu einer wirksamen Herzaktion führt, muss das **Erregungsleitungssystem (AV-Überleitung) intakt** sein – sonst kommt der Vorhofimpuls nie in der Kammer an.\n\nDie Wahl zwischen AAI und VVI hängt also nicht von der Technik, sondern vom **Ort des Problems** ab: Sinusknoten-Erkrankung mit intakter AV-Überleitung → AAI möglich; AV-Block → VVI nötig.",
+  "keyPoints": [
+   "AAI und VVI: technisch identisch (1 Elektrode, inhibiert)",
+   "VVI: Ventrikel, unabhängig vom Vorhof",
+   "AAI: Vorhof, braucht intakte AV-Überleitung",
+   "Wahl hängt vom Ort der Erkrankung ab"
+  ],
+  "mc": {
+   "stem": "Warum ist AAI nur bei intaktem Erregungsleitungssystem sinnvoll?",
+   "options": [
+    "Weil der Vorhofimpuls sonst nicht über den AV-Knoten zur Kammer geleitet wird",
+    "Weil AAI technisch keine Wahrnehmung besitzt",
+    "Weil AAI grundsätzlich nur im Notfallmodus arbeitet",
+    "Weil AAI die Kammer direkt mitstimuliert"
+   ],
+   "correct": "Weil der Vorhofimpuls sonst nicht über den AV-Knoten zur Kammer geleitet wird"
+  },
+  "source": "MTS__07_CRM2.pdf, Folie 24, 27"
+ },
+ {
+  "id": "MTS-K7-14",
+  "fach": "MTS",
+  "unit": "MTS-K7",
+  "examMode": "free",
+  "front": "Was ist der entscheidende Nachteil von **DVI** gegenüber **DDD vorhofgesteuert**?",
+  "back": "**DVI:** gibt einen Vorhofimpuls ab und „untersucht“ anschließend nur die Weiterleitung zur Kammer (AV-Zeit) – **ohne die natürliche Vorhofaktivität selbst zu erfassen**. Einsatz z. B. bei Sinusbradykardie mit AV-Block 3. Grades; dabei **keine Frequenzanpassung**.\n\n**Problem:** Da DVI die Eigenaktivität des Vorhofs nicht wahrnimmt, kann der Vorhofstimulus **in die vulnerable Phase einer natürlichen Vorhoferregung** fallen.\n\n**DDD vorhofgesteuert** behebt das: Es **detektiert zusätzlich** die Vorhofaktivität und setzt das Grundintervall entsprechend zurück (bei atrialem Stimulus, natürlicher Vorhoferregung oder natürlicher Kammererregung außerhalb des AV-Intervalls) – und bildet damit die Physiologie **am besten ab**.",
+  "keyPoints": [
+   "DVI: Vorhofstimulus ohne Vorhof-Sensing, keine Frequenzanpassung",
+   "Risiko DVI: Stimulation in vulnerabler Phase des Vorhofs",
+   "DDD: zusätzlich vorhofgesteuert, bildet Physiologie am besten ab",
+   "DDD setzt GI bei atrialem Stimulus/natürlicher Erregung zurück"
+  ],
+  "why": "Warum reicht es bei DVI nicht aus, nur die AV-Überleitung zu 'untersuchen', ohne die Vorhofaktivität selbst wahrzunehmen?",
+  "source": "MTS__07_CRM2.pdf, Folie 32, 34"
+ },
+ {
+  "id": "MTS-K7-15",
+  "fach": "MTS",
+  "unit": "MTS-K7",
+  "examMode": "free",
+  "front": "Was bewirken **AV-Hysterese** und **PVARP** im DDD-Modus?",
+  "back": "- **AV-Hysterese:** verlängert nach einem **künstlichen (stimulierten)** Vorhofimpuls das AV-Intervall gegenüber einer natürlichen Vorhoferregung – sie gibt der physiologischen Überleitung mehr Zeit, bevor der Schrittmacher in der Kammer stimuliert.\n- **PVARP** (postventrikuläre atriale Refraktärzeit): eine Refraktärzeit im **Vorhofkanal direkt nach einer Kammeraktion**. Sie verhindert, dass eine **im Ventrikel stimulierte, retrograd zum Vorhof geleitete** Erregung fälschlich als natürliche Vorhofaktivität erkannt und zur Rücksetzung genutzt wird.",
+  "keyPoints": [
+   "AV-Hysterese: längeres AV-Intervall nach künstlichem Vorhofstimulus",
+   "Grund: Zeit für physiologische Überleitung",
+   "PVARP: postventrikuläre atriale Refraktärzeit",
+   "PVARP verhindert Fehldetektion retrograd geleiteter Erregung"
+  ],
+  "cloze": {
+   "text": "Die {{1}} verlängert nach einem künstlichen Vorhofstimulus das AV-Intervall. Die {{2}} verhindert, dass eine im Ventrikel stimulierte, retrograd geleitete Erregung fälschlich als natürliches Vorhofsignal erkannt wird.",
+   "answers": [
+    "AV-Hysterese",
+    "PVARP"
+   ]
+  },
+  "source": "MTS__07_CRM2.pdf, Folie 34–35"
+ },
+ {
+  "id": "MTS-K7-16",
+  "fach": "MTS",
+  "unit": "MTS-K7",
+  "examMode": "calc",
+  "front": "Ein VVI-Schrittmacher stimuliert mit einer Grundfrequenz $f$ und hat eine Refraktärzeit RFZ. Bei $t_{event}$ nach dem Start des Grundintervalls wird ein natürliches Signal detektiert – da $t_{event} < RFZ$, fällt es in die Refraktärzeit und wird nicht zur Rücksetzung genutzt. Berechne die Zeit ab $t_{event}$ bis zum nächsten, regulär vom Schrittmacher ausgelösten Ventrikelstimulus.",
+  "back": "1. Grundintervall aus der Frequenz: $GI = 1000/f$ (in ms, wenn $f$ in Hz).\n2. Das Signal bei $t_{event}$ liegt innerhalb der RFZ → **keine Rücksetzung**, der GI-Zähler läuft seit Start unverändert weiter.\n3. Restzeit bis zum Stimulus $= GI - t_{event}$.\n\nÜbungswerte: $f=1{,}23$ Hz → $GI \\approx 813{,}0$ ms; $t_{event}=182$ ms (RFZ = 200 ms, also innerhalb der Refraktärzeit) → Restzeit $\\approx 813{,}0 - 182 = $ **631,0 ms**.\n\n*Die RFZ selbst wird für die Rechnung nicht gebraucht, sobald feststeht, dass $t_{event}$ innerhalb liegt – sie ist nur die Begründung, warum keine Rücksetzung erfolgt.*",
+  "keyPoints": [
+   "GI = 1000/f (f in Hz, GI in ms)",
+   "Ignoriertes Ereignis: GI-Zähler läuft unverändert weiter",
+   "Restzeit = GI − t_event",
+   "Übung: 813,0 ms − 182 ms ≈ 631,0 ms"
+  ],
+  "calc": {
+   "vars": {
+    "f": [
+     0.8,
+     1.5,
+     0.01
+    ],
+    "RFZ": [
+     190,
+     260,
+     5
+    ],
+    "tEvent": [
+     20,
+     185,
+     1
+    ]
+   },
+   "given": "Grundfrequenz $f$ = [[f]] Hz, Refraktärzeit RFZ = [[RFZ]] ms. Bei $t_{event}$ = [[tEvent]] ms nach Start des Grundintervalls wird ein natürliches Signal detektiert (innerhalb der RFZ, daher ohne Rücksetzung). Gesucht: Zeit ab $t_{event}$ bis zum nächsten Ventrikelstimulus.",
+   "solution": "1000/f - tEvent",
+   "unit": "ms",
+   "steps": [
+    "Grundintervall aus der Frequenz: $GI = 1000/f$ = [[= 1000/f]] ms",
+    "$t_{event}$ = [[tEvent]] ms liegt innerhalb der RFZ ([[RFZ]] ms) → keine Rücksetzung, der GI-Zähler läuft unverändert weiter",
+    "Restzeit bis zum Stimulus = $GI - t_{event}$ = [[= 1000/f]] − [[tEvent]] = [[= 1000/f - tEvent]] ms"
+   ],
+   "example": {
+    "vars": {
+     "f": 1.23,
+     "RFZ": 200,
+     "tEvent": 182
+    },
+    "result": 631.01
+   }
+  },
+  "source": "MTS_Ue__05_CRM1-2.pdf, Transferfrage „Zeitablauf bei Kammerstimulation“; MTS__07_CRM2.pdf, Folie 24–25"
+ },
+ {
+  "id": "MTS-K7-17",
+  "fach": "MTS",
+  "unit": "MTS-K7",
+  "examMode": "free",
+  "front": "Was unterscheidet **ANS-gesteuerte** von **Nicht-ANS-gesteuerten** frequenzadaptiven Schrittmachern, und welche Sensorgrößen werden real genutzt?",
+  "back": "**Ziel der Frequenzadaption:** Ersatz der ANS-Funktion bei **chronotroper Inkompetenz** (Sinusknoten/Innervation, SA-Überleitung oder fehlendes arterielles Sensing betroffen).\n\n- **ANS-gesteuert:** nutzt Körpersignale, die mit den **Stellgrößen des ANS** korrelieren. Beispiele: **inotrop** (Impedanz- oder intrakardiale Beschleunigungsmessung), **QT-HSM** (Zeit von Depolarisation bis Ende Repolarisation, adrenalinabhängig), **dromotrop** (atrioventrikuläre Überleitungszeit). Der „ideale“ ANS-HSM würde direkt neuronal messen – das ist **nicht machbar**.\n- **Nicht-ANS-gesteuert:** nutzt Signale, die mit **allgemeiner körperlicher Aktivität/Belastung** korrelieren, nicht mit dem ANS selbst. Ideal wären Größen, die direkt vom **Herzzeitvolumen** abhängen; real genutzt werden **Aktivität** (Beschleunigungssensor im Aggregat) und **Atemminutenvolumen** (über transthorakale Impedanz), seltener Temperatur oder pH-Wert.",
+  "keyPoints": [
+   "Ziel: Ersatz der ANS-Funktion bei chronotroper Inkompetenz",
+   "ANS-gesteuert: Impedanz/Beschleunigung, QT-Intervall, AV-Überleitungszeit",
+   "Nicht-ANS-gesteuert: Aktivität (Beschleunigung), Atemminutenvolumen (Impedanz)",
+   "Ideale HZV-abhängige Steuergröße ist real (noch) nicht praktikabel"
+  ],
+  "mc": {
+   "stem": "Welche Sensorgröße wird laut Vorlesung bei Nicht-ANS-gesteuerten Schrittmachern am häufigsten zur Frequenzadaption genutzt?",
+   "options": [
+    "Aktivität über Beschleunigungssensor im Aggregat",
+    "Direkte Messung des Herzzeitvolumens",
+    "Neuronale Messung des Sympathikus",
+    "QT-Intervall"
+   ],
+   "correct": "Aktivität über Beschleunigungssensor im Aggregat"
+  },
+  "source": "MTS__07_CRM2.pdf, Folie 37, 39–40"
+ },
+ {
+  "id": "MTS-K7-18",
+  "fach": "MTS",
+  "unit": "MTS-K7",
+  "examMode": "free",
+  "front": "Was unterscheidet **Single-Component-** von **Multi-Component-Leadless-Pacemakern**, und welchen Nachteil klassischer Systeme mit Elektrode vermeiden sie?",
+  "back": "**Problem klassischer Systeme:** die Elektrode selbst verursacht Komplikationen – mechanische Elektrodenprobleme, **Thromboserisiko**, Infektionen in der Schrittmachertasche. **Leadless Pacemaker** verzichten komplett auf die Elektrode.\n\n- **Single-Component-Systeme** (z. B. Micra, Nanostim): alle Funktionen (inkl. Remote Monitoring) in einer Kapsel integriert, Implantation per Spezialkatheter, konventionelle Fixation, Laufzeit vergleichbar mit klassischen Systemen. **Nachteil: nur RV-Pacing** (nur eine Kammer erreichbar).\n- **Multi-Component-Systeme** (z. B. WiSE-CRT): ein separates **Koimplantat** wertet die Stimulation im rechten Herz aus, ein Stimulator wird per **Ultraschall-Energieübertragung** aktiviert. **Nachteil:** Energieübertragung nicht immer zuverlässig möglich, zusätzliches Koimplantat nötig.",
+  "keyPoints": [
+   "Klassisches Problem: Elektrode → mechanische Probleme, Thrombose, Infektion",
+   "Single-Component: alles integriert, Katheterimplantation, nur RV-Pacing",
+   "Multi-Component: Koimplantat + Ultraschall-Energieübertragung zum Stimulator",
+   "Multi-Component-Nachteil: Energieübertragung nicht immer möglich"
+  ],
+  "mc": {
+   "stem": "Was ist der zentrale Nachteil von Single-Component-Leadless-Pacemakern?",
+   "options": [
+    "Sie ermöglichen nur RV-Pacing (eine Kammer)",
+    "Sie benötigen zwingend ein Koimplantat",
+    "Ihre Laufzeit ist deutlich kürzer als bei klassischen Systemen",
+    "Sie können nicht per Katheter implantiert werden"
+   ],
+   "correct": "Sie ermöglichen nur RV-Pacing (eine Kammer)"
+  },
+  "source": "MTS__07_CRM2.pdf, Folie 42–44"
+ },
+ {
+  "id": "MTS-K7-19",
+  "fach": "MTS",
+  "unit": "MTS-K7",
+  "examMode": "free",
+  "front": "Warum gilt der **VAT-Modus** als energetisch ungünstig, obwohl er als erster Zweikammermodus die AV-Synchronität herstellte?",
+  "back": "VAT wurde für **AV-Block** und **supraventrikuläre Tachykardien** eingesetzt und verhindert über die **Refraktärzeit im Vorhofkanal (RFZ-A)** eine zu schnelle Erregungsübertragung auf die Kammer.\n\n**Problem:** VAT ist **immer getriggert** – jede erkannte Vorhofaktivität löst nach der AV-Verzögerung einen Ventrikelstimulus aus, auch wenn eine **eigene, intrinsische Kammererregung** längst vorhanden wäre. Der Schrittmacher stimuliert also häufiger als nötig → hoher Energieverbrauch. Zusätzlich ist, wie bei anderen frühen Modi, eine **Stimulation in der vulnerablen Phase** möglich. Deshalb wird VAT heute kaum noch eingesetzt.",
+  "keyPoints": [
+   "VAT: AV-Synchronität via RFZ-A, aber immer getriggert",
+   "Triggert auch bei vorhandener intrinsischer Kammererregung → unnötige Stimulation",
+   "Hoher Energieverbrauch, deshalb kaum noch verwendet",
+   "Stimulation in vulnerabler Phase weiterhin möglich"
+  ],
+  "why": "Warum führt ein 'immer getriggerter' Modus zu einem höheren Energieverbrauch als ein 'inhibierter' Modus wie VVI oder DDD?",
+  "source": "MTS__07_CRM2.pdf, Folie 28"
+ },
+ {
+  "id": "MTS-K7-20",
+  "fach": "MTS",
+  "unit": "MTS-K7",
+  "examMode": "free",
+  "front": "Was ist ein VDD-Schrittmacher, und wo liegen seine Nachteile gegenüber DDD?",
+  "back": "**VDD** ist ein **Demand-Schrittmacher**: er detektiert Vorhof- UND Kammeraktivität, stimuliert aber **nur im Ventrikel** (kein Vorhofstimulus). Einsatz z. B. bei **AV-Block mit erhaltener Sinusfunktion**.\n\n**Nachteil:** Sobald die **Vorhofaktivität gestört** ist (z. B. verzögert/ausbleibend), ähneln die Nachteile denen von **VVI** – die physiologische Vorhof-Kammer-Synchronisation fehlt dann, weil VDD im Vorhof nicht stimulieren kann. Das Grundintervall wird zurückgesetzt bei natürlicher ventrikulärer Erregung außerhalb RFZ-V und AV-Intervall, natürlicher Vorhoferregung außerhalb RFZ-A, oder wenn Vorhofausweichintervall/Grundintervallzähler abläuft.",
+  "keyPoints": [
+   "VDD = Demand, stimuliert nur im Ventrikel",
+   "Detektiert Vorhof UND Kammer",
+   "Einsatz: AV-Block + erhaltene Sinusfunktion",
+   "Nachteil wie VVI, sobald Vorhofaktivität gestört ist"
+  ],
+  "why": "Warum verhält sich VDD bei gestörter Vorhofaktivität ähnlich schlecht wie VVI, obwohl es den Vorhof mitüberwacht?",
+  "source": "MTS__07_CRM2.pdf, Folie 30"
+ },
+ {
+  "id": "MTS-K8-01",
+  "fach": "MTS",
+  "unit": "MTS-K8",
+  "examMode": "free",
+  "front": "Wann kommen mechanische Herzunterstützungssysteme zum Einsatz, und wie sind sie definiert?",
+  "back": "- Mechanische Herzaktivität bei **Herzinsuffizienz** teilweise nicht ausreichend (chronisch, aber z. B. auch nach Operationen).\n- **Medikamentöse Therapie ist 1. Wahl.**\n- Erst wenn diese **nicht ausreicht oder nicht infrage kommt**, werden mechanische Herzunterstützungssysteme eingesetzt.\n- **Definition:** komplexe Systeme, die die Funktion des Herzens **unterstützen oder komplett übernehmen**.",
+  "keyPoints": [
+   "Einsatz bei Herzinsuffizienz, wenn Medikation nicht ausreicht",
+   "Medikamentöse Therapie ist 1. Wahl",
+   "Herzunterstützungssysteme = unterstützen oder übernehmen Herzfunktion komplett"
+  ],
+  "source": "MTS__08_HLM.pdf, Folie 6"
+ },
+ {
+  "id": "MTS-K8-02",
+  "fach": "MTS",
+  "unit": "MTS-K8",
+  "examMode": "free",
+  "front": "Nach welchen zwei Grundprinzipien lassen sich mechanische Herzunterstützungssysteme einteilen?",
+  "back": "- **Synchron zum Herzzyklus:** Gegenpulsation – Senken der Nachlast, Erhöhung des diastolischen Drucks; funktioniert nur getaktet auf den Herzzyklus.\n- **Asynchron zum Herzzyklus:** Ventricular Assist Devices (VAD) – Blutförderung „parallel\" zur Herzaktivität, unabhängig vom Herzzyklus; unterteilt in **pulsatile** (Pumpenventrikel) und **nicht-pulsatile** (Rotationspumpen: Axial-, Diagonal-, Zentrifugalpumpe) Systeme.",
+  "keyPoints": [
+   "Synchron: Gegenpulsation (Nachlast ↓, diastolischer Druck ↑)",
+   "Asynchron: VAD, unabhängig vom Herzzyklus",
+   "VAD: pulsatil (Pumpenventrikel) vs. nicht-pulsatil (Rotationspumpen)"
+  ],
+  "mc": {
+   "stem": "Welches Merkmal kennzeichnet ein asynchron arbeitendes Herzunterstützungssystem (VAD)?",
+   "options": [
+    "Der Betrieb muss nicht auf den Herzzyklus getaktet werden",
+    "Es senkt die Nachlast durch ballongestützte Gegenpulsation",
+    "Es arbeitet ausschließlich im 1:2-Timing zum Herzzyklus",
+    "Es benötigt zwingend eine EKG-Synchronisation wie die IABP"
+   ],
+   "correct": "Der Betrieb muss nicht auf den Herzzyklus getaktet werden"
+  },
+  "source": "MTS__08_HLM.pdf, Folie 10"
+ },
+ {
+  "id": "MTS-K8-03",
+  "fach": "MTS",
+  "unit": "MTS-K8",
+  "examMode": "free",
+  "front": "Beschreibe Positionierung, Volumen, Antrieb und Synchronisation der intraaortalen Ballonpumpe (IABP).",
+  "back": "- **Positionierung:** absteigende Aorta\n- **Zugang:** Einbringen über die **Femoralarterie**\n- **Ballonvolumen:** 25–50 mL\n- **Antrieb:** Versorgungskatheter treibt einen **heliumbetriebenen Ballon**\n- **Synchronisation:** über **EKG** oder **intraarteriellen Druck** – der Betrieb muss exakt auf den Herzzyklus getaktet sein.",
+  "keyPoints": [
+   "Absteigende Aorta, Zugang über Femoralarterie",
+   "Ballonvolumen 25–50 mL, Helium-Antrieb",
+   "Synchronisation via EKG oder intraarteriellem Druck"
+  ],
+  "why": "Warum muss die IABP exakt mit dem Herzzyklus synchronisiert sein und kann nicht einfach mit fester Frequenz laufen?",
+  "source": "MTS__08_HLM.pdf, Folie 11"
+ },
+ {
+  "id": "MTS-K8-04",
+  "fach": "MTS",
+  "unit": "MTS-K8",
+  "examMode": "free",
+  "front": "Erkläre das Wirkprinzip der Gegenpulsation in den zwei Phasen des Herzzyklus (Diastole und vor der Systole).",
+  "back": "- **In der Diastole:** Ballon bläht sich auf → **Verkleinerung des arteriellen Gefäßvolumens** bzw. Auswurf eines gespeicherten Blutvolumens → **positive Druckwelle** zum Herzen hin und in den systemischen Kreislauf → Verbesserung der Durchblutung von Herz und Endorganen.\n- **Vor der Systole:** Ballon entleert sich schlagartig → **Vergrößerung des Gefäßvolumens** bzw. Aufnahme eines Blutvolumens → **negative Druckwelle** → **Verringerung der Nachlast**, das linke Ventrikel muss gegen einen niedrigeren Druck auswerfen.",
+  "keyPoints": [
+   "Diastole: Ballon füllt sich → positive Druckwelle → bessere Koronar-/Organperfusion",
+   "Vor Systole: Ballon entleert sich → negative Druckwelle → Nachlast ↓",
+   "Effekt hängt vollständig vom richtigen Timing ab"
+  ],
+  "why": "Warum verbessert das Aufblähen des Ballons in der Diastole gerade die Durchblutung des Herzens selbst?",
+  "source": "MTS__08_HLM.pdf, Folie 13"
+ },
+ {
+  "id": "MTS-K8-05",
+  "fach": "MTS",
+  "unit": "MTS-K8",
+  "examMode": "free",
+  "front": "In welchen Timing-Verhältnissen kann die Gegenpulsation zum Herzzyklus getaktet werden?",
+  "back": "Die Gegenpulsation kann im Verhältnis **1:1** (jeder Herzzyklus), **1:2** (jeder zweite Herzzyklus) oder **1:3** (jeder dritte Herzzyklus) ausgelöst werden. Ein **synchroner Betrieb** zum Herzzyklus ist dabei in jedem Fall essenziell.",
+  "keyPoints": [
+   "1:1 = jeder Herzzyklus",
+   "1:2 = jeder zweite Herzzyklus",
+   "1:3 = jeder dritte Herzzyklus"
+  ],
+  "cloze": {
+   "text": "Die Gegenpulsation lässt sich im Verhältnis 1:1 (jeder Herzzyklus), 1:{{1}} (jeder zweite Herzzyklus) oder 1:{{2}} (jeder dritte Herzzyklus) auslösen; ein {{3}} Betrieb zum Herzzyklus ist dabei essenziell.",
+   "answers": [
+    "2",
+    "3",
+    "synchroner"
+   ]
+  },
+  "source": "MTS__08_HLM.pdf, Folie 13"
+ },
+ {
+  "id": "MTS-K8-06",
+  "fach": "MTS",
+  "unit": "MTS-K8",
+  "examMode": "free",
+  "front": "Warum kann die intraaortale Gegenpulsation nicht asynchron zum Herzzyklus betrieben werden?",
+  "back": "Die Wirkung der Gegenpulsation hängt vollständig von der **richtigen Phasenlage** zum Herzzyklus ab: Der Ballon muss sich in der **Diastole** füllen (Perfusion ↑) und **kurz vor der Systole** entleeren (Nachlast ↓). Bei falschem oder fehlendem Timing treten die gewünschten Effekte nicht zuverlässig auf – deshalb ist ein **synchroner Betrieb zum Herzzyklus essenziell** (EKG- oder Druck-getriggert).",
+  "keyPoints": [
+   "Wirkung hängt von exakter Phasenlage ab",
+   "Diastole: Füllen; kurz vor Systole: Entleeren",
+   "Synchronisation via EKG oder intraarteriellem Druck essenziell"
+  ],
+  "mc": {
+   "stem": "Was passiert grundsätzlich, wenn die Gegenpulsation nicht korrekt auf den Herzzyklus synchronisiert ist?",
+   "options": [
+    "Die gewünschten Effekte (Perfusion ↑, Nachlast ↓) treten nicht zuverlässig auf, weil sie von der richtigen Phasenlage abhängen",
+    "Das System arbeitet trotzdem normal weiter, da es wie ein VAD unabhängig vom Herzzyklus fördert",
+    "Der Ballon bläht sich dann dauerhaft auf und wirkt wie eine feste Gefäßstütze",
+    "Die Synchronisation ist nur für die Anzeige relevant, nicht für die Hämodynamik"
+   ],
+   "correct": "Die gewünschten Effekte (Perfusion ↑, Nachlast ↓) treten nicht zuverlässig auf, weil sie von der richtigen Phasenlage abhängen"
+  },
+  "source": "MTS__08_HLM.pdf, Folie 12–13"
+ },
+ {
+  "id": "MTS-K8-07",
+  "fach": "MTS",
+  "unit": "MTS-K8",
+  "examMode": "free",
+  "front": "Was ist die Grundidee eines asynchron arbeitenden VAD, und welche zwei Effekte erzielt sie?",
+  "back": "**Grundidee:** Erhöhung der Fördermenge durch eine „parallel geschaltete Quelle\" – dem Kreislauf wird Blut **vor dem (natürlichen) Auswurf entnommen** und **nach dem Auswurf zurückgegeben**.\n\n**Effekte:**\n1. **Verringerung der Herzarbeit** (das native Herz muss weniger leisten)\n2. **Erhöhung des Blutflusses**\n\nDer Betrieb muss/kann dabei **nicht auf den Herzzyklus synchronisiert** werden.",
+  "keyPoints": [
+   "„Parallel geschaltete Quelle\": Blutentnahme vor, Rückgabe nach Auswurf",
+   "Verringert Herzarbeit, erhöht Blutfluss",
+   "Kein Synchronbetrieb zum Herzzyklus nötig"
+  ],
+  "source": "MTS__08_HLM.pdf, Folie 19"
+ },
+ {
+  "id": "MTS-K8-08",
+  "fach": "MTS",
+  "unit": "MTS-K8",
+  "examMode": "free",
+  "front": "Worin unterscheiden sich pulsatile und nicht-pulsatile VAD grundlegend im Aufbau?",
+  "back": "- **Pulsatile Herzunterstützung (Pumpenventrikel):** Blut wird in eine Pumpenkammer aufgenommen (passiv, aktiv oder kombiniert); **Rückschlagventile verhindern Rückfluss**; zeitliche Ansteuerung nicht herzsynchron (z. B. gemäß Füllen/Entleeren der Pumpe) → zusätzlicher **pulsatiler** Blutfluss.\n- **Nicht-pulsatile Herzunterstützung (Rotationspumpen):** ein **Laufrad (Impeller)** zieht Blut an und wirft es aus, Drehmomentübertragung direkt oder magnetisch; **keine Ventile nötig**; Ergebnis: zusätzlicher **kontinuierlicher** Blutfluss.",
+  "keyPoints": [
+   "Pulsatil: Pumpenventrikel + Rückschlagventile, nicht herzsynchron getaktet",
+   "Nicht-pulsatil: Rotationspumpe/Impeller, keine Ventile",
+   "Pulsatil → pulsatiler Zusatzfluss, nicht-pulsatil → kontinuierlicher Zusatzfluss"
+  ],
+  "mc": {
+   "stem": "Warum benötigen nicht-pulsatile VAD (Rotationspumpen) keine Ventile?",
+   "options": [
+    "Weil ein rotierendes Laufrad kontinuierlich Blut ansaugt und auswirft, ohne Kammern zu füllen/entleeren",
+    "Weil sie grundsätzlich synchron zum Herzzyklus arbeiten",
+    "Weil das native Herz die Ventilfunktion übernimmt",
+    "Weil sie nur bei totalem Bypass eingesetzt werden"
+   ],
+   "correct": "Weil ein rotierendes Laufrad kontinuierlich Blut ansaugt und auswirft, ohne Kammern zu füllen/entleeren"
+  },
+  "source": "MTS__08_HLM.pdf, Folie 20 und 23"
+ },
+ {
+  "id": "MTS-K8-09",
+  "fach": "MTS",
+  "unit": "MTS-K8",
+  "examMode": "free",
+  "front": "Nenne die Anschlussmöglichkeiten (Ein-/Auslass) und drei Bauformen nicht-pulsatiler Rotationspumpen als VAD.",
+  "back": "**Einlass:** Kanüle direkt in den **linken Ventrikel** (für Unterstützung des großen Kreislaufs) oder in den **Vorhof**.\n**Auslass:** Kanüle in den **Aortenbogen** oder eine große herznahe Arterie.\n\n**Bauformen:** Axialpumpe, Radialpumpe, Diagonalpumpe – die **Flussrichtung am Austritt** unterscheidet die Varianten. Alle liefern einen **zusätzlichen kontinuierlichen** Blutfluss, ganz ohne Ventile.",
+  "keyPoints": [
+   "Einlass: linker Ventrikel oder Vorhof",
+   "Auslass: Aortenbogen oder herznahe Arterie",
+   "Bauformen: Axial-, Radial-, Diagonalpumpe"
+  ],
+  "source": "MTS__08_HLM.pdf, Folie 23"
+ },
+ {
+  "id": "MTS-K8-10",
+  "fach": "MTS",
+  "unit": "MTS-K8",
+  "examMode": "free",
+  "front": "Ordne den drei VAD-Beispielen Impella, HVAD und Synergy ihren jeweiligen Pumpentyp zu.",
+  "back": "- **Impella** (Abiomed): **(Mikro-)Axialpumpe**, Förderleistung bis **5 L/min**, Pumpe sitzt auf einem Katheter, Zugang über die **Arteria femoralis**, Einlass im linken Ventrikel, Auslass in der aufsteigenden Aorta.\n- **HVAD** (HeartWare): **Zentrifugalpumpe (Radialpumpe)**, Förderleistung bis **10 L/min**, Implantation am **Apex**, Einlass im linken Ventrikel („direkt in Pumpe\"), Auslass in der aufsteigenden Aorta.\n- **Synergy** (HeartWare): **Diagonalpumpe**, Förderleistung bis **4,25 L/min**, Implantation unterhalb des rechten Schlüsselbeins, Einlass im linken Vorhof, Auslass in der Arteria subclavia dextra.",
+  "keyPoints": [
+   "Impella = Axialpumpe (Katheter, A. femoralis, bis 5 L/min)",
+   "HVAD = Zentrifugalpumpe/Radialpumpe (Apex, bis 10 L/min)",
+   "Synergy = Diagonalpumpe (bis 4,25 L/min)"
+  ],
+  "cloze": {
+   "text": "Impella (Abiomed) ist eine (Mikro-){{1}}; HVAD (HeartWare) ist eine {{2}} (Radialpumpe); Synergy (HeartWare) ist eine {{3}}.",
+   "answers": [
+    "Axialpumpe",
+    "Zentrifugalpumpe",
+    "Diagonalpumpe"
+   ]
+  },
+  "source": "MTS__08_HLM.pdf, Folie 25–27"
+ },
+ {
+  "id": "MTS-K8-11",
+  "fach": "MTS",
+  "unit": "MTS-K8",
+  "examMode": "free",
+  "front": "Was ist ein Kardiotomiereservoir, und wofür wird es benötigt?",
+  "back": "**Kardiotomie** = die operative Öffnung des Herzens. Das **Kardiotomiereservoir** sammelt **nicht benötigtes Blut des Körpers** und **Blut aus dem OP-Feld** (Absaugung). Da dieses Blut Luft, Gewebereste und Schaum enthalten kann, benötigt es i. d. R. einen **Partikelfilter** und einen **Entschäumer**, bevor es wieder in den Kreislauf der HLM gelangt.",
+  "keyPoints": [
+   "Kardiotomie = operative Öffnung des Herzens",
+   "Sammelt Restblut des Körpers + Blut aus OP-Feld",
+   "Benötigt i. d. R. Partikelfilter und Entschäumer"
+  ],
+  "mc": {
+   "stem": "Welche zusätzliche Aufbereitung benötigt das Blut im Kardiotomiereservoir typischerweise?",
+   "options": [
+    "Partikelfilterung und Entschäumung",
+    "Zusätzliche Kardioplegielösung",
+    "Erwärmung über den Wärmetauscher",
+    "Beimischung von Heliumgas"
+   ],
+   "correct": "Partikelfilterung und Entschäumung"
+  },
+  "source": "MTS__08_HLM.pdf, Folie 31"
+ },
+ {
+  "id": "MTS-K8-12",
+  "fach": "MTS",
+  "unit": "MTS-K8",
+  "examMode": "free",
+  "front": "Was bedeutet Kardioplegie, und welche zwei Aufgaben erfüllt die Kardioplegielinie?",
+  "back": "**Kardioplegie** = (hier künstlich herbeigeführter) **Herzstillstand**.\n\nDie **Kardioplegielinie** perfundiert das Gefäßsystem des Herzens mit **oxygeniertem Blut und einer Lösung**, die:\n1. primär eine **schlaffe Lähmung** des Herzens erzeugt (Stillstand für die Operation)\n2. durch **Kühlung des Herzens** den **Energiebedarf reduziert** (Schutz des Herzmuskels während des künstlichen Stillstands)",
+  "keyPoints": [
+   "Kardioplegie = künstlich herbeigeführter Herzstillstand",
+   "Kardioplegielösung: schlaffe Lähmung + oxygeniertes Blut",
+   "Kühlung senkt den Energiebedarf des Herzens"
+  ],
+  "why": "Warum wird das Herz während der Kardioplegie zusätzlich gekühlt, obwohl es bereits stillgelegt ist?",
+  "source": "MTS__08_HLM.pdf, Folie 31"
+ },
+ {
+  "id": "MTS-K8-13",
+  "fach": "MTS",
+  "unit": "MTS-K8",
+  "examMode": "free",
+  "front": "Unterscheide totalen und partiellen Bypass an der HLM.",
+  "back": "- **Totaler Bypass:** **kein Blutfluss durch das Herz** – die HLM übernimmt die komplette Kreislauffunktion.\n- **Partieller Bypass:** ein Teil des Blutflusses läuft weiterhin durch das Herz; wird **vor allem beim Hochfahren bzw. bei der Entwöhnung (Weaning) der HLM** eingesetzt, also beim schrittweisen Übergang zwischen Eigen- und Maschinenkreislauf.",
+  "keyPoints": [
+   "Totaler Bypass: kein Blutfluss durchs Herz",
+   "Partieller Bypass: Herz noch teilweise durchflossen",
+   "Partieller Bypass v. a. beim Hochfahren/Weaning der HLM"
+  ],
+  "mc": {
+   "stem": "Wann wird typischerweise ein partieller statt ein totaler Bypass eingesetzt?",
+   "options": [
+    "Beim Hochfahren bzw. bei der Entwöhnung (Weaning) der HLM",
+    "Ausschließlich während der Kardioplegie",
+    "Nur bei veno-venöser ECMO",
+    "Immer dann, wenn der Oxygenator ausfällt"
+   ],
+   "correct": "Beim Hochfahren bzw. bei der Entwöhnung (Weaning) der HLM"
+  },
+  "source": "MTS__08_HLM.pdf, Folie 31"
+ },
+ {
+  "id": "MTS-K8-14",
+  "fach": "MTS",
+  "unit": "MTS-K8",
+  "examMode": "free",
+  "front": "Unterscheide vvECMO, vaECMO und pECLA nach ihrer Indikation.",
+  "back": "- **vvECMO** (veno-venös): schweres Lungenversagen, **Pumpfähigkeit des Herzens ausreichend** – nur die Lungenfunktion wird ersetzt/unterstützt.\n- **vaECMO** (veno-arteriell): schweres Lungenversagen, **Pumpfähigkeit eingeschränkt** – zusätzlich wird der Kreislauf unterstützt.\n- **pECLA** (pumpenlose arterio-venöse extrakorporale Lungenunterstützung/ECLA): **leichtes** Lungenversagen, kommt ohne eigene Pumpe aus.",
+  "keyPoints": [
+   "vvECMO: Lungenversagen, Herz pumpt ausreichend",
+   "vaECMO: Lungenversagen + eingeschränkte Pumpfähigkeit",
+   "pECLA: leichtes Lungenversagen, pumpenlos"
+  ],
+  "mc": {
+   "stem": "Wann ist eine vaECMO gegenüber einer vvECMO indiziert?",
+   "options": [
+    "Bei schwerem Lungenversagen mit zusätzlich eingeschränkter Pumpfähigkeit des Herzens",
+    "Nur wenn keinerlei Kreislaufunterstützung nötig ist",
+    "Bei leichtem Lungenversagen ohne Kreislaufbeteiligung",
+    "Ausschließlich bei intakter Herzfunktion"
+   ],
+   "correct": "Bei schwerem Lungenversagen mit zusätzlich eingeschränkter Pumpfähigkeit des Herzens"
+  },
+  "source": "MTS__08_HLM.pdf, Folie 32"
+ },
+ {
+  "id": "MTS-K8-15",
+  "fach": "MTS",
+  "unit": "MTS-K8",
+  "examMode": "free",
+  "front": "Vergleiche HLM und ECMO hinsichtlich Einsatzbereich, Anwendungsdauer und Pumpfunktion.",
+  "back": "**Unterschiede:**\n- **Einsatzbereich:** HLM v. a. **Herzchirurgie**, ECMO **Intensivmedizin allgemein**\n- **Anwendungsdauer:** HLM **zeitlich sehr begrenzt** (einige Stunden), ECMO **mittel- bis langfristig** (mehrere Tage)\n- **Pumpfunktion:** bei ECMO liegt eine **eigene (Teil-)Pumpenfunktion** vor\n\n**Gemeinsamkeiten:** beide sind **extrakorporale Zirkulationen** mit technisch sehr ähnlichen Hauptkomponenten – **Pumpe(n), Oxygenator (+ Wärmetauscher), Sensorik, Filter, Reservoirs** – nur unterschiedlich stark ausgeprägt.",
+  "keyPoints": [
+   "HLM: Herzchirurgie, Stunden; ECMO: Intensivmedizin, Tage",
+   "ECMO hat eigene (Teil-)Pumpenfunktion",
+   "Gemeinsame Hauptkomponenten: Pumpe, Oxygenator+Wärmetauscher, Sensorik, Filter, Reservoirs"
+  ],
+  "why": "Warum kann dieselbe technische Grundarchitektur (Pumpe + Oxygenator) sowohl für eine stundenlange HLM-Operation als auch für eine tagelange ECMO-Therapie genutzt werden?",
+  "source": "MTS__08_HLM.pdf, Folie 33"
+ },
+ {
+  "id": "MTS-K8-16",
+  "fach": "MTS",
+  "unit": "MTS-K8",
+  "examMode": "free",
+  "front": "Vergleiche Rollenpumpe (Verdrängerpumpe) und Rotationspumpe (z. B. Zentrifugalpumpe) hinsichtlich Funktionsprinzip sowie Vor- und Nachteilen.",
+  "back": "**Rollenpumpe (Verdrängerpumpe):**\n- Rotierende Bewegung, **zyklisches Zusammendrücken eines Schlauches**\n- Anpressdruck meist einstellbar (bis zum vollkommenen Verschluss des Schlauches)\n- Ausgang zeigt (geringe) **Druckpulsation**\n- **Vorteile:** einfache, günstige Umsetzung; Blutfluss lässt sich vollständig stoppen\n- **Nachteil:** **Schädigung von Erythrozyten** durch das wiederholte mechanische Zusammendrücken des Schlauches\n\n**Rotationspumpe (in der HLM meist Radialpumpe/Zentrifugalpumpe):**\n- Flussrichtung am Austritt unterscheidet die Varianten\n- Pumpenkopf ist **Verbrauchsmaterial**\n- **Keine Druckpulsation**\n- **Vorteil:** (heute) **geringere Schädigung der Erythrozyten** als bei der Rollenpumpe\n- **Nachteile:** komplexere Umsetzung; bei **Pumpenstillstand retrograder Fluss** möglich – benötigt ein Ventil oder muss weitergedreht werden, auch ohne Förderleistung",
+  "keyPoints": [
+   "Rollenpumpe: Schlauchkompression, einfach/günstig, stoppbar, mehr Erythrozytenschädigung",
+   "Rotationspumpe: kein Kontaktverschluss, keine Druckpulsation, heute weniger Schädigung",
+   "Rotationspumpe: bei Stillstand Gefahr von retrogradem Fluss"
+  ],
+  "why": "Warum kann bei einer stillstehenden Rotationspumpe Blut in die falsche Richtung zurückfließen, bei einer stillstehenden Rollenpumpe aber nicht?",
+  "source": "MTS__08_HLM.pdf, Folie 34–35"
+ },
+ {
+  "id": "MTS-K8-17",
+  "fach": "MTS",
+  "unit": "MTS-K8",
+  "examMode": "free",
+  "front": "Vergleiche die drei Funktionsprinzipien von Oxygenatoren und nenne den Grund, warum sich der Membranoxygenator durchgesetzt hat.",
+  "back": "- **Filmoxygenator/Scheibenoxygenator:** erzeugt einen dünnen Blutfilm (Sieb oder rotierende Scheiben, die ins Blut eintauchen) in Sauerstoffumgebung; Gas in **direktem Kontakt** zum Blut → sehr schlecht steuerbar, aufwändige Reinigung, wenig blutschonend.\n- **Blasenoxygenator:** Dispersion von Gasblasen im Blut; Gas ebenfalls in **direktem Kontakt** → schlecht steuerbar, **Gefahr von Mikroembolien**.\n- **Membranoxygenator:** **Gas und Blut sind durch eine Membran getrennt** – kein direkter Kontakt, dadurch gut steuerbar und deutlich blutschonender. Heute Standard, meist mit integriertem Wärmetauscher.",
+  "keyPoints": [
+   "Film-/Scheibenoxygenator und Blasenoxygenator: direkter Gas-Blut-Kontakt",
+   "Blasenoxygenator: zusätzlich Mikroembolie-Risiko",
+   "Membranoxygenator: Gas/Blut getrennt → steuerbar, blutschonend, heute Standard"
+  ],
+  "mc": {
+   "stem": "Was ist der entscheidende Konstruktionsunterschied des Membranoxygenators gegenüber Film- und Blasenoxygenator?",
+   "options": [
+    "Gas und Blut sind durch eine gasdurchlässige Membran voneinander getrennt",
+    "Das Blut wird als dünner Film über rotierende Scheiben geführt",
+    "Gasblasen werden direkt im Blut dispergiert",
+    "Der Gasaustausch erfolgt ganz ohne Diffusion"
+   ],
+   "correct": "Gas und Blut sind durch eine gasdurchlässige Membran voneinander getrennt"
+  },
+  "source": "MTS__08_HLM.pdf, Folie 36"
+ },
+ {
+  "id": "MTS-K8-18",
+  "fach": "MTS",
+  "unit": "MTS-K8",
+  "examMode": "free",
+  "front": "Wie ist ein Membranoxygenator aufgebaut, und wonach richtet sich die Transferrate des Gasaustauschs?",
+  "back": "**Aufbau:** Gasseite und Blutseite sind durch eine gasdurchlässige Membran getrennt; das **Gas wird in dünnen Fasern geführt** (Durchmesser ≈ 200–400 µm, Wanddicke ≈ 20–50 µm), die vom Blut umströmt werden. Materialien: **mikroporöse Polypropylen-Fasern** (gute Austauschrate, aber Plasmaübertritt), **Silikonmembranen** (plasmadicht, geringere Austauschrate), heute meist **Kompositmembranen** (poröses Polymethylpenten + Beschichtung).\n\n**Funktion:** Antrieb ist die **Diffusion entlang von Partialdruckdifferenzen** – für O₂ muss $p_{O_2,Gas} > p_{O_2,Blut}$ gelten. Die Transferrate $\\dot V_{O_2} = f(\\Delta p, A, K_{O_2})$ hängt von der Partialdruckdifferenz, der Austauschfläche $A$ und dem Austauschkoeffizienten $K_{O_2}$ ab. Das **Gegenstromprinzip** liefert dabei die günstigsten (größten) Partialdruckdifferenzen entlang der Faser.",
+  "keyPoints": [
+   "Gas in Fasern (Ø 200–400 µm), Blut umströmt sie",
+   "Materialien: Polypropylen (porös), Silikon (dicht), Kompositmembran (heute Standard)",
+   "Transferrate V̇_O2 = f(Δp, A, K_O2); Gegenstrom optimiert Δp"
+  ],
+  "source": "MTS__08_HLM.pdf, Folie 37–38"
+ },
+ {
+  "id": "MTS-K9-01",
+  "fach": "MTS",
+  "unit": "MTS-K9",
+  "examMode": "free",
+  "front": "Was ist das **Nephron**, und aus welchen zwei Bestandteilen setzt es sich zusammen?",
+  "back": "Das Nephron ist die **funktionelle Untereinheit der Niere** – ca. **1 Million Nephrone pro Niere**.\n\n**Zwei Bestandteile:**\n- **Nierenkörperchen:** Glomerulus (Kapillarknäuel) + Bowman-Kapsel, Durchmesser ≈ **0,2 mm**.\n- **Tubulus:** gegliedert in **proximaler Tubulus → Henle-Schleife → distaler Tubulus → Verbindungsstück → Sammelrohr**.\n\nIm Nierenkörperchen entsteht der Primärharn (Filtration), entlang des Tubulus wird er durch Resorption und Sekretion weiterverarbeitet.",
+  "keyPoints": [
+   "Funktionelle Untereinheit der Niere, ca. 1 Million pro Niere",
+   "Nierenkörperchen: Glomerulus + Bowman-Kapsel (Ø ≈ 0,2 mm)",
+   "Tubulus: proximaler Tubulus → Henle-Schleife → distaler Tubulus → Verbindungsstück → Sammelrohr"
+  ],
+  "mc": {
+   "stem": "Aus welchen zwei Hauptbestandteilen besteht ein Nephron?",
+   "options": [
+    "Nierenkörperchen und Tubulus",
+    "Glomerulus und Nierenbecken",
+    "Rinde und Mark",
+    "Vas afferens und Vas efferens"
+   ],
+   "correct": "Nierenkörperchen und Tubulus"
+  },
+  "source": "MTS__09_NES1.pdf, Folie 8–9"
+ },
+ {
+  "id": "MTS-K9-02",
+  "fach": "MTS",
+  "unit": "MTS-K9",
+  "examMode": "free",
+  "front": "Beschreibe die **Gefäßkette der Nierendurchblutung** von der Arteria renalis bis zu den Venae interlobares, und nenne die Besonderheit.",
+  "back": "**A. renalis → Aa. interlobares → Aa. arcuatae → Aa. interlobulares → Vasa afferentia → Kapillaren im Glomerulus → Vasa efferentia → peritubuläre Kapillaren (Rinde) bzw. Vasa recta (Mark) → Venae interlobulares → Venae arcuatae → Venae interlobares.**\n\n**Besonderheit:** Nach den Kapillaren im Glomerulus schließt sich über das Vas efferens ein **zweites Kapillargebiet** an (peritubuläre Kapillaren/Vasa recta) – ohne dass dazwischen eine Vene liegt. Die **Nierenrinde** (Glomeruli + peritubuläre Kapillaren) ist stark durchblutet, das **Nierenmark** dagegen schwach.",
+  "keyPoints": [
+   "Kette: A. renalis → interlobares → arcuatae → interlobulares → Vas afferens → Glomerulus → Vas efferens → peritubuläre Kapillaren/Vasa recta → Venen",
+   "Besonderheit: zweites Kapillargebiet nach dem Glomerulus ohne zwischengeschaltete Vene",
+   "Rinde stark, Mark schwach durchblutet"
+  ],
+  "cloze": {
+   "text": "Nach den Kapillaren im Glomerulus folgt über das {{1}} ein zweites Kapillargebiet (peritubuläre Kapillaren bzw. Vasa recta) – ohne dass dazwischen eine {{2}} liegt. Die Nierenrinde ist dabei deutlich {{3}} durchblutet als das Nierenmark.",
+   "answers": [
+    "Vas efferens",
+    "Vene",
+    "stärker"
+   ]
+  },
+  "source": "MTS__09_NES1.pdf, Folie 10"
+ },
+ {
+  "id": "MTS-K9-03",
+  "fach": "MTS",
+  "unit": "MTS-K9",
+  "examMode": "free",
+  "front": "Was ist der **effektive Filtrationsdruck** $P_{eff}$ am Glomerulus, und welche vier Druckkomponenten bestimmen ihn?",
+  "back": "Die glomeruläre Filtration wird angetrieben vom **effektiven Filtrationsdruck**:\n$$P_{eff} = \\Delta P - \\Delta \\pi = (p_K - p_G) - (\\pi_K - \\pi_G)$$\n- $p_K$ – **hydrostatischer Druck in den Kapillaren** (≈50 mmHg) – treibt die Filtration an.\n- $p_G$ – **Gewebedruck** im Bowman-Raum ($p_G = p_{Bowman}$, ≈15 mmHg) – wirkt entgegen.\n- $\\pi_K$ – **onkotischer (kolloidosmotischer) Druck** im Kapillarblut (≈25 mmHg) – wirkt entgegen (hält Wasser im Gefäß).\n- $\\pi_G$ – onkotischer Druck im Bowman-Raum (≈0 mmHg, da Primärharn praktisch proteinfrei).\n\nDamit: $GFR = L_P \\cdot F \\cdot P_{eff} = K_f \\cdot P_{eff}$ (hydraulische Leitfähigkeit $L_P$, Fläche $F$, Ultrafiltrationskoeffizient $K_f$).",
+  "keyPoints": [
+   "Peff = ΔP − Δπ = (pK − pG) − (πK − πG)",
+   "Hydrostatischer Druck pK treibt die Filtration an",
+   "Onkotischer Druck πK wirkt der Filtration entgegen",
+   "GFR = Lp·F·Peff = Kf·Peff"
+  ],
+  "why": "Warum wirkt der onkotische Druck der Plasmaproteine der Filtration entgegen, obwohl er nur eine Eigenschaft des Blutes und keine mechanische Kraft von außen ist?",
+  "source": "MTS__09_NES1.pdf, Folie 14"
+ },
+ {
+  "id": "MTS-K9-04",
+  "fach": "MTS",
+  "unit": "MTS-K9",
+  "examMode": "calc",
+  "front": "Berechne den **effektiven Filtrationsdruck** $P_{eff}$ am Glomerulus aus den vier Druckkomponenten.",
+  "back": "$$P_{eff} = (p_K - p_G) - (\\pi_K - \\pi_G)$$\nHydrostatische Druckdifferenz minus onkotische Druckdifferenz. Mit den typischen Werten $p_K$ = 50 mmHg, $p_G$ = 15 mmHg, $\\pi_K$ = 25 mmHg, $\\pi_G$ = 0 mmHg ergibt sich $P_{eff}$ = (50 − 15) − (25 − 0) = 35 − 25 = **10 mmHg**.",
+  "keyPoints": [
+   "Peff = (pK − pG) − (πK − πG)",
+   "Hydrostatische Differenz minus onkotische Differenz",
+   "Typisch: 35 mmHg − 25 mmHg ≈ 10 mmHg"
+  ],
+  "calc": {
+   "vars": {
+    "pK": [
+     45,
+     55,
+     1
+    ],
+    "pG": [
+     10,
+     20,
+     1
+    ],
+    "piK": [
+     20,
+     30,
+     1
+    ],
+    "piG": [
+     0,
+     5,
+     1
+    ]
+   },
+   "given": "Kapillardruck $p_K$ = [[pK]] mmHg, Gewebedruck (Bowman) $p_G$ = [[pG]] mmHg, onkotischer Druck im Kapillarblut $\\pi_K$ = [[piK]] mmHg, onkotischer Druck im Bowman-Raum $\\pi_G$ = [[piG]] mmHg. Gesucht: effektiver Filtrationsdruck $P_{eff}$.",
+   "solution": "(pK-pG)-(piK-piG)",
+   "unit": "mmHg",
+   "steps": [
+    "Hydrostatische Druckdifferenz: $\\Delta P = p_K - p_G$ = [[pK]] − [[pG]] = [[= pK-pG]] mmHg",
+    "Onkotische Druckdifferenz: $\\Delta \\pi = \\pi_K - \\pi_G$ = [[piK]] − [[piG]] = [[= piK-piG]] mmHg",
+    "$P_{eff} = \\Delta P - \\Delta \\pi$ = [[= pK-pG]] − [[= piK-piG]] = [[= (pK-pG)-(piK-piG)]] mmHg"
+   ],
+   "example": {
+    "vars": {
+     "pK": 50,
+     "pG": 15,
+     "piK": 25,
+     "piG": 0
+    },
+    "result": 10
+   }
+  },
+  "source": "MTS__09_NES1.pdf, Folie 14"
+ },
+ {
+  "id": "MTS-K9-05",
+  "fach": "MTS",
+  "unit": "MTS-K9",
+  "examMode": "free",
+  "front": "Welche **vier Typen tubulärer Transportprozesse** gibt es, und wodurch unterscheiden sie sich?",
+  "back": "- **I – Passive tubuläre Resorption:** folgt Konzentrationsgradienten, betrifft vor allem **Wasser und gelöste Stoffe**.\n- **II – Aktive geregelte tubuläre Resorption:** Transport unter **Energieaufwand**, z. B. **Na⁺**.\n- **III – Passive tubuläre Sekretion:** folgt Konzentrationsgradienten, z. B. **NH₃**.\n- **IV – Aktive geregelte tubuläre Sekretion:** Transport unter Energieaufwand, vor allem **H⁺**.\n\nIm **Sammelrohr** erfolgt zusätzlich eine **aktiv geregelte Konzentrierung** über Osmose, d. h. bedarfsgerechter Wasserentzug.",
+  "keyPoints": [
+   "I: passive Resorption (Konzentrationsgradient)",
+   "II: aktive Resorption unter Energieaufwand, z. B. Na⁺",
+   "III: passive Sekretion, z. B. NH₃",
+   "IV: aktive Sekretion, v. a. H⁺"
+  ],
+  "cloze": {
+   "text": "Typ I ist die {{1}} tubuläre Resorption entlang von Konzentrationsgradienten. Typ II ist die aktive Resorption unter Energieaufwand, z. B. von {{2}}⁺-Ionen. Typ IV ist die aktive tubuläre Sekretion, vor allem von {{3}}⁺-Ionen.",
+   "answers": [
+    "passive",
+    "Na",
+    "H"
+   ]
+  },
+  "source": "MTS__09_NES1.pdf, Folie 15"
+ },
+ {
+  "id": "MTS-K9-06",
+  "fach": "MTS",
+  "unit": "MTS-K9",
+  "examMode": "free",
+  "front": "Verfolge den **Mengenfluss durch das Nephron**: Wie viel wird gefiltert, wie viel bleibt am Ende als Urin übrig?",
+  "back": "**Mengenbilanz pro Tag:** 1500 L Blut durch die Nierenarterien → **180 L Filtrat** in den Glomeruli → 60 L am Ende des proximalen Tubulus → 20 L zu Beginn des distalen Tubulus → 10 L am Ende des distalen Tubulus → **1,5 L** am Ende des Sammelrohrs = tatsächliche Ausscheidung.\n\nDer größte Rückresorptionsschritt passiert bereits im **proximalen Tubulus** (180 L → 60 L), Henle-Schleife und distaler Tubulus/Sammelrohr konzentrieren den Harn weiter auf ≈1,5 L.",
+  "keyPoints": [
+   "1500 L Blut/Tag durchfließen die Nierenarterien",
+   "180 L Primärharn/Tag werden in den Glomeruli filtriert",
+   "Größter Rückresorptionsschritt: 180 L → 60 L bereits im proximalen Tubulus",
+   "Nur ≈1,5 L/Tag verlassen den Körper als Urin"
+  ],
+  "mc": {
+   "stem": "Wie groß ist die tägliche glomeruläre Filtrationsmenge (Primärharn) beim Gesunden ungefähr?",
+   "options": [
+    "≈180 L",
+    "≈1,5 L",
+    "≈60 L",
+    "≈1500 L"
+   ],
+   "correct": "≈180 L"
+  },
+  "source": "MTS__09_NES1.pdf, Folie 18"
+ },
+ {
+  "id": "MTS-K9-07",
+  "fach": "MTS",
+  "unit": "MTS-K9",
+  "examMode": "free",
+  "front": "Wie funktioniert die renale **Autoregulation**, und welche drei Mechanismen wirken vor allem am Vas afferens?",
+  "back": "Durchblutung (**renaler Plasmafluss, RPF**) und **GFR** bleiben im Bereich **80–180 mmHg** arteriellem Mitteldruck nahezu konstant – geregelt v. a. über das **Vas afferens**:\n- **Myogene Vasokonstriktion (Bayliss-Effekt):** Ein erhöhter transmuraler Druck löst reflektorisch eine Vasokonstriktion der Gefäßmuskulatur aus.\n- **Prostaglandine:** Werden bei **Mangeldurchblutung des Nierenmarks** gebildet und wirken vasodilatatorisch – sie wirken der myogenen Konstriktion entgegen.\n- **Tubuloglomeruläres Feedback:** Steigt die Filtration, steigt die NaCl-Menge im Primärharn. Reicht die Resorption nicht aus, registriert die **Macula densa** mehr NaCl im distalen Tubulus → **Kontraktion des Vas afferens** → Filtration sinkt wieder.\n\nHormone und weitere Mediatoren stellen die Autoregulation zusätzlich neu ein.",
+  "keyPoints": [
+   "RPF und GFR konstant im Bereich 80–180 mmHg",
+   "Bayliss-Effekt: myogene Vasokonstriktion bei erhöhtem Druck",
+   "Prostaglandine: Vasodilatation bei Mangeldurchblutung des Marks",
+   "Tubuloglomeruläres Feedback: NaCl an Macula densa steuert Vas afferens"
+  ],
+  "why": "Warum senkt eine Kontraktion des Vas afferens die glomeruläre Filtration – und wie hängt das mit der Peff-Formel zusammen?",
+  "mc": {
+   "stem": "Was löst beim tubuloglomerulären Feedback die Kontraktion des Vas afferens aus?",
+   "options": [
+    "Ein erhöhter NaCl-Gehalt an der Macula densa",
+    "Ein Abfall des arteriellen Mitteldrucks unter 80 mmHg",
+    "Eine erhöhte Proteinkonzentration im Primärharn",
+    "Prostaglandin-Ausschüttung im Nierenmark"
+   ],
+   "correct": "Ein erhöhter NaCl-Gehalt an der Macula densa"
+  },
+  "source": "MTS__09_NES1.pdf, Folie 16–17"
+ },
+ {
+  "id": "MTS-K9-08",
+  "fach": "MTS",
+  "unit": "MTS-K9",
+  "examMode": "free",
+  "front": "Was ist die **fraktionelle Ausscheidung** $f$, und in welchem Wertebereich liegt sie?",
+  "back": "$$f = \\frac{\\dot n_U}{\\dot n_g}$$\nVerhältnis der **Stoffmenge pro Zeit im Urin** ($\\dot n_U$) zur **Stoffmenge pro Zeit, die über den glomerulären Filter geht** ($\\dot n_g$).\n\n- **Minimal: 0** – vollständige Rückresorption, Beispiel **Glucose**.\n- **Maximal: bis ca. 5** – ausgeprägte Sekretion, Beispiel **p-Aminohippursäure**.\n\n$f = 1$ bedeutet: ausschließliche Filtration, keine Netto-Resorption oder -Sekretion (z. B. Inulin).",
+  "keyPoints": [
+   "f = ṅU/ṅg (ausgeschiedene / filtrierte Stoffmenge pro Zeit)",
+   "Minimal 0: vollständige Rückresorption (Glucose)",
+   "Maximal ≈5: ausgeprägte Sekretion (p-Aminohippursäure)",
+   "f = 1: ausschließliche Filtration (Inulin)"
+  ],
+  "cloze": {
+   "text": "Die fraktionelle Ausscheidung $f = \\dot n_U/\\dot n_g$ nimmt minimal den Wert {{1}} an (vollständige Rückresorption, Beispiel Glucose) und maximal etwa {{2}} (ausgeprägte Sekretion, Beispiel p-Aminohippursäure).",
+   "answers": [
+    "0",
+    "5"
+   ]
+  },
+  "source": "MTS__09_NES1.pdf, Folie 20"
+ },
+ {
+  "id": "MTS-K9-09",
+  "fach": "MTS",
+  "unit": "MTS-K9",
+  "examMode": "free",
+  "front": "Wie leitet man aus der **fraktionellen Ausscheidung** die Formel für die glomeruläre Filtrationsrate her?",
+  "back": "Massestrom ergibt sich immer aus **Volumenstrom · Konzentration**:\n$$\\dot n_U = \\dot V_U \\cdot U \\qquad \\dot n_g = \\dot V_{PH} \\cdot PH$$\nmit Urinzeitvolumen $\\dot V_U$, Stoffkonzentration im Urin $U$, Primärharnzeitvolumen $\\dot V_{PH}$ und Stoffkonzentration im Primärharn $PH$.\n\nEingesetzt in $f = \\dot n_U / \\dot n_g$ und nach $\\dot V_{PH}$ aufgelöst:\n$$\\dot V_{PH} = \\frac{U}{f \\cdot PH} \\cdot \\dot V_U = GFR$$\nKennt man also $f$ sowie die Konzentrationen in Urin und Primärharn, lässt sich daraus die GFR berechnen.",
+  "keyPoints": [
+   "Massestrom = Volumenstrom · Konzentration",
+   "ṅU = V̇U·U, ṅg = V̇PH·PH",
+   "f = ṅU/ṅg nach V̇PH aufgelöst ergibt GFR",
+   "V̇PH = (U/(f·PH))·V̇U"
+  ],
+  "why": "Warum reicht ein reiner Konzentrationsvergleich nicht aus, um die GFR zu bestimmen – warum muss man mit dem Volumenstrom multiplizieren?",
+  "source": "MTS__09_NES1.pdf, Folie 20–21"
+ },
+ {
+  "id": "MTS-K9-10",
+  "fach": "MTS",
+  "unit": "MTS-K9",
+  "examMode": "free",
+  "front": "Definiere die **Clearance**, und leite die Formel $\\dot V_P = \\dot V_U \\cdot U/P$ aus einer Massebilanz her.",
+  "back": "**Clearance:** Auswaschleistung der Niere – das **fiktive Blutplasmavolumen**, das in einer bestimmten Zeit vollständig von einer interessierenden Testsubstanz befreit wird. Einheit **mL/min**.\n\n**Herleitung über Massebilanz:** Was ausgeschieden wird, muss vorher im Plasma gewesen sein: $\\dot n_P = \\dot n_U$. Mit $\\dot n_P = \\dot V_P \\cdot P$ (Plasmazeitvolumen $\\dot V_P$, Plasmakonzentration $P$) und $\\dot n_U = \\dot V_U \\cdot U$ (Urinzeitvolumen $\\dot V_U$, Urinkonzentration $U$) folgt:\n$$\\dot V_P = \\dot V_U \\cdot \\frac{U}{P} = \\text{Clearance}$$",
+  "keyPoints": [
+   "Clearance = fiktives Plasmavolumen, das pro Zeit von einem Stoff befreit wird",
+   "Herleitung: ṅP = ṅU (Massebilanz)",
+   "V̇P = V̇U · U/P",
+   "Einheit: mL/min"
+  ],
+  "mc": {
+   "stem": "Was bedeutet die Clearance eines Stoffes anschaulich?",
+   "options": [
+    "Das fiktive Blutplasmavolumen, das pro Zeit vollständig von diesem Stoff befreit wird",
+    "Das tatsächlich filtrierte Blutvolumen pro Herzschlag",
+    "Die im Urin ausgeschiedene Stoffmenge pro Tag",
+    "Der Druckabfall über den Glomeruluskapillaren"
+   ],
+   "correct": "Das fiktive Blutplasmavolumen, das pro Zeit vollständig von diesem Stoff befreit wird"
+  },
+  "source": "MTS__09_NES1.pdf, Folie 22"
+ },
+ {
+  "id": "MTS-K9-11",
+  "fach": "MTS",
+  "unit": "MTS-K9",
+  "examMode": "free",
+  "front": "Warum eignet sich **Inulin** ideal zur Bestimmung der GFR?",
+  "back": "Ansatz: Man braucht einen Stoff, der **frei filtrierbar** ist und im Tubulus **weder resorbiert noch sezerniert noch gebildet oder abgebaut** wird.\n\nFür Inulin gilt dann: Die **filtrierte Inulinmenge/Zeit** entspricht exakt der **ausgeschiedenen Inulinmenge/Zeit** (fraktionelle Ausscheidung $f = 1$) → die Inulinkonzentration im Filtrat entspricht der im Plasma → **Clearance von Inulin = GFR**.\n\nKlinische Bestimmung: **15-minütige Inulin-Infusion** mit **konstanter Plasmakonzentration**, Sammeln des ausgeschiedenen Urins, Bestimmung der Inulinkonzentration, Einsetzen in die Clearance-Formel. Ergebnis: Inulin-Clearance ≈ **125 mL/min**.",
+  "keyPoints": [
+   "Frei filtrierbar, keine Resorption/Sekretion/Bildung/Abbau im Tubulus",
+   "f = 1 → Inulinkonzentration im Filtrat = im Plasma",
+   "Inulin-Clearance = GFR ≈ 125 mL/min",
+   "Klinisch: 15-min-Infusion mit konstanter Plasmakonzentration"
+  ],
+  "why": "Warum würde ein Stoff, der im Tubulus zusätzlich sezerniert wird (wie H⁺), die GFR über die Clearance-Formel überschätzen?",
+  "source": "MTS__09_NES1.pdf, Folie 23–24"
+ },
+ {
+  "id": "MTS-K9-12",
+  "fach": "MTS",
+  "unit": "MTS-K9",
+  "examMode": "calc",
+  "front": "Berechne die **Inulin-Clearance** (= GFR) aus Urinzeitvolumen sowie Inulinkonzentration in Urin und Plasma.",
+  "back": "$$\\text{Clearance} = \\dot V_P = \\dot V_U \\cdot \\frac{U}{P}$$\nDa Inulin frei filtriert, aber im Tubulus weder resorbiert noch sezerniert wird, entspricht diese Clearance direkt der **GFR** – klinisch typischerweise ≈ **125 mL/min**.",
+  "keyPoints": [
+   "Clearance = V̇U · U/P",
+   "Inulin: weder Resorption noch Sekretion → Clearance = GFR",
+   "Typischer klinischer Wert: ≈125 mL/min"
+  ],
+  "calc": {
+   "vars": {
+    "Vu": [
+     0.5,
+     2,
+     0.1
+    ],
+    "Uc": [
+     50,
+     200,
+     5
+    ],
+    "Pc": [
+     0.5,
+     2,
+     0.1
+    ]
+   },
+   "given": "Urinzeitvolumen $\\dot V_U$ = [[Vu]] mL/min, Inulinkonzentration im Urin $U$ = [[Uc]] mg/mL, Inulinkonzentration im Plasma $P$ = [[Pc]] mg/mL. Gesucht: Inulin-Clearance (= GFR).",
+   "solution": "Vu*Uc/Pc",
+   "unit": "mL/min",
+   "steps": [
+    "Clearance-Formel: $\\dot V_P = \\dot V_U \\cdot U/P$",
+    "Einsetzen: [[Vu]] · [[Uc]] / [[Pc]] = [[= Vu*Uc/Pc]] mL/min",
+    "Da Inulin weder resorbiert noch sezerniert wird, entspricht dieser Wert direkt der GFR."
+   ],
+   "example": {
+    "vars": {
+     "Vu": 1,
+     "Uc": 125,
+     "Pc": 1
+    },
+    "result": 125
+   }
+  },
+  "source": "MTS__09_NES1.pdf, Folie 22, 24"
+ },
+ {
+  "id": "MTS-K9-13",
+  "fach": "MTS",
+  "unit": "MTS-K9",
+  "examMode": "free",
+  "front": "Welche **Clearance-Bereiche** zeigen welches Zusammenspiel von Filtration, Resorption und Sekretion?",
+  "back": "- **0 mL/min:** keine Filtration + keine Sekretion (z. B. **Eiweiß**) **oder** Filtration mit vollständiger Resorption (z. B. **Glukose**).\n- **0–125 mL/min:** Filtration + Resorption (z. B. **Harnstoff**); oder Filtration + Resorption + etwas Sekretion, wobei Sekretion < Resorption (z. B. **Kalium**).\n- **≈125 mL/min:** ausschließliche Filtration (z. B. **Inulin**) – oder Filtration + Resorption + Sekretion in exakter Balance.\n- **125–600 mL/min:** Filtration + Sekretion (z. B. **H⁺-Ionen**).\n- **600 mL/min:** Maximum – entspricht dem **renalen Plasmafluss**.",
+  "keyPoints": [
+   "0 mL/min: keine Netto-Filtration wirksam oder vollständige Resorption (Glukose)",
+   "0–125 mL/min: Filtration + Resorption (Harnstoff, Kalium)",
+   "≈125 mL/min: reine Filtration (Inulin)",
+   "125–600 mL/min: Filtration + Sekretion, Maximum = renaler Plasmafluss"
+  ],
+  "mc": {
+   "stem": "Eine Substanz wird frei filtriert, aber im Tubulus vollständig rückresorbiert. Welche Clearance hat sie?",
+   "options": [
+    "0 mL/min",
+    "≈125 mL/min",
+    "≈300 mL/min",
+    "600 mL/min"
+   ],
+   "correct": "0 mL/min"
+  },
+  "source": "MTS__09_NES1.pdf, Folie 25"
+ },
+ {
+  "id": "MTS-K9-14",
+  "fach": "MTS",
+  "unit": "MTS-K9",
+  "examMode": "free",
+  "front": "Unterscheide **Primärharn** und **Urin (Sekundärharn)**.",
+  "back": "- **Primärharn:** Filtrat aus den Glomeruli – ein **Ultrafiltrat** des Blutplasmas (frei von zellulären Bestandteilen, minimaler Proteinanteil). Menge ≈ **180 L/Tag**.\n- **Urin (Sekundärharn):** das letztlich **ausgeschiedene Stoffgemisch**, nachdem die Tubuli den Primärharn durch Resorption und Sekretion bearbeitet haben. Menge ≈ **1,5 L/Tag**.\n\nDer Primärharn entspricht in seiner Zusammensetzung frei filtrierbaren Plasmabestandteilen; der Urin unterscheidet sich stark davon, da über 99 % des Volumens tubulär rückresorbiert werden.",
+  "keyPoints": [
+   "Primärharn = Ultrafiltrat aus den Glomeruli, ≈180 L/Tag",
+   "Urin (Sekundärharn) = ausgeschiedenes Stoffgemisch nach Tubulus, ≈1,5 L/Tag",
+   "Primärharn: zellfrei, minimaler Proteinanteil",
+   "Über 99 % des Primärharns werden tubulär rückresorbiert"
+  ],
+  "mc": {
+   "stem": "Welche Aussage trifft auf den Primärharn zu?",
+   "options": [
+    "Er ist ein zellfreies Ultrafiltrat des Blutplasmas direkt nach der glomerulären Filtration",
+    "Er entspricht dem tatsächlich ausgeschiedenen Urin",
+    "Er enthält deutlich mehr Proteine als das Blutplasma",
+    "Er entsteht erst im Sammelrohr"
+   ],
+   "correct": "Er ist ein zellfreies Ultrafiltrat des Blutplasmas direkt nach der glomerulären Filtration"
+  },
+  "source": "MTS__09_NES1.pdf, Folie 13, 26"
+ },
+ {
+  "id": "MTS-K9-15",
+  "fach": "MTS",
+  "unit": "MTS-K9",
+  "examMode": "free",
+  "front": "Unterscheide **Schockniere**, **Proteinurie** und **chronische Niereninsuffizienz** nach Mechanismus und Folgen.",
+  "back": "- **Schockniere:** akutes, im Rahmen eines **Schockgeschehens** auftretendes Nierenversagen. Mechanismus: Der Körper hält den Blutdruck aufrecht (z. B. bei schweren Blutverlusten) über **Vasokonstriktion bis zur Ischämie** des Nierengewebes. Folgen: deutlich verringerte Harnproduktion, ggf. langfristig anhaltend, ggf. **Mikrothromben** in den Glomerulikapillaren.\n- **Proteinurie:** übermäßige Ausscheidung von Proteinen. Mechanismus, z. B. durch eine **Entzündung (Glomerulonephritis)**, die den Filter durchlässiger macht. Folgen: Gefahr des Nierenversagens, gilt als **Risikoprädiktor**.\n- **Chronische Niereninsuffizienz:** Verlust der Nierenfunktion durch **Zerstörung von Nierengewebe**. Mechanismus meist **Diabetes mellitus** oder anhaltender **Bluthochdruck**. Folgen: gemäß den gestörten Nierenfunktionen diverse Erkrankungen wie Bluthochdruck, Störung des Elektrolythaushalts.",
+  "keyPoints": [
+   "Schockniere: Vasokonstriktion zur Kreislaufstabilisierung → Ischämie → Harnproduktion ↓",
+   "Proteinurie: durchlässigerer Filter (z. B. Glomerulonephritis) → Risikoprädiktor",
+   "Chronische Niereninsuffizienz: Diabetes/Bluthochdruck → Gewebeverlust → Elektrolytstörungen",
+   "Alle drei können in gestörte Nierenfunktion und Ersatztherapie münden"
+  ],
+  "cloze": {
+   "text": "Ein akutes, im Rahmen eines Schockgeschehens auftretendes Nierenversagen mit Vasokonstriktion bis zur Ischämie heißt {{1}}. Eine übermäßige Eiweißausscheidung durch einen durchlässigeren Filter (z. B. bei Glomerulonephritis) heißt {{2}}. Der Verlust der Nierenfunktion durch Diabetes mellitus oder anhaltenden Bluthochdruck heißt {{3}}.",
+   "answers": [
+    "Schockniere",
+    "Proteinurie",
+    "chronische Niereninsuffizienz"
+   ]
+  },
+  "source": "MTS__09_NES1.pdf, Folie 28"
+ },
+ {
+  "id": "MTS-K9-16",
+  "fach": "MTS",
+  "unit": "MTS-K9",
+  "examMode": "free",
+  "front": "Welche diagnostischen und therapeutischen **Verfahrensklassen** kommen bei Nierenerkrankungen zum Einsatz?",
+  "back": "**Diagnostische Verfahren:**\n- **Funktionsdiagnostik** (Clearance- bzw. GFR-Bestimmung)\n- **Bildgebung:** Ultraschalldiagnostik (Form, Lage, Größe von Niere und Harnwegen, Steinbildung), Röntgendiagnostik und Angiographie (strukturell und funktionell), tomographische Verfahren\n- **Endoskopie**\n\n**Therapeutische Verfahren:**\n- **Chirurgische Eingriffe** (endoskopisch)\n- **Apparative Blutdetoxikation** = **Nierenersatztherapie** – Thema der folgenden Einheit (K10).",
+  "keyPoints": [
+   "Diagnostik: Funktionsdiagnostik, Bildgebung (Ultraschall, Röntgen/Angiographie, Tomographie), Endoskopie",
+   "Therapie: chirurgische Eingriffe (endoskopisch)",
+   "Apparative Blutdetoxikation = Nierenersatztherapie",
+   "Überleitung zu K10"
+  ],
+  "cloze": {
+   "text": "Zu den diagnostischen Verfahren zählen Funktionsdiagnostik, Bildgebung und {{1}}. Zu den therapeutischen Verfahren zählen chirurgische Eingriffe und die {{2}} (Nierenersatztherapie).",
+   "answers": [
+    "Endoskopie",
+    "apparative Blutdetoxikation"
+   ]
+  },
+  "source": "MTS__09_NES1.pdf, Folie 29"
+ },
+ {
+  "id": "MTS-K9-17",
+  "fach": "MTS",
+  "unit": "MTS-K9",
+  "examMode": "free",
+  "front": "Richtig oder falsch: „Autoregulation bedeutet, dass der arterielle Blutdruck in der Niere konstant gehalten wird.“ Begründe.",
+  "back": "**Falsch.** Der **arterielle Mitteldruck** selbst darf im Bereich **80–180 mmHg** durchaus schwanken – das ist gerade die Voraussetzung, unter der die Autoregulation greift.\n\nKonstant gehalten werden **RPF (renaler Plasmafluss) und GFR**, nicht der Druck selbst: Steigt der arterielle Druck, kontrahiert das Vas afferens (myogener Bayliss-Effekt) und hält Durchblutung/Filtration auf einem nahezu gleichen Niveau. Außerhalb von 80–180 mmHg versagt dieser Mechanismus – dann folgen RPF und GFR dem Blutdruck.",
+  "keyPoints": [
+   "Autoregulation hält RPF und GFR konstant, nicht den Blutdruck selbst",
+   "Gültigkeitsbereich: 80–180 mmHg arterieller Mitteldruck",
+   "Mechanismus: Vas afferens kontrahiert bei steigendem Druck (Bayliss-Effekt)",
+   "Außerhalb des Bereichs folgen RPF/GFR dem Blutdruck"
+  ],
+  "why": "Warum bricht die Autoregulation außerhalb von 80–180 mmHg zusammen, und was bedeutet das für die Niere bei starkem Blutdruckabfall (z. B. im Schock)?",
+  "source": "MTS__09_NES1.pdf, Folie 17"
+ },
+ {
+  "id": "MTS-K10-01",
+  "fach": "MTS",
+  "unit": "MTS-K10",
+  "examMode": "free",
+  "front": "Was versteht man unter **Nierenversagen (Niereninsuffizienz)**, und wie unterscheiden sich die **akute** und die **chronische** Form?",
+  "back": "**Nierenversagen** (synonym: Niereninsuffizienz, Nierenfunktionsstörung) = Verschlechterung oder Verlust der Nierenfunktion.\n\n- **Akut:** potenziell **lebensbedrohlich**, tritt plötzlich auf.\n- **Chronisch:** schleichender Verlauf, häufig als **Folge von Erkrankungen** wie Typ-2-Diabetes mellitus.\n\nDie Zahl der Betroffenen steigt weltweit stark (Prognose 2025: ≈ 4,9 Mio. Dialysepatienten). Therapie der Wahl bei fortgeschrittenem Nierenversagen ist die **Nierenersatztherapie (Dialyse)**.",
+  "keyPoints": [
+   "Nierenversagen = Verschlechterung/Verlust der Nierenfunktion",
+   "Akut = lebensbedrohlich, plötzlich",
+   "Chronisch = schleichend, z. B. Folge von Typ-2-Diabetes",
+   "Therapie: Nierenersatztherapie (Dialyse)"
+  ],
+  "mc": {
+   "stem": "Welche Aussage zu den beiden Grundformen des Nierenversagens ist korrekt?",
+   "options": [
+    "Akutes Nierenversagen ist potenziell lebensbedrohlich, chronisches kann z. B. Folge von Typ-2-Diabetes sein",
+    "Chronisches Nierenversagen ist immer akut lebensbedrohlich",
+    "Akutes Nierenversagen entsteht ausschließlich durch Diabetes",
+    "Beide Formen werden nie mit Dialyse behandelt"
+   ],
+   "correct": "Akutes Nierenversagen ist potenziell lebensbedrohlich, chronisches kann z. B. Folge von Typ-2-Diabetes sein"
+  },
+  "source": "MTS__10_NES2.pdf, Folie 4"
+ },
+ {
+  "id": "MTS-K10-02",
+  "fach": "MTS",
+  "unit": "MTS-K10",
+  "examMode": "free",
+  "front": "Was ist das **Ziel** der extrakorporalen Blutreinigung, und wie häufig/lange dauert eine typische Hämodialyse-Behandlung?",
+  "back": "Ziel: Wasser, Stoffwechsel-Endprodukte und sogenannte **urämische Toxine** werden dem Blut über eine **semipermeable Membran** entzogen – dafür kommt **extrakorporale Technik** zum Einsatz (Blut verlässt kurzzeitig den Körper).\n\nAnwendung i. d. R.: **3-mal pro Woche, ca. 4 Stunden** je Termin.",
+  "keyPoints": [
+   "Entfernt werden Wasser, Stoffwechsel-Endprodukte, urämische Toxine",
+   "Über semipermeable Membran, extrakorporal",
+   "Typisch: 3×/Woche, ca. 4 Stunden je Termin"
+  ],
+  "cloze": {
+   "text": "Eine Hämodialyse-Behandlung findet typischerweise {{1}}-mal pro Woche statt und dauert jeweils ca. {{2}} Stunden.",
+   "answers": [
+    "3",
+    "4"
+   ]
+  },
+  "source": "MTS__10_NES2.pdf, Folie 6"
+ },
+ {
+  "id": "MTS-K10-03",
+  "fach": "MTS",
+  "unit": "MTS-K10",
+  "examMode": "free",
+  "front": "Beschreibe das **Grundprinzip** der Hämodialyse: welche zwei Kreisläufe gibt es?",
+  "back": "Das Prinzip ähnelt laut Vorlesung dem der **extrakorporalen Membranoxygenierung** – Stoffaustausch über eine Membran zwischen zwei getrennten Kreisläufen:\n\n1. **Blutkreislauf** (Patientenblut)\n2. **Kreislauf für Dialysierflüssigkeit** (Dialysat)\n\nDie eigentliche Blutreinigung findet dort statt, wo beide Kreisläufe über die Membran in Kontakt kommen: im **Dialysator**.",
+  "keyPoints": [
+   "Prinzip ähnlich extrakorporaler Membranoxygenierung",
+   "Blutkreislauf + Dialysatkreislauf getrennt",
+   "Kontakt nur über Membran im Dialysator"
+  ],
+  "why": "Warum müssen Blut- und Dialysatkreislauf strikt getrennt bleiben und dürfen sich nur über die Membran 'berühren'?",
+  "source": "MTS__10_NES2.pdf, Folie 7, 9"
+ },
+ {
+  "id": "MTS-K10-04",
+  "fach": "MTS",
+  "unit": "MTS-K10",
+  "examMode": "free",
+  "front": "Welche **Gefäßzugänge** gibt es für die Hämodialyse, und warum ist eine **Antikoagulation** nötig?",
+  "back": "**Gefäßzugang:**\n- Chronisch: **arteriovenöse Fistel**, meist am Vorderarm angelegt.\n- Akut: **zentralvenöser Katheter**.\n\n**Antikoagulation:** Der Kontakt des Bluts mit der **Fremdoberfläche** des extrakorporalen Systems (Schläuche, Membran) löst die Gerinnungskaskade aus. Um Blutgerinnung im System zu verhindern, werden **Antikoagulantien** eingesetzt – meist **Heparin** oder eine **Na-Citratlösung**.",
+  "keyPoints": [
+   "Chronisch: arteriovenöse Fistel (Vorderarm)",
+   "Akut: zentralvenöser Katheter",
+   "Fremdflächenkontakt löst Gerinnung aus",
+   "Antikoagulation: Heparin oder Na-Citratlösung"
+  ],
+  "mc": {
+   "stem": "Welcher Gefäßzugang wird bei chronischer Dialysepflicht i. d. R. genutzt?",
+   "options": [
+    "Arteriovenöse Fistel am Vorderarm",
+    "Zentralvenöser Katheter",
+    "Bauchkatheter",
+    "Portsystem am Oberschenkel"
+   ],
+   "correct": "Arteriovenöse Fistel am Vorderarm"
+  },
+  "source": "MTS__10_NES2.pdf, Folie 8"
+ },
+ {
+  "id": "MTS-K10-05",
+  "fach": "MTS",
+  "unit": "MTS-K10",
+  "examMode": "free",
+  "front": "Woraus besteht die **Dialysierflüssigkeit**, und welches Volumen wird pro Behandlung benötigt?",
+  "back": "Die Dialysierflüssigkeit ist eine **Elektrolytlösung**; die exakten Bestandteile sind variabel, typischerweise: **Glukose, Bicarbonat, Natrium-, Kalium-, Calcium- und Magnesium-Ionen**.\n\nPro Behandlung werden ca. **120 L** Dialysierflüssigkeit benötigt.",
+  "keyPoints": [
+   "Dialysierflüssigkeit = Elektrolytlösung",
+   "Bestandteile variabel: Glukose, Bicarbonat, Na/K/Ca/Mg",
+   "≈ 120 L pro Behandlung"
+  ],
+  "cloze": {
+   "text": "Pro Hämodialyse-Behandlung werden ca. {{1}} Liter Dialysierflüssigkeit benötigt.",
+   "answers": [
+    "120"
+   ]
+  },
+  "source": "MTS__10_NES2.pdf, Folie 8"
+ },
+ {
+  "id": "MTS-K10-06",
+  "fach": "MTS",
+  "unit": "MTS-K10",
+  "examMode": "free",
+  "front": "Wie ist ein **Hohlfaserdialysator** aufgebaut (Kennwerte)?",
+  "back": "Der Dialysator ist der eigentliche **Nierenersatz**: Blut fließt durch das Innere von i. d. R. **mehr als 10.000 Hohlfasern** (Kapillaren, Durchmesser ca. **200 µm**); die Dialysierflüssigkeit umspült die Fasern von außen.\n\n- **Membranfläche: 1–2 m²**\n- Membranmaterial: **Zellulose, modifizierte Zellulose** oder **synthetische Polymere**",
+  "keyPoints": [
+   "> 10.000 Hohlfasern, Ø ≈ 200 µm",
+   "Blut innen, Dialysat außen um die Fasern",
+   "Membranfläche 1–2 m²",
+   "Material: Zellulose/mod. Zellulose/synthetische Polymere"
+  ],
+  "mc": {
+   "stem": "Wodurch fließt beim Hohlfaserdialysator das Blut des Patienten?",
+   "options": [
+    "Durch das Innere der Hohlfasern",
+    "Außen um die Hohlfasern herum",
+    "Durch beide Kammern gleichzeitig",
+    "Es fließt gar nicht durch den Dialysator"
+   ],
+   "correct": "Durch das Innere der Hohlfasern"
+  },
+  "source": "MTS__10_NES2.pdf, Folie 11"
+ },
+ {
+  "id": "MTS-K10-07",
+  "fach": "MTS",
+  "unit": "MTS-K10",
+  "examMode": "free",
+  "front": "Durch welche **vier Parameter** ist eine Dialysemembran definiert, und was soll grundsätzlich mit ihr erreicht werden?",
+  "back": "Die semipermeable Membran ist die Grundlage für den Stoffaustausch. Sie ist definiert durch:\n\n- **Anzahl $n$ der Poren**\n- **Radius $r$ der Poren**\n- **Verteilung der Poren** (homogen oder heterogen)\n- **Membrandicke $d$**\n\nZielstellung ist die Entfernung verschiedener Substanzen unterschiedlicher **Molekülgröße** – dabei ist laut Vorlesung „nach wie vor nicht ganz einheitliche Meinung“, welche Substanzen im Detail entfernt werden müssen.",
+  "keyPoints": [
+   "Membran: n Poren, Radius r, Verteilung, Dicke d",
+   "Ziel: variable Molekülgrößen entfernen",
+   "Uneinheitliche Meinung, welche Substanzen entfernt werden sollen"
+  ],
+  "why": "Warum ist es fachlich umstritten, welche Substanzen eine Dialysemembran genau entfernen sollte?",
+  "source": "MTS__10_NES2.pdf, Folie 12"
+ },
+ {
+  "id": "MTS-K10-08",
+  "fach": "MTS",
+  "unit": "MTS-K10",
+  "examMode": "free",
+  "front": "Wie lautet das **Fick'sche Diffusionsgesetz** für den Dialysator, was treibt die Diffusion an, und welche Moleküle werden bevorzugt transportiert?",
+  "back": "$$\\frac{dm}{dt} = -D_k \\cdot A \\cdot \\frac{dc}{dx}$$\n\nmit Massetransport pro Zeit $dm/dt$, Diffusionskoeffizient $D_k$ des Moleküls $k$, Austauschfläche $A$ und Konzentrationsgradient $dc/dx$ über die Membrandicke.\n\n**Antrieb:** der **Konzentrationsunterschied** zwischen Blut und Dialysat. Diffusion transportiert effektiv v. a. **kleine Moleküle** wie **Harnstoff, Kreatinin und Elektrolyte**.",
+  "keyPoints": [
+   "dm/dt = -Dk · A · dc/dx",
+   "Antrieb: Konzentrationsgradient",
+   "Effektiv für kleine Moleküle: Harnstoff, Kreatinin, Elektrolyte"
+  ],
+  "cloze": {
+   "text": "Diffusion transportiert vor allem {{1}} Moleküle wie Harnstoff und {{2}}, angetrieben durch den {{3}} zwischen Blut und Dialysat.",
+   "answers": [
+    "kleine",
+    "Kreatinin",
+    "Konzentrationsgradienten"
+   ]
+  },
+  "source": "MTS__10_NES2.pdf, Folie 13"
+ },
+ {
+  "id": "MTS-K10-09",
+  "fach": "MTS",
+  "unit": "MTS-K10",
+  "examMode": "free",
+  "front": "Wovon hängt der **Diffusionskoeffizient** $D$ eines Moleküls ab, und was folgt daraus für kleine im Vergleich zu großen Molekülen?",
+  "back": "**Stokes-Einstein-Beziehung:**\n\n$$D = \\frac{kT}{6\\pi \\eta a}$$\n\nmit Boltzmann-Konstante $k$, Temperatur $T$, Viskosität $\\eta$ des Mediums, Teilchenradius $a$.\n\n$D$ steigt mit der **Temperatur**, sinkt mit **Viskosität** und **Teilchenradius**. Deshalb diffundieren **kleine Moleküle** (kleines $a$) schneller als **große** (z. B. Proteine) – das erklärt, warum Diffusion bevorzugt Kleinmoleküle transportiert.",
+  "keyPoints": [
+   "D = kT/(6πηa)",
+   "D ↑ mit Temperatur, D ↓ mit Viskosität und Teilchenradius",
+   "Kleine Moleküle diffundieren schneller als große"
+  ],
+  "mc": {
+   "stem": "Welche Größe erhöht laut D = kT/(6πηa) den Diffusionskoeffizienten?",
+   "options": [
+    "Höhere Temperatur T",
+    "Größerer Teilchenradius a",
+    "Höhere Viskosität η",
+    "Größere Membranfläche A"
+   ],
+   "correct": "Höhere Temperatur T"
+  },
+  "source": "MTS__10_NES2.pdf, Folie 13"
+ },
+ {
+  "id": "MTS-K10-10",
+  "fach": "MTS",
+  "unit": "MTS-K10",
+  "examMode": "free",
+  "front": "Warum wird der Dialysator im **Gegenstromprinzip** betrieben, statt Blut und Dialysat in dieselbe Richtung zu führen?",
+  "back": "Im Gegenstrom trifft **frisches, toxinfreies Dialysat** stets auf das Blut an der Stelle, an der es **bereits am stärksten gereinigt** ist (kurz vor dem Rücklauf zum Patienten). Dadurch bleibt der **Konzentrationsgradient über die gesamte Membranlänge** groß.\n\nBei **Gleichstrom** würden sich Blut- und Dialysatkonzentration entlang der Faser schnell angleichen – der Gradient (und damit die Diffusion) würde zum Ende der Faser hin gegen null gehen, die Clearance wäre schlechter.",
+  "keyPoints": [
+   "Gegenstrom: frisches Dialysat trifft auf gereinigtes Blut",
+   "Konzentrationsgradient bleibt über volle Membranlänge hoch",
+   "Gleichstrom: Gradient sinkt zum Ende hin gegen null"
+  ],
+  "why": "Warum sinkt bei Gleichstromführung die Diffusionsleistung zum Ende der Membranstrecke hin ab, im Gegenstrom aber nicht?",
+  "source": "MTS__10_NES2.pdf, Folie 13"
+ },
+ {
+  "id": "MTS-K10-11",
+  "fach": "MTS",
+  "unit": "MTS-K10",
+  "examMode": "calc",
+  "front": "Berechne die **Ultrafiltrationsrate** $\\dot V_{UF}$ eines Dialysators aus dem **UF-Faktor** und dem angelegten **Transmembrandruck**.",
+  "back": "Der **UF-Faktor $K_{UF}$** [mL/(h·mmHg)] ist die praktische Kenngröße für die Ultrafiltrationsgleichung $\\dot V_{UF} = L \\cdot A \\cdot P_{eff}$: er fasst hydraulische Permeabilität $L$ und Fläche $A$ zusammen und bezieht sich auf den angelegten **Transmembrandruck** $p_{TMP}$ (entspricht $P_{eff}$). Damit gilt:\n\n$$\\dot V_{UF} = K_{UF} \\cdot p_{TMP}$$\n\n**Beispiel** (vgl. High-Flux-Grenze $K_{UF} > 20$ aus Folie 21 und den Benchmark $\\dot V_{UF} \\approx 3.000$ mL/h aus Folie 18): $K_{UF}$ = 20 mL/(h·mmHg), $p_{TMP}$ = 150 mmHg → $\\dot V_{UF}$ = 20 · 150 = **3.000 mL/h**.",
+  "keyPoints": [
+   "K_UF fasst L·A zusammen, bezogen auf p_TMP",
+   "V̇_UF = K_UF · p_TMP",
+   "High-Flux-Membranen: K_UF > 20 mL/(h·mmHg)"
+  ],
+  "calc": {
+   "vars": {
+    "KUF": [
+     10,
+     45,
+     5
+    ],
+    "TMP": [
+     50,
+     300,
+     10
+    ]
+   },
+   "given": "UF-Faktor $K_{UF}$ = [[KUF]] mL/(h·mmHg), Transmembrandruck $p_{TMP}$ = [[TMP]] mmHg.",
+   "solution": "KUF*TMP",
+   "unit": "mL/h",
+   "steps": [
+    "Definition (Folie 21): $K_{UF} = \\dot V_{UF}/p_{TMP}$, also $\\dot V_{UF} = K_{UF}\\cdot p_{TMP}$.",
+    "$\\dot V_{UF}$ = [[KUF]] · [[TMP]] = [[= KUF*TMP]] mL/h"
+   ],
+   "example": {
+    "vars": {
+     "KUF": 20,
+     "TMP": 150
+    },
+    "result": 3000
+   }
+  },
+  "source": "MTS__10_NES2.pdf, Folie 14, 18, 21"
+ },
+ {
+  "id": "MTS-K10-12",
+  "fach": "MTS",
+  "unit": "MTS-K10",
+  "examMode": "free",
+  "front": "Was treibt den **konvektiven** Stofftransport (Ultrafiltration) an, und was versteht man unter 'solvent drag'?",
+  "back": "**Antrieb:** hydrostatische und (kolloid-)osmotische Druckdifferenzen:\n\n$$P_{eff} = \\Delta P - \\Delta\\pi = (p_B - p_D) - (\\pi_B - \\pi_D)$$\n\nmit hydrostatischen Drücken $p_B$ (Blut), $p_D$ (Dialysat) und onkotischen Drücken $\\pi_B$, $\\pi_D$ (wobei $\\pi_D = 0$ mmHg). Bei der extrakorporalen Blutreinigung sind die **hydrostatischen Drücke maßgeblich** – eingestellt über den Druck im Dialysat.\n\n**Solvent drag:** Mit dem Wasserstrom durch die Membran werden auch **größere, gelöste Moleküle mitgerissen** – unabhängig von ihrem (kleinen) Konzentrationsgradienten.",
+  "keyPoints": [
+   "Antrieb: hydrostatische + onkotische Druckdifferenzen",
+   "P_eff = (p_B − p_D) − (π_B − π_D), π_D = 0",
+   "Hydrostatische Drücke bei ECC maßgeblich, Einstellung über Dialysatdruck",
+   "Solvent drag: größere Moleküle werden mit dem Wasserstrom mitgerissen"
+  ],
+  "mc": {
+   "stem": "Was beschreibt der Begriff 'solvent drag'?",
+   "options": [
+    "Größere Moleküle werden mit dem Ultrafiltrat durch die Membran mitgerissen",
+    "Kleine Moleküle diffundieren entlang ihres Konzentrationsgradienten",
+    "Das Dialysat bremst den Blutfluss im Dialysator",
+    "Eiweiße lagern sich an der Membranoberfläche ab und verstopfen sie"
+   ],
+   "correct": "Größere Moleküle werden mit dem Ultrafiltrat durch die Membran mitgerissen"
+  },
+  "source": "MTS__10_NES2.pdf, Folie 14"
+ },
+ {
+  "id": "MTS-K10-13",
+  "fach": "MTS",
+  "unit": "MTS-K10",
+  "examMode": "free",
+  "front": "Was misst der **Siebkoeffizient** $SC$, wie wird er bestimmt, und wo liegt der 'cut-off'?",
+  "back": "Der Siebkoeffizient beschreibt die **Trenngrenze** einer Membran für ein bestimmtes Molekül:\n\n$$SC = \\frac{2 C_F}{C_{Be} + C_{Ba}}$$\n\nmit Konzentration im **Filtrat** $C_F$ (nicht Dialysat!) sowie Konzentrationen im Bluteinlass $C_{Be}$ und -auslass $C_{Ba}$. Für jedes Molekül ergibt sich ein **individueller** $SC$.\n\n- $SC = 1$ → Membran **vollständig durchlässig**\n- „cut-off“ ist definiert bei $SC = 0{,}1$\n- Heutige Membranen: cut-off bei ca. **60.000 g/mol**",
+  "keyPoints": [
+   "SC = 2·CF/(CBe+CBa)",
+   "SC = 1: vollständig durchlässig",
+   "cut-off definiert bei SC = 0,1",
+   "Heutiger cut-off ≈ 60.000 g/mol"
+  ],
+  "cloze": {
+   "text": "Für eine vollständig durchlässige Membran ist der Siebkoeffizient gleich {{1}}; der 'cut-off' liegt heute bei etwa {{2}} g/mol.",
+   "answers": [
+    "1",
+    "60000"
+   ]
+  },
+  "source": "MTS__10_NES2.pdf, Folie 15, 16"
+ },
+ {
+  "id": "MTS-K10-14",
+  "fach": "MTS",
+  "unit": "MTS-K10",
+  "examMode": "calc",
+  "front": "Berechne die **konvektive Clearance** eines Moleküls aus Siebkoeffizient und Ultrafiltrationsrate.",
+  "back": "$$C_{konvektiv} = SC \\cdot \\dot V_{UF}$$\n\nDer Siebkoeffizient $SC$ „gewichtet“, welcher Anteil der Ultrafiltrationsrate für ein bestimmtes Molekül tatsächlich als Clearance wirkt.\n\n**Beispiel:** $SC$ = 0,7 (High-Flux-Membran; β2-Mikroglobulin hat dort laut Folie 21 $SC > 0{,}6$), $\\dot V_{UF}$ = 3.000 mL/h → $C_{konvektiv}$ = 0,7 · 3.000 = **2.100 mL/h**.",
+  "keyPoints": [
+   "C_konvektiv = SC · V̇_UF",
+   "SC gewichtet die UF-Rate je Molekül",
+   "β2-Mikroglobulin bei High-Flux: SC > 0,6 (Folie 21)"
+  ],
+  "calc": {
+   "vars": {
+    "SC": [
+     0.1,
+     0.9,
+     0.1
+    ],
+    "VUF": [
+     500,
+     4000,
+     100
+    ]
+   },
+   "given": "Siebkoeffizient $SC$ = [[SC]], Ultrafiltrationsrate $\\dot V_{UF}$ = [[VUF]] mL/h.",
+   "solution": "SC*VUF",
+   "unit": "mL/h",
+   "steps": [
+    "Konvektive Clearance: $C_{konvektiv} = SC \\cdot \\dot V_{UF}$ = [[SC]] · [[VUF]] = [[= SC*VUF]] mL/h"
+   ],
+   "example": {
+    "vars": {
+     "SC": 0.7,
+     "VUF": 3000
+    },
+    "result": 2100
+   }
+  },
+  "source": "MTS__10_NES2.pdf, Folie 17, 21"
+ },
+ {
+  "id": "MTS-K10-15",
+  "fach": "MTS",
+  "unit": "MTS-K10",
+  "examMode": "free",
+  "front": "Wie unterscheiden sich **Low-Flux-, High-Flux-** und **Hämofilter**-Membranen anhand von UF-Faktor und Cut-off?",
+  "back": "| Kategorie | UF-Faktor [mL/(h·mmHg)] | Cut-off | SC β2-Mikroglobulin |\n|---|---|---|---|\n| Low-Flux | < 20 | – | – |\n| High-Efficiency | > 10 | – | – |\n| High-Flux | > 20 | < 60.000 D | > 0,6 |\n| Hämofilter | > 40 | > 60.000 D | > 0,6 |\n\n**High-Flux-Dialysatoren** (hohe hydraulische Leitfähigkeit) gewinnen zunehmend an Bedeutung: Sie entziehen große Volumina, die **wieder zugeführt werden müssen** (mehrere L/h) → erfordert eine engmaschige **Volumenbilanzierung**.",
+  "keyPoints": [
+   "Low-Flux: UF-Faktor < 20",
+   "High-Flux: UF-Faktor > 20, Cut-off < 60.000 D, SC β2 > 0,6",
+   "Hämofilter: UF-Faktor > 40, Cut-off > 60.000 D",
+   "High-Flux erfordert engmaschige Volumenbilanzierung"
+  ],
+  "mc": {
+   "stem": "Welche Membran-Kategorie hat laut Vorlesung einen UF-Faktor > 40 mL/(h·mmHg) UND einen Cut-off > 60.000 D?",
+   "options": [
+    "Hämofilter",
+    "Low-Flux",
+    "High-Efficiency",
+    "High-Flux"
+   ],
+   "correct": "Hämofilter"
+  },
+  "source": "MTS__10_NES2.pdf, Folie 18, 21"
+ },
+ {
+  "id": "MTS-K10-16",
+  "fach": "MTS",
+  "unit": "MTS-K10",
+  "examMode": "free",
+  "front": "Was passiert im Dialysator durch das Gegenstromprinzip lokal mit der Filtrationsrichtung (Stichwort **Rückfiltration**), und wie ist die **Nettofiltration** definiert?",
+  "back": "Die Druckverhältnisse sind wegen des Gegenstromprinzips **entlang der Faser lokal unterschiedlich**:\n\n- In der **ersten Hälfte** des Dialysators überwiegt die **Ultrafiltration** (Wasser vom Blut ins Dialysat).\n- In der **zweiten Hälfte** kann Dialysierflüssigkeit **zurück ins Blut** fließen = **Rückfiltration**.\n\n$$\\text{Nettofiltration} = \\text{innere Filtrationsrate} - \\text{Rückfiltration}$$\n\nZusätzlich gibt es **Rückdiffusion**. Gesamter Rücktransport = Rückdiffusion + Rückfiltration. Deshalb ist die **Reinheit der Dialysierflüssigkeit essentiell** (unterstützt durch Adsorption in der Membranwand).",
+  "keyPoints": [
+   "1. Hälfte: Ultrafiltration überwiegt",
+   "2. Hälfte: Rückfiltration (Dialysat → Blut)",
+   "Nettofiltration = innere Filtrationsrate − Rückfiltration",
+   "Rücktransport = Rückdiffusion + Rückfiltration"
+  ],
+  "why": "Warum ist die Reinheit der Dialysierflüssigkeit besonders bei High-Flux-Membranen mit ausgeprägter Rückfiltration essentiell?",
+  "source": "MTS__10_NES2.pdf, Folie 20"
+ },
+ {
+  "id": "MTS-K10-17",
+  "fach": "MTS",
+  "unit": "MTS-K10",
+  "examMode": "free",
+  "front": "Worin unterscheiden sich **Hämodialyse, Hämofiltration** und **Hämodiafiltration** in Prinzip und Kreislauf?",
+  "back": "| Verfahren | Haupteffekt | Kreislauf |\n|---|---|---|\n| **Hämodialyse (HD)** | Diffusion im Gegenstrom; Filtration nur von Überschusswasser | Blut- + Dialysatkreislauf, Shunt am Unterarm, Blutfluss ≈ 300–500 mL/min |\n| **Hämofiltration (HF)** | Ultrafiltration; reißt auch Mittelmoleküle mit (≈ glomeruläre Filtration) | nur Blutkreislauf, Substitution durch eiweißfreie Elektrolytlösung |\n| **Hämodiafiltration (HDF)** | Diffusion **und** Ultrafiltration (vereinigt HD + HF) | High-Flux-Dialysator, Dialysat + Ultrafiltrat als Flüssigkeitsgemisch |\n\nAlle drei arbeiten bei einem Blutfluss von ca. **300 mL/min**.",
+  "keyPoints": [
+   "HD: Diffusion, Blut- + Dialysatkreislauf",
+   "HF: Ultrafiltration, kein Dialysatkreislauf, Substitution nötig",
+   "HDF: Diffusion + Ultrafiltration (High-Flux-Dialysator)",
+   "Alle: Blutfluss ≈ 300 mL/min"
+  ],
+  "mc": {
+   "stem": "Welches Verfahren kommt OHNE Dialysatkreislauf aus und ersetzt das entzogene Plasmawasser durch eine eiweißfreie Elektrolytlösung?",
+   "options": [
+    "Hämofiltration",
+    "Hämodialyse",
+    "Hämodiafiltration",
+    "Peritonealdialyse"
+   ],
+   "correct": "Hämofiltration"
+  },
+  "source": "MTS__10_NES2.pdf, Folie 24, 25, 26"
+ },
+ {
+  "id": "MTS-K10-18",
+  "fach": "MTS",
+  "unit": "MTS-K10",
+  "examMode": "free",
+  "front": "Wie funktioniert die **Peritonealdialyse**, und welche Rolle spielt das **Peritoneum**?",
+  "back": "Die Peritonealdialyse kombiniert das Prinzip der extrakorporalen Verfahren mit einer **körpereigenen Membran** – dadurch kommt sie **ohne externen Blutkreislauf** aus.\n\n**Peritoneum (Bauchfell):** seröse Haut, die die Bauchhöhle auskleidet; besteht aus einer einzelnen **Epithelschicht**, ist **sehr gut durchblutet** → nutzbar als Austauschmembran.\n\n**Vorgehen:** Dialysierflüssigkeit wird über einen **Bauchkatheter** eingebracht, Stoffaustausch (v. a. Harnstoff, Kreatinin) erfolgt per **Diffusion** aus kleinen Gefäßen direkt unter der Epithelschicht. Die Flüssigkeit muss einen **hohen osmotischen Druck** haben (z. B. hochmolare Zuckerlösung), um Filtration zu ermöglichen, ohne ins Gewebe einzutreten.",
+  "keyPoints": [
+   "Peritoneum = körpereigene Austauschmembran, gut durchblutet",
+   "Kein extrakorporaler Blutkreislauf, Zugang über Bauchkatheter",
+   "Stoffaustausch v. a. per Diffusion",
+   "Hoher osmotischer Druck der Dialysierflüssigkeit nötig (z. B. Zuckerlösung)"
+  ],
+  "cloze": {
+   "text": "Bei der Peritonealdialyse dient das {{1}} als körpereigene Austauschmembran; die Dialysierflüssigkeit braucht einen hohen {{2}} Druck, um zu filtrieren, ohne ins Gewebe einzudringen.",
+   "answers": [
+    "Peritoneum",
+    "osmotischen"
+   ]
+  },
+  "source": "MTS__10_NES2.pdf, Folie 27, 28"
+ },
+ {
+  "id": "MTS-K10-19",
+  "fach": "MTS",
+  "unit": "MTS-K10",
+  "examMode": "free",
+  "front": "Ein **Mittelmolekül** soll entfernt werden, das durch reinen Konzentrationsgradienten kaum die Membran passiert. Welches Prinzip nutzt man gezielt, und warum wirkt es unabhängig vom Konzentrationsgradienten?",
+  "back": "Man nutzt gezielt **Konvektion/Ultrafiltration** (Verfahren mit ausgeprägter Ultrafiltration: **Hämofiltration** oder **Hämodiafiltration**). Beim konvektiven Transport wird das Molekül nicht durch seinen (bei Mittelmolekülen kleinen) Konzentrationsgradienten transportiert, sondern **mit dem Wasserstrom durch die Membran mitgerissen** (**„solvent drag“**) – solange sein Siebkoeffizient $SC$ groß genug ist. Reine **Hämodialyse** (v. a. Diffusion) ist für solche Moleküle deutlich weniger effektiv.",
+  "keyPoints": [
+   "Mittelmoleküle: Diffusion allein reicht nicht",
+   "Konvektion/Ultrafiltration transportiert unabhängig vom Konzentrationsgradienten",
+   "'Solvent drag' zieht Moleküle mit dem Wasserstrom mit",
+   "HF/HDF statt reiner HD für Mittelmoleküle"
+  ],
+  "mc": {
+   "stem": "Warum ist Ultrafiltration (Konvektion) zur Entfernung von Mittelmolekülen oft wirksamer als reine Diffusion?",
+   "options": [
+    "Weil der Transport per 'solvent drag' unabhängig vom (kleinen) Konzentrationsgradienten mit dem Wasserstrom erfolgt",
+    "Weil Mittelmoleküle besonders schnell diffundieren",
+    "Weil Ultrafiltration keine Membran benötigt",
+    "Weil Diffusion nur für Wasser funktioniert"
+   ],
+   "correct": "Weil der Transport per 'solvent drag' unabhängig vom (kleinen) Konzentrationsgradienten mit dem Wasserstrom erfolgt"
+  },
+  "source": "MTS__10_NES2.pdf, Folie 14, 25, 26"
  }
 ]

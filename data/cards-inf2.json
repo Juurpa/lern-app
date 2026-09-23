@@ -109,87 +109,6 @@
   "source": "Lernplan/cards_data.js LE01-04"
  },
  {
-  "id": "INF2-LE01-05",
-  "fach": "INF2",
-  "unit": "INF2-LE01",
-  "examMode": "free",
-  "front": "Seit wann gibt es AWT und welches Verhalten kennzeichnet es?",
-  "back": "Seit Java 1.0 (1996); Heavyweight-Framework, nutzt native GUI-Elemente der Zielplattform → 'Look and Feel' der Zielplattform.",
-  "priority": false,
-  "mc": {
-   "stem": "Seit wann gibt es AWT und welches Verhalten kennzeichnet es?",
-   "options": [
-    "Seit Java 1.0 (1996), Heavyweight-Framework mit nativen GUI-Elementen",
-    "Seit Java 1.2 (1998), Lightweight-Framework mit eigenen GUI-Elementen",
-    "Seit Java 1.1 (1997), Heavyweight-Framework mit Java-eigenen Elementen",
-    "Seit 2014, Lightweight-Framework mit nativem Look and Feel"
-   ],
-   "correct": "Seit Java 1.0 (1996), Heavyweight-Framework mit nativen GUI-Elementen"
-  },
-  "cloze": {
-   "text": "AWT gibt es seit Java {{1}} ({{2}}); es ist ein {{3}}-Framework, das native GUI-Elemente der Zielplattform nutzt.",
-   "answers": [
-    "1.0",
-    "1996",
-    "Heavyweight"
-   ]
-  },
-  "source": "Lernplan/cards_data.js LE01-05"
- },
- {
-  "id": "INF2-LE01-06",
-  "fach": "INF2",
-  "unit": "INF2-LE01",
-  "examMode": "free",
-  "front": "Seit wann gibt es Swing und wie unterscheidet es sich von AWT?",
-  "back": "Ab Java 1.1 (1997), vollständig ab 1.2 (1998); baut auf AWT auf, nutzt aber Java-eigene (lightweight) GUI-Elemente → eigenes, anpassbares Look and Feel.",
-  "priority": false,
-  "mc": {
-   "stem": "Seit wann gibt es Swing und wie unterscheidet es sich von AWT?",
-   "options": [
-    "Ab Java 1.1/1.2; lightweight, Java-eigene GUI-Elemente statt native",
-    "Ab Java 1.0; heavyweight wie AWT",
-    "Ab Java 8; komplett unabhängig von AWT",
-    "Ab Java 1.2; nutzt native Betriebssystem-Elemente wie AWT"
-   ],
-   "correct": "Ab Java 1.1/1.2; lightweight, Java-eigene GUI-Elemente statt native"
-  },
-  "cloze": {
-   "text": "Swing gibt es ab Java {{1}} (1997), vollständig ab 1.2 (1998); es baut auf AWT auf, nutzt aber {{2}} (Java-eigene) GUI-Elemente statt native.",
-   "answers": [
-    "1.1",
-    "lightweight"
-   ]
-  },
-  "source": "Lernplan/cards_data.js LE01-06"
- },
- {
-  "id": "INF2-LE01-07",
-  "fach": "INF2",
-  "unit": "INF2-LE01",
-  "examMode": "free",
-  "front": "Seit wann gibt es JavaFX?",
-  "back": "Seit 2014.",
-  "priority": false,
-  "mc": {
-   "stem": "Seit wann gibt es JavaFX?",
-   "options": [
-    "Seit 2014",
-    "Seit 2008",
-    "Seit 1998",
-    "Seit 2020"
-   ],
-   "correct": "Seit 2014"
-  },
-  "cloze": {
-   "text": "JavaFX gibt es seit {{1}}.",
-   "answers": [
-    "2014"
-   ]
-  },
-  "source": "Lernplan/cards_data.js LE01-07"
- },
- {
   "id": "INF2-LE01-08",
   "fach": "INF2",
   "unit": "INF2-LE01",
@@ -883,32 +802,6 @@
    ]
   },
   "source": "Lernplan/cards_data.js LE01-33"
- },
- {
-  "id": "INF2-LE01-34",
-  "fach": "INF2",
-  "unit": "INF2-LE01",
-  "examMode": "free",
-  "front": "Ab welcher Java-Version können Lambda-Ausdrücke verwendet werden?",
-  "back": "Ab Java 8.",
-  "priority": true,
-  "mc": {
-   "stem": "Ab welcher Java-Version können Lambda-Ausdrücke verwendet werden?",
-   "options": [
-    "Ab Java 8",
-    "Ab Java 7",
-    "Ab Java 11",
-    "Ab Java 1.2"
-   ],
-   "correct": "Ab Java 8"
-  },
-  "cloze": {
-   "text": "Lambda-Ausdrücke können ab Java {{1}} verwendet werden.",
-   "answers": [
-    "8"
-   ]
-  },
-  "source": "Lernplan/cards_data.js LE01-34"
  },
  {
   "id": "INF2-LE01-35",
@@ -6136,34 +6029,6 @@
   "source": "Lernplan/cards_data.js LE05-01"
  },
  {
-  "id": "INF2-LE05-02",
-  "fach": "INF2",
-  "unit": "INF2-LE05",
-  "examMode": "free",
-  "front": "Welche drei Prinzipien der Objektorientierung gibt es?",
-  "back": "Datenkapselung, Vererbung, Polymorphie (Polymorphismus).",
-  "priority": false,
-  "mc": {
-   "stem": "Welche drei Prinzipien der Objektorientierung gibt es?",
-   "options": [
-    "Datenkapselung, Vererbung, Polymorphie",
-    "Abstraktion, Modularität, Kapselung",
-    "Vererbung, Rekursion, Iteration",
-    "Polymorphie, Kompilierung, Bindung"
-   ],
-   "correct": "Datenkapselung, Vererbung, Polymorphie"
-  },
-  "cloze": {
-   "text": "Die drei Prinzipien der Objektorientierung sind {{1}}, {{2}} und {{3}}.",
-   "answers": [
-    "Datenkapselung",
-    "Vererbung",
-    "Polymorphie (Polymorphismus)"
-   ]
-  },
-  "source": "Lernplan/cards_data.js LE05-02"
- },
- {
   "id": "INF2-LE05-03",
   "fach": "INF2",
   "unit": "INF2-LE05",
@@ -7287,34 +7152,6 @@
    ]
   },
   "source": "Lernplan/cards_data.js LE05-43"
- },
- {
-  "id": "INF2-LE06-01",
-  "fach": "INF2",
-  "unit": "INF2-LE06",
-  "examMode": "free",
-  "front": "Was ist die Schnittstelle eines Objekts?",
-  "back": "Die Menge aller sichtbaren Methodenköpfe/Operationsköpfe, die das Objekt unterstützt. Keine Aussage über die Realisierung (Implementierung/Methodenrumpf) oder die Datenstruktur des Objekts.",
-  "priority": false,
-  "mc": {
-   "stem": "Was ist die Schnittstelle eines Objekts?",
-   "options": [
-    "Die Menge aller sichtbaren Methodenköpfe/Operationsköpfe, die das Objekt unterstützt, ohne Aussage über die Implementierung",
-    "Die vollständige Implementierung aller Methoden des Objekts inklusive Methodenrümpfe",
-    "Die interne Datenstruktur, mit der die Attribute des Objekts gespeichert werden",
-    "Die Menge aller privaten Methoden und Instanzvariablen des Objekts"
-   ],
-   "correct": "Die Menge aller sichtbaren Methodenköpfe/Operationsköpfe, die das Objekt unterstützt, ohne Aussage über die Implementierung"
-  },
-  "cloze": {
-   "text": "Die Schnittstelle eines Objekts ist die Menge aller {{1}} Methodenköpfe, die das Objekt unterstützt. Sie macht keine Aussage über die {{2}} oder die {{3}} des Objekts.",
-   "answers": [
-    "sichtbaren",
-    "Realisierung (Implementierung/Methodenrumpf)",
-    "Datenstruktur"
-   ]
-  },
-  "source": "Lernplan/cards_data.js LE06-01"
  },
  {
   "id": "INF2-LE06-02",
@@ -8948,32 +8785,6 @@
    ]
   },
   "source": "Lernplan/cards_data.js LE08-05"
- },
- {
-  "id": "INF2-LE08-06",
-  "fach": "INF2",
-  "unit": "INF2-LE08",
-  "examMode": "free",
-  "front": "Seit welcher Java-Version gibt es den Diamantoperator?",
-  "back": "Java 7",
-  "priority": false,
-  "mc": {
-   "stem": "Seit welcher Java-Version gibt es den Diamantoperator?",
-   "options": [
-    "Java 7",
-    "Java 5",
-    "Java 8",
-    "Java 10"
-   ],
-   "correct": "Java 7"
-  },
-  "cloze": {
-   "text": "Java {{1}}",
-   "answers": [
-    "7"
-   ]
-  },
-  "source": "Lernplan/cards_data.js LE08-06"
  },
  {
   "id": "INF2-LE08-07",

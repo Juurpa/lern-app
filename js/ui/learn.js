@@ -6,7 +6,7 @@ import { makeReviewEvent } from '../sync.js';
 import { renderCard } from './card.js';
 import { renderUnit } from './unit.js';
 
-export function renderLearn({ data, store, root, sync }) {
+export function renderLearn({ data, store, root, sync, tutorPrompt }) {
   const doc = store.load();
   const cardById = new Map(data.cards.map(c => [c.id, c]));
   const unitById = new Map(data.units.map(u => [u.id, u]));
@@ -60,7 +60,7 @@ export function renderLearn({ data, store, root, sync }) {
     const exam = data.meta.faecher[card.fach].exam;
     const mode = chooseMode(card, doc.cards[card.id], new Date(), exam);
     renderCard(root, {
-      card, mode, fachLabel,
+      card, mode, fachLabel, settings: doc.settings, tutorPrompt,
       onRated: ({ button, hinted, answer, ms }) => {
         const now = new Date();
         if (!doc.cards[card.id]) shownNew++;

@@ -42,6 +42,12 @@ label > input { margin-top: 4px; }
 .checklist label { display: flex; gap: 10px; align-items: flex-start; padding: 6px 0; }
 .checklist input { width: 22px; height: 22px; flex: none; margin-top: 2px; }
 .warn { border-left: 4px solid var(--yellow); padding: 8px 12px; background: var(--surface); margin-bottom: var(--gap); }
+.gemini-feedback { border-left: 4px solid var(--accent); }
+.gemini-feedback p { margin: 4px 0; }
+.kp-item { padding: 6px 10px; border-left: 4px solid var(--border); margin-bottom: 6px; }
+.kp-item.right { border-color: var(--green); } .kp-item.wrong { border-color: var(--red); }
+.kp-item p { margin: 2px 0 0; }
+.mic { margin-top: 8px; }
 nav.bottom { display: flex; gap: 8px; margin-top: var(--gap); }
 nav.bottom a { flex: 1; }
 .calc-row { align-items: center; }

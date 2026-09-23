@@ -10,11 +10,12 @@ test('jede SHELL-Datei existiert', () => {
   for (const p of shell.filter(p => p !== './')) assert.ok(existsSync(new URL(p, root)), `fehlt: ${p}`);
 });
 
-test('alle JS-Module und Datendateien sind in SHELL', () => {
+test('alle JS-Module, Datendateien und Prompts sind in SHELL', () => {
   const js = readdirSync(new URL('js/', root)).filter(f => f.endsWith('.js')).map(f => `js/${f}`);
   const ui = readdirSync(new URL('js/ui/', root)).map(f => `js/ui/${f}`);
   const data = readdirSync(new URL('data/', root)).map(f => `data/${f}`);
-  for (const p of [...js, ...ui, ...data]) assert.ok(shell.includes(p), `nicht gecacht: ${p}`);
+  const prompts = readdirSync(new URL('prompts/', root)).map(f => `prompts/${f}`);
+  for (const p of [...js, ...ui, ...data, ...prompts]) assert.ok(shell.includes(p), `nicht gecacht: ${p}`);
 });
 
 test('Gemini-Aufrufe werden nie gecacht', () => {
@@ -46,7 +47,7 @@ test('KaTeX-Grundschriften sind im Precache', () => {
 
 test('CDN wird mit CORS-Requests vorgeladen, Cache-Version erhöht', () => {
   assert.match(sw, /new Request\(u(rl)?, \{ mode: 'cors' \}\)/);
-  assert.match(sw, /const CACHE = 'lernapp-v7'/);
+  assert.match(sw, /const CACHE = 'lernapp-v8'/);
 });
 
 test('Update-Prüfanfragen werden nicht gecacht', () => {

@@ -36,12 +36,19 @@ async function checkForUpdate() {
   document.body.append(bar);
 }
 
+const FALLBACK_TUTOR_PROMPT = 'Du bist ein Prüfungstutor. Bewerte die Antwort fair anhand von Frage, Musterlösung und Kernpunkten. Antworte ausschließlich als JSON gemäß responseSchema.';
+
 async function main() {
   navigator.storage?.persist?.().catch(() => {}); // Fortschritt vor automatischer Löschung schützen
-  ctx.data = await loadData(p => fetch(p).then(r => {
-    if (!r.ok) throw new Error(`${p}: HTTP ${r.status}`);
-    return r.json();
-  }));
+  const [data, tutorPrompt] = await Promise.all([
+    loadData(p => fetch(p).then(r => {
+      if (!r.ok) throw new Error(`${p}: HTTP ${r.status}`);
+      return r.json();
+    })),
+    fetch('prompts/tutor.md').then(r => (r.ok ? r.text() : FALLBACK_TUTOR_PROMPT)).catch(() => FALLBACK_TUTOR_PROMPT),
+  ]);
+  ctx.data = data;
+  ctx.tutorPrompt = tutorPrompt;
   ctx.sync = createSync({ getConfig: () => ({ url: ctx.data.meta.workerUrl, key: ctx.store.load().settings.syncKey }) });
   ctx.sync.flush();
   window.addEventListener('online', () => ctx.sync.flush());

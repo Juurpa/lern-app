@@ -1,5 +1,7 @@
 import { h, md, mdInline, enhance, esc } from '../render.js';
 import { prepareCalc, checkAnswer, formatNumber } from '../calc.js';
+import { grade, mapRatingToButton } from '../grader.js';
+import { pickInputMode, getSpeechRecognitionCtor, createSpeechInput, recordAudio } from '../voice.js';
 
 const MODE_LABEL = { free: 'Freitext', voice: 'Erklären', code: 'Code', calc: 'Rechnen', mc: 'Multiple Choice', cloze: 'Lückentext', why: 'Warum?', bridge: 'Brücke' };
 const norm = s => String(s).trim().toLowerCase().replace(/\s+/g, ' ');
@@ -17,7 +19,7 @@ function ratingBar(suggest, cb) {
   return el;
 }
 
-export function renderCard(root, { card, mode, fachLabel, onRated }) {
+export function renderCard(root, { card, mode, fachLabel, onRated, settings, tutorPrompt }) {
   const el = h(`<article class="card">
     <div class="kicker"><span class="badge">${esc(fachLabel)}</span><span>${MODE_LABEL[mode] ?? mode}</span></div>
     <div class="q"></div><div class="work"></div><div class="reveal" hidden></div><div class="rate-slot" hidden></div>
@@ -133,24 +135,111 @@ export function renderCard(root, { card, mode, fachLabel, onRated }) {
     buttons.append(stepBtn, check);
     work.append(row, stepBox, buttons);
   } else {
+    const isVoice = mode === 'voice';
     q.innerHTML = mode === 'why' && card.why ? `<div class="muted">${md(card.front)}</div>${md(`**${card.why}**`)}` : md(card.front);
-    work.append(h(`<textarea placeholder="${mode === 'voice' ? 'Laut erklären und Stichpunkte tippen …' : 'Erst selbst antworten …'}"></textarea>`));
-    const go = h('<button class="primary big">Aufdecken</button>');
-    go.onclick = () => {
-      answer = work.querySelector('textarea').value;
-      go.remove();
+    const ta = h(`<textarea placeholder="${isVoice ? 'Laut erklären und Stichpunkte tippen …' : 'Erst selbst antworten …'}"></textarea>`);
+    work.append(ta);
+
+    let recordedAudio = null;
+    if (isVoice) {
+      const SR = getSpeechRecognitionCtor();
+      const canRecordAudio = Boolean(globalThis.MediaRecorder) && Boolean(navigator.mediaDevices?.getUserMedia);
+      const inputMode = pickInputMode({ hasSpeechRecognition: Boolean(SR), hasMediaRecorder: canRecordAudio, hasGeminiKey: Boolean(settings?.geminiKey) });
+      if (inputMode === 'speech') {
+        let speech = null, listening = false;
+        const micBtn = h('<button type="button" class="mic">🎙️ Sprechen</button>');
+        micBtn.onclick = () => {
+          if (listening) { speech.stop(); return; }
+          speech = createSpeechInput({
+            SpeechRecognitionCtor: SR,
+            onTranscript: live => { ta.value = live; },
+            onEnd: () => { listening = false; micBtn.textContent = '🎙️ Sprechen'; },
+            onError: () => { listening = false; micBtn.textContent = '🎙️ Sprechen'; },
+          });
+          speech.start();
+          listening = true;
+          micBtn.textContent = '⏹️ Stopp';
+        };
+        work.append(micBtn);
+      } else if (inputMode === 'audio') {
+        let recorder = null, recording = false;
+        const recBtn = h('<button type="button" class="mic">🎙️ Aufnehmen (für Gemini)</button>');
+        recBtn.onclick = async () => {
+          if (!recording) {
+            try { recorder = await recordAudio(); }
+            catch (e) { alert(`Mikrofon: ${e.message}`); return; }
+            recording = true;
+            recBtn.textContent = '⏹️ Aufnahme stoppen';
+          } else {
+            recorder.stop();
+            recordedAudio = await recorder.result;
+            recording = false;
+            recBtn.textContent = '🎙️ Erneut aufnehmen';
+          }
+        };
+        work.append(recBtn);
+      }
+    }
+
+    const finish = suggest => {
       showBack();
-      if (!card.keyPoints?.length) return showRating(null);
+      if (!card.keyPoints?.length) return showRating(suggest ?? null);
       const list = h(`<div class="checklist"><h3>Kernpunkte – was hattest du?</h3>${card.keyPoints.map((k, i) =>
         `<label><input type="checkbox" data-i="${i}"><span>${md(k)}</span></label>`).join('')}</div>`);
       const done = h('<button class="primary">Auswerten</button>');
       done.onclick = () => {
         const ratio = list.querySelectorAll('input:checked').length / card.keyPoints.length;
         done.remove();
-        showRating(ratio >= 0.8 ? 'green' : ratio >= 0.4 ? 'yellow' : 'red');
+        showRating(suggest ?? (ratio >= 0.8 ? 'green' : ratio >= 0.4 ? 'yellow' : 'red'));
       };
       reveal.append(list, done);
       enhance(list);
+    };
+
+    const finishWithGemini = result => {
+      showBack();
+      const kp = result.keyPoints?.length
+        ? `<div class="checklist"><h3>Kernpunkte – Gemini-Einschätzung</h3>${result.keyPoints.map(k =>
+            `<div class="kp-item ${k.erfuellt ? 'right' : 'wrong'}"><span>${k.erfuellt ? '✅' : '❌'} ${md(k.point)}</span><p class="muted">${md(k.kommentar)}</p></div>`).join('')}</div>`
+        : '';
+      reveal.insertAdjacentHTML('beforeend', `<div class="panel gemini-feedback"><p><b>Stärke:</b> ${md(result.staerke)}</p><p><b>Unscharfe Stelle:</b> ${md(result.unscharfeStelle)}</p></div>${kp}`);
+      enhance(reveal);
+      showRating(mapRatingToButton(result.vorschlagRating));
+    };
+
+    let attempt = 0;
+    const feedbackBox = document.createElement('div');
+    work.append(feedbackBox);
+    const askGemini = async () => {
+      attempt++;
+      const r = await grade({
+        settings, card, attempt, systemPrompt: tutorPrompt,
+        userText: ta.value.trim() || undefined, userAudio: recordedAudio ?? undefined,
+      });
+      if (r.source === 'self') {
+        if (r.error) feedbackBox.append(h(`<p class="muted">Gemini nicht verfügbar (${esc(r.error)}) – Selbstbewertung.</p>`));
+        go.remove();
+        finish(null);
+        return;
+      }
+      if (!r.revealSolution) {
+        feedbackBox.replaceChildren(h(`<div class="panel gemini-feedback"><p><b>Stärke:</b> ${md(r.result.staerke)}</p><p><b>Noch nicht ganz:</b> ${md(r.result.unscharfeStelle)}</p></div>`));
+        enhance(feedbackBox);
+        go.textContent = 'Nochmal prüfen';
+        return;
+      }
+      go.remove();
+      finishWithGemini(r.result);
+    };
+
+    const go = h('<button class="primary big">Aufdecken</button>');
+    go.onclick = async () => {
+      answer = ta.value;
+      if (!settings?.geminiKey) { go.remove(); finish(null); return; }
+      go.disabled = true;
+      go.textContent = 'Bewerte …';
+      await askGemini();
+      if (go.isConnected) go.disabled = false;
     };
     work.append(go);
   }

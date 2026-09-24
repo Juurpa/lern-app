@@ -89,3 +89,35 @@ test('POST /events: > 200 events → 413', async () => {
   assert.equal(res.status, 413);
   assert.deepEqual(await res.json(), { error: 'too many events' });
 });
+
+const slideReq = (path, key = 'dev-key') => new Request(`https://w.example${path}`, { headers: { Origin: ORIGIN, ...(key ? { Authorization: `Bearer ${key}` } : {}) } });
+const assetsEnv = () => {
+  const seen = [];
+  return { ...env(), seen, ASSETS: { fetch: async r => { seen.push(new URL(r.url).pathname); return new URL(r.url).pathname.endsWith('/049.webp') ? new Response('IMG', { status: 200 }) : new Response('nope', { status: 404 }); } } };
+};
+
+test('Folien: ohne oder mit falschem Schlüssel 401, Assets werden nie angefasst', async () => {
+  const e = assetsEnv();
+  assert.equal((await handle(slideReq('/slides/mts06/049.webp', ''), e, now)).status, 401);
+  assert.equal((await handle(slideReq('/slides/mts06/049.webp', 'falsch'), e, now)).status, 401);
+  assert.deepEqual(e.seen, []);
+});
+
+test('Folien: mit Geräteschlüssel Bild + CORS + privates Caching', async () => {
+  const e = assetsEnv();
+  const r = await handle(slideReq('/slides/mts06/049.webp'), e, now);
+  assert.equal(r.status, 200);
+  assert.equal(await r.text(), 'IMG');
+  assert.equal(r.headers.get('Content-Type'), 'image/webp');
+  assert.equal(r.headers.get('Access-Control-Allow-Origin'), ORIGIN);
+  assert.match(r.headers.get('Cache-Control'), /^private/);
+});
+
+test('Folien: Ausschnitt-Pfade erlaubt, fremde Pfade und fehlende Dateien 404', async () => {
+  const e = assetsEnv();
+  assert.equal((await handle(slideReq('/slides/mts06/012@0.1_0.2_0.9_0.8.webp'), e, now)).status, 404); // Pfad gültig, Datei fehlt
+  assert.deepEqual(e.seen, ['/slides/mts06/012@0.1_0.2_0.9_0.8.webp']);
+  assert.equal((await handle(slideReq('/slides/../wrangler.toml'), e, now)).status, 404);
+  assert.equal((await handle(slideReq('/slides/mts06/49.webp'), e, now)).status, 404);
+  assert.equal(e.seen.length, 1);
+});

@@ -1,0 +1,434 @@
+[
+ {
+  "id": "mts01",
+  "fach": "MTS",
+  "title": "MTS 01 · Organisatorisches",
+  "file": "Semester 4 - Medizintechnische Systeme & Fehlerdiagnose/Vorlesungsfolien/MTS__01_Organisatorisches.pdf",
+  "pages": 11,
+  "aspect": 1.7778,
+  "units": []
+ },
+ {
+  "id": "mts02",
+  "fach": "MTS",
+  "title": "MTS 02 · Respiratorisches System I",
+  "file": "Semester 4 - Medizintechnische Systeme & Fehlerdiagnose/Vorlesungsfolien/MTS__02_RS1.pdf",
+  "pages": 56,
+  "aspect": 1.7778,
+  "units": [
+   "MTS-K2"
+  ]
+ },
+ {
+  "id": "mts03",
+  "fach": "MTS",
+  "title": "MTS 03 · Respiratorisches System II",
+  "file": "Semester 4 - Medizintechnische Systeme & Fehlerdiagnose/Vorlesungsfolien/MTS__03_RS2.pdf",
+  "pages": 44,
+  "aspect": 1.7778,
+  "units": [
+   "MTS-K3"
+  ]
+ },
+ {
+  "id": "mts04",
+  "fach": "MTS",
+  "title": "MTS 04 · Respiratorisches System III",
+  "file": "Semester 4 - Medizintechnische Systeme & Fehlerdiagnose/Vorlesungsfolien/MTS__04_RS3.pdf",
+  "pages": 56,
+  "aspect": 1.7778,
+  "units": [
+   "MTS-K4"
+  ]
+ },
+ {
+  "id": "mts05",
+  "fach": "MTS",
+  "title": "MTS 05 · Respiratorisches System IV",
+  "file": "Semester 4 - Medizintechnische Systeme & Fehlerdiagnose/Vorlesungsfolien/MTS__05_RS4.pdf",
+  "pages": 46,
+  "aspect": 1.7778,
+  "units": [
+   "MTS-K5"
+  ]
+ },
+ {
+  "id": "mts06",
+  "fach": "MTS",
+  "title": "MTS 06 · Cardiac Rhythm Management I",
+  "file": "Semester 4 - Medizintechnische Systeme & Fehlerdiagnose/Vorlesungsfolien/MTS__06_CRM1.pdf",
+  "pages": 55,
+  "aspect": 1.7778,
+  "units": [
+   "MTS-K6"
+  ]
+ },
+ {
+  "id": "mts07",
+  "fach": "MTS",
+  "title": "MTS 07 · Cardiac Rhythm Management II",
+  "file": "Semester 4 - Medizintechnische Systeme & Fehlerdiagnose/Vorlesungsfolien/MTS__07_CRM2.pdf",
+  "pages": 48,
+  "aspect": 1.7778,
+  "units": [
+   "MTS-K7"
+  ]
+ },
+ {
+  "id": "mts08",
+  "fach": "MTS",
+  "title": "MTS 08 · Herz-Lungen-Maschine",
+  "file": "Semester 4 - Medizintechnische Systeme & Fehlerdiagnose/Vorlesungsfolien/MTS__08_HLM.pdf",
+  "pages": 43,
+  "aspect": 1.7778,
+  "units": [
+   "MTS-K8"
+  ]
+ },
+ {
+  "id": "mts09",
+  "fach": "MTS",
+  "title": "MTS 09 · Niere I",
+  "file": "Semester 4 - Medizintechnische Systeme & Fehlerdiagnose/Vorlesungsfolien/MTS__09_NES1.pdf",
+  "pages": 33,
+  "aspect": 1.7778,
+  "units": [
+   "MTS-K9"
+  ]
+ },
+ {
+  "id": "mts10",
+  "fach": "MTS",
+  "title": "MTS 10 · Niere II",
+  "file": "Semester 4 - Medizintechnische Systeme & Fehlerdiagnose/Vorlesungsfolien/MTS__10_NES2.pdf",
+  "pages": 32,
+  "aspect": 1.7778,
+  "units": [
+   "MTS-K10"
+  ]
+ },
+ {
+  "id": "mtsue01",
+  "fach": "MTS",
+  "title": "MTS Übung 01 · RS1",
+  "file": "Semester 4 - Medizintechnische Systeme & Fehlerdiagnose/Uebungen/MTS_Ue__01_RS1.pdf",
+  "pages": 6,
+  "aspect": 1.7778,
+  "units": [
+   "MTS-K2"
+  ]
+ },
+ {
+  "id": "mtsue02",
+  "fach": "MTS",
+  "title": "MTS Übung 02 · RS2",
+  "file": "Semester 4 - Medizintechnische Systeme & Fehlerdiagnose/Uebungen/MTS_Ue__02_RS2.pdf",
+  "pages": 7,
+  "aspect": 1.7778,
+  "units": [
+   "MTS-K3"
+  ]
+ },
+ {
+  "id": "mtsue03",
+  "fach": "MTS",
+  "title": "MTS Übung 03 · RS3",
+  "file": "Semester 4 - Medizintechnische Systeme & Fehlerdiagnose/Uebungen/MTS_Ue__03_RS3.pdf",
+  "pages": 8,
+  "aspect": 1.7778,
+  "units": [
+   "MTS-K4"
+  ]
+ },
+ {
+  "id": "mtsue04",
+  "fach": "MTS",
+  "title": "MTS Übung 04 · RS4",
+  "file": "Semester 4 - Medizintechnische Systeme & Fehlerdiagnose/Uebungen/MTS_Ue__04_RS4.pdf",
+  "pages": 9,
+  "aspect": 1.7778,
+  "units": [
+   "MTS-K5"
+  ]
+ },
+ {
+  "id": "mtslsg04",
+  "fach": "MTS",
+  "title": "MTS Lösung Übung 04 · RS4",
+  "file": "Semester 4 - Medizintechnische Systeme & Fehlerdiagnose/Uebungen/Lsg_RS4.pdf",
+  "pages": 6,
+  "aspect": 0.7071,
+  "units": [
+   "MTS-K5"
+  ]
+ },
+ {
+  "id": "mtsue05",
+  "fach": "MTS",
+  "title": "MTS Übung 05 · CRM I+II",
+  "file": "Semester 4 - Medizintechnische Systeme & Fehlerdiagnose/Uebungen/MTS_Ue__05_CRM1-2.pdf",
+  "pages": 4,
+  "aspect": 1.7778,
+  "units": [
+   "MTS-K6",
+   "MTS-K7"
+  ]
+ },
+ {
+  "id": "mtssem01",
+  "fach": "MTS",
+  "title": "MTS Seminar · Strömungsmechanik",
+  "file": "Semester 4 - Medizintechnische Systeme & Fehlerdiagnose/Seminar/01__Einführung_Strömungsmechanik.pdf",
+  "pages": 13,
+  "aspect": 1.7778,
+  "units": [
+   "MTS-S1"
+  ]
+ },
+ {
+  "id": "inf2-le01",
+  "fach": "INF2",
+  "title": "INF2 LE01 · Einführung GUI",
+  "file": "Informatik 2/Vorlesung/INF2_LE01_EinfuehrungGUI_260416.pdf",
+  "pages": 51,
+  "aspect": 1.7778,
+  "units": [
+   "INF2-LE01"
+  ]
+ },
+ {
+  "id": "inf2-le02",
+  "fach": "INF2",
+  "title": "INF2 LE02 · GUI mit Layoutbeschreibung",
+  "file": "Informatik 2/Vorlesung/INF2_LE02_GUImitLayoutbeschreibung_260322.pdf",
+  "pages": 55,
+  "aspect": 1.7778,
+  "units": [
+   "INF2-LE02"
+  ]
+ },
+ {
+  "id": "inf2-le02b",
+  "fach": "INF2",
+  "title": "INF2 LE02b · Konstruktoren",
+  "file": "Informatik 2/Vorlesung/INF2_LE02b_Konstruktoren_260322.pdf",
+  "pages": 12,
+  "aspect": 1.7778,
+  "units": [
+   "INF2-LE02b"
+  ]
+ },
+ {
+  "id": "inf2-le02c",
+  "fach": "INF2",
+  "title": "INF2 LE02c · Bilder",
+  "file": "Informatik 2/Vorlesung/INF2_LE02c_Bilder_260322.pdf",
+  "pages": 45,
+  "aspect": 1.7778,
+  "units": [
+   "INF2-LE02c"
+  ]
+ },
+ {
+  "id": "inf2-le03a",
+  "fach": "INF2",
+  "title": "INF2 LE03a · Zeichnen mit Pane",
+  "file": "Informatik 2/Vorlesung/INF2_LE03a_ZeichnenPane_260322.pdf",
+  "pages": 54,
+  "aspect": 1.7778,
+  "units": [
+   "INF2-LE03a"
+  ]
+ },
+ {
+  "id": "inf2-le03b",
+  "fach": "INF2",
+  "title": "INF2 LE03b · Zeichnen mit Canvas",
+  "file": "Informatik 2/Vorlesung/INF2_LE03b_ZeichnenCanvas_260322.pdf",
+  "pages": 72,
+  "aspect": 1.7778,
+  "units": [
+   "INF2-LE03b"
+  ]
+ },
+ {
+  "id": "inf2-le04",
+  "fach": "INF2",
+  "title": "INF2 LE04 · OO: Klassen und Objekte",
+  "file": "Informatik 2/Vorlesung/INF2_LE04_OOKlassenObjekte_260322.pdf",
+  "pages": 84,
+  "aspect": 1.7778,
+  "units": [
+   "INF2-LE04"
+  ]
+ },
+ {
+  "id": "inf2-le05",
+  "fach": "INF2",
+  "title": "INF2 LE05 · OO: Polymorphie",
+  "file": "Informatik 2/Vorlesung/INF2_LE05_OOPolymorphie_260322.pdf",
+  "pages": 80,
+  "aspect": 1.7778,
+  "units": [
+   "INF2-LE05"
+  ]
+ },
+ {
+  "id": "inf2-le06",
+  "fach": "INF2",
+  "title": "INF2 LE06 · Schnittstellen",
+  "file": "Informatik 2/Vorlesung/INF2_LE06_Schnittstellen_260322.pdf",
+  "pages": 63,
+  "aspect": 1.7778,
+  "units": [
+   "INF2-LE06"
+  ]
+ },
+ {
+  "id": "inf2-le07",
+  "fach": "INF2",
+  "title": "INF2 LE07 · Mehrfachvererbung",
+  "file": "Informatik 2/Vorlesung/INF2_LE07_Mehrfachvererbung_260322.pdf",
+  "pages": 37,
+  "aspect": 1.7778,
+  "units": [
+   "INF2-LE07"
+  ]
+ },
+ {
+  "id": "inf2-le08",
+  "fach": "INF2",
+  "title": "INF2 LE08 · Parameter",
+  "file": "Informatik 2/Vorlesung/INF2_LE08_Parameter_260322.pdf",
+  "pages": 95,
+  "aspect": 1.7778,
+  "units": [
+   "INF2-LE08"
+  ]
+ },
+ {
+  "id": "inf2-le09",
+  "fach": "INF2",
+  "title": "INF2 LE09 · Listen",
+  "file": "Informatik 2/Vorlesung/INF2_LE09_DDSListen_260322.pdf",
+  "pages": 72,
+  "aspect": 1.7778,
+  "units": [
+   "INF2-LE09"
+  ]
+ },
+ {
+  "id": "inf2-le10",
+  "fach": "INF2",
+  "title": "INF2 LE10 · Datenstrukturen im JDK",
+  "file": "Informatik 2/Vorlesung/INF2_LE10_DS_JDK_260709.pdf",
+  "pages": 99,
+  "aspect": 1.7778,
+  "units": [
+   "INF2-LE10"
+  ]
+ },
+ {
+  "id": "inf2-le11",
+  "fach": "INF2",
+  "title": "INF2 LE11 · Bäume",
+  "file": "Informatik 2/Vorlesung/INF2_LE11_DDS_Baeume_260721.pdf",
+  "pages": 91,
+  "aspect": 1.7778,
+  "units": [
+   "INF2-LE11"
+  ]
+ },
+ {
+  "id": "inf2-p01",
+  "fach": "INF2",
+  "title": "INF2 Praktikum 1 · JavaFX-Start",
+  "file": "Informatik 2/Praktika/INF2_P01_JavaFXStart_260323.pdf",
+  "pages": 5,
+  "aspect": 0.7071,
+  "units": [
+   "INF2-P01"
+  ]
+ },
+ {
+  "id": "inf2-p02",
+  "fach": "INF2",
+  "title": "INF2 Praktikum 2 · GUI",
+  "file": "Informatik 2/Praktika/INF2_P02_GUI_260323.pdf",
+  "pages": 9,
+  "aspect": 0.7071,
+  "units": [
+   "INF2-P02"
+  ]
+ },
+ {
+  "id": "inf2-p03",
+  "fach": "INF2",
+  "title": "INF2 Praktikum 3 · GUI mit FXML",
+  "file": "Informatik 2/Praktika/INF2_P03_GUImitFXML_260323.pdf",
+  "pages": 15,
+  "aspect": 0.7071,
+  "units": [
+   "INF2-P03"
+  ]
+ },
+ {
+  "id": "inf2-p04",
+  "fach": "INF2",
+  "title": "INF2 Praktikum 4 · Dynamische Datenstrukturen",
+  "file": "Informatik 2/Praktika/INF2_P04_DynamischeDatenstrukturen_260323.pdf",
+  "pages": 14,
+  "aspect": 0.7071,
+  "units": [
+   "INF2-P04"
+  ]
+ },
+ {
+  "id": "inf2-p05",
+  "fach": "INF2",
+  "title": "INF2 Praktikum 5 · Zeichnen",
+  "file": "Informatik 2/Praktika/INF2_P05_Zeichnen_250323.pdf",
+  "pages": 28,
+  "aspect": 0.7071,
+  "units": [
+   "INF2-P05"
+  ]
+ },
+ {
+  "id": "inf2-k25",
+  "fach": "INF2",
+  "title": "INF2 Klausur 2025",
+  "file": "Informatik 2/INFO 2 Klausur 2025 22222_260114_200902pdf_260804_175347.pdf",
+  "pages": 48,
+  "aspect": 0.7071,
+  "units": [
+   "INF2-K25"
+  ]
+ },
+ {
+  "id": "rad-lec",
+  "fach": "RADAR",
+  "title": "Radar Systems · Vorlesung (Becker)",
+  "file": "Semester 4 - Radartechnik/Lecture_RadarSystems_Lec.pdf",
+  "pages": 477,
+  "aspect": 1.7778,
+  "units": [
+   "RAD-S1",
+   "RAD-S2",
+   "RAD-S3",
+   "RAD-S4",
+   "RAD-S5"
+  ]
+ },
+ {
+  "id": "rad-emf",
+  "fach": "RADAR",
+  "title": "Physik 2 · Elektromagnetische Felder (Skript)",
+  "file": "Semester 4 - Radartechnik/skript_physik_2_emf.pdf",
+  "pages": 31,
+  "aspect": 0.7727,
+  "units": [
+   "RAD-S1"
+  ]
+ }
+]

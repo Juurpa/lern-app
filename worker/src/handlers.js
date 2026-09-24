@@ -3,6 +3,7 @@ const MAX_TEXT = 2000;
 const MAX_EVENTS = 200;
 const RETENTION_TTL = 60 * 60 * 24 * 120; // 120 Tage
 const ALLOWED_ORIGINS = ['https://juurpa.github.io', 'http://localhost:8080'];
+const SLIDE_PATH = /^\/slides\/[a-z0-9-]+\/\d{3}(@[\d.]+_[\d.]+_[\d.]+_[\d.]+)?\.webp$/;
 
 const corsHeaders = origin => (ALLOWED_ORIGINS.includes(origin)
   ? { 'Access-Control-Allow-Origin': origin, 'Access-Control-Allow-Headers': 'Authorization, Content-Type', 'Access-Control-Allow-Methods': 'GET, POST, OPTIONS', Vary: 'Origin' }
@@ -43,6 +44,16 @@ export async function handle(req, env, now = new Date()) {
     if (!events.length) return json({ stored: 0 }, 200, cors);
     await env.LERN.put(`b:${now.toISOString()}:${crypto.randomUUID()}`, JSON.stringify(events), { expirationTtl: RETENTION_TTL });
     return json({ stored: events.length }, 200, cors);
+  }
+
+  // Folienbilder: urheberrechtlich geschützt, daher nur mit Geräteschlüssel (Worker-Static-Assets, run_worker_first).
+  if (url.pathname.startsWith('/slides/') && req.method === 'GET') {
+    if (!env.DEVICE_KEY || bearer(req) !== env.DEVICE_KEY) return json({ error: 'unauthorized' }, 401, cors);
+    if (!SLIDE_PATH.test(url.pathname) || !env.ASSETS) return json({ error: 'not found' }, 404, cors);
+    const asset = await env.ASSETS.fetch(new Request(new URL(url.pathname, url.origin)));
+    if (!asset.ok) return json({ error: 'not found' }, 404, cors);
+    const headers = new Headers({ 'Content-Type': 'image/webp', 'Cache-Control': 'private, max-age=31536000, immutable', ...cors });
+    return new Response(asset.body, { status: 200, headers });
   }
 
   if (url.pathname === '/events' && req.method === 'GET') {

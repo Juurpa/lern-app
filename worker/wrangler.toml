@@ -5,3 +5,10 @@ compatibility_date = "2026-09-01"
 [[kv_namespaces]]
 binding = "LERN"
 id = "ce332e3175964e399621081748f214cf"
+
+# Folienbilder (gitignored, via tools/render-slides.py erzeugt). run_worker_first: jede Anfrage
+# läuft durch handlers.js, das den Geräteschlüssel prüft – die Bilder sind nie öffentlich abrufbar.
+[assets]
+directory = "../private-assets"
+binding = "ASSETS"
+run_worker_first = true

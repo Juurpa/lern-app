@@ -38,5 +38,12 @@ test('applyUpdate bricht bei HTTP-Fehler ab', async () => {
 });
 
 test('DATA_URLS enthält alle Datendateien und version.json', () => {
-  for (const u of ['data/meta.json', 'data/units.json', 'data/cards-inf2.json', 'data/cards-mts.json', 'data/cards-radar.json', 'data/bridges.json', 'data/synthesis.json', 'data/version.json']) assert.ok(DATA_URLS.includes(u), u);
+  for (const u of ['data/meta.json', 'data/units.json', 'data/cards-inf2.json', 'data/cards-mts.json', 'data/cards-radar.json', 'data/bridges.json', 'data/synthesis.json', 'data/decks.json', 'data/exercises.json', 'data/version.json']) assert.ok(DATA_URLS.includes(u), u);
+});
+
+test('applyUpdate schreibt in den App-Cache, nie in den Folien-Cache', async () => {
+  const opened = [];
+  const cachesApi = { keys: async () => ['lernapp-slides-v1', 'lernapp-v9'], open: async name => { opened.push(name); return { put: async () => {} }; } };
+  await applyUpdate({ cachesApi, fetchFn: async () => ({ ok: true, clone() { return this; } }), urls: ['data/a.json'] });
+  assert.deepEqual(opened, ['lernapp-v9']);
 });

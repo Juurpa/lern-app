@@ -26,6 +26,7 @@ export function renderStart({ data, store, root }) {
   root.append(h(`<section>
     <h1>Klausurtraining</h1>${warn}
     <a class="btn primary big" href="#/learn">Lernen</a>
+    <div class="row start-nav"><a class="btn" href="#/aufgaben">📝 Aufgaben</a><a class="btn" href="#/klausuren">⏱ Probeklausur</a><a class="btn" href="#/folien">📄 Folien</a></div>
     <h2>Stand</h2>${rows}
     <nav class="bottom"><a class="btn" href="#/gaps">Lücken</a><a class="btn" href="#/settings">Einstellungen</a></nav>
   </section>`));

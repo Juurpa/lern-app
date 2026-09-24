@@ -3,7 +3,7 @@ import { fsrs, generatorParameters, createEmptyCard, Rating, State } from 'ts-fs
 const DAY = 86400000;
 const engine = fsrs(generatorParameters({ enable_fuzz: false }));
 
-export const MULT = { mc: 0.3, cloze: 0.5, hinted: 0.7, free: 1.0, voice: 1.0, code: 1.0, calc: 1.0, why: 1.2, bridge: 1.2 };
+export const MULT = { mc: 0.3, cloze: 0.5, hinted: 0.7, free: 1.0, voice: 1.0, code: 1.0, calc: 1.0, sketch: 1.0, why: 1.2, bridge: 1.2 };
 
 export function toRating(button, mode, hinted = false) {
   if (button === 'red') return Rating.Again;

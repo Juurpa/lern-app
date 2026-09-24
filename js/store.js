@@ -2,7 +2,7 @@ export const VERSION = 1;
 
 export function emptyDoc() {
   return {
-    version: VERSION, cards: {}, units: {}, gaps: [],
+    version: VERSION, cards: {}, units: {}, gaps: [], exercises: {}, exams: [],
     settings: { newPerSession: 15, geminiKey: '', geminiModel: 'gemini-flash-latest', syncKey: '' },
   };
 }
@@ -47,6 +47,8 @@ export function createStore(storage = globalThis.localStorage, key = 'lernapp.v1
       const doc = normalize(d);
       doc.cards = Object.fromEntries(Object.entries(doc.cards).filter(([, st]) => validCardState(st)));
       doc.gaps = doc.gaps.filter(validGap);
+      doc.exercises = isPlainObject(doc.exercises) ? Object.fromEntries(Object.entries(doc.exercises).filter(([, st]) => isPlainObject(st?.parts))) : {};
+      doc.exams = Array.isArray(doc.exams) ? doc.exams.filter(x => isPlainObject(x) && typeof x.set === 'string') : [];
       doc.settings.geminiKey = k.geminiKey ?? '';
       doc.settings.syncKey = k.syncKey ?? '';
       this.save(doc);

@@ -6,7 +6,8 @@ import { makeReviewEvent } from '../sync.js';
 import { renderCard } from './card.js';
 import { renderUnit } from './unit.js';
 
-export function renderLearn({ data, store, root, sync, tutorPrompt }) {
+export function renderLearn({ data, store, root, sync, tutorPrompt, slides, decksById }) {
+  const sctx = slides ? { slides, decksById } : null;
   const doc = store.load();
   const cardById = new Map(data.cards.map(c => [c.id, c]));
   const unitById = new Map(data.units.map(u => [u.id, u]));
@@ -54,13 +55,13 @@ export function renderLearn({ data, store, root, sync, tutorPrompt }) {
         doc.units[item.unitId] = { seen: true };
         save();
         next();
-      });
+      }, sctx, data.decks);
     }
     const card = cardById.get(item.cardId);
     const exam = data.meta.faecher[card.fach].exam;
     const mode = chooseMode(card, doc.cards[card.id], new Date(), exam);
     renderCard(root, {
-      card, mode, fachLabel, settings: doc.settings, tutorPrompt,
+      card, mode, fachLabel, settings: doc.settings, tutorPrompt, sctx,
       onRated: ({ button, hinted, answer, ms }) => {
         const now = new Date();
         if (!doc.cards[card.id]) shownNew++;

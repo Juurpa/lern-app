@@ -1,7 +1,34 @@
 import { h, esc, download } from '../render.js';
 import { emptyDoc } from '../store.js';
+import { deckRefs } from '../slides.js';
 
-export function renderSettings({ data, store, root, sync }) {
+function slidesPanel(data, slides) {
+  const faecher = Object.entries(data.meta.faecher).filter(([f]) => data.decks.some(d => d.fach === f));
+  const el = h(`<div class="panel"><h3>Folien offline</h3>
+    <p class="muted">Die Folienbilder kommen privat über deinen Sync-Schlüssel (nicht öffentlich im Repo). Angesehene Folien bleiben automatisch offline – hier kannst du ganze Fächer vorab laden (WLAN empfohlen).</p>
+    ${faecher.map(([f, info]) => {
+      const pages = data.decks.filter(d => d.fach === f).reduce((s, d) => s + d.pages, 0);
+      return `<div class="row slide-dl"><button type="button" data-fach="${esc(f)}">${esc(info.short)}-Folien laden (${pages})</button><span class="muted" data-status="${esc(f)}"></span></div>`;
+    }).join('')}</div>`);
+  for (const [f] of faecher) {
+    const refs = data.decks.filter(d => d.fach === f).flatMap(deckRefs);
+    const status = el.querySelector(`[data-status="${f}"]`);
+    slides?.countCached(refs).then(n => { status.textContent = `${n}/${refs.length} offline`; }).catch(() => {});
+    el.querySelector(`[data-fach="${f}"]`).onclick = async e => {
+      const b = e.target;
+      b.disabled = true;
+      try {
+        const r = await slides.prefetch(refs, (done, total) => { status.textContent = `${done}/${total} …`; });
+        status.textContent = `✓ ${refs.length - r.failed}/${refs.length} offline${r.failed ? ` (${r.failed} fehlgeschlagen)` : ''}`;
+      } catch (err) {
+        status.textContent = `✗ ${err.message}`;
+      } finally { b.disabled = false; }
+    };
+  }
+  return el;
+}
+
+export function renderSettings({ data, store, root, sync, slides }) {
   const doc = store.load();
   const s = doc.settings;
   const problems = [...data.errors, ...data.warnings];
@@ -63,6 +90,7 @@ export function renderSettings({ data, store, root, sync }) {
     catch (err) { alert(err.message); }
     finally { e.target.value = ''; }
   };
+  if (data.decks?.length) el.querySelector('.panel:nth-of-type(3)').after(slidesPanel(data, slides));
   q('#reset').onclick = () => {
     if (!confirm('Wirklich den gesamten Lernfortschritt löschen? Vorher exportieren!')) return;
     const fresh = emptyDoc();

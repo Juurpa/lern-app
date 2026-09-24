@@ -47,7 +47,12 @@ test('KaTeX-Grundschriften sind im Precache', () => {
 
 test('CDN wird mit CORS-Requests vorgeladen, Cache-Version erhöht', () => {
   assert.match(sw, /new Request\(u(rl)?, \{ mode: 'cors' \}\)/);
-  assert.match(sw, /const CACHE = 'lernapp-v8'/);
+  assert.match(sw, /const CACHE = 'lernapp-v9'/);
+});
+
+test('Folien-Cache überlebt App-Updates, Worker-Anfragen gehen am SW vorbei', () => {
+  assert.match(sw, /!k\.startsWith\('lernapp-slides-'\)/);
+  assert.match(sw, /hostname\.endsWith\('\.workers\.dev'\)/);
 });
 
 test('Update-Prüfanfragen werden nicht gecacht', () => {

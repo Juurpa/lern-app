@@ -2,12 +2,13 @@ import { h, md, mdInline, enhance, esc } from '../render.js';
 import { prepareCalc, checkAnswer, formatNumber } from '../calc.js';
 import { grade, mapRatingToButton } from '../grader.js';
 import { pickInputMode, getSpeechRecognitionCtor, createSpeechInput, recordAudio } from '../voice.js';
+import { slideStrip, slideFigure } from './slides.js';
 
-const MODE_LABEL = { free: 'Freitext', voice: 'Erklären', code: 'Code', calc: 'Rechnen', mc: 'Multiple Choice', cloze: 'Lückentext', why: 'Warum?', bridge: 'Brücke' };
+const MODE_LABEL = { free: 'Freitext', voice: 'Erklären', code: 'Code', calc: 'Rechnen', mc: 'Multiple Choice', cloze: 'Lückentext', why: 'Warum?', bridge: 'Brücke', sketch: 'Skizze' };
 const norm = s => String(s).trim().toLowerCase().replace(/\s+/g, ' ');
 const shuffle = a => a.map(v => [Math.random(), v]).sort((x, y) => x[0] - y[0]).map(x => x[1]);
 
-function ratingBar(suggest, cb) {
+export function ratingBar(suggest, cb) {
   const el = h(`<div class="row rate">
     <button class="r-red" data-b="red">🔴 Lücke</button>
     <button class="r-yellow" data-b="yellow">🟡 Unsicher</button>
@@ -19,7 +20,7 @@ function ratingBar(suggest, cb) {
   return el;
 }
 
-export function renderCard(root, { card, mode, fachLabel, onRated, settings, tutorPrompt }) {
+export function renderCard(root, { card, mode, fachLabel, onRated, settings, tutorPrompt, sctx }) {
   const el = h(`<article class="card">
     <div class="kicker"><span class="badge">${esc(fachLabel)}</span><span>${MODE_LABEL[mode] ?? mode}</span></div>
     <div class="q"></div><div class="work"></div><div class="reveal" hidden></div><div class="rate-slot" hidden></div>
@@ -32,12 +33,31 @@ export function renderCard(root, { card, mode, fachLabel, onRated, settings, tut
   const showBack = () => {
     reveal.hidden = false;
     reveal.innerHTML = `<h3>Lösung</h3>${md(card.back)}${card.why && mode !== 'why' ? `<h3>Denk-Trigger</h3>${md(card.why)}` : ''}`;
+    if (sctx && card.slides?.length) {
+      if (mode === 'sketch') card.slides.forEach(r => reveal.append(slideFigure(r, sctx)));
+      else reveal.append(slideStrip(card.slides, sctx));
+    }
     enhance(reveal);
   };
   const showRating = suggest => {
     rate.hidden = false;
     rate.replaceChildren(ratingBar(suggest, button => onRated({ button, mode, hinted, answer, ms: Date.now() - t0 })));
     rate.scrollIntoView({ behavior: 'smooth', block: 'end' });
+  };
+  // Lösung zeigen + Kernpunkte-Checkliste zur Selbstbewertung (suggest überschreibt den Checklisten-Vorschlag).
+  const selfAssess = suggest => {
+    showBack();
+    if (!card.keyPoints?.length) return showRating(suggest ?? null);
+    const list = h(`<div class="checklist"><h3>Kernpunkte – was hattest du?</h3>${card.keyPoints.map((k, i) =>
+      `<label><input type="checkbox" data-i="${i}"><span>${md(k)}</span></label>`).join('')}</div>`);
+    const done = h('<button class="primary">Auswerten</button>');
+    done.onclick = () => {
+      const ratio = list.querySelectorAll('input:checked').length / card.keyPoints.length;
+      done.remove();
+      showRating(suggest ?? (ratio >= 0.8 ? 'green' : ratio >= 0.4 ? 'yellow' : 'red'));
+    };
+    reveal.append(list, done);
+    enhance(list);
   };
 
   if (mode === 'mc') {
@@ -134,6 +154,12 @@ export function renderCard(root, { card, mode, fachLabel, onRated, settings, tut
     const buttons = h('<div class="row"></div>');
     buttons.append(stepBtn, check);
     work.append(row, stepBox, buttons);
+  } else if (mode === 'sketch') {
+    q.innerHTML = md(card.front);
+    work.append(h('<p class="muted">✏️ Skizziere auf Papier – mit Achsen, Beschriftungen und den charakteristischen Punkten. Dann aufdecken und ehrlich vergleichen.</p>'));
+    const go = h('<button class="primary big">Aufdecken</button>');
+    go.onclick = () => { answer = '(Skizze auf Papier)'; go.remove(); selfAssess(null); };
+    work.append(go);
   } else {
     const isVoice = mode === 'voice';
     q.innerHTML = mode === 'why' && card.why ? `<div class="muted">${md(card.front)}</div>${md(`**${card.why}**`)}` : md(card.front);
@@ -181,21 +207,6 @@ export function renderCard(root, { card, mode, fachLabel, onRated, settings, tut
       }
     }
 
-    const finish = suggest => {
-      showBack();
-      if (!card.keyPoints?.length) return showRating(suggest ?? null);
-      const list = h(`<div class="checklist"><h3>Kernpunkte – was hattest du?</h3>${card.keyPoints.map((k, i) =>
-        `<label><input type="checkbox" data-i="${i}"><span>${md(k)}</span></label>`).join('')}</div>`);
-      const done = h('<button class="primary">Auswerten</button>');
-      done.onclick = () => {
-        const ratio = list.querySelectorAll('input:checked').length / card.keyPoints.length;
-        done.remove();
-        showRating(suggest ?? (ratio >= 0.8 ? 'green' : ratio >= 0.4 ? 'yellow' : 'red'));
-      };
-      reveal.append(list, done);
-      enhance(list);
-    };
-
     const finishWithGemini = result => {
       showBack();
       const kp = result.keyPoints?.length
@@ -219,7 +230,7 @@ export function renderCard(root, { card, mode, fachLabel, onRated, settings, tut
       if (r.source === 'self') {
         if (r.error) feedbackBox.append(h(`<p class="muted">Gemini nicht verfügbar (${esc(r.error)}) – Selbstbewertung.</p>`));
         go.remove();
-        finish(null);
+        selfAssess(null);
         return;
       }
       if (!r.revealSolution) {
@@ -235,7 +246,7 @@ export function renderCard(root, { card, mode, fachLabel, onRated, settings, tut
     const go = h('<button class="primary big">Aufdecken</button>');
     go.onclick = async () => {
       answer = ta.value;
-      if (!settings?.geminiKey) { go.remove(); finish(null); return; }
+      if (!settings?.geminiKey) { go.remove(); selfAssess(null); return; }
       go.disabled = true;
       go.textContent = 'Bewerte …';
       await askGemini();
@@ -243,5 +254,7 @@ export function renderCard(root, { card, mode, fachLabel, onRated, settings, tut
     };
     work.append(go);
   }
+  // Abbildung zur Frage (Ausschnitt ohne Lösungstext) – kein Blättern, sonst sieht man die Antwort.
+  if (sctx && card.frontSlides?.length) card.frontSlides.forEach(r => q.append(slideFigure(r, sctx, { browse: false, caption: false })));
   enhance(q);
 }

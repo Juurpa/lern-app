@@ -1,7 +1,8 @@
 import { DATA_FILES } from './data.js';
 
 export const VERSION_FILE = 'data/version.json';
-export const DATA_URLS = [DATA_FILES.meta, DATA_FILES.units, ...DATA_FILES.cards, DATA_FILES.bridges, DATA_FILES.synthesis, VERSION_FILE];
+export const DATA_URLS = [DATA_FILES.meta, DATA_FILES.units, ...DATA_FILES.cards, DATA_FILES.bridges, DATA_FILES.synthesis, DATA_FILES.decks, DATA_FILES.exercises, VERSION_FILE];
+const APP_CACHE = /^lernapp-v\d+$/; // nicht den Folien-Cache (lernapp-slides-…) erwischen
 
 export const hasUpdate = (loaded, remote) => Boolean(remote?.version) && remote.version !== loaded?.version;
 
@@ -15,7 +16,7 @@ export async function fetchRemoteVersion(fetchFn = globalThis.fetch) {
 }
 
 export async function applyUpdate({ cachesApi = globalThis.caches, fetchFn = globalThis.fetch, urls = DATA_URLS } = {}) {
-  const name = cachesApi ? (await cachesApi.keys()).find(k => k.startsWith('lernapp-')) : undefined;
+  const name = cachesApi ? (await cachesApi.keys()).find(k => APP_CACHE.test(k)) : undefined;
   const cache = name ? await cachesApi.open(name) : null;
   for (const u of urls) {
     // SW-Cache umgehen (Stale-while-revalidate liefert sonst weiter den alten Stand zurück).

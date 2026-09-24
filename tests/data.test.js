@@ -99,3 +99,28 @@ test('kaputtes calc an Nicht-calc-Karte wird entfernt (Warnung)', () => {
   assert.equal(r.cards[0].calc, undefined);
   assert.equal(r.warnings.length, 1);
 });
+
+const decks = [{ id: 'mts06', pages: 10 }];
+
+test('Folien-Referenzen: ungültige werden entfernt (Warnung), gültige bleiben', () => {
+  const r = validateData({ meta, units, decks, cards: [{ ...ok, slides: ['mts06:3', 'mts06:11', 'xx:1'], frontSlides: ['mts06:2@0.1,0.1,0.9,0.9'] }] });
+  assert.equal(r.cards.length, 1);
+  assert.deepEqual(r.cards[0].slides, ['mts06:3']);
+  assert.deepEqual(r.cards[0].frontSlides, ['mts06:2@0.1,0.1,0.9,0.9']);
+  assert.equal(r.warnings.length, 2);
+});
+
+test('Skizzier-Karte braucht eine gültige Lösungsfolie', () => {
+  const r = validateData({ meta, units, decks, cards: [
+    { ...ok, id: 'S1', examMode: 'sketch', slides: ['mts06:4'] },
+    { ...ok, id: 'S2', examMode: 'sketch', slides: ['mts06:99'] },
+  ] });
+  assert.deepEqual(r.cards.map(c => c.id), ['S1']);
+  assert.match(r.errors.join(), /S2: Skizzier-Karte ohne Lösungsfolie/);
+});
+
+test('Unit-Schlüsselfolien werden geprüft', () => {
+  const r = validateData({ meta, units: [{ ...units[0], slides: ['mts06:1', 'mts06:0'] }], decks, cards: [] });
+  assert.deepEqual(r.units[0].slides, ['mts06:1']);
+  assert.equal(r.warnings.length, 1);
+});

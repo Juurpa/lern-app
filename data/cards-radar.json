@@ -22,7 +22,11 @@
    ],
    "correct": "$\\oint \\vec B\\cdot d\\vec A = 0$"
   },
-  "source": "skript_physik_2_emf.pdf, Kapitel 1.11 (Maxwell'sche Gleichungen in Integralform, S. 15–16)"
+  "source": "skript_physik_2_emf.pdf, Kapitel 1.11 (Maxwell'sche Gleichungen in Integralform, S. 15–16)",
+  "slides": [
+   "rad-emf:15",
+   "rad-emf:16"
+  ]
  },
  {
   "id": "RAD-S1-02",
@@ -46,7 +50,10 @@
    ],
    "correct": "Er macht das Gesetz unabhängig von der Wahl der Integrationsfläche und ermöglicht Wellenausbreitung im ladungsfreien Raum"
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.2.6, Folie 63"
+  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.2.6, Folie 63",
+  "slides": [
+   "rad-lec:63"
+  ]
  },
  {
   "id": "RAD-S1-03",
@@ -66,7 +73,10 @@
     "Ladung"
    ]
   },
-  "source": "skript_physik_2_emf.pdf, Kapitel 1.5/1.7/1.8 (Materialgleichungen); Kontinuitätsgleichung: Lecture_RadarSystems_Lec.pdf, Abschnitt 2.4.2, Folie 88"
+  "source": "skript_physik_2_emf.pdf, Kapitel 1.5/1.7/1.8 (Materialgleichungen); Kontinuitätsgleichung: Lecture_RadarSystems_Lec.pdf, Abschnitt 2.4.2, Folie 88",
+  "slides": [
+   "rad-lec:88"
+  ]
  },
  {
   "id": "RAD-S1-04",
@@ -88,6 +98,10 @@
    "Quasistationär: dD/dt gegenüber J vernachlässigbar (Nahfeld)",
    "Zeitharmonisch: e^(jωt)-Ansatz, d/dt → jω",
    "Macht aus DGLs algebraische Gleichungen in ω"
+  ],
+  "slides": [
+   "rad-lec:54",
+   "rad-lec:64"
   ]
  },
  {
@@ -104,7 +118,12 @@
    "Ergebnis: rot rot H = ω²με H = k²H mit c=1/√(εμ)"
   ],
   "why": "Warum taucht in der Wellengleichung nur noch das Produkt ωc bzw. k auf, aber nicht mehr E und H getrennt?",
-  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.3.1, Folie 67–70"
+  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.3.1, Folie 67–70",
+  "slides": [
+   "rad-lec:67",
+   "rad-lec:68",
+   "rad-lec:69"
+  ]
  },
  {
   "id": "RAD-S1-06",
@@ -128,7 +147,11 @@
    ],
    "correct": "E, H und Ausbreitungsrichtung stehen paarweise senkrecht aufeinander (TEM-Welle)"
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.3.2, Folie 72–73"
+  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.3.2, Folie 72–73",
+  "slides": [
+   "rad-lec:72",
+   "rad-lec:73"
+  ]
  },
  {
   "id": "RAD-S1-07",
@@ -148,7 +171,11 @@
     "377"
    ]
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.3.2, Folie 73–74"
+  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.3.2, Folie 73–74",
+  "slides": [
+   "rad-lec:73",
+   "rad-lec:74"
+  ]
  },
  {
   "id": "RAD-S1-08",
@@ -185,6 +212,9 @@
    "Faustformel: λ[mm] = 300/f[GHz]",
    "Bei 76 GHz: λ ≈ 3,947 mm",
    "Diese Zahl taucht mehrfach wieder auf (d=λ/2, Fernfeld, Range-Auflösung)"
+  ],
+  "slides": [
+   "rad-lec:70"
   ]
  },
  {
@@ -209,7 +239,10 @@
    ],
    "correct": "Die Polarisation bezeichnet die Richtung des E-Feldvektors senkrecht zur Ausbreitungsrichtung"
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.3.2, Folie 75"
+  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.3.2, Folie 75",
+  "slides": [
+   "rad-lec:75"
+  ]
  },
  {
   "id": "RAD-S1-10",
@@ -246,6 +279,10 @@
    "Zf = √(μ/ε) = Zf0/√(εr) für μr=1",
    "Zf0 (Vakuum) ≈ 377 Ω",
    "Größeres εr → kleineres Zf"
+  ],
+  "slides": [
+   "rad-lec:73",
+   "rad-lec:74"
   ]
  },
  {
@@ -271,7 +308,10 @@
    ],
    "correct": "Entlang seiner eigenen Achse (θ = 0°)"
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.4.1, Folie 80"
+  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.4.1, Folie 80",
+  "slides": [
+   "rad-lec:80"
+  ]
  },
  {
   "id": "RAD-S1-12",
@@ -286,7 +326,11 @@
    "t' = t - r/c: Signal braucht die Laufzeit r/c",
    "Feld 'hinkt' der Quelle um r/c hinterher"
   ],
-  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.4.2, Folie 87–88"
+  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.4.2, Folie 87–88",
+  "slides": [
+   "rad-lec:87",
+   "rad-lec:88"
+  ]
  },
  {
   "id": "RAD-S1-13",
@@ -308,6 +352,9 @@
    "D = Antennenapertur",
    "Ab dort: Phasenfehler durch Kugelwellenkrümmung vernachlässigbar",
    "Welle darf lokal als eben behandelt werden"
+  ],
+  "slides": [
+   "rad-lec:91"
   ]
  },
  {
@@ -366,7 +413,10 @@
    "Grunddämpfung steigt mit der Frequenz",
    "76–81 GHz liegt zwischen den Resonanzspitzen"
   ],
-  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.5.2, Folie 107"
+  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.5.2, Folie 107",
+  "slides": [
+   "rad-lec:107"
+  ]
  },
  {
   "id": "RAD-S1-16",
@@ -390,7 +440,10 @@
    ],
    "correct": "$n=\\sqrt{\\varepsilon_r\\mu_r}$"
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.5.1, Folie 100"
+  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.5.1, Folie 100",
+  "slides": [
+   "rad-lec:100"
+  ]
  },
  {
   "id": "RAD-S1-17",
@@ -414,7 +467,10 @@
    ],
    "correct": "TE: E-Feld senkrecht zur Einfallsebene (parallel zur Grenzfläche); TM: E-Feld parallel zur Einfallsebene"
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.5.1, Folie 99"
+  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.5.1, Folie 99",
+  "slides": [
+   "rad-lec:99"
+  ]
  },
  {
   "id": "RAD-S1-18",
@@ -439,7 +495,10 @@
    ],
    "correct": "r_p = +1 und r_s = −1 – nur die TE-Welle macht einen 180°-Phasensprung"
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.5.1, Folie 105"
+  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.5.1, Folie 105",
+  "slides": [
+   "rad-lec:105"
+  ]
  },
  {
   "id": "RAD-S1-19",
@@ -460,6 +519,9 @@
    "Brewster-Winkel: θB = arctan(n2/n1)",
    "Dort: p-/TM-Welle vollständig transmittiert, rp=0",
    "s-/TE-Welle hat keinen entsprechenden Winkel"
+  ],
+  "slides": [
+   "rad-lec:103"
   ]
  },
  {
@@ -486,7 +548,12 @@
    ],
    "correct": "Weil ihre Reflexionsfaktoren an der Grenzfläche unterschiedliches Vorzeichen haben (rp = +1, rs = −1)"
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.5.3, Folie 109–113"
+  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 2.5.3, Folie 109–113",
+  "slides": [
+   "rad-lec:109",
+   "rad-lec:110",
+   "rad-lec:111"
+  ]
  },
  {
   "id": "RAD-S2-01",
@@ -502,7 +569,10 @@
    "PLL = Regelschleife um den VCO, kein Serienblock im Signalpfad"
   ],
   "why": "Warum lohnt es sich, die Kette immer in derselben Reihenfolge zu erzählen, auch wenn der Prüfer mittendrin mit einer Nachfrage einsteigt?",
-  "source": "Lecture_RadarSystems_Lec.pdf, Folie 126"
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 126",
+  "slides": [
+   "rad-lec:126"
+  ]
  },
  {
   "id": "RAD-S2-02",
@@ -527,7 +597,10 @@
    ],
    "correct": "Phasenrauschen"
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, Folie 130; 04_Radartechnik.md, Abschnitt 'Station 2'"
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 130; 04_Radartechnik.md, Abschnitt 'Station 2'",
+  "slides": [
+   "rad-lec:130"
+  ]
  },
  {
   "id": "RAD-S2-03",
@@ -549,7 +622,10 @@
     "nichtlinearen"
    ]
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, Folie 133; 04_Radartechnik.md, Abschnitt 'Station 2'"
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 133; 04_Radartechnik.md, Abschnitt 'Station 2'",
+  "slides": [
+   "rad-lec:133"
+  ]
  },
  {
   "id": "RAD-S2-04",
@@ -573,7 +649,12 @@
    ],
    "correct": "Der VCO erzeugt die Trägerfrequenz, die PLL stabilisiert und linearisiert den Sweep"
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, Folie 129-133"
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 129-133",
+  "slides": [
+   "rad-lec:129",
+   "rad-lec:130",
+   "rad-lec:131"
+  ]
  },
  {
   "id": "RAD-S2-05",
@@ -613,7 +694,10 @@
    ],
    "correct": "Durch Energie, die über Nebenkeulen in andere Richtungen abgestrahlt und dort reflektiert wird"
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, Folie 139; 04_Radartechnik.md, Abschnitt 'Station 2'"
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 139; 04_Radartechnik.md, Abschnitt 'Station 2'",
+  "slides": [
+   "rad-lec:139"
+  ]
  },
  {
   "id": "RAD-S2-07",
@@ -638,7 +722,11 @@
    ],
    "correct": "Gain berücksichtigt zusätzlich den Wirkungsgrad der Antenne"
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, Folie 140, 142"
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 140, 142",
+  "slides": [
+   "rad-lec:140",
+   "rad-lec:142"
+  ]
  },
  {
   "id": "RAD-S2-08",
@@ -654,7 +742,10 @@
    "Erster Schritt der Radargleichungs-Herleitung"
   ],
   "why": "Warum taucht im Nenner die komplette Kugeloberfläche 4πR² auf und nicht z. B. nur ein Kreisquerschnitt?",
-  "source": "Lecture_RadarSystems_Lec.pdf, Folie 143"
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 143",
+  "slides": [
+   "rad-lec:143"
+  ]
  },
  {
   "id": "RAD-S2-09",
@@ -669,7 +760,10 @@
    "Einheit m², logarithmisch üblich in dBsm"
   ],
   "why": "Warum ist σ keine echte, direkt messbare geometrische Fläche des Ziels, sondern eine 'hypothetische' Größe?",
-  "source": "Lecture_RadarSystems_Lec.pdf, Folie 159"
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 159",
+  "slides": [
+   "rad-lec:159"
+  ]
  },
  {
   "id": "RAD-S2-10",
@@ -690,7 +784,11 @@
     "2"
    ]
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, Folie 160-161"
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 160-161",
+  "slides": [
+   "rad-lec:160",
+   "rad-lec:161"
+  ]
  },
  {
   "id": "RAD-S2-11",
@@ -738,7 +836,10 @@
     "result": 743
    }
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, Folie 161"
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 161",
+  "slides": [
+   "rad-lec:161"
+  ]
  },
  {
   "id": "RAD-S2-12",
@@ -781,7 +882,10 @@
     "result": 1.21
    }
   },
-  "source": "04_Radartechnik.md, Abschnitt 'Station 2'; Lecture_RadarSystems_Lec.pdf, Folie 144"
+  "source": "04_Radartechnik.md, Abschnitt 'Station 2'; Lecture_RadarSystems_Lec.pdf, Folie 144",
+  "slides": [
+   "rad-lec:144"
+  ]
  },
  {
   "id": "RAD-S2-13",
@@ -797,7 +901,10 @@
    "Schritt 4: Empfangsantenne fängt über wirksame Fläche Ar=Grλ²/4π ein"
   ],
   "why": "Warum taucht 4πR² im Nenner gleich zweimal auf (einmal hin, einmal zurück)?",
-  "source": "04_Radartechnik.md, Abschnitt 'Station 2'; Lecture_RadarSystems_Lec.pdf, Folie 165"
+  "source": "04_Radartechnik.md, Abschnitt 'Station 2'; Lecture_RadarSystems_Lec.pdf, Folie 165",
+  "slides": [
+   "rad-lec:165"
+  ]
  },
  {
   "id": "RAD-S2-14",
@@ -817,7 +924,10 @@
     "4"
    ]
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, Folie 165"
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 165",
+  "slides": [
+   "rad-lec:165"
+  ]
  },
  {
   "id": "RAD-S2-15",
@@ -841,7 +951,10 @@
    ],
    "correct": "16"
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, Folie 165; 04_Radartechnik.md, Abschnitt 'Station 2'"
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 165; 04_Radartechnik.md, Abschnitt 'Station 2'",
+  "slides": [
+   "rad-lec:165"
+  ]
  },
  {
   "id": "RAD-S2-16",
@@ -883,7 +996,10 @@
     "result": 16
    }
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, Folie 165; 04_Radartechnik.md, Abschnitt 'Station 2'"
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 165; 04_Radartechnik.md, Abschnitt 'Station 2'",
+  "slides": [
+   "rad-lec:165"
+  ]
  },
  {
   "id": "RAD-S2-17",
@@ -926,7 +1042,10 @@
     "result": 1.226
    }
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, Folie 165; 04_Radartechnik.md, Abschnitt 'Station 2'"
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 165; 04_Radartechnik.md, Abschnitt 'Station 2'",
+  "slides": [
+   "rad-lec:165"
+  ]
  },
  {
   "id": "RAD-S2-18",
@@ -951,7 +1070,10 @@
    ],
    "correct": "Vom Aspektwinkel (Blickrichtung) auf das Ziel"
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, Folie 163"
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 163",
+  "slides": [
+   "rad-lec:163"
+  ]
  },
  {
   "id": "RAD-S2-19",
@@ -966,7 +1088,10 @@
    "LNA sitzt so nah wie möglich an der Antenne"
   ],
   "why": "Warum steht der LNA direkt nach der Empfangsantenne und nicht erst nach dem Filter?",
-  "source": "Lecture_RadarSystems_Lec.pdf, Folie 169; 04_Radartechnik.md, Abschnitt 'Station 2'"
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 169; 04_Radartechnik.md, Abschnitt 'Station 2'",
+  "slides": [
+   "rad-lec:169"
+  ]
  },
  {
   "id": "RAD-S2-20",
@@ -991,7 +1116,10 @@
    ],
    "correct": "Weil ein Filter vor dem LNA die Systemrauschzahl mit vollem Gewicht verschlechtert"
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, Folie 170"
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 170",
+  "slides": [
+   "rad-lec:170"
+  ]
  },
  {
   "id": "RAD-S2-21",
@@ -1013,7 +1141,12 @@
     "Konversionsverlust"
    ]
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, Folie 175-176, 178"
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 175-176, 178",
+  "slides": [
+   "rad-lec:175",
+   "rad-lec:176",
+   "rad-lec:178"
+  ]
  },
  {
   "id": "RAD-S2-22",
@@ -1058,7 +1191,11 @@
     "12"
    ]
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, Folie 181-182"
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 181-182",
+  "slides": [
+   "rad-lec:181",
+   "rad-lec:182"
+  ]
  },
  {
   "id": "RAD-S2-24",
@@ -1074,7 +1211,11 @@
    "Reicht die ADC-Auflösung nicht, geht das schwache Ziel im Quantisierungsrauschen unter"
   ],
   "why": "Warum reicht 'einfach mehr Bit beim ADC' als Lösung nicht immer aus, wenn schwache und starke Ziele gleichzeitig sichtbar sein sollen?",
-  "source": "Lecture_RadarSystems_Lec.pdf, Folie 183-184"
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 183-184",
+  "slides": [
+   "rad-lec:183",
+   "rad-lec:184"
+  ]
  },
  {
   "id": "RAD-S3-01",
@@ -1099,7 +1240,12 @@
    ],
    "correct": "CW"
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, S. 190–196"
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 190–196",
+  "slides": [
+   "rad-lec:190",
+   "rad-lec:191",
+   "rad-lec:192"
+  ]
  },
  {
   "id": "RAD-S3-02",
@@ -1124,7 +1270,11 @@
    ],
    "correct": "Ein zeitveränderliches Merkmal (Modulation), dessen Verschiebung die Laufzeit codiert"
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, S. 190f"
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 190f",
+  "slides": [
+   "rad-lec:190",
+   "rad-lec:191"
+  ]
  },
  {
   "id": "RAD-S3-03",
@@ -1145,7 +1295,11 @@
     "wenige"
    ]
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, S. 192f"
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 192f",
+  "slides": [
+   "rad-lec:192",
+   "rad-lec:193"
+  ]
  },
  {
   "id": "RAD-S3-04",
@@ -1160,7 +1314,12 @@
    "Näherung: Terme in 1/c² vernachlässigt"
   ],
   "why": "Warum wird aus dem Mischprodukt eine konstante Frequenz, obwohl Sende- und Empfangssignal beide ihre Frequenz ändern?",
-  "source": "Lecture_RadarSystems_Lec.pdf, S. 194–197"
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 194–197",
+  "slides": [
+   "rad-lec:194",
+   "rad-lec:195",
+   "rad-lec:196"
+  ]
  },
  {
   "id": "RAD-S3-05",
@@ -1598,7 +1757,12 @@
     "Range-Doppler"
    ]
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, S. 203–207"
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 203–207",
+  "slides": [
+   "rad-lec:203",
+   "rad-lec:204",
+   "rad-lec:205"
+  ]
  },
  {
   "id": "RAD-S3-20",
@@ -1646,7 +1810,12 @@
    ],
    "correct": "Um Signale mehrerer gleichzeitig sendender Tx-Antennen am Empfänger trennen zu können"
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, S. 216–218"
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 216–218",
+  "slides": [
+   "rad-lec:216",
+   "rad-lec:217",
+   "rad-lec:218"
+  ]
  },
  {
   "id": "RAD-S3-22",
@@ -1743,7 +1912,12 @@
     "12"
    ]
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, S. 223–226"
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 223–226",
+  "slides": [
+   "rad-lec:223",
+   "rad-lec:224",
+   "rad-lec:225"
+  ]
  },
  {
   "id": "RAD-S3-26",
@@ -1767,7 +1941,11 @@
    ],
    "correct": "Dem Verhältnis von Differenz- zu Summensignal zweier überlappender Keulen"
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, S. 229f"
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 229f",
+  "slides": [
+   "rad-lec:229",
+   "rad-lec:230"
+  ]
  },
  {
   "id": "RAD-S3-27",
@@ -1782,7 +1960,12 @@
    "Δθ≈2/N rad – identisch zum Steering-Vektor-Ergebnis"
   ],
   "why": "Warum liefert die DFT-Sichtweise exakt dieselbe Winkelauflösung wie die Steering-Vektor-Nullstellenbetrachtung?",
-  "source": "Lecture_RadarSystems_Lec.pdf, S. 234–236"
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 234–236",
+  "slides": [
+   "rad-lec:234",
+   "rad-lec:235",
+   "rad-lec:236"
+  ]
  },
  {
   "id": "RAD-S3-28",
@@ -1831,7 +2014,10 @@
    ],
    "correct": "Wenn seine ε-Nachbarschaft mindestens MinPts Punkte enthält"
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, S. 278 (Kap. 5.2 Clustering, Algorithmus DBSCAN)"
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 278 (Kap. 5.2 Clustering, Algorithmus DBSCAN)",
+  "slides": [
+   "rad-lec:278"
+  ]
  },
  {
   "id": "RAD-S4-02",
@@ -1854,7 +2040,10 @@
     "Rauschen"
    ]
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, S. 278 (Kap. 5.2 Clustering)"
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 278 (Kap. 5.2 Clustering)",
+  "slides": [
+   "rad-lec:278"
+  ]
  },
  {
   "id": "RAD-S4-03",
@@ -1879,7 +2068,10 @@
    ],
    "correct": "Weil eine Gleichung mit zwei Unbekannten unterbestimmt ist"
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, S. 283 (Kap. 5.3 Determination of radial speed)"
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 283 (Kap. 5.3 Determination of radial speed)",
+  "slides": [
+   "rad-lec:283"
+  ]
  },
  {
   "id": "RAD-S4-04",
@@ -1941,7 +2133,10 @@
     "result": 10.66
    }
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, S. 283 (Kap. 5.3 Determination of radial speed)"
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 283 (Kap. 5.3 Determination of radial speed)",
+  "slides": [
+   "rad-lec:283"
+  ]
  },
  {
   "id": "RAD-S4-06",
@@ -1965,7 +2160,12 @@
    ],
    "correct": "Sie benötigen mehr als eine einzelne Momentaufnahme (mehrere Winkel oder mehrere Zeitpunkte)"
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, S. 283–285 (Kap. 5.3); 04_Radartechnik.md, Abschnitt 'Station 4'"
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 283–285 (Kap. 5.3); 04_Radartechnik.md, Abschnitt 'Station 4'",
+  "slides": [
+   "rad-lec:283",
+   "rad-lec:284",
+   "rad-lec:285"
+  ]
  },
  {
   "id": "RAD-S4-07",
@@ -2007,7 +2207,11 @@
     "result": 10
    }
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, S. 284–285 (Kap. 5.3, Beispiel 'Two targets')"
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 284–285 (Kap. 5.3, Beispiel 'Two targets')",
+  "slides": [
+   "rad-lec:284",
+   "rad-lec:285"
+  ]
  },
  {
   "id": "RAD-S4-08",
@@ -2031,7 +2235,10 @@
    ],
    "correct": "Clustering wirkt innerhalb eines Zyklus räumlich, Tracking verfolgt Objekte über mehrere Zyklen zeitlich"
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, S. 275 (Kap. 5, Gliederung Point cloud processing)"
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 275 (Kap. 5, Gliederung Point cloud processing)",
+  "slides": [
+   "rad-lec:275"
+  ]
  },
  {
   "id": "RAD-S4-09",
@@ -2095,7 +2302,11 @@
    "Motivation, nicht Herleitung der Matrizen"
   ],
   "why": "Warum reicht die reine Messung nicht aus, obwohl sie doch die 'echten' Daten liefert?",
-  "source": "Lecture_RadarSystems_Lec.pdf, S. 321, 323 (Kap. 5.6.1 Motivation, Beispiel + Findings)"
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 321, 323 (Kap. 5.6.1 Motivation, Beispiel + Findings)",
+  "slides": [
+   "rad-lec:321",
+   "rad-lec:323"
+  ]
  },
  {
   "id": "RAD-S4-12",
@@ -2118,7 +2329,10 @@
     "sinkt"
    ]
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, Kap. 5.6.6 (Algorithm); S. 323 (Findings)"
+  "source": "Lecture_RadarSystems_Lec.pdf, Kap. 5.6.6 (Algorithm); S. 323 (Findings)",
+  "slides": [
+   "rad-lec:319"
+  ]
  },
  {
   "id": "RAD-S4-13",
@@ -2142,7 +2356,10 @@
    ],
    "correct": "Lineare Systeme mit gaußschem Rauschen"
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, Kap. 5.6 (Kalman Filter), Kap. 5.7 (Single Target Tracking)"
+  "source": "Lecture_RadarSystems_Lec.pdf, Kap. 5.6 (Kalman Filter), Kap. 5.7 (Single Target Tracking)",
+  "slides": [
+   "rad-lec:319"
+  ]
  },
  {
   "id": "RAD-S4-14",
@@ -2166,7 +2383,10 @@
    ],
    "correct": "Er linearisiert das nichtlineare Modell bei jedem Schritt lokal um die aktuelle Schätzung"
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, Kap. 5.7 (Single Target Tracking)"
+  "source": "Lecture_RadarSystems_Lec.pdf, Kap. 5.7 (Single Target Tracking)",
+  "slides": [
+   "rad-lec:355"
+  ]
  },
  {
   "id": "RAD-S4-15",
@@ -2188,7 +2408,10 @@
     "Partikel"
    ]
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, Kap. 5.7 (Single Target Tracking)"
+  "source": "Lecture_RadarSystems_Lec.pdf, Kap. 5.7 (Single Target Tracking)",
+  "slides": [
+   "rad-lec:355"
+  ]
  },
  {
   "id": "RAD-S4-16",
@@ -2213,7 +2436,10 @@
    ],
    "correct": "Die Frage, welche neue Detektion zu welchem bestehenden Track gehört"
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, Kap. 5.8 (Multiple Target Tracking)"
+  "source": "Lecture_RadarSystems_Lec.pdf, Kap. 5.8 (Multiple Target Tracking)",
+  "slides": [
+   "rad-lec:366"
+  ]
  },
  {
   "id": "RAD-S5-01",
@@ -2263,7 +2489,10 @@
    ],
    "correct": "Innenraum-Radar (z. B. Kindererkennung, Präsenzsensorik)"
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, Folie 383 (6.2.1 Automotive radar market forecast)"
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 383 (6.2.1 Automotive radar market forecast)",
+  "slides": [
+   "rad-lec:383"
+  ]
  },
  {
   "id": "RAD-S5-03",
@@ -2279,7 +2508,10 @@
    "Größere Apertur → feinere Winkelauflösung, keine zusätzliche Hardware"
   ],
   "why": "Warum reicht die orthogonale Codierung der Sender aus, um aus wenigen physischen Antennen ein deutlich größeres virtuelles Array zu machen?",
-  "source": "Lecture_RadarSystems_Lec.pdf, Folie 456 (6.4.3 Virtual Antennas)"
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 456 (6.4.3 Virtual Antennas)",
+  "slides": [
+   "rad-lec:456"
+  ]
  },
  {
   "id": "RAD-S5-04",
@@ -2303,7 +2535,10 @@
    ],
    "correct": "Die Anzahl virtueller Kanäle nach MIMO-Kombination von Tx- und Rx-Antennen"
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, Folie 455 (6.4.3 Virtual Antennas, 'Number of Antennas')"
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 455 (6.4.3 Virtual Antennas, 'Number of Antennas')",
+  "slides": [
+   "rad-lec:455"
+  ]
  },
  {
   "id": "RAD-S5-05",
@@ -2347,7 +2582,10 @@
     "result": 576
    }
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, Folie 456 (6.4.3 Virtual Antennas)"
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 456 (6.4.3 Virtual Antennas)",
+  "slides": [
+   "rad-lec:456"
+  ]
  },
  {
   "id": "RAD-S5-06",
@@ -2372,7 +2610,10 @@
    ],
    "correct": "MUSIC"
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 4.4.5 Spectral-Based Algorithms (MUSIC laut Index auf Folie 259); Folie 453 (6.4.2) nennt dazu nur die Übungsaufgabe ohne Erklärung."
+  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 4.4.5 Spectral-Based Algorithms (MUSIC laut Index auf Folie 259); Folie 453 (6.4.2) nennt dazu nur die Übungsaufgabe ohne Erklärung.",
+  "slides": [
+   "rad-lec:259"
+  ]
  },
  {
   "id": "RAD-S5-07",
@@ -2388,7 +2629,12 @@
    "Kosten: höherer Rechenaufwand, Kovarianzschätzung nötig"
   ],
   "why": "Warum kann ein statistisches Verfahren wie MUSIC eine feinere Winkeltrennung liefern als die physikalische Apertur eigentlich erlaubt?",
-  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 4.4.5 Spectral-Based Algorithms (Folie ca. 239-261); Folie 453 (6.4.2) nennt dazu nur die Übungsaufgabe ohne Erklärung."
+  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 4.4.5 Spectral-Based Algorithms (Folie ca. 239-261); Folie 453 (6.4.2) nennt dazu nur die Übungsaufgabe ohne Erklärung.",
+  "slides": [
+   "rad-lec:239",
+   "rad-lec:240",
+   "rad-lec:241"
+  ]
  },
  {
   "id": "RAD-S5-08",
@@ -2410,7 +2656,11 @@
     "kohärente"
    ]
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, Kap. 6.4.1 Interference (Folie 450-451, dort nur als Übungsaufgabe genannt; PMCW/OFDM/kohärente Netzwerke sind Standard-Automotive-Radar-Fachwissen, nicht wörtlich auf der Folie ausgeführt)."
+  "source": "Lecture_RadarSystems_Lec.pdf, Kap. 6.4.1 Interference (Folie 450-451, dort nur als Übungsaufgabe genannt; PMCW/OFDM/kohärente Netzwerke sind Standard-Automotive-Radar-Fachwissen, nicht wörtlich auf der Folie ausgeführt).",
+  "slides": [
+   "rad-lec:450",
+   "rad-lec:451"
+  ]
  },
  {
   "id": "RAD-S5-09",
@@ -2460,7 +2710,10 @@
    ],
    "correct": "Ein Dauerstrichsignal wird nach einem Codemuster in der Phase moduliert, statt die Frequenz zu wobbeln"
   },
-  "source": "Lecture_RadarSystems_Lec.pdf, Folie 458 (6.4.4 Modulation Schemes)"
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 458 (6.4.4 Modulation Schemes)",
+  "slides": [
+   "rad-lec:458"
+  ]
  },
  {
   "id": "RAD-S5-11",
@@ -2476,7 +2729,10 @@
    "Vorteil: besseres Mapping / Occupancy Gridmapping"
   ],
   "why": "Warum bringt allein die Synchronisation mehrerer Radare schon einen Auflösungsgewinn, ohne dass ein einzelner Sensor verändert wird?",
-  "source": "Lecture_RadarSystems_Lec.pdf, Folie 461 (6.4.6 Coherent Radar)"
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 461 (6.4.6 Coherent Radar)",
+  "slides": [
+   "rad-lec:461"
+  ]
  },
  {
   "id": "RAD-S5-12",
@@ -2514,7 +2770,12 @@
    "CAPON: Leistungsminimierung bei erhaltenem Zielsignal"
   ],
   "why": "Warum brauchen sowohl CAPON als auch MUSIC denselben Steering-Vektor, obwohl sie unterschiedlich rechnen?",
-  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 4.4.1 Steering vector of ULA (Folie 223-228) und Anhang 7.0.4 Index ('Steering Vector')."
+  "source": "Lecture_RadarSystems_Lec.pdf, Abschnitt 4.4.1 Steering vector of ULA (Folie 223-228) und Anhang 7.0.4 Index ('Steering Vector').",
+  "slides": [
+   "rad-lec:223",
+   "rad-lec:224",
+   "rad-lec:225"
+  ]
  },
  {
   "id": "RAD-S5-14",
@@ -2531,5 +2792,815 @@
   ],
   "why": "Warum ist diese Synthese die stärkste Antwort auf eine Nachfrage, nachdem du die Stichwortliste (Karte 1) schon genannt hast?",
   "source": "04_Radartechnik.md, Abschnitt 'Station 5 · Einordnung'"
+ },
+ {
+  "id": "RAD-S1-F01",
+  "examMode": "sketch",
+  "front": "Skizziere und beschrifte eine linear polarisierte ebene Welle, die sich in +y-Richtung ausbreitet (Momentaufnahme t = 0, E-Feld in z-Richtung). Zeichne Achsen, E- und B-Feld-Verlauf, Wellenlänge und Ausbreitungsrichtung ein.",
+  "back": "**Skizze (wie Folie 75, t = 0):** Achsenkreuz x, y, z, Ausbreitungsrichtung +y (dicker Pfeil).\n- **E** (rot) als Kosinuslinie in der y-z-Ebene (Feldpfeile parallel zu z), **B bzw. H** (grau) als gleichphasige Linie in der x-y-Ebene (Feldpfeile parallel zu x).\n- E, B und Ausbreitungsrichtung stehen paarweise senkrecht aufeinander (**TEM-Welle**). $\\vec E\\times\\vec H$ zeigt in Ausbreitungsrichtung.\n- E und B sind **in Phase**: Maxima und Nullstellen liegen an denselben y-Positionen. Die räumliche Periode ist die Wellenlänge $\\lambda=2\\pi/k$ (Feld $\\propto\\cos(\\omega t-ky)$, Folie 73).\n- **Linear polarisiert:** Der E-Vektor schwingt immer in derselben Ebene. Mit wachsender Zeit (Folie 76: t = T/4 … T) wandert das Muster in +y-Richtung.\n- Amplitudenverhältnis $|E|/|H|=Z_f=\\sqrt{\\mu/\\varepsilon}$ (Vakuum: $120\\pi\\,\\Omega\\approx377\\,\\Omega$).",
+  "keyPoints": [
+   "E ⟂ B ⟂ Ausbreitungsrichtung (TEM), E × H zeigt in Ausbreitungsrichtung",
+   "E und B in Phase (gleiche Nullstellen/Maxima), räumliche Periode λ",
+   "Linear polarisiert: E schwingt stets in derselben Ebene (hier y-z-Ebene)",
+   "|E|/|H| = Z_f = √(μ/ε), im Vakuum ≈ 377 Ω"
+  ],
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 73, 75–76 (Abschnitt 2.3.2 Plane waves)",
+  "slides": [
+   "rad-lec:75",
+   "rad-lec:76",
+   "rad-lec:73"
+  ],
+  "why": "Das Feldbild der ebenen Welle ist die Grundlage für Polarisation, Reflexion und Antennen.",
+  "fach": "RADAR",
+  "unit": "RAD-S1"
+ },
+ {
+  "id": "RAD-S1-F02",
+  "examMode": "sketch",
+  "front": "Skizziere die Richtcharakteristik |E(θ)| im Fernfeld eines Hertzschen Dipols, der entlang der z-Achse liegt: als Schnitt in einer Ebene, die die Dipolachse enthält, als Schnitt in der Äquatorebene und als 3D-Form.",
+  "back": "Fernfeld (Folie 80): $\\vec E(\\vec r)=Z_f\\dfrac{jk}{4\\pi}Ih\\dfrac{e^{-jkr}}{r}\\sin\\theta\\,\\vec e_\\theta$ ⇒ Richtcharakteristik $|E|\\propto\\sin\\theta$.\n- **Schnitt durch eine Ebene mit der Dipolachse:** zwei gleich große Kreise links und rechts der z-Achse, die sich im Ursprung berühren (liegende Acht). **Nullstellen entlang der Achse** (θ = 0°, 180°), **Maximum senkrecht dazu** (θ = 90°).\n- **Schnitt in der Äquatorebene (θ = 90°):** ein Kreis, in φ also rundstrahlend.\n- **3D:** Rotationskörper um die z-Achse, eine Donut- bzw. Torusform ohne Mittelloch (Bild auf Folie 80).\n- Außerdem: E zeigt in $\\vec e_\\theta$-Richtung, in der Äquatorebene also parallel zur Dipolachse. Die Amplitude fällt mit $1/r$ (Kugelwelle $e^{-jkr}/r$).",
+  "keyPoints": [
+   "|E| ∝ sin θ: Nullstellen entlang der Dipolachse (θ = 0°/180°)",
+   "Maximum bei θ = 90°, in der Äquatorebene rundstrahlend (Kreis)",
+   "Schnitt mit Achse: zwei sich im Ursprung berührende Kreise; 3D: Donut (rotationssymmetrisch)",
+   "E in e_θ-Richtung, Fernfeld-Amplitude ∝ 1/r"
+  ],
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 80 (Abschnitt 2.4.1 Hertzian dipole)",
+  "slides": [
+   "rad-lec:80"
+  ],
+  "why": "Das Richtdiagramm des Elementarstrahlers ist das Grundmuster jeder Antennencharakteristik.",
+  "fach": "RADAR",
+  "unit": "RAD-S1"
+ },
+ {
+  "id": "RAD-S1-F03",
+  "examMode": "sketch",
+  "front": "Skizziere die Reflexion und Brechung einer ebenen Welle an einer ebenen Grenzfläche zwischen Medium 1 und Medium 2 (n2 > n1). Zeichne das Lot, die einfallende, die reflektierte und die transmittierte Welle mit ihren Winkeln ein und trage für s-/TE-Polarisation die Richtung des E-Feldes ein.",
+  "back": "**Skizze (wie Folie 99/100):**\n- Horizontale Grenzfläche (Boundary), oben Medium 1, unten Medium 2. Im Auftreffpunkt das gestrichelte **Lot** (Flächennormale).\n- Die einfallende Welle trifft unter $\\theta_i$ zum Lot auf. Die reflektierte Welle läuft auf der anderen Seite des Lots unter $\\theta_r=\\theta_i$ weg. Die transmittierte Welle läuft in Medium 2 unter $\\theta_t$.\n- Snellius: $\\sin\\theta_t=\\sin\\theta_i\\,\\dfrac{n_1}{n_2}$ mit $n=\\sqrt{\\varepsilon_r\\mu_r}$. Für $n_2>n_1$ ist $\\theta_t<\\theta_i$ (Brechung zum Lot hin).\n- **Einfallsebene** = Zeichenebene, aufgespannt von Einfallsrichtung und Flächennormale.\n- **s/TE:** E steht senkrecht auf der Einfallsebene. Es wird an der einfallenden und der reflektierten Welle als ⊗ gezeichnet ($E_{i,TE}$, $E_{r,TE}$) und liegt parallel zur Grenzfläche.\n- Zum Vergleich **p/TM:** E liegt in der Einfallsebene (Pfeil in der Zeichenebene, senkrecht zum Strahl).",
+  "keyPoints": [
+   "Lot plus drei Strahlen, Reflexionswinkel = Einfallswinkel",
+   "θt < θi für n2 > n1 (sin θt = sin θi · n1/n2, n = √(εr μr))",
+   "Einfallsebene = Ebene aus Einfallsrichtung und Flächennormale",
+   "TE: E ⟂ Einfallsebene (⊗, parallel zur Grenzfläche); TM: E liegt in der Einfallsebene"
+  ],
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 99–100 (Abschnitt 2.5.1 Reflection by a flat surface)",
+  "slides": [
+   "rad-lec:99",
+   "rad-lec:100"
+  ],
+  "why": "Die Geometrieskizze ist Voraussetzung für Fresnel-Faktoren, den Brewster-Winkel und Multipath.",
+  "fach": "RADAR",
+  "unit": "RAD-S1"
+ },
+ {
+  "id": "RAD-S1-F04",
+  "examMode": "sketch",
+  "front": "Skizziere qualitativ den Verlauf der Reflexions- und Transmissionsfaktoren r_p, t_p (TM) und r_s, t_s (TE) über dem Einfallswinkel θi = 0…90° für den Übergang Luft → Polypropylen (n2 > n1). Markiere den Brewster-Winkel.",
+  "back": "Formeln (Folie 102/104): $r_p=\\dfrac{n_2\\cos\\theta_i-n_1\\cos\\theta_t}{n_2\\cos\\theta_i+n_1\\cos\\theta_t}$, $t_p=\\dfrac{2n_1\\cos\\theta_i}{n_2\\cos\\theta_i+n_1\\cos\\theta_t}$, $r_s=\\dfrac{n_1\\cos\\theta_i-n_2\\cos\\theta_t}{n_1\\cos\\theta_i+n_2\\cos\\theta_t}$, $t_s=\\dfrac{2n_1\\cos\\theta_i}{n_1\\cos\\theta_i+n_2\\cos\\theta_t}$.\n- **TM-Diagramm (Folie 102):** $r_p$ beginnt bei $\\theta_i=0$ positiv mit $(n_2-n_1)/(n_2+n_1)$ (im Plot ca. 0,1) und fällt dann. Beim **Brewster-Winkel** $\\theta_B=\\arctan(n_2/n_1)$ geht es durch null (senkrechte Linie im TM-Plot auf Folie 102, Formel auf Folie 103) und läuft bei 90° gegen −1. $t_p$ beginnt bei $2n_1/(n_1+n_2)$ (ca. 0,9), bleibt lange fast konstant und fällt zu 90° hin auf 0.\n- **TE-Diagramm (Folie 104):** $r_s$ beginnt negativ bei $-(n_2-n_1)/(n_2+n_1)$ (ca. −0,1). Es ist **immer negativ, hat also keinen Nulldurchgang und keinen Brewster-Winkel**, und fällt monoton auf −1 bei 90°. $t_s$ beginnt wie $t_p$ bei ca. 0,9 und fällt auf 0.\n- Kontrollbeziehung: $\\frac{n_2}{n_1}t_p=r_p+1$ (Folie 102). Außerdem gilt $t_s=1+r_s$ *(aus den Formeln selbst abgeleitet)*.\n- Bei streifendem Einfall (90°) wird für beide Polarisationen vollständig reflektiert ($|r|=1$, $t=0$).",
+  "keyPoints": [
+   "θi = 0: r_p = −r_s = (n2−n1)/(n2+n1) > 0, t_p = t_s = 2n1/(n1+n2)",
+   "r_p hat seinen Nulldurchgang beim Brewster-Winkel θB = arctan(n2/n1); r_s ist immer negativ",
+   "θi → 90°: r_p = r_s = −1, t_p = t_s = 0"
+  ],
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 102–104 (Abschnitt 2.5.1, Plots für Luft → Polypropylen)",
+  "slides": [
+   "rad-lec:102",
+   "rad-lec:104",
+   "rad-lec:103"
+  ],
+  "why": "Die Kurven zeigen auf einen Blick den Unterschied TE/TM und den Brewster-Effekt, etwa bei Radomen und Stoßfängern.",
+  "fach": "RADAR",
+  "unit": "RAD-S1"
+ },
+ {
+  "id": "RAD-S1-F05",
+  "examMode": "voice",
+  "front": "Was zeigt diese Abbildung (Radarsensor in Höhe h1 = 0,5 m über einer ideal leitenden Fahrbahn, Reflektor in Höhe h2 = 0,6 m, f = 76 GHz)? Erkläre die drei Kurven, die Lage der letzten Einbrüche und das Verhalten von TM und TE bei großer Entfernung.",
+  "frontSlides": [
+   "rad-lec:113@0.25,0.22,0.90,0.78"
+  ],
+  "back": "**Dargestellt:** der simulierte Empfangspegel $R_x$ (dB) über der Entfernung d bei **Mehrwegeausbreitung über einer ideal leitenden Fläche**. Das Modell überlagert vier Pfade (SRS, SRBS, SBRS, SBRBS; Folie 109–110): $R_x\\sim\\dfrac{e^{-jkr_1}}{r_1}+r_{p,s}\\dfrac{e^{-jkr_2}}{r_2}+r_{p,s}\\dfrac{e^{-jkr_3}}{r_3}+r_{p,s}^2\\dfrac{e^{-jkr_4}}{r_4}$ mit $r_{TM}=+1$ und $r_{TE}=-1$ (Folie 105).\n- **Gelb, nur Direktpfad (LOS):** glatter Abfall $\\propto1/r_1$ ohne Einbrüche.\n- **Blau (TM) und Rot (TE):** Die Bodenumwege interferieren mit dem Direktpfad. Das erzeugt tiefe **Einbrüche (Nullstellen)**, die bei kleinem d sehr dicht liegen und mit wachsendem d immer weiter auseinanderrücken.\n\n*(Musterlösung selbst erstellt, zur Lage der Einbrüche:)* Für $d\\gg h_{1,2}$ hat ein Bodenumweg den Gangunterschied $\\Delta\\approx2h_1h_2/d$ zum Direktpfad, der doppelte Umweg $2\\Delta$. Damit gilt $R_x\\approx\\dfrac{e^{-jkr_1}}{r_1}(1+r\\,e^{-jk\\Delta})^2$, also $|R_x|=|R_{x,LOS}|\\cdot4\\cos^2(k\\Delta/2)$ für TM und $|R_{x,LOS}|\\cdot4\\sin^2(k\\Delta/2)$ für TE.\n- Letzter Einbruch **TE** bei $k\\Delta=2\\pi$: $d=2h_1h_2/\\lambda\\approx152$ m. Letzter Einbruch **TM** bei $k\\Delta=\\pi$: $d=4h_1h_2/\\lambda\\approx304$ m (mit $\\lambda\\approx3{,}95$ mm). Beides passt zum Plot.\n- Für großes d ($k\\Delta\\to0$) addiert sich TM konstruktiv: bis zum Faktor 4 in der Amplitude, also +12 dB über LOS (bei 1000 m ca. +10 dB). TE löscht sich zunehmend aus und fällt unter die LOS-Kurve.\n- **Bedeutung:** Je nach Entfernung und Polarisation bricht das Zielsignal stark ein (Detektionslücken) oder ist überhöht.",
+  "keyPoints": [
+   "LOS (gelb) fällt glatt ∝ 1/r; bei TM/TE interferieren 4 Pfade über die Fahrbahn → Einbrüche",
+   "Gangunterschied Δ ≈ 2h1h2/d → Einbrüche bei kleinem d dicht, bei großem d weit auseinander",
+   "Letzter Einbruch: TE bei 2h1h2/λ ≈ 152 m, TM bei 4h1h2/λ ≈ 304 m",
+   "Großes d: TM konstruktiv (bis +12 dB über LOS), TE destruktiv (unter LOS)"
+  ],
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 109–113 (Abschnitt 2.5.3 Multipath), Plot auf Folie 113",
+  "slides": [
+   "rad-lec:113",
+   "rad-lec:110",
+   "rad-lec:111"
+  ],
+  "why": "Das Interferenzmuster erklärt Pegeleinbrüche und Zielverluste beim Automotive-Radar über der Fahrbahn.",
+  "fach": "RADAR",
+  "unit": "RAD-S1"
+ },
+ {
+  "id": "RAD-S1-F06",
+  "examMode": "sketch",
+  "front": "Skizziere für eine Grenzfläche zwischen zwei Dielektrika mit ε1 < ε2 die Vektoren D1, D2 und E1, E2 (von einem gemeinsamen Punkt auf der Grenzfläche aus), zerlegt in Normal- und Tangentialkomponenten. Welche Komponenten sind stetig?",
+  "back": "**Stetigkeitsbedingungen (Kap. 1.12):** Die Normalkomponenten von D (und B) sind stetig, $D_{1n}=D_{2n}$. Die Tangentialkomponenten von E (und H) sind stetig, $E_{1t}=E_{2t}$.\n**Folgerungen** mit $D=\\varepsilon_0\\varepsilon_r E$: $E_{2n}=\\dfrac{\\varepsilon_1}{\\varepsilon_2}E_{1n}$ (kleiner) und $D_{2t}=\\dfrac{\\varepsilon_2}{\\varepsilon_1}D_{1t}$ (größer).\n- **Skizze (a) für D:** gleiche Normalkomponente, $D_2$ hat die längere Tangentialkomponente.\n- **Skizze (b) für E:** gleiche Tangentialkomponente, $E_2$ hat die kürzere Normalkomponente.\n- In beiden Fällen ist der Vektor in Medium 2 (größeres ε) stärker zur Grenzfläche hin geneigt. Es gilt $\\vec E_1\\parallel\\vec D_1$ und $\\vec E_2\\parallel\\vec D_2$ (isotropes Medium).\n\n*(Ergänzung, selbst erstellt:)* Für den Winkel α zur Flächennormalen folgt $\\tan\\alpha_1/\\tan\\alpha_2=\\varepsilon_1/\\varepsilon_2$. Feldlinien werden im Medium mit größerem ε also vom Lot weg gebrochen. $D_{1n}=D_{2n}$ gilt nur, wenn auf der Grenzfläche keine Flächenladung sitzt.",
+  "keyPoints": [
+   "D1n = D2n und E1t = E2t sind stetig",
+   "E2n = (ε1/ε2)·E1n und D2t = (ε2/ε1)·D1t",
+   "Vektor in Medium 2 (größeres ε) stärker zur Grenzfläche geneigt; E ∥ D in jedem Medium"
+  ],
+  "source": "skript_physik_2_emf.pdf, Kap. 1.12 Randbedingungen, S. 17–18 (PDF-Seite 19–20), Abb. 1.18",
+  "slides": [
+   "rad-emf:20",
+   "rad-emf:19"
+  ],
+  "why": "Die Randbedingungen sind die Grundlage für Reflexion und Brechung an Materialgrenzen.",
+  "fach": "RADAR",
+  "unit": "RAD-S1"
+ },
+ {
+  "id": "RAD-S1-F07",
+  "examMode": "sketch",
+  "front": "Paralleldrahtleitung: Der Hinleiter liegt bei x = −b/2 (Strom I aus der Zeichenebene heraus), der Rückleiter bei x = +b/2 (Strom I in die Ebene hinein), I = 1 A, b = 8 cm. Skizziere den Verlauf der magnetischen Feldstärke H_y(x) auf der x-Achse für −10 cm ≤ x ≤ 10 cm und gib H_y(0) an.",
+  "back": "Überlagerung der beiden Leiterfelder $H=I/(2\\pi R)$ auf der x-Achse (Skript Gl. A.26–A.30):\n$\\vec H=\\left[\\dfrac{I}{2\\pi(x+b/2)}-\\dfrac{I}{2\\pi(x-b/2)}\\right]\\vec e_y=\\dfrac{I}{2\\pi}\\cdot\\dfrac{b}{b^2/4-x^2}\\,\\vec e_y$\n**Achtung:** Im Skript fehlt in Gl. (A.31) das Minuszeichen aus (A.30), dort steht $b/(x^2-b^2/4)$. Richtig ist die Form oben. Sie passt auch zu Abb. A.5 (positiv zwischen den Leitern).\n**Skizze (wie Abb. A.5, x in cm):**\n- Pole bei $x=\\pm4$ cm: Auf der Innenseite geht $H_y\\to+\\infty$, auf der Außenseite $\\to-\\infty$ (Vorzeichenwechsel am Leiter).\n- Zwischen den Leitern ist $H_y$ positiv, mit flachem Minimum bei $x=0$: $H_y(0)=\\dfrac{2I}{\\pi b}=\\dfrac{2\\cdot1\\,\\text{A}}{\\pi\\cdot0{,}08\\,\\text{m}}\\approx7{,}96$ A/m.\n- Außerhalb ist $H_y$ negativ und geht für $|x|\\to\\infty$ gegen 0 (asymptotisch $\\approx-\\dfrac{Ib}{2\\pi x^2}$).\n- Die Kurve ist symmetrisch zu $x=0$ (gerade Funktion).\n*(Zahlenwert bei x = 0 und Asymptotik selbst berechnet.)*",
+  "keyPoints": [
+   "Pole mit Vorzeichenwechsel an den Leitern bei x = ±4 cm",
+   "Zwischen den Leitern positiv, Minimum bei x = 0: H_y = 2I/(πb) ≈ 7,96 A/m",
+   "Außen negativ, → 0 für |x| → ∞; symmetrisch zu x = 0",
+   "H_y = I/(2π) · b/(b²/4 − x²) (Vorzeichenfehler in Skript-Gl. A.31 beachten)"
+  ],
+  "source": "skript_physik_2_emf.pdf, Anhang A.3 Paralleldrahtleitung, S. 27–28 (PDF-Seite 29–30), Abb. A.4 und A.5",
+  "slides": [
+   "rad-emf:29",
+   "rad-emf:30"
+  ],
+  "why": "Die integrierte Übungsaufgabe trainiert Superposition und das Durchflutungsgesetz an einer echten Leitung.",
+  "fach": "RADAR",
+  "unit": "RAD-S1"
+ },
+ {
+  "id": "RAD-S1-F08",
+  "examMode": "voice",
+  "front": "Was zeigt dieses Diagramm (Übergang Luft → Kunststoff)? Erkläre den Verlauf der durchgezogenen Kurve im Vergleich zur gestrichelten Linie und den Grenzwert bei θi → 90°.",
+  "frontSlides": [
+   "rad-lec:101@0.59,0.22,0.98,0.76"
+  ],
+  "back": "Das Diagramm zeigt den **Brechungswinkel θt über dem Einfallswinkel θi** beim Übergang Luft → Polypropylen nach dem **Snellius'schen Brechungsgesetz**: $\\sin\\theta_t=\\sin\\theta_i\\,\\dfrac{n_1}{n_2}=\\sin\\theta_i\\dfrac{\\sqrt{\\varepsilon_{r1}\\mu_{r1}}}{\\sqrt{\\varepsilon_{r2}\\mu_{r2}}}$.\n- **Gestrichelte Diagonale:** $\\theta_t=\\theta_i$, die Referenz für den Fall ohne Brechung (gleiche Brechzahl).\n- **Durchgezogene Kurve:** Sie liegt unter der Diagonalen, weil $n_2>n_1$ ist. Die Welle wird **zum Lot hin gebrochen**. Für kleine Winkel verläuft sie nahezu linear ($\\theta_t\\approx\\theta_i\\,n_1/n_2$).\n- **Streifender Einfall ($\\theta_i\\to90°$):** Die Kurve sättigt bei $\\theta_{t,max}=\\arcsin(n_1/n_2)$ (im Plot ca. 47°). Größere Brechungswinkel kommen im dichteren Medium nicht vor.\n*(Ergänzung, selbst erstellt:)* Für den umgekehrten Weg (Kunststoff → Luft) ist $\\theta_{t,max}$ genau der Grenzwinkel der Totalreflexion.",
+  "keyPoints": [
+   "θt über θi nach Snellius: sin θt = sin θi · n1/n2, n = √(εr μr)",
+   "Kurve liegt unter der Diagonalen θt = θi, da n2 > n1 → Brechung zum Lot hin",
+   "Sättigung für θi → 90°: θt,max = arcsin(n1/n2) (im Plot ca. 47°)"
+  ],
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 100–101 (Abschnitt 2.5.1 Snell's law), Plot auf Folie 101",
+  "slides": [
+   "rad-lec:101",
+   "rad-lec:100"
+  ],
+  "why": "Das Diagramm verknüpft das Brechungsgesetz mit einer realen Materialpaarung (Radom/Stoßfänger).",
+  "fach": "RADAR",
+  "unit": "RAD-S1"
+ },
+ {
+  "id": "RAD-S2-F01",
+  "examMode": "sketch",
+  "front": "Skizziere und beschrifte das Blockschaltbild einer **PLL** zur Frequenzerzeugung im Radar. Zeichne die Signalflussrichtung mit Pfeilen ein. Wo wird das HF-Signal ausgekoppelt?",
+  "back": "**Vorwärtszweig:** **Quarz (Referenz)** → **Phasenvergleicher (Phase comparator)** → **Tiefpass (Low pass, Schleifenfilter)** → **VCO (Voltage-Controlled Oscillator)** → **RF-out** (zum Sendeverstärker bzw. als LO-Signal zum Mischer).\n**Rückführung:** VCO-Ausgang → **Vorteiler (Pre-divider)** → **digital steuerbarer Teiler (Digitally controlled countdown)** → zweiter Eingang des Phasenvergleichers. Der Teiler hat einen eigenen **Steuereingang**: Über das digital einstellbare Teilerverhältnis wird die Ausgangsfrequenz bzw. der Sweep programmiert.\n**Funktion:** Der Phasenvergleicher vergleicht die heruntergeteilte VCO-Frequenz mit der Quarzreferenz. Das tiefpassgefilterte Fehlersignal ist die Steuerspannung des VCO. Im eingerasteten Zustand gilt $f_{VCO}=N\\cdot f_{ref}$ mit dem Gesamtteilerverhältnis $N$ *(Ergänzung, nicht auf der Folie)*.\n**Achtung:** Das HF-Signal kommt aus dem VCO. Die PLL ist die Regelschleife um ihn herum.",
+  "keyPoints": [
+   "Vorwärtspfad: Quarz → Phasenvergleicher → Tiefpass → VCO → RF-out",
+   "Rückkopplung: VCO → Vorteiler → digital steuerbarer Teiler → Phasenvergleicher",
+   "Teilerverhältnis digital einstellbar (Steuereingang) → Frequenz/Sweep programmierbar",
+   "HF-Auskopplung am VCO-Ausgang"
+  ],
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 133",
+  "slides": [
+   "rad-lec:133"
+  ],
+  "fach": "RADAR",
+  "unit": "RAD-S2"
+ },
+ {
+  "id": "RAD-S2-F02",
+  "examMode": "sketch",
+  "front": "Skizziere und beschrifte ein typisches **Antennen-Richtdiagramm** (Polardiagramm, dB-Skala) einer Richtantenne. Markiere Hauptkeule, −3-dB-Punkte, Halbwertsbreite (HPBW) und Nebenkeulen.",
+  "back": "**Polardiagramm** mit Pegelringen: 0 dB (Maximum der Hauptkeule), nach innen −10 / −20 / −30 dB.\n**Hauptkeule** in Hauptstrahlrichtung (0°), auf 0 dB normiert.\n**−3-dB-Punkte:** die beiden Punkte links und rechts, an denen die Hauptkeule auf halbe Leistung abgefallen ist. Der Winkel zwischen ihnen ist die **Halbwertsbreite HPBW** (Half-Power Beam Width).\n**Nebenkeulen:** seitlich und rückwärtig mehrere deutlich kleinere Keulen, getrennt durch **Nullstellen**. Die Vorzeichen +/− in der Balanis-Abbildung zeigen, dass benachbarte Keulen gegenphasig sind.\n**Bedeutung:** Die HPBW legt fest, wie breit ausgeleuchtet wird. Über Nebenkeulen empfangene Reflexionen können als Falschziele in Hauptrichtung erscheinen.",
+  "keyPoints": [
+   "Hauptkeule bei 0° als 0-dB-Referenz, dB-Ringe als Skala",
+   "Zwei −3-dB-Punkte, HPBW = Winkel dazwischen",
+   "Mehrere Nebenkeulen mit deutlich geringerem Pegel, Nullstellen dazwischen"
+  ],
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 139-140",
+  "slides": [
+   "rad-lec:139",
+   "rad-lec:140"
+  ],
+  "fach": "RADAR",
+  "unit": "RAD-S2"
+ },
+ {
+  "id": "RAD-S2-F03",
+  "examMode": "sketch",
+  "front": "Skizziere die **Feldregionen** um eine Antenne mit der größten Abmessung $D$ und gib die Grenzradien $R_1$ und $R_2$ an. Warum ist die Unterscheidung für die Radargleichung wichtig?",
+  "back": "**Drei konzentrische Bereiche** um die Antenne (Abmessung $D$):\n1. **Reaktives Nahfeld** (innen) bis $R_1=0{,}62\\sqrt{D^3/\\lambda}$\n2. **Strahlendes Nahfeld (Fresnel-Region)** bis $R_2=2D^2/\\lambda$\n3. **Fernfeld (Fraunhofer-Region)** für $R>2D^2/\\lambda$\n**Bedeutung:** Die Fernfeldformeln gelten nur im Fernfeld, weil sich das Richtdiagramm erst dort vollständig ausbildet. Dazu gehören die Leistungsdichte $W_t=P_tG_t/(4\\pi R^2)$, der Antennengewinn, die Radargleichung und die RCS-Formeln. Die Folie zur Rechteckplatte hält das ausdrücklich fest: Die Nummernschild-Faustregel (bis 30 dBsm bei 76 GHz) gilt im Fernfeld. Im Nahfeld wird die Energie weggespiegelt.\n**Beispiel** *(Musterlösung selbst erstellt)*: Antenne mit $D=10\\,\\text{cm}$ bei 76 GHz ($\\lambda\\approx3{,}9\\,\\text{mm}$): $R_2=2\\cdot0{,}1^2/0{,}0039\\approx5{,}1\\,\\text{m}$.",
+  "keyPoints": [
+   "Drei Regionen: reaktives Nahfeld, strahlendes Nahfeld (Fresnel), Fernfeld (Fraunhofer)",
+   "R₁ = 0,62·√(D³/λ)",
+   "R₂ = 2D²/λ als Fernfeldgrenze",
+   "Radargleichung, Gewinn und RCS gelten nur im Fernfeld"
+  ],
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 139 und 161",
+  "slides": [
+   "rad-lec:139",
+   "rad-lec:161"
+  ],
+  "fach": "RADAR",
+  "unit": "RAD-S2"
+ },
+ {
+  "id": "RAD-S2-F04",
+  "examMode": "sketch",
+  "front": "Skizziere den Verlauf der normierten RCS $\\sigma/(\\pi a^2)$ einer ideal leitenden **Kugel** über dem Verhältnis Radius/Wellenlänge $a/\\lambda$ (doppelt logarithmisch). Beschrifte die drei Bereiche.",
+  "back": "**Achsen:** x = $a/\\lambda$ (log, ca. 0,05 … 5), y = $\\sigma/(\\pi a^2)$ (log, 0,1 … 5).\n**Rayleigh-Bereich** ($a/\\lambda\\lesssim0{,}1$): steiler, geradliniger Anstieg (gestrichelte Asymptote). Die Kugel ist klein gegen λ, σ wächst stark mit der Frequenz. Nach dem Standardergebnis gilt dort $\\sigma\\propto a^6/\\lambda^4$ *(Ergänzung, nicht auf der Folie)*.\n**Resonanzbereich** (ca. $0{,}1\\lesssim a/\\lambda\\lesssim1{,}6$): erstes und größtes Maximum mit $\\sigma/(\\pi a^2)\\approx3{,}7$ bei $a/\\lambda\\approx0{,}16$. Danach folgt eine gedämpfte Oszillation um 1 mit tiefem erstem Minimum (≈ 0,3).\n**Optischer Bereich** ($a/\\lambda\\gtrsim1{,}6$): Die Kurve pendelt sich bei **1** ein, also $\\sigma=\\pi a^2$ (geometrischer Querschnitt). Das ist **frequenzunabhängig** und bei der Kugel auch **unabhängig vom Aspektwinkel**.",
+  "keyPoints": [
+   "Log-log-Achsen: σ/(πa²) über a/λ",
+   "Rayleigh-Bereich: steiler Anstieg bei a/λ < 0,1",
+   "Resonanzbereich: Maximum ≈ 3,7 bei a/λ ≈ 0,16, danach gedämpfte Oszillation",
+   "Optischer Bereich: σ → πa² (Wert 1), frequenzunabhängig"
+  ],
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 160",
+  "slides": [
+   "rad-lec:160"
+  ],
+  "fach": "RADAR",
+  "unit": "RAD-S2"
+ },
+ {
+  "id": "RAD-S2-F05",
+  "examMode": "voice",
+  "front": "Was zeigt diese Abbildung? Erkläre, warum die RCS der Kugel oberhalb weniger GHz praktisch konstant ist, während die RCS der Platte mit der Frequenz stetig steigt. Wie groß ist die Platten-RCS bei 76 GHz?",
+  "frontSlides": [
+   "rad-lec:162@0.27,0.21,0.88,0.75"
+  ],
+  "back": "Die Abbildung vergleicht die RCS über der Frequenz (0–100 GHz) für eine ideal leitende **Kugel** und eine **ebene Platte 10 cm × 10 cm** (Maximalwert bei senkrechtem Einfall).\n**Kugel:** Bei sehr niedrigen Frequenzen steigt die Kurve steil an (Rayleigh-Bereich), danach folgen Oszillationen (Resonanzbereich). Anschließend erreicht sie den **optischen Bereich** mit $\\sigma=\\pi r^2$. Das ist **frequenzunabhängig**, daher die horizontale Linie.\n**Platte:** $\\sigma_{max}=4\\pi w^2h^2/\\lambda^2\\propto f^2$. Die Kurve steigt also mit 20 dB pro Frequenzdekade bzw. +6 dB pro Frequenzverdopplung, bis ≈ 21 dBsm bei 100 GHz.\n**Bei 76 GHz** *(Musterlösung selbst erstellt)*: $\\sigma=4\\pi\\cdot0{,}1^2\\cdot0{,}1^2/0{,}0039^2\\approx83\\,\\text{m}^2\\approx19\\,\\text{dBsm}$.\n**Folgerung:** Senkrecht angestrahlte ebene Flächen haben bei mmWave eine riesige RCS. Das gilt aber nur als Maximum bei senkrechtem Einfall. Schräg angestrahlt spiegelt die Platte die Energie am Radar vorbei.\n**Hinweis:** Die Kugelkurve liegt in der Grafik bei ≈ −21 dBsm. Rechnerisch ergäbe $\\pi r^2$ mit r = 10 cm ≈ −15 dBsm. Entscheidend ist der qualitative Verlauf.",
+  "keyPoints": [
+   "Kugel im optischen Bereich: σ = πr², frequenzunabhängig → konstante Linie",
+   "Oszillationen bei niedriger Frequenz = Resonanzbereich",
+   "Platte: σ_max = 4πw²h²/λ² ∝ f² → +20 dB pro Dekade",
+   "76 GHz: Platte 10 × 10 cm ≈ 83 m² ≈ 19 dBsm"
+  ],
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 161-162",
+  "slides": [
+   "rad-lec:162",
+   "rad-lec:161"
+  ],
+  "fach": "RADAR",
+  "unit": "RAD-S2"
+ },
+ {
+  "id": "RAD-S2-F06",
+  "examMode": "sketch",
+  "front": "Skizziere das Schaltbild eines einfachen **Diodenmischers** (Eingangsquellen, Widerstände, Diode, Last). Erkläre anhand einer Reihenentwicklung der Ausgangsspannung, wie die gewünschten Mischprodukte und die „Spurs“ entstehen.",
+  "back": "**Schaltbild:** Zwei Spannungsquellen in Reihe (RF-Signal und LO) bilden zusammen $U_{in}$. Es folgen der Serienwiderstand $R_S$, die **Diode** und der Lastwiderstand $R_L$ (Ausgangsspannung $U_L$) in einem geschlossenen Stromkreis.\n**Erklärung:** Die nichtlineare Diodenkennlinie ergibt $U_L=c_0+c_1U_{in}+c_2U_{in}^2+\\dots$.\nMit $U_{in}=a+b$ (a = RF, b = LO) liefert der quadratische Term $(a+b)^2=a^2+2ab+b^2$.\n**2ab** ist das Produkt der beiden Signale: $\\cos\\omega_1t\\cos\\omega_2t=\\tfrac12[\\cos(\\omega_1+\\omega_2)t+\\cos(\\omega_1-\\omega_2)t]$. Daraus entstehen **Summen- und Differenzfrequenz (erwünscht)**.\nWeitere Spektrallinien sind die **Spurs**. Sie stammen aus $a^2$, $b^2$ (Oberwellen), aus dem linearen Term (Durchgriff von RF und LO) und aus höheren Ordnungen.\n**Messbeispiel der Folie:** $F_{RF}=110\\,\\text{MHz}$, $F_{LO}=100\\,\\text{MHz}$ ($|V_{RF}|=0{,}1\\,\\text{V}$, $|V_{LO}|=0{,}2\\,\\text{V}$, $V_{DC}=0{,}6\\,\\text{V}$). Erwünscht sind die Linien bei **10 MHz** (Differenz) und **210 MHz** (Summe), dazu kommen zahlreiche Spurs.",
+  "keyPoints": [
+   "Schaltbild: zwei Quellen in Reihe (RF + LO) = U_in, R_S, Diode, R_L",
+   "Quadratischer Term (a+b)² → 2ab = Mischprodukt",
+   "Summen- und Differenzfrequenz erwünscht (Beispiel: 10 MHz und 210 MHz)",
+   "a², b², linearer Term und höhere Ordnungen → Spurs"
+  ],
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 175 und 177",
+  "slides": [
+   "rad-lec:177",
+   "rad-lec:175"
+  ],
+  "fach": "RADAR",
+  "unit": "RAD-S2"
+ },
+ {
+  "id": "RAD-S2-F07",
+  "examMode": "sketch",
+  "front": "**Übung #3.1 (Vorlesung):** Nimm an, dass ein Radar in Hauptstrahlrichtung (Boresight) eine maximale Reichweite von 100 m für ein 20-dBsm-Ziel hat und die gezeigten Antennendiagramme besitzt. Zeichne die Abdeckung (Coverage) für ein 20-dBsm- und ein 0-dBsm-Ziel.",
+  "frontSlides": [
+   "rad-lec:166@0.18,0.34,0.97,0.80"
+  ],
+  "back": "*(Musterlösung selbst erstellt)*\n**Ansatz:** Bei fester Mindestempfangsleistung $P_{r,min}$ folgt aus der Radargleichung $R_{max}=\\left(\\dfrac{P_tG_tG_r\\lambda^2\\sigma}{(4\\pi)^3P_{r,min}}\\right)^{1/4}$.\n**Ziel:** $R_{max}\\propto\\sigma^{1/4}$. Bei 0 dBsm statt 20 dBsm (Faktor 1/100) gilt $R_{max}=100\\,\\text{m}\\cdot100^{-1/4}\\approx31{,}6\\,\\text{m}$ in Boresight. Die 0-dBsm-Kurve ist die 20-dBsm-Kurve **mit Faktor 0,316 skaliert** (gleiche Form).\n**Winkel:** Bei gleichem Diagramm für Senden und Empfangen ($G_t=G_r=G(\\theta)$) gilt $R_{max}(\\theta)=R_{max}(0)\\cdot10^{\\Delta G(\\theta)/20}$ mit $\\Delta G=G_{dB}(\\theta)-G_{dB}(0)$. Wirkt das Diagramm nur auf einer Seite, gilt $10^{\\Delta G/40}$.\n**Merkwerte:** −3 dB → ×0,71; −6 dB → ×0,5; −10 dB → ×0,32; −20 dB → ×0,1.\n**Zeichnung:** Draufsicht mit dem Radar im Ursprung und Boresight nach oben. Die Kurve $R_{max}(\\theta)$ wird polar aufgetragen ($x=R\\sin\\theta$, $y=R\\cos\\theta$), die 0-dBsm-Kurve liegt innen.\n**Ablesewerte (ca.), linkes Diagramm, E-Ebene:**\n- 0°: ≈ 17 dBi → 100 m\n- ±20°: ≈ 15,5 dBi → ≈ 84 m\n- ±40°: ≈ 11 dBi → ≈ 50 m\n- ±60°: ≈ 3 dBi → ≈ 20 m\n- ±80°: ≈ −12,5 dBi → ≈ 3,4 m\nFür 0 dBsm ergibt das ≈ 32 / 27 / 16 / 6 / 1 m.\n**H-Ebene:** sehr schmale Keule, schon bei ±10° ≈ −12 dB → ≈ 25 m. Die Nebenkeulen erzeugen kleine „Inseln“.\n**Rechtes Diagramm:** ≈ 10 dBi, von ca. −60° bis +70° nahezu konstant (±1–2 dB). Die Abdeckung ist daher fast ein **Kreissektor mit ≈ 100 m** (0 dBsm: ≈ 32 m). Erst zu den Rändern hin (links ab etwa −65°, rechts ab etwa +72°) fällt sie stark ab, z. B. bei −80° ≈ 1 dBi → ΔG ≈ −9 dB → ≈ 35 m (0 dBsm: ≈ 11 m).",
+  "keyPoints": [
+   "R_max ∝ σ^(1/4): 0 dBsm → 100 m · 100^(−1/4) ≈ 31,6 m",
+   "R_max(θ) = 100 m · 10^(ΔG(θ)/20) bei gleichem Sende- und Empfangsdiagramm",
+   "Polare Coverage-Kurve folgt der Antennenkeule; 0-dBsm-Kurve = mit 0,316 skalierte Kopie",
+   "Breites, flaches Diagramm → Kreissektor ≈ 100 m; schmale Keule → schmale Reichweitenkeule"
+  ],
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 165-166 (Exercise #3.1)",
+  "slides": [
+   "rad-lec:166",
+   "rad-lec:165"
+  ],
+  "fach": "RADAR",
+  "unit": "RAD-S2"
+ },
+ {
+  "id": "RAD-S2-F08",
+  "examMode": "voice",
+  "front": "Die Abbildung zeigt die Eingangsimpedanz $Z=R+jX$ eines dünnen Dipols (R schwarz, X blau) über der Dipollänge in Wellenlängen. Bei welcher Länge lässt er sich gut speisen, wie verhält sich ein kurzer Dipol, und was passiert bei etwa 1 λ?",
+  "frontSlides": [
+   "rad-lec:145@0.36,0.22,0.79,0.76"
+  ],
+  "back": "**Ablesen:** Schwarz ist der Wirkanteil R (Strahlungswiderstand), blau der Blindanteil X. Leiterdurchmesser 0,001 λ.\n**Kurzer Dipol** (≪ λ/2): R sehr klein, X stark negativ (kapazitiv) → schlecht anpassbar.\n**Erste Resonanz** (X = 0) knapp **unter λ/2** (≈ 0,48 λ) mit R ≈ 65–70 Ω: Die Impedanz ist reell und gut an übliche Leitungen anpassbar. Das ist der Standard-λ/2-Dipol. Bei exakt λ/2 liest man R ≈ 73 Ω und X ≈ +45 Ω (leicht induktiv) ab.\n**Bei ≈ 1 λ:** Antiresonanz. R steigt steil an und verlässt das Diagramm nach oben (> 1 kΩ), X wechselt von stark induktiv nach stark kapazitiv. Bei Mittenspeisung ist der Dipol dort praktisch nicht anpassbar.\n**Zweite Resonanz** bei ≈ 1,48 λ mit R ≈ 100 Ω.\n(Zahlenwerte aus der Abbildung abgelesen.)",
+  "keyPoints": [
+   "Kurzer Dipol: kleines R, stark kapazitiv → schlecht anpassbar",
+   "Erste Resonanz (X = 0) knapp unter λ/2 (≈ 0,48 λ) mit R ≈ 65–70 Ω → gut anpassbar",
+   "Bei ≈ 1 λ Antiresonanz: R > 1 kΩ (verlässt das Diagramm), X wechselt induktiv → kapazitiv → schlecht speisbar",
+   "Zweite Resonanz bei ≈ 1,5 λ mit R ≈ 100 Ω"
+  ],
+  "source": "Lecture_RadarSystems_Lec.pdf, Folie 145",
+  "slides": [
+   "rad-lec:145"
+  ],
+  "fach": "RADAR",
+  "unit": "RAD-S2"
+ },
+ {
+  "id": "RAD-S3-F01",
+  "examMode": "sketch",
+  "front": "Skizziere und beschrifte den **Frequenzverlauf f(t) des Sendesignals** für die vier Modulationsverfahren **CW**, **FSK**, **FMCW** und **Chirp Sequence** (je ein kleines f-t-Diagramm) und gib jeweils das Sendesignal $s_{tx}(t)$ an.",
+  "back": "Achsen jeweils: Frequenz (GHz) über Zeit (ms).\n\n- **CW:** waagerechte Linie, konstante Frequenz (Folienbeispiel 76,5 GHz). $s_{tx}(t)\\propto\\sin(\\omega_0 t)$.\n- **FSK:** zwei eng benachbarte konstante Frequenzen $f_1,f_2$ (Folienbeispiel knapp über 24 GHz, gestrichelt), die **abwechselnd** in Zeitschlitzen gesendet werden: $s_{tx}(t)\\propto\\sum_{n=1}^{N}s_{n,1}(t)+s_{n,2}(t)$ mit $s_{n,1}(t)=\\sin(\\omega_1 t)\\,\\mathrm{rect}\\big(\\frac{t-nT-T/4}{2T}\\big)$, $s_{n,2}(t)=\\sin(\\omega_2 t)\\,\\mathrm{rect}\\big(\\frac{t-nT+T/4}{2T}\\big)$.\n- **FMCW:** **eine lange lineare Rampe** über die gesamte Messzeit (Folienbeispiel: fallend von 76,5 GHz auf ca. 76,1 GHz in ca. 40 ms). $\\omega(t)=\\omega_0+\\Delta\\omega t$, $\\varphi(t)=\\omega_0 t+0{,}5\\Delta\\omega t^2$, $s_{tx}(t)\\propto\\sin(\\omega_0 t+0{,}5\\Delta\\omega t^2)$.\n- **Chirp Sequence (Fast Chirps):** **viele kurze, identische Rampen** hintereinander (Sägezahn), jede der Dauer $T$: $s_{tx}(t)\\propto\\sum_{n=1}^{N}s_n(t_n)\\,\\mathrm{rect}\\big(\\frac{t_n+T/2}{T}\\big)$ mit $t_n=t-nT$, $s_n(t)=\\sin(\\omega_0 t+0{,}5\\Delta\\omega t^2)$.",
+  "keyPoints": [
+   "CW: waagerechte Linie (konstante Frequenz), nur Doppler messbar",
+   "FSK: zwei eng benachbarte feste Frequenzen f1, f2, abwechselnd gesendet",
+   "FMCW: eine lange lineare Frequenzrampe über die gesamte Messzeit, Phase quadratisch in t",
+   "Chirp Sequence: viele kurze identische Rampen (Sägezahn) mit Periode T"
+  ],
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 191, 193, 195, 204",
+  "slides": [
+   "rad-lec:191",
+   "rad-lec:193",
+   "rad-lec:195",
+   "rad-lec:204"
+  ],
+  "why": "Die vier f-t-Verläufe sind die Grundlage für alle Modulationsvergleiche. Sie sollte man aus dem Kopf zeichnen können.",
+  "fach": "RADAR",
+  "unit": "RAD-S3"
+ },
+ {
+  "id": "RAD-S3-F02",
+  "examMode": "voice",
+  "front": "Was zeigt diese Abbildung? Erkläre die Achsen der **oberen** und der **unteren** Bildreihe und wie man solche Darstellungen mit einem Radar gewinnt.",
+  "frontSlides": [
+   "rad-lec:207@0.19,0.22,0.96,0.8"
+  ],
+  "back": "Messergebnisse eines **Chirp-Sequence-Radars (Fast Chirps)**, Quelle FH Dortmund.\n\n- **Obere Reihe: Range-Doppler-Maps.** x-Achse: Doppler-Geschwindigkeit (m/s), y-Achse: Entfernung (m), Farbe: Betrag (Magnitude). Ein Ziel erscheint als heller Peak bei seinem Paar $(\\dot R, R)$. Ausgedehnte Ziele belegen mehrere benachbarte Zellen.\n- **Entstehung (2D-FFT):** Die 1. FFT über die Samples innerhalb eines Chirps liefert die Beatfrequenz ∝ Entfernung. Die 2. FFT über die aufeinanderfolgenden Chirps erfasst die Phasenänderung von Chirp zu Chirp ∝ Doppler. So sind R und Ṙ ohne Up-/Down-Paarung getrennt, und es entstehen keine Geisterziele.\n- **Untere Reihe: Doppler-Geschwindigkeit über der Zeit.** Das Doppler-Spektrum jedes Messzyklus wird über der Zeit aufgetragen. Man sieht den Geschwindigkeitsverlauf eines Ziels: links ein langsam abnehmender Doppler (ca. 11 → 9 m/s), in der Mitte stärker abnehmend (ca. 8 → 3 m/s), rechts ein sehr langsames Ziel (ca. 1 m/s).\n\n*(Musterlösung selbst erstellt – die Folie zeigt nur die Abbildung)*",
+  "keyPoints": [
+   "Oben: Range-Doppler-Map (x: Doppler-Geschwindigkeit, y: Entfernung, Farbe: Betrag)",
+   "Entstehung per 2D-FFT: FFT innerhalb des Chirps → Range, FFT über die Chirps → Doppler",
+   "Unten: Doppler-Geschwindigkeit über der Zeit → Geschwindigkeitsverlauf des Ziels",
+   "Jedes Ziel ist ein eigener Peak, daher keine Up-/Down-Paarung und keine Geisterziele"
+  ],
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 207",
+  "slides": [
+   "rad-lec:207"
+  ],
+  "why": "Range-Doppler-Maps sind das zentrale Ergebnisbild der Chirp Sequence. Die Achsen muss man sicher deuten können.",
+  "fach": "RADAR",
+  "unit": "RAD-S3"
+ },
+ {
+  "id": "RAD-S3-F03",
+  "examMode": "voice",
+  "front": "Die Tabelle zeigt typische Chirp-Sequence-Parametersätze für vier Radartypen (LRR, MRR, SRR, USRR). Erkläre die Zusammenhänge: Warum hat das LRR die größte Reichweite, aber die schlechteste Entfernungsauflösung? Wie lassen sich **Range resolution**, **Max unambiguous range** und **Max unambiguous relative velocity** aus den übrigen Zeilen berechnen?",
+  "frontSlides": [
+   "rad-lec:205@0.27,0.22,0.88,0.8"
+  ],
+  "back": "- **Bandbreite = Rampensteigung × Chirpdauer:** 10 MHz/µs·30 µs = 300 MHz, 12·45 = 540 MHz, 15·50 = 750 MHz, 30·50 = 1500 MHz.\n- **Entfernungsauflösung** hängt nur von B ab: $\\Delta R=c/(2B)$ → 0,5 m / 0,28 m / 0,2 m / 0,1 m (stimmt mit der Tabelle überein).\n- **Max. eindeutige Reichweite** ist durch die maximale Beatfrequenz (ADC/Filter) begrenzt. Aus $f_b=2SR/c$ folgt $R_{max}=f_{b,max}\\,c/(2S)$. LRR: 15 MHz·3·10⁸ m/s/(2·10 MHz/µs) = 225 m. Ebenso MRR 125 m, SRR 45 m, USRR 22,5 m.\n- **Max. eindeutige Geschwindigkeit** folgt aus der Chirp-Wiederholzeit $T_c$ = Chirpdauer + Inter-Chirp-Pause: $v_{max}=\\lambda/(4T_c)$. LRR: $T_c$ = 38 µs → ca. 25,6 m/s ≈ 92 km/h. USRR: $T_c$ = 100 µs → ca. 9,8 m/s ≈ 35 km/h (mit λ ≈ 3,9 mm).\n- **Frame-Zeit = Anzahl Chirps × T_c:** 256·38 µs = 9,728 ms, aktiv 256·30 µs = 7,68 ms.\n- **Trade-off:** Bei begrenzter Beatfrequenz verlangt eine große Reichweite eine flache Rampe. Bei begrenzter Chirpdauer bleibt dann wenig Bandbreite, also eine grobe Auflösung (LRR: 225 m, 0,5 m). Das USRR nutzt eine steile Rampe mit 1,5 GHz und erreicht 0,1 m Auflösung, aber nur 22,5 m Reichweite. Mehr Chirps (LRR: 256) verlängern die Beobachtungszeit und verfeinern so die Doppler-Auflösung ($\\Delta\\dot R=\\lambda_0/2T$), brauchen aber mehr Speicher (2048 KB).\n\n*(Musterlösung selbst erstellt – Tabellenwerte nachgerechnet)*",
+  "keyPoints": [
+   "ΔR = c/(2B), mit B = Rampensteigung × Chirpdauer",
+   "R_max = f_b,max·c/(2S): durch maximale Beatfrequenz/ADC begrenzt",
+   "v_max = λ/(4·T_c), mit T_c = Chirpdauer + Inter-Chirp-Pause",
+   "Trade-off Reichweite ↔ Auflösung (LRR vs. USRR)"
+  ],
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 205",
+  "slides": [
+   "rad-lec:205"
+  ],
+  "why": "An der Tabelle lassen sich alle Chirp-Sequence-Dimensionierungsformeln an echten Zahlen prüfen – ein typischer Rechen-/Diskussionsaufhänger.",
+  "fach": "RADAR",
+  "unit": "RAD-S3"
+ },
+ {
+  "id": "RAD-S3-F04",
+  "examMode": "sketch",
+  "front": "Skizziere und beschrifte den Betrag des Array-Faktors einer ULA mit $d=\\lambda/2$, $|F(\\vartheta)|=\\left|\\frac{\\sin(\\frac12 Nkd\\cos\\vartheta)}{\\sin(\\frac12 kd\\cos\\vartheta)}\\right|$, über $\\vartheta\\in[0°,180°]$ für **N = 3** und **N = 7**. Markiere Maximum, erste Nullstellen und 3-dB-Breite.",
+  "back": "- **Hauptkeule bei ϑ = 90°** (Broadside, senkrecht zur Array-Achse z) mit **Maximum |F| = N** (3 bzw. 7). Die Kurve ist symmetrisch zu 90°.\n- **Erste Nullstellen:** aus $\\frac12\\pi N\\cos\\vartheta_0=\\pi$ folgt $\\cos\\vartheta_0=2/N$. N = 3: ϑ₀ = 48,2° und 131,8°. N = 7: ϑ₀ = 73,4° und 106,6°. Die Linearisierung um 90° liefert $\\Delta\\vartheta\\approx2/N$ rad ≈ 120°/N (N = 7: 90° − 17,1° = 72,9°).\n- **3-dB-Breite** (Schnitt mit der Linie $N/\\sqrt2$): N = 3 → 36,2°, N = 7 → 14,7° (zum Vergleich: N = 2 → 60°, N = 20 → 5,08°).\n- **Ränder und Nebenkeulen:** Bei N = 3 steigt |F| zu den Rändern (0°/180°) wieder auf 1 an, es gibt keine ausgeprägten Nebenkeulen. Bei N = 7 liegen weitere Nullstellen bei ca. 31° und 55° (und symmetrisch). Die erste Nebenkeule erreicht ca. 1,6, am Rand ist |F| = 1.\n- **Tendenz:** Mehr Antennen ergeben eine schmalere Hauptkeule (bessere Winkelauflösung) und mehr Nebenkeulen.",
+  "keyPoints": [
+   "Hauptkeule bei ϑ = 90° mit Maximum |F| = N, symmetrisch zu 90°",
+   "Erste Nullstellen bei cos ϑ0 = 2/N (N=3: 48,2°/131,8°; N=7: 73,4°/106,6°)",
+   "3-dB-Breite (Schnitt bei N/√2) schrumpft mit N: 36,2° (N=3), 14,7° (N=7)",
+   "N=7: Nebenkeulen (erste ca. 1,6), Ränder |F| = 1"
+  ],
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 224–228",
+  "slides": [
+   "rad-lec:227",
+   "rad-lec:228",
+   "rad-lec:225"
+  ],
+  "why": "Das Antennendiagramm einer ULA ist das Standardbild zur Winkelauflösung Δϑ ≈ 120°/N.",
+  "fach": "RADAR",
+  "unit": "RAD-S3"
+ },
+ {
+  "id": "RAD-S3-F05",
+  "examMode": "voice",
+  "front": "Die Abbildung zeigt die Phasendifferenz Δφ (in Grad) zwischen zwei Empfangsantennen über dem Einfallswinkel ϑ für zwei Antennenabstände d. Erkläre den Verlauf beider Kurven, die **Sprünge im unteren Bild** und die Konsequenz für die Winkelmessung per Phasenvergleich.",
+  "frontSlides": [
+   "rad-lec:233@0.25,0.22,0.9,0.86"
+  ],
+  "back": "- **Prinzip Phasenvergleich:** Die Phase wird zwischen zwei Antennen im Abstand d verglichen. Für die Kurven der Folie gilt $\\Delta\\varphi=-kd\\cos\\vartheta=-2\\pi\\frac{d}{\\lambda}\\cos\\vartheta$ (ϑ gegen die Antennenachse gemessen: −180° bei ϑ = 0°, +180° bei ϑ = 180°). Das Vorzeichen hängt nur von der Wahl der Referenzantenne ab: Mit dem Steering-Vektor von S. 224 hat Antenne 2 gegenüber Antenne 1 die Phase $+kd\\cos\\vartheta$. Der Betrag ist $|\\Delta\\varphi|=kd\\,|\\cos\\vartheta|$. Messbar ist die Phase nur modulo 360°, also in (−180°, 180°].\n- **Oben, d = λ/2:** Δφ = −180°·cos ϑ läuft **monoton** von −180° (ϑ = 0°) über 0° (ϑ = 90°) bis +180° (ϑ = 180°). Jedem Δφ ist genau ein Winkel zugeordnet, die Messung ist also **eindeutig**. Am steilsten ist die Kurve bei 90°, an den Rändern flach (dort geringere Genauigkeit).\n- **Unten, d = 3λ/2:** Δφ = −540°·cos ϑ, der Phasenhub beträgt also ±540°. Bei jedem Überschreiten von ±180° springt der Messwert um 360° (Phase-Wrapping). Die Sprünge liegen bei cos ϑ = ±1/3, also ϑ ≈ 70,5° und 109,5°. Die Kurve ist etwa 3-mal steiler und damit **genauer**, aber **mehrdeutig**: Ein gemessenes Δφ passt zu bis zu drei Winkeln.\n- **Folie (wörtlich):** „Often: λ/2 spacing“ und „Increasing distance increases accuracy but introduced ambiguities“ (gemeint: *introduces*).\n\n*(Musterlösung selbst erstellt – Herleitung der Sprungstellen)*",
+  "keyPoints": [
+   "Δφ = −kd·cos ϑ (Vorzeichen je nach Referenzantenne), nur modulo 360° messbar",
+   "d = λ/2: monoton von −180° bis +180° → eindeutig im ganzen Bereich",
+   "d = 3λ/2: steiler/genauer, aber Phasensprünge bei ϑ ≈ 70,5° und 109,5° → mehrdeutig",
+   "Größerer Abstand: höhere Genauigkeit, aber Mehrdeutigkeiten"
+  ],
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 232–233",
+  "slides": [
+   "rad-lec:233",
+   "rad-lec:232"
+  ],
+  "why": "Das Bild zeigt direkt, warum d = λ/2 der Standardabstand ist – eine klassische Verständnisfrage.",
+  "fach": "RADAR",
+  "unit": "RAD-S3"
+ },
+ {
+  "id": "RAD-S3-F06",
+  "examMode": "voice",
+  "front": "Was zeigt diese Abbildung? In welchem Zusammenhang wird das dargestellte Verfahren bei der Winkelschätzung eingesetzt, und welches Problem löst es?",
+  "frontSlides": [
+   "rad-lec:261@0.23,0.22,0.92,0.83"
+  ],
+  "back": "**Spatial Smoothing (räumliche Glättung):** Eine ULA (hier 7 Elemente entlang X) wird in **überlappende, gleich große Subarrays** zerlegt. Hier hat jedes Subarray 5 Elemente und ist gegenüber dem vorigen um ein Element verschoben (Subarray 1–3).\n\n- **Kontext MUSIC:** $P(\\vartheta)=\\frac{1}{\\boldsymbol a^H(\\vartheta)\\boldsymbol U_n\\boldsymbol U_n^H\\boldsymbol a(\\vartheta)}$ nutzt die Eigenzerlegung der räumlichen Kovarianzmatrix $\\boldsymbol R=\\boldsymbol A\\boldsymbol P\\boldsymbol A^H+\\sigma^2\\boldsymbol I$ in Signal- und Rauschunterraum. Folie: „Does not work in case of correlated signals. Signals can be de-correlated e.g. by making use of spatial smoothing.“\n- **Problem:** Bei korrelierten bzw. kohärenten Quellen (z. B. Mehrwegeechos desselben Signals) ist die Quell-Kovarianzmatrix $\\boldsymbol P$ singulär. Der Signalunterraum hat dann einen zu kleinen Rang, und Signal- und Rauschunterraum werden falsch getrennt.\n- **Lösung:** Die Kovarianzmatrizen aller Subarrays werden **gemittelt**. Alle Subarrays haben dieselbe Geometrie, sehen die Quellen aber mit unterschiedlichem, winkelabhängigem Phasenversatz. Dadurch wird die Korrelation aufgebrochen und der Rang wiederhergestellt.\n- **Preis:** Die effektive Apertur wird kleiner (5 statt 7 Elemente), die Auflösung also geringer.\n\n*(Musterlösung selbst erstellt – die Folie zeigt nur die Abbildung und den Hinweis auf S. 259)*",
+  "keyPoints": [
+   "Überlappende, gleich große Subarrays einer ULA (jeweils um ein Element verschoben)",
+   "Kovarianzmatrizen der Subarrays werden gemittelt",
+   "Dekorreliert kohärente Signale, damit MUSIC wieder funktioniert",
+   "Preis: kleinere effektive Apertur und damit geringere Auflösung"
+  ],
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 259, 261",
+  "slides": [
+   "rad-lec:261",
+   "rad-lec:259"
+  ],
+  "why": "Die Grenze von MUSIC bei korrelierten Signalen und ihre Abhilfe ist eine typische Vertiefungsfrage zu den Spektralverfahren.",
+  "fach": "RADAR",
+  "unit": "RAD-S3"
+ },
+ {
+  "id": "RAD-S3-F07",
+  "examMode": "sketch",
+  "front": "Skizziere und beschrifte das **Systemmodell des Eigenfilters** (Signalquelle, Rauschquelle, FIR-Filter). Gib an, wie die optimalen Filterkoeffizienten **w** bestimmt werden und welches maximale SNR sich ergibt.",
+  "back": "**Skizze:** Signalquelle → $u_n$ (WSS-Prozess) → Addierer ⊕. Rauschquelle → $v_n$ → in denselben Addierer. Summe $x_n$ → **FIR-Filter** (Koeffizienten **w**) → $y_n$. Ziel: **w** so wählen, dass das SNR am Ausgang maximal wird.\n\n- **Ausgangsleistungen:** Signalleistung $P_y=\\boldsymbol w^H\\boldsymbol R\\boldsymbol w$ ($\\boldsymbol R$ = Autokorrelationsmatrix von $u_n$), Rauschleistung $N_y=\\sigma^2\\boldsymbol w^H\\boldsymbol w$. Daraus folgt $(SNR)_y=\\frac{\\boldsymbol w^H\\boldsymbol R\\boldsymbol w}{\\sigma^2\\boldsymbol w^H\\boldsymbol w}$.\n- **Lösung** unter der Nebenbedingung $\\boldsymbol w^H\\boldsymbol w=1$:\n  1. Eigenzerlegung von $\\boldsymbol R$.\n  2. Größten Eigenwert $\\lambda_m$ und den zugehörigen Eigenvektor $\\boldsymbol q_m$ bestimmen.\n  3. $\\boldsymbol q_m$ ist die Impulsantwort des optimalen Filters. Damit gilt $(SNR)_{y,max}=\\lambda_m/\\sigma^2$.\n- **Einordnung:** stochastisches Gegenstück zum **Matched Filter** (der maximiert das SNR für ein bekanntes Signal in additivem weißem Rauschen) und ein Beispiel für die Hauptkomponentenanalyse (PCA).",
+  "keyPoints": [
+   "Signalquelle u_n + Rauschquelle v_n → Addierer → x_n → FIR-Filter (w) → y_n",
+   "(SNR)_y = wᴴRw / (σ²·wᴴw)",
+   "Optimum: Eigenvektor q_m zum größten Eigenwert λ_m von R, SNR_max = λ_m/σ²",
+   "Stochastisches Gegenstück zum Matched Filter (PCA)"
+  ],
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 270–273",
+  "slides": [
+   "rad-lec:270",
+   "rad-lec:271",
+   "rad-lec:272",
+   "rad-lec:273"
+  ],
+  "why": "Kompaktes Blockschaltbild mit einer klaren Optimierungslösung. Es verbindet Eigenzerlegung (MUSIC) mit dem Matched-Filter-Gedanken.",
+  "fach": "RADAR",
+  "unit": "RAD-S3"
+ },
+ {
+  "id": "RAD-S4-F01",
+  "examMode": "sketch",
+  "front": "Skizziere und beschrifte das Blockschaltbild eines **rauschgetriebenen zeitdiskreten LTI-Systems mit verrauschter Messung** (das Systemmodell, das dem Kalman-Filter zugrunde liegt). Gib dazu die System- und die Messgleichung an und erkläre, was die Größen bedeuten.",
+  "back": "**Blockschaltbild (Folie 332):**\n- Eingang $\\boldsymbol u$ → Block $\\boldsymbol B$ → Summierer (zusätzlich eingezeichnet ist dort ein Eingang $\\boldsymbol w$) → $\\boldsymbol x_{n+1}$ → Verzögerung $z^{-1}$ → $\\boldsymbol x_n$\n- Rückführung: $\\boldsymbol x_n$ → Block $\\boldsymbol A$ → zurück in den Summierer\n- Messpfad: $\\boldsymbol x_n$ → Block $\\boldsymbol C$ → Summierer, an dem das Messrauschen $\\boldsymbol n$ addiert wird → Ausgang $\\boldsymbol y_n$\n\n**Gleichungen:**\n$$\\boldsymbol x_n = \\boldsymbol B\\,\\boldsymbol u_n + \\boldsymbol A\\,\\boldsymbol x_{n-1}$$\n$$\\boldsymbol y_n = [c_1 \\dots c_N]\\,[x_{n,1} \\dots x_{n,N}]^T + \\boldsymbol n = \\boldsymbol C^T \\boldsymbol x_n + \\boldsymbol n$$\n\n**Bedeutung der Größen (Folie 333):**\n- $u_n$: Prozessrauschen (mittelwertfrei, weiß), treibt den Systemzustand\n- $x_n$: Systemzustand, soll geschätzt werden\n- $n$: Messrauschen (additiv, mittelwertfrei, weiß)\n- $c$: Messmatrix, verknüpft Messung und Systemzustand\n- $y_n$: Messung\n\nGemessen wird nur $y_n$, den Zustand $x_n$ muss man schätzen (→ Kalman-Filter).\n\n**Achtung Notation:** In der Wikipedia-Darstellung (Folie 334) heißt die Zustandsübergangsmatrix $F_k$, $u_k$ ist dort ein Steuereingang und $w_k$ das Prozessrauschen.",
+  "keyPoints": [
+   "Rückkopplungsschleife Summierer → $z^{-1}$ → $x_n$ → $A$ → Summierer, Eingang $u_n$ über $B$: $x_n = B u_n + A x_{n-1}$",
+   "Messpfad $x_n$ → $C$ → Addition des Messrauschens $n$ → $y_n = C^T x_n + n$",
+   "$u_n$ = Prozessrauschen, $n$ = Messrauschen (beide mittelwertfrei, weiß)",
+   "Gemessen wird nur $y_n$, geschätzt werden soll $x_n$"
+  ],
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 332–334 (Kap. 5.6.4 Noisy measurement)",
+  "slides": [
+   "rad-lec:332",
+   "rad-lec:333",
+   "rad-lec:334"
+  ],
+  "why": "Das Systemmodell des Kalman-Filters als Blockschaltbild ist ein typischer Zeichen-Auftrag in der Prüfung.",
+  "fach": "RADAR",
+  "unit": "RAD-S4"
+ },
+ {
+  "id": "RAD-S4-F02",
+  "examMode": "voice",
+  "front": "Erkläre dieses Blockschaltbild: Welche Aufgabe hat es, was passiert in den einzelnen Pfaden, und wie lautet die Gleichung für $\\hat{\\boldsymbol x}$?",
+  "frontSlides": [
+   "rad-lec:337@0.29,0.23,0.89,0.57"
+  ],
+  "back": "Das ist das **Zustandsschätz-System (Struktur des Kalman-Filters)**. Es wird an den Ausgang des realen, verrauschten Systems angehängt, also an die Messung $y_n$ (Folie 336).\n\n1. **Zustand vorhersagen:** Die letzte Schätzung $\\hat x_{i-1}$ wird über $\\boldsymbol A$ einen Schritt weitergerechnet → *pred. state* $\\bar x_i = A\\,\\hat x_{i-1}$.\n2. **Messung vorhersagen:** Über $\\boldsymbol C$ wird daraus die erwartete Messung $C^T \\bar x_i$ gebildet.\n3. **Schätzung berechnen:** Am linken Summierer wird die vorhergesagte Messung von der echten Messung abgezogen (**Innovation**). Die Innovation wird mit dem **Kalman-Gain $K$** gewichtet und zum vorhergesagten Zustand addiert. $z^{-1}$ hält das Ergebnis für den nächsten Takt.\n\n$$\\hat x_i = A\\,\\hat x_{i-1} + K_i\\left[y_i - C^T A\\,\\hat x_{i-1}\\right]$$\n\n**Der Trick** (Folie 337): Der Kalman-Gain wird **adaptiv** bestimmt. Laut Algorithmus (Schritt 3, Folie 342) wird er in jedem Schritt neu aus der Kovarianz der Vorhersage $\\overset{*}{P}_i$ und der Kovarianz des Messrauschens $N_i$ berechnet: $K_i = \\overset{*}{P}_i C\\,[C^T \\overset{*}{P}_i C + N_i]^{-1}$.\n\nFolie 338 stellt die Struktur dem **Beobachter (Observer)** eines Regelkreises gegenüber. Vom Aufbau her ist der Kalman-Filter ein Beobachter, dessen Rückführverstärkung $K$ adaptiv bestimmt wird.",
+  "keyPoints": [
+   "Zustand vorhersagen: pred. state $= A\\,\\hat x_{i-1}$",
+   "Messung über $C$ vorhersagen; Differenz zur echten Messung = Innovation",
+   "Korrektur: $\\hat x_i = A\\hat x_{i-1} + K_i[y_i - C^T A \\hat x_{i-1}]$",
+   "Kern: Der Kalman-Gain $K$ wird adaptiv bestimmt"
+  ],
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 336–338, 342, 344 (Kap. 5.6.5 State Estimation system, 5.6.6 Algorithm)",
+  "slides": [
+   "rad-lec:336",
+   "rad-lec:337",
+   "rad-lec:338",
+   "rad-lec:342",
+   "rad-lec:344"
+  ],
+  "why": "Die Signalflussstruktur Vorhersage → Innovation → Korrektur ist der Kern des Kalman-Filters.",
+  "fach": "RADAR",
+  "unit": "RAD-S4"
+ },
+ {
+  "id": "RAD-S4-F03",
+  "examMode": "sketch",
+  "front": "Skizziere den **Ablauf eines Kalman-Filter-Zyklus** als Blockschema mit zwei Spalten (Zustandszweig und Kovarianzzweig, nach Bar-Shalom). Ordne jedem Block die passende Gleichung aus dem Algorithmus (Schritte 1–5) zu.",
+  "back": "**Linke Spalte – Zustand:**\n- (state estimate)$_k$ → (predicted state)$_{k+1^-}$ → (predicted measurement)$_{k+1^-}$\n- (measurement)$_{k+1}$ kommt als Eingang von außen und geht nach unten in die neue Schätzung.\n- (state estimate)$_{k+1}$ hat **vier Eingänge**: (predicted state)$_{k+1^-}$, (predicted measurement)$_{k+1^-}$ (beide über Seitenleitungen rechts), (measurement)$_{k+1}$ und (filter gain)$_{k+1}$.\n\n**Rechte Spalte – Kovarianz:**\n- (variance of state)$_k$ → (var. of predicted state)$_{k+1^-}$ → (var. of predicted meas.)$_{k+1^-}$ → (filter gain)$_{k+1}$ → (variance of state)$_{k+1}$\n- Zusätzlich führt eine Seitenleitung rechts von (var. of predicted state)$_{k+1^-}$ **direkt** in (filter gain)$_{k+1}$ und **direkt** in (variance of state)$_{k+1}$.\n- (filter gain)$_{k+1}$ hat also **zwei Eingänge** (var. of predicted meas., var. of predicted state), ebenso (variance of state)$_{k+1}$ (filter gain, var. of predicted state).\n\n**Querverbindung:** Der **Filter-Gain** fließt aus der rechten Spalte in die neue Zustandsschätzung ein. Das ist die einzige Verbindung zwischen den Spalten.\n\n**Gleichungen (Folien 340–343):**\n1. Zustand vorhersagen: $\\bar x_i = A\\,\\hat x_{i-1}$\n2. Kovarianz der Vorhersage: $\\overset{*}{P}_i = A\\,\\tilde P_{i-1}\\,A^T + U_i$ (im ersten Schritt $\\overset{*}{P}_0 = P_0$)\n3. Kalman-Gain: $K_i = \\overset{*}{P}_i\\,C\\left[C^T \\overset{*}{P}_i\\,C + N_i\\right]^{-1}$\n4. Neue Schätzung: $\\hat x_i = \\bar x_i + K_i\\,[\\,y_i - C^T \\bar x_i\\,]$ (Klammer = Innovation)\n5. Fehlerkovarianz der Schätzung: $\\tilde P_i = [\\,1 - K_i C^T\\,]\\,\\overset{*}{P}_i$\n6. Sobald eine neue Messung kommt, wieder bei 1. beginnen.\n\nZusammengefasst (Folie 344): $\\hat x_i = A\\,\\hat x_{i-1} + K_i\\,[\\,y_i - C^T A\\,\\hat x_{i-1}\\,]$\n\n$U$ = Kovarianz des Prozessrauschens, $N$ = Kovarianz des Messrauschens.\n\n**Zuordnung Block ↔ Gleichung** *(Musterlösung selbst erstellt, die Folie zeigt nur die Blöcke)*:\n- (predicted state) ↔ Gl. 1: $\\bar x_i$\n- (predicted measurement) ↔ $C^T \\bar x_i$ (steckt in Gl. 4)\n- (var. of predicted state) ↔ Gl. 2: $\\overset{*}{P}_i$\n- (var. of predicted meas.) ↔ Klammerterm $C^T \\overset{*}{P}_i C + N_i$ in Gl. 3\n- (filter gain) ↔ Gl. 3: braucht $\\overset{*}{P}_i$ und den Klammerterm → genau die zwei Eingangspfeile\n- (state estimate)$_{k+1}$ ↔ Gl. 4: braucht $\\bar x_i$, $C^T \\bar x_i$, $y_i$ und $K_i$ → genau die vier Eingangspfeile\n- (variance of state)$_{k+1}$ ↔ Gl. 5: braucht $K_i$ und $\\overset{*}{P}_i$ → genau die zwei Eingangspfeile\n\nIn der Skizze führt kein Pfeil aus der Zustandsspalte in die Kovarianzspalte. Der Kovarianzzweig hängt also nicht von den Messwerten ab, sondern nur von $A$, $C$, $U$ und $N$.",
+  "keyPoints": [
+   "Zustandsspalte: Schätzung$_k$ → vorhergesagter Zustand → vorhergesagte Messung; die neue Schätzung$_{k+1}$ hat vier Eingänge: vorhergesagter Zustand, vorhergesagte Messung, Messung (von außen) und Gain",
+   "Kovarianzspalte: $\\tilde P$ → $\\overset{*}{P}$ → Var. der vorhergesagten Messung → Gain → neues $\\tilde P$; zusätzlich geht $\\overset{*}{P}$ direkt in den Gain und direkt in das neue $\\tilde P$",
+   "$\\overset{*}{P}_i = A\\tilde P_{i-1}A^T + U_i$ und $K_i = \\overset{*}{P}_i C[C^T\\overset{*}{P}_i C + N_i]^{-1}$",
+   "$\\hat x_i = \\bar x_i + K_i[y_i - C^T\\bar x_i]$ und $\\tilde P_i = [1 - K_i C^T]\\overset{*}{P}_i$; Der Gain ist die einzige Verbindung zwischen den Spalten; kein Pfeil von der Zustands- in die Kovarianzspalte"
+  ],
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 340–344 (Kap. 5.6.6 Algorithm, Sequence of operations nach Bar-Shalom)",
+  "slides": [
+   "rad-lec:344",
+   "rad-lec:340",
+   "rad-lec:342",
+   "rad-lec:343"
+  ],
+  "why": "Die Reihenfolge der Algorithmusschritte samt Formeln lässt sich über das Zwei-Spalten-Schema am sichersten reproduzieren.",
+  "fach": "RADAR",
+  "unit": "RAD-S4"
+ },
+ {
+  "id": "RAD-S4-F04",
+  "examMode": "sketch",
+  "front": "Skizziere und beschrifte qualitativ für die **Bayes-Positionsschätzung eines Roboters** (gaußscher Prior, gaußsche Messung) die drei Dichten **Prior, Likelihood und Posterior** in einem Diagramm $f(x)$ über $x$, und zwar für einen Iterationsschritt. Gib Mittelwert und Varianz des Posteriors an und beschreibe, wie sich der Posterior über viele Iterationen verändert.",
+  "back": "**Skizze (Folien 300/302):**\n- **Prior** $f_X(x) = \\frac{1}{\\sqrt{2\\pi\\sigma_0^2}}\\exp\\left(-\\frac{(x-x_0)^2}{2\\sigma_0^2}\\right)$: Glockenkurve um die bisherige Schätzung $x_0$\n- **Likelihood** $f_M(m_1,x) = \\frac{1}{\\sqrt{2\\pi\\sigma^2}}\\exp\\left(-\\frac{(m_1-x)^2}{2\\sigma^2}\\right)$: Glockenkurve um den Messwert $m_1$\n- **Posterior** $f_{X|Y}(x|y) = \\frac{f_{Y|X}(y|x)\\,f_X(x)}{\\int_x f_{Y|X}(y|x)\\,f_X(x)\\,dx}$: Glockenkurve **zwischen** den beiden Maxima, **schmaler und höher** als Prior und Likelihood. Der Nenner normiert nur.\n\n**Produkt zweier Gaußkurven (Folie 308):**\n$$\\mu_Z = \\frac{\\mu_X\\sigma_Y^2 + \\mu_Y\\sigma_X^2}{\\sigma_X^2 + \\sigma_Y^2},\\qquad \\sigma_Z^2 = \\frac{\\sigma_X^2\\,\\sigma_Y^2}{\\sigma_X^2 + \\sigma_Y^2}$$\n→ gewichteter Mittelwert: Der Posterior liegt näher an der Kurve mit der **kleineren Varianz**, und $\\sigma_Z^2$ ist kleiner als jede der beiden Einzelvarianzen.\n\n**Rekursion (Folien 301, 303, 304, 307):** Der Posterior wird zum neuen Prior, mit der nächsten Messung entsteht ein neuer Posterior. Über die Iterationen wird er immer **schmaler**. Die Schätzung schwankt anfangs noch (Iteration 1: est = 9,40; Iteration 20: est = 8,33) und stabilisiert sich dann bei ≈ 7 m (Iteration 200: 7,05; Iteration 5000: 7,04). Die einzelnen Messungen streuen dabei weiter stark (z. B. meas = 2,48 oder 10,67).",
+  "keyPoints": [
+   "Das Maximum des Posteriors liegt zwischen Prior- und Likelihood-Maximum, näher an der Kurve mit der kleineren Varianz",
+   "Der Posterior ist schmaler und höher als Prior und Likelihood: $\\sigma_Z^2 = \\sigma_X^2\\sigma_Y^2/(\\sigma_X^2+\\sigma_Y^2)$",
+   "$\\mu_Z = (\\mu_X\\sigma_Y^2 + \\mu_Y\\sigma_X^2)/(\\sigma_X^2+\\sigma_Y^2)$",
+   "Der Posterior wird zum neuen Prior → über die Iterationen immer schmaler"
+  ],
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 296–308 (Kap. 5.4.2 Example: Position measurement, 5.4.3 Principal approach, Product of two Gaussians)",
+  "slides": [
+   "rad-lec:300",
+   "rad-lec:302",
+   "rad-lec:303",
+   "rad-lec:304",
+   "rad-lec:308"
+  ],
+  "why": "Das Bild „Posterior liegt dazwischen und ist schmaler“ ist die anschauliche Grundlage für den Kalman-Filter.",
+  "fach": "RADAR",
+  "unit": "RAD-S4"
+ },
+ {
+  "id": "RAD-S4-F05",
+  "examMode": "voice",
+  "front": "Zwei Detektionen **desselben starren Ziels** wurden gemessen (auf der Folie „Target 1/2“ genannt): bei $\\varphi_1 = 30°$ mit $\\dot R_1 = 16{,}1603$ m/s und bei $\\varphi_2 = 20°$ mit $\\dot R_2 = 14{,}5272$ m/s. Die Abbildung zeigt das Ergebnis im $v_x$-$v_y$-Diagramm. Erkläre, was die beiden Geraden darstellen, was ihr Schnittpunkt liefert und warum man mindestens zwei Detektionen braucht.",
+  "frontSlides": [
+   "rad-lec:285@0.61,0.28,0.93,0.72"
+  ],
+  "back": "Jede Detektion liefert **eine Gleichung** $\\dot R_i = v_x\\cos\\varphi_i + v_y\\sin\\varphi_i$ mit zwei Unbekannten. Nach $v_y$ aufgelöst ist das eine **Gerade** im $v_x$-$v_y$-Raum:\n$$v_y = \\frac{\\dot R_i}{\\sin\\varphi_i} - v_x\\,\\frac{\\cos\\varphi_i}{\\sin\\varphi_i}$$\nJeder Punkt auf der Geraden passt zur Messung. Aus einer einzelnen Detektion ist $(v_x, v_y)$ deshalb **nicht eindeutig** bestimmbar.\n\n- Gerade 1 ($\\varphi_1 = 30°$): Steigung $-\\cot 30° \\approx -1{,}73$, Achsenabschnitt $16{,}1603/0{,}5 \\approx 32{,}3$ m/s\n- Gerade 2 ($\\varphi_2 = 20°$): Steigung $-\\cot 20° \\approx -2{,}75$ (steiler), Achsenabschnitt $\\approx 42{,}5$ m/s\n\nBeide Detektionen stammen vom **selben starren Ziel** und haben deshalb dieselbe Geschwindigkeit. Der **Schnittpunkt** ist die gesuchte kartesische Geschwindigkeit: $v_x \\approx 10$ m/s, $v_y \\approx 15$ m/s (Probe: $10\\cos 30° + 15\\sin 30° = 16{,}16$ ✓; $10\\cos 20° + 15\\sin 20° = 14{,}53$ ✓).\n\n**Achtung, zwei Druckfehler (selbst geprüft):**\n1. Auf den Folien 284/285 ist die aufgelöste Geradengleichung mit **vertauschten Vorzeichen** gedruckt ($v_y = \\frac{v_x}{\\sin\\varphi}\\cos\\varphi - \\frac{\\dot R}{\\sin\\varphi}$).\n2. Auf Folie 285 steht in der Gleichung für Target 2 (20°) **$\\cos 30°$ statt $\\cos 20°$**.\n\nDer Plot (fallende Geraden, Schnittpunkt bei (10, 15)) passt nur zur korrekten Form oben mit $\\cos 20°$ für Target 2 (Steigung $-\\cot 20°$), die aus $\\dot R = v_x\\cos\\varphi + v_y\\sin\\varphi$ (Folie 283) folgt.\n\n*(Ergänzung, Musterlösung selbst erstellt):* Je **kleiner der Winkelunterschied** der Detektionen ist, desto ähnlicher sind die Steigungen. Die Geraden schneiden sich dann unter einem flachen Winkel, und das Ergebnis reagiert empfindlich auf Messrauschen (Nenner $\\sin(\\varphi_2 - \\varphi_1)$ in der Lösung für $v_x$).",
+  "keyPoints": [
+   "Jede Detektion = eine Gleichung mit zwei Unbekannten = eine Gerade im $v_x$-$v_y$-Raum",
+   "Steigung $-\\cot\\varphi$, Achsenabschnitt $\\dot R/\\sin\\varphi$ → verschiedene Winkel ergeben verschiedene Geraden",
+   "Schnittpunkt = Geschwindigkeit des starren Ziels: $v_x \\approx 10$ m/s, $v_y \\approx 15$ m/s",
+   "Kleiner Winkelunterschied → flacher Schnittwinkel, schlecht bestimmtes Ergebnis"
+  ],
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 283–285 (Kap. 5.3 Determination of radial speed, Two targets)",
+  "slides": [
+   "rad-lec:283",
+   "rad-lec:284",
+   "rad-lec:285"
+  ],
+  "why": "Die geometrische Deutung (Gerade pro Detektion, Schnittpunkt = Geschwindigkeit) erklärt, warum eine einzelne Radialmessung nicht reicht.",
+  "fach": "RADAR",
+  "unit": "RAD-S4"
+ },
+ {
+  "id": "RAD-S4-F06",
+  "examMode": "voice",
+  "front": "Die Abbildungen zeigen eine Szene mit **zwei ausgedehnten Zielen** (schwarz, rot) und die daraus berechneten Darstellungen im $v_x$-$v_y$-Raum. Erkläre, wie die Geraden entstehen, was das Raster rechts darstellt und wie man daraus die Geschwindigkeiten der Ziele bestimmt. Welches Problem kann bei mehreren Zielen auftreten?",
+  "frontSlides": [
+   "rad-lec:286@0.24,0.22,0.92,0.89",
+   "rad-lec:287@0.6,0.25,0.93,0.79"
+  ],
+  "back": "**Targets (Folie 286 links):** Draufsicht ($x$, $y$ in m) mit zwei ausgedehnten Zielen (Rechtecke). Die Punkte an den Ecken sind die einzelnen **Detektionen**, der Sensor sitzt im Ursprung (blauer Punkt). Jede Detektion hat ihren eigenen Winkel $\\varphi_i$ und ihre eigene Radialgeschwindigkeit $\\dot R_i$.\n\n**Lines:** Jede Detektion liefert eine Gerade $\\dot R_i = v_x\\cos\\varphi_i + v_y\\sin\\varphi_i$ im $v_x$-$v_y$-Raum (Farbe = Ziel). Alle Detektionen eines **starren** Ziels haben dieselbe Geschwindigkeit. Deshalb schneiden sich die Geraden eines Ziels in **einem gemeinsamen Punkt**, z. B. die vier schwarzen Geraden bei etwa $(v_x, v_y) \\approx (0;\\ 10{,}5)$ m/s.\n\n**Hits (Folie 287):** Der $v_x$-$v_y$-Raum wird in ein Raster aus Zellen à 2 m/s eingeteilt. Für jede Zelle wird gezählt, **wie viele Geraden durch sie laufen** (Voting/Akkumulator, ähnlich einer Hough-Transformation). Das **Maximum** (hier 5 in der Zelle $v_x \\approx 0 \\dots 2$, $v_y \\approx 10 \\dots 12$ m/s) markiert den Schnittpunkt und damit die Geschwindigkeitsschätzung eines Ziels. Man muss dafür nicht für jedes Detektionspaar ein Gleichungssystem lösen.\n\n**Problem bei mehreren Zielen:** Man weiß vorher nicht, welche Detektion zu welchem Ziel gehört. Auch Geraden **verschiedener** Ziele kreuzen sich und können **Scheinmaxima** erzeugen, z. B. der Wert 4 oben rechts ($v_x \\approx 10 \\dots 12$, $v_y \\approx 18 \\dots 20$ m/s), wo sich rote und schwarze Geraden treffen. Außerdem liefern Detektionen mit **ähnlichem Winkel** fast parallele Geraden (z. B. die roten Paare) und damit einen unscharfen Schnittpunkt.\n\n*(Musterlösung selbst erstellt – die Folien zeigen nur die Abbildungen und verweisen auf den Quellcode, Exercise #5.2)*",
+  "keyPoints": [
+   "Jede Detektion → eine Gerade im $v_x$-$v_y$-Raum; die Geraden eines starren Ziels schneiden sich in seinem Geschwindigkeitspunkt",
+   "Das Hits-Raster zählt pro Zelle die durchlaufenden Geraden (Voting); Maximum = Geschwindigkeitsschätzung",
+   "Mehrzielproblem: Kreuzungen von Geraden verschiedener Ziele erzeugen Scheinmaxima",
+   "Ähnliche Winkel → fast parallele Geraden → unscharfer Schnittpunkt"
+  ],
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 286–288 (Kap. 5.3 Determination of radial speed, Example)",
+  "slides": [
+   "rad-lec:286",
+   "rad-lec:287"
+  ],
+  "why": "Das Beispiel überträgt die Zwei-Detektionen-Idee auf echte Punktwolken mit mehreren Zielen.",
+  "fach": "RADAR",
+  "unit": "RAD-S4"
+ },
+ {
+  "id": "RAD-S4-F07",
+  "examMode": "voice",
+  "front": "Die Abbildung zeigt links den simulierten Verlauf $x_n$ eines **rauschgetriebenen zeitdiskreten Systems** $x_n = B\\,u_n + A\\,x_{n-1}$ (skalar) über $n = 0 \\dots 1000$ und rechts das Histogramm der Eingangsfolge $u$. Welche Werte von $A$ und $B$ wurden verwendet, wie heißt der Prozess, und was erkennt man in beiden Diagrammen?",
+  "frontSlides": [
+   "rad-lec:330@0.27,0.44,0.88,0.8"
+  ],
+  "back": "Folie 330: $x_n = x_{n-1} + u_n$ mit normalverteiltem $u_n$, also $A = 1$, $B = 1$ → **Random Walk (Irrfahrt)**.\n\n- **Histogramm (rechts):** Die Eingangswerte $u$ sind **mittelwertfrei** und glockenförmig um 0 verteilt (etwa −3 … +3). Das ist weißes, normalverteiltes Prozessrauschen.\n- **Verlauf (links):** $x_n$ ist die **Summe aller bisherigen Rauschwerte**, $x_n = x_0 + \\sum_{k=1}^{n} u_k$. Wegen $A = 1$ gibt es keine Rückstellung zur Null. Das Signal **driftet** zufällig (hier bis etwa −40), obwohl der Eingang mittelwertfrei ist.\n- *(Musterlösung selbst hergeleitet):* Bei unabhängigen $u_k$ mit Varianz $\\sigma^2$ wächst die Varianz von $x_n$ linear mit $n$: $\\mathrm{Var}(x_n) = n\\,\\sigma^2$. Der Prozess ist also nicht stationär.\n\n**Bedeutung:** Das ist das einfachste Beispiel für das Blockschaltbild $x_n = B u_n + A x_{n-1}$ als Modell eines rauschgetriebenen Systems (Folie 328). Auf diesem Modell baut das Systemmodell des Kalman-Filters auf.",
+  "keyPoints": [
+   "Modell $x_n = x_{n-1} + u_n$ ($A = 1$, $B = 1$): Random Walk",
+   "$u$ ist mittelwertfreies, normalverteiltes (weißes) Rauschen: Histogramm glockenförmig um 0",
+   "$x_n$ summiert das Rauschen auf → driftet ohne Rückstellung, die Varianz wächst mit $n$"
+  ],
+  "source": "Lecture_RadarSystems_Lec.pdf, S. 328–330 (Kap. 5.6.3 Matrix notation of discrete-time LTI system, Block diagram Example)",
+  "slides": [
+   "rad-lec:328",
+   "rad-lec:330"
+  ],
+  "why": "An diesem Beispiel sieht man, was „rauschgetriebenes System“ im Kalman-Modell anschaulich bedeutet.",
+  "fach": "RADAR",
+  "unit": "RAD-S4"
+ },
+ {
+  "id": "RAD-S5-F01",
+  "examMode": "voice",
+  "front": "Was zeigt diese Abbildung? Erkläre, wie die linke und die rechte Anordnung zusammenhängen, was die gefüllte Zeile bedeutet und warum das für 4D-/Imaging-Radar wichtig ist.",
+  "frontSlides": [
+   "rad-lec:456@0.33,0.21,0.82,0.75"
+  ],
+  "back": "**MIMO-Radar: physische Antennen vs. virtuelles Array** (Beispiel nach Sun et al. mit $M_{Tx}=24$, $M_{Rx}=24$)\n- **Links: physische Anordnung.** 24 Sendeantennen (×) stehen in zwei senkrechten Spalten zu je 12 am linken und rechten Rand. 24 Empfangsantennen (○) liegen in zwei waagerechten Reihen zu je 12 oben und unten, genau auf Höhe des obersten bzw. untersten Tx. Zusammen sind das nur **48 physische Elemente**.\n- **Rechts: virtuelles Array.** Die Tx senden orthogonal (z. B. TDM, DDM oder Code). Dadurch lässt sich jedes Echo einem Tx-Rx-Paar zuordnen. Jedes Paar wirkt wie ein Element an der Position $\\vec r_{virt}=\\vec r_{Tx}+\\vec r_{Rx}$, also einer Faltung der Tx- mit der Rx-Anordnung. So entstehen $M_{Tx}\\cdot M_{Rx}=576$ Tx-Rx-Paare. Sie liegen auf einem flächigen Gitter mit **24 Spalten × 23 Zeilen = 552 verschiedenen Positionen**.\n  - Waagerecht: Die beiden Tx-Spalten verschieben die Rx-Reihen seitlich. Daher liegen zwei Blöcke zu je 12 Spalten nebeneinander (24 Spalten).\n  - Senkrecht: Die 12 Tx einer Spalte liefern 12 Zeilen. Die beiden Rx-Reihen liegen 11 Tx-Schritte auseinander. Die untere Rx-Reihe ergibt die Zeilen 0…11, die obere die Zeilen 11…22, zusammen 23 Zeilen.\n  - **Gefüllte Mittelzeile:** Zeile 11 wird von beiden Rx-Reihen erreicht und ist daher **doppelt belegt**. Das sind die 24 redundanten Elemente ($576-552=24$).\n- **Bedeutung:** Die große **2D-Apertur** liefert eine feine Winkelauflösung in **Azimut und Elevation**. Das ist die Grundlage für 4D-/Imaging-Radar, ohne dass man 576 HF-Kanäle bauen muss. Die Yole-Übersicht (Seite 455) ordnet 4D-Imaging-Systeme bei 192 bis 2304 Kanälen ein, klassisches MIMO bei 12 bzw. 24.\n\n*(Musterlösung selbst erstellt; die Folie liefert nur die Bildunterschrift)*",
+  "keyPoints": [
+   "Links: 24 Tx (2 Spalten) + 24 Rx (2 Reihen) = 48 physische Antennen",
+   "Virtuelle Elementposition = Tx-Position + Rx-Position, dafür orthogonale Tx-Signale nötig",
+   "576 Tx-Rx-Paare auf 24 × 23 = 552 Gitterpositionen; gefüllte Mittelzeile doppelt belegt (24 redundant)",
+   "2D-Apertur → Winkelauflösung in Azimut und Elevation (4D-Imaging)"
+  ],
+  "source": "Lecture_RadarSystems_Lec.pdf, Seite 456 (6.4.3 Virtual Antennas, Sun et al.); Seite 455 (Number of Antennas)",
+  "slides": [
+   "rad-lec:456",
+   "rad-lec:455"
+  ],
+  "why": "Erklärt das virtuelle Array anhand der zentralen Abbildung. Die bestehenden Karten behandeln es nur als Text/Formel.",
+  "fach": "RADAR",
+  "unit": "RAD-S5"
+ },
+ {
+  "id": "RAD-S5-F02",
+  "examMode": "voice",
+  "front": "Die Tabelle zeigt die Sendeparameter eines Serien-Automotive-Radars (Hella RS6, 3 Tx / 4 Rx). Erkläre, wie die drei Sender voneinander getrennt werden, wie viele virtuelle Kanäle entstehen und welche Entfernungsauflösung sich ergibt.",
+  "frontSlides": [
+   "rad-lec:399@0.27,0.28,0.88,0.63"
+  ],
+  "back": "**Trennung der Sender über die Phase von Chirp zu Chirp (Doppler-/Phasenmultiplex)**\n- **Gemeinsame Chirpfolge:** Alle drei Tx senden gleichzeitig dieselbe Folge, nämlich 78,0 GHz Mittenfrequenz, 1720 MHz Bandbreite und 512 Chirps zu je 33…37 µs.\n- **Unterschied ist die Phasenprogression von Chirp zu Chirp:**\n  - Tx1: konstant $0°$\n  - Tx2: $+90°$ pro Chirp (0/90/180/270/…)\n  - Tx3: $+180°$ pro Chirp (0/180/0/180/…)\n- **Wirkung in der Doppler-FFT:** Ein linearer Phasenzuwachs $\\Delta\\varphi$ pro Chirp wirkt über die 512 Chirps wie eine zusätzliche Dopplerverschiebung um den Anteil $\\Delta\\varphi/2\\pi$ des eindeutigen Dopplerbereichs.\n  - Tx2 erscheint gegenüber Tx1 um $1/4$ verschoben (128 Bins).\n  - Tx3 erscheint um $1/2$ verschoben (256 Bins).\n  - Die Echos der drei Sender liegen damit getrennt im Doppler-Spektrum. Beim Conti ARS 540 heißt dasselbe Prinzip **Doppler Division Multiplexing (DDM)**.\n- **Preis:** Der eindeutige Geschwindigkeitsbereich wird auf die Doppler-Slots aufgeteilt.\n- **Virtuelle Kanäle:** $3\\cdot4=12$\n- **Entfernungsauflösung:** $\\Delta R=\\dfrac{c}{2B}=\\dfrac{3\\cdot10^8\\,\\text{m/s}}{2\\cdot1{,}72\\cdot10^9\\,\\text{Hz}}\\approx8{,}7\\,\\text{cm}$\n- **Zeitbudget zur Kontrolle:** $512\\cdot(33…37\\,\\mu s)\\approx17…19\\,\\text{ms}$ Senden plus 31…33 ms Pause ergibt 50 ms Zyklus. Das passt zum Duty Cycle von 34…38 %.\n\n*(Musterlösung selbst erstellt; die Tabelle nennt nur die Parameter)*",
+  "keyPoints": [
+   "Tx1/Tx2/Tx3: 0°, +90°, +180° Phasenzuwachs pro Chirp",
+   "Phasenrampe = Dopplerversatz um 1/4 bzw. 1/2 des Dopplerbereichs → Trennung in der Doppler-FFT (DDM)",
+   "3 Tx × 4 Rx = 12 virtuelle Kanäle",
+   "ΔR = c/(2B) ≈ 8,7 cm bei 1720 MHz"
+  ],
+  "source": "Lecture_RadarSystems_Lec.pdf, Seite 399 (6.2.2 Leading Tier 1, Hella RS6), Seite 398 (RS6-Antennenlayout), Seite 401 (ARS 540: DDM)",
+  "slides": [
+   "rad-lec:399",
+   "rad-lec:398",
+   "rad-lec:401"
+  ],
+  "why": "Zeigt an einem echten Sensor, wie MIMO-Sender praktisch getrennt werden, und verbindet das mit ΔR = c/2B.",
+  "fach": "RADAR",
+  "unit": "RAD-S5"
+ },
+ {
+  "id": "RAD-S5-F03",
+  "examMode": "sketch",
+  "front": "Skizziere und beschrifte das Sendeprinzip der Digital Code Modulation (DCM, eine Form von PMCW), wie sie im MAGNA-Radar eingesetzt wird. Zeichne die Codefolge mit ihren Zeitgrößen, den Signalfluss bis zur Antenne und das entstehende Sendesignal. Berechne außerdem die Chipdauer für die angegebene Bandbreite von 471,1 MHz.",
+  "back": "**Die Skizze muss enthalten:**\n- **Codefolge** als Rechtecksignal mit zwei Pegeln (±1), Bits z. B. 1 0 0 1 0 1 … $L_c$\n- **Zeitgrößen:**\n  - Chipdauer $T_{chip}=1/BW$ (Dauer eines Bits)\n  - Code-/Pingdauer $T_{ping}=L_c\\cdot T_{chip}$\n- **Signalfluss:** PRN-Codegenerator (Pseudo-Random-Noise) → **Mischer/Multiplizierer** ← **LO** (Dauerstrich-Träger) → **TX-Antenne**\n- **Sendesignal:** Träger mit konstanter Frequenz, dessen **Phase bei jedem Bitwechsel um 180° springt** (auf der Folie rot/blau). Anders als bei FMCW wird nicht die Frequenz moduliert, sondern die Phase.\n\n**Rechnung:**\n- $T_{chip}=\\dfrac{1}{471{,}1\\,\\text{MHz}}\\approx2{,}12\\,\\text{ns}$ (genau 2,1227 ns)\n- Die Folie nennt 2,1182 ns. Das entspräche 472,1 MHz, ist also vermutlich ein Tippfehler.\n\n**Ergänzung:**\n- Entfernungsauflösung: $\\Delta R=\\dfrac{c\\,T_{chip}}{2}=\\dfrac{c}{2\\,BW}\\approx0{,}32\\,\\text{m}$\n- Empfang: Das Echo wird mit dem verzögerten Code korreliert. Die Verzögerung des Korrelationsmaximums liefert die Entfernung.\n- Unterschiedliche Codes machen eigene Sender (MIMO) und fremde Radare (Interferenz) unterscheidbar.\n\n*(Skizze nach Seite 393; ΔR und Empfangsprinzip: Musterlösung selbst erstellt)*",
+  "keyPoints": [
+   "PRN-Codegenerator × LO → TX (Phasenmodulation mit 0°/180°-Sprüngen)",
+   "T_chip = 1/BW und T_ping = L_c · T_chip eingezeichnet",
+   "T_chip = 1/471,1 MHz ≈ 2,12 ns",
+   "Unterschied zu FMCW: konstante Frequenz, Phase codiert"
+  ],
+  "source": "Lecture_RadarSystems_Lec.pdf, Seite 393 (MAGNA, DCM-Prinzip); Seite 392 (Modulation: Digital Code Modulation)",
+  "slides": [
+   "rad-lec:393",
+   "rad-lec:392"
+  ],
+  "why": "PMCW/DCM ist die wichtigste Alternative zu FMCW. Das Prinzipbild und T_chip = 1/BW sind typische Skizzier- und Rechenaufgaben.",
+  "fach": "RADAR",
+  "unit": "RAD-S5"
+ },
+ {
+  "id": "RAD-S5-F04",
+  "examMode": "sketch",
+  "front": "Skizziere und beschrifte das Blockschaltbild eines 77-GHz-Automotive-Radarsensors mit Radar-MMIC (3 Tx, 4 Rx), Mikrocontroller und Fahrzeuganbindung (Beispiel: Veoneer-Sensor).",
+  "back": "**MMIC (hier AWR2243):**\n- **Oszillator (OSC)** mit 40-MHz-Quarz als Referenz → **PLL**. Der **Ramp Generator** steuert die PLL und erzeugt so die FMCW-Rampe (Chirp).\n- PLL-Ausgang → Frequenzvervielfacher (×2) → **3 Sendepfade mit je einem Phasenschieber ΔΦ** → 3 Tx-Antennen (76–77 GHz).\n- 4 Rx-Antennen → **Mischer**, der das LO aus derselben PLL nutzt (homodyn) → ZF-Signale → ADC → „IF ADC Data (×4)“ an den Controller.\n- **Control/Status**-Block: Konfiguration durch den Controller.\n\n**Mikrocontroller** (TC357 mit eigenem 25-MHz-Quarz): Signalverarbeitung (FFTs, Detektion …) und Steuerung des MMIC.\n\n**Peripherie:**\n- Power-IC: erzeugt 5,0 / 3,3 / 1,8 / 1,2 / 1,0 V aus 12 V\n- 2 CAN-Treiber (U1/U10, TCAN1051) und 2 LED-Treiber (U11/U12, BCR401)\n- Stecker mit DC 12 V, GND, MPIO und 2 × CAN-Bus\n\nDie ΔΦ-Schieber in den Tx-Pfaden erlauben die Phasencodierung der Sender für MIMO (vgl. Seite 399) bzw. eine Strahlschwenkung.\n\n*(Blockschaltbild laut Seite 389; Funktionserläuterungen: Musterlösung selbst erstellt)*",
+  "keyPoints": [
+   "PLL + Ramp Generator + Quarzoszillator erzeugen den Chirp (LO)",
+   "3 Tx-Pfade mit Phasenschiebern ΔΦ; 4 Rx-Pfade über Mischer mit demselben LO → ZF → ADC",
+   "ADC-Daten (×4) gehen zum Mikrocontroller für die Signalverarbeitung",
+   "Versorgung aus 12 V über Power-IC, Ausgabe über CAN"
+  ],
+  "source": "Lecture_RadarSystems_Lec.pdf, Seite 389 (6.2.2 Leading Tier 1, Veoneer-Blockschaltbild)",
+  "slides": [
+   "rad-lec:389"
+  ],
+  "why": "Das Blockschaltbild eines realen Sensors fasst den gesamten Signalweg (Chirp-Erzeugung, Mischer, ADC, Verarbeitung) in einer Skizze zusammen.",
+  "fach": "RADAR",
+  "unit": "RAD-S5"
+ },
+ {
+  "id": "RAD-S5-F05",
+  "examMode": "sketch",
+  "front": "Skizziere und beschrifte, wie zwei Radar-MMICs (je 3 Tx / 4 Rx) als Master und Slave kaskadiert werden. Welche Signale müssen zwischen den Chips verteilt werden, und was gewinnt man dadurch?",
+  "back": "**Die Skizze muss enthalten** (Beispiel AWR1243, Seite 468):\n- **Master und Slave:** je Tx1–3 und Rx1–4 zur Antenne, SPI-Schnittstelle zur Steuerung und CSI2-Datenausgang.\n- **LO-Verteilung:** Der Master gibt sein FMCW-LO-Signal (20 GHz, *FM_CW_SYNCOUT*) über einen **Leistungsteiler** an die *FM_CW_SYNCIN*-Eingänge des Slaves **und** zurück in den Master. Alle Chips senden und mischen dadurch mit **demselben, phasenkohärenten LO**.\n- **Referenztakt:** Nur der Master hat den 40-MHz-Quarz. Sein *OSC_CLKOUT* (40 MHz) geht an *CLKP* des Slaves.\n- **Zeitsynchronisation:** *SYNC_OUT* (Master) → *SYNC_IN* (Slave), damit Frames und Chirps gleichzeitig starten.\n\n**Gewinn:** Die Chips arbeiten wie ein großer MMIC.\n- 2 Chips: 6 Tx / 8 Rx → 48 virtuelle Kanäle\n- 4 Chips (unterer Teil der Folie: 1 Master + 3 Slaves mit Leistungsteiler, Clock- und Sync-Treiber): 12 Tx / 16 Rx → **192 virtuelle Kanäle**. Das passt zum ARS 540 mit 12 Tx / 16 Rx.\n- Ergebnis: größere Apertur und bessere Winkelauflösung.\n\n*(Funktionserklärung: Musterlösung selbst erstellt)*",
+  "keyPoints": [
+   "Gemeinsames 20-GHz-LO vom Master über Leistungsteiler an alle Chips → Kohärenz",
+   "40-MHz-Referenztakt Master → Slave; SYNC_OUT → SYNC_IN für gleichzeitigen Start",
+   "2 Chips: 6 Tx/8 Rx = 48; 4 Chips: 12 Tx/16 Rx = 192 virtuelle Kanäle"
+  ],
+  "source": "Lecture_RadarSystems_Lec.pdf, Seite 468 (6.5.3 MMICs – Cascading, Longman et al.); Seite 401 (ARS 540: 12 Tx, 16 Rx)",
+  "slides": [
+   "rad-lec:468",
+   "rad-lec:401"
+  ],
+  "why": "Kaskadierung erklärt, wie reale Sensoren auf 12 Tx / 16 Rx kommen. Kernpunkt ist das kohärent geteilte LO.",
+  "fach": "RADAR",
+  "unit": "RAD-S5"
+ },
+ {
+  "id": "RAD-S5-F06",
+  "examMode": "voice",
+  "front": "Was zeigt diese Abbildung aus dem Abschnitt zur Sensorintegration, und wie wirkt sich der dargestellte Effekt auf die berechnete Zielposition aus?",
+  "frontSlides": [
+   "rad-lec:433@0.36,0.21,0.79,0.73"
+  ],
+  "back": "**Mehrwegeausbreitung im Einbauraum (Gehäuse/Stoßfänger)**\n- **Aufbau:** Schraffiert ist die Radar-/Antennenebene mit dem Ursprung. Blau ist eine **Platte vor dem Radar** (z. B. Stoßfängerverkleidung), in der Simulation **0,1 m** davor.\n- **Effekt:** Ein Echo fällt unter dem Winkel $\\phi$ ein. Ein Teil wird **am Radar re-reflektiert, dann an der Platte zurückgeworfen** und trifft erneut auf die Antenne. Dem direkten Echo überlagert sich so eine verzögerte, schwächere Kopie (Simulation: Amplitude $A=0{,}1$).\n- **Folge:** Die Phasendifferenzen zwischen den Rx-Elementen werden verfälscht. Das gibt einen **Winkelfehler**, sodass die berechnete Position **um die reale Bahn pendelt**. Der Plot zeigt ein Ziel bei $x=5$, das sich in y-Richtung bewegt (Seiten 434–436, für 0,5λ und 1,5λ Antennenabstand bei verschiedenen Winkeln ϑ).\n- **Sprung bei 1,5λ:** Nur bei 1,5λ-Abstand springt die Kurve bei $y\\approx14$ waagerecht weg. Das passt zur Winkelmehrdeutigkeit: Eindeutig ist nur $|\\sin\\varphi|<\\lambda/(2d)=1/3$, also $|\\varphi|<\\arcsin(1/3)\\approx19{,}47°$. Für das Ziel bei $x=5$ wird diese Grenze bei $y=5/\\tan(19{,}47°)\\approx14{,}1$ erreicht, also genau dort, wo die Kurve springt.\n- **Erkenntnisse der Folie (Seite 437):**\n  - Eine Neigung (Tilt) lenkt Energie vom Radar weg.\n  - Trifft der reflektierte Strahl die Antenne, vergrößert der Tilt den Fehler.\n  - Größerer Abstand zur Platte → höhere Frequenz der Oszillation.\n  - Größere Antennenabstände helfen bei großen Fehlern (phase wrap, slope).\n  - HF-Simulation ist nötig, aber generell hilft mehr Tilt.\n\n*(Deutung der Abbildung und des Sprungs: Musterlösung selbst erstellt; Erkenntnisse sinngemäß (übersetzt) nach Seite 437)*",
+  "keyPoints": [
+   "Echo wird zwischen Radar und Platte (0,1 m davor) hin- und herreflektiert → überlagerte Kopie",
+   "Verfälschte Phasendifferenzen → Winkelfehler → berechnete Position pendelt um die reale Bahn",
+   "Mehr Abstand zur Platte → schnellere Oszillation; Tilt lenkt Energie weg",
+   "1,5λ-Abstand: Mehrdeutigkeit ab arcsin(1/3) ≈ 19,5° (phase wrap), bei x = 5 also ab y ≈ 14"
+  ],
+  "source": "Lecture_RadarSystems_Lec.pdf, Seiten 433–437 (6.2.6 Integration, Modell nach E. Fuente)",
+  "slides": [
+   "rad-lec:433",
+   "rad-lec:434",
+   "rad-lec:435",
+   "rad-lec:436",
+   "rad-lec:437"
+  ],
+  "why": "Verbindet Multipath, Phasendifferenz-Winkelmessung und λ/2-Eindeutigkeit an einem praktischen Einbauproblem.",
+  "fach": "RADAR",
+  "unit": "RAD-S5"
+ },
+ {
+  "id": "RAD-S5-F07",
+  "examMode": "sketch",
+  "front": "Skizziere und beschrifte die Einbausituation eines Radarsensors hinter einer Stoßfängerverkleidung (Fascia) mit vertikalem Neigungswinkel. Erkläre, warum die Neigung hilft, und gib an, wie sich die zulässige Reflexion der Verkleidung mit dem Neigungswinkel ändert (Bosch-Vorgabe).",
+  "back": "**Skizze** (Seite 438):\n- Sensor mit senkrechter Antennenfläche, davor die **schräg gestellte Fascia**.\n- Sensornormale (Hauptstrahlrichtung) und **Fascia-Normale** einzeichnen. Der Winkel zwischen beiden ist der **vertikale Neigungswinkel (vertical tilt angle)**.\n- Der an der Fascia reflektierte Anteil wird um den doppelten Neigungswinkel abgelenkt und verfehlt die Antennenapertur.\n\n**Begründung:** Ohne Neigung wird der Anteil, den die Verkleidung reflektiert, direkt in die Antenne zurückgeworfen. Das erzeugt Mehrwege im Einbauraum und damit Winkelfehler (vgl. Seiten 433–437: Tilt lenkt Energie weg, mehr Tilt hilft).\n\n**Bosch-Anforderungen an die Verkleidung:**\n- **Ohne Mindestneigung:** Reflexion < −15 dB; Dicke ±0,1 mm, ε_r ±0,02, tan δ < 0,01 (unlackiert, (schwarz) lackiert, Embleme)\n- **> 8°:** Reflexion < −10 dB\n  - Dicke ±0,2 mm, ε_r ±0,02, tan δ < 0,03 (unlackiert, (schwarz) lackiert, Embleme)\n  - bzw. Dicke ±0,1 mm, ε_r ±0,2, tan δ < 0,03 (lackierter Stoßfänger)\n- **> 18°:** Reflexion < −6 dB; Dicke ±0,2 mm, ε_r ±0,2, tan δ < 0,05 (lackierter Stoßfänger)\n\n→ Je größer die Neigung, desto stärker darf die Verkleidung reflektieren und desto lockerer sind die Toleranzen.\n\n*(Geometrie und Begründung: Musterlösung selbst erstellt; Werte laut Tabelle Seite 438)*",
+  "keyPoints": [
+   "Sensor hinter geneigter Fascia; Neigungswinkel zwischen Sensor- und Fascia-Normale",
+   "Reflexion wird um 2× Neigung weggelenkt → weniger Mehrweg in die Antenne",
+   "Ohne Tilt < −15 dB, > 8° < −10 dB, > 18° < −6 dB zulässige Reflexion"
+  ],
+  "source": "Lecture_RadarSystems_Lec.pdf, Seite 438 (6.2.6 Integration, Bosch via FCC); Seite 437 (Findings)",
+  "slides": [
+   "rad-lec:438",
+   "rad-lec:437"
+  ],
+  "why": "Praxisregel für die Sensorintegration: Tilt gegen Mehrweg, mit konkreten Grenzwerten.",
+  "fach": "RADAR",
+  "unit": "RAD-S5"
+ },
+ {
+  "id": "RAD-S5-F08",
+  "examMode": "sketch",
+  "front": "Ein Ziel schwingt radial mit $R(t)=R_0+A_1\\sin(\\omega_1 t)$ (Anwendung: Atem- bzw. Herzfrequenzerkennung). Leite ausgehend vom Sendesignal $s_{tx}=A_{tx}\\sin(\\omega_0 t+0{,}5\\,\\Delta\\omega\\,t^2)$ das Empfangssignal für den CW-Sonderfall her und skizziere die Momentanphase $\\varphi(t)$ über der Zeit.",
+  "back": "**Herleitung** (Seiten 445–447):\n1. Nach Mischen und Filtern: $s_{rx}(t)=A_{rx}\\sin\\!\\left(\\frac{2\\omega_0}{c}R(t)+\\frac{2\\Delta\\omega}{c}R(t)\\,t-\\frac{2\\Delta\\omega}{c^2}R^2(t)\\right)$\n2. Terme mit $c^2$ vernachlässigen und $R(t)$ einsetzen: $s_{rx}(t)=A_{rx}\\sin\\!\\left(\\frac{2\\omega_0}{c}(R_0+A_1\\sin\\omega_1 t)+\\frac{2\\Delta\\omega}{c}(R_0+A_1\\sin\\omega_1 t)\\,t\\right)$\n3. **CW-Sonderfall** ($\\Delta\\omega=0$): $s_{rx}(t)=A_{rx}\\sin\\!\\left(\\frac{2\\omega_0}{c}(R_0+A_1\\sin\\omega_1 t)\\right)$\n4. Konstante Phase $2\\omega_0R_0/c$ weglassen. Das ergibt die Momentanphase $\\varphi(t)=\\frac{2\\omega_0}{c}A_1\\sin(\\omega_1 t)=\\frac{4\\pi A_1}{\\lambda}\\sin(\\omega_1 t)$.\n   - Die Folie schreibt verkürzt $\\varphi(t)=A_1\\sin(\\omega_1 t)$. Der Vorfaktor $2\\omega_0/c$ ist dort in $A_1$ aufgegangen.\n\n**Skizze:**\n- Achsen: $t$ waagerecht, $\\varphi$ senkrecht\n- Eine **Sinuskurve mit der Schwingfrequenz $\\omega_1$ des Ziels** (Atem-/Herzfrequenz)\n- Amplitude $4\\pi A_1/\\lambda$, um den konstanten Offset $2\\omega_0R_0/c$\n- Periode $2\\pi/\\omega_1$ markieren\n\n**Deutung:** Die Phase bildet die Auslenkung linear ab. Weil λ bei 77 GHz nur etwa 4 mm beträgt, erzeugen schon Auslenkungen im mm-Bereich große Phasenhübe. Man bestimmt die Vitalfrequenz daher aus dem Spektrum von $\\varphi(t)$.\n\n*(Faktor 4πA₁/λ und Deutung: Musterlösung selbst erstellt)*",
+  "keyPoints": [
+   "CW-Fall: Δω = 0 → s_rx = A_rx sin(2ω0/c · (R0 + A1 sin ω1t))",
+   "φ(t) ist sinusförmig mit der Zielfrequenz ω1",
+   "Phasenamplitude 2ω0A1/c = 4πA1/λ, konstanter Offset 2ω0R0/c",
+   "Vitalfrequenz aus dem Spektrum der Phase"
+  ],
+  "source": "Lecture_RadarSystems_Lec.pdf, Seiten 445–447 (6.3.1 Oscillating target)",
+  "slides": [
+   "rad-lec:445",
+   "rad-lec:446",
+   "rad-lec:447"
+  ],
+  "why": "Das Modell des oszillierenden Ziels (Vitalzeichen) wird mit Formeln hergeleitet. Die bestehenden Karten decken es nicht ab.",
+  "fach": "RADAR",
+  "unit": "RAD-S5"
  }
 ]

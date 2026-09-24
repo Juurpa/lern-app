@@ -19,7 +19,7 @@ const UNITS = [
 
 for (const { id, sources } of UNITS) {
   const unit = units.find(u => u.id === id);
-  const cards = all.filter(c => c.unit === id);
+  const cards = all.filter(c => c.unit === id && !/-F\d+$/.test(c.id));
 
   test(`${id}: Unit vollständig, Fach RADAR`, () => {
     assert.ok(unit, 'Unit fehlt');

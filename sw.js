@@ -1,8 +1,8 @@
-const CACHE = 'lernapp-v9';
+const CACHE = 'lernapp-v10';
 const SHELL = [
   './', 'index.html', 'manifest.webmanifest', 'icon.svg', 'icon-180.png', 'icon-192.png', 'icon-512.png', 'css/app.css',
   'js/app.js', 'js/calc.js', 'js/data.js', 'js/exercises.js', 'js/gaps.js', 'js/gemini.js', 'js/grader.js', 'js/render.js', 'js/scheduler.js', 'js/session.js', 'js/slides.js', 'js/store.js', 'js/sync.js', 'js/update.js', 'js/voice.js',
-  'js/ui/card.js', 'js/ui/exam.js', 'js/ui/exercises.js', 'js/ui/gaps.js', 'js/ui/learn.js', 'js/ui/settings.js', 'js/ui/setup.js', 'js/ui/slides.js', 'js/ui/start.js', 'js/ui/unit.js',
+  'js/ui/card.js', 'js/ui/exam.js', 'js/ui/exercises.js', 'js/ui/gaps.js', 'js/ui/learn.js', 'js/ui/settings.js', 'js/ui/setup.js', 'js/ui/slides.js', 'js/ui/start.js', 'js/ui/tabbar.js', 'js/ui/unit.js',
   'data/bridges.json', 'data/cards-inf2.json', 'data/cards-mts.json', 'data/cards-radar.json', 'data/decks.json', 'data/exercises.json',
   'data/meta.json', 'data/synthesis.json', 'data/units.json', 'data/version.json',
   'prompts/tutor.md'

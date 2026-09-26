@@ -25,7 +25,7 @@ export function renderExamList({ data, store, root }) {
   root.append(h(`<section><h1>Probeklausuren</h1>
     <p class="muted">Unter echten Bedingungen: Zeitlimit, Lösungen erst nach der Abgabe, danach Punkte vergeben.</p>
     ${rows || '<p class="muted">Noch keine Probeklausuren geladen.</p>'}
-    <nav class="bottom"><a class="btn" href="#/aufgaben">Aufgaben</a><a class="btn" href="#/">Zurück</a></nav></section>`));
+  </section>`));
 }
 
 export function renderExam(ctx, params) {

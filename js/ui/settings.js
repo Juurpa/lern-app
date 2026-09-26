@@ -35,30 +35,31 @@ export function renderSettings({ data, store, root, sync, slides }) {
   const el = h(`<section>
     <h1>Einstellungen</h1>
     <div class="panel">
+      <h3>🎚 Session</h3>
       <label>Neue Karten pro 15-min-Session<input type="number" id="newPer" min="0" max="50" value="${esc(s.newPerSession)}"></label>
     </div>
     <div class="panel">
-      <h3>Lernmaschine (Sync)</h3>
+      <h3>🔄 Lernmaschine (Sync)</h3>
       <label>Sync-Schlüssel<input type="password" id="syncKey" value="${esc(s.syncKey)}" autocomplete="off"></label>
       <p class="muted" id="syncStatus"></p>
       <button id="syncNow">Jetzt senden</button>
     </div>
     <div class="panel">
-      <h3>Gemini (optional)</h3>
+      <h3>🤖 Gemini (optional)</h3>
       <label>API-Key (bleibt nur auf diesem Gerät)<input type="password" id="key" value="${esc(s.geminiKey)}" autocomplete="off"></label>
       <label>Modell<input type="text" id="model" value="${esc(s.geminiModel)}"></label>
     </div>
     <div class="panel">
-      <h3>Sicherung</h3>
-      <div class="row"><button id="exp">Exportieren</button><label class="btn">Importieren<input type="file" id="imp" accept="application/json" hidden></label></div>
+      <h3>💾 Sicherung</h3>
+      <div class="row"><button id="exp">⬇️ Exportieren</button><label class="btn">⬆️ Importieren<input type="file" id="imp" accept="application/json" hidden></label></div>
       <p class="muted">Der Export enthält keine Schlüssel.</p>
-      <button id="reset">Fortschritt zurücksetzen</button>
+      <button id="reset">🗑 Fortschritt zurücksetzen</button>
     </div>
-    <div class="panel"><h3>Datenprüfung</h3>
-      <p>${data.cards.length} Karten geladen · ${data.errors.length} Fehler · ${data.warnings.length} Warnungen</p>
+    <div class="panel"><h3>🩺 Datenprüfung</h3>
+      <p>${esc(data.cards.length)} Karten geladen · ${esc(data.errors.length)} Fehler · ${esc(data.warnings.length)} Warnungen</p>
       ${problems.length ? `<details><summary>Details</summary><pre>${esc(problems.join('\n'))}</pre></details>` : ''}
     </div>
-    <nav class="bottom"><a class="btn primary" href="#/" id="save">Speichern &amp; zurück</a></nav>
+    <a class="btn primary big" href="#/" id="save">Speichern &amp; zurück</a>
   </section>`);
   const q = sel => el.querySelector(sel);
   const showStatus = () => {

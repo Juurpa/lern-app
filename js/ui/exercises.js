@@ -216,7 +216,7 @@ function renderOverview({ data, store, root }) {
     <p class="muted">Übungsblätter, Praktika, Klausur und Prüfungsfragen – Schritt für Schritt mit Lösung, Folien und Selbstbewertung. Rote Teilaufgaben landen in den Lücken.</p>
     ${blocks || '<p class="muted">Noch keine Aufgaben geladen.</p>'}
     <div class="row"><a class="btn" href="#/klausuren">⏱ Probeklausuren</a></div>
-    <nav class="bottom"><a class="btn" href="#/">Zurück</a></nav></section>`));
+  </section>`));
 }
 
 function nextAfter(list, currentId, states) {
@@ -232,8 +232,12 @@ function renderSet({ data, store, root }, setId) {
   const exs = exercisesOf(data, set.id);
   const next = exs.find(e => exerciseStatus(e, doc.exercises[e.id]) !== 'done') ?? exs[0];
   const unitTitle = id => data.units.find(u => u.id === id)?.title ?? '';
+  const p = setProgress(exs, doc.exercises);
+  const pct = p.total ? Math.round(((p.done + p.partial * 0.5) / p.total) * 100) : 0;
   root.append(h(`<section><h1>${esc(set.title)}</h1>
     <p class="muted">${esc(KIND[set.kind] ?? set.kind)}${set.note ? ` · ${esc(set.note)}` : ''}</p>
+    <div class="progress-bar"><span style="width:${pct}%"></span></div>
+    <p class="muted">${p.done} von ${p.total} fertig${p.partial ? ` · ${p.partial} angefangen` : ''}</p>
     <div class="row">${next ? `<a class="btn primary" href="#/aufgaben?id=${encodeURIComponent(next.id)}">▶ ${exerciseStatus(next, doc.exercises[next.id]) === 'new' ? 'Nächste Aufgabe' : 'Weiter üben'}</a>` : ''}${set.minutes ? `<a class="btn" href="#/klausur?set=${encodeURIComponent(set.id)}">⏱ Als Probeklausur (${esc(set.minutes)} min)</a>` : ''}</div>
     ${exs.map(e => {
       const st = exerciseStatus(e, doc.exercises[e.id]);

@@ -91,7 +91,7 @@ export function renderDecks({ data, root, slides, decksById }) {
   const el = h(`<section><h1>Folien</h1>
     <p class="muted">Alle Foliensätze zum Durchblättern (wischen oder ◀ ▶). Die Bilder kommen privat über deinen Sync-Schlüssel und werden nach dem Ansehen offline gespeichert.</p>
     ${groups}
-    <nav class="bottom"><a class="btn" href="#/">Zurück</a></nav></section>`);
+    </section>`);
   el.querySelectorAll('.deck-row').forEach(b => { b.onclick = () => openViewer(pageRef(b.dataset.deck, 1), sctx); });
   root.append(el);
 }

@@ -11,6 +11,8 @@ import { renderExercises } from './ui/exercises.js';
 import { renderExamList, renderExam } from './ui/exam.js';
 import { createSlideLoader } from './slides.js';
 import { hasUpdate, fetchRemoteVersion, applyUpdate } from './update.js';
+import { createTabBar } from './ui/tabbar.js';
+import { openGaps } from './gaps.js';
 
 const root = document.getElementById('app');
 const ctx = { data: null, store: createStore(), root };
@@ -18,6 +20,7 @@ const ROUTES = {
   '': renderStart, learn: renderLearn, gaps: renderGaps, settings: renderSettings, setup: renderSetup,
   folien: renderDecks, aufgaben: renderExercises, klausuren: renderExamList, klausur: renderExam,
 };
+const tabbar = createTabBar(() => (ctx.data ? openGaps(ctx.store.load().gaps).length : 0));
 
 function route() {
   const [path, query] = location.hash.replace(/^#\/?/, '').split('?');
@@ -25,6 +28,7 @@ function route() {
   root.replaceChildren();
   window.scrollTo(0, 0);
   view(ctx, new URLSearchParams(query ?? ''));
+  tabbar.update(path);
 }
 
 async function checkForUpdate() {

@@ -17,8 +17,7 @@ export function renderGaps({ data, store, root }) {
     <h1>Lücken (${open.length} offen)</h1>
     ${Object.keys(data.meta.faecher).map(block).join('') || '<p class="muted">Keine offenen Lücken.</p>'}
     <p class="muted">${closed.length} geschlossen.</p>
-    <div class="row"><button id="copy">Markdown kopieren</button><button id="dl">Als LUECKEN.md laden</button></div>
-    <nav class="bottom"><a class="btn" href="#/">Zurück</a></nav>
+    <div class="row"><button id="copy">📋 Markdown kopieren</button><button id="dl">⬇️ Als LUECKEN.md laden</button></div>
   </section>`);
   const text = toMarkdown(doc.gaps, data.meta);
   el.querySelector('#copy').onclick = e => navigator.clipboard.writeText(text).then(() => { e.target.textContent = 'Kopiert ✓'; });

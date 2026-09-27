@@ -8,7 +8,7 @@ import {
   exerciseVars, fillText, evalCalcPart, checkCalc, checkMc, checkCloze, suggestButton,
   exerciseStatus, recordExercise, setProgress, partCardId, SELF_GRADED,
 } from '../exercises.js';
-import { ratingBar } from './card.js';
+import { ratingBar, conceptInfo } from './card.js';
 import { slideStrip, slideFigure } from './slides.js';
 
 export const KIND = { uebung: 'Übung', praktikum: 'Praktikum', klausur: 'Klausur', pruefung: 'Prüfung' };
@@ -141,6 +141,8 @@ function practicePart(part, ex, vars, ctx, onRate) {
   const { sctx, settings, tutorPrompt } = ctx;
   const sec = h(`<section class="part">${partHeader(part)}</section>`);
   sec.append(renderPrompt(part, vars, sctx));
+  const info = conceptInfo({ front: fillText(part.prompt, vars), fach: ex.fach, settings });
+  if (info) sec.append(info.btn, info.panel);
   const input = partInput(part, ex, vars);
   const actions = h('<div class="row p-actions"></div>');
   const result = h('<div class="p-result"></div>');

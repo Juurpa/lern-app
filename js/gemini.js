@@ -69,3 +69,38 @@ export async function gradeAnswer({ apiKey, model, fetchFn = globalThis.fetch?.b
   }
   return parseGradeResponse(await res.json());
 }
+
+// Kurzer Konzept-Info-Text zu einer Frage – erklärt den Begriff/Kontext, ohne die Antwort zu verraten.
+const EXPLAIN_SYSTEM = 'Du bist ein Tutor. Erkläre kurz und verständlich (max. 4 Sätze, wie ein Lexikon-Eintrag) den Begriff bzw. das Konzept, um das es in der folgenden Prüfungsfrage geht. Verrate dabei NICHT die Antwort auf die Frage selbst, sondern nur den fachlichen Hintergrund/Kontext.';
+
+export function buildExplainRequest({ fach, front }) {
+  const text = [fach ? `Fach: ${fach}` : '', `Frage: ${front}`].filter(Boolean).join('\n');
+  return {
+    system_instruction: { parts: [{ text: EXPLAIN_SYSTEM }] },
+    contents: [{ role: 'user', parts: [{ text }] }],
+    generationConfig: { temperature: .3 },
+  };
+}
+
+export function parseExplainResponse(json) {
+  const text = json?.candidates?.[0]?.content?.parts?.[0]?.text;
+  if (!text) throw new Error('Gemini: keine Antwort erhalten');
+  return text.trim();
+}
+
+export async function explainConcept({ apiKey, model, fetchFn = globalThis.fetch?.bind(globalThis), ...params }) {
+  if (!apiKey) throw new Error('Kein Gemini-Key konfiguriert');
+  if (!fetchFn) throw new Error('Kein fetch verfügbar');
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent?key=${encodeURIComponent(apiKey)}`;
+  const res = await fetchFn(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(buildExplainRequest(params)),
+  });
+  if (!res.ok) {
+    let detail = '';
+    try { detail = (await res.json())?.error?.message ?? ''; } catch { /* Body nicht lesbar/kein JSON */ }
+    throw new Error(`Gemini HTTP ${res.status}${detail ? `: ${detail}` : ''}`);
+  }
+  return parseExplainResponse(await res.json());
+}

@@ -3,10 +3,35 @@ import { prepareCalc, checkAnswer, formatNumber } from '../calc.js';
 import { grade, mapRatingToButton } from '../grader.js';
 import { pickInputMode, getSpeechRecognitionCtor, createSpeechInput, recordAudio } from '../voice.js';
 import { slideStrip, slideFigure } from './slides.js';
+import { explainConcept } from '../gemini.js';
 
 const MODE_LABEL = { free: 'Freitext', voice: 'Erklären', code: 'Code', calc: 'Rechnen', mc: 'Multiple Choice', cloze: 'Lückentext', why: 'Warum?', bridge: 'Brücke', sketch: 'Skizze' };
 const norm = s => String(s).trim().toLowerCase().replace(/\s+/g, ' ');
 const shuffle = a => a.map(v => [Math.random(), v]).sort((x, y) => x[0] - y[0]).map(x => x[1]);
+
+// ℹ️-Button, der bei Bedarf per Gemini kurz den Begriff/Kontext der Frage erklärt (ohne die Antwort zu verraten).
+// Ohne Gemini-Key gibt es keine belastbare Quelle für so einen Text, daher entfällt der Button dann ganz.
+export function conceptInfo({ front, fach, settings }) {
+  if (!settings?.geminiKey || !front) return null;
+  const btn = h('<button type="button" class="info-btn">ℹ️ Was ist das?</button>');
+  const panel = h('<div class="panel info-panel" hidden></div>');
+  const label = btn.textContent;
+  btn.onclick = async () => {
+    if (panel.dataset.loaded) { panel.hidden = !panel.hidden; return; }
+    btn.disabled = true; btn.textContent = 'Lädt …';
+    try {
+      const text = await explainConcept({ apiKey: settings.geminiKey, model: settings.geminiModel, fach, front });
+      panel.innerHTML = md(text);
+      panel.dataset.loaded = '1';
+      enhance(panel);
+    } catch (e) {
+      panel.innerHTML = `<p class="muted">Nicht verfügbar (${esc(e.message)}).</p>`;
+    }
+    panel.hidden = false;
+    btn.disabled = false; btn.textContent = label;
+  };
+  return { btn, panel };
+}
 
 export function ratingBar(suggest, cb) {
   const el = h(`<div class="row rate">
@@ -257,4 +282,6 @@ export function renderCard(root, { card, mode, fachLabel, onRated, settings, tut
   // Abbildung zur Frage (Ausschnitt ohne Lösungstext) – kein Blättern, sonst sieht man die Antwort.
   if (sctx && card.frontSlides?.length) card.frontSlides.forEach(r => q.append(slideFigure(r, sctx, { browse: false, caption: false })));
   enhance(q);
+  const info = conceptInfo({ front: card.mc?.stem || card.front, fach: card.fach, settings });
+  if (info) { q.insertAdjacentElement('afterend', info.panel); q.insertAdjacentElement('afterend', info.btn); }
 }

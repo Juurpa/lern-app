@@ -81,15 +81,34 @@ export function decksForUnit(unitId, decks) {
   return decks.filter(d => d.units?.includes(unitId));
 }
 
+// Ordner-Kategorie aus dem Dateipfad ableiten (z. B. ".../Vorlesungsfolien/x.pdf" → "Vorlesungsfolien").
+// Liegt die Datei direkt im Fach-Ordner (kein Unterordner), landet sie in "Weiteres Material".
+const CATEGORY_LABEL = { Vorlesungsfolien: 'Vorlesung', Vorlesung: 'Vorlesung', Uebungen: 'Übungen', Seminar: 'Seminar', Praktika: 'Praktika' };
+function deckCategory(deck) {
+  const seg = deck.file.split('/')[1];
+  return seg && deck.file.split('/').length > 2 ? (CATEGORY_LABEL[seg] ?? seg) : 'Weiteres Material';
+}
+const CATEGORY_ORDER = ['Vorlesung', 'Übungen', 'Seminar', 'Praktika', 'Weiteres Material'];
+
+function deckRow(d) {
+  return `<button type="button" class="deck-row" data-deck="${esc(d.id)}"><span>${esc(d.title)}</span><span class="muted">${d.pages} Folien</span></button>`;
+}
+
 export function renderDecks({ data, root, slides, decksById }) {
   const sctx = { slides, decksById };
   const groups = Object.entries(data.meta.faecher).map(([f, info]) => {
     const ds = data.decks.filter(d => d.fach === f);
     if (!ds.length) return '';
-    return `<h2>${esc(info.label)}</h2>${ds.map(d => `<button type="button" class="deck-row" data-deck="${esc(d.id)}"><span>${esc(d.title)}</span><span class="muted">${d.pages} Folien</span></button>`).join('')}`;
+    const byCat = new Map();
+    for (const d of ds) { const c = deckCategory(d); if (!byCat.has(c)) byCat.set(c, []); byCat.get(c).push(d); }
+    const cats = [...byCat.keys()].sort((a, b) => CATEGORY_ORDER.indexOf(a) - CATEGORY_ORDER.indexOf(b));
+    const body = cats.map(c => `<details class="subfolder"><summary><span class="chev">▸</span><span>${esc(c)}</span><span class="muted">${byCat.get(c).length}</span></summary>
+      <div class="subfolder-body">${byCat.get(c).map(deckRow).join('')}</div></details>`).join('');
+    return `<details class="folder"><summary><span class="chev">▸</span><span class="badge">${esc(info.short)}</span><span>${esc(info.label)}</span><span class="muted">${ds.length} Foliensätze</span></summary>
+      <div class="folder-body">${body}</div></details>`;
   }).join('');
   const el = h(`<section><h1>Folien</h1>
-    <p class="muted">Alle Foliensätze zum Durchblättern (wischen oder ◀ ▶). Die Bilder kommen privat über deinen Sync-Schlüssel und werden nach dem Ansehen offline gespeichert.</p>
+    <p class="muted">Alle Foliensätze nach Fach und Ordner sortiert – zum Öffnen antippen. Die Bilder kommen privat über deinen Sync-Schlüssel und werden nach dem Ansehen offline gespeichert.</p>
     ${groups}
     </section>`);
   el.querySelectorAll('.deck-row').forEach(b => { b.onclick = () => openViewer(pageRef(b.dataset.deck, 1), sctx); });

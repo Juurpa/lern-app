@@ -190,6 +190,36 @@ nav.bottom a { flex: 1; }
 .deck-row { width: 100%; justify-content: space-between; margin-bottom: 8px; text-align: left; gap: 12px; border-radius: var(--radius); }
 .deck-row:hover { box-shadow: var(--shadow); transform: translateY(-1px); }
 .deck-links { margin: 12px 0; }
+
+/* Ordnerstruktur (Folien-Übersicht) */
+details.folder, details.subfolder { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 10px; overflow: hidden; }
+details.folder summary, details.subfolder summary {
+  display: flex; align-items: center; gap: 10px; padding: 14px var(--gap); cursor: pointer; list-style: none; font-weight: 700;
+  -webkit-user-select: none; user-select: none;
+}
+details.folder summary::-webkit-details-marker, details.subfolder summary::-webkit-details-marker { display: none; }
+details.folder summary .muted, details.subfolder summary .muted { margin-left: auto; font-weight: 500; font-size: .85rem; }
+.chev { display: inline-flex; transition: transform .18s var(--ease); color: var(--muted); font-size: .8rem; }
+details[open] > summary .chev { transform: rotate(90deg); }
+.folder-body { padding: 0 var(--gap) var(--gap); }
+details.subfolder { margin: 0 0 8px; box-shadow: none; }
+details.subfolder summary { padding: 10px 12px; font-weight: 600; font-size: .95rem; background: var(--surface-2); }
+.subfolder-body { padding: 10px 10px 2px; }
+.subfolder-body .deck-row { margin-bottom: 8px; }
+.subfolder-body .deck-row:last-child { margin-bottom: 0; }
+
+/* Lerneinheit: Abschnitte einzeln aufklappbar statt alles auf einmal */
+details.topic-section { border-top: 1px solid var(--border); margin: 0; }
+details.topic-section:first-of-type { border-top: none; }
+details.topic-section summary {
+  display: flex; align-items: center; gap: 8px; padding: 14px 0; cursor: pointer; list-style: none;
+  font-size: .78rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .07em;
+  -webkit-user-select: none; user-select: none;
+}
+details.topic-section summary::-webkit-details-marker { display: none; }
+details.topic-section .topic-body { padding-bottom: 6px; }
+details.topic-section .topic-body h3 { margin-top: 0; }
+details.source-section summary { color: var(--accent); text-transform: none; letter-spacing: 0; font-size: .95rem; }
 body.no-scroll { overflow: hidden; }
 .viewer { position: fixed; inset: 0; background: rgba(2, 6, 23, .97); z-index: 50; display: flex; flex-direction: column; color: #e2e8f0; animation: fade-in .18s var(--ease) both; }
 @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }

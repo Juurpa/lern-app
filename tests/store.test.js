@@ -73,6 +73,57 @@ test('Import verwirft kaputte Kartenzustände und Lücken statt sie zu übernehm
   assert.deepEqual(s.load().cards, { A: ok });
 });
 
+test('Standarddokument enthält leere Folien-Position/-Markierungen', () => {
+  const doc = emptyDoc();
+  assert.deepEqual(doc.slidePositions, {});
+  assert.deepEqual(doc.slideMarks, {});
+});
+
+test('save/load Rundreise für Folien-Position und -Markierungen', () => {
+  const s = createStore(fakeStorage());
+  const doc = emptyDoc();
+  doc.slidePositions.mts06 = 12;
+  doc.slideMarks['mts06:12'] = 'unsure';
+  s.save(doc);
+  const loaded = s.load();
+  assert.equal(loaded.slidePositions.mts06, 12);
+  assert.equal(loaded.slideMarks['mts06:12'], 'unsure');
+});
+
+test('load() (nicht nur Import) verwirft kaputte Folien-Positionen/-Markierungen aus localStorage', () => {
+  const st = fakeStorage();
+  st.setItem('lernapp.v1', JSON.stringify({
+    version: 1, cards: {}, units: {}, gaps: [],
+    slidePositions: 'oops', slideMarks: null,
+  }));
+  const doc = createStore(st).load();
+  assert.deepEqual(doc.slidePositions, {});
+  assert.deepEqual(doc.slideMarks, {});
+});
+
+test('load() verwirft Array-artige Folien-Positionen/-Markierungen (würden sonst beim Speichern verschwinden)', () => {
+  const st = fakeStorage();
+  st.setItem('lernapp.v1', JSON.stringify({
+    version: 1, cards: {}, units: {}, gaps: [],
+    slidePositions: [], slideMarks: [1, 2, 3],
+  }));
+  const doc = createStore(st).load();
+  assert.deepEqual(doc.slidePositions, {});
+  assert.deepEqual(doc.slideMarks, {});
+});
+
+test('Import verwirft ungültige Folien-Positionen und -Markierungen', () => {
+  const s = createStore(fakeStorage());
+  const d = {
+    version: 1, units: {}, cards: {}, gaps: [],
+    slidePositions: { a: 3, b: -1, c: 'x', d: 1.5 },
+    slideMarks: { 'a:1': 'unsure', 'a:2': 'ok', 'a:3': 'quatsch', 'a:4': 1 },
+  };
+  const doc = s.importJson(JSON.stringify(d));
+  assert.deepEqual(doc.slidePositions, { a: 3 });
+  assert.deepEqual(doc.slideMarks, { 'a:1': 'unsure', 'a:2': 'ok' });
+});
+
 test('Export enthält keinen Sync-Schlüssel, Import behält beide Schlüssel', () => {
   const s = createStore(fakeStorage());
   const doc = emptyDoc();

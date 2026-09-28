@@ -9,7 +9,7 @@ import { renderSetup } from './ui/setup.js';
 import { renderDecks } from './ui/slides.js';
 import { renderExercises } from './ui/exercises.js';
 import { renderExamList, renderExam } from './ui/exam.js';
-import { createSlideLoader } from './slides.js';
+import { createSlideLoader, buildCardsBySlide } from './slides.js';
 import { hasUpdate, fetchRemoteVersion, applyUpdate } from './update.js';
 import { createTabBar } from './ui/tabbar.js';
 import { openGaps } from './gaps.js';
@@ -61,6 +61,7 @@ async function main() {
   ctx.data = data;
   ctx.tutorPrompt = tutorPrompt;
   ctx.decksById = new Map(data.decks.map(d => [d.id, d]));
+  ctx.cardsBySlide = buildCardsBySlide({ cards: data.cards, exercises: data.exercises, units: data.units });
   ctx.slides = createSlideLoader({ baseUrl: data.meta.workerUrl, getKey: () => ctx.store.load().settings.syncKey });
   ctx.sync = createSync({ getConfig: () => ({ url: ctx.data.meta.workerUrl, key: ctx.store.load().settings.syncKey }) });
   ctx.sync.flush();

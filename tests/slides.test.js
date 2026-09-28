@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { parseRef, checkRef, refPath, cleanRefs, deckRefs, refLabel, createSlideLoader, SLIDE_CACHE } from '../js/slides.js';
+import { parseRef, checkRef, refPath, cleanRefs, deckRefs, refLabel, createSlideLoader, SLIDE_CACHE, buildCardsBySlide } from '../js/slides.js';
 
 const decks = new Map([['mts06', { id: 'mts06', title: 'MTS 06', pages: 55 }]]);
 
@@ -83,6 +83,45 @@ test('Loader.prefetch: Fortschritt, zählt Fehler, bricht bei Schlüsselfehler a
   assert.equal(seen.at(-1), '3/3');
   const nokey = createSlideLoader({ baseUrl: 'https://w.dev', getKey: () => '', cachesApi: fakeCaches(), fetchFn: async () => resp() });
   await assert.rejects(nokey.prefetch(['d:1', 'd:2']), /Sync-Schlüssel/);
+});
+
+test('buildCardsBySlide: Karten, Aufgaben-Teile und Einheiten landen unter ihrer Seite, Ausschnitte zählen auf die Seite ein', () => {
+  const cards = [
+    { id: 'c1', fach: 'MTS', front: 'Was ist Compliance?', slides: ['mts06:12'] },
+    { id: 'c2', fach: 'MTS', front: 'x'.repeat(120), frontSlides: ['mts06:12@0.1,0.1,0.9,0.9'] },
+  ];
+  const exercises = [{ id: 'ex1', fach: 'MTS', title: 'Übung 1', parts: [{ id: 'a', slides: ['mts06:12'] }, { id: 'b', slides: ['mts06:13'] }] }];
+  const units = [{ id: 'MTS-K6', fach: 'MTS', title: 'CRM I', slides: ['mts06:12'] }];
+  const map = buildCardsBySlide({ cards, exercises, units });
+  const onPage12 = map.get('mts06:12');
+  assert.equal(onPage12.length, 4);
+  assert.deepEqual(onPage12.map(x => x.kind).sort(), ['card', 'card', 'exercise', 'unit']);
+  const truncated = onPage12.find(x => x.id === 'c2');
+  assert.equal(truncated.label.length, 91);
+  assert.ok(truncated.label.endsWith('…'));
+  assert.equal(map.get('mts06:13').length, 1);
+  assert.equal(map.get('mts06:13')[0].label, 'Übung 1 · b)');
+  assert.equal(map.has('mts06:14'), false);
+});
+
+test('buildCardsBySlide: doppelte Referenzen auf derselben Karte/Teilaufgabe erzeugen keinen doppelten Eintrag', () => {
+  const cards = [{ id: 'c1', fach: 'MTS', front: 'F', slides: ['mts06:12'], frontSlides: ['mts06:12'] }];
+  const map = buildCardsBySlide({ cards, exercises: [], units: [] });
+  assert.equal(map.get('mts06:12').length, 1);
+});
+
+test('buildCardsBySlide: ungültige Referenzen werden ignoriert, leere Eingabe liefert leere Map', () => {
+  assert.equal(buildCardsBySlide({}).size, 0);
+  const map = buildCardsBySlide({ cards: [{ id: 'c1', fach: 'MTS', front: 'F', slides: ['quatsch'] }], exercises: [], units: [] });
+  assert.equal(map.size, 0);
+});
+
+test('buildCardsBySlide: nicht-Array-Felder (z. B. slides: {} bei fehlendem decksById) werfen nicht', () => {
+  const cards = [{ id: 'c1', fach: 'MTS', front: 'F', slides: {}, frontSlides: null }];
+  const exercises = [{ id: 'ex1', fach: 'MTS', title: 'T', parts: null }, { id: 'ex2', fach: 'MTS', title: 'T2', parts: [{ id: 'a', slides: 'x' }] }];
+  const units = [{ id: 'U1', fach: 'MTS', title: 'T', slides: 5 }];
+  assert.doesNotThrow(() => buildCardsBySlide({ cards, exercises, units }));
+  assert.equal(buildCardsBySlide({ cards, exercises, units }).size, 0);
 });
 
 import { refsFromSource } from '../tools/link-sources.mjs';

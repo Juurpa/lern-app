@@ -33,6 +33,41 @@ export function refPath(ref) {
 export const pageRef = (deck, page) => `${deck}:${page}`;
 export const deckRefs = deck => Array.from({ length: deck.pages }, (_, i) => pageRef(deck.id, i + 1));
 
+const truncate = (s, n) => (String(s ?? '').length > n ? `${String(s).slice(0, n)}…` : String(s ?? ''));
+
+// Kehrt die Folien-Referenzen aus Karten/Aufgaben-Teilen/Lerneinheiten um: Seite ("deck:seite", Ausschnitte
+// zählen auf ihre Seite ein) → Liste der Karten/Aufgaben/Einheiten, die darauf verweisen. Für den Folien-
+// Viewer ("welche Karten gehören zu dieser Folie?"), DOM-frei und daher gut testbar.
+const arr = v => (Array.isArray(v) ? v : []);
+
+export function buildCardsBySlide({ cards = [], exercises = [], units = [] }) {
+  const map = new Map();
+  const add = (ref, item) => {
+    const r = parseRef(ref);
+    if (!r) return;
+    const key = pageRef(r.deck, r.page);
+    const list = map.get(key) ?? [];
+    if (!list.some(x => x.kind === item.kind && x.id === item.id && x.partId === item.partId)) list.push(item);
+    map.set(key, list);
+  };
+  for (const c of cards) {
+    for (const ref of [...arr(c.slides), ...arr(c.frontSlides)]) {
+      add(ref, { kind: 'card', id: c.id, fach: c.fach, label: truncate(c.front, 90) });
+    }
+  }
+  for (const ex of exercises) {
+    for (const p of arr(ex.parts)) {
+      for (const ref of [...arr(p.slides), ...arr(p.frontSlides)]) {
+        add(ref, { kind: 'exercise', id: ex.id, partId: p.id, fach: ex.fach, label: `${truncate(ex.title, 60)} · ${p.id})` });
+      }
+    }
+  }
+  for (const u of units) {
+    for (const ref of arr(u.slides)) add(ref, { kind: 'unit', id: u.id, fach: u.fach, label: truncate(u.title, 90) });
+  }
+  return map;
+}
+
 export function refLabel(ref, decksById) {
   const r = parseRef(ref);
   if (!r) return String(ref);

@@ -193,6 +193,15 @@ nav.bottom a { flex: 1; }
 .deck-row { width: 100%; justify-content: space-between; margin-bottom: 8px; text-align: left; gap: 12px; border-radius: var(--radius); }
 .deck-row:hover { box-shadow: var(--shadow); transform: translateY(-1px); }
 .deck-links { margin: 12px 0; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.search-input { width: 100%; margin-bottom: var(--gap); }
+.search-results .deck-row { margin-bottom: 8px; align-items: flex-start; }
+.search-hit-meta { font-size: .75rem; font-weight: 400; }
+/* --green ist im hellen Theme (#16a34a auf weißem Grund) zu kontrastarm für normalen Fließtext (≈3.3:1,
+   WCAG verlangt 4.5:1) – dunklere, feste Farbe statt des Theme-Tokens nur für diesen Text-Anwendungsfall. */
+.offline-badge { color: #15803d; font-weight: 600; }
+@media (prefers-color-scheme: dark) { .offline-badge { color: var(--green); } }
+.unsure-badge { color: var(--yellow); font-weight: 600; }
 
 /* Ordnerstruktur (Folien-Übersicht) */
 details.folder, details.subfolder { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 10px; overflow: hidden; }
@@ -234,8 +243,29 @@ body.no-scroll { overflow: hidden; }
 .viewer-stage img { max-width: 100%; max-height: 100%; background: #fff; border-radius: 4px; }
 .viewer-stage.zoomed { align-items: flex-start; justify-content: flex-start; }
 .viewer-stage.zoomed img { max-width: none; max-height: none; width: 250%; border-radius: 0; }
-.viewer-stage .slide-msg { position: absolute; color: #94a3b8; }
+.viewer-stage .slide-msg { position: absolute; color: #94a3b8; text-align: center; padding: 0 16px; }
+.viewer-stage .slide-msg a { color: #fff; text-decoration: underline; }
 .v-page { min-width: 80px; text-align: center; font-variant-numeric: tabular-nums; }
+/* "input" vor der Klasse: nur damit reicht die Spezifität gegen die generische input[type=number]-Regel weiter oben. */
+input.v-page-input { width: 80px; text-align: center; min-height: 44px; }
+.viewer-progress { margin: 0 12px; background: rgba(255, 255, 255, .14); }
+.viewer-progress > span { background: linear-gradient(90deg, var(--accent), var(--accent-2)); }
+.viewer-marks { padding: 0 12px 8px; }
+/* Kleinere Schrift/Padding als normale Buttons, damit alle drei nebeneinander passen (375px Viewport)
+   statt der dritte Button ungleichmäßig in eine eigene Zeile umbricht. */
+.viewer-marks .v-mark { font-size: .78rem; padding: 10px 4px; }
+.v-mark.active { background: color-mix(in srgb, var(--accent) 35%, rgba(255, 255, 255, .08)); border-color: var(--accent); }
+.viewer-links { padding: 2px 12px 10px; }
+.viewer-links p { margin: 0 0 6px; font-size: .8rem; color: #94a3b8; }
+.link-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  display: inline-flex; align-items: center; font-size: .78rem; padding: 6px 10px; min-height: 0;
+  max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  border-radius: 99px; background: rgba(255, 255, 255, .08); border: 1px solid rgba(255, 255, 255, .16); color: inherit; text-decoration: none;
+}
+/* Nur <a class="chip"> ist antippbar (Kartenverweise sind reine <span>s) – die brauchen ein echtes Tap-Ziel. */
+a.chip { min-height: 44px; }
+a.chip:hover { border-color: var(--accent); }
 
 /* Aufgaben */
 .set-row, .ex-row { display: block; color: inherit; text-decoration: none; border-radius: var(--radius); }

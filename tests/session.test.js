@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { allocate, interleave, buildSession, insertRelearn, examFinished, calendarDaysUntil, newPerDayNeeded, sessionNewLimit } from '../js/session.js';
+import { allocate, interleave, buildSession, insertRelearn, examFinished, calendarDaysUntil, newPerDayNeeded, sessionNewLimit, resolveFach } from '../js/session.js';
 import { emptyDoc } from '../js/store.js';
 
 const meta = { faecher: { INF2: { exam: '2026-10-07' }, MTS: { exam: '2026-10-07' } } };
@@ -103,6 +103,37 @@ test('buildSession: Karten eines Fachs mit vergangener Prüfung werden ausgeschl
   const after = buildSession({ cards, units: units2, doc, meta: meta2, now: new Date(2026, 9, 8, 0, 30) });
   const ids = after.filter(x => x.type === 'card').map(x => x.cardId);
   assert.deepEqual(ids.sort(), ['r1', 'r2']);
+});
+
+test('buildSession mit fach: nur Karten (und Unit-Intros) dieses Fachs, fällige wie neue', () => {
+  const cards = [mk('i1', 'INF2', 'U-I'), mk('i2', 'INF2', 'U-I'), mk('m1', 'MTS', 'U-M'), mk('md', 'MTS', 'U-M')];
+  const doc = emptyDoc();
+  doc.cards.md = { fsrs: { due: past, reps: 2, stability: 3 }, alt: 2 };
+  const onlyMts = buildSession({ cards, units, doc, meta, now, fach: 'MTS' });
+  assert.deepEqual(onlyMts.map(x => x.cardId).sort(), ['m1', 'md']);
+  assert.ok(onlyMts.every(x => x.fach === 'MTS'));
+  const onlyInf = buildSession({ cards, units, doc, meta, now, fach: 'INF2' });
+  assert.ok(onlyInf.every(x => x.fach === 'INF2'));
+  assert.deepEqual(onlyInf.filter(x => x.type === 'unit').map(x => x.unitId), ['U-I']);
+  assert.equal(buildSession({ cards, units, doc, meta, now }).filter(x => x.type === 'card').length, 4, 'ohne fach: alle Fächer gemischt');
+});
+
+test('buildSession mit fach: Fach mit vergangener Prüfung bleibt leer', () => {
+  const meta2 = { faecher: { INF2: { exam: '2026-10-07' }, RADAR: { exam: '2026-10-08' } } };
+  const cards = [mk('i1', 'INF2', 'U-I'), mk('r1', 'RADAR', 'U-R')];
+  const after = new Date(2026, 9, 8, 0, 30);
+  assert.deepEqual(buildSession({ cards, units: [], doc: emptyDoc(), meta: meta2, now: after, fach: 'INF2' }), []);
+});
+
+test('resolveFach: Schlüssel case-insensitiv, unbekannt/leer → null (alle mischen)', () => {
+  const m = { faecher: { INF2: {}, MTS: {}, RADAR: {} } };
+  assert.equal(resolveFach(m, 'MTS'), 'MTS');
+  assert.equal(resolveFach(m, 'radar'), 'RADAR');
+  assert.equal(resolveFach(m, ' inf2 '), 'INF2');
+  assert.equal(resolveFach(m, 'quatsch'), null);
+  assert.equal(resolveFach(m, ''), null);
+  assert.equal(resolveFach(m, null), null);
+  assert.equal(resolveFach(m, undefined), null);
 });
 
 test('examFinished / calendarDaysUntil: lokale Kalendertage', () => {

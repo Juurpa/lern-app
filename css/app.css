@@ -164,6 +164,16 @@ nav.bottom a { flex: 1; }
 .start-hero .stats > div { background: rgba(255, 255, 255, .14); }
 .start-hero .stats b { color: #fff; }
 .start-hero p.muted { color: rgba(255, 255, 255, .82); }
+.fach-pick-label { margin: 14px 0 8px; font-size: .85rem; font-weight: 600; color: rgba(255, 255, 255, .82); }
+.fach-pick { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.fach-pick-btn {
+  flex-direction: column; gap: 2px; padding: 10px 4px; min-height: 56px; min-width: 0;
+  background: rgba(255, 255, 255, .16); color: #fff; border: 1px solid rgba(255, 255, 255, .3); box-shadow: none;
+}
+.fach-pick-btn:hover { background: rgba(255, 255, 255, .26); border-color: rgba(255, 255, 255, .5); }
+.fach-pick-btn b { font-size: 1rem; }
+.fach-pick-btn small { font-size: .75rem; font-weight: 600; color: rgba(255, 255, 255, .85); }
+.fach-pick-btn[aria-disabled="true"] { opacity: .5; cursor: default; }
 .quick-actions .btn { flex-direction: column; gap: 6px; padding: 14px 8px; font-size: .92rem; }
 .quick-actions .qi { display: inline-flex; }
 .quick-actions .qi svg { width: 24px; height: 24px; color: var(--accent); }

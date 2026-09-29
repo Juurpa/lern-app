@@ -1,14 +1,16 @@
-import { h } from '../render.js';
-import { buildSession, insertRelearn, sessionNewLimit } from '../session.js';
+import { h, esc } from '../render.js';
+import { buildSession, insertRelearn, sessionNewLimit, resolveFach } from '../session.js';
 import { review, chooseMode } from '../scheduler.js';
 import { addGap, recordCorrect } from '../gaps.js';
 import { makeReviewEvent } from '../sync.js';
 import { renderCard } from './card.js';
 import { renderUnit } from './unit.js';
 
-export function renderLearn({ data, store, root, sync, tutorPrompt, slides, decksById }) {
+export function renderLearn({ data, store, root, sync, tutorPrompt, slides, decksById }, params) {
   const sctx = slides ? { slides, decksById } : null;
   const doc = store.load();
+  const fach = resolveFach(data.meta, params?.get('fach'));
+  const fachInfo = fach ? data.meta.faecher[fach] : null;
   const cardById = new Map(data.cards.map(c => [c.id, c]));
   const unitById = new Map(data.units.map(u => [u.id, u]));
   const done = new Set();
@@ -21,7 +23,7 @@ export function renderLearn({ data, store, root, sync, tutorPrompt, slides, deck
 
   const build = () => buildSession({
     cards: data.cards, units: data.units, doc, meta: data.meta, now: new Date(),
-    newLimit: sessionNewLimit(doc.settings, shownNew), exclude: done,
+    newLimit: sessionNewLimit(doc.settings, shownNew), exclude: done, fach,
   });
 
   function save() {
@@ -32,10 +34,10 @@ export function renderLearn({ data, store, root, sync, tutorPrompt, slides, deck
   function end(empty = false) {
     const total = stats.red + stats.yellow + stats.green;
     const el = h(`<section class="card">
-      <h1>${empty ? 'Alles erledigt 🎉' : 'Session-Pause'}</h1>
+      <h1>${empty ? `Alles erledigt${fachInfo ? ` in ${esc(fachInfo.short)}` : ''} 🎉` : 'Session-Pause'}</h1>
       <div class="stats"><div><b>${stats.green}</b>🟢</div><div><b>${stats.yellow}</b>🟡</div><div><b>${stats.red}</b>🔴</div></div>
       <p class="muted">${total} Karten in ${Math.round((Date.now() - started) / 60000)} min.</p>
-      <div class="row">${empty ? '' : '<button class="primary" id="more">Weiter (15 min)</button>'}<a class="btn" href="#/">Schluss</a></div>
+      <div class="row">${empty ? '' : '<button class="primary" id="more">Weiter (15 min)</button>'}${fach ? '<a class="btn" href="#/learn">Alle Fächer</a>' : ''}<a class="btn" href="#/">Schluss</a></div>
     </section>`);
     el.querySelector('#more')?.addEventListener('click', () => { started = Date.now(); shownNew = 0; next(); });
     root.replaceChildren(el);

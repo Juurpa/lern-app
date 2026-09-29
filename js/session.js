@@ -70,9 +70,12 @@ export function fachWeights(meta, doc, cards, now) {
 const groupBy = (list, key) => list.reduce((acc, x) => ((acc[x[key]] ??= []).push(x), acc), {});
 const countsOf = groups => Object.fromEntries(Object.entries(groups).map(([k, v]) => [k, v.length]));
 
-export function buildSession({ cards, units, doc, meta, now, size = 30, newLimit = 10, exclude = new Set() }) {
+// Fach-Schlüssel aus der URL (z. B. "mts" → "MTS"); unbekannt/leer → null = alle Fächer mischen.
+export const resolveFach = (meta, raw) => Object.keys(meta.faecher).find(k => k.toLowerCase() === String(raw ?? '').trim().toLowerCase()) ?? null;
+
+export function buildSession({ cards, units, doc, meta, now, size = 30, newLimit = 10, exclude = new Set(), fach = null }) {
   const unitById = new Map(units.map(u => [u.id, u]));
-  const pool = cards.filter(c => !exclude.has(c.id) && !examFinished(meta.faecher[c.fach].exam, now));
+  const pool = cards.filter(c => (!fach || c.fach === fach) && !exclude.has(c.id) && !examFinished(meta.faecher[c.fach].exam, now));
   const weights = fachWeights(meta, doc, cards, now);
   const dueAt = c => new Date(doc.cards[c.id].fsrs.due);
 

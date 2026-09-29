@@ -16,18 +16,30 @@ const examLabel = (exam, now) => {
   return n === 0 ? 'heute Prüfung' : `noch ${n} ${n === 1 ? 'Tag' : 'Tage'}`;
 };
 
+function fachPick(f, info, { due, fresh, finished }) {
+  const sub = finished ? 'vorbei' : due ? `${due} fällig` : fresh ? `${fresh} neu` : 'erledigt ✓';
+  const inner = `<b>${esc(info.short)}</b><small>${esc(sub)}</small>`;
+  return finished
+    ? `<span class="btn fach-pick-btn" aria-disabled="true">${inner}</span>`
+    : `<a class="btn fach-pick-btn" href="#/learn?fach=${encodeURIComponent(f)}" aria-label="Nur ${esc(info.label)} lernen, ${esc(sub)}">${inner}</a>`;
+}
+
 export function renderStart({ data, store, root }) {
   const doc = store.load();
   const now = new Date();
   const gaps = openGaps(doc.gaps);
   let totalDue = 0, totalFresh = 0;
+  const picks = [];
   const rows = Object.entries(data.meta.faecher).map(([f, info]) => {
     const cards = data.cards.filter(c => c.fach === f);
     const due = cards.filter(c => isDue(doc.cards[c.id], now)).length;
     const fresh = cards.filter(c => !doc.cards[c.id]).length;
     const g = gaps.filter(x => x.fach === f).length;
     const pace = newPerDayNeeded(fresh, info.exam, now);
-    totalDue += due; totalFresh += fresh;
+    const finished = examFinished(info.exam, now);
+    // Abgeschlossene Fächer zählen nicht mit (die Session-Auswahl schließt sie ebenfalls aus).
+    if (!finished) { totalDue += due; totalFresh += fresh; }
+    picks.push(fachPick(f, info, { due, fresh, finished }));
     return `<div class="panel"><div class="kicker"><span class="badge">${esc(info.short)}</span><span>${examLabel(info.exam, now)}</span></div>
       <div class="stats"><div><b>${due}</b>fällig</div><div><b>${fresh}</b>neu</div><div><b>${g}</b>Lücken</div></div>${pace ? `<p class="muted">Tempo: ≈ ${pace} neue Karten/Tag nötig</p>` : ''}</div>`;
   }).join('');
@@ -41,6 +53,8 @@ export function renderStart({ data, store, root }) {
       <h1>Bereit zum Lernen?</h1>
       <p class="muted">${esc(heroSub)}</p>
       <a class="btn primary big" href="#/learn">▶ Lernen starten</a>
+      <p class="fach-pick-label">Oder nur ein Fach lernen:</p>
+      <div class="fach-pick">${picks.join('')}</div>
     </div>
     ${warn}
     <div class="row quick-actions">

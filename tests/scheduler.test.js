@@ -129,3 +129,15 @@ test('chooseMode: Karte mit MC, aber ohne Lückentext → MC in den ersten 2 Wie
   assert.equal(chooseMode(mcOnly, stWith(1, 1, 1), t0, FAR), 'mc');
   assert.equal(chooseMode(mcOnly, stWith(2, 3, 2), t0, FAR), 'free');
 });
+
+test('chooseMode mit avoid: dieselbe Karte wird beim nächsten Mal anders gefragt, im Prüfungsfenster nicht', () => {
+  const st = stWith(2, 3, 2);
+  assert.equal(chooseMode(card, st, t0, FAR, 'free'), 'cloze');
+  assert.equal(chooseMode(card, st, t0, FAR, 'mc'), 'free', 'anderes Format als zuletzt → unverändert');
+  assert.equal(chooseMode(card, undefined, t0, FAR, 'mc'), 'free', 'MC/Lückentext → Abruf im Prüfungsformat');
+  assert.equal(chooseMode({ examMode: 'free', mc: { options: ['a'], correct: 'a' } }, st, t0, FAR, 'free'), 'mc');
+  assert.equal(chooseMode({ examMode: 'free', why: 'Warum?' }, st, t0, FAR, 'free'), 'why');
+  assert.equal(chooseMode({ examMode: 'free' }, st, t0, FAR, 'free'), 'free', 'nichts anderes vorhanden');
+  const now = new Date(2026, 9, 4, 9, 0);
+  assert.equal(chooseMode(card, st, now, '2026-10-07', 'free'), 'free');
+});

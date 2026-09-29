@@ -1,12 +1,11 @@
 import { h, md, mdInline, enhance, esc } from '../render.js';
 import { prepareCalc, checkAnswer, formatNumber } from '../calc.js';
-import { grade, mapRatingToButton } from '../grader.js';
+import { grade, mapRatingToButton, selfAssessRatio, answerMatches, autoCheckKeyPoints } from '../grader.js';
 import { pickInputMode, getSpeechRecognitionCtor, createSpeechInput, recordAudio } from '../voice.js';
 import { slideStrip, slideFigure } from './slides.js';
 import { explainConcept } from '../gemini.js';
 
 const MODE_LABEL = { free: 'Freitext', voice: 'Erklären', code: 'Code', calc: 'Rechnen', mc: 'Multiple Choice', cloze: 'Lückentext', why: 'Warum?', bridge: 'Brücke', sketch: 'Skizze' };
-const norm = s => String(s).trim().toLowerCase().replace(/\s+/g, ' ');
 const shuffle = a => a.map(v => [Math.random(), v]).sort((x, y) => x[0] - y[0]).map(x => x[1]);
 
 // ℹ️-Button, der bei Bedarf per Gemini kurz den Begriff/Kontext der Frage erklärt (ohne die Antwort zu verraten).
@@ -45,15 +44,23 @@ export function ratingBar(suggest, cb) {
   return el;
 }
 
-export function renderCard(root, { card, mode, fachLabel, retry = false, onRated, settings, tutorPrompt, sctx }) {
+const VERDICT = { green: ['ok', '✅ Richtig'], yellow: ['part', '🟡 Noch nicht ganz'], red: ['bad', '❌ Falsch'] };
+
+// Die Bewertung läuft automatisch: jeder Kartentyp ermittelt selbst richtig (green) / teilweise (yellow) / falsch (red).
+// `onRated` wird genau einmal aufgerufen, sobald das Ergebnis feststeht (Rückgabe: Hinweistext für die Anzeige),
+// „Weiter“ ruft danach `onNext`. Nur Formate, die sich nicht prüfen lassen (Skizze, Code, Freitext ohne Gemini), fragen
+// einmal ehrlich nach – über die Kernpunkte-Checkliste bzw. „Hatte ich / Hatte ich nicht“, nie über „sicher/unsicher“.
+export function renderCard(root, { card, mode, fachLabel, retry = false, got = 0, need = 2, onRated, onNext, settings, tutorPrompt, sctx }) {
+  const pips = Array.from({ length: need }, (_, i) => `<i class="${i < got ? 'on' : ''}"></i>`).join('');
   const el = h(`<article class="card">
-    <div class="kicker"><span class="badge">${esc(fachLabel)}</span><span>${retry ? '<span class="retry">🔁 Nochmal – vorhin falsch</span> · ' : ''}${MODE_LABEL[mode] ?? mode}</span></div>
-    <div class="q"></div><div class="work"></div><div class="reveal" hidden></div><div class="rate-slot" hidden></div>
+    <div class="kicker"><span class="badge">${esc(fachLabel)}</span><span>${retry ? '<span class="retry">🔁 Nochmal – vorhin falsch</span> · ' : ''}${MODE_LABEL[mode] ?? mode} <span class="pips" title="Richtige Antworten in Folge (${need} nötig)">${pips}</span></span></div>
+    <div class="q"></div><div class="work"></div><div class="verdict" hidden></div><div class="reveal" hidden></div><div class="next-slot" hidden></div>
   </article>`);
   root.replaceChildren(el);
-  const [q, work, reveal, rate] = ['.q', '.work', '.reveal', '.rate-slot'].map(s => el.querySelector(s));
+  const [q, work, verdict, reveal, next] = ['.q', '.work', '.verdict', '.reveal', '.next-slot'].map(s => el.querySelector(s));
   let hinted = false;
   let answer = ''; const t0 = Date.now();
+  let graded = false;
 
   const showBack = () => {
     reveal.hidden = false;
@@ -64,25 +71,44 @@ export function renderCard(root, { card, mode, fachLabel, retry = false, onRated
     }
     enhance(reveal);
   };
-  const showRating = suggest => {
-    rate.hidden = false;
-    rate.replaceChildren(ratingBar(suggest, button => onRated({ button, mode, hinted, answer, ms: Date.now() - t0 })));
-    rate.scrollIntoView({ behavior: 'smooth', block: 'end' });
+  const finish = (button, label) => {
+    if (graded) return;
+    graded = true;
+    const note = onRated?.({ button, mode, hinted, answer, ms: Date.now() - t0 });
+    const [cls, text] = VERDICT[button];
+    verdict.hidden = false;
+    verdict.className = `verdict ${cls}`;
+    verdict.innerHTML = `<b>${esc(label ?? text)}</b>${note ? `<span>${esc(note)}</span>` : ''}`;
+    const cont = h('<button class="primary big">Weiter</button>');
+    cont.onclick = () => { cont.disabled = true; onNext?.(); };
+    next.hidden = false;
+    next.replaceChildren(cont);
+    cont.focus({ preventScroll: true });
+    cont.scrollIntoView({ behavior: 'smooth', block: 'end' });
   };
-  // Lösung zeigen + Kernpunkte-Checkliste zur Selbstbewertung (suggest überschreibt den Checklisten-Vorschlag).
-  const selfAssess = suggest => {
-    showBack();
-    if (!card.keyPoints?.length) return showRating(suggest ?? null);
-    const list = h(`<div class="checklist"><h3>Kernpunkte – was hattest du?</h3>${card.keyPoints.map((k, i) =>
-      `<label><input type="checkbox" data-i="${i}"><span>${md(k)}</span></label>`).join('')}</div>`);
-    const done = h('<button class="primary">Auswerten</button>');
-    done.onclick = () => {
-      const ratio = list.querySelectorAll('input:checked').length / card.keyPoints.length;
-      done.remove();
-      showRating(suggest ?? (ratio >= 0.8 ? 'green' : ratio >= 0.4 ? 'yellow' : 'red'));
-    };
-    reveal.append(list, done);
-    enhance(list);
+  // Lösung zeigen; Kernpunkte-Checkliste (vorausgewählt nach der getippten Antwort) bzw. Hatte-ich-Abfrage für nicht prüfbare Formate.
+  const selfCheck = (backShown = false) => {
+    if (!backShown) showBack();
+    if (card.keyPoints?.length) {
+      const auto = autoCheckKeyPoints(answer, card.keyPoints);
+      const list = h(`<div class="checklist"><h3>Kernpunkte – was hattest du?</h3>${card.keyPoints.map((k, i) =>
+        `<label><input type="checkbox" data-i="${i}"${auto[i] ? ' checked' : ''}><span>${mdInline(k)}</span></label>`).join('')}</div>`);
+      const done = h('<button class="primary">Auswerten</button>');
+      done.onclick = () => {
+        const checked = list.querySelectorAll('input:checked').length;
+        list.querySelectorAll('input').forEach(i => { i.disabled = true; });
+        done.remove();
+        finish(selfAssessRatio(checked, card.keyPoints.length));
+      };
+      reveal.append(list, done);
+      enhance(list);
+      return;
+    }
+    const ask = h(`<div class="row rate"><button class="r-red" data-b="red">❌ Hatte ich nicht</button><button class="r-green" data-b="green">✅ Hatte ich</button></div>`);
+    ask.querySelectorAll('button').forEach(b => {
+      b.onclick = () => { ask.querySelectorAll('button').forEach(x => { x.disabled = true; }); finish(b.dataset.b); };
+    });
+    reveal.append(ask);
   };
 
   if (mode === 'mc') {
@@ -96,7 +122,7 @@ export function renderCard(root, { card, mode, fachLabel, retry = false, onRated
         work.querySelectorAll('.opt').forEach(o => { o.disabled = true; if (Number(o.dataset.i) === correctIdx) o.classList.add('right'); });
         if (!right) b.classList.add('wrong');
         showBack();
-        showRating(right ? 'green' : 'red');
+        finish(right ? 'green' : 'red');
       };
       work.append(b);
     }
@@ -116,15 +142,16 @@ export function renderCard(root, { card, mode, fachLabel, retry = false, onRated
       let ok = 0;
       inputs.forEach(i => {
         const want = card.cloze.answers[Number(i.dataset.i)];
-        const right = norm(i.value) === norm(want);
+        const right = answerMatches(i.value, want);
         ok += right; i.classList.add(right ? 'right' : 'wrong'); i.disabled = true;
         if (!right) i.value = `${i.value} → ${want}`;
       });
       check.remove();
       showBack();
-      showRating(ok === inputs.length ? 'green' : ok * 2 >= inputs.length ? 'yellow' : 'red');
+      finish(ok === inputs.length ? 'green' : ok * 2 >= inputs.length ? 'yellow' : 'red');
     };
     work.append(p, check);
+    p.addEventListener('keydown', e => { if (e.key === 'Enter' && check.isConnected) { e.preventDefault(); check.click(); } });
   } else if (mode === 'code') {
     q.innerHTML = md(card.front);
     work.append(h('<textarea class="mono" placeholder="Erst auf Papier bzw. hier selbst schreiben …" spellcheck="false"></textarea>'));
@@ -141,7 +168,7 @@ export function renderCard(root, { card, mode, fachLabel, retry = false, onRated
       if (shown >= hints.length) hintBtn.hidden = true;
     };
     const solve = h('<button class="primary">Lösung zeigen</button>');
-    solve.onclick = () => { answer = work.querySelector('textarea').value; solve.remove(); hintBtn.remove(); showBack(); showRating(null); };
+    solve.onclick = () => { answer = work.querySelector('textarea').value; solve.remove(); hintBtn.remove(); selfCheck(); };
     work.append(hintBox, h('<div class="row"></div>'));
     work.lastChild.append(hintBtn, solve);
   } else if (mode === 'calc' && card.calc) {
@@ -174,8 +201,9 @@ export function renderCard(root, { card, mode, fachLabel, retry = false, onRated
       );
       enhance(stepBox);
       showBack();
-      showRating(r.ok ? (hinted ? 'yellow' : 'green') : 'red');
+      finish(r.ok ? (hinted ? 'yellow' : 'green') : 'red', r.ok && hinted ? '🟡 Richtig – aber mit Rechenweg-Hilfe' : undefined);
     };
+    input.addEventListener('keydown', e => { if (e.key === 'Enter' && check.isConnected) { e.preventDefault(); check.click(); } });
     const buttons = h('<div class="row"></div>');
     buttons.append(stepBtn, check);
     work.append(row, stepBox, buttons);
@@ -183,7 +211,7 @@ export function renderCard(root, { card, mode, fachLabel, retry = false, onRated
     q.innerHTML = md(card.front);
     work.append(h('<p class="muted">✏️ Skizziere auf Papier – mit Achsen, Beschriftungen und den charakteristischen Punkten. Dann aufdecken und ehrlich vergleichen.</p>'));
     const go = h('<button class="primary big">Aufdecken</button>');
-    go.onclick = () => { answer = '(Skizze auf Papier)'; go.remove(); selfAssess(null); };
+    go.onclick = () => { answer = '(Skizze auf Papier)'; go.remove(); selfCheck(); };
     work.append(go);
   } else {
     const isVoice = mode === 'voice';
@@ -240,7 +268,9 @@ export function renderCard(root, { card, mode, fachLabel, retry = false, onRated
         : '';
       reveal.insertAdjacentHTML('beforeend', `<div class="panel gemini-feedback"><p><b>Stärke:</b> ${md(result.staerke)}</p><p><b>Unscharfe Stelle:</b> ${md(result.unscharfeStelle)}</p></div>${kp}`);
       enhance(reveal);
-      showRating(mapRatingToButton(result.vorschlagRating));
+      const button = mapRatingToButton(result.vorschlagRating);
+      if (button) finish(button);
+      else selfCheck(true);
     };
 
     let attempt = 0;
@@ -253,12 +283,13 @@ export function renderCard(root, { card, mode, fachLabel, retry = false, onRated
         userText: ta.value.trim() || undefined, userAudio: recordedAudio ?? undefined,
       });
       if (r.source === 'self') {
-        if (r.error) feedbackBox.append(h(`<p class="muted">Gemini nicht verfügbar (${esc(r.error)}) – Selbstbewertung.</p>`));
+        if (r.error) feedbackBox.append(h(`<p class="muted">Gemini nicht verfügbar (${esc(r.error)}) – Kernpunkte selbst abhaken.</p>`));
         go.remove();
-        selfAssess(null);
+        selfCheck();
         return;
       }
       if (!r.revealSolution) {
+        hinted = true;
         feedbackBox.replaceChildren(h(`<div class="panel gemini-feedback"><p><b>Stärke:</b> ${md(r.result.staerke)}</p><p><b>Noch nicht ganz:</b> ${md(r.result.unscharfeStelle)}</p></div>`));
         enhance(feedbackBox);
         go.textContent = 'Nochmal prüfen';
@@ -271,7 +302,7 @@ export function renderCard(root, { card, mode, fachLabel, retry = false, onRated
     const go = h('<button class="primary big">Aufdecken</button>');
     go.onclick = async () => {
       answer = ta.value;
-      if (!settings?.geminiKey) { go.remove(); selfAssess(null); return; }
+      if (!settings?.geminiKey) { go.remove(); selfCheck(); return; }
       go.disabled = true;
       go.textContent = 'Bewerte …';
       await askGemini();

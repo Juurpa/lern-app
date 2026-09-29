@@ -51,9 +51,22 @@ export function isDue(st, now) {
   return Boolean(st) && new Date(st.fsrs.due) <= now;
 }
 
-export function chooseMode(card, st, now, examDate) {
+// `avoid`: Format der letzten Antwort auf dieselbe Karte in dieser Session – die Wiederholung soll möglichst anders gefragt werden
+// (vom Wiedererkennen zum Abruf und zurück). In den letzten 3 Tagen bleibt es beim Prüfungsformat.
+export function chooseMode(card, st, now, examDate, avoid = null) {
   const exam = card.examMode;
   if ((localDate(examDate) - now) / DAY <= 3) return exam;
+  const mode = baseMode(card, st);
+  if (!avoid || mode !== avoid) return mode;
+  const hasBridge = (card.bridges?.length ?? 0) > 0;
+  const alternatives = avoid === 'mc' || avoid === 'cloze'
+    ? [exam]
+    : [card.cloze && 'cloze', card.mc && 'mc', card.why && 'why', hasBridge && 'bridge'];
+  return alternatives.find(m => m && m !== avoid) ?? mode;
+}
+
+function baseMode(card, st) {
+  const exam = card.examMode;
   const reps = st?.fsrs.reps ?? 0;
   if (reps === 0 && card.mc) return 'mc';
   if (reps < 2 && card.cloze) return 'cloze';

@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { allocate, interleave, buildSession, requeueWrong, shuffle, weave, LEAD_FRESH, examFinished, calendarDaysUntil, newPerDayNeeded, sessionNewLimit, resolveFach, fachStats, examLabel, urgencyOf, estimateMinutes, reviewedToday, dayKey, resolveOnly } from '../js/session.js';
+import { allocate, interleave, buildSession, scheduleAgain, barSegments, NEED_CORRECT, shuffle, weave, LEAD_FRESH, examFinished, calendarDaysUntil, newPerDayNeeded, sessionNewLimit, resolveFach, fachStats, examLabel, urgencyOf, estimateMinutes, reviewedToday, dayKey, resolveOnly } from '../js/session.js';
 import { emptyDoc } from '../js/store.js';
 
 const meta = { faecher: { INF2: { exam: '2026-10-07' }, MTS: { exam: '2026-10-07' } } };
@@ -63,22 +63,53 @@ test('gesehene Units bekommen kein Intro, exclude wird beachtet', () => {
   assert.deepEqual(s, [{ type: 'card', cardId: 'i2', fach: 'INF2' }]);
 });
 
-test('requeueWrong: falsche Karte rutscht ans Ende (retry), bereits Gezeigtes bleibt, keine Dopplung', () => {
-  const q = [1, 2, 3, 4, 5, 6, 7].map(n => ({ type: 'card', cardId: String(n), fach: 'INF2' }));
-  const item = { type: 'card', cardId: 'X', fach: 'INF2' };
-  const out = requeueWrong(q, 1, item);
+const cardItem = id => ({ type: 'card', cardId: String(id), fach: 'INF2' });
+
+test('scheduleAgain (falsch): ans Ende mit retry, Gezeigtes bleibt, keine Dopplung, Units bleiben', () => {
+  const q = [1, 2, 3, 4, 5, 6, 7].map(cardItem);
+  const item = cardItem('X');
+  const out = scheduleAgain(q, 1, item, { wrong: true });
   assert.equal(out.length, 8);
   assert.deepEqual(out.slice(0, 7), q);
   assert.deepEqual(out.at(-1), { ...item, retry: true });
   assert.equal(q.length, 7, 'Eingabe bleibt unverändert');
 
-  const again = requeueWrong(out, 5, { type: 'card', cardId: 'X', fach: 'INF2' });
+  const again = scheduleAgain(out, 5, cardItem('X'), { wrong: true });
   assert.equal(again.filter(x => x.cardId === 'X').length, 1);
   assert.equal(again.at(-1).cardId, 'X');
-  assert.deepEqual(requeueWrong([], 0, item), [{ ...item, retry: true }]);
+  assert.deepEqual(scheduleAgain([], 0, item, { wrong: true }), [{ ...item, retry: true }]);
 
   const withUnit = [{ type: 'unit', unitId: 'X', fach: 'INF2' }, ...q];
-  assert.equal(requeueWrong(withUnit, 0, item).filter(x => x.type === 'unit').length, 1, 'Unit-Einträge werden nicht entfernt');
+  assert.equal(scheduleAgain(withUnit, 0, item, { wrong: true }).filter(x => x.type === 'unit').length, 1, 'Unit-Einträge werden nicht entfernt');
+});
+
+test('scheduleAgain (richtig, aber noch nicht genug): 4–8 Karten später, nie sofort, nie über das Ende hinaus', () => {
+  const q = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(cardItem);
+  const item = cardItem('X');
+  const at = (rng, queue = q, pos = 2) => scheduleAgain(queue, pos, item, { wrong: false, rng }).findIndex(x => x.cardId === 'X');
+  assert.equal(at(() => 0), 2 + 4, 'frühestens 4 Karten nach der aktuellen');
+  assert.equal(at(() => 0.999), 2 + 8, 'spätestens 8 Karten danach');
+  const out = scheduleAgain(q, 2, item, { wrong: false, rng: () => 0 });
+  assert.equal(out.length, 13);
+  assert.equal(out[6].retry, false);
+  assert.deepEqual(out.filter(x => x.cardId !== 'X'), q);
+  assert.equal(at(() => 0.5, q.slice(0, 5), 2), 5, 'kurze Queue: ans Ende, nicht darüber hinaus');
+  assert.equal(scheduleAgain([], 0, item, { wrong: false }).length, 1);
+  const dup = scheduleAgain([...q, item], 2, item, { wrong: false, rng: () => 0 });
+  assert.equal(dup.filter(x => x.cardId === 'X').length, 1, 'keine Dopplung');
+});
+
+test('barSegments: Verlauf plus noch nötige richtige Antworten, aktuelle Frage markiert, Fehler verlängern den Balken', () => {
+  assert.equal(NEED_CORRECT, 2);
+  const queue = [cardItem('a'), cardItem('b'), { type: 'unit', unitId: 'U', fach: 'INF2' }];
+  const got = new Map();
+  assert.deepEqual(barSegments({ history: [], current: cardItem('a'), queue, pos: 1, got }), ['cur', '', '', ''], 'a und b brauchen je 2, Units zählen nicht');
+  assert.deepEqual(barSegments({ history: ['g'], current: null, queue: [cardItem('b'), cardItem('a')], pos: 0, got: new Map([['a', 1]]) }), ['g', 'cur', '', '']);
+  assert.deepEqual(barSegments({ history: ['g', 'r'], current: cardItem('c'), queue: [], pos: 0, got: new Map([['c', 1]]) }), ['g', 'r', 'cur']);
+  assert.deepEqual(barSegments({ history: ['g', 'g'], current: null, queue: [], pos: 0, got: new Map() }), ['g', 'g'], 'nichts mehr offen → keine cur-Markierung');
+  const before = barSegments({ history: [], current: cardItem('a'), queue: [cardItem('b')], pos: 0, got: new Map() });
+  const afterWrong = barSegments({ history: ['r'], current: null, queue: [cardItem('b'), { ...cardItem('a'), retry: true }], pos: 0, got: new Map() });
+  assert.equal(afterWrong.length, before.length + 1, 'eine falsche Antwort macht den Balken um ein Segment länger');
 });
 
 test('shuffle: Permutation ohne Mutation, seed-abhängig', () => {

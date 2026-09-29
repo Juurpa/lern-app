@@ -209,7 +209,27 @@ export function buildSession({ cards, units, doc, meta, now, size = 30, newLimit
   return items;
 }
 
-// Falsche Antwort: die Karte rutscht ans Ende der Queue (`retry`) und kommt wieder, bis sie einmal richtig war.
-export function requeueWrong(queue, pos, item) {
-  return [...queue.slice(0, pos), ...queue.slice(pos).filter(x => !(x.type === 'card' && x.cardId === item.cardId)), { ...item, retry: true }];
+// Jede Karte muss in einer Session zweimal in Folge richtig beantwortet werden.
+export const NEED_CORRECT = 2;
+const AGAIN_GAP = [4, 8];
+
+// Die Karte kommt noch einmal: falsch → ganz ans Ende (`retry`); richtig, aber noch nicht oft genug → 4–8 Karten später,
+// nie sofort. Bereits Gezeigtes (bis `pos`) bleibt unberührt, pro Karte steht nie mehr als ein Eintrag in der Queue.
+export function scheduleAgain(queue, pos, item, { wrong, rng = Math.random, gap = AGAIN_GAP }) {
+  const rest = queue.slice(pos).filter(x => !(x.type === 'card' && x.cardId === item.cardId));
+  const head = queue.slice(0, pos);
+  if (wrong) return [...head, ...rest, { ...item, retry: true }];
+  const [lo, hi] = gap;
+  const at = Math.min(rest.length, lo + Math.floor(rng() * (hi - lo + 1)));
+  return [...head, ...rest.slice(0, at), { ...item, retry: false }, ...rest.slice(at)];
+}
+
+// Segmente des Fortschrittsbalkens einer Runde: je beantworteter Frage grün/rot ('g'/'r'), dahinter die noch nötigen
+// richtigen Antworten (leer; das erste ist die aktuelle Frage 'cur'). Falsche Antworten verlängern den Balken.
+export function barSegments({ history, current = null, queue, pos, got, need = NEED_CORRECT }) {
+  const owed = item => (item?.type === 'card' ? Math.max(1, need - (got.get(item.cardId) ?? 0)) : 0);
+  const pending = owed(current) + queue.slice(pos).reduce((n, x) => n + owed(x), 0);
+  const segs = [...history, ...Array(pending).fill('')];
+  if (pending) segs[history.length] = 'cur';
+  return segs;
 }

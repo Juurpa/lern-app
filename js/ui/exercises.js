@@ -6,14 +6,13 @@ import { makeReviewEvent } from '../sync.js';
 import { getSpeechRecognitionCtor, createSpeechInput } from '../voice.js';
 import {
   exerciseVars, fillText, evalCalcPart, checkCalc, checkMc, checkCloze, suggestButton,
-  exerciseStatus, recordExercise, setProgress, partCardId, SELF_GRADED,
+  exerciseStatus, recordExercise, setProgress, partCardId, fachSets, SELF_GRADED,
 } from '../exercises.js';
 import { ratingBar, conceptInfo } from './card.js';
 import { slideStrip, slideFigure } from './slides.js';
 
 export const KIND = { uebung: 'Übung', praktikum: 'Praktikum', klausur: 'Klausur', pruefung: 'Prüfung' };
 const ICON = { new: '○', partial: '◐', done: '✓' };
-const KIND_ORDER = ['uebung', 'praktikum', 'klausur', 'pruefung'];
 
 // ---------- Bausteine (auch von der Probeklausur genutzt) ----------
 
@@ -201,18 +200,19 @@ function exercisesOf(data, setId) {
   return data.exercises.filter(e => e.set === setId);
 }
 
+export function setRow(data, doc, s) {
+  const p = setProgress(exercisesOf(data, s.id), doc.exercises);
+  return `<a class="panel set-row" href="#/aufgaben?set=${encodeURIComponent(s.id)}">
+    <div class="kicker"><span class="badge">${esc(KIND[s.kind] ?? s.kind)}</span><span>${p.done}/${p.total} ✓${p.partial ? ` · ${p.partial} ◐` : ''}</span></div>
+    <b>${esc(s.title)}</b>${s.minutes ? ` <span class="muted">· ⏱ ${esc(s.minutes)} min</span>` : ''}</a>`;
+}
+
 function renderOverview({ data, store, root }) {
   const doc = store.load();
   const blocks = Object.entries(data.meta.faecher).map(([f, info]) => {
-    const sets = data.sets.filter(s => s.fach === f && !s.from?.length).sort((a, b) => KIND_ORDER.indexOf(a.kind) - KIND_ORDER.indexOf(b.kind));
-    if (!sets.length) return '';
-    return `<h2>${esc(info.label)}</h2>${sets.map(s => {
-      const exs = exercisesOf(data, s.id);
-      const p = setProgress(exs, doc.exercises);
-      return `<a class="panel set-row" href="#/aufgaben?set=${encodeURIComponent(s.id)}">
-        <div class="kicker"><span class="badge">${esc(KIND[s.kind] ?? s.kind)}</span><span>${p.done}/${p.total} ✓${p.partial ? ` · ${p.partial} ◐` : ''}</span></div>
-        <b>${esc(s.title)}</b>${s.minutes ? ` <span class="muted">· ⏱ ${esc(s.minutes)} min</span>` : ''}</a>`;
-    }).join('')}`;
+    const { practice } = fachSets(data.sets, f);
+    if (!practice.length) return '';
+    return `<h2>${esc(info.label)}</h2>${practice.map(s => setRow(data, doc, s)).join('')}`;
   }).join('');
   root.append(h(`<section><h1>Aufgaben</h1>
     <p class="muted">Übungsblätter, Praktika, Klausur und Prüfungsfragen – Schritt für Schritt mit Lösung, Folien und Selbstbewertung. Rote Teilaufgaben landen in den Lücken.</p>

@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   validateExercises, clozeValid, exerciseVars, evalCalcPart, checkCalc, checkMc, checkCloze, suggestButton,
-  exerciseStatus, recordExercise, setProgress, nextExercise, examExercises, scoreExam, partPoints, partCardId,
+  exerciseStatus, recordExercise, setProgress, nextExercise, examExercises, scoreExam, partPoints, partCardId, fachSets,
 } from '../js/exercises.js';
 
 const decksById = new Map([['mtsue02', { id: 'mtsue02', pages: 7 }]]);
@@ -121,4 +121,17 @@ test('Punkte: Standard 1, Summe gedeckelt, Prozent', () => {
   assert.equal(suggestButton(0.8), 'green');
   assert.equal(suggestButton(0.5), 'yellow');
   assert.equal(suggestButton(0.1), 'red');
+});
+
+test('fachSets: Übungssets nach Art sortiert, zusammengesetzte Sets ausgeblendet, Probeklausuren getrennt', () => {
+  const sets = [
+    { id: 'k', fach: 'MTS', kind: 'klausur', minutes: 90, from: ['u1'] },
+    { id: 'p', fach: 'MTS', kind: 'pruefung', minutes: 0 },
+    { id: 'u1', fach: 'MTS', kind: 'uebung', minutes: 0 },
+    { id: 'x', fach: 'INF2', kind: 'praktikum', minutes: 0 },
+  ];
+  const r = fachSets(sets, 'MTS');
+  assert.deepEqual(r.practice.map(s => s.id), ['u1', 'p']);
+  assert.deepEqual(r.exams.map(s => s.id), ['k']);
+  assert.deepEqual(fachSets(sets, 'RADAR'), { practice: [], exams: [] });
 });

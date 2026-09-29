@@ -2,6 +2,7 @@ import { loadData } from './data.js';
 import { createStore } from './store.js';
 import { createSync } from './sync.js';
 import { renderStart } from './ui/start.js';
+import { renderFach } from './ui/fach.js';
 import { renderLearn } from './ui/learn.js';
 import { renderGaps } from './ui/gaps.js';
 import { renderSettings } from './ui/settings.js';
@@ -18,7 +19,7 @@ const root = document.getElementById('app');
 const ctx = { data: null, store: createStore(), root };
 const ROUTES = {
   '': renderStart, learn: renderLearn, gaps: renderGaps, settings: renderSettings, setup: renderSetup,
-  folien: renderDecks, aufgaben: renderExercises, klausuren: renderExamList, klausur: renderExam,
+  fach: renderFach, folien: renderDecks, aufgaben: renderExercises, klausuren: renderExamList, klausur: renderExam,
 };
 const tabbar = createTabBar(() => (ctx.data ? openGaps(ctx.store.load().gaps).length : 0));
 

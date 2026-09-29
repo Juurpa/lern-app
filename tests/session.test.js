@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { allocate, interleave, buildSession, insertRelearn, examFinished, calendarDaysUntil, newPerDayNeeded, sessionNewLimit, resolveFach } from '../js/session.js';
+import { allocate, interleave, buildSession, insertRelearn, examFinished, calendarDaysUntil, newPerDayNeeded, sessionNewLimit, resolveFach, fachStats, examLabel } from '../js/session.js';
 import { emptyDoc } from '../js/store.js';
 
 const meta = { faecher: { INF2: { exam: '2026-10-07' }, MTS: { exam: '2026-10-07' } } };
@@ -156,4 +156,25 @@ test('sessionNewLimit: neue Karten pro 15-min-Session, nicht pro Queue-Aufbau', 
   assert.equal(sessionNewLimit({ newPerSession: 15 }, 9), 6);
   assert.equal(sessionNewLimit({ newPerSession: 15 }, 20), 0);
   assert.equal(emptyDoc().settings.newPerSession, 15);
+});
+
+test('fachStats: fällig/neu/Lücken/Tempo nur für das gewählte Fach', () => {
+  const cards = [mk('i1', 'INF2', 'U-I'), mk('i2', 'INF2', 'U-I'), mk('m1', 'MTS', 'U-M'), mk('md', 'MTS', 'U-M')];
+  const doc = emptyDoc();
+  doc.cards.md = { fsrs: { due: past, reps: 2, stability: 3 }, alt: 2 };
+  doc.gaps = [{ cardId: 'x', fach: 'MTS' }, { cardId: 'y', fach: 'INF2' }, { cardId: 'z', fach: 'MTS', closed: true }];
+  const mts = fachStats({ cards, doc, fach: 'MTS', exam: '2026-10-07', now });
+  assert.deepEqual(mts, { due: 1, fresh: 1, gaps: 1, pace: 1, finished: false });
+  const inf = fachStats({ cards, doc, fach: 'INF2', exam: '2026-10-07', now });
+  assert.equal(inf.due, 0);
+  assert.equal(inf.fresh, 2);
+  assert.equal(inf.gaps, 1);
+  assert.equal(fachStats({ cards, doc, fach: 'INF2', exam: '2026-10-07', now: new Date(2026, 9, 8, 1) }).finished, true);
+});
+
+test('examLabel: Restzeit, heute, vorbei', () => {
+  assert.equal(examLabel('2026-10-07', new Date(2026, 9, 6, 9)), 'noch 1 Tag');
+  assert.equal(examLabel('2026-10-07', new Date(2026, 8, 29, 9)), 'noch 8 Tage');
+  assert.equal(examLabel('2026-10-07', new Date(2026, 9, 7, 9)), 'heute Prüfung');
+  assert.equal(examLabel('2026-10-07', new Date(2026, 9, 8, 9)), 'Prüfung vorbei');
 });

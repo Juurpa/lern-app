@@ -20,7 +20,7 @@ export const TABS = [
 ];
 
 // Routen ohne eigenen Tab zählen für die Hervorhebung als Unterseite des jeweiligen Bereichs.
-const ALIAS = { klausuren: 'aufgaben', klausur: 'aufgaben' };
+const ALIAS = { klausuren: 'aufgaben', klausur: 'aufgaben', fach: '' };
 
 export function createTabBar(getBadge) {
   const el = h(`<nav class="tabbar" aria-label="Hauptnavigation">${TABS.map(t =>

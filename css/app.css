@@ -278,8 +278,10 @@ a.chip { min-height: 44px; }
 a.chip:hover { border-color: var(--accent); }
 
 /* Aufgaben */
-.set-row, .ex-row { display: block; color: inherit; text-decoration: none; border-radius: var(--radius); }
-.set-row:hover, .ex-row:hover { box-shadow: var(--shadow); transform: translateY(-1px); }
+.set-row, .ex-row, .fach-panel { display: block; color: inherit; text-decoration: none; border-radius: var(--radius); }
+.set-row:hover, .ex-row:hover, .fach-panel:hover { box-shadow: var(--shadow); transform: translateY(-1px); }
+.fach-go { display: block; margin-top: 10px; font-size: .85rem; font-weight: 600; color: var(--accent); }
+.fach-actions { margin: 14px 0 4px; }
 .ex-row { display: flex; gap: 12px; align-items: flex-start; }
 .status-icon { font-size: 1.3rem; width: 1.5em; text-align: center; flex: none; }
 .s-done { color: var(--green); } .s-partial { color: var(--yellow); }

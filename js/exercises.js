@@ -153,6 +153,15 @@ export function setProgress(exs, states) {
   return { total: exs.length, done: s.filter(x => x === 'done').length, partial: s.filter(x => x === 'partial').length };
 }
 
+// Übungssets eines Fachs (ohne zusammengesetzte Sets) nach Art sortiert + zeitbegrenzte Probeklausuren.
+export function fachSets(sets, fach) {
+  const own = sets.filter(s => s.fach === fach);
+  return {
+    practice: own.filter(s => !s.from?.length).sort((a, b) => SET_KINDS.indexOf(a.kind) - SET_KINDS.indexOf(b.kind)),
+    exams: own.filter(s => s.minutes > 0),
+  };
+}
+
 // Nächste sinnvolle Aufgabe: zuerst neue, dann solche mit Lücken, dann die am längsten nicht geübte.
 export function nextExercise(exs, states) {
   const fresh = exs.find(e => exerciseStatus(e, states[e.id]) === 'new');

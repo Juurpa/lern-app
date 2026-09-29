@@ -19,6 +19,12 @@ export function calendarDaysUntil(examDate, now) {
 }
 
 // Neue Karten gelten pro 15-min-Session (bis „Weiter“), nicht pro Queue-Aufbau.
+export const examLabel = (exam, now) => {
+  if (examFinished(exam, now)) return 'Prüfung vorbei';
+  const n = calendarDaysUntil(exam, now);
+  return n === 0 ? 'heute Prüfung' : `noch ${n} ${n === 1 ? 'Tag' : 'Tage'}`;
+};
+
 export const sessionNewLimit = (settings, shownNew) => Math.max(0, (settings.newPerSession ?? 0) - shownNew);
 
 // Nötiges Tempo: verbleibende neue Karten auf die Tage bis zum Vortag der Prüfung verteilen.
@@ -71,6 +77,19 @@ const groupBy = (list, key) => list.reduce((acc, x) => ((acc[x[key]] ??= []).pus
 const countsOf = groups => Object.fromEntries(Object.entries(groups).map(([k, v]) => [k, v.length]));
 
 // Fach-Schlüssel aus der URL (z. B. "mts" → "MTS"); unbekannt/leer → null = alle Fächer mischen.
+// Kennzahlen eines Fachs für Start- und Fach-Seite: fällige/neue Karten, offene Lücken, Tempo bis zur Prüfung.
+export function fachStats({ cards, doc, fach, exam, now }) {
+  const own = cards.filter(c => c.fach === fach);
+  const fresh = own.filter(c => !doc.cards[c.id]).length;
+  return {
+    due: own.filter(c => isDue(doc.cards[c.id], now)).length,
+    fresh,
+    gaps: openGaps(doc.gaps).filter(g => g.fach === fach).length,
+    pace: newPerDayNeeded(fresh, exam, now),
+    finished: examFinished(exam, now),
+  };
+}
+
 export const resolveFach = (meta, raw) => Object.keys(meta.faecher).find(k => k.toLowerCase() === String(raw ?? '').trim().toLowerCase()) ?? null;
 
 export function buildSession({ cards, units, doc, meta, now, size = 30, newLimit = 10, exclude = new Set(), fach = null }) {

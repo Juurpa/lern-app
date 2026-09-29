@@ -48,6 +48,21 @@ async function checkForUpdate() {
   document.body.append(bar);
 }
 
+// Neuer Service Worker (= neue App-Version) hat übernommen: laufende Seite ist noch alt → Neuladen anbieten.
+function watchAppUpdate(reg) {
+  if (!navigator.serviceWorker.controller) return; // Erstinstallation, nichts Altes zu ersetzen
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (document.querySelector('.update-banner')) return;
+    const bar = document.createElement('button');
+    bar.className = 'update-banner primary';
+    bar.textContent = '✨ Neue App-Version – jetzt neu laden';
+    bar.onclick = () => location.reload();
+    document.body.append(bar);
+  });
+  // Installierte PWAs (iOS) laden beim Zurückholen aus dem Hintergrund nicht neu → selbst nach einem neuen Service Worker fragen.
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) reg.update().catch(() => {}); });
+}
+
 const FALLBACK_TUTOR_PROMPT = 'Du bist ein Prüfungstutor. Bewerte die Antwort fair anhand von Frage, Musterlösung und Kernpunkten. Antworte ausschließlich als JSON gemäß responseSchema.';
 
 async function main() {
@@ -71,7 +86,7 @@ async function main() {
   route();
   checkForUpdate();
   setInterval(checkForUpdate, 30 * 60 * 1000);
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').then(watchAppUpdate).catch(() => {});
 }
 
 main().catch(e => { root.textContent = `Fehler beim Laden: ${e.message}`; });

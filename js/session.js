@@ -18,13 +18,13 @@ export function calendarDaysUntil(examDate, now) {
   return Math.round((examDay(examDate) - today) / DAY);
 }
 
-// Neue Karten gelten pro 15-min-Session (bis „Weiter“), nicht pro Queue-Aufbau.
 export const examLabel = (exam, now) => {
   if (examFinished(exam, now)) return 'Prüfung vorbei';
   const n = calendarDaysUntil(exam, now);
   return n === 0 ? 'heute Prüfung' : `noch ${n} ${n === 1 ? 'Tag' : 'Tage'}`;
 };
 
+// Neue Karten gelten pro 15-min-Session (bis „Weiter“), nicht pro Queue-Aufbau.
 export const sessionNewLimit = (settings, shownNew) => Math.max(0, (settings.newPerSession ?? 0) - shownNew);
 
 // Nötiges Tempo: verbleibende neue Karten auf die Tage bis zum Vortag der Prüfung verteilen.
@@ -76,35 +76,73 @@ export function fachWeights(meta, doc, cards, now) {
 const groupBy = (list, key) => list.reduce((acc, x) => ((acc[x[key]] ??= []).push(x), acc), {});
 const countsOf = groups => Object.fromEntries(Object.entries(groups).map(([k, v]) => [k, v.length]));
 
-// Fach-Schlüssel aus der URL (z. B. "mts" → "MTS"); unbekannt/leer → null = alle Fächer mischen.
+// Dringlichkeit eines Fachs: hohes Neu-Tempo bzw. kurz vor der Prüfung noch Offenes → 'high'.
+const URGENCY_HIGH = 80;
+const URGENCY_MID = 30;
+export function urgencyOf({ pace, due, fresh, finished }, exam, now) {
+  if (finished) return 'done';
+  if (calendarDaysUntil(exam, now) <= 2 && due + fresh > 0) return 'high';
+  return pace >= URGENCY_HIGH ? 'high' : pace >= URGENCY_MID ? 'mid' : 'low';
+}
+
 // Kennzahlen eines Fachs für Start- und Fach-Seite: fällige/neue Karten, offene Lücken, Tempo bis zur Prüfung.
+// prio/prioPace: dasselbe nur für die als wichtig markierten (priority) neuen Karten.
 export function fachStats({ cards, doc, fach, exam, now }) {
   const own = cards.filter(c => c.fach === fach);
   const fresh = own.filter(c => !doc.cards[c.id]).length;
-  return {
+  const prio = own.filter(c => c.priority && !doc.cards[c.id]).length;
+  const s = {
     due: own.filter(c => isDue(doc.cards[c.id], now)).length,
     fresh,
     gaps: openGaps(doc.gaps).filter(g => g.fach === fach).length,
     pace: newPerDayNeeded(fresh, exam, now),
+    prio,
+    prioTotal: own.filter(c => c.priority).length,
+    prioPace: newPerDayNeeded(prio, exam, now),
     finished: examFinished(exam, now),
   };
+  return { ...s, urgency: urgencyOf(s, exam, now) };
 }
 
+// Zeit-Budget: grobe Schätzung, wie lange n Karten dauern.
+export const SECONDS_PER_CARD = 30;
+export const estimateMinutes = n => Math.ceil((n * SECONDS_PER_CARD) / 60);
+
+export const dayKey = now => `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+
+// Wie viele verschiedene Karten wurden heute (lokaler Kalendertag) bewertet?
+export function reviewedToday(cards, doc, now) {
+  const start = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  return cards.filter(c => { const last = doc.cards[c.id]?.fsrs.last_review; return last && new Date(last) >= start; }).length;
+}
+
+// Fach-Schlüssel aus der URL (z. B. "mts" → "MTS"); unbekannt/leer → null = alle Fächer mischen.
 export const resolveFach = (meta, raw) => Object.keys(meta.faecher).find(k => k.toLowerCase() === String(raw ?? '').trim().toLowerCase()) ?? null;
 
-export function buildSession({ cards, units, doc, meta, now, size = 30, newLimit = 10, exclude = new Set(), fach = null }) {
+// Fokus-Modi der Lern-Session: nur Fälliges, nur Neues, nur Wichtiges (priority) oder nur offene Lücken.
+export const ONLY_MODES = ['due', 'new', 'prio', 'gaps'];
+export const ONLY_LABEL = { due: 'fällige Karten', new: 'neue Karten', prio: '★ Wichtiges', gaps: 'Lücken' };
+export const resolveOnly = raw => (ONLY_MODES.includes(raw) ? raw : null);
+
+export function buildSession({ cards, units, doc, meta, now, size = 30, newLimit = 10, exclude = new Set(), fach = null, only = null }) {
   const unitById = new Map(units.map(u => [u.id, u]));
-  const pool = cards.filter(c => (!fach || c.fach === fach) && !exclude.has(c.id) && !examFinished(meta.faecher[c.fach].exam, now));
+  const gapIds = new Set(openGaps(doc.gaps).map(g => g.cardId));
+  const pool = cards.filter(c => (!fach || c.fach === fach) && !exclude.has(c.id) && !examFinished(meta.faecher[c.fach].exam, now)
+    && (only !== 'prio' || c.priority) && (only !== 'gaps' || gapIds.has(c.id)));
   const weights = fachWeights(meta, doc, cards, now);
   const dueAt = c => new Date(doc.cards[c.id].fsrs.due);
 
-  const due = pool.filter(c => isDue(doc.cards[c.id], now)).sort((a, b) => dueAt(a) - dueAt(b));
+  // Neu-/Prio-Modus ist eine bewusste Wahl: das 15-min-Neukarten-Limit gilt dort nicht.
+  if (only === 'new' || only === 'prio') newLimit = size;
+  // Lücken-Modus übt offene Lücken auch vor dem Fälligkeitstermin.
+  const isDueHere = c => (only === 'gaps' ? Boolean(doc.cards[c.id]) : isDue(doc.cards[c.id], now));
+  const due = only === 'new' ? [] : pool.filter(isDueHere).sort((a, b) => dueAt(a) - dueAt(b));
   const dueGroups = groupBy(due, 'fach');
   const dueAlloc = allocate(countsOf(dueGroups), weights, size);
   const dueCards = Object.entries(dueAlloc).flatMap(([f, n]) => dueGroups[f].slice(0, n)).sort((a, b) => dueAt(a) - dueAt(b));
 
   const order = c => unitById.get(c.unit)?.order ?? Infinity;
-  const fresh = pool.filter(c => !doc.cards[c.id])
+  const fresh = only === 'due' || only === 'gaps' ? [] : pool.filter(c => !doc.cards[c.id])
     .sort((a, b) => Number(Boolean(b.priority)) - Number(Boolean(a.priority)) || order(a) - order(b));
   const freshGroups = groupBy(fresh, 'fach');
   const freshAlloc = allocate(countsOf(freshGroups), weights, Math.max(0, Math.min(newLimit, size - dueCards.length)));

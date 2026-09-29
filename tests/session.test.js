@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { allocate, interleave, buildSession, insertRelearn, examFinished, calendarDaysUntil, newPerDayNeeded, sessionNewLimit, resolveFach, fachStats, examLabel } from '../js/session.js';
+import { allocate, interleave, buildSession, insertRelearn, examFinished, calendarDaysUntil, newPerDayNeeded, sessionNewLimit, resolveFach, fachStats, examLabel, urgencyOf, estimateMinutes, reviewedToday, dayKey, resolveOnly } from '../js/session.js';
 import { emptyDoc } from '../js/store.js';
 
 const meta = { faecher: { INF2: { exam: '2026-10-07' }, MTS: { exam: '2026-10-07' } } };
@@ -164,7 +164,7 @@ test('fachStats: fällig/neu/Lücken/Tempo nur für das gewählte Fach', () => {
   doc.cards.md = { fsrs: { due: past, reps: 2, stability: 3 }, alt: 2 };
   doc.gaps = [{ cardId: 'x', fach: 'MTS' }, { cardId: 'y', fach: 'INF2' }, { cardId: 'z', fach: 'MTS', closed: true }];
   const mts = fachStats({ cards, doc, fach: 'MTS', exam: '2026-10-07', now });
-  assert.deepEqual(mts, { due: 1, fresh: 1, gaps: 1, pace: 1, finished: false });
+  assert.deepEqual(mts, { due: 1, fresh: 1, gaps: 1, pace: 1, prio: 0, prioTotal: 0, prioPace: 0, finished: false, urgency: 'low' });
   const inf = fachStats({ cards, doc, fach: 'INF2', exam: '2026-10-07', now });
   assert.equal(inf.due, 0);
   assert.equal(inf.fresh, 2);
@@ -177,4 +177,82 @@ test('examLabel: Restzeit, heute, vorbei', () => {
   assert.equal(examLabel('2026-10-07', new Date(2026, 8, 29, 9)), 'noch 8 Tage');
   assert.equal(examLabel('2026-10-07', new Date(2026, 9, 7, 9)), 'heute Prüfung');
   assert.equal(examLabel('2026-10-07', new Date(2026, 9, 8, 9)), 'Prüfung vorbei');
+});
+
+test('buildSession only=due: nur Fälliges, keine neuen Karten', () => {
+  const cards = [mk('i1', 'INF2', 'U-I'), mk('i2', 'INF2', 'U-I'), mk('id', 'INF2', 'U-I')];
+  const doc = emptyDoc();
+  doc.cards.id = { fsrs: { due: past, reps: 2, stability: 3 }, alt: 2 };
+  const s = buildSession({ cards, units, doc, meta, now, only: 'due', fach: 'INF2' });
+  assert.deepEqual(s, [{ type: 'card', cardId: 'id', fach: 'INF2' }]);
+});
+
+test('buildSession only=new: nur Neues, ohne 15-min-Limit (newLimit 0 wird ignoriert)', () => {
+  const cards = [mk('i1', 'INF2', 'U-I'), mk('i2', 'INF2', 'U-I'), mk('id', 'INF2', 'U-I')];
+  const doc = emptyDoc();
+  doc.cards.id = { fsrs: { due: past, reps: 2, stability: 3 }, alt: 2 };
+  doc.units['U-I'] = { seen: true };
+  const s = buildSession({ cards, units, doc, meta, now, only: 'new', newLimit: 0 });
+  assert.deepEqual(s.map(x => x.cardId).sort(), ['i1', 'i2']);
+});
+
+test('buildSession only=prio: nur als wichtig markierte Karten, fällige wie neue', () => {
+  const cards = [mk('p1', 'INF2', 'U-I', true), mk('p2', 'INF2', 'U-I', true), mk('n1', 'INF2', 'U-I'), mk('nd', 'INF2', 'U-I')];
+  const doc = emptyDoc();
+  doc.cards.p2 = { fsrs: { due: past, reps: 2, stability: 3 }, alt: 2 };
+  doc.cards.nd = { fsrs: { due: past, reps: 2, stability: 3 }, alt: 2 };
+  doc.units['U-I'] = { seen: true };
+  const s = buildSession({ cards, units, doc, meta, now, only: 'prio', newLimit: 0 });
+  assert.deepEqual(s.map(x => x.cardId).sort(), ['p1', 'p2']);
+});
+
+test('buildSession only=gaps: offene Lücken auch vor der Fälligkeit, geschlossene nicht', () => {
+  const cards = [mk('g1', 'MTS', 'U-M'), mk('g2', 'MTS', 'U-M'), mk('ok', 'MTS', 'U-M'), mk('n1', 'MTS', 'U-M')];
+  const doc = emptyDoc();
+  for (const id of ['g1', 'g2', 'ok']) doc.cards[id] = { fsrs: { due: future, reps: 1, stability: 1 }, alt: 1 };
+  doc.gaps = [{ cardId: 'g1', fach: 'MTS' }, { cardId: 'g2', fach: 'MTS' }, { cardId: 'ok', fach: 'MTS', closed: true }];
+  const s = buildSession({ cards, units, doc, meta, now, only: 'gaps' });
+  assert.deepEqual(s.map(x => x.cardId).sort(), ['g1', 'g2']);
+  assert.deepEqual(buildSession({ cards, units, doc, meta, now, only: 'gaps', exclude: new Set(['g1']) }).map(x => x.cardId), ['g2']);
+});
+
+test('resolveOnly: nur bekannte Modi, sonst null', () => {
+  assert.equal(resolveOnly('due'), 'due');
+  assert.equal(resolveOnly('gaps'), 'gaps');
+  assert.equal(resolveOnly('quatsch'), null);
+  assert.equal(resolveOnly(null), null);
+});
+
+test('fachStats: prio zählt nur neue Prioritätskarten; Tempo dafür separat', () => {
+  const cards = [mk('p1', 'INF2', 'U-I', true), mk('p2', 'INF2', 'U-I', true), mk('p3', 'INF2', 'U-I', true), mk('n1', 'INF2', 'U-I'), mk('n2', 'INF2', 'U-I')];
+  const doc = emptyDoc();
+  doc.cards.p3 = { fsrs: { due: future, reps: 1, stability: 1 }, alt: 1 };
+  const s = fachStats({ cards, doc, fach: 'INF2', exam: '2026-10-07', now });
+  assert.equal(s.prio, 2);
+  assert.equal(s.prioTotal, 3);
+  assert.equal(s.fresh, 4);
+  assert.ok(s.prioPace <= s.pace);
+});
+
+test('urgencyOf: Tempo-Schwellen, kurz vor der Prüfung immer dringend, vorbei = done', () => {
+  const early = new Date(2026, 8, 22, 10);
+  assert.equal(urgencyOf({ pace: 126, due: 0, fresh: 882, finished: false }, '2026-10-07', early), 'high');
+  assert.equal(urgencyOf({ pace: 39, due: 0, fresh: 267, finished: false }, '2026-10-07', early), 'mid');
+  assert.equal(urgencyOf({ pace: 18, due: 0, fresh: 140, finished: false }, '2026-10-07', early), 'low');
+  assert.equal(urgencyOf({ pace: 5, due: 0, fresh: 5, finished: false }, '2026-10-07', new Date(2026, 9, 5, 10)), 'high');
+  assert.equal(urgencyOf({ pace: 0, due: 0, fresh: 0, finished: false }, '2026-10-07', new Date(2026, 9, 5, 10)), 'low');
+  assert.equal(urgencyOf({ pace: 99, due: 9, fresh: 9, finished: true }, '2026-10-07', early), 'done');
+});
+
+test('Zeit-Budget, Tagesschlüssel und heute bewertete Karten', () => {
+  assert.equal(estimateMinutes(0), 0);
+  assert.equal(estimateMinutes(1), 1);
+  assert.equal(estimateMinutes(120), 60);
+  assert.equal(dayKey(new Date(2026, 8, 5, 23, 59)), '2026-09-05');
+  const cards = [mk('a', 'INF2', 'U-I'), mk('b', 'INF2', 'U-I'), mk('c', 'INF2', 'U-I'), mk('d', 'INF2', 'U-I')];
+  const doc = emptyDoc();
+  doc.cards.a = { fsrs: { due: future, last_review: new Date(2026, 8, 22, 8).toISOString() }, alt: 1 };
+  doc.cards.b = { fsrs: { due: future, last_review: new Date(2026, 8, 21, 23, 59).toISOString() }, alt: 1 };
+  doc.cards.c = { fsrs: { due: future, last_review: null }, alt: 1 };
+  assert.equal(reviewedToday(cards, doc, now), 1);
 });

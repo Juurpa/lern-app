@@ -12,6 +12,25 @@ function examRow(data, doc, s) {
     <a class="btn primary" href="#/klausur?set=${encodeURIComponent(s.id)}">Starten</a></div>`;
 }
 
+// fällig / neu / Lücken als Einzel-Links in den passenden Lern-Modus; Nullen und abgelaufene Prüfungen bleiben reine Anzeige.
+export function statLinks(f, info, st) {
+  const k = encodeURIComponent(f);
+  const cell = (n, label, href, aria, enabled = true) => n && enabled
+    ? `<a href="${href}" aria-label="${esc(aria)}"><b>${n}</b>${label}</a>`
+    : `<div><b>${n}</b>${label}</div>`;
+  return `<div class="stats">
+    ${cell(st.due, 'fällig', `#/learn?fach=${k}&amp;only=due`, `${st.due} fällige ${info.short}-Karten lernen`, !st.finished)}
+    ${cell(st.fresh, 'neu', `#/learn?fach=${k}&amp;only=new`, `${st.fresh} neue ${info.short}-Karten lernen`, !st.finished)}
+    ${cell(st.gaps, 'Lücken', `#/gaps?fach=${k}`, `${st.gaps} offene ${info.short}-Lücken ansehen`)}
+  </div>`;
+}
+
+export function paceNote(st) {
+  if (!st.pace) return '';
+  const prio = st.prioPace && st.prioPace < st.pace ? ` · nur ★ Wichtiges: ≈ ${st.prioPace}/Tag` : '';
+  return `<p class="muted">Tempo: ≈ ${st.pace} neue Karten/Tag nötig${prio}</p>`;
+}
+
 export function renderFach({ data, store, root }, params) {
   const f = resolveFach(data.meta, params?.get('f'));
   if (!f) return root.append(h('<section><p>Fach nicht gefunden.</p><a class="btn" href="#/">Zur Startseite</a></section>'));
@@ -25,22 +44,25 @@ export function renderFach({ data, store, root }, params) {
   const pct = prog.total ? Math.round(((prog.done + prog.partial * 0.5) / prog.total) * 100) : 0;
   const next = nextExercise(exs, doc.exercises);
   const nextLabel = next && exerciseStatus(next, doc.exercises[next.id]) === 'new' ? 'Nächste Aufgabe' : 'Weiter üben';
+  const k = encodeURIComponent(f);
   const learn = st.finished
     ? '<span class="btn" aria-disabled="true">Prüfung vorbei</span>'
-    : `<a class="btn primary" href="#/learn?fach=${encodeURIComponent(f)}">▶ Nur ${esc(info.short)} lernen</a>`;
+    : `<a class="btn primary" href="#/learn?fach=${k}">▶ Nur ${esc(info.short)} lernen</a>`;
+  const prio = !st.finished && st.prioTotal
+    ? `<a class="btn" href="#/learn?fach=${k}&amp;only=prio">★ Nur Wichtiges${st.prio ? ` · ${st.prio} neu` : ''}</a>` : '';
 
   root.append(h(`<section>
     <div class="kicker"><span class="badge">${esc(info.short)}</span><span>${esc(examLabel(info.exam, now))}</span></div>
     <h1>${esc(info.label)}</h1>
-    <div class="stats"><div><b>${st.due}</b>fällig</div><div><b>${st.fresh}</b>neu</div><div><b>${st.gaps}</b>Lücken</div></div>
-    ${st.pace ? `<p class="muted">Tempo: ≈ ${st.pace} neue Karten/Tag nötig</p>` : ''}
-    <div class="row fach-actions">${learn}${next ? `<a class="btn" href="#/aufgaben?id=${encodeURIComponent(next.id)}">${nextLabel}</a>` : ''}</div>
+    ${statLinks(f, info, st)}
+    ${paceNote(st)}
+    <div class="row fach-actions">${learn}${prio}${next ? `<a class="btn" href="#/aufgaben?id=${encodeURIComponent(next.id)}">${nextLabel}</a>` : ''}</div>
     <h2>Aufgaben</h2>
     ${prog.total ? `<div class="progress-bar"><span style="width:${pct}%"></span></div>
     <p class="muted">${prog.done} von ${prog.total} Aufgaben fertig${prog.partial ? ` · ${prog.partial} angefangen` : ''}</p>` : ''}
     ${practice.map(s => setRow(data, doc, s)).join('') || '<p class="muted">Für dieses Fach gibt es noch keine Aufgaben.</p>'}
     ${exams.length ? `<h2>Probeklausur</h2>${exams.map(s => examRow(data, doc, s)).join('')}` : ''}
-    <div class="row"><a class="btn" href="#/folien">Folien</a>${st.gaps ? '<a class="btn" href="#/gaps">Lücken</a>' : ''}</div>
+    <div class="row"><a class="btn" href="#/folien">Folien</a>${st.gaps ? `<a class="btn" href="#/gaps?fach=${k}">Lücken</a>` : ''}</div>
     <nav class="bottom"><a class="btn" href="#/">Start</a></nav>
   </section>`));
 }

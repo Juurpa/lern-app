@@ -93,7 +93,10 @@ pre { overflow-x: auto; border-radius: var(--radius-sm); background: var(--surfa
 input[type=checkbox], input[type=radio] { accent-color: var(--accent); }
 
 .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; text-align: center; }
-.stats > div { background: var(--surface-2); border-radius: var(--radius-sm); padding: 10px 4px; }
+.stats > div, .stats > a { background: var(--surface-2); border-radius: var(--radius-sm); padding: 10px 4px; }
+.stats > a { color: inherit; text-decoration: none; box-shadow: inset 0 -3px 0 color-mix(in srgb, var(--accent) 55%, transparent); transition: background-color .12s var(--ease), transform .12s var(--ease); }
+.stats > a:hover { background: color-mix(in srgb, var(--accent) 12%, var(--surface-2)); }
+.stats > a:active { transform: scale(.97); }
 .stats b { display: block; font-size: 1.5rem; font-weight: 800; letter-spacing: -.02em; }
 
 .rate { gap: 10px; }
@@ -278,9 +281,19 @@ a.chip { min-height: 44px; }
 a.chip:hover { border-color: var(--accent); }
 
 /* Aufgaben */
-.set-row, .ex-row, .fach-panel { display: block; color: inherit; text-decoration: none; border-radius: var(--radius); }
-.set-row:hover, .ex-row:hover, .fach-panel:hover { box-shadow: var(--shadow); transform: translateY(-1px); }
-.fach-go { display: block; margin-top: 10px; font-size: .85rem; font-weight: 600; color: var(--accent); }
+.set-row, .ex-row { display: block; color: inherit; text-decoration: none; border-radius: var(--radius); }
+.set-row:hover, .ex-row:hover { box-shadow: var(--shadow); transform: translateY(-1px); }
+.fach-head { color: var(--muted); text-decoration: none; }
+.fach-panel.urg-high { border-left: 5px solid var(--red); }
+.fach-panel.urg-mid { border-left: 5px solid var(--yellow); }
+.fach-panel.urg-low { border-left: 5px solid var(--green); }
+.fach-panel .muted { margin: 10px 0 0; font-size: .9rem; }
+.daily { margin: 14px 0; }
+.daily-head { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; font-size: .9rem; color: rgba(255, 255, 255, .88); }
+.daily-head b { color: #fff; }
+.start-hero .progress-bar { background: rgba(255, 255, 255, .2); margin-bottom: 0; }
+.start-hero .progress-bar > span { background: #fff; }
+.qsub { font-size: .72rem; font-weight: 600; color: var(--muted); }.fach-go { display: block; margin-top: 10px; font-size: .85rem; font-weight: 600; color: var(--accent); }
 .fach-actions { margin: 14px 0 4px; }
 .ex-row { display: flex; gap: 12px; align-items: flex-start; }
 .status-icon { font-size: 1.3rem; width: 1.5em; text-align: center; flex: none; }

@@ -48,9 +48,10 @@ export function allocate(counts, weights, total) {
   return slots;
 }
 
-export function interleave(items, maxRun = 3) {
+// `head` sind bereits gesetzte Einträge, die unverändert am Anfang bleiben (zählen für den Lauf mit).
+export function interleave(items, maxRun = 3, head = []) {
   const rest = [...items];
-  const out = [];
+  const out = [...head];
   while (rest.length) {
     const n = out.length;
     const last = out[n - 1]?.fach;
@@ -60,6 +61,26 @@ export function interleave(items, maxRun = 3) {
     out.push(rest.splice(i, 1)[0]);
   }
   return out;
+}
+
+export function shuffle(list, rng = Math.random) {
+  const a = [...list];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+// Wiederholer gleichmäßig zwischen die neuen Karten streuen (jeder in seinem Abschnitt, nie am Anfang der Liste stapeln).
+export function weave(fresh, reps) {
+  if (!reps.length) return [...fresh];
+  const total = fresh.length + reps.length;
+  const step = total / reps.length;
+  const at = new Set(reps.map((_, k) => Math.floor((k + 0.5) * step)));
+  const f = [...fresh];
+  const r = [...reps];
+  return Array.from({ length: total }, (_, i) => (at.has(i) ? r.shift() : f.shift()));
 }
 
 export function fachWeights(meta, doc, cards, now) {
@@ -124,31 +145,57 @@ export const ONLY_MODES = ['due', 'new', 'prio', 'gaps'];
 export const ONLY_LABEL = { due: 'fällige Karten', new: 'neue Karten', prio: '★ Wichtiges', gaps: 'Lücken' };
 export const resolveOnly = raw => (ONLY_MODES.includes(raw) ? raw : null);
 
-export function buildSession({ cards, units, doc, meta, now, size = 30, newLimit = 10, exclude = new Set(), fach = null, only = null }) {
+// Muster einer Session: die ersten Karten sind garantiert neu, dazwischen kommen ein paar Wiederholer
+// (ca. 1 je 3 neue). Neue wie fällige Karten werden gezogen, nicht stur nach Fälligkeit/Reihenfolge abgearbeitet.
+export const LEAD_FRESH = 3;
+const REPEAT_PER_FRESH = 3;
+const MIN_REPEATERS = 2;
+
+export function buildSession({ cards, units, doc, meta, now, size = 30, newLimit = 10, exclude = new Set(), fach = null, only = null, rng = Math.random }) {
   const unitById = new Map(units.map(u => [u.id, u]));
   const gapIds = new Set(openGaps(doc.gaps).map(g => g.cardId));
   const pool = cards.filter(c => (!fach || c.fach === fach) && !exclude.has(c.id) && !examFinished(meta.faecher[c.fach].exam, now)
     && (only !== 'prio' || c.priority) && (only !== 'gaps' || gapIds.has(c.id)));
   const weights = fachWeights(meta, doc, cards, now);
-  const dueAt = c => new Date(doc.cards[c.id].fsrs.due);
 
   // Neu-/Prio-Modus ist eine bewusste Wahl: das 15-min-Neukarten-Limit gilt dort nicht.
   if (only === 'new' || only === 'prio') newLimit = size;
   // Lücken-Modus übt offene Lücken auch vor dem Fälligkeitstermin.
   const isDueHere = c => (only === 'gaps' ? Boolean(doc.cards[c.id]) : isDue(doc.cards[c.id], now));
-  const due = only === 'new' ? [] : pool.filter(isDueHere).sort((a, b) => dueAt(a) - dueAt(b));
-  const dueGroups = groupBy(due, 'fach');
-  const dueAlloc = allocate(countsOf(dueGroups), weights, size);
-  const dueCards = Object.entries(dueAlloc).flatMap(([f, n]) => dueGroups[f].slice(0, n)).sort((a, b) => dueAt(a) - dueAt(b));
+  const due = only === 'new' ? [] : pool.filter(isDueHere);
 
   const order = c => unitById.get(c.unit)?.order ?? Infinity;
   const fresh = only === 'due' || only === 'gaps' ? [] : pool.filter(c => !doc.cards[c.id])
     .sort((a, b) => Number(Boolean(b.priority)) - Number(Boolean(a.priority)) || order(a) - order(b));
-  const freshGroups = groupBy(fresh, 'fach');
-  const freshAlloc = allocate(countsOf(freshGroups), weights, Math.max(0, Math.min(newLimit, size - dueCards.length)));
-  const freshCards = Object.entries(freshAlloc).flatMap(([f, n]) => freshGroups[f].slice(0, n));
 
-  const seq = interleave([...dueCards, ...freshCards], meta.maxRun ?? 3);
+  // Anzahl: erst die neuen Karten festlegen, Wiederholer sind nur die Beilage; ohne Neues füllen Wiederholer die Session.
+  const wantFresh = Math.min(newLimit, fresh.length, size);
+  const nDue = wantFresh > 0
+    ? Math.min(due.length, Math.max(MIN_REPEATERS, Math.ceil(wantFresh / REPEAT_PER_FRESH)), Math.floor(size / 3))
+    : Math.min(due.length, size);
+  const nFresh = Math.min(wantFresh, size - nDue);
+
+  // Fächer nach Gewicht verteilen; Wiederholer zufällig (offene Lücken zuerst), Neues zufällig aus einem Fenster vorn (Wichtiges zuerst).
+  const dueGroups = groupBy(due, 'fach');
+  const dueAlloc = allocate(countsOf(dueGroups), weights, nDue);
+  const pickDue = (list, n) => {
+    const s = shuffle(list, rng);
+    return [...s.filter(c => gapIds.has(c.id)), ...s.filter(c => !gapIds.has(c.id))].slice(0, n);
+  };
+  const dueCards = Object.entries(dueAlloc).flatMap(([f, n]) => pickDue(dueGroups[f], n));
+
+  const freshGroups = groupBy(fresh, 'fach');
+  const freshAlloc = allocate(countsOf(freshGroups), weights, nFresh);
+  const pickFresh = (list, n) => {
+    const s = shuffle(list.slice(0, Math.max(2 * n, n + 4)), rng);
+    return [...s.filter(c => c.priority), ...s.filter(c => !c.priority)].slice(0, n);
+  };
+  const freshCards = Object.entries(freshAlloc).flatMap(([f, n]) => pickFresh(freshGroups[f], n));
+
+  const maxRun = meta.maxRun ?? 3;
+  const freshSeq = interleave(shuffle(freshCards, rng), maxRun);
+  const lead = freshSeq.slice(0, LEAD_FRESH);
+  const seq = interleave(weave(freshSeq.slice(LEAD_FRESH), shuffle(dueCards, rng)), maxRun, lead);
   const items = [];
   const introduced = new Set();
   for (const c of seq) {
@@ -162,8 +209,7 @@ export function buildSession({ cards, units, doc, meta, now, size = 30, newLimit
   return items;
 }
 
-export function insertRelearn(queue, pos, item, gap = 5) {
-  const out = [...queue];
-  out.splice(Math.min(pos + gap, out.length), 0, item);
-  return out;
+// Falsche Antwort: die Karte rutscht ans Ende der Queue (`retry`) und kommt wieder, bis sie einmal richtig war.
+export function requeueWrong(queue, pos, item) {
+  return [...queue.slice(0, pos), ...queue.slice(pos).filter(x => !(x.type === 'card' && x.cardId === item.cardId)), { ...item, retry: true }];
 }

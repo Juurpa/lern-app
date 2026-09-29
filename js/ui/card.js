@@ -45,9 +45,9 @@ export function ratingBar(suggest, cb) {
   return el;
 }
 
-export function renderCard(root, { card, mode, fachLabel, onRated, settings, tutorPrompt, sctx }) {
+export function renderCard(root, { card, mode, fachLabel, retry = false, onRated, settings, tutorPrompt, sctx }) {
   const el = h(`<article class="card">
-    <div class="kicker"><span class="badge">${esc(fachLabel)}</span><span>${MODE_LABEL[mode] ?? mode}</span></div>
+    <div class="kicker"><span class="badge">${esc(fachLabel)}</span><span>${retry ? '<span class="retry">🔁 Nochmal – vorhin falsch</span> · ' : ''}${MODE_LABEL[mode] ?? mode}</span></div>
     <div class="q"></div><div class="work"></div><div class="reveal" hidden></div><div class="rate-slot" hidden></div>
   </article>`);
   root.replaceChildren(el);
